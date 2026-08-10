@@ -32,3 +32,10 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# pipeline/monitoring runtime cache — ephemeral ETag/ConditionalGET cache
+# written by lib/pipeline/fetcher.ts's fetchLive() (reused as-is by the
+# monitoring engine, lib/monitoring/fetch.ts, since Phase 4.2). Never
+# meant to be committed — only .gitkeep preserves the directory itself.
+data/_pipeline/cache/*
+!data/_pipeline/cache/.gitkeep
