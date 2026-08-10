@@ -1,0 +1,19 @@
+{
+  "id": "texas-endorsement-rule",
+  "agencyName": "Texas Board of Nursing (TXBON)",
+  "website": "https://www.bon.texas.gov/licensure_endorsement.asp.html",
+  "jurisdiction": "texas",
+  "professionsCovered": [
+    "registered-nurse"
+  ],
+  "sourceType": "official-board",
+  "official": true,
+  "authorityLevel": "authoritative",
+  "authorityRationale": "TXBON's own official endorsement page, citing Rule 217.1(12)/217.5 directly.",
+  "specificity": "field-specific",
+  "reliabilityScore": 0.97,
+  "reliabilityRationale": "Primary regulatory citation hosted by the board itself.",
+  "lastCrawl": null,
+  "lastManualVerification": "2026-08-10",
+  "fieldsUsingThisSource": 0
+}

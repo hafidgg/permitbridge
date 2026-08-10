@@ -1,0 +1,19 @@
+{
+  "id": "georgia-regulations-cornell-mirror",
+  "agencyName": "Georgia Board of Nursing (regulation text mirrored by Cornell Law LII)",
+  "website": "https://www.law.cornell.edu/regulations/georgia/Ga-Comp-R-Regs-R-510-3-.03",
+  "jurisdiction": "georgia",
+  "professionsCovered": [
+    "registered-nurse"
+  ],
+  "sourceType": "official-government",
+  "official": true,
+  "authorityLevel": "authoritative",
+  "authorityRationale": "Cornell Law's Legal Information Institute mirrors verbatim official state regulation text -- an academic legal-reference resource, not a commercial nursing site or blog.",
+  "specificity": "field-specific",
+  "reliabilityScore": 0.85,
+  "reliabilityRationale": "Verbatim regulation mirror, not original government hosting.",
+  "lastCrawl": null,
+  "lastManualVerification": "2026-08-10",
+  "fieldsUsingThisSource": 0
+}

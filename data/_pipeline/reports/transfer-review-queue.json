@@ -1,0 +1,931 @@
+{
+  "generatedAt": "2026-08-09T02:25:10.820Z",
+  "totalItems": 69,
+  "highPriority": 36,
+  "mediumPriority": 3,
+  "lowPriority": 30,
+  "items": [
+    {
+      "transfer": "california-to-new-york",
+      "field": "transferMechanism",
+      "currentValue": "endorsement",
+      "sourceTitle": "Endorsement of Nursing Licenses - RPN",
+      "sourceUrl": "https://www.op.nysed.gov/professions/registered-professional-nursing/endorsement-nursing-licenses",
+      "authority": "authoritative",
+      "confidence": 0.95,
+      "status": "pending_verification",
+      "whyReviewNeeded": "Critical field — no human has reviewed this AI-researched, authoritatively-sourced value yet.",
+      "priority": "High"
+    },
+    {
+      "transfer": "california-to-new-york",
+      "field": "examRequirement",
+      "currentValue": {
+        "status": "not_required"
+      },
+      "sourceTitle": "NYS Nursing: RN License Requirements",
+      "sourceUrl": "https://www.op.nysed.gov/professions/registered-professional-nursing/license-requirements",
+      "authority": "authoritative",
+      "confidence": 0.85,
+      "status": "pending_verification",
+      "whyReviewNeeded": "Critical field — no human has reviewed this AI-researched, authoritatively-sourced value yet.",
+      "priority": "High"
+    },
+    {
+      "transfer": "california-to-new-york",
+      "field": "applicationFeeUsd",
+      "currentValue": 143,
+      "sourceTitle": "Endorsement of Nursing Licenses - RPN",
+      "sourceUrl": "https://www.op.nysed.gov/professions/registered-professional-nursing/endorsement-nursing-licenses",
+      "authority": "authoritative",
+      "confidence": 0.93,
+      "status": "pending_verification",
+      "whyReviewNeeded": "Critical field — no human has reviewed this AI-researched, authoritatively-sourced value yet.",
+      "priority": "High"
+    },
+    {
+      "transfer": "california-to-new-york",
+      "field": "licenseVerificationRequirement",
+      "currentValue": {
+        "status": "required"
+      },
+      "sourceTitle": "Endorsement of Nursing Licenses - RPN",
+      "sourceUrl": "https://www.op.nysed.gov/professions/registered-professional-nursing/endorsement-nursing-licenses",
+      "authority": "authoritative",
+      "confidence": 0.9,
+      "status": "pending_verification",
+      "whyReviewNeeded": "Critical field — no human has reviewed this AI-researched, authoritatively-sourced value yet.",
+      "priority": "High"
+    },
+    {
+      "transfer": "california-to-new-york",
+      "field": "goodStandingRequirement",
+      "currentValue": {
+        "status": "required"
+      },
+      "sourceTitle": "NYS Nursing: RN License Requirements",
+      "sourceUrl": "https://www.op.nysed.gov/professions/registered-professional-nursing/license-requirements",
+      "authority": "authoritative",
+      "confidence": 0.8,
+      "status": "pending_verification",
+      "whyReviewNeeded": "Critical field — no human has reviewed this AI-researched, authoritatively-sourced value yet.",
+      "priority": "High"
+    },
+    {
+      "transfer": "california-to-new-york",
+      "field": "disciplinaryDisclosureRequirement",
+      "currentValue": {
+        "status": "required"
+      },
+      "sourceTitle": "NYS Nursing: RN License Requirements",
+      "sourceUrl": "https://www.op.nysed.gov/professions/registered-professional-nursing/license-requirements",
+      "authority": "authoritative",
+      "confidence": 0.75,
+      "status": "pending_verification",
+      "whyReviewNeeded": "Critical field — no human has reviewed this AI-researched, authoritatively-sourced value yet.",
+      "priority": "High"
+    },
+    {
+      "transfer": "california-to-texas",
+      "field": "transferMechanism",
+      "currentValue": "endorsement",
+      "sourceTitle": "Licensure - Endorsement Information",
+      "sourceUrl": "https://www.bon.texas.gov/licensure_endorsement.asp.html",
+      "authority": "authoritative",
+      "confidence": 0.95,
+      "status": "pending_verification",
+      "whyReviewNeeded": "Critical field — no human has reviewed this AI-researched, authoritatively-sourced value yet.",
+      "priority": "High"
+    },
+    {
+      "transfer": "california-to-texas",
+      "field": "examRequirement",
+      "currentValue": {
+        "status": "required"
+      },
+      "sourceTitle": "Texas Nursing License by Endorsement (2026)",
+      "sourceUrl": "https://www.renewrn.net/license-transfer/texas",
+      "authority": "supplementary",
+      "confidence": 0.55,
+      "status": "pending_verification",
+      "whyReviewNeeded": "Critical field currently relies only on a secondary source — needs an authoritative source, then human review, before publication.",
+      "priority": "High"
+    },
+    {
+      "transfer": "california-to-texas",
+      "field": "experienceRequirement",
+      "currentValue": {
+        "status": "conditional",
+        "conditions": [
+          {
+            "description": "Required (Six-Month Permit / Rule 217.5(c) compliance) if the applicant passed the NCLEX-RN or SBTPE more than 4 years ago AND has not practiced as an RN in the US or a Canadian province within the last 4 years.",
+            "category": "practice_gap"
+          }
+        ]
+      },
+      "sourceTitle": "Graduates Of International Programs - Endorsement Instructions",
+      "sourceUrl": "https://www.bon.texas.gov/pdfs/education_pdfs/education_programs/RN%20END%20INTL%20INSTRUCTIONS%208.22.pdf",
+      "authority": "authoritative",
+      "confidence": 0.88,
+      "status": "pending_verification",
+      "whyReviewNeeded": "Critical field — no human has reviewed this AI-researched, authoritatively-sourced value yet.",
+      "priority": "High"
+    },
+    {
+      "transfer": "california-to-texas",
+      "field": "applicationFeeUsd",
+      "currentValue": 150,
+      "sourceTitle": "Texas Nursing License by Endorsement (2026)",
+      "sourceUrl": "https://www.renewrn.net/license-transfer/texas",
+      "authority": "supplementary",
+      "confidence": 0.6,
+      "status": "pending_verification",
+      "whyReviewNeeded": "Critical field currently relies only on a secondary source — needs an authoritative source, then human review, before publication.",
+      "priority": "High"
+    },
+    {
+      "transfer": "california-to-texas",
+      "field": "backgroundCheckRequirement",
+      "currentValue": {
+        "status": "required"
+      },
+      "sourceTitle": "Licensure - Endorsement Information",
+      "sourceUrl": "https://www.bon.texas.gov/licensure_endorsement.asp.html",
+      "authority": "authoritative",
+      "confidence": 0.9,
+      "status": "pending_verification",
+      "whyReviewNeeded": "Critical field — no human has reviewed this AI-researched, authoritatively-sourced value yet.",
+      "priority": "High"
+    },
+    {
+      "transfer": "california-to-texas",
+      "field": "fingerprintingRequirement",
+      "currentValue": {
+        "status": "required"
+      },
+      "sourceTitle": "Licensure - Endorsement Information",
+      "sourceUrl": "https://www.bon.texas.gov/licensure_endorsement.asp.html",
+      "authority": "authoritative",
+      "confidence": 0.9,
+      "status": "pending_verification",
+      "whyReviewNeeded": "Critical field — no human has reviewed this AI-researched, authoritatively-sourced value yet.",
+      "priority": "High"
+    },
+    {
+      "transfer": "california-to-texas",
+      "field": "licenseVerificationRequirement",
+      "currentValue": {
+        "status": "required"
+      },
+      "sourceTitle": "Graduates Of International Programs - Endorsement Instructions",
+      "sourceUrl": "https://www.bon.texas.gov/pdfs/education_pdfs/education_programs/RN%20END%20INTL%20INSTRUCTIONS%208.22.pdf",
+      "authority": "authoritative",
+      "confidence": 0.9,
+      "status": "pending_verification",
+      "whyReviewNeeded": "Critical field — no human has reviewed this AI-researched, authoritatively-sourced value yet.",
+      "priority": "High"
+    },
+    {
+      "transfer": "california-to-texas",
+      "field": "goodStandingRequirement",
+      "currentValue": {
+        "status": "required"
+      },
+      "sourceTitle": "Licensure - Endorsement Information",
+      "sourceUrl": "https://www.bon.texas.gov/licensure_endorsement.asp.html",
+      "authority": "authoritative",
+      "confidence": 0.85,
+      "status": "pending_verification",
+      "whyReviewNeeded": "Critical field — no human has reviewed this AI-researched, authoritatively-sourced value yet.",
+      "priority": "High"
+    },
+    {
+      "transfer": "illinois-to-georgia",
+      "field": "transferMechanism",
+      "currentValue": "endorsement",
+      "sourceTitle": "FAQs for Nursing",
+      "sourceUrl": "https://sos.ga.gov/page/faqs-nursing",
+      "authority": "authoritative",
+      "confidence": 0.93,
+      "status": "pending_verification",
+      "whyReviewNeeded": "Critical field — no human has reviewed this AI-researched, authoritatively-sourced value yet.",
+      "priority": "High"
+    },
+    {
+      "transfer": "illinois-to-georgia",
+      "field": "examRequirement",
+      "currentValue": {
+        "status": "not_required"
+      },
+      "sourceTitle": "FAQs for Nursing",
+      "sourceUrl": "https://sos.ga.gov/page/faqs-nursing",
+      "authority": "authoritative",
+      "confidence": 0.85,
+      "status": "pending_verification",
+      "whyReviewNeeded": "Critical field — no human has reviewed this AI-researched, authoritatively-sourced value yet.",
+      "priority": "High"
+    },
+    {
+      "transfer": "illinois-to-georgia",
+      "field": "experienceRequirement",
+      "currentValue": {
+        "status": "conditional",
+        "conditions": [
+          {
+            "description": "A Board-approved reentry program (40 hours didactic + 160 hours clinical study, per Ga. Comp. R. & Regs. 410-4-.03) is required if the applicant has NOT documented at least 500 hours of licensed RN practice within the 4 years immediately preceding the application date.",
+            "category": "practice_gap"
+          }
+        ]
+      },
+      "sourceTitle": "Reentry Proposal Instructions (RN)",
+      "sourceUrl": "https://sos.ga.gov/sites/default/files/forms/38%20Form%20-%20Reentry%20Packet%20(RN).pdf",
+      "authority": "authoritative",
+      "confidence": 0.95,
+      "status": "pending_verification",
+      "whyReviewNeeded": "Critical field — no human has reviewed this AI-researched, authoritatively-sourced value yet.",
+      "priority": "High"
+    },
+    {
+      "transfer": "illinois-to-georgia",
+      "field": "applicationFeeUsd",
+      "currentValue": 75,
+      "sourceTitle": "Georgia Board of Nursing Fee Schedule",
+      "sourceUrl": "https://sos.ga.gov/sites/default/files/forms/38%20Reference%20-%20GBON%20Fee%20Schedule.pdf",
+      "authority": "authoritative",
+      "confidence": 0.93,
+      "status": "pending_verification",
+      "whyReviewNeeded": "Critical field — no human has reviewed this AI-researched, authoritatively-sourced value yet.",
+      "priority": "High"
+    },
+    {
+      "transfer": "illinois-to-georgia",
+      "field": "backgroundCheckRequirement",
+      "currentValue": {
+        "status": "required"
+      },
+      "sourceTitle": "Ga. Comp. R. & Regs. 410-3-.02 - Licensure by Endorsement (LPN/RN pattern)",
+      "sourceUrl": "https://regulations.justia.com/states/georgia/department-410/chapter-410-3/rule-410-3-02",
+      "authority": "authoritative",
+      "confidence": 0.85,
+      "status": "pending_verification",
+      "whyReviewNeeded": "Critical field — no human has reviewed this AI-researched, authoritatively-sourced value yet.",
+      "priority": "High"
+    },
+    {
+      "transfer": "illinois-to-georgia",
+      "field": "fingerprintingRequirement",
+      "currentValue": {
+        "status": "required"
+      },
+      "sourceTitle": "Ga. Comp. R. & Regs. 410-3-.02",
+      "sourceUrl": "https://regulations.justia.com/states/georgia/department-410/chapter-410-3/rule-410-3-02",
+      "authority": "authoritative",
+      "confidence": 0.8,
+      "status": "pending_verification",
+      "whyReviewNeeded": "Critical field — no human has reviewed this AI-researched, authoritatively-sourced value yet.",
+      "priority": "High"
+    },
+    {
+      "transfer": "illinois-to-georgia",
+      "field": "licenseVerificationRequirement",
+      "currentValue": {
+        "status": "required"
+      },
+      "sourceTitle": "FAQs for Nursing",
+      "sourceUrl": "https://sos.ga.gov/page/faqs-nursing",
+      "authority": "authoritative",
+      "confidence": 0.85,
+      "status": "pending_verification",
+      "whyReviewNeeded": "Critical field — no human has reviewed this AI-researched, authoritatively-sourced value yet.",
+      "priority": "High"
+    },
+    {
+      "transfer": "illinois-to-georgia",
+      "field": "goodStandingRequirement",
+      "currentValue": {
+        "status": "required"
+      },
+      "sourceTitle": "Ga. Comp. R. & Regs. 410-3-.02",
+      "sourceUrl": "https://regulations.justia.com/states/georgia/department-410/chapter-410-3/rule-410-3-02",
+      "authority": "authoritative",
+      "confidence": 0.8,
+      "status": "pending_verification",
+      "whyReviewNeeded": "Critical field — no human has reviewed this AI-researched, authoritatively-sourced value yet.",
+      "priority": "High"
+    },
+    {
+      "transfer": "illinois-to-georgia",
+      "field": "disciplinaryDisclosureRequirement",
+      "currentValue": {
+        "status": "required"
+      },
+      "sourceTitle": "Ga. Comp. R. & Regs. 410-4-.01",
+      "sourceUrl": "https://regulations.justia.com/states/georgia/department-410/chapter-410-4/rule-410-4-01",
+      "authority": "authoritative",
+      "confidence": 0.75,
+      "status": "pending_verification",
+      "whyReviewNeeded": "Critical field — no human has reviewed this AI-researched, authoritatively-sourced value yet.",
+      "priority": "High"
+    },
+    {
+      "transfer": "texas-to-california",
+      "field": "transferMechanism",
+      "currentValue": "endorsement",
+      "sourceTitle": "Licensure by Endorsement",
+      "sourceUrl": "https://www.rn.ca.gov/applicants/lic-end",
+      "authority": "authoritative",
+      "confidence": 0.95,
+      "status": "pending_verification",
+      "whyReviewNeeded": "Critical field — no human has reviewed this AI-researched, authoritatively-sourced value yet.",
+      "priority": "High"
+    },
+    {
+      "transfer": "texas-to-california",
+      "field": "examRequirement",
+      "currentValue": {
+        "status": "not_required"
+      },
+      "sourceTitle": "Licensure by Endorsement",
+      "sourceUrl": "https://www.rn.ca.gov/applicants/lic-end",
+      "authority": "authoritative",
+      "confidence": 0.9,
+      "status": "pending_verification",
+      "whyReviewNeeded": "Critical field — no human has reviewed this AI-researched, authoritatively-sourced value yet.",
+      "priority": "High"
+    },
+    {
+      "transfer": "texas-to-california",
+      "field": "applicationFeeUsd",
+      "currentValue": 350,
+      "sourceTitle": "California Code of Regulations, Title 16, Division 14, Section 1417 - Fees",
+      "sourceUrl": "https://www.rn.ca.gov/pdfs/regulations/proposedlang-fees2018.pdf",
+      "authority": "authoritative",
+      "confidence": 0.93,
+      "status": "pending_verification",
+      "whyReviewNeeded": "Critical field — no human has reviewed this AI-researched, authoritatively-sourced value yet.",
+      "priority": "High"
+    },
+    {
+      "transfer": "texas-to-california",
+      "field": "backgroundCheckRequirement",
+      "currentValue": {
+        "status": "required"
+      },
+      "sourceTitle": "Applicant Fingerprint Information",
+      "sourceUrl": "https://www.rn.ca.gov/applicants/fpinstruct",
+      "authority": "authoritative",
+      "confidence": 0.9,
+      "status": "pending_verification",
+      "whyReviewNeeded": "Critical field — no human has reviewed this AI-researched, authoritatively-sourced value yet.",
+      "priority": "High"
+    },
+    {
+      "transfer": "texas-to-california",
+      "field": "fingerprintingRequirement",
+      "currentValue": {
+        "status": "required"
+      },
+      "sourceTitle": "Applicant Fingerprint Information",
+      "sourceUrl": "https://www.rn.ca.gov/applicants/fpinstruct",
+      "authority": "authoritative",
+      "confidence": 0.9,
+      "status": "pending_verification",
+      "whyReviewNeeded": "Critical field — no human has reviewed this AI-researched, authoritatively-sourced value yet.",
+      "priority": "High"
+    },
+    {
+      "transfer": "texas-to-california",
+      "field": "licenseVerificationRequirement",
+      "currentValue": {
+        "status": "required"
+      },
+      "sourceTitle": "Licensure by Endorsement",
+      "sourceUrl": "https://www.rn.ca.gov/applicants/lic-end",
+      "authority": "authoritative",
+      "confidence": 0.85,
+      "status": "pending_verification",
+      "whyReviewNeeded": "Critical field — no human has reviewed this AI-researched, authoritatively-sourced value yet.",
+      "priority": "High"
+    },
+    {
+      "transfer": "texas-to-california",
+      "field": "goodStandingRequirement",
+      "currentValue": {
+        "status": "required"
+      },
+      "sourceTitle": "Licensure by Endorsement",
+      "sourceUrl": "https://www.rn.ca.gov/applicants/lic-end",
+      "authority": "authoritative",
+      "confidence": 0.85,
+      "status": "pending_verification",
+      "whyReviewNeeded": "Critical field — no human has reviewed this AI-researched, authoritatively-sourced value yet.",
+      "priority": "High"
+    },
+    {
+      "transfer": "texas-to-florida",
+      "field": "transferMechanism",
+      "currentValue": "compact_privilege",
+      "sourceTitle": "Licensing - Florida Board of Nursing",
+      "sourceUrl": "https://floridasnursing.gov/licensing/",
+      "authority": "authoritative",
+      "confidence": 0.95,
+      "status": "pending_verification",
+      "whyReviewNeeded": "Critical field — no human has reviewed this AI-researched, authoritatively-sourced value yet.",
+      "priority": "High"
+    },
+    {
+      "transfer": "texas-to-florida",
+      "field": "examRequirement",
+      "currentValue": {
+        "status": "not_required"
+      },
+      "sourceTitle": "Licensing - Florida Board of Nursing",
+      "sourceUrl": "https://floridasnursing.gov/licensing/",
+      "authority": "authoritative",
+      "confidence": 0.9,
+      "status": "pending_verification",
+      "whyReviewNeeded": "Critical field — no human has reviewed this AI-researched, authoritatively-sourced value yet.",
+      "priority": "High"
+    },
+    {
+      "transfer": "texas-to-florida",
+      "field": "experienceRequirement",
+      "currentValue": {
+        "status": "not_applicable"
+      },
+      "sourceTitle": "Licensing - Florida Board of Nursing",
+      "sourceUrl": "https://floridasnursing.gov/licensing/",
+      "authority": "authoritative",
+      "confidence": 0.75,
+      "status": "pending_verification",
+      "whyReviewNeeded": "Critical field — no human has reviewed this AI-researched, authoritatively-sourced value yet.",
+      "priority": "High"
+    },
+    {
+      "transfer": "texas-to-florida",
+      "field": "applicationFeeUsd",
+      "currentValue": 100,
+      "sourceTitle": "Fees - Florida Board of Nursing",
+      "sourceUrl": "https://floridasnursing.gov/category/post-template-toggle/fees/",
+      "authority": "authoritative",
+      "confidence": 0.85,
+      "status": "pending_verification",
+      "whyReviewNeeded": "Critical field — no human has reviewed this AI-researched, authoritatively-sourced value yet.",
+      "priority": "High"
+    },
+    {
+      "transfer": "texas-to-florida",
+      "field": "licenseVerificationRequirement",
+      "currentValue": {
+        "status": "required"
+      },
+      "sourceTitle": "Licensing - Florida Board of Nursing",
+      "sourceUrl": "https://floridasnursing.gov/licensing/",
+      "authority": "authoritative",
+      "confidence": 0.8,
+      "status": "pending_verification",
+      "whyReviewNeeded": "Critical field — no human has reviewed this AI-researched, authoritatively-sourced value yet.",
+      "priority": "High"
+    },
+    {
+      "transfer": "texas-to-florida",
+      "field": "goodStandingRequirement",
+      "currentValue": {
+        "status": "required"
+      },
+      "sourceTitle": "Multistate Upgrade Application",
+      "sourceUrl": "https://floridasnursing.gov/applications/multistate-upgrade-app.pdf",
+      "authority": "authoritative",
+      "confidence": 0.85,
+      "status": "pending_verification",
+      "whyReviewNeeded": "Critical field — no human has reviewed this AI-researched, authoritatively-sourced value yet.",
+      "priority": "High"
+    },
+    {
+      "transfer": "california-to-new-york",
+      "field": "temporaryPermitAvailability",
+      "currentValue": {
+        "status": "not_applicable"
+      },
+      "sourceTitle": "New York Nursing License & Board of Nursing Guide",
+      "sourceUrl": "https://www.trustedhealth.com/nurse-licensure-guide/new-york",
+      "authority": "supplementary",
+      "confidence": 0.5,
+      "status": "pending_verification",
+      "whyReviewNeeded": "Relies on a secondary (discovery-only) source — human review should confirm or seek an authoritative replacement.",
+      "priority": "Medium"
+    },
+    {
+      "transfer": "illinois-to-georgia",
+      "field": "endorsementProcess",
+      "currentValue": "Apply via the GOALS portal (Registered Nurse by Endorsement); submit signed/notarized application by mail, Nursys or direct license verification, GAPS/Idemia fingerprinting, and the fee.",
+      "sourceTitle": "Georgia Nursing License Renewal & Application Guide 2026",
+      "sourceUrl": "https://advantismed.com/nursing-license/georgia",
+      "authority": "supplementary",
+      "confidence": 0.6,
+      "status": "pending_verification",
+      "whyReviewNeeded": "Relies on a secondary (discovery-only) source — human review should confirm or seek an authoritative replacement.",
+      "priority": "Medium"
+    },
+    {
+      "transfer": "texas-to-california",
+      "field": "processingTime",
+      "currentValue": "Generally 6-12 weeks once a complete application is submitted (secondary-source estimate; BRN's own official Processing Times page publishes rolling cohort-based dates rather than a fixed range, so this figure is not a direct official quote).",
+      "sourceTitle": "California RN License Endorsement 2026 — 6-12 Week Timeline",
+      "sourceUrl": "https://catsol.com/guides/california-rn-license-guide/",
+      "authority": "supplementary",
+      "confidence": 0.5,
+      "status": "pending_verification",
+      "whyReviewNeeded": "Relies on a secondary (discovery-only) source — human review should confirm or seek an authoritative replacement.",
+      "priority": "Medium"
+    },
+    {
+      "transfer": "california-to-new-york",
+      "field": "endorsementProcess",
+      "currentValue": "Submit Form 1 (Application for Licensure, $143 fee) via the NY.gov portal; Form 2 (Certification of Professional Education) sent directly from the nursing school; Form 3 or Nursys verification of the CA license.",
+      "sourceTitle": "Endorsement of Nursing Licenses - RPN",
+      "sourceUrl": "https://www.op.nysed.gov/professions/registered-professional-nursing/endorsement-nursing-licenses",
+      "authority": "authoritative",
+      "confidence": 0.92,
+      "status": "pending_verification",
+      "whyReviewNeeded": "Supporting field — no human has reviewed this AI-researched value yet.",
+      "priority": "Low"
+    },
+    {
+      "transfer": "california-to-new-york",
+      "field": "reciprocityAgreementExists",
+      "currentValue": {
+        "status": "not_applicable"
+      },
+      "sourceTitle": "Endorsement of Nursing Licenses - RPN",
+      "sourceUrl": "https://www.op.nysed.gov/professions/registered-professional-nursing/endorsement-nursing-licenses",
+      "authority": "authoritative",
+      "confidence": 0.85,
+      "status": "pending_verification",
+      "whyReviewNeeded": "Supporting field — no human has reviewed this AI-researched value yet.",
+      "priority": "Low"
+    },
+    {
+      "transfer": "california-to-new-york",
+      "field": "universalRecognitionApplies",
+      "currentValue": {
+        "status": "not_applicable"
+      },
+      "sourceTitle": "Endorsement of Nursing Licenses - RPN",
+      "sourceUrl": "https://www.op.nysed.gov/professions/registered-professional-nursing/endorsement-nursing-licenses",
+      "authority": "authoritative",
+      "confidence": 0.75,
+      "status": "pending_verification",
+      "whyReviewNeeded": "Supporting field — no human has reviewed this AI-researched value yet.",
+      "priority": "Low"
+    },
+    {
+      "transfer": "california-to-new-york",
+      "field": "documentsRequired",
+      "currentValue": "Form 1, Form 2 (from nursing school directly), Form 3 or Nursys verification.",
+      "sourceTitle": "Endorsement of Nursing Licenses - RPN",
+      "sourceUrl": "https://www.op.nysed.gov/professions/registered-professional-nursing/endorsement-nursing-licenses",
+      "authority": "authoritative",
+      "confidence": 0.85,
+      "status": "pending_verification",
+      "whyReviewNeeded": "Supporting field — no human has reviewed this AI-researched value yet.",
+      "priority": "Low"
+    },
+    {
+      "transfer": "california-to-new-york",
+      "field": "compactStatus",
+      "currentValue": "Not applicable -- neither state participates in the NLC.",
+      "sourceTitle": "NYS Nursing: RN License Requirements",
+      "sourceUrl": "https://www.op.nysed.gov/professions/registered-professional-nursing/license-requirements",
+      "authority": "authoritative",
+      "confidence": 0.9,
+      "status": "pending_verification",
+      "whyReviewNeeded": "Supporting field — no human has reviewed this AI-researched value yet.",
+      "priority": "Low"
+    },
+    {
+      "transfer": "california-to-texas",
+      "field": "endorsementProcess",
+      "currentValue": "Submit online endorsement application via the Texas Nurse Portal per Rule 217.5(a) eligibility criteria; requires Nursys license verification, fingerprinting, and passing the Texas Nursing Jurisprudence Exam.",
+      "sourceTitle": "Application Forms - Endorsement",
+      "sourceUrl": "https://bon.texas.gov/applications_endorsement.asp.html",
+      "authority": "authoritative",
+      "confidence": 0.9,
+      "status": "pending_verification",
+      "whyReviewNeeded": "Supporting field — no human has reviewed this AI-researched value yet.",
+      "priority": "Low"
+    },
+    {
+      "transfer": "california-to-texas",
+      "field": "reciprocityAgreementExists",
+      "currentValue": {
+        "status": "not_applicable"
+      },
+      "sourceTitle": "Licensure - Endorsement Information",
+      "sourceUrl": "https://www.bon.texas.gov/licensure_endorsement.asp.html",
+      "authority": "authoritative",
+      "confidence": 0.85,
+      "status": "pending_verification",
+      "whyReviewNeeded": "Supporting field — no human has reviewed this AI-researched value yet.",
+      "priority": "Low"
+    },
+    {
+      "transfer": "california-to-texas",
+      "field": "universalRecognitionApplies",
+      "currentValue": {
+        "status": "not_applicable"
+      },
+      "sourceTitle": "Licensure - Endorsement Information",
+      "sourceUrl": "https://www.bon.texas.gov/licensure_endorsement.asp.html",
+      "authority": "authoritative",
+      "confidence": 0.7,
+      "status": "pending_verification",
+      "whyReviewNeeded": "Supporting field — no human has reviewed this AI-researched value yet.",
+      "priority": "Low"
+    },
+    {
+      "transfer": "california-to-texas",
+      "field": "otherRequiredFees",
+      "currentValue": "DPS and FBI fingerprint fee, set by those agencies and paid separately (amount not published by TXBON as a fixed figure).",
+      "sourceTitle": "Licensure - Endorsement Information",
+      "sourceUrl": "https://www.bon.texas.gov/licensure_endorsement.asp.html",
+      "authority": "authoritative",
+      "confidence": 0.7,
+      "status": "pending_verification",
+      "whyReviewNeeded": "Supporting field — no human has reviewed this AI-researched value yet.",
+      "priority": "Low"
+    },
+    {
+      "transfer": "california-to-texas",
+      "field": "processingTime",
+      "currentValue": "Board staff review: approximately 10 business days after the last required item is received (per TXBON's own instructions); temporary permit eligibility review: 15 business days.",
+      "sourceTitle": "Graduates Of International Programs - Endorsement Instructions",
+      "sourceUrl": "https://www.bon.texas.gov/pdfs/education_pdfs/education_programs/RN%20END%20INTL%20INSTRUCTIONS%208.22.pdf",
+      "authority": "authoritative",
+      "confidence": 0.85,
+      "status": "pending_verification",
+      "whyReviewNeeded": "Supporting field — no human has reviewed this AI-researched value yet.",
+      "priority": "Low"
+    },
+    {
+      "transfer": "california-to-texas",
+      "field": "temporaryPermitAvailability",
+      "currentValue": {
+        "status": "required"
+      },
+      "sourceTitle": "Six Month Permits & Temporary Licenses",
+      "sourceUrl": "https://www.bon.texas.gov/applications_six_month_permits_and_temporary_licenses.asp.html",
+      "authority": "authoritative",
+      "confidence": 0.9,
+      "status": "pending_verification",
+      "whyReviewNeeded": "Supporting field — no human has reviewed this AI-researched value yet.",
+      "priority": "Low"
+    },
+    {
+      "transfer": "california-to-texas",
+      "field": "compactStatus",
+      "currentValue": "Not applicable to this transfer -- California is not an NLC member, so no compact pathway exists regardless of Texas's own membership.",
+      "sourceTitle": "Licensure - Endorsement Information",
+      "sourceUrl": "https://www.bon.texas.gov/licensure_endorsement.asp.html",
+      "authority": "authoritative",
+      "confidence": 0.9,
+      "status": "pending_verification",
+      "whyReviewNeeded": "Supporting field — no human has reviewed this AI-researched value yet.",
+      "priority": "Low"
+    },
+    {
+      "transfer": "illinois-to-georgia",
+      "field": "reciprocityAgreementExists",
+      "currentValue": {
+        "status": "not_applicable"
+      },
+      "sourceTitle": "FAQs for Nursing",
+      "sourceUrl": "https://sos.ga.gov/page/faqs-nursing",
+      "authority": "authoritative",
+      "confidence": 0.85,
+      "status": "pending_verification",
+      "whyReviewNeeded": "Supporting field — no human has reviewed this AI-researched value yet.",
+      "priority": "Low"
+    },
+    {
+      "transfer": "illinois-to-georgia",
+      "field": "universalRecognitionApplies",
+      "currentValue": {
+        "status": "not_applicable"
+      },
+      "sourceTitle": "FAQs for Nursing",
+      "sourceUrl": "https://sos.ga.gov/page/faqs-nursing",
+      "authority": "authoritative",
+      "confidence": 0.7,
+      "status": "pending_verification",
+      "whyReviewNeeded": "Supporting field — no human has reviewed this AI-researched value yet.",
+      "priority": "Low"
+    },
+    {
+      "transfer": "illinois-to-georgia",
+      "field": "processingTime",
+      "currentValue": "Applications are typically reviewed within 15 business days of receipt of all required documents (longer if disciplinary/criminal history requires review).",
+      "sourceTitle": "FAQs for Nursing",
+      "sourceUrl": "https://sos.ga.gov/page/faqs-nursing",
+      "authority": "authoritative",
+      "confidence": 0.85,
+      "status": "pending_verification",
+      "whyReviewNeeded": "Supporting field — no human has reviewed this AI-researched value yet.",
+      "priority": "Low"
+    },
+    {
+      "transfer": "illinois-to-georgia",
+      "field": "temporaryPermitAvailability",
+      "currentValue": {
+        "status": "required"
+      },
+      "sourceTitle": "Ga. Comp. R. & Regs. 510-3-.03 - Temporary License",
+      "sourceUrl": "https://www.law.cornell.edu/regulations/georgia/Ga-Comp-R-Regs-R-510-3-.03",
+      "authority": "authoritative",
+      "confidence": 0.8,
+      "status": "pending_verification",
+      "whyReviewNeeded": "Supporting field — no human has reviewed this AI-researched value yet.",
+      "priority": "Low"
+    },
+    {
+      "transfer": "illinois-to-georgia",
+      "field": "compactStatus",
+      "currentValue": "Not applicable to this specific transfer -- Illinois is not an NLC member, so Georgia's compact membership provides no shortcut here; standard endorsement applies regardless.",
+      "sourceTitle": "FAQs for Nursing",
+      "sourceUrl": "https://sos.ga.gov/page/faqs-nursing",
+      "authority": "authoritative",
+      "confidence": 0.85,
+      "status": "pending_verification",
+      "whyReviewNeeded": "Supporting field — no human has reviewed this AI-researched value yet.",
+      "priority": "Low"
+    },
+    {
+      "transfer": "illinois-to-georgia",
+      "field": "exceptions",
+      "currentValue": "Military spouses and transitioning service members have a distinct eligibility pathway referenced in Georgia's endorsement regulation (410-3-.02(1)), not researched in detail in this pass.",
+      "sourceTitle": "Ga. Comp. R. & Regs. 410-3-.02",
+      "sourceUrl": "https://regulations.justia.com/states/georgia/department-410/chapter-410-3/rule-410-3-02",
+      "authority": "authoritative",
+      "confidence": 0.7,
+      "status": "pending_verification",
+      "whyReviewNeeded": "Supporting field — no human has reviewed this AI-researched value yet.",
+      "priority": "Low"
+    },
+    {
+      "transfer": "texas-to-california",
+      "field": "endorsementProcess",
+      "currentValue": "Apply via BreEZe, selecting 'RN Endorsement'; submit Nursys or direct verification, official transcripts request, fingerprinting, and the $350 fee.",
+      "sourceTitle": "Licensure by Endorsement",
+      "sourceUrl": "https://www.rn.ca.gov/applicants/lic-end",
+      "authority": "authoritative",
+      "confidence": 0.85,
+      "status": "pending_verification",
+      "whyReviewNeeded": "Supporting field — no human has reviewed this AI-researched value yet.",
+      "priority": "Low"
+    },
+    {
+      "transfer": "texas-to-california",
+      "field": "reciprocityAgreementExists",
+      "currentValue": {
+        "status": "not_applicable"
+      },
+      "sourceTitle": "Licensure by Endorsement",
+      "sourceUrl": "https://www.rn.ca.gov/applicants/lic-end",
+      "authority": "authoritative",
+      "confidence": 0.85,
+      "status": "pending_verification",
+      "whyReviewNeeded": "Supporting field — no human has reviewed this AI-researched value yet.",
+      "priority": "Low"
+    },
+    {
+      "transfer": "texas-to-california",
+      "field": "universalRecognitionApplies",
+      "currentValue": {
+        "status": "not_applicable"
+      },
+      "sourceTitle": "Licensure by Endorsement",
+      "sourceUrl": "https://www.rn.ca.gov/applicants/lic-end",
+      "authority": "authoritative",
+      "confidence": 0.8,
+      "status": "pending_verification",
+      "whyReviewNeeded": "Supporting field — no human has reviewed this AI-researched value yet.",
+      "priority": "Low"
+    },
+    {
+      "transfer": "texas-to-california",
+      "field": "otherRequiredFees",
+      "currentValue": "Fingerprinting: Live Scan vendor fees vary (in-state); $49 BRN processing fee for out-of-state FD-258 hard-card applicants.",
+      "sourceTitle": "Applicant Fingerprint Information",
+      "sourceUrl": "https://www.rn.ca.gov/applicants/fpinstruct",
+      "authority": "authoritative",
+      "confidence": 0.85,
+      "status": "pending_verification",
+      "whyReviewNeeded": "Supporting field — no human has reviewed this AI-researched value yet.",
+      "priority": "Low"
+    },
+    {
+      "transfer": "texas-to-california",
+      "field": "documentsRequired",
+      "currentValue": "Official transcripts sent directly from nursing school; Nursys or direct license verification; disciplinary explanation letters if applicable.",
+      "sourceTitle": "Licensure by Endorsement",
+      "sourceUrl": "https://www.rn.ca.gov/applicants/lic-end",
+      "authority": "authoritative",
+      "confidence": 0.8,
+      "status": "pending_verification",
+      "whyReviewNeeded": "Supporting field — no human has reviewed this AI-researched value yet.",
+      "priority": "Low"
+    },
+    {
+      "transfer": "texas-to-california",
+      "field": "temporaryPermitAvailability",
+      "currentValue": {
+        "status": "required"
+      },
+      "sourceTitle": "Temporary Licenses",
+      "sourceUrl": "https://rn.ca.gov/applicants/lic-temp.shtml",
+      "authority": "authoritative",
+      "confidence": 0.92,
+      "status": "pending_verification",
+      "whyReviewNeeded": "Supporting field — no human has reviewed this AI-researched value yet.",
+      "priority": "Low"
+    },
+    {
+      "transfer": "texas-to-california",
+      "field": "compactStatus",
+      "currentValue": "Not applicable -- California does not participate in the NLC at all, regardless of the source state's compact membership.",
+      "sourceTitle": "Licensure by Endorsement",
+      "sourceUrl": "https://www.rn.ca.gov/applicants/lic-end",
+      "authority": "authoritative",
+      "confidence": 0.9,
+      "status": "pending_verification",
+      "whyReviewNeeded": "Supporting field — no human has reviewed this AI-researched value yet.",
+      "priority": "Low"
+    },
+    {
+      "transfer": "texas-to-florida",
+      "field": "reciprocityAgreementExists",
+      "currentValue": {
+        "status": "not_applicable"
+      },
+      "sourceTitle": "Licensing - Florida Board of Nursing",
+      "sourceUrl": "https://floridasnursing.gov/licensing/",
+      "authority": "authoritative",
+      "confidence": 0.9,
+      "status": "pending_verification",
+      "whyReviewNeeded": "Supporting field — no human has reviewed this AI-researched value yet.",
+      "priority": "Low"
+    },
+    {
+      "transfer": "texas-to-florida",
+      "field": "universalRecognitionApplies",
+      "currentValue": {
+        "status": "not_applicable"
+      },
+      "sourceTitle": "Licensing - Florida Board of Nursing",
+      "sourceUrl": "https://floridasnursing.gov/licensing/",
+      "authority": "authoritative",
+      "confidence": 0.85,
+      "status": "pending_verification",
+      "whyReviewNeeded": "Supporting field — no human has reviewed this AI-researched value yet.",
+      "priority": "Low"
+    },
+    {
+      "transfer": "texas-to-florida",
+      "field": "temporaryPermitAvailability",
+      "currentValue": {
+        "status": "not_applicable"
+      },
+      "sourceTitle": "Licensing - Florida Board of Nursing",
+      "sourceUrl": "https://floridasnursing.gov/licensing/",
+      "authority": "authoritative",
+      "confidence": 0.7,
+      "status": "pending_verification",
+      "whyReviewNeeded": "Supporting field — no human has reviewed this AI-researched value yet.",
+      "priority": "Low"
+    },
+    {
+      "transfer": "texas-to-florida",
+      "field": "compactStatus",
+      "currentValue": "Both states are NLC members. A relocating nurse must still submit Florida's simplified 'Multistate License Upgrade' application (not full endorsement) to have Florida become the new home-state license.",
+      "sourceTitle": "Multistate Upgrade Application",
+      "sourceUrl": "https://floridasnursing.gov/applications/multistate-upgrade-app.pdf",
+      "authority": "authoritative",
+      "confidence": 0.9,
+      "status": "pending_verification",
+      "whyReviewNeeded": "Supporting field — no human has reviewed this AI-researched value yet.",
+      "priority": "Low"
+    },
+    {
+      "transfer": "texas-to-florida",
+      "field": "exceptions",
+      "currentValue": "If the Texas-licensed nurse is NOT changing primary residence (e.g. a travel assignment), no Florida application is needed at all -- the multistate license alone suffices. This transfer rule specifically models the RELOCATION scenario (changing primary residence), which does require the upgrade application.",
+      "sourceTitle": "Multistate Upgrade Application",
+      "sourceUrl": "https://floridasnursing.gov/applications/multistate-upgrade-app.pdf",
+      "authority": "authoritative",
+      "confidence": 0.85,
+      "status": "pending_verification",
+      "whyReviewNeeded": "Supporting field — no human has reviewed this AI-researched value yet.",
+      "priority": "Low"
+    }
+  ]
+}

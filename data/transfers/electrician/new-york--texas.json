@@ -1,0 +1,33 @@
+{
+  "profession": "electrician",
+  "fromState": "new-york",
+  "toState": "texas",
+  "pathway": "none",
+  "pathwayLabel": "Full New Application Required",
+  "examRequired": true,
+  "examName": "TDLR Journeyman Electrician Exam (PSI)",
+  "additionalHoursRequired": 32,
+  "feeUsd": 108,
+  "estimatedProcessingDays": [
+    30,
+    90
+  ],
+  "minimumYearsLicensed": 2,
+  "difficultyScore": 8,
+  "portabilityScore": 21,
+  "steps": [
+    "Confirm your Electrician license is active and in good standing in New York.",
+    "Submit a license verification request from New York through the appropriate national registry or the state board directly.",
+    "File an application for full new application required with Texas's licensing board.",
+    "Register for and pass the required exam: NASCLA Accredited Examination for Commercial General Building Contractors.",
+    "Complete 32 additional training/CE hours required by Texas.",
+    "Pay the Texas application fee (approx. $235) and submit supporting documents.",
+    "Await processing — typically 30-90 days in Texas."
+  ],
+  "notes": "Texas (TDLR) has electrical reciprocity agreements with only a short, specific list of states (Alabama, Alaska, Arkansas, Idaho, Iowa, Nebraska, New Mexico, North Carolina, Oklahoma, South Dakota, Wyoming) - none of which include California, Florida, New York, or Ohio. Applicants from those four states must apply as a new, non-reciprocal applicant: $30 journeyman application fee plus a $78 PSI exam fee ($108 total), and TDLR may still require documented supervised on-the-job hours even for an already-licensed electrician, not just a fee and paperwork.",
+  "officialSourceName": "Texas Department of Licensing and Regulation (TDLR)",
+  "updatedAt": "2026-08-07",
+  "sourceUrl": "https://www.tdlr.texas.gov/electricians/out-of-state.htm",
+  "verifiedAt": "2026-08-07",
+  "confidence": 0.9
+}

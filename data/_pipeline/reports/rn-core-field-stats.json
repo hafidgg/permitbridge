@@ -1,0 +1,104 @@
+{
+  "generatedAt": "2026-08-08T22:03:56.642Z",
+  "stats": [
+    {
+      "field": "licensingBoard",
+      "purpose": "Identifies which government body actually issues/regulates the license — the starting point for every other step.",
+      "authorityRequirement": "Tier 1 (State Licensing Authority)",
+      "totalStates": 50,
+      "authoritativeCoverage": 10,
+      "secondaryCoverage": 40,
+      "missingCoverage": 0
+    },
+    {
+      "field": "officialWebsite",
+      "purpose": "Where to actually go to apply, check status, or find current forms — without this, every other fact is unusable in practice.",
+      "authorityRequirement": "Tier 1 (State Licensing Authority)",
+      "totalStates": 50,
+      "authoritativeCoverage": 10,
+      "secondaryCoverage": 40,
+      "missingCoverage": 0
+    },
+    {
+      "field": "licenseTransferPage",
+      "purpose": "The specific page describing how an out-of-state nurse actually transfers a license here — the direct answer to \"how do I do this.\"",
+      "authorityRequirement": "Tier 1 (State Licensing Authority)",
+      "totalStates": 50,
+      "authoritativeCoverage": 0,
+      "secondaryCoverage": 0,
+      "missingCoverage": 50
+    },
+    {
+      "field": "reciprocityRules",
+      "purpose": "Whether/how this state recognizes a license already held elsewhere — directly determines the difficulty of the move.",
+      "authorityRequirement": "Tier 1 (State Licensing Authority)",
+      "totalStates": 50,
+      "authoritativeCoverage": 0,
+      "secondaryCoverage": 0,
+      "missingCoverage": 50
+    },
+    {
+      "field": "endorsementRules",
+      "purpose": "The specific procedure for licensure-by-endorsement — the most common real pathway nurses actually use to relocate.",
+      "authorityRequirement": "Tier 1 (State Licensing Authority)",
+      "totalStates": 50,
+      "authoritativeCoverage": 0,
+      "secondaryCoverage": 0,
+      "missingCoverage": 50
+    },
+    {
+      "field": "universalLicenseRecognitionStatus",
+      "purpose": "Whether a broad state law guarantees recognition of an out-of-state license as a fallback, independent of the compact system.",
+      "authorityRequirement": "Tier 1 (State Licensing Authority)",
+      "totalStates": 50,
+      "authoritativeCoverage": 0,
+      "secondaryCoverage": 0,
+      "missingCoverage": 50
+    },
+    {
+      "field": "compactMembership",
+      "purpose": "For nursing specifically, the single biggest portability factor — a compact member state requires no new application at all for a nurse moving from another compact state.",
+      "authorityRequirement": "Tier 2 (Official Interstate Compact)",
+      "totalStates": 50,
+      "authoritativeCoverage": 50,
+      "secondaryCoverage": 0,
+      "missingCoverage": 0
+    },
+    {
+      "field": "requiredExams",
+      "purpose": "Whether the nurse must retake an exam to practice here — a major cost/time factor in the transfer decision.",
+      "authorityRequirement": "Tier 3 (Official National Licensing Organization) or Tier 1 (State Licensing Authority)",
+      "totalStates": 50,
+      "authoritativeCoverage": 50,
+      "secondaryCoverage": 0,
+      "missingCoverage": 0
+    },
+    {
+      "field": "requiredExperience",
+      "purpose": "Minimum active-practice requirements some states impose for endorsement — can block an otherwise-eligible transfer.",
+      "authorityRequirement": "Tier 1 (State Licensing Authority)",
+      "totalStates": 50,
+      "authoritativeCoverage": 0,
+      "secondaryCoverage": 0,
+      "missingCoverage": 50
+    },
+    {
+      "field": "processingTime",
+      "purpose": "How long the nurse must wait before being able to legally work — often the single most practically important number for someone planning a move.",
+      "authorityRequirement": "Tier 1 (State Licensing Authority)",
+      "totalStates": 50,
+      "authoritativeCoverage": 0,
+      "secondaryCoverage": 0,
+      "missingCoverage": 50
+    },
+    {
+      "field": "rnEndorsementFeeUsd",
+      "purpose": "The fee an already-licensed nurse pays to obtain RN licensure in this state BY ENDORSEMENT — i.e. the practical cost of the transfer itself. Explicitly clarified in Phase 2.5 (see data/_pipeline/reports/phase-2.5-*.md for the full ambiguity-resolution note): this is NOT the fee for initial licensure by examination (new nursing graduates, not a portability scenario this dataset covers), and NOT the ongoing renewal fee (tracked separately as renewalFeeUsd). If a state publishes only a single undifferentiated 'licensure fee' with no distinction between exam and endorsement applicants, that figure may be used, but the field's source evidence must say so explicitly.",
+      "authorityRequirement": "Tier 1 (State Licensing Authority)",
+      "totalStates": 50,
+      "authoritativeCoverage": 5,
+      "secondaryCoverage": 0,
+      "missingCoverage": 45
+    }
+  ]
+}

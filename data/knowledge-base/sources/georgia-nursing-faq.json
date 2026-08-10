@@ -1,0 +1,19 @@
+{
+  "id": "georgia-nursing-faq",
+  "agencyName": "Georgia Board of Nursing",
+  "website": "https://sos.ga.gov/page/faqs-nursing",
+  "jurisdiction": "georgia",
+  "professionsCovered": [
+    "registered-nurse"
+  ],
+  "sourceType": "official-board",
+  "official": true,
+  "authorityLevel": "authoritative",
+  "authorityRationale": "Georgia Board of Nursing's own official FAQ page, hosted on the Georgia Secretary of State's domain.",
+  "specificity": "profession-specific",
+  "reliabilityScore": 0.93,
+  "reliabilityRationale": "Official board FAQ page.",
+  "lastCrawl": null,
+  "lastManualVerification": "2026-08-10",
+  "fieldsUsingThisSource": 0
+}

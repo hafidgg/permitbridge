@@ -1,0 +1,19 @@
+{
+  "id": "california-fee-schedule",
+  "agencyName": "California Board of Registered Nursing",
+  "website": "https://www.rn.ca.gov/pdfs/regulations/proposedlang-fees2018.pdf",
+  "jurisdiction": "california",
+  "professionsCovered": [
+    "registered-nurse"
+  ],
+  "sourceType": "official-board",
+  "official": true,
+  "authorityLevel": "authoritative",
+  "authorityRationale": "California Code of Regulations Title 16, Division 14, Section 1417, hosted directly on the BRN's own domain (rn.ca.gov) \u2014 the actual regulatory text establishing all BRN fees, not a third-party summary.",
+  "reliabilityScore": 0.97,
+  "reliabilityRationale": "Primary regulatory text self-hosted by the licensing board itself.",
+  "lastCrawl": null,
+  "lastManualVerification": "2026-08-09",
+  "fieldsUsingThisSource": 1,
+  "specificity": "field-specific"
+}

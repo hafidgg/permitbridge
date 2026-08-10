@@ -1,0 +1,41 @@
+{
+  "$id": "permitbridge-source-registry",
+  "type": "object",
+  "required": ["sources"],
+  "properties": {
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "entityKind", "entitySlug", "category", "name", "url", "extract", "checkIntervalDays", "enabled"],
+        "properties": {
+          "id": { "type": "string" },
+          "entityKind": { "enum": ["profession", "state", "transfer"] },
+          "entitySlug": { "type": "string" },
+          "category": {
+            "enum": ["state_licensing_board", "national_compact_registry", "federal_agency", "professional_association"]
+          },
+          "name": { "type": "string" },
+          "url": { "type": "string", "format": "uri" },
+          "checkIntervalDays": { "type": "integer", "minimum": 1 },
+          "enabled": { "type": "boolean" },
+          "notes": { "type": "string" },
+          "extract": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["field", "pattern", "transform"],
+              "properties": {
+                "field": { "type": "string" },
+                "pattern": { "type": "string" },
+                "transform": {
+                  "enum": ["boolean_presence", "first_capture_group", "number", "year"]
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

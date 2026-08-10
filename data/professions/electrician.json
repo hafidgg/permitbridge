@@ -1,0 +1,55 @@
+{
+  "slug": "electrician",
+  "name": "Electrician License",
+  "shortName": "Electrician",
+  "category": "Skilled Trades",
+  "icon": "zap",
+  "description": "How to transfer an electrical contractor or journeyman license between US states.",
+  "longDescription": "Electrician licensing is regulated at the state or, in some states, the county/city level, which makes interstate transfers unusually fragmented. Most states recognize the NASCLA and IAEI-backed National Electrical Code exam content, but classification levels (apprentice, journeyman, master, contractor) do not map 1:1 across state lines, and business/law exams are almost always state-specific.",
+  "averageTransferDays": [
+    21,
+    90
+  ],
+  "hasNationalCompact": false,
+  "commonExam": "NASCLA Accredited Examination for Commercial General Building Contractors",
+  "commonExamAcceptedStates": [
+    "Alabama",
+    "Arizona",
+    "Arkansas",
+    "Florida",
+    "Georgia",
+    "Louisiana",
+    "Mississippi",
+    "Nevada",
+    "New Mexico",
+    "North Carolina",
+    "Oregon",
+    "South Carolina",
+    "Tennessee",
+    "Utah",
+    "Virginia",
+    "West Virginia"
+  ],
+  "faqs": [
+    {
+      "question": "Can I use my electrician license in another state?",
+      "answer": "In most cases you cannot simply use an out-of-state license as-is. You typically need to apply for licensure by reciprocity or endorsement in the new state, which may waive the trade exam but almost always requires a state-specific business and law exam."
+    },
+    {
+      "question": "Is there a national electrician license?",
+      "answer": "No. There is no national electrician license or compact. The National Electrical Code (NEC) is a common technical standard, but each state licenses and regulates electricians independently."
+    },
+    {
+      "question": "Do I need to retake the trade exam if I move states?",
+      "answer": "It depends on the pathway. States that accept the NASCLA exam or have a direct reciprocity agreement with your home state often waive the trade exam. States without an agreement usually require the full exam."
+    }
+  ],
+  "relatedProfessions": [
+    "hvac-technician",
+    "plumber",
+    "contractor"
+  ],
+  "updatedAt": "2026-08-07",
+  "sourceUrl": "https://www.nascla.org/nascla-commercial-exam-participating-state-agencies",
+  "verifiedAt": "2026-08-07"
+}

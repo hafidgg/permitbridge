@@ -1,0 +1,68 @@
+{
+  "generatedAt": "2026-08-09T02:24:58.565Z",
+  "rows": [
+    {
+      "transfer": "california-to-new-york",
+      "populatedFields": 12,
+      "verifiedFields": 0,
+      "pendingFields": 12,
+      "unknownFields": 6,
+      "secondarySourceFields": 1,
+      "conflictingFields": 0,
+      "publishable": true,
+      "coverageClass": "partially_verified",
+      "blockingReasons": []
+    },
+    {
+      "transfer": "california-to-texas",
+      "populatedFields": 15,
+      "verifiedFields": 0,
+      "pendingFields": 15,
+      "unknownFields": 3,
+      "secondarySourceFields": 2,
+      "conflictingFields": 0,
+      "publishable": false,
+      "coverageClass": "insufficient_evidence",
+      "blockingReasons": [
+        "Critical field \"examRequirement\" relies only on a secondary source (RenewRN.net (commercial nursing license service, NOT an official source)) — needs an authoritative source before publication.",
+        "Critical field \"applicationFeeUsd\" relies only on a secondary source (RenewRN.net (commercial nursing license service, NOT an official source)) — needs an authoritative source before publication."
+      ]
+    },
+    {
+      "transfer": "illinois-to-georgia",
+      "populatedFields": 16,
+      "verifiedFields": 0,
+      "pendingFields": 16,
+      "unknownFields": 2,
+      "secondarySourceFields": 1,
+      "conflictingFields": 0,
+      "publishable": true,
+      "coverageClass": "partially_verified",
+      "blockingReasons": []
+    },
+    {
+      "transfer": "texas-to-california",
+      "populatedFields": 15,
+      "verifiedFields": 0,
+      "pendingFields": 15,
+      "unknownFields": 3,
+      "secondarySourceFields": 1,
+      "conflictingFields": 0,
+      "publishable": true,
+      "coverageClass": "partially_verified",
+      "blockingReasons": []
+    },
+    {
+      "transfer": "texas-to-florida",
+      "populatedFields": 11,
+      "verifiedFields": 0,
+      "pendingFields": 11,
+      "unknownFields": 7,
+      "secondarySourceFields": 0,
+      "conflictingFields": 0,
+      "publishable": true,
+      "coverageClass": "partially_verified",
+      "blockingReasons": []
+    }
+  ]
+}

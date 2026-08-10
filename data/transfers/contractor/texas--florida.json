@@ -1,0 +1,27 @@
+{
+  "profession": "contractor",
+  "fromState": "texas",
+  "toState": "florida",
+  "pathway": "reciprocity",
+  "pathwayLabel": "Universal License Recognition (Endorsement)",
+  "examRequired": false,
+  "additionalHoursRequired": 0,
+  "feeUsd": 285,
+  "estimatedProcessingDays": [
+    14,
+    45
+  ],
+  "minimumYearsLicensed": 1,
+  "difficultyScore": 3,
+  "portabilityScore": 76,
+  "steps": [
+    "Confirm your Contractor license is active and in good standing in Texas.",
+    "Submit a license verification request from Texas through the appropriate national registry or the state board directly.",
+    "File an application for universal license recognition (endorsement) with Florida's licensing board.",
+    "Pay the Florida application fee (approx. $285) and submit supporting documents.",
+    "Await processing — typically 14-45 days in Florida."
+  ],
+  "notes": "Florida's contractor licensing requirements are administered per the state's licensing authority. Florida trade licenses are issued by the Department of Business and Professional Regulation (DBPR); healthcare licenses go through the Department of Health. Always confirm current rules directly with the official board before applying, since requirements change.",
+  "officialSourceName": "Florida State Licensing Board",
+  "updatedAt": "2026-08-07"
+}

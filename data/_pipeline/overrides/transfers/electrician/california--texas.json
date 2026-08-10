@@ -1,0 +1,13 @@
+{
+  "pathway": "none",
+  "pathwayLabel": "Full New Application Required",
+  "examRequired": true,
+  "examName": "TDLR Journeyman Electrician Exam (PSI)",
+  "feeUsd": 108,
+  "estimatedProcessingDays": [30, 90],
+  "notes": "Texas (TDLR) has electrical reciprocity agreements with only a short, specific list of states (Alabama, Alaska, Arkansas, Idaho, Iowa, Nebraska, New Mexico, North Carolina, Oklahoma, South Dakota, Wyoming) - none of which include California, Florida, New York, or Ohio. Applicants from those four states must apply as a new, non-reciprocal applicant: $30 journeyman application fee plus a $78 PSI exam fee ($108 total), and TDLR may still require documented supervised on-the-job hours even for an already-licensed electrician, not just a fee and paperwork.",
+  "officialSourceName": "Texas Department of Licensing and Regulation (TDLR)",
+  "sourceUrl": "https://www.tdlr.texas.gov/electricians/out-of-state.htm",
+  "verifiedAt": "2026-08-07",
+  "confidence": 0.9
+}

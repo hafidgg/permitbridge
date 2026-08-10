@@ -1,0 +1,18 @@
+{
+  "slug": "california",
+  "name": "California",
+  "abbreviation": "CA",
+  "region": "West",
+  "licensingAuthorityNote": "Most trade licenses in California are issued by the Contractors State License Board (CSLB); healthcare licenses go through the relevant state board (e.g., Board of Registered Nursing).",
+  "isUlrState": false,
+  "populationRank": 1,
+  "faqs": [
+    {
+      "question": "Does California have license reciprocity with other states?",
+      "answer": "California generally does not offer broad contractor license reciprocity. Most out-of-state license holders still need to pass California's trade and law/business exams, though verified experience can sometimes reduce required documentation."
+    }
+  ],
+  "updatedAt": "2026-08-05",
+  "sourceUrl": "https://www.cslb.ca.gov/Contractors/Applicants/Out_Of_State_Applicants.aspx",
+  "verifiedAt": "2026-08-05"
+}

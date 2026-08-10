@@ -1,0 +1,26 @@
+{
+  "profession": "nurse",
+  "fromState": "florida",
+  "toState": "ohio",
+  "pathway": "compact",
+  "pathwayLabel": "Nurse Licensure Compact (multistate privilege)",
+  "examRequired": false,
+  "additionalHoursRequired": 0,
+  "feeUsd": 210,
+  "estimatedProcessingDays": [
+    5,
+    15
+  ],
+  "minimumYearsLicensed": 0,
+  "difficultyScore": 2,
+  "portabilityScore": 84,
+  "steps": [
+    "Confirm your Nurse license is active and in good standing in Florida.",
+    "Verify Ohio is a compact member state and set it as your primary state of residence.",
+    "Update your address with your home-state nursing board so your multistate privilege applies to the new state.",
+    "Await processing — typically 5-15 days in Ohio."
+  ],
+  "notes": "Ohio's nurse licensing requirements are administered per the state's licensing authority. Ohio trade licenses for larger jurisdictions go through the Ohio Construction Industry Licensing Board (OCILB); some smaller municipalities license independently. Always confirm current rules directly with the official board before applying, since requirements change.",
+  "officialSourceName": "Ohio State Licensing Board",
+  "updatedAt": "2026-08-07"
+}

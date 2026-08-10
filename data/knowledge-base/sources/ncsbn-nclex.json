@@ -1,0 +1,19 @@
+{
+  "id": "ncsbn-nclex",
+  "agencyName": "NCSBN (National Council of State Boards of Nursing)",
+  "website": "https://www.ncsbn.org/exams/nclex.page",
+  "jurisdiction": "national",
+  "professionsCovered": [
+    "registered-nurse"
+  ],
+  "reliabilityScore": 0.98,
+  "reliabilityRationale": "NCSBN both administers and documents the NCLEX-RN exam directly \u2014 there is no more authoritative source for this specific fact. Scored just under 1.0 only to reserve a full score for facts additionally confirmed by a named human reviewer, per this system's trust model.",
+  "lastCrawl": null,
+  "lastManualVerification": "2026-08-07",
+  "fieldsUsingThisSource": 50,
+  "sourceType": "official-national-organization",
+  "official": true,
+  "authorityLevel": "authoritative",
+  "authorityRationale": "NCSBN both owns and administers the NCLEX-RN examination directly (it is not merely reporting on an exam run by someone else) \u2014 this is exactly the case the rule 'authoritative only for facts they actually control' is meant to capture. This authority is scoped to the requiredExams fact specifically; it would NOT automatically make NCSBN authoritative for a state-specific fact (e.g. that state's exact fee or processing time) that NCSBN does not govern.",
+  "specificity": "national-general"
+}

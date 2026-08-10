@@ -1,0 +1,19 @@
+{
+  "id": "florida-compact-info",
+  "agencyName": "Florida Board of Nursing",
+  "website": "https://floridasnursing.gov/licensing/",
+  "jurisdiction": "florida",
+  "professionsCovered": [
+    "registered-nurse"
+  ],
+  "sourceType": "official-board",
+  "official": true,
+  "authorityLevel": "authoritative",
+  "authorityRationale": "Florida Board of Nursing's own official Licensing page, describing NLC compact practice directly.",
+  "specificity": "profession-specific",
+  "reliabilityScore": 0.95,
+  "reliabilityRationale": "Official board page.",
+  "lastCrawl": null,
+  "lastManualVerification": "2026-08-10",
+  "fieldsUsingThisSource": 0
+}

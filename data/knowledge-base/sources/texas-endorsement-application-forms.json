@@ -1,0 +1,19 @@
+{
+  "id": "texas-endorsement-application-forms",
+  "agencyName": "Texas Board of Nursing (TXBON)",
+  "website": "https://bon.texas.gov/applications_endorsement.asp.html",
+  "jurisdiction": "texas",
+  "professionsCovered": [
+    "registered-nurse"
+  ],
+  "sourceType": "official-board",
+  "official": true,
+  "authorityLevel": "authoritative",
+  "authorityRationale": "TXBON's own official Application Forms - Endorsement page.",
+  "specificity": "field-specific",
+  "reliabilityScore": 0.95,
+  "reliabilityRationale": "Primary official application-forms page.",
+  "lastCrawl": null,
+  "lastManualVerification": "2026-08-10",
+  "fieldsUsingThisSource": 0
+}

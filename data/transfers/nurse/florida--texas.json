@@ -1,0 +1,26 @@
+{
+  "profession": "nurse",
+  "fromState": "florida",
+  "toState": "texas",
+  "pathway": "compact",
+  "pathwayLabel": "Nurse Licensure Compact (multistate privilege)",
+  "examRequired": false,
+  "additionalHoursRequired": 0,
+  "feeUsd": 235,
+  "estimatedProcessingDays": [
+    5,
+    15
+  ],
+  "minimumYearsLicensed": 0,
+  "difficultyScore": 2,
+  "portabilityScore": 84,
+  "steps": [
+    "Confirm your Nurse license is active and in good standing in Florida.",
+    "Verify Texas is a compact member state and set it as your primary state of residence.",
+    "Update your address with your home-state nursing board so your multistate privilege applies to the new state.",
+    "Await processing — typically 5-15 days in Texas."
+  ],
+  "notes": "Texas's nurse licensing requirements are administered per the state's licensing authority. Texas does not have a single statewide general contractor license; licensing is trade-specific (electrical, plumbing, HVAC) and administered by the Texas Department of Licensing and Regulation (TDLR). Unlike states with a broad Universal License Recognition law, Texas gives TDLR discretionary authority (Occupations Code §51.4041) to waive requirements for holders of a \"substantially equivalent\" out-of-state license, rather than a guaranteed \"shall issue\" right. Texas's clearest guaranteed out-of-state recognition applies specifically to military service members and military spouses, not the general public. Always confirm current rules directly with the official board before applying, since requirements change.",
+  "officialSourceName": "Texas State Licensing Board",
+  "updatedAt": "2026-08-07"
+}

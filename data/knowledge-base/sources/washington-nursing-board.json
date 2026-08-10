@@ -1,0 +1,19 @@
+{
+  "id": "washington-nursing-board",
+  "agencyName": "Washington State Board of Nursing",
+  "website": "https://nursing.wa.gov/",
+  "jurisdiction": "washington",
+  "professionsCovered": [
+    "registered-nurse"
+  ],
+  "sourceType": "official-board",
+  "official": true,
+  "authorityLevel": "authoritative",
+  "authorityRationale": "Washington State Board of Nursing is the state government body that actually issues and regulates RN licenses in this state \u2014 the single most authoritative possible source for any registered-nurse licensing fact about this state.",
+  "reliabilityScore": 0.95,
+  "reliabilityRationale": "Official state government licensing board. Not scored a full 1.0 only because no field currently cites this source directly yet (see fieldsUsingThisSource) \u2014 the existing licensingBoard/officialWebsite facts were sourced via the nurse.org directory, not by visiting this board's site directly. This record exists as the correct verification target for Phase 3, not as a claim that direct verification has already happened.",
+  "lastCrawl": null,
+  "lastManualVerification": null,
+  "fieldsUsingThisSource": 0,
+  "specificity": "profession-specific"
+}

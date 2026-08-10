@@ -1,0 +1,19 @@
+{
+  "id": "georgia-reentry-rule",
+  "agencyName": "Georgia Board of Nursing",
+  "website": "https://sos.ga.gov/sites/default/files/forms/38%20Form%20-%20Reentry%20Packet%20(RN).pdf",
+  "jurisdiction": "georgia",
+  "professionsCovered": [
+    "registered-nurse"
+  ],
+  "sourceType": "official-board",
+  "official": true,
+  "authorityLevel": "authoritative",
+  "authorityRationale": "The Georgia Board of Nursing's own official reentry packet, quoting GA Comp. R. & Regs. R. 410-4-.03 directly (the 500-hour/4-year practice rule).",
+  "specificity": "field-specific",
+  "reliabilityScore": 0.97,
+  "reliabilityRationale": "Primary regulatory text hosted by the board itself via the Georgia Secretary of State.",
+  "lastCrawl": null,
+  "lastManualVerification": "2026-08-10",
+  "fieldsUsingThisSource": 0
+}

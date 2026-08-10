@@ -1,0 +1,22 @@
+{
+  "id": "new-york-fees-chart-general",
+  "agencyName": "New York State Education Department, Office of the Professions",
+  "website": "https://www.op.nysed.gov/sites/op/files/documents/opfeechart.pdf",
+  "jurisdiction": "new-york",
+  "professionsCovered": [
+    "registered-nurse",
+    "acupuncture",
+    "dentistry",
+    "medicine"
+  ],
+  "sourceType": "official-government",
+  "official": true,
+  "authorityLevel": "authoritative",
+  "authorityRationale": "An official NYSED document listing fees across every profession the Office of the Professions licenses (nursing, dentistry, medicine, acupuncture, and dozens more). Genuinely official, but not specific to nursing.",
+  "specificity": "jurisdiction-general",
+  "reliabilityScore": 0.85,
+  "reliabilityRationale": "Official but low-specificity: a single 'Endorsement (Relocation): $50' line item with no visible profession label in the excerpted context, inside a chart covering dozens of unrelated professions. Real risk of misattributing a non-nursing profession's fee to nursing if read in isolation from the nursing-specific page.",
+  "lastCrawl": null,
+  "lastManualVerification": "2026-08-09",
+  "fieldsUsingThisSource": 0
+}

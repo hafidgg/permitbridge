@@ -1,0 +1,387 @@
+{
+  "profession": "registered-nurse",
+  "sourceState": "texas",
+  "destinationState": "florida",
+  "licenseType": "RN",
+  "transferMechanism": {
+    "value": "compact_privilege",
+    "sourceUrl": "https://floridasnursing.gov/licensing/",
+    "sourceTitle": "Licensing - Florida Board of Nursing",
+    "sourceName": "Florida Board of Nursing",
+    "verifiedAt": "2026-08-10",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.95,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": "compact_privilege",
+        "changedAt": "2026-08-10",
+        "reason": "Phase 3.1: first population from real official-source research.",
+        "sourceUrl": "https://floridasnursing.gov/licensing/",
+        "reviewer": null
+      }
+    ],
+    "notes": "Both Texas and Florida are confirmed NLC member states in our knowledge base. A Texas RN holding an active MULTISTATE license may practice in Florida without a new FL application, PROVIDED Texas remains their declared primary state of residence. If the nurse is genuinely RELOCATING (changing primary residence to Florida, the scenario this site is built around), FL's own multistate-upgrade form confirms an application IS still required -- just a simplified compact-conversion application, not a full endorsement application. See applicationFeeUsd notes."
+  },
+  "endorsementProcess": {
+    "value": "Unknown",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "sourceName": null,
+    "verifiedAt": null,
+    "verificationMethod": null,
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0,
+    "confidenceLevel": "unknown",
+    "history": [],
+    "notes": "Not applicable in the pure compact-privilege sense (no 'endorsement' application) -- see compactStatus for the actual required action when relocating."
+  },
+  "reciprocityAgreementExists": {
+    "value": {
+      "status": "not_applicable"
+    },
+    "sourceUrl": "https://floridasnursing.gov/licensing/",
+    "sourceTitle": "Licensing - Florida Board of Nursing",
+    "sourceName": "Florida Board of Nursing",
+    "verifiedAt": "2026-08-10",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.9,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": {
+          "status": "not_applicable"
+        },
+        "changedAt": "2026-08-10",
+        "reason": "Phase 3.1: first population from real official-source research.",
+        "sourceUrl": "https://floridasnursing.gov/licensing/",
+        "reviewer": null
+      }
+    ],
+    "notes": "This transfer works via NLC compact membership, not a bilateral reciprocity agreement."
+  },
+  "universalRecognitionApplies": {
+    "value": {
+      "status": "not_applicable"
+    },
+    "sourceUrl": "https://floridasnursing.gov/licensing/",
+    "sourceTitle": "Licensing - Florida Board of Nursing",
+    "sourceName": "Florida Board of Nursing",
+    "verifiedAt": "2026-08-10",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.85,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": {
+          "status": "not_applicable"
+        },
+        "changedAt": "2026-08-10",
+        "reason": "Phase 3.1: first population from real official-source research.",
+        "sourceUrl": "https://floridasnursing.gov/licensing/",
+        "reviewer": null
+      }
+    ],
+    "notes": "Compact membership makes a separate ULR determination moot for this transfer."
+  },
+  "examRequirement": {
+    "value": {
+      "status": "not_required"
+    },
+    "sourceUrl": "https://floridasnursing.gov/licensing/",
+    "sourceTitle": "Licensing - Florida Board of Nursing",
+    "sourceName": "Florida Board of Nursing",
+    "verifiedAt": "2026-08-10",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.9,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": {
+          "status": "not_required"
+        },
+        "changedAt": "2026-08-10",
+        "reason": "Phase 3.1: first population from real official-source research.",
+        "sourceUrl": "https://floridasnursing.gov/licensing/",
+        "reviewer": null
+      }
+    ],
+    "notes": "No new exam -- compact privilege relies on the nurse's original NCLEX-RN pass."
+  },
+  "experienceRequirement": {
+    "value": {
+      "status": "not_applicable"
+    },
+    "sourceUrl": "https://floridasnursing.gov/licensing/",
+    "sourceTitle": "Licensing - Florida Board of Nursing",
+    "sourceName": "Florida Board of Nursing",
+    "verifiedAt": "2026-08-10",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.75,
+    "confidenceLevel": "likely",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": {
+          "status": "not_applicable"
+        },
+        "changedAt": "2026-08-10",
+        "reason": "Phase 3.1: first population from real official-source research.",
+        "sourceUrl": "https://floridasnursing.gov/licensing/",
+        "reviewer": null
+      }
+    ],
+    "notes": "No specific minimum-practice-hours requirement found for the compact multistate-upgrade pathway (distinct from FL's endorsement pathway, which was not researched for this transfer since it doesn't apply here)."
+  },
+  "applicationFeeUsd": {
+    "value": 100,
+    "sourceUrl": "https://floridasnursing.gov/category/post-template-toggle/fees/",
+    "sourceTitle": "Fees - Florida Board of Nursing",
+    "sourceName": "Florida Board of Nursing",
+    "verifiedAt": "2026-08-10",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.85,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": 100,
+        "changedAt": "2026-08-10",
+        "reason": "Phase 3.1: first population from real official-source research.",
+        "sourceUrl": "https://floridasnursing.gov/category/post-template-toggle/fees/",
+        "reviewer": null
+      }
+    ],
+    "notes": "Florida's official Fees page lists 'Multi-state Upgrade Fees: $100.00 Application and Licensing Fee to the Board of Nursing' -- distinct from and lower than the $110 general endorsement fee, confirming this is genuinely a simplified pathway, not full endorsement."
+  },
+  "otherRequiredFees": {
+    "value": "Unknown",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "sourceName": null,
+    "verifiedAt": null,
+    "verificationMethod": null,
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0,
+    "confidenceLevel": "unknown",
+    "history": [],
+    "notes": "Fee varies for Livescan/fingerprint service provider, per FL's fee page -- exact amount not published as a fixed figure."
+  },
+  "backgroundCheckRequirement": {
+    "value": "Unknown",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "sourceName": null,
+    "verifiedAt": null,
+    "verificationMethod": null,
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0,
+    "confidenceLevel": "unknown",
+    "history": [],
+    "notes": "Not specifically confirmed for the multistate-upgrade pathway distinct from full endorsement."
+  },
+  "fingerprintingRequirement": {
+    "value": "Unknown",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "sourceName": null,
+    "verifiedAt": null,
+    "verificationMethod": null,
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0,
+    "confidenceLevel": "unknown",
+    "history": [],
+    "notes": "Not specifically confirmed for the multistate-upgrade pathway distinct from full endorsement."
+  },
+  "licenseVerificationRequirement": {
+    "value": {
+      "status": "required"
+    },
+    "sourceUrl": "https://floridasnursing.gov/licensing/",
+    "sourceTitle": "Licensing - Florida Board of Nursing",
+    "sourceName": "Florida Board of Nursing",
+    "verifiedAt": "2026-08-10",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.8,
+    "confidenceLevel": "likely",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": {
+          "status": "required"
+        },
+        "changedAt": "2026-08-10",
+        "reason": "Phase 3.1: first population from real official-source research.",
+        "sourceUrl": "https://floridasnursing.gov/licensing/",
+        "reviewer": null
+      }
+    ],
+    "notes": "Nurse must hold an active, unencumbered multistate license verifiable via Nursys."
+  },
+  "documentsRequired": {
+    "value": "Unknown",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "sourceName": null,
+    "verifiedAt": null,
+    "verificationMethod": null,
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0,
+    "confidenceLevel": "unknown",
+    "history": [],
+    "notes": "Detailed document checklist for the multistate-upgrade application not yet researched."
+  },
+  "goodStandingRequirement": {
+    "value": {
+      "status": "required"
+    },
+    "sourceUrl": "https://floridasnursing.gov/applications/multistate-upgrade-app.pdf",
+    "sourceTitle": "Multistate Upgrade Application",
+    "sourceName": "Florida Board of Nursing",
+    "verifiedAt": "2026-08-10",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.85,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": {
+          "status": "required"
+        },
+        "changedAt": "2026-08-10",
+        "reason": "Phase 3.1: first population from real official-source research.",
+        "sourceUrl": "https://floridasnursing.gov/applications/multistate-upgrade-app.pdf",
+        "reviewer": null
+      }
+    ],
+    "notes": "Multistate-upgrade applicant must hold a clear, active FL RN/LPN license in good standing."
+  },
+  "disciplinaryDisclosureRequirement": {
+    "value": "Unknown",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "sourceName": null,
+    "verifiedAt": null,
+    "verificationMethod": null,
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0,
+    "confidenceLevel": "unknown",
+    "history": [],
+    "notes": "Not specifically confirmed for this pathway."
+  },
+  "processingTime": {
+    "value": "Unknown",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "sourceName": null,
+    "verifiedAt": null,
+    "verificationMethod": null,
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0,
+    "confidenceLevel": "unknown",
+    "history": [],
+    "notes": "Not specifically published for the multistate-upgrade pathway; general FL endorsement processing time (4-8 weeks) is NOT reused here since this is a materially faster, different pathway -- leaving genuinely Unknown rather than guessing."
+  },
+  "temporaryPermitAvailability": {
+    "value": {
+      "status": "not_applicable"
+    },
+    "sourceUrl": "https://floridasnursing.gov/licensing/",
+    "sourceTitle": "Licensing - Florida Board of Nursing",
+    "sourceName": "Florida Board of Nursing",
+    "verifiedAt": "2026-08-10",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.7,
+    "confidenceLevel": "likely",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": {
+          "status": "not_applicable"
+        },
+        "changedAt": "2026-08-10",
+        "reason": "Phase 3.1: first population from real official-source research.",
+        "sourceUrl": "https://floridasnursing.gov/licensing/",
+        "reviewer": null
+      }
+    ],
+    "notes": "Not applicable in the same sense as endorsement -- the TX multistate license itself already authorizes practice while the FL upgrade application is pending, per FL's own compact rules."
+  },
+  "compactStatus": {
+    "value": "Both states are NLC members. A relocating nurse must still submit Florida's simplified 'Multistate License Upgrade' application (not full endorsement) to have Florida become the new home-state license.",
+    "sourceUrl": "https://floridasnursing.gov/applications/multistate-upgrade-app.pdf",
+    "sourceTitle": "Multistate Upgrade Application",
+    "sourceName": "Florida Board of Nursing",
+    "verifiedAt": "2026-08-10",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.9,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": "Both states are NLC members. A relocating nurse must still submit Florida's simplified 'Multistate License Upgrade' application (not full endorsement) to have Florida become the new home-state license.",
+        "changedAt": "2026-08-10",
+        "reason": "Phase 3.1: first population from real official-source research.",
+        "sourceUrl": "https://floridasnursing.gov/applications/multistate-upgrade-app.pdf",
+        "reviewer": null
+      }
+    ],
+    "notes": null
+  },
+  "exceptions": {
+    "value": "If the Texas-licensed nurse is NOT changing primary residence (e.g. a travel assignment), no Florida application is needed at all -- the multistate license alone suffices. This transfer rule specifically models the RELOCATION scenario (changing primary residence), which does require the upgrade application.",
+    "sourceUrl": "https://floridasnursing.gov/applications/multistate-upgrade-app.pdf",
+    "sourceTitle": "Multistate Upgrade Application",
+    "sourceName": "Florida Board of Nursing",
+    "verifiedAt": "2026-08-10",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.85,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": "If the Texas-licensed nurse is NOT changing primary residence (e.g. a travel assignment), no Florida application is needed at all -- the multistate license alone suffices. This transfer rule specifically models the RELOCATION scenario (changing primary residence), which does require the upgrade application.",
+        "changedAt": "2026-08-10",
+        "reason": "Phase 3.1: first population from real official-source research.",
+        "sourceUrl": "https://floridasnursing.gov/applications/multistate-upgrade-app.pdf",
+        "reviewer": null
+      }
+    ],
+    "notes": null
+  },
+  "conflicts": [],
+  "lastFullReviewAt": null
+}

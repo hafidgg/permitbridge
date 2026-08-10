@@ -1,0 +1,17 @@
+{
+  "id": "renewrn-net-secondary",
+  "agencyName": "RenewRN.net (commercial nursing license service, NOT an official source)",
+  "website": "https://www.renewrn.net/license-transfer/texas",
+  "jurisdiction": "texas",
+  "professionsCovered": ["registered-nurse"],
+  "sourceType": "secondary",
+  "official": false,
+  "authorityLevel": "supplementary",
+  "authorityRationale": "A commercial nursing-license service site. Used ONLY for discovery of the $150 Texas endorsement fee figure and jurisprudence-exam requirement in Phase 3.1, per the explicit instruction that such sites 'may be used for discovery only... but must never become authoritative evidence.' Both fields citing this source are deliberately kept at low confidence and pending_verification status, and are correctly counted as secondary (not authoritative) evidence by this system's automated source-usage accounting.",
+  "specificity": "field-specific",
+  "reliabilityScore": 0.5,
+  "reliabilityRationale": "Commercial site, not an official source. Fee figure needs re-confirmation directly against bon.texas.gov's own 'RN Schedule of Fees' before this field could ever be marked Verified.",
+  "lastCrawl": null,
+  "lastManualVerification": "2026-08-10",
+  "fieldsUsingThisSource": 0
+}

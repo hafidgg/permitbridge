@@ -1,0 +1,30 @@
+{
+  "profession": "hvac-technician",
+  "fromState": "florida",
+  "toState": "california",
+  "pathway": "none",
+  "pathwayLabel": "Full New Application Required",
+  "examRequired": true,
+  "examName": "NASCLA Accredited Examination for Commercial General Building Contractors",
+  "additionalHoursRequired": 32,
+  "feeUsd": 465,
+  "estimatedProcessingDays": [
+    30,
+    90
+  ],
+  "minimumYearsLicensed": 2,
+  "difficultyScore": 8,
+  "portabilityScore": 21,
+  "steps": [
+    "Confirm your HVAC Technician license is active and in good standing in Florida.",
+    "Submit a license verification request from Florida through the appropriate national registry or the state board directly.",
+    "File an application for full new application required with California's licensing board.",
+    "Register for and pass the required exam: NASCLA Accredited Examination for Commercial General Building Contractors.",
+    "Complete 32 additional training/CE hours required by California.",
+    "Pay the California application fee (approx. $465) and submit supporting documents.",
+    "Await processing — typically 30-90 days in California."
+  ],
+  "notes": "California's hvac technician licensing requirements are administered per the state's licensing authority. Most trade licenses in California are issued by the Contractors State License Board (CSLB); healthcare licenses go through the relevant state board (e.g., Board of Registered Nursing). Always confirm current rules directly with the official board before applying, since requirements change.",
+  "officialSourceName": "California State Licensing Board",
+  "updatedAt": "2026-08-07"
+}

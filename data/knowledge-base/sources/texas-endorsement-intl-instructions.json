@@ -1,0 +1,19 @@
+{
+  "id": "texas-endorsement-intl-instructions",
+  "agencyName": "Texas Board of Nursing (TXBON)",
+  "website": "https://www.bon.texas.gov/pdfs/education_pdfs/education_programs/RN%20END%20INTL%20INSTRUCTIONS%208.22.pdf",
+  "jurisdiction": "texas",
+  "professionsCovered": [
+    "registered-nurse"
+  ],
+  "sourceType": "official-board",
+  "official": true,
+  "authorityLevel": "authoritative",
+  "authorityRationale": "TXBON's own official endorsement instructions PDF (covers Nursys process and processing timelines applicable to all endorsement applicants, not only international graduates).",
+  "specificity": "field-specific",
+  "reliabilityScore": 0.95,
+  "reliabilityRationale": "Primary official instructions document.",
+  "lastCrawl": null,
+  "lastManualVerification": "2026-08-10",
+  "fieldsUsingThisSource": 0
+}

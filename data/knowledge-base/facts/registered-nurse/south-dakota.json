@@ -1,0 +1,268 @@
+{
+  "profession": "registered-nurse",
+  "state": "south-dakota",
+  "licensingBoard": {
+    "value": "South Dakota Board of Nursing",
+    "sourceUrl": "https://nurse.org/education/state-board-nursing-directory/",
+    "sourceTitle": "State Boards of Nursing Directory",
+    "sourceName": "Nurse.org (cross-checked against NCSBN member directory)",
+    "verifiedAt": "2026-08-07",
+    "verificationMethod": "ai_assisted_manual_research",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.9,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": "South Dakota Board of Nursing",
+        "changedAt": "2026-08-07",
+        "reason": "Initial value recorded during Phase 1 knowledge-base research",
+        "sourceUrl": "https://nurse.org/education/state-board-nursing-directory/",
+        "reviewer": null
+      }
+    ],
+    "notes": null
+  },
+  "officialWebsite": {
+    "value": "https://www.sdbon.org/",
+    "sourceUrl": "https://nurse.org/education/state-board-nursing-directory/",
+    "sourceTitle": "State Boards of Nursing Directory",
+    "sourceName": "Nurse.org (cross-checked against NCSBN member directory)",
+    "verifiedAt": "2026-08-07",
+    "verificationMethod": "ai_assisted_manual_research",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.9,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": "https://www.sdbon.org/",
+        "changedAt": "2026-08-07",
+        "reason": "Initial value recorded during Phase 1 knowledge-base research",
+        "sourceUrl": "https://nurse.org/education/state-board-nursing-directory/",
+        "reviewer": null
+      }
+    ],
+    "notes": null
+  },
+  "licenseTransferPage": {
+    "value": "Unknown",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "sourceName": null,
+    "verifiedAt": null,
+    "verificationMethod": null,
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0,
+    "confidenceLevel": "unknown",
+    "history": [],
+    "notes": "Not yet individually verified \u2014 the board's homepage above is known, but the specific endorsement/reciprocity sub-page has not been located and confirmed for this state."
+  },
+  "reciprocityRules": {
+    "value": "Unknown",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "sourceName": null,
+    "verifiedAt": null,
+    "verificationMethod": null,
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0,
+    "confidenceLevel": "unknown",
+    "history": [],
+    "notes": "Not yet individually researched for this state."
+  },
+  "endorsementRules": {
+    "value": "Unknown",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "sourceName": null,
+    "verifiedAt": null,
+    "verificationMethod": null,
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0,
+    "confidenceLevel": "unknown",
+    "history": [],
+    "notes": "Not yet individually researched for this state. All non-compact states are known to require licensure by endorsement in general (see compactMembership), but state-specific procedural detail is unverified."
+  },
+  "universalLicenseRecognitionStatus": {
+    "value": "Unknown",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "sourceName": null,
+    "verifiedAt": null,
+    "verificationMethod": null,
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0,
+    "confidenceLevel": "unknown",
+    "history": [],
+    "notes": "Nursing licensure operates primarily through the NLC compact system rather than general ULR law; a state's general ULR law (if any) may still apply as a fallback for non-compact applicants but has not been checked here."
+  },
+  "compactMembership": {
+    "value": true,
+    "sourceUrl": "https://www.nursecompact.com/",
+    "sourceTitle": "Nurse Licensure Compact \u2014 Official Site",
+    "sourceName": "NCSBN (National Council of State Boards of Nursing)",
+    "verifiedAt": "2026-08-08",
+    "verificationMethod": "cross_referenced_multiple_sources",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.9,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": true,
+        "changedAt": "2026-08-07",
+        "reason": "Initial value recorded during Phase 1 knowledge-base research",
+        "sourceUrl": "https://www.nursecompact.com/",
+        "reviewer": null
+      },
+      {
+        "previousValue": true,
+        "newValue": true,
+        "changedAt": "2026-08-08",
+        "reason": "Phase 2.2 Batch 1: re-confirmed live against nursecompact.com (official NLC site) plus corroborating sources (Wikipedia Nurse Licensure Compact article, NCSBN's own NLC_Map.pdf, Prolink 2026 NLC guide). Value unchanged \u2014 status remains pending_verification because no human reviewer has signed off; this is NOT the same as 'verified'. See VERIFICATION_POLICY.md.",
+        "sourceUrl": "https://www.nursecompact.com/",
+        "reviewer": null
+      }
+    ],
+    "notes": "Cross-referenced: nursecompact.com, ncsbn.org/public-files/NLC_Map.pdf, en.wikipedia.org/wiki/Nurse_Licensure_Compact (2026-08-08)"
+  },
+  "requiredExams": {
+    "value": "NCLEX-RN",
+    "sourceUrl": "https://www.ncsbn.org/exams/nclex.page",
+    "sourceTitle": "NCLEX Examinations",
+    "sourceName": "NCSBN (National Council of State Boards of Nursing)",
+    "verifiedAt": "2026-08-08",
+    "verificationMethod": "cross_referenced_multiple_sources",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.95,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": "NCLEX-RN",
+        "changedAt": "2026-08-07",
+        "reason": "Initial value recorded during Phase 1 knowledge-base research",
+        "sourceUrl": "https://www.ncsbn.org/exams/nclex.page",
+        "reviewer": null
+      },
+      {
+        "previousValue": "NCLEX-RN",
+        "newValue": "NCLEX-RN",
+        "changedAt": "2026-08-08",
+        "reason": "Phase 2.2 Batch 1: re-confirmed live against NCSBN's official 2026 NCLEX-RN Test Plan and NCSBN publications page. Value unchanged. Status remains pending_verification (no human reviewer).",
+        "sourceUrl": "https://www.ncsbn.org/exams/nclex.page",
+        "reviewer": null
+      }
+    ],
+    "notes": "Cross-referenced: ncsbn.org/publications/2026-nclex-rn-test-plan, nclex.com 2026 RN Test Plan PDF (2026-08-08)"
+  },
+  "requiredExperience": {
+    "value": "Unknown",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "sourceName": null,
+    "verifiedAt": null,
+    "verificationMethod": null,
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0,
+    "confidenceLevel": "unknown",
+    "history": [],
+    "notes": "Not yet individually researched for this state."
+  },
+  "requiredEducation": {
+    "value": "Unknown",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "sourceName": null,
+    "verifiedAt": null,
+    "verificationMethod": null,
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0,
+    "confidenceLevel": "unknown",
+    "history": [],
+    "notes": "Not yet individually researched for this state. Nationally, an accredited nursing education program (diploma, ADN, or BSN) is required, but state-specific accreditation recognition rules are unverified."
+  },
+  "requiredDocuments": {
+    "value": "Unknown",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "sourceName": null,
+    "verifiedAt": null,
+    "verificationMethod": null,
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0,
+    "confidenceLevel": "unknown",
+    "history": [],
+    "notes": "Not yet individually researched for this state."
+  },
+  "processingTime": {
+    "value": "Unknown",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "sourceName": null,
+    "verifiedAt": null,
+    "verificationMethod": null,
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0,
+    "confidenceLevel": "unknown",
+    "history": [],
+    "notes": "Not yet individually researched for this state."
+  },
+  "rnEndorsementFeeUsd": {
+    "value": "Unknown",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "sourceName": null,
+    "verifiedAt": null,
+    "verificationMethod": null,
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0,
+    "confidenceLevel": "unknown",
+    "history": [],
+    "notes": "Not yet individually researched for this state."
+  },
+  "renewalFeeUsd": {
+    "value": "Unknown",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "sourceName": null,
+    "verifiedAt": null,
+    "verificationMethod": null,
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0,
+    "confidenceLevel": "unknown",
+    "history": [],
+    "notes": "Not yet individually researched for this state."
+  },
+  "continuingEducationRequirements": {
+    "value": "Unknown",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "sourceName": null,
+    "verifiedAt": null,
+    "verificationMethod": null,
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0,
+    "confidenceLevel": "unknown",
+    "history": [],
+    "notes": "Not yet individually researched for this state."
+  },
+  "conflicts": [],
+  "lastFullReviewAt": null
+}

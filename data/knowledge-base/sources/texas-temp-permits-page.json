@@ -1,0 +1,19 @@
+{
+  "id": "texas-temp-permits-page",
+  "agencyName": "Texas Board of Nursing (TXBON)",
+  "website": "https://www.bon.texas.gov/applications_six_month_permits_and_temporary_licenses.asp.html",
+  "jurisdiction": "texas",
+  "professionsCovered": [
+    "registered-nurse"
+  ],
+  "sourceType": "official-board",
+  "official": true,
+  "authorityLevel": "authoritative",
+  "authorityRationale": "TXBON's own official Six Month Permits & Temporary Licenses page.",
+  "specificity": "field-specific",
+  "reliabilityScore": 0.95,
+  "reliabilityRationale": "Primary official page dedicated to this exact fact.",
+  "lastCrawl": null,
+  "lastManualVerification": "2026-08-10",
+  "fieldsUsingThisSource": 0
+}

@@ -1,0 +1,4255 @@
+{
+  "generatedAt": "2026-08-08T22:03:56.642Z",
+  "matrix": [
+    {
+      "state": "alabama",
+      "fields": [
+        {
+          "field": "licensingBoard",
+          "value": "Alabama Board of Nursing",
+          "sourceUrl": "https://nurse.org/education/state-board-nursing-directory/",
+          "sourceType": "secondary",
+          "status": "secondary"
+        },
+        {
+          "field": "officialWebsite",
+          "value": "https://www.abn.alabama.gov/",
+          "sourceUrl": "https://nurse.org/education/state-board-nursing-directory/",
+          "sourceType": "secondary",
+          "status": "secondary"
+        },
+        {
+          "field": "licenseTransferPage",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "reciprocityRules",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "endorsementRules",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "universalLicenseRecognitionStatus",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "compactMembership",
+          "value": true,
+          "sourceUrl": "https://www.nursecompact.com/",
+          "sourceType": "official-compact",
+          "status": "authoritative"
+        },
+        {
+          "field": "requiredExams",
+          "value": "NCLEX-RN",
+          "sourceUrl": "https://www.ncsbn.org/exams/nclex.page",
+          "sourceType": "official-national-organization",
+          "status": "authoritative"
+        },
+        {
+          "field": "requiredExperience",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "processingTime",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "rnEndorsementFeeUsd",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        }
+      ],
+      "authoritativeCount": 2,
+      "secondaryCount": 2,
+      "missingCount": 7
+    },
+    {
+      "state": "alaska",
+      "fields": [
+        {
+          "field": "licensingBoard",
+          "value": "Alaska Board of Nursing",
+          "sourceUrl": "https://nurse.org/education/state-board-nursing-directory/",
+          "sourceType": "secondary",
+          "status": "secondary"
+        },
+        {
+          "field": "officialWebsite",
+          "value": "https://www.commerce.alaska.gov/web/cbpl/professionallicensing/boardofnursing.aspx",
+          "sourceUrl": "https://nurse.org/education/state-board-nursing-directory/",
+          "sourceType": "secondary",
+          "status": "secondary"
+        },
+        {
+          "field": "licenseTransferPage",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "reciprocityRules",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "endorsementRules",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "universalLicenseRecognitionStatus",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "compactMembership",
+          "value": false,
+          "sourceUrl": "https://www.nursecompact.com/",
+          "sourceType": "official-compact",
+          "status": "authoritative"
+        },
+        {
+          "field": "requiredExams",
+          "value": "NCLEX-RN",
+          "sourceUrl": "https://www.ncsbn.org/exams/nclex.page",
+          "sourceType": "official-national-organization",
+          "status": "authoritative"
+        },
+        {
+          "field": "requiredExperience",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "processingTime",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "rnEndorsementFeeUsd",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        }
+      ],
+      "authoritativeCount": 2,
+      "secondaryCount": 2,
+      "missingCount": 7
+    },
+    {
+      "state": "arizona",
+      "fields": [
+        {
+          "field": "licensingBoard",
+          "value": "Arizona State Board of Nursing",
+          "sourceUrl": "https://nurse.org/education/state-board-nursing-directory/",
+          "sourceType": "secondary",
+          "status": "secondary"
+        },
+        {
+          "field": "officialWebsite",
+          "value": "https://www.azbn.gov/",
+          "sourceUrl": "https://nurse.org/education/state-board-nursing-directory/",
+          "sourceType": "secondary",
+          "status": "secondary"
+        },
+        {
+          "field": "licenseTransferPage",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "reciprocityRules",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "endorsementRules",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "universalLicenseRecognitionStatus",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "compactMembership",
+          "value": true,
+          "sourceUrl": "https://www.nursecompact.com/",
+          "sourceType": "official-compact",
+          "status": "authoritative"
+        },
+        {
+          "field": "requiredExams",
+          "value": "NCLEX-RN",
+          "sourceUrl": "https://www.ncsbn.org/exams/nclex.page",
+          "sourceType": "official-national-organization",
+          "status": "authoritative"
+        },
+        {
+          "field": "requiredExperience",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "processingTime",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "rnEndorsementFeeUsd",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        }
+      ],
+      "authoritativeCount": 2,
+      "secondaryCount": 2,
+      "missingCount": 7
+    },
+    {
+      "state": "arkansas",
+      "fields": [
+        {
+          "field": "licensingBoard",
+          "value": "Arkansas State Board of Nursing",
+          "sourceUrl": "https://nurse.org/education/state-board-nursing-directory/",
+          "sourceType": "secondary",
+          "status": "secondary"
+        },
+        {
+          "field": "officialWebsite",
+          "value": "https://healthy.arkansas.gov/boards-commissions/boards/nursing-arkansas-state-board/",
+          "sourceUrl": "https://nurse.org/education/state-board-nursing-directory/",
+          "sourceType": "secondary",
+          "status": "secondary"
+        },
+        {
+          "field": "licenseTransferPage",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "reciprocityRules",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "endorsementRules",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "universalLicenseRecognitionStatus",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "compactMembership",
+          "value": true,
+          "sourceUrl": "https://www.nursecompact.com/",
+          "sourceType": "official-compact",
+          "status": "authoritative"
+        },
+        {
+          "field": "requiredExams",
+          "value": "NCLEX-RN",
+          "sourceUrl": "https://www.ncsbn.org/exams/nclex.page",
+          "sourceType": "official-national-organization",
+          "status": "authoritative"
+        },
+        {
+          "field": "requiredExperience",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "processingTime",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "rnEndorsementFeeUsd",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        }
+      ],
+      "authoritativeCount": 2,
+      "secondaryCount": 2,
+      "missingCount": 7
+    },
+    {
+      "state": "california",
+      "fields": [
+        {
+          "field": "licensingBoard",
+          "value": "California Board of Registered Nursing",
+          "sourceUrl": "https://www.rn.ca.gov/",
+          "sourceType": "official-board",
+          "status": "authoritative"
+        },
+        {
+          "field": "officialWebsite",
+          "value": "https://www.rn.ca.gov/",
+          "sourceUrl": "https://www.rn.ca.gov/",
+          "sourceType": "official-board",
+          "status": "authoritative"
+        },
+        {
+          "field": "licenseTransferPage",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "reciprocityRules",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "endorsementRules",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "universalLicenseRecognitionStatus",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "compactMembership",
+          "value": false,
+          "sourceUrl": "https://www.nursecompact.com/",
+          "sourceType": "official-compact",
+          "status": "authoritative"
+        },
+        {
+          "field": "requiredExams",
+          "value": "NCLEX-RN",
+          "sourceUrl": "https://www.ncsbn.org/exams/nclex.page",
+          "sourceType": "official-national-organization",
+          "status": "authoritative"
+        },
+        {
+          "field": "requiredExperience",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "processingTime",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "rnEndorsementFeeUsd",
+          "value": 350,
+          "sourceUrl": "https://www.rn.ca.gov/pdfs/regulations/proposedlang-fees2018.pdf",
+          "sourceType": "official-board",
+          "status": "authoritative"
+        }
+      ],
+      "authoritativeCount": 5,
+      "secondaryCount": 0,
+      "missingCount": 6
+    },
+    {
+      "state": "colorado",
+      "fields": [
+        {
+          "field": "licensingBoard",
+          "value": "Colorado Board of Nursing",
+          "sourceUrl": "https://nurse.org/education/state-board-nursing-directory/",
+          "sourceType": "secondary",
+          "status": "secondary"
+        },
+        {
+          "field": "officialWebsite",
+          "value": "https://dpo.colorado.gov/Nursing",
+          "sourceUrl": "https://nurse.org/education/state-board-nursing-directory/",
+          "sourceType": "secondary",
+          "status": "secondary"
+        },
+        {
+          "field": "licenseTransferPage",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "reciprocityRules",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "endorsementRules",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "universalLicenseRecognitionStatus",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "compactMembership",
+          "value": true,
+          "sourceUrl": "https://www.nursecompact.com/",
+          "sourceType": "official-compact",
+          "status": "authoritative"
+        },
+        {
+          "field": "requiredExams",
+          "value": "NCLEX-RN",
+          "sourceUrl": "https://www.ncsbn.org/exams/nclex.page",
+          "sourceType": "official-national-organization",
+          "status": "authoritative"
+        },
+        {
+          "field": "requiredExperience",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "processingTime",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "rnEndorsementFeeUsd",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        }
+      ],
+      "authoritativeCount": 2,
+      "secondaryCount": 2,
+      "missingCount": 7
+    },
+    {
+      "state": "connecticut",
+      "fields": [
+        {
+          "field": "licensingBoard",
+          "value": "Connecticut Board of Examiners for Nursing",
+          "sourceUrl": "https://nurse.org/education/state-board-nursing-directory/",
+          "sourceType": "secondary",
+          "status": "secondary"
+        },
+        {
+          "field": "officialWebsite",
+          "value": "https://portal.ct.gov/dph/public-health-hearing-office/board-of-examiners-for-nursing/board-of-examiners-for-nursing",
+          "sourceUrl": "https://nurse.org/education/state-board-nursing-directory/",
+          "sourceType": "secondary",
+          "status": "secondary"
+        },
+        {
+          "field": "licenseTransferPage",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "reciprocityRules",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "endorsementRules",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "universalLicenseRecognitionStatus",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "compactMembership",
+          "value": true,
+          "sourceUrl": "https://www.nursecompact.com/",
+          "sourceType": "official-compact",
+          "status": "authoritative"
+        },
+        {
+          "field": "requiredExams",
+          "value": "NCLEX-RN",
+          "sourceUrl": "https://www.ncsbn.org/exams/nclex.page",
+          "sourceType": "official-national-organization",
+          "status": "authoritative"
+        },
+        {
+          "field": "requiredExperience",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "processingTime",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "rnEndorsementFeeUsd",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        }
+      ],
+      "authoritativeCount": 2,
+      "secondaryCount": 2,
+      "missingCount": 7
+    },
+    {
+      "state": "delaware",
+      "fields": [
+        {
+          "field": "licensingBoard",
+          "value": "Delaware Board of Nursing",
+          "sourceUrl": "https://nurse.org/education/state-board-nursing-directory/",
+          "sourceType": "secondary",
+          "status": "secondary"
+        },
+        {
+          "field": "officialWebsite",
+          "value": "https://dpr.delaware.gov/boards/nursing/",
+          "sourceUrl": "https://nurse.org/education/state-board-nursing-directory/",
+          "sourceType": "secondary",
+          "status": "secondary"
+        },
+        {
+          "field": "licenseTransferPage",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "reciprocityRules",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "endorsementRules",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "universalLicenseRecognitionStatus",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "compactMembership",
+          "value": true,
+          "sourceUrl": "https://www.nursecompact.com/",
+          "sourceType": "official-compact",
+          "status": "authoritative"
+        },
+        {
+          "field": "requiredExams",
+          "value": "NCLEX-RN",
+          "sourceUrl": "https://www.ncsbn.org/exams/nclex.page",
+          "sourceType": "official-national-organization",
+          "status": "authoritative"
+        },
+        {
+          "field": "requiredExperience",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "processingTime",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "rnEndorsementFeeUsd",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        }
+      ],
+      "authoritativeCount": 2,
+      "secondaryCount": 2,
+      "missingCount": 7
+    },
+    {
+      "state": "florida",
+      "fields": [
+        {
+          "field": "licensingBoard",
+          "value": "Florida Board of Nursing",
+          "sourceUrl": "https://floridasnursing.gov/",
+          "sourceType": "official-board",
+          "status": "authoritative"
+        },
+        {
+          "field": "officialWebsite",
+          "value": "https://floridasnursing.gov/",
+          "sourceUrl": "https://floridasnursing.gov/",
+          "sourceType": "official-board",
+          "status": "authoritative"
+        },
+        {
+          "field": "licenseTransferPage",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "reciprocityRules",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "endorsementRules",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "universalLicenseRecognitionStatus",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "compactMembership",
+          "value": true,
+          "sourceUrl": "https://www.nursecompact.com/",
+          "sourceType": "official-compact",
+          "status": "authoritative"
+        },
+        {
+          "field": "requiredExams",
+          "value": "NCLEX-RN",
+          "sourceUrl": "https://www.ncsbn.org/exams/nclex.page",
+          "sourceType": "official-national-organization",
+          "status": "authoritative"
+        },
+        {
+          "field": "requiredExperience",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "processingTime",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "rnEndorsementFeeUsd",
+          "value": 110,
+          "sourceUrl": "https://floridasnursing.gov/category/post-template-toggle/fees/",
+          "sourceType": "official-board",
+          "status": "authoritative"
+        }
+      ],
+      "authoritativeCount": 5,
+      "secondaryCount": 0,
+      "missingCount": 6
+    },
+    {
+      "state": "georgia",
+      "fields": [
+        {
+          "field": "licensingBoard",
+          "value": "Georgia Board of Nursing",
+          "sourceUrl": "https://sos.ga.gov/georgia-board-nursing",
+          "sourceType": "official-board",
+          "status": "authoritative"
+        },
+        {
+          "field": "officialWebsite",
+          "value": "https://sos.ga.gov/georgia-board-nursing",
+          "sourceUrl": "https://sos.ga.gov/georgia-board-nursing",
+          "sourceType": "official-board",
+          "status": "authoritative"
+        },
+        {
+          "field": "licenseTransferPage",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "reciprocityRules",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "endorsementRules",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "universalLicenseRecognitionStatus",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "compactMembership",
+          "value": true,
+          "sourceUrl": "https://www.nursecompact.com/",
+          "sourceType": "official-compact",
+          "status": "authoritative"
+        },
+        {
+          "field": "requiredExams",
+          "value": "NCLEX-RN",
+          "sourceUrl": "https://www.ncsbn.org/exams/nclex.page",
+          "sourceType": "official-national-organization",
+          "status": "authoritative"
+        },
+        {
+          "field": "requiredExperience",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "processingTime",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "rnEndorsementFeeUsd",
+          "value": 75,
+          "sourceUrl": "https://sos.ga.gov/sites/default/files/forms/38%20Reference%20-%20GBON%20Fee%20Schedule.pdf",
+          "sourceType": "official-board",
+          "status": "authoritative"
+        }
+      ],
+      "authoritativeCount": 5,
+      "secondaryCount": 0,
+      "missingCount": 6
+    },
+    {
+      "state": "hawaii",
+      "fields": [
+        {
+          "field": "licensingBoard",
+          "value": "Hawaii Board of Nursing",
+          "sourceUrl": "https://nurse.org/education/state-board-nursing-directory/",
+          "sourceType": "secondary",
+          "status": "secondary"
+        },
+        {
+          "field": "officialWebsite",
+          "value": "https://cca.hawaii.gov/pvl/boards/nursing/",
+          "sourceUrl": "https://nurse.org/education/state-board-nursing-directory/",
+          "sourceType": "secondary",
+          "status": "secondary"
+        },
+        {
+          "field": "licenseTransferPage",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "reciprocityRules",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "endorsementRules",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "universalLicenseRecognitionStatus",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "compactMembership",
+          "value": false,
+          "sourceUrl": "https://www.nursecompact.com/",
+          "sourceType": "official-compact",
+          "status": "authoritative"
+        },
+        {
+          "field": "requiredExams",
+          "value": "NCLEX-RN",
+          "sourceUrl": "https://www.ncsbn.org/exams/nclex.page",
+          "sourceType": "official-national-organization",
+          "status": "authoritative"
+        },
+        {
+          "field": "requiredExperience",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "processingTime",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "rnEndorsementFeeUsd",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        }
+      ],
+      "authoritativeCount": 2,
+      "secondaryCount": 2,
+      "missingCount": 7
+    },
+    {
+      "state": "idaho",
+      "fields": [
+        {
+          "field": "licensingBoard",
+          "value": "Idaho Board of Nursing",
+          "sourceUrl": "https://nurse.org/education/state-board-nursing-directory/",
+          "sourceType": "secondary",
+          "status": "secondary"
+        },
+        {
+          "field": "officialWebsite",
+          "value": "https://dopl.idaho.gov/bon/",
+          "sourceUrl": "https://nurse.org/education/state-board-nursing-directory/",
+          "sourceType": "secondary",
+          "status": "secondary"
+        },
+        {
+          "field": "licenseTransferPage",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "reciprocityRules",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "endorsementRules",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "universalLicenseRecognitionStatus",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "compactMembership",
+          "value": true,
+          "sourceUrl": "https://www.nursecompact.com/",
+          "sourceType": "official-compact",
+          "status": "authoritative"
+        },
+        {
+          "field": "requiredExams",
+          "value": "NCLEX-RN",
+          "sourceUrl": "https://www.ncsbn.org/exams/nclex.page",
+          "sourceType": "official-national-organization",
+          "status": "authoritative"
+        },
+        {
+          "field": "requiredExperience",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "processingTime",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "rnEndorsementFeeUsd",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        }
+      ],
+      "authoritativeCount": 2,
+      "secondaryCount": 2,
+      "missingCount": 7
+    },
+    {
+      "state": "illinois",
+      "fields": [
+        {
+          "field": "licensingBoard",
+          "value": "Illinois Board of Nursing (IDFPR)",
+          "sourceUrl": "https://idfpr.illinois.gov/profs/nursing.html",
+          "sourceType": "official-board",
+          "status": "authoritative"
+        },
+        {
+          "field": "officialWebsite",
+          "value": "https://idfpr.illinois.gov/profs/nursing.html",
+          "sourceUrl": "https://idfpr.illinois.gov/profs/nursing.html",
+          "sourceType": "official-board",
+          "status": "authoritative"
+        },
+        {
+          "field": "licenseTransferPage",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "reciprocityRules",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "endorsementRules",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "universalLicenseRecognitionStatus",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "compactMembership",
+          "value": false,
+          "sourceUrl": "https://www.nursecompact.com/",
+          "sourceType": "official-compact",
+          "status": "authoritative"
+        },
+        {
+          "field": "requiredExams",
+          "value": "NCLEX-RN",
+          "sourceUrl": "https://www.ncsbn.org/exams/nclex.page",
+          "sourceType": "official-national-organization",
+          "status": "authoritative"
+        },
+        {
+          "field": "requiredExperience",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "processingTime",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "rnEndorsementFeeUsd",
+          "value": 50,
+          "sourceUrl": "https://idfpr.illinois.gov/content/dam/soi/en/web/idfpr/renewals/apply/forms/RN-EN.pdf",
+          "sourceType": "official-board",
+          "status": "authoritative"
+        }
+      ],
+      "authoritativeCount": 5,
+      "secondaryCount": 0,
+      "missingCount": 6
+    },
+    {
+      "state": "indiana",
+      "fields": [
+        {
+          "field": "licensingBoard",
+          "value": "Indiana State Board of Nursing",
+          "sourceUrl": "https://nurse.org/education/state-board-nursing-directory/",
+          "sourceType": "secondary",
+          "status": "secondary"
+        },
+        {
+          "field": "officialWebsite",
+          "value": "https://www.in.gov/pla/professions/nursing-home/",
+          "sourceUrl": "https://nurse.org/education/state-board-nursing-directory/",
+          "sourceType": "secondary",
+          "status": "secondary"
+        },
+        {
+          "field": "licenseTransferPage",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "reciprocityRules",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "endorsementRules",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "universalLicenseRecognitionStatus",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "compactMembership",
+          "value": true,
+          "sourceUrl": "https://www.nursecompact.com/",
+          "sourceType": "official-compact",
+          "status": "authoritative"
+        },
+        {
+          "field": "requiredExams",
+          "value": "NCLEX-RN",
+          "sourceUrl": "https://www.ncsbn.org/exams/nclex.page",
+          "sourceType": "official-national-organization",
+          "status": "authoritative"
+        },
+        {
+          "field": "requiredExperience",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "processingTime",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "rnEndorsementFeeUsd",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        }
+      ],
+      "authoritativeCount": 2,
+      "secondaryCount": 2,
+      "missingCount": 7
+    },
+    {
+      "state": "iowa",
+      "fields": [
+        {
+          "field": "licensingBoard",
+          "value": "Iowa Board of Nursing",
+          "sourceUrl": "https://nurse.org/education/state-board-nursing-directory/",
+          "sourceType": "secondary",
+          "status": "secondary"
+        },
+        {
+          "field": "officialWebsite",
+          "value": "https://nursing.iowa.gov/",
+          "sourceUrl": "https://nurse.org/education/state-board-nursing-directory/",
+          "sourceType": "secondary",
+          "status": "secondary"
+        },
+        {
+          "field": "licenseTransferPage",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "reciprocityRules",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "endorsementRules",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "universalLicenseRecognitionStatus",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "compactMembership",
+          "value": true,
+          "sourceUrl": "https://www.nursecompact.com/",
+          "sourceType": "official-compact",
+          "status": "authoritative"
+        },
+        {
+          "field": "requiredExams",
+          "value": "NCLEX-RN",
+          "sourceUrl": "https://www.ncsbn.org/exams/nclex.page",
+          "sourceType": "official-national-organization",
+          "status": "authoritative"
+        },
+        {
+          "field": "requiredExperience",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "processingTime",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "rnEndorsementFeeUsd",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        }
+      ],
+      "authoritativeCount": 2,
+      "secondaryCount": 2,
+      "missingCount": 7
+    },
+    {
+      "state": "kansas",
+      "fields": [
+        {
+          "field": "licensingBoard",
+          "value": "Kansas State Board of Nursing",
+          "sourceUrl": "https://nurse.org/education/state-board-nursing-directory/",
+          "sourceType": "secondary",
+          "status": "secondary"
+        },
+        {
+          "field": "officialWebsite",
+          "value": "https://ksbn.kansas.gov/",
+          "sourceUrl": "https://nurse.org/education/state-board-nursing-directory/",
+          "sourceType": "secondary",
+          "status": "secondary"
+        },
+        {
+          "field": "licenseTransferPage",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "reciprocityRules",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "endorsementRules",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "universalLicenseRecognitionStatus",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "compactMembership",
+          "value": true,
+          "sourceUrl": "https://www.nursecompact.com/",
+          "sourceType": "official-compact",
+          "status": "authoritative"
+        },
+        {
+          "field": "requiredExams",
+          "value": "NCLEX-RN",
+          "sourceUrl": "https://www.ncsbn.org/exams/nclex.page",
+          "sourceType": "official-national-organization",
+          "status": "authoritative"
+        },
+        {
+          "field": "requiredExperience",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "processingTime",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "rnEndorsementFeeUsd",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        }
+      ],
+      "authoritativeCount": 2,
+      "secondaryCount": 2,
+      "missingCount": 7
+    },
+    {
+      "state": "kentucky",
+      "fields": [
+        {
+          "field": "licensingBoard",
+          "value": "Kentucky Board of Nursing",
+          "sourceUrl": "https://nurse.org/education/state-board-nursing-directory/",
+          "sourceType": "secondary",
+          "status": "secondary"
+        },
+        {
+          "field": "officialWebsite",
+          "value": "https://kbn.ky.gov/",
+          "sourceUrl": "https://nurse.org/education/state-board-nursing-directory/",
+          "sourceType": "secondary",
+          "status": "secondary"
+        },
+        {
+          "field": "licenseTransferPage",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "reciprocityRules",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "endorsementRules",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "universalLicenseRecognitionStatus",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "compactMembership",
+          "value": true,
+          "sourceUrl": "https://www.nursecompact.com/",
+          "sourceType": "official-compact",
+          "status": "authoritative"
+        },
+        {
+          "field": "requiredExams",
+          "value": "NCLEX-RN",
+          "sourceUrl": "https://www.ncsbn.org/exams/nclex.page",
+          "sourceType": "official-national-organization",
+          "status": "authoritative"
+        },
+        {
+          "field": "requiredExperience",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "processingTime",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "rnEndorsementFeeUsd",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        }
+      ],
+      "authoritativeCount": 2,
+      "secondaryCount": 2,
+      "missingCount": 7
+    },
+    {
+      "state": "louisiana",
+      "fields": [
+        {
+          "field": "licensingBoard",
+          "value": "Louisiana State Board of Nursing",
+          "sourceUrl": "https://nurse.org/education/state-board-nursing-directory/",
+          "sourceType": "secondary",
+          "status": "secondary"
+        },
+        {
+          "field": "officialWebsite",
+          "value": "https://www.lsbn.state.la.us/",
+          "sourceUrl": "https://nurse.org/education/state-board-nursing-directory/",
+          "sourceType": "secondary",
+          "status": "secondary"
+        },
+        {
+          "field": "licenseTransferPage",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "reciprocityRules",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "endorsementRules",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "universalLicenseRecognitionStatus",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "compactMembership",
+          "value": true,
+          "sourceUrl": "https://www.nursecompact.com/",
+          "sourceType": "official-compact",
+          "status": "authoritative"
+        },
+        {
+          "field": "requiredExams",
+          "value": "NCLEX-RN",
+          "sourceUrl": "https://www.ncsbn.org/exams/nclex.page",
+          "sourceType": "official-national-organization",
+          "status": "authoritative"
+        },
+        {
+          "field": "requiredExperience",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "processingTime",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "rnEndorsementFeeUsd",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        }
+      ],
+      "authoritativeCount": 2,
+      "secondaryCount": 2,
+      "missingCount": 7
+    },
+    {
+      "state": "maine",
+      "fields": [
+        {
+          "field": "licensingBoard",
+          "value": "Maine State Board of Nursing",
+          "sourceUrl": "https://nurse.org/education/state-board-nursing-directory/",
+          "sourceType": "secondary",
+          "status": "secondary"
+        },
+        {
+          "field": "officialWebsite",
+          "value": "https://www.maine.gov/boardofnursing/",
+          "sourceUrl": "https://nurse.org/education/state-board-nursing-directory/",
+          "sourceType": "secondary",
+          "status": "secondary"
+        },
+        {
+          "field": "licenseTransferPage",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "reciprocityRules",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "endorsementRules",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "universalLicenseRecognitionStatus",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "compactMembership",
+          "value": true,
+          "sourceUrl": "https://www.nursecompact.com/",
+          "sourceType": "official-compact",
+          "status": "authoritative"
+        },
+        {
+          "field": "requiredExams",
+          "value": "NCLEX-RN",
+          "sourceUrl": "https://www.ncsbn.org/exams/nclex.page",
+          "sourceType": "official-national-organization",
+          "status": "authoritative"
+        },
+        {
+          "field": "requiredExperience",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "processingTime",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "rnEndorsementFeeUsd",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        }
+      ],
+      "authoritativeCount": 2,
+      "secondaryCount": 2,
+      "missingCount": 7
+    },
+    {
+      "state": "maryland",
+      "fields": [
+        {
+          "field": "licensingBoard",
+          "value": "Maryland Board of Nursing",
+          "sourceUrl": "https://nurse.org/education/state-board-nursing-directory/",
+          "sourceType": "secondary",
+          "status": "secondary"
+        },
+        {
+          "field": "officialWebsite",
+          "value": "https://health.maryland.gov/mbon/pages/default.aspx",
+          "sourceUrl": "https://nurse.org/education/state-board-nursing-directory/",
+          "sourceType": "secondary",
+          "status": "secondary"
+        },
+        {
+          "field": "licenseTransferPage",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "reciprocityRules",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "endorsementRules",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "universalLicenseRecognitionStatus",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "compactMembership",
+          "value": true,
+          "sourceUrl": "https://www.nursecompact.com/",
+          "sourceType": "official-compact",
+          "status": "authoritative"
+        },
+        {
+          "field": "requiredExams",
+          "value": "NCLEX-RN",
+          "sourceUrl": "https://www.ncsbn.org/exams/nclex.page",
+          "sourceType": "official-national-organization",
+          "status": "authoritative"
+        },
+        {
+          "field": "requiredExperience",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "processingTime",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "rnEndorsementFeeUsd",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        }
+      ],
+      "authoritativeCount": 2,
+      "secondaryCount": 2,
+      "missingCount": 7
+    },
+    {
+      "state": "massachusetts",
+      "fields": [
+        {
+          "field": "licensingBoard",
+          "value": "Massachusetts Board of Registration in Nursing",
+          "sourceUrl": "https://nurse.org/education/state-board-nursing-directory/",
+          "sourceType": "secondary",
+          "status": "secondary"
+        },
+        {
+          "field": "officialWebsite",
+          "value": "https://www.mass.gov/orgs/board-of-registration-in-nursing",
+          "sourceUrl": "https://nurse.org/education/state-board-nursing-directory/",
+          "sourceType": "secondary",
+          "status": "secondary"
+        },
+        {
+          "field": "licenseTransferPage",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "reciprocityRules",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "endorsementRules",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "universalLicenseRecognitionStatus",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "compactMembership",
+          "value": false,
+          "sourceUrl": "https://www.nursecompact.com/",
+          "sourceType": "official-compact",
+          "status": "authoritative"
+        },
+        {
+          "field": "requiredExams",
+          "value": "NCLEX-RN",
+          "sourceUrl": "https://www.ncsbn.org/exams/nclex.page",
+          "sourceType": "official-national-organization",
+          "status": "authoritative"
+        },
+        {
+          "field": "requiredExperience",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "processingTime",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "rnEndorsementFeeUsd",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        }
+      ],
+      "authoritativeCount": 2,
+      "secondaryCount": 2,
+      "missingCount": 7
+    },
+    {
+      "state": "michigan",
+      "fields": [
+        {
+          "field": "licensingBoard",
+          "value": "Michigan Board of Nursing (LARA)",
+          "sourceUrl": "https://www.michigan.gov/lara/bureau-list/bpl/health/hp-lic-health-prof/nursing",
+          "sourceType": "official-board",
+          "status": "authoritative"
+        },
+        {
+          "field": "officialWebsite",
+          "value": "https://www.michigan.gov/lara/bureau-list/bpl/health/hp-lic-health-prof/nursing",
+          "sourceUrl": "https://www.michigan.gov/lara/bureau-list/bpl/health/hp-lic-health-prof/nursing",
+          "sourceType": "official-board",
+          "status": "authoritative"
+        },
+        {
+          "field": "licenseTransferPage",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "reciprocityRules",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "endorsementRules",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "universalLicenseRecognitionStatus",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "compactMembership",
+          "value": false,
+          "sourceUrl": "https://www.nursecompact.com/",
+          "sourceType": "official-compact",
+          "status": "authoritative"
+        },
+        {
+          "field": "requiredExams",
+          "value": "NCLEX-RN",
+          "sourceUrl": "https://www.ncsbn.org/exams/nclex.page",
+          "sourceType": "official-national-organization",
+          "status": "authoritative"
+        },
+        {
+          "field": "requiredExperience",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "processingTime",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "rnEndorsementFeeUsd",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        }
+      ],
+      "authoritativeCount": 4,
+      "secondaryCount": 0,
+      "missingCount": 7
+    },
+    {
+      "state": "minnesota",
+      "fields": [
+        {
+          "field": "licensingBoard",
+          "value": "Minnesota Board of Nursing",
+          "sourceUrl": "https://nurse.org/education/state-board-nursing-directory/",
+          "sourceType": "secondary",
+          "status": "secondary"
+        },
+        {
+          "field": "officialWebsite",
+          "value": "https://mn.gov/boards/nursing/",
+          "sourceUrl": "https://nurse.org/education/state-board-nursing-directory/",
+          "sourceType": "secondary",
+          "status": "secondary"
+        },
+        {
+          "field": "licenseTransferPage",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "reciprocityRules",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "endorsementRules",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "universalLicenseRecognitionStatus",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "compactMembership",
+          "value": false,
+          "sourceUrl": "https://www.nursecompact.com/",
+          "sourceType": "official-compact",
+          "status": "authoritative"
+        },
+        {
+          "field": "requiredExams",
+          "value": "NCLEX-RN",
+          "sourceUrl": "https://www.ncsbn.org/exams/nclex.page",
+          "sourceType": "official-national-organization",
+          "status": "authoritative"
+        },
+        {
+          "field": "requiredExperience",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "processingTime",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "rnEndorsementFeeUsd",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        }
+      ],
+      "authoritativeCount": 2,
+      "secondaryCount": 2,
+      "missingCount": 7
+    },
+    {
+      "state": "mississippi",
+      "fields": [
+        {
+          "field": "licensingBoard",
+          "value": "Mississippi Board of Nursing",
+          "sourceUrl": "https://nurse.org/education/state-board-nursing-directory/",
+          "sourceType": "secondary",
+          "status": "secondary"
+        },
+        {
+          "field": "officialWebsite",
+          "value": "https://www.msbn.ms.gov/",
+          "sourceUrl": "https://nurse.org/education/state-board-nursing-directory/",
+          "sourceType": "secondary",
+          "status": "secondary"
+        },
+        {
+          "field": "licenseTransferPage",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "reciprocityRules",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "endorsementRules",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "universalLicenseRecognitionStatus",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "compactMembership",
+          "value": true,
+          "sourceUrl": "https://www.nursecompact.com/",
+          "sourceType": "official-compact",
+          "status": "authoritative"
+        },
+        {
+          "field": "requiredExams",
+          "value": "NCLEX-RN",
+          "sourceUrl": "https://www.ncsbn.org/exams/nclex.page",
+          "sourceType": "official-national-organization",
+          "status": "authoritative"
+        },
+        {
+          "field": "requiredExperience",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "processingTime",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "rnEndorsementFeeUsd",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        }
+      ],
+      "authoritativeCount": 2,
+      "secondaryCount": 2,
+      "missingCount": 7
+    },
+    {
+      "state": "missouri",
+      "fields": [
+        {
+          "field": "licensingBoard",
+          "value": "Missouri State Board of Nursing",
+          "sourceUrl": "https://nurse.org/education/state-board-nursing-directory/",
+          "sourceType": "secondary",
+          "status": "secondary"
+        },
+        {
+          "field": "officialWebsite",
+          "value": "https://pr.mo.gov/nursing.asp",
+          "sourceUrl": "https://nurse.org/education/state-board-nursing-directory/",
+          "sourceType": "secondary",
+          "status": "secondary"
+        },
+        {
+          "field": "licenseTransferPage",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "reciprocityRules",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "endorsementRules",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "universalLicenseRecognitionStatus",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "compactMembership",
+          "value": true,
+          "sourceUrl": "https://www.nursecompact.com/",
+          "sourceType": "official-compact",
+          "status": "authoritative"
+        },
+        {
+          "field": "requiredExams",
+          "value": "NCLEX-RN",
+          "sourceUrl": "https://www.ncsbn.org/exams/nclex.page",
+          "sourceType": "official-national-organization",
+          "status": "authoritative"
+        },
+        {
+          "field": "requiredExperience",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "processingTime",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "rnEndorsementFeeUsd",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        }
+      ],
+      "authoritativeCount": 2,
+      "secondaryCount": 2,
+      "missingCount": 7
+    },
+    {
+      "state": "montana",
+      "fields": [
+        {
+          "field": "licensingBoard",
+          "value": "Montana Board of Nursing",
+          "sourceUrl": "https://nurse.org/education/state-board-nursing-directory/",
+          "sourceType": "secondary",
+          "status": "secondary"
+        },
+        {
+          "field": "officialWebsite",
+          "value": "https://boards.bsd.dli.mt.gov/nursing/",
+          "sourceUrl": "https://nurse.org/education/state-board-nursing-directory/",
+          "sourceType": "secondary",
+          "status": "secondary"
+        },
+        {
+          "field": "licenseTransferPage",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "reciprocityRules",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "endorsementRules",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "universalLicenseRecognitionStatus",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "compactMembership",
+          "value": true,
+          "sourceUrl": "https://www.nursecompact.com/",
+          "sourceType": "official-compact",
+          "status": "authoritative"
+        },
+        {
+          "field": "requiredExams",
+          "value": "NCLEX-RN",
+          "sourceUrl": "https://www.ncsbn.org/exams/nclex.page",
+          "sourceType": "official-national-organization",
+          "status": "authoritative"
+        },
+        {
+          "field": "requiredExperience",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "processingTime",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "rnEndorsementFeeUsd",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        }
+      ],
+      "authoritativeCount": 2,
+      "secondaryCount": 2,
+      "missingCount": 7
+    },
+    {
+      "state": "nebraska",
+      "fields": [
+        {
+          "field": "licensingBoard",
+          "value": "Nebraska Board of Nursing",
+          "sourceUrl": "https://nurse.org/education/state-board-nursing-directory/",
+          "sourceType": "secondary",
+          "status": "secondary"
+        },
+        {
+          "field": "officialWebsite",
+          "value": "https://dhhs.ne.gov/licensure/pages/nurse-licensing.aspx",
+          "sourceUrl": "https://nurse.org/education/state-board-nursing-directory/",
+          "sourceType": "secondary",
+          "status": "secondary"
+        },
+        {
+          "field": "licenseTransferPage",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "reciprocityRules",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "endorsementRules",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "universalLicenseRecognitionStatus",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "compactMembership",
+          "value": true,
+          "sourceUrl": "https://www.nursecompact.com/",
+          "sourceType": "official-compact",
+          "status": "authoritative"
+        },
+        {
+          "field": "requiredExams",
+          "value": "NCLEX-RN",
+          "sourceUrl": "https://www.ncsbn.org/exams/nclex.page",
+          "sourceType": "official-national-organization",
+          "status": "authoritative"
+        },
+        {
+          "field": "requiredExperience",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "processingTime",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "rnEndorsementFeeUsd",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        }
+      ],
+      "authoritativeCount": 2,
+      "secondaryCount": 2,
+      "missingCount": 7
+    },
+    {
+      "state": "nevada",
+      "fields": [
+        {
+          "field": "licensingBoard",
+          "value": "Nevada State Board of Nursing",
+          "sourceUrl": "https://nurse.org/education/state-board-nursing-directory/",
+          "sourceType": "secondary",
+          "status": "secondary"
+        },
+        {
+          "field": "officialWebsite",
+          "value": "https://nevadanursingboard.org/",
+          "sourceUrl": "https://nurse.org/education/state-board-nursing-directory/",
+          "sourceType": "secondary",
+          "status": "secondary"
+        },
+        {
+          "field": "licenseTransferPage",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "reciprocityRules",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "endorsementRules",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "universalLicenseRecognitionStatus",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "compactMembership",
+          "value": false,
+          "sourceUrl": "https://www.nursecompact.com/",
+          "sourceType": "official-compact",
+          "status": "authoritative"
+        },
+        {
+          "field": "requiredExams",
+          "value": "NCLEX-RN",
+          "sourceUrl": "https://www.ncsbn.org/exams/nclex.page",
+          "sourceType": "official-national-organization",
+          "status": "authoritative"
+        },
+        {
+          "field": "requiredExperience",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "processingTime",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "rnEndorsementFeeUsd",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        }
+      ],
+      "authoritativeCount": 2,
+      "secondaryCount": 2,
+      "missingCount": 7
+    },
+    {
+      "state": "new-hampshire",
+      "fields": [
+        {
+          "field": "licensingBoard",
+          "value": "New Hampshire Board of Nursing",
+          "sourceUrl": "https://nurse.org/education/state-board-nursing-directory/",
+          "sourceType": "secondary",
+          "status": "secondary"
+        },
+        {
+          "field": "officialWebsite",
+          "value": "https://www.oplc.nh.gov/new-hampshire-board-nursing",
+          "sourceUrl": "https://nurse.org/education/state-board-nursing-directory/",
+          "sourceType": "secondary",
+          "status": "secondary"
+        },
+        {
+          "field": "licenseTransferPage",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "reciprocityRules",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "endorsementRules",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "universalLicenseRecognitionStatus",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "compactMembership",
+          "value": true,
+          "sourceUrl": "https://www.nursecompact.com/",
+          "sourceType": "official-compact",
+          "status": "authoritative"
+        },
+        {
+          "field": "requiredExams",
+          "value": "NCLEX-RN",
+          "sourceUrl": "https://www.ncsbn.org/exams/nclex.page",
+          "sourceType": "official-national-organization",
+          "status": "authoritative"
+        },
+        {
+          "field": "requiredExperience",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "processingTime",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "rnEndorsementFeeUsd",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        }
+      ],
+      "authoritativeCount": 2,
+      "secondaryCount": 2,
+      "missingCount": 7
+    },
+    {
+      "state": "new-jersey",
+      "fields": [
+        {
+          "field": "licensingBoard",
+          "value": "New Jersey Board of Nursing",
+          "sourceUrl": "https://nurse.org/education/state-board-nursing-directory/",
+          "sourceType": "secondary",
+          "status": "secondary"
+        },
+        {
+          "field": "officialWebsite",
+          "value": "https://www.njconsumeraffairs.gov/nur/Pages/default.aspx",
+          "sourceUrl": "https://nurse.org/education/state-board-nursing-directory/",
+          "sourceType": "secondary",
+          "status": "secondary"
+        },
+        {
+          "field": "licenseTransferPage",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "reciprocityRules",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "endorsementRules",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "universalLicenseRecognitionStatus",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "compactMembership",
+          "value": true,
+          "sourceUrl": "https://www.nursecompact.com/",
+          "sourceType": "official-compact",
+          "status": "authoritative"
+        },
+        {
+          "field": "requiredExams",
+          "value": "NCLEX-RN",
+          "sourceUrl": "https://www.ncsbn.org/exams/nclex.page",
+          "sourceType": "official-national-organization",
+          "status": "authoritative"
+        },
+        {
+          "field": "requiredExperience",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "processingTime",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "rnEndorsementFeeUsd",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        }
+      ],
+      "authoritativeCount": 2,
+      "secondaryCount": 2,
+      "missingCount": 7
+    },
+    {
+      "state": "new-mexico",
+      "fields": [
+        {
+          "field": "licensingBoard",
+          "value": "New Mexico Board of Nursing",
+          "sourceUrl": "https://nurse.org/education/state-board-nursing-directory/",
+          "sourceType": "secondary",
+          "status": "secondary"
+        },
+        {
+          "field": "officialWebsite",
+          "value": "https://www.bon.nm.gov/",
+          "sourceUrl": "https://nurse.org/education/state-board-nursing-directory/",
+          "sourceType": "secondary",
+          "status": "secondary"
+        },
+        {
+          "field": "licenseTransferPage",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "reciprocityRules",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "endorsementRules",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "universalLicenseRecognitionStatus",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "compactMembership",
+          "value": true,
+          "sourceUrl": "https://www.nursecompact.com/",
+          "sourceType": "official-compact",
+          "status": "authoritative"
+        },
+        {
+          "field": "requiredExams",
+          "value": "NCLEX-RN",
+          "sourceUrl": "https://www.ncsbn.org/exams/nclex.page",
+          "sourceType": "official-national-organization",
+          "status": "authoritative"
+        },
+        {
+          "field": "requiredExperience",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "processingTime",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "rnEndorsementFeeUsd",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        }
+      ],
+      "authoritativeCount": 2,
+      "secondaryCount": 2,
+      "missingCount": 7
+    },
+    {
+      "state": "new-york",
+      "fields": [
+        {
+          "field": "licensingBoard",
+          "value": "New York State Board for Nursing",
+          "sourceUrl": "https://www.op.nysed.gov/professions/registered-professional-nursing",
+          "sourceType": "official-board",
+          "status": "authoritative"
+        },
+        {
+          "field": "officialWebsite",
+          "value": "https://www.op.nysed.gov/registered-professional-nursing",
+          "sourceUrl": "https://www.op.nysed.gov/professions/registered-professional-nursing",
+          "sourceType": "official-board",
+          "status": "authoritative"
+        },
+        {
+          "field": "licenseTransferPage",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "reciprocityRules",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "endorsementRules",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "universalLicenseRecognitionStatus",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "compactMembership",
+          "value": false,
+          "sourceUrl": "https://www.nursecompact.com/",
+          "sourceType": "official-compact",
+          "status": "authoritative"
+        },
+        {
+          "field": "requiredExams",
+          "value": "NCLEX-RN",
+          "sourceUrl": "https://www.ncsbn.org/exams/nclex.page",
+          "sourceType": "official-national-organization",
+          "status": "authoritative"
+        },
+        {
+          "field": "requiredExperience",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "processingTime",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "rnEndorsementFeeUsd",
+          "value": 143,
+          "sourceUrl": "https://www.op.nysed.gov/professions/registered-professional-nursing/endorsement-nursing-licenses",
+          "sourceType": "official-board",
+          "status": "authoritative"
+        }
+      ],
+      "authoritativeCount": 5,
+      "secondaryCount": 0,
+      "missingCount": 6
+    },
+    {
+      "state": "north-carolina",
+      "fields": [
+        {
+          "field": "licensingBoard",
+          "value": "North Carolina Board of Nursing",
+          "sourceUrl": "https://www.ncbon.com/",
+          "sourceType": "official-board",
+          "status": "authoritative"
+        },
+        {
+          "field": "officialWebsite",
+          "value": "https://www.ncbon.com/",
+          "sourceUrl": "https://www.ncbon.com/",
+          "sourceType": "official-board",
+          "status": "authoritative"
+        },
+        {
+          "field": "licenseTransferPage",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "reciprocityRules",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "endorsementRules",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "universalLicenseRecognitionStatus",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "compactMembership",
+          "value": true,
+          "sourceUrl": "https://www.nursecompact.com/",
+          "sourceType": "official-compact",
+          "status": "authoritative"
+        },
+        {
+          "field": "requiredExams",
+          "value": "NCLEX-RN",
+          "sourceUrl": "https://www.ncsbn.org/exams/nclex.page",
+          "sourceType": "official-national-organization",
+          "status": "authoritative"
+        },
+        {
+          "field": "requiredExperience",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "processingTime",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "rnEndorsementFeeUsd",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        }
+      ],
+      "authoritativeCount": 4,
+      "secondaryCount": 0,
+      "missingCount": 7
+    },
+    {
+      "state": "north-dakota",
+      "fields": [
+        {
+          "field": "licensingBoard",
+          "value": "North Dakota Board of Nursing",
+          "sourceUrl": "https://nurse.org/education/state-board-nursing-directory/",
+          "sourceType": "secondary",
+          "status": "secondary"
+        },
+        {
+          "field": "officialWebsite",
+          "value": "https://www.ndbon.org/",
+          "sourceUrl": "https://nurse.org/education/state-board-nursing-directory/",
+          "sourceType": "secondary",
+          "status": "secondary"
+        },
+        {
+          "field": "licenseTransferPage",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "reciprocityRules",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "endorsementRules",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "universalLicenseRecognitionStatus",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "compactMembership",
+          "value": true,
+          "sourceUrl": "https://www.nursecompact.com/",
+          "sourceType": "official-compact",
+          "status": "authoritative"
+        },
+        {
+          "field": "requiredExams",
+          "value": "NCLEX-RN",
+          "sourceUrl": "https://www.ncsbn.org/exams/nclex.page",
+          "sourceType": "official-national-organization",
+          "status": "authoritative"
+        },
+        {
+          "field": "requiredExperience",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "processingTime",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "rnEndorsementFeeUsd",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        }
+      ],
+      "authoritativeCount": 2,
+      "secondaryCount": 2,
+      "missingCount": 7
+    },
+    {
+      "state": "ohio",
+      "fields": [
+        {
+          "field": "licensingBoard",
+          "value": "Ohio Board of Nursing",
+          "sourceUrl": "https://nursing.ohio.gov/",
+          "sourceType": "official-board",
+          "status": "authoritative"
+        },
+        {
+          "field": "officialWebsite",
+          "value": "https://nursing.ohio.gov/",
+          "sourceUrl": "https://nursing.ohio.gov/",
+          "sourceType": "official-board",
+          "status": "authoritative"
+        },
+        {
+          "field": "licenseTransferPage",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "reciprocityRules",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "endorsementRules",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "universalLicenseRecognitionStatus",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "compactMembership",
+          "value": true,
+          "sourceUrl": "https://www.nursecompact.com/",
+          "sourceType": "official-compact",
+          "status": "authoritative"
+        },
+        {
+          "field": "requiredExams",
+          "value": "NCLEX-RN",
+          "sourceUrl": "https://www.ncsbn.org/exams/nclex.page",
+          "sourceType": "official-national-organization",
+          "status": "authoritative"
+        },
+        {
+          "field": "requiredExperience",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "processingTime",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "rnEndorsementFeeUsd",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        }
+      ],
+      "authoritativeCount": 4,
+      "secondaryCount": 0,
+      "missingCount": 7
+    },
+    {
+      "state": "oklahoma",
+      "fields": [
+        {
+          "field": "licensingBoard",
+          "value": "Oklahoma Board of Nursing",
+          "sourceUrl": "https://nurse.org/education/state-board-nursing-directory/",
+          "sourceType": "secondary",
+          "status": "secondary"
+        },
+        {
+          "field": "officialWebsite",
+          "value": "https://oklahoma.gov/nursing.html",
+          "sourceUrl": "https://nurse.org/education/state-board-nursing-directory/",
+          "sourceType": "secondary",
+          "status": "secondary"
+        },
+        {
+          "field": "licenseTransferPage",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "reciprocityRules",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "endorsementRules",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "universalLicenseRecognitionStatus",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "compactMembership",
+          "value": true,
+          "sourceUrl": "https://www.nursecompact.com/",
+          "sourceType": "official-compact",
+          "status": "authoritative"
+        },
+        {
+          "field": "requiredExams",
+          "value": "NCLEX-RN",
+          "sourceUrl": "https://www.ncsbn.org/exams/nclex.page",
+          "sourceType": "official-national-organization",
+          "status": "authoritative"
+        },
+        {
+          "field": "requiredExperience",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "processingTime",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "rnEndorsementFeeUsd",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        }
+      ],
+      "authoritativeCount": 2,
+      "secondaryCount": 2,
+      "missingCount": 7
+    },
+    {
+      "state": "oregon",
+      "fields": [
+        {
+          "field": "licensingBoard",
+          "value": "Oregon State Board of Nursing",
+          "sourceUrl": "https://nurse.org/education/state-board-nursing-directory/",
+          "sourceType": "secondary",
+          "status": "secondary"
+        },
+        {
+          "field": "officialWebsite",
+          "value": "https://www.oregon.gov/osbn",
+          "sourceUrl": "https://nurse.org/education/state-board-nursing-directory/",
+          "sourceType": "secondary",
+          "status": "secondary"
+        },
+        {
+          "field": "licenseTransferPage",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "reciprocityRules",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "endorsementRules",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "universalLicenseRecognitionStatus",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "compactMembership",
+          "value": false,
+          "sourceUrl": "https://www.nursecompact.com/",
+          "sourceType": "official-compact",
+          "status": "authoritative"
+        },
+        {
+          "field": "requiredExams",
+          "value": "NCLEX-RN",
+          "sourceUrl": "https://www.ncsbn.org/exams/nclex.page",
+          "sourceType": "official-national-organization",
+          "status": "authoritative"
+        },
+        {
+          "field": "requiredExperience",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "processingTime",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "rnEndorsementFeeUsd",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        }
+      ],
+      "authoritativeCount": 2,
+      "secondaryCount": 2,
+      "missingCount": 7
+    },
+    {
+      "state": "pennsylvania",
+      "fields": [
+        {
+          "field": "licensingBoard",
+          "value": "Pennsylvania State Board of Nursing",
+          "sourceUrl": "https://www.pa.gov/agencies/dos/department-and-offices/bpoa/boards-commissions/nursing",
+          "sourceType": "official-board",
+          "status": "authoritative"
+        },
+        {
+          "field": "officialWebsite",
+          "value": "https://www.pa.gov/agencies/dos/department-and-offices/bpoa/boards-commissions/nursing",
+          "sourceUrl": "https://www.pa.gov/agencies/dos/department-and-offices/bpoa/boards-commissions/nursing",
+          "sourceType": "official-board",
+          "status": "authoritative"
+        },
+        {
+          "field": "licenseTransferPage",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "reciprocityRules",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "endorsementRules",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "universalLicenseRecognitionStatus",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "compactMembership",
+          "value": true,
+          "sourceUrl": "https://www.nursecompact.com/",
+          "sourceType": "official-compact",
+          "status": "authoritative"
+        },
+        {
+          "field": "requiredExams",
+          "value": "NCLEX-RN",
+          "sourceUrl": "https://www.ncsbn.org/exams/nclex.page",
+          "sourceType": "official-national-organization",
+          "status": "authoritative"
+        },
+        {
+          "field": "requiredExperience",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "processingTime",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "rnEndorsementFeeUsd",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        }
+      ],
+      "authoritativeCount": 4,
+      "secondaryCount": 0,
+      "missingCount": 7
+    },
+    {
+      "state": "rhode-island",
+      "fields": [
+        {
+          "field": "licensingBoard",
+          "value": "Rhode Island Board of Nursing",
+          "sourceUrl": "https://nurse.org/education/state-board-nursing-directory/",
+          "sourceType": "secondary",
+          "status": "secondary"
+        },
+        {
+          "field": "officialWebsite",
+          "value": "https://health.ri.gov/licensing/nurses",
+          "sourceUrl": "https://nurse.org/education/state-board-nursing-directory/",
+          "sourceType": "secondary",
+          "status": "secondary"
+        },
+        {
+          "field": "licenseTransferPage",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "reciprocityRules",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "endorsementRules",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "universalLicenseRecognitionStatus",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "compactMembership",
+          "value": true,
+          "sourceUrl": "https://www.nursecompact.com/",
+          "sourceType": "official-compact",
+          "status": "authoritative"
+        },
+        {
+          "field": "requiredExams",
+          "value": "NCLEX-RN",
+          "sourceUrl": "https://www.ncsbn.org/exams/nclex.page",
+          "sourceType": "official-national-organization",
+          "status": "authoritative"
+        },
+        {
+          "field": "requiredExperience",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "processingTime",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "rnEndorsementFeeUsd",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        }
+      ],
+      "authoritativeCount": 2,
+      "secondaryCount": 2,
+      "missingCount": 7
+    },
+    {
+      "state": "south-carolina",
+      "fields": [
+        {
+          "field": "licensingBoard",
+          "value": "South Carolina Board of Nursing",
+          "sourceUrl": "https://nurse.org/education/state-board-nursing-directory/",
+          "sourceType": "secondary",
+          "status": "secondary"
+        },
+        {
+          "field": "officialWebsite",
+          "value": "https://llr.sc.gov/nurse/",
+          "sourceUrl": "https://nurse.org/education/state-board-nursing-directory/",
+          "sourceType": "secondary",
+          "status": "secondary"
+        },
+        {
+          "field": "licenseTransferPage",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "reciprocityRules",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "endorsementRules",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "universalLicenseRecognitionStatus",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "compactMembership",
+          "value": true,
+          "sourceUrl": "https://www.nursecompact.com/",
+          "sourceType": "official-compact",
+          "status": "authoritative"
+        },
+        {
+          "field": "requiredExams",
+          "value": "NCLEX-RN",
+          "sourceUrl": "https://www.ncsbn.org/exams/nclex.page",
+          "sourceType": "official-national-organization",
+          "status": "authoritative"
+        },
+        {
+          "field": "requiredExperience",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "processingTime",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "rnEndorsementFeeUsd",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        }
+      ],
+      "authoritativeCount": 2,
+      "secondaryCount": 2,
+      "missingCount": 7
+    },
+    {
+      "state": "south-dakota",
+      "fields": [
+        {
+          "field": "licensingBoard",
+          "value": "South Dakota Board of Nursing",
+          "sourceUrl": "https://nurse.org/education/state-board-nursing-directory/",
+          "sourceType": "secondary",
+          "status": "secondary"
+        },
+        {
+          "field": "officialWebsite",
+          "value": "https://www.sdbon.org/",
+          "sourceUrl": "https://nurse.org/education/state-board-nursing-directory/",
+          "sourceType": "secondary",
+          "status": "secondary"
+        },
+        {
+          "field": "licenseTransferPage",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "reciprocityRules",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "endorsementRules",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "universalLicenseRecognitionStatus",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "compactMembership",
+          "value": true,
+          "sourceUrl": "https://www.nursecompact.com/",
+          "sourceType": "official-compact",
+          "status": "authoritative"
+        },
+        {
+          "field": "requiredExams",
+          "value": "NCLEX-RN",
+          "sourceUrl": "https://www.ncsbn.org/exams/nclex.page",
+          "sourceType": "official-national-organization",
+          "status": "authoritative"
+        },
+        {
+          "field": "requiredExperience",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "processingTime",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "rnEndorsementFeeUsd",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        }
+      ],
+      "authoritativeCount": 2,
+      "secondaryCount": 2,
+      "missingCount": 7
+    },
+    {
+      "state": "tennessee",
+      "fields": [
+        {
+          "field": "licensingBoard",
+          "value": "Tennessee Board of Nursing",
+          "sourceUrl": "https://nurse.org/education/state-board-nursing-directory/",
+          "sourceType": "secondary",
+          "status": "secondary"
+        },
+        {
+          "field": "officialWebsite",
+          "value": "https://www.tn.gov/health/licensure/nurs.html",
+          "sourceUrl": "https://nurse.org/education/state-board-nursing-directory/",
+          "sourceType": "secondary",
+          "status": "secondary"
+        },
+        {
+          "field": "licenseTransferPage",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "reciprocityRules",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "endorsementRules",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "universalLicenseRecognitionStatus",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "compactMembership",
+          "value": true,
+          "sourceUrl": "https://www.nursecompact.com/",
+          "sourceType": "official-compact",
+          "status": "authoritative"
+        },
+        {
+          "field": "requiredExams",
+          "value": "NCLEX-RN",
+          "sourceUrl": "https://www.ncsbn.org/exams/nclex.page",
+          "sourceType": "official-national-organization",
+          "status": "authoritative"
+        },
+        {
+          "field": "requiredExperience",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "processingTime",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "rnEndorsementFeeUsd",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        }
+      ],
+      "authoritativeCount": 2,
+      "secondaryCount": 2,
+      "missingCount": 7
+    },
+    {
+      "state": "texas",
+      "fields": [
+        {
+          "field": "licensingBoard",
+          "value": "Texas Board of Nursing",
+          "sourceUrl": "https://www.bon.texas.gov/",
+          "sourceType": "official-board",
+          "status": "authoritative"
+        },
+        {
+          "field": "officialWebsite",
+          "value": "https://www.bon.texas.gov/",
+          "sourceUrl": "https://www.bon.texas.gov/",
+          "sourceType": "official-board",
+          "status": "authoritative"
+        },
+        {
+          "field": "licenseTransferPage",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "reciprocityRules",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "endorsementRules",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "universalLicenseRecognitionStatus",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "compactMembership",
+          "value": true,
+          "sourceUrl": "https://www.nursecompact.com/",
+          "sourceType": "official-compact",
+          "status": "authoritative"
+        },
+        {
+          "field": "requiredExams",
+          "value": "NCLEX-RN",
+          "sourceUrl": "https://www.ncsbn.org/exams/nclex.page",
+          "sourceType": "official-national-organization",
+          "status": "authoritative"
+        },
+        {
+          "field": "requiredExperience",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "processingTime",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "rnEndorsementFeeUsd",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        }
+      ],
+      "authoritativeCount": 4,
+      "secondaryCount": 0,
+      "missingCount": 7
+    },
+    {
+      "state": "utah",
+      "fields": [
+        {
+          "field": "licensingBoard",
+          "value": "Utah Division of Professional Licensing - Nursing",
+          "sourceUrl": "https://nurse.org/education/state-board-nursing-directory/",
+          "sourceType": "secondary",
+          "status": "secondary"
+        },
+        {
+          "field": "officialWebsite",
+          "value": "https://commerce.utah.gov/dopl/nursing/",
+          "sourceUrl": "https://nurse.org/education/state-board-nursing-directory/",
+          "sourceType": "secondary",
+          "status": "secondary"
+        },
+        {
+          "field": "licenseTransferPage",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "reciprocityRules",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "endorsementRules",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "universalLicenseRecognitionStatus",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "compactMembership",
+          "value": true,
+          "sourceUrl": "https://www.nursecompact.com/",
+          "sourceType": "official-compact",
+          "status": "authoritative"
+        },
+        {
+          "field": "requiredExams",
+          "value": "NCLEX-RN",
+          "sourceUrl": "https://www.ncsbn.org/exams/nclex.page",
+          "sourceType": "official-national-organization",
+          "status": "authoritative"
+        },
+        {
+          "field": "requiredExperience",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "processingTime",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "rnEndorsementFeeUsd",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        }
+      ],
+      "authoritativeCount": 2,
+      "secondaryCount": 2,
+      "missingCount": 7
+    },
+    {
+      "state": "vermont",
+      "fields": [
+        {
+          "field": "licensingBoard",
+          "value": "Vermont Board of Nursing",
+          "sourceUrl": "https://nurse.org/education/state-board-nursing-directory/",
+          "sourceType": "secondary",
+          "status": "secondary"
+        },
+        {
+          "field": "officialWebsite",
+          "value": "https://sos.vermont.gov/nursing/",
+          "sourceUrl": "https://nurse.org/education/state-board-nursing-directory/",
+          "sourceType": "secondary",
+          "status": "secondary"
+        },
+        {
+          "field": "licenseTransferPage",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "reciprocityRules",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "endorsementRules",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "universalLicenseRecognitionStatus",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "compactMembership",
+          "value": true,
+          "sourceUrl": "https://www.nursecompact.com/",
+          "sourceType": "official-compact",
+          "status": "authoritative"
+        },
+        {
+          "field": "requiredExams",
+          "value": "NCLEX-RN",
+          "sourceUrl": "https://www.ncsbn.org/exams/nclex.page",
+          "sourceType": "official-national-organization",
+          "status": "authoritative"
+        },
+        {
+          "field": "requiredExperience",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "processingTime",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "rnEndorsementFeeUsd",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        }
+      ],
+      "authoritativeCount": 2,
+      "secondaryCount": 2,
+      "missingCount": 7
+    },
+    {
+      "state": "virginia",
+      "fields": [
+        {
+          "field": "licensingBoard",
+          "value": "Virginia Board of Nursing",
+          "sourceUrl": "https://nurse.org/education/state-board-nursing-directory/",
+          "sourceType": "secondary",
+          "status": "secondary"
+        },
+        {
+          "field": "officialWebsite",
+          "value": "https://www.dhp.virginia.gov/nursing/",
+          "sourceUrl": "https://nurse.org/education/state-board-nursing-directory/",
+          "sourceType": "secondary",
+          "status": "secondary"
+        },
+        {
+          "field": "licenseTransferPage",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "reciprocityRules",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "endorsementRules",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "universalLicenseRecognitionStatus",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "compactMembership",
+          "value": true,
+          "sourceUrl": "https://www.nursecompact.com/",
+          "sourceType": "official-compact",
+          "status": "authoritative"
+        },
+        {
+          "field": "requiredExams",
+          "value": "NCLEX-RN",
+          "sourceUrl": "https://www.ncsbn.org/exams/nclex.page",
+          "sourceType": "official-national-organization",
+          "status": "authoritative"
+        },
+        {
+          "field": "requiredExperience",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "processingTime",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "rnEndorsementFeeUsd",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        }
+      ],
+      "authoritativeCount": 2,
+      "secondaryCount": 2,
+      "missingCount": 7
+    },
+    {
+      "state": "washington",
+      "fields": [
+        {
+          "field": "licensingBoard",
+          "value": "Washington State Board of Nursing",
+          "sourceUrl": "https://nurse.org/education/state-board-nursing-directory/",
+          "sourceType": "secondary",
+          "status": "secondary"
+        },
+        {
+          "field": "officialWebsite",
+          "value": "https://nursing.wa.gov/",
+          "sourceUrl": "https://nurse.org/education/state-board-nursing-directory/",
+          "sourceType": "secondary",
+          "status": "secondary"
+        },
+        {
+          "field": "licenseTransferPage",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "reciprocityRules",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "endorsementRules",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "universalLicenseRecognitionStatus",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "compactMembership",
+          "value": true,
+          "sourceUrl": "https://www.nursecompact.com/",
+          "sourceType": "official-compact",
+          "status": "authoritative"
+        },
+        {
+          "field": "requiredExams",
+          "value": "NCLEX-RN",
+          "sourceUrl": "https://www.ncsbn.org/exams/nclex.page",
+          "sourceType": "official-national-organization",
+          "status": "authoritative"
+        },
+        {
+          "field": "requiredExperience",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "processingTime",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "rnEndorsementFeeUsd",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        }
+      ],
+      "authoritativeCount": 2,
+      "secondaryCount": 2,
+      "missingCount": 7
+    },
+    {
+      "state": "west-virginia",
+      "fields": [
+        {
+          "field": "licensingBoard",
+          "value": "West Virginia Board of Registered Nurses",
+          "sourceUrl": "https://nurse.org/education/state-board-nursing-directory/",
+          "sourceType": "secondary",
+          "status": "secondary"
+        },
+        {
+          "field": "officialWebsite",
+          "value": "https://wvrnboard.wv.gov/",
+          "sourceUrl": "https://nurse.org/education/state-board-nursing-directory/",
+          "sourceType": "secondary",
+          "status": "secondary"
+        },
+        {
+          "field": "licenseTransferPage",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "reciprocityRules",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "endorsementRules",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "universalLicenseRecognitionStatus",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "compactMembership",
+          "value": true,
+          "sourceUrl": "https://www.nursecompact.com/",
+          "sourceType": "official-compact",
+          "status": "authoritative"
+        },
+        {
+          "field": "requiredExams",
+          "value": "NCLEX-RN",
+          "sourceUrl": "https://www.ncsbn.org/exams/nclex.page",
+          "sourceType": "official-national-organization",
+          "status": "authoritative"
+        },
+        {
+          "field": "requiredExperience",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "processingTime",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "rnEndorsementFeeUsd",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        }
+      ],
+      "authoritativeCount": 2,
+      "secondaryCount": 2,
+      "missingCount": 7
+    },
+    {
+      "state": "wisconsin",
+      "fields": [
+        {
+          "field": "licensingBoard",
+          "value": "Wisconsin Board of Nursing (DSPS)",
+          "sourceUrl": "https://nurse.org/education/state-board-nursing-directory/",
+          "sourceType": "secondary",
+          "status": "secondary"
+        },
+        {
+          "field": "officialWebsite",
+          "value": "https://dsps.wi.gov/Pages/BoardsCouncils/Nursing/Default.aspx",
+          "sourceUrl": "https://nurse.org/education/state-board-nursing-directory/",
+          "sourceType": "secondary",
+          "status": "secondary"
+        },
+        {
+          "field": "licenseTransferPage",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "reciprocityRules",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "endorsementRules",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "universalLicenseRecognitionStatus",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "compactMembership",
+          "value": true,
+          "sourceUrl": "https://www.nursecompact.com/",
+          "sourceType": "official-compact",
+          "status": "authoritative"
+        },
+        {
+          "field": "requiredExams",
+          "value": "NCLEX-RN",
+          "sourceUrl": "https://www.ncsbn.org/exams/nclex.page",
+          "sourceType": "official-national-organization",
+          "status": "authoritative"
+        },
+        {
+          "field": "requiredExperience",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "processingTime",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "rnEndorsementFeeUsd",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        }
+      ],
+      "authoritativeCount": 2,
+      "secondaryCount": 2,
+      "missingCount": 7
+    },
+    {
+      "state": "wyoming",
+      "fields": [
+        {
+          "field": "licensingBoard",
+          "value": "Wyoming State Board of Nursing",
+          "sourceUrl": "https://nurse.org/education/state-board-nursing-directory/",
+          "sourceType": "secondary",
+          "status": "secondary"
+        },
+        {
+          "field": "officialWebsite",
+          "value": "https://wsbn.wyo.gov/",
+          "sourceUrl": "https://nurse.org/education/state-board-nursing-directory/",
+          "sourceType": "secondary",
+          "status": "secondary"
+        },
+        {
+          "field": "licenseTransferPage",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "reciprocityRules",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "endorsementRules",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "universalLicenseRecognitionStatus",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "compactMembership",
+          "value": true,
+          "sourceUrl": "https://www.nursecompact.com/",
+          "sourceType": "official-compact",
+          "status": "authoritative"
+        },
+        {
+          "field": "requiredExams",
+          "value": "NCLEX-RN",
+          "sourceUrl": "https://www.ncsbn.org/exams/nclex.page",
+          "sourceType": "official-national-organization",
+          "status": "authoritative"
+        },
+        {
+          "field": "requiredExperience",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "processingTime",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        },
+        {
+          "field": "rnEndorsementFeeUsd",
+          "value": "Unknown",
+          "sourceUrl": null,
+          "sourceType": null,
+          "status": "missing"
+        }
+      ],
+      "authoritativeCount": 2,
+      "secondaryCount": 2,
+      "missingCount": 7
+    }
+  ]
+}

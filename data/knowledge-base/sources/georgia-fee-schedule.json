@@ -1,0 +1,19 @@
+{
+  "id": "georgia-fee-schedule",
+  "agencyName": "Georgia Board of Nursing",
+  "website": "https://sos.ga.gov/sites/default/files/forms/38%20Reference%20-%20GBON%20Fee%20Schedule.pdf",
+  "jurisdiction": "georgia",
+  "professionsCovered": [
+    "registered-nurse"
+  ],
+  "sourceType": "official-board",
+  "official": true,
+  "authorityLevel": "authoritative",
+  "authorityRationale": "The Georgia Board of Nursing's own official fee schedule PDF, hosted on the Georgia Secretary of State's domain, with fee types explicitly and separately labeled (Exam / Endorsement / Reinstatement / etc.).",
+  "reliabilityScore": 0.97,
+  "reliabilityRationale": "Primary official fee schedule document with unambiguous per-category labeling.",
+  "lastCrawl": null,
+  "lastManualVerification": "2026-08-09",
+  "fieldsUsingThisSource": 1,
+  "specificity": "field-specific"
+}

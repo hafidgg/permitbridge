@@ -1,0 +1,73 @@
+{
+  "name": "permitbridge",
+  "version": "1.0.0",
+  "private": true,
+  "description": "PermitBridge \u2014 the global reference for transferring professional licenses between US states.",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "validate-data": "tsx scripts/validate-data.ts",
+    "generate-transfers": "tsx scripts/generate-transfers.ts",
+    "pipeline": "tsx scripts/pipeline/run.ts --mode=live",
+    "pipeline:dry-run": "tsx scripts/pipeline/run.ts --mode=mock --dry-run",
+    "pipeline:mock": "tsx scripts/pipeline/run.ts --mode=mock",
+    "pipeline:approve": "tsx scripts/pipeline/approve.ts",
+    "kb:coverage": "tsx scripts/knowledge-base/coverage-report.ts",
+    "kb:trust": "tsx scripts/knowledge-base/trust-report.ts",
+    "kb:queue": "tsx scripts/knowledge-base/verification-queue.ts",
+    "test": "tsx scripts/knowledge-base/tests.ts",
+    "kb:audit": "tsx scripts/knowledge-base/metric-audit.ts",
+    "kb:core-audit": "tsx scripts/knowledge-base/rn-core-audit.ts",
+    "kb:human-review": "tsx scripts/knowledge-base/human-review-queue.ts",
+    "kb:transfer-packets": "tsx scripts/knowledge-base/transfer-review-packets.ts",
+    "kb:transfer-queue": "tsx scripts/knowledge-base/transfer-review-queue.ts",
+    "kb:transfer-publication": "tsx scripts/knowledge-base/transfer-publication-report.ts",
+    "monitor:changes": "tsx scripts/monitoring/changes.ts",
+    "monitor:review": "tsx scripts/monitoring/review.ts",
+    "monitor:rollback": "tsx scripts/monitoring/rollback.ts",
+    "monitor": "tsx scripts/monitoring/run.ts",
+    "monitor:dry-run": "tsx scripts/monitoring/dry-run.ts",
+    "monitor:health": "tsx scripts/monitoring/health.ts"
+  },
+  "dependencies": {
+    "next": "^15.1.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "clsx": "^2.1.1",
+    "tailwind-merge": "^2.5.4",
+    "class-variance-authority": "^0.7.0",
+    "lucide-react": "^0.454.0",
+    "zod": "^3.23.8",
+    "server-only": "^0.0.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.3",
+    "@types/node": "^22.9.0",
+    "@types/react": "^19.0.1",
+    "@types/react-dom": "^19.0.1",
+    "tailwindcss": "^3.4.14",
+    "postcss": "^8.4.47",
+    "autoprefixer": "^10.4.20",
+    "tsx": "^4.19.2",
+    "eslint": "^9.15.0",
+    "eslint-config-next": "^15.1.0",
+    "@eslint/eslintrc": "^3.1.0"
+  },
+  "overrides": {
+    "react": "$react",
+    "react-dom": "$react-dom"
+  },
+  "engines": {
+    "node": ">=18.18.0"
+  },
+  "browserslist": [
+    "chrome >= 100",
+    "edge >= 100",
+    "firefox >= 100",
+    "safari >= 15",
+    "not dead"
+  ]
+}

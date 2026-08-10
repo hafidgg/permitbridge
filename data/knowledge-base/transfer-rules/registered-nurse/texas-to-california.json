@@ -1,0 +1,427 @@
+{
+  "profession": "registered-nurse",
+  "sourceState": "texas",
+  "destinationState": "california",
+  "licenseType": "RN",
+  "transferMechanism": {
+    "value": "endorsement",
+    "sourceUrl": "https://www.rn.ca.gov/applicants/lic-end",
+    "sourceTitle": "Licensure by Endorsement",
+    "sourceName": "California Board of Registered Nursing (BRN)",
+    "verifiedAt": "2026-08-10",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.95,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": "endorsement",
+        "changedAt": "2026-08-10",
+        "reason": "Phase 3.1: first population from real official-source research.",
+        "sourceUrl": "https://www.rn.ca.gov/applicants/lic-end",
+        "reviewer": null
+      }
+    ],
+    "notes": "California is not an NLC member and does not recognize compact privilege at all -- even though Texas is a compact member and the nurse may hold a multistate license, it has no effect in California. BRN's own page: 'To qualify for endorsement (reciprocity) into California... you must hold a current and active RN license in another state.' (Note BRN's own page loosely uses the word 'reciprocity' in parentheses next to 'endorsement' -- per Phase 3.0's documented mechanism distinctions, this is still classified endorsement: BRN issues its OWN license after review, there is no bilateral agreement recognizing the license directly.)"
+  },
+  "endorsementProcess": {
+    "value": "Apply via BreEZe, selecting 'RN Endorsement'; submit Nursys or direct verification, official transcripts request, fingerprinting, and the $350 fee.",
+    "sourceUrl": "https://www.rn.ca.gov/applicants/lic-end",
+    "sourceTitle": "Licensure by Endorsement",
+    "sourceName": "California Board of Registered Nursing (BRN)",
+    "verifiedAt": "2026-08-10",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.85,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": "Apply via BreEZe, selecting 'RN Endorsement'; submit Nursys or direct verification, official transcripts request, fingerprinting, and the $350 fee.",
+        "changedAt": "2026-08-10",
+        "reason": "Phase 3.1: first population from real official-source research.",
+        "sourceUrl": "https://www.rn.ca.gov/applicants/lic-end",
+        "reviewer": null
+      }
+    ],
+    "notes": null
+  },
+  "reciprocityAgreementExists": {
+    "value": {
+      "status": "not_applicable"
+    },
+    "sourceUrl": "https://www.rn.ca.gov/applicants/lic-end",
+    "sourceTitle": "Licensure by Endorsement",
+    "sourceName": "California Board of Registered Nursing (BRN)",
+    "verifiedAt": "2026-08-10",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.85,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": {
+          "status": "not_applicable"
+        },
+        "changedAt": "2026-08-10",
+        "reason": "Phase 3.1: first population from real official-source research.",
+        "sourceUrl": "https://www.rn.ca.gov/applicants/lic-end",
+        "reviewer": null
+      }
+    ],
+    "notes": "No bilateral CA-TX agreement -- BRN issues its own license via its own endorsement review."
+  },
+  "universalRecognitionApplies": {
+    "value": {
+      "status": "not_applicable"
+    },
+    "sourceUrl": "https://www.rn.ca.gov/applicants/lic-end",
+    "sourceTitle": "Licensure by Endorsement",
+    "sourceName": "California Board of Registered Nursing (BRN)",
+    "verifiedAt": "2026-08-10",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.8,
+    "confidenceLevel": "likely",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": {
+          "status": "not_applicable"
+        },
+        "changedAt": "2026-08-10",
+        "reason": "Phase 3.1: first population from real official-source research.",
+        "sourceUrl": "https://www.rn.ca.gov/applicants/lic-end",
+        "reviewer": null
+      }
+    ],
+    "notes": "California does not have a general nursing ULR law; endorsement is the applicable pathway."
+  },
+  "examRequirement": {
+    "value": {
+      "status": "not_required"
+    },
+    "sourceUrl": "https://www.rn.ca.gov/applicants/lic-end",
+    "sourceTitle": "Licensure by Endorsement",
+    "sourceName": "California Board of Registered Nursing (BRN)",
+    "verifiedAt": "2026-08-10",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.9,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": {
+          "status": "not_required"
+        },
+        "changedAt": "2026-08-10",
+        "reason": "Phase 3.1: first population from real official-source research.",
+        "sourceUrl": "https://www.rn.ca.gov/applicants/lic-end",
+        "reviewer": null
+      }
+    ],
+    "notes": "Endorsement requires having ALREADY passed NCLEX-RN or SBTPE -- not retaken."
+  },
+  "experienceRequirement": {
+    "value": "Unknown",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "sourceName": null,
+    "verifiedAt": null,
+    "verificationMethod": null,
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0,
+    "confidenceLevel": "unknown",
+    "history": [],
+    "notes": "No specific minimum-recent-practice-hours requirement for CA RN endorsement was found in official BRN sources reviewed this session (contrast with Texas's explicit 4-year/practice rule) -- left honestly Unknown rather than assumed absent."
+  },
+  "applicationFeeUsd": {
+    "value": 350,
+    "sourceUrl": "https://www.rn.ca.gov/pdfs/regulations/proposedlang-fees2018.pdf",
+    "sourceTitle": "California Code of Regulations, Title 16, Division 14, Section 1417 - Fees",
+    "sourceName": "California Board of Registered Nursing",
+    "verifiedAt": "2026-08-10",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.93,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": 350,
+        "changedAt": "2026-08-10",
+        "reason": "Phase 3.1: first population from real official-source research.",
+        "sourceUrl": "https://www.rn.ca.gov/pdfs/regulations/proposedlang-fees2018.pdf",
+        "reviewer": null
+      }
+    ],
+    "notes": "Reuses the exact figure/source already verified in Phase 2.5 for this field on California's own ProfessionStateFacts record -- 16 CCR 1417(g), endorsement fee."
+  },
+  "otherRequiredFees": {
+    "value": "Fingerprinting: Live Scan vendor fees vary (in-state); $49 BRN processing fee for out-of-state FD-258 hard-card applicants.",
+    "sourceUrl": "https://www.rn.ca.gov/applicants/fpinstruct",
+    "sourceTitle": "Applicant Fingerprint Information",
+    "sourceName": "California Board of Registered Nursing (BRN)",
+    "verifiedAt": "2026-08-10",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.85,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": "Fingerprinting: Live Scan vendor fees vary (in-state); $49 BRN processing fee for out-of-state FD-258 hard-card applicants.",
+        "changedAt": "2026-08-10",
+        "reason": "Phase 3.1: first population from real official-source research.",
+        "sourceUrl": "https://www.rn.ca.gov/applicants/fpinstruct",
+        "reviewer": null
+      }
+    ],
+    "notes": null
+  },
+  "backgroundCheckRequirement": {
+    "value": {
+      "status": "required"
+    },
+    "sourceUrl": "https://www.rn.ca.gov/applicants/fpinstruct",
+    "sourceTitle": "Applicant Fingerprint Information",
+    "sourceName": "California Board of Registered Nursing (BRN)",
+    "verifiedAt": "2026-08-10",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.9,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": {
+          "status": "required"
+        },
+        "changedAt": "2026-08-10",
+        "reason": "Phase 3.1: first population from real official-source research.",
+        "sourceUrl": "https://www.rn.ca.gov/applicants/fpinstruct",
+        "reviewer": null
+      }
+    ],
+    "notes": null
+  },
+  "fingerprintingRequirement": {
+    "value": {
+      "status": "required"
+    },
+    "sourceUrl": "https://www.rn.ca.gov/applicants/fpinstruct",
+    "sourceTitle": "Applicant Fingerprint Information",
+    "sourceName": "California Board of Registered Nursing (BRN)",
+    "verifiedAt": "2026-08-10",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.9,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": {
+          "status": "required"
+        },
+        "changedAt": "2026-08-10",
+        "reason": "Phase 3.1: first population from real official-source research.",
+        "sourceUrl": "https://www.rn.ca.gov/applicants/fpinstruct",
+        "reviewer": null
+      }
+    ],
+    "notes": "Live Scan (California-based vendor, in-state) or FD-258 hard card (out-of-state, up to 90 days processing)."
+  },
+  "licenseVerificationRequirement": {
+    "value": {
+      "status": "required"
+    },
+    "sourceUrl": "https://www.rn.ca.gov/applicants/lic-end",
+    "sourceTitle": "Licensure by Endorsement",
+    "sourceName": "California Board of Registered Nursing (BRN)",
+    "verifiedAt": "2026-08-10",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.85,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": {
+          "status": "required"
+        },
+        "changedAt": "2026-08-10",
+        "reason": "Phase 3.1: first population from real official-source research.",
+        "sourceUrl": "https://www.rn.ca.gov/applicants/lic-end",
+        "reviewer": null
+      }
+    ],
+    "notes": "Nursys Verification Application, or the Verification of License form for non-Nursys states."
+  },
+  "documentsRequired": {
+    "value": "Official transcripts sent directly from nursing school; Nursys or direct license verification; disciplinary explanation letters if applicable.",
+    "sourceUrl": "https://www.rn.ca.gov/applicants/lic-end",
+    "sourceTitle": "Licensure by Endorsement",
+    "sourceName": "California Board of Registered Nursing (BRN)",
+    "verifiedAt": "2026-08-10",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.8,
+    "confidenceLevel": "likely",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": "Official transcripts sent directly from nursing school; Nursys or direct license verification; disciplinary explanation letters if applicable.",
+        "changedAt": "2026-08-10",
+        "reason": "Phase 3.1: first population from real official-source research.",
+        "sourceUrl": "https://www.rn.ca.gov/applicants/lic-end",
+        "reviewer": null
+      }
+    ],
+    "notes": null
+  },
+  "goodStandingRequirement": {
+    "value": {
+      "status": "required"
+    },
+    "sourceUrl": "https://www.rn.ca.gov/applicants/lic-end",
+    "sourceTitle": "Licensure by Endorsement",
+    "sourceName": "California Board of Registered Nursing (BRN)",
+    "verifiedAt": "2026-08-10",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.85,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": {
+          "status": "required"
+        },
+        "changedAt": "2026-08-10",
+        "reason": "Phase 3.1: first population from real official-source research.",
+        "sourceUrl": "https://www.rn.ca.gov/applicants/lic-end",
+        "reviewer": null
+      }
+    ],
+    "notes": null
+  },
+  "disciplinaryDisclosureRequirement": {
+    "value": "Unknown",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "sourceName": null,
+    "verifiedAt": null,
+    "verificationMethod": null,
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0,
+    "confidenceLevel": "unknown",
+    "history": [],
+    "notes": "Not specifically itemized in the official sources reviewed this session beyond general application-honesty requirements."
+  },
+  "processingTime": {
+    "value": "Generally 6-12 weeks once a complete application is submitted (secondary-source estimate; BRN's own official Processing Times page publishes rolling cohort-based dates rather than a fixed range, so this figure is not a direct official quote).",
+    "sourceUrl": "https://catsol.com/guides/california-rn-license-guide/",
+    "sourceTitle": "California RN License Endorsement 2026 \u2014 6-12 Week Timeline",
+    "sourceName": "CatSol (secondary source, used for discovery only)",
+    "verifiedAt": "2026-08-10",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.5,
+    "confidenceLevel": "uncertain",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": "Generally 6-12 weeks once a complete application is submitted (secondary-source estimate; BRN's own official Processing Times page publishes rolling cohort-based dates rather than a fixed range, so this figure is not a direct official quote).",
+        "changedAt": "2026-08-10",
+        "reason": "Phase 3.1: first population from real official-source research.",
+        "sourceUrl": "https://catsol.com/guides/california-rn-license-guide/",
+        "reviewer": null
+      }
+    ],
+    "notes": "Secondary/commercial source used for discovery only, per Phase 3.1 Step 2. BRN's own official Processing Times page (rn.ca.gov/times.shtml) publishes current cohort dates rather than a static range, so a precise official range was not directly extractable this session. Deliberately low confidence and never eligible for Verified status without direct re-confirmation."
+  },
+  "temporaryPermitAvailability": {
+    "value": {
+      "status": "required"
+    },
+    "sourceUrl": "https://rn.ca.gov/applicants/lic-temp.shtml",
+    "sourceTitle": "Temporary Licenses",
+    "sourceName": "California Board of Registered Nursing (BRN)",
+    "verifiedAt": "2026-08-10",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.92,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": {
+          "status": "required"
+        },
+        "changedAt": "2026-08-10",
+        "reason": "Phase 3.1: first population from real official-source research.",
+        "sourceUrl": "https://rn.ca.gov/applicants/lic-temp.shtml",
+        "reviewer": null
+      }
+    ],
+    "notes": "Valid 6 months; must submit endorsement application first; requires fingerprint results processed by DOJ/FBI before issuance."
+  },
+  "compactStatus": {
+    "value": "Not applicable -- California does not participate in the NLC at all, regardless of the source state's compact membership.",
+    "sourceUrl": "https://www.rn.ca.gov/applicants/lic-end",
+    "sourceTitle": "Licensure by Endorsement",
+    "sourceName": "California Board of Registered Nursing (BRN)",
+    "verifiedAt": "2026-08-10",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.9,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": "Not applicable -- California does not participate in the NLC at all, regardless of the source state's compact membership.",
+        "changedAt": "2026-08-10",
+        "reason": "Phase 3.1: first population from real official-source research.",
+        "sourceUrl": "https://www.rn.ca.gov/applicants/lic-end",
+        "reviewer": null
+      }
+    ],
+    "notes": null
+  },
+  "exceptions": {
+    "value": "Unknown",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "sourceName": null,
+    "verifiedAt": null,
+    "verificationMethod": null,
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0,
+    "confidenceLevel": "unknown",
+    "history": [],
+    "notes": "No additional exceptions researched in this pass."
+  },
+  "conflicts": [],
+  "lastFullReviewAt": null
+}

@@ -1,0 +1,27 @@
+{
+  "profession": "nurse",
+  "fromState": "new-york",
+  "toState": "florida",
+  "pathway": "endorsement",
+  "pathwayLabel": "Licensure by Endorsement",
+  "examRequired": false,
+  "additionalHoursRequired": 0,
+  "feeUsd": 285,
+  "estimatedProcessingDays": [
+    14,
+    45
+  ],
+  "minimumYearsLicensed": 0,
+  "difficultyScore": 4,
+  "portabilityScore": 68,
+  "steps": [
+    "Confirm your Nurse license is active and in good standing in New York.",
+    "Submit a license verification request from New York through the appropriate national registry or the state board directly.",
+    "File an application for licensure by endorsement with Florida's licensing board.",
+    "Pay the Florida application fee (approx. $285) and submit supporting documents.",
+    "Await processing — typically 14-45 days in Florida."
+  ],
+  "notes": "Florida's nurse licensing requirements are administered per the state's licensing authority. Florida trade licenses are issued by the Department of Business and Professional Regulation (DBPR); healthcare licenses go through the Department of Health. Always confirm current rules directly with the official board before applying, since requirements change.",
+  "officialSourceName": "Florida State Licensing Board",
+  "updatedAt": "2026-08-07"
+}

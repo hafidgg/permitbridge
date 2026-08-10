@@ -1,0 +1,29 @@
+{
+  "profession": "hvac-technician",
+  "fromState": "new-york",
+  "toState": "ohio",
+  "pathway": "reciprocity",
+  "pathwayLabel": "Universal License Recognition (Endorsement)",
+  "examRequired": true,
+  "examName": "NASCLA Accredited Examination for Commercial General Building Contractors",
+  "additionalHoursRequired": 0,
+  "feeUsd": 210,
+  "estimatedProcessingDays": [
+    14,
+    45
+  ],
+  "minimumYearsLicensed": 1,
+  "difficultyScore": 5,
+  "portabilityScore": 50,
+  "steps": [
+    "Confirm your HVAC Technician license is active and in good standing in New York.",
+    "Submit a license verification request from New York through the appropriate national registry or the state board directly.",
+    "File an application for universal license recognition (endorsement) with Ohio's licensing board.",
+    "Register for and pass the required exam: NASCLA Accredited Examination for Commercial General Building Contractors.",
+    "Pay the Ohio application fee (approx. $210) and submit supporting documents.",
+    "Await processing — typically 14-45 days in Ohio."
+  ],
+  "notes": "Ohio's hvac technician licensing requirements are administered per the state's licensing authority. Ohio trade licenses for larger jurisdictions go through the Ohio Construction Industry Licensing Board (OCILB); some smaller municipalities license independently. Always confirm current rules directly with the official board before applying, since requirements change.",
+  "officialSourceName": "Ohio State Licensing Board",
+  "updatedAt": "2026-08-07"
+}

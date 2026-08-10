@@ -1,0 +1,1591 @@
+{
+  "generatedAt": "2026-08-05T22:54:00.200Z",
+  "documentCount": 115,
+  "documents": [
+    {
+      "type": "profession",
+      "title": "Electrician License",
+      "description": "How to transfer an electrical contractor or journeyman license between US states.",
+      "url": "/profession/electrician",
+      "keywords": [
+        "Electrician License",
+        "Electrician",
+        "Skilled Trades",
+        "license",
+        "requirements"
+      ]
+    },
+    {
+      "type": "profession",
+      "title": "General Contractor License",
+      "description": "How to transfer a general contractor license between US states, including NASCLA and Universal License Recognition (ULR) laws.",
+      "url": "/profession/contractor",
+      "keywords": [
+        "General Contractor License",
+        "Contractor",
+        "Construction",
+        "license",
+        "requirements"
+      ]
+    },
+    {
+      "type": "profession",
+      "title": "HVAC Technician License",
+      "description": "How to transfer an HVAC (heating, ventilation, and air conditioning) contractor license between US states.",
+      "url": "/profession/hvac-technician",
+      "keywords": [
+        "HVAC Technician License",
+        "HVAC Technician",
+        "Skilled Trades",
+        "license",
+        "requirements"
+      ]
+    },
+    {
+      "type": "profession",
+      "title": "Plumber License",
+      "description": "How to transfer a journeyman or master plumber license between US states.",
+      "url": "/profession/plumber",
+      "keywords": [
+        "Plumber License",
+        "Plumber",
+        "Skilled Trades",
+        "license",
+        "requirements"
+      ]
+    },
+    {
+      "type": "profession",
+      "title": "Registered Nurse (RN) License",
+      "description": "How to transfer a Registered Nurse (RN) or Licensed Practical Nurse (LPN) license between US states, including the Nurse Licensure Compact (NLC).",
+      "url": "/profession/nurse",
+      "keywords": [
+        "Registered Nurse (RN) License",
+        "Nurse",
+        "Healthcare",
+        "license",
+        "requirements"
+      ]
+    },
+    {
+      "type": "state",
+      "title": "California Professional Licensing",
+      "description": "License transfer and reciprocity rules for professionals moving to or from California.",
+      "url": "/state/california",
+      "keywords": [
+        "California",
+        "CA",
+        "West",
+        "license",
+        "reciprocity"
+      ]
+    },
+    {
+      "type": "state",
+      "title": "Florida Professional Licensing",
+      "description": "License transfer and reciprocity rules for professionals moving to or from Florida.",
+      "url": "/state/florida",
+      "keywords": [
+        "Florida",
+        "FL",
+        "South",
+        "license",
+        "reciprocity"
+      ]
+    },
+    {
+      "type": "state",
+      "title": "New York Professional Licensing",
+      "description": "License transfer and reciprocity rules for professionals moving to or from New York.",
+      "url": "/state/new-york",
+      "keywords": [
+        "New York",
+        "NY",
+        "Northeast",
+        "license",
+        "reciprocity"
+      ]
+    },
+    {
+      "type": "state",
+      "title": "Ohio Professional Licensing",
+      "description": "License transfer and reciprocity rules for professionals moving to or from Ohio.",
+      "url": "/state/ohio",
+      "keywords": [
+        "Ohio",
+        "OH",
+        "Midwest",
+        "license",
+        "reciprocity"
+      ]
+    },
+    {
+      "type": "state",
+      "title": "Texas Professional Licensing",
+      "description": "License transfer and reciprocity rules for professionals moving to or from Texas.",
+      "url": "/state/texas",
+      "keywords": [
+        "Texas",
+        "TX",
+        "South",
+        "license",
+        "reciprocity"
+      ]
+    },
+    {
+      "type": "transfer",
+      "title": "Contractor: California → Florida",
+      "description": "Universal License Recognition (Endorsement). No exam required. Est. 14-45 days.",
+      "url": "/transfer/contractor/california/florida",
+      "keywords": [
+        "General Contractor License",
+        "Contractor",
+        "California",
+        "Florida",
+        "Universal License Recognition (Endorsement)",
+        "transfer license"
+      ]
+    },
+    {
+      "type": "transfer",
+      "title": "Contractor: California → New York",
+      "description": "Full New Application Required. Exam required. Est. 30-90 days.",
+      "url": "/transfer/contractor/california/new-york",
+      "keywords": [
+        "General Contractor License",
+        "Contractor",
+        "California",
+        "New York",
+        "Full New Application Required",
+        "transfer license"
+      ]
+    },
+    {
+      "type": "transfer",
+      "title": "Contractor: California → Ohio",
+      "description": "Universal License Recognition (Endorsement). Exam required. Est. 14-45 days.",
+      "url": "/transfer/contractor/california/ohio",
+      "keywords": [
+        "General Contractor License",
+        "Contractor",
+        "California",
+        "Ohio",
+        "Universal License Recognition (Endorsement)",
+        "transfer license"
+      ]
+    },
+    {
+      "type": "transfer",
+      "title": "Contractor: California → Texas",
+      "description": "Universal License Recognition (Endorsement). Exam required. Est. 14-45 days.",
+      "url": "/transfer/contractor/california/texas",
+      "keywords": [
+        "General Contractor License",
+        "Contractor",
+        "California",
+        "Texas",
+        "Universal License Recognition (Endorsement)",
+        "transfer license"
+      ]
+    },
+    {
+      "type": "transfer",
+      "title": "Contractor: Florida → California",
+      "description": "Full New Application Required. Exam required. Est. 30-90 days.",
+      "url": "/transfer/contractor/florida/california",
+      "keywords": [
+        "General Contractor License",
+        "Contractor",
+        "Florida",
+        "California",
+        "Full New Application Required",
+        "transfer license"
+      ]
+    },
+    {
+      "type": "transfer",
+      "title": "Contractor: Florida → New York",
+      "description": "Full New Application Required. Exam required. Est. 30-90 days.",
+      "url": "/transfer/contractor/florida/new-york",
+      "keywords": [
+        "General Contractor License",
+        "Contractor",
+        "Florida",
+        "New York",
+        "Full New Application Required",
+        "transfer license"
+      ]
+    },
+    {
+      "type": "transfer",
+      "title": "Contractor: Florida → Ohio",
+      "description": "Universal License Recognition (Endorsement). Exam required. Est. 14-45 days.",
+      "url": "/transfer/contractor/florida/ohio",
+      "keywords": [
+        "General Contractor License",
+        "Contractor",
+        "Florida",
+        "Ohio",
+        "Universal License Recognition (Endorsement)",
+        "transfer license"
+      ]
+    },
+    {
+      "type": "transfer",
+      "title": "Contractor: Florida → Texas",
+      "description": "Universal License Recognition (Endorsement). Exam required. Est. 14-45 days.",
+      "url": "/transfer/contractor/florida/texas",
+      "keywords": [
+        "General Contractor License",
+        "Contractor",
+        "Florida",
+        "Texas",
+        "Universal License Recognition (Endorsement)",
+        "transfer license"
+      ]
+    },
+    {
+      "type": "transfer",
+      "title": "Contractor: New York → California",
+      "description": "Full New Application Required. Exam required. Est. 30-90 days.",
+      "url": "/transfer/contractor/new-york/california",
+      "keywords": [
+        "General Contractor License",
+        "Contractor",
+        "New York",
+        "California",
+        "Full New Application Required",
+        "transfer license"
+      ]
+    },
+    {
+      "type": "transfer",
+      "title": "Contractor: New York → Florida",
+      "description": "Universal License Recognition (Endorsement). No exam required. Est. 14-45 days.",
+      "url": "/transfer/contractor/new-york/florida",
+      "keywords": [
+        "General Contractor License",
+        "Contractor",
+        "New York",
+        "Florida",
+        "Universal License Recognition (Endorsement)",
+        "transfer license"
+      ]
+    },
+    {
+      "type": "transfer",
+      "title": "Contractor: New York → Ohio",
+      "description": "Universal License Recognition (Endorsement). Exam required. Est. 14-45 days.",
+      "url": "/transfer/contractor/new-york/ohio",
+      "keywords": [
+        "General Contractor License",
+        "Contractor",
+        "New York",
+        "Ohio",
+        "Universal License Recognition (Endorsement)",
+        "transfer license"
+      ]
+    },
+    {
+      "type": "transfer",
+      "title": "Contractor: New York → Texas",
+      "description": "Universal License Recognition (Endorsement). Exam required. Est. 14-45 days.",
+      "url": "/transfer/contractor/new-york/texas",
+      "keywords": [
+        "General Contractor License",
+        "Contractor",
+        "New York",
+        "Texas",
+        "Universal License Recognition (Endorsement)",
+        "transfer license"
+      ]
+    },
+    {
+      "type": "transfer",
+      "title": "Contractor: Ohio → California",
+      "description": "Full New Application Required. Exam required. Est. 30-90 days.",
+      "url": "/transfer/contractor/ohio/california",
+      "keywords": [
+        "General Contractor License",
+        "Contractor",
+        "Ohio",
+        "California",
+        "Full New Application Required",
+        "transfer license"
+      ]
+    },
+    {
+      "type": "transfer",
+      "title": "Contractor: Ohio → Florida",
+      "description": "Universal License Recognition (Endorsement). No exam required. Est. 14-45 days.",
+      "url": "/transfer/contractor/ohio/florida",
+      "keywords": [
+        "General Contractor License",
+        "Contractor",
+        "Ohio",
+        "Florida",
+        "Universal License Recognition (Endorsement)",
+        "transfer license"
+      ]
+    },
+    {
+      "type": "transfer",
+      "title": "Contractor: Ohio → New York",
+      "description": "Full New Application Required. Exam required. Est. 30-90 days.",
+      "url": "/transfer/contractor/ohio/new-york",
+      "keywords": [
+        "General Contractor License",
+        "Contractor",
+        "Ohio",
+        "New York",
+        "Full New Application Required",
+        "transfer license"
+      ]
+    },
+    {
+      "type": "transfer",
+      "title": "Contractor: Ohio → Texas",
+      "description": "Universal License Recognition (Endorsement). Exam required. Est. 14-45 days.",
+      "url": "/transfer/contractor/ohio/texas",
+      "keywords": [
+        "General Contractor License",
+        "Contractor",
+        "Ohio",
+        "Texas",
+        "Universal License Recognition (Endorsement)",
+        "transfer license"
+      ]
+    },
+    {
+      "type": "transfer",
+      "title": "Contractor: Texas → California",
+      "description": "Full New Application Required. Exam required. Est. 30-90 days.",
+      "url": "/transfer/contractor/texas/california",
+      "keywords": [
+        "General Contractor License",
+        "Contractor",
+        "Texas",
+        "California",
+        "Full New Application Required",
+        "transfer license"
+      ]
+    },
+    {
+      "type": "transfer",
+      "title": "Contractor: Texas → Florida",
+      "description": "Universal License Recognition (Endorsement). No exam required. Est. 14-45 days.",
+      "url": "/transfer/contractor/texas/florida",
+      "keywords": [
+        "General Contractor License",
+        "Contractor",
+        "Texas",
+        "Florida",
+        "Universal License Recognition (Endorsement)",
+        "transfer license"
+      ]
+    },
+    {
+      "type": "transfer",
+      "title": "Contractor: Texas → New York",
+      "description": "Full New Application Required. Exam required. Est. 30-90 days.",
+      "url": "/transfer/contractor/texas/new-york",
+      "keywords": [
+        "General Contractor License",
+        "Contractor",
+        "Texas",
+        "New York",
+        "Full New Application Required",
+        "transfer license"
+      ]
+    },
+    {
+      "type": "transfer",
+      "title": "Contractor: Texas → Ohio",
+      "description": "Universal License Recognition (Endorsement). Exam required. Est. 14-45 days.",
+      "url": "/transfer/contractor/texas/ohio",
+      "keywords": [
+        "General Contractor License",
+        "Contractor",
+        "Texas",
+        "Ohio",
+        "Universal License Recognition (Endorsement)",
+        "transfer license"
+      ]
+    },
+    {
+      "type": "transfer",
+      "title": "Electrician: California → Florida",
+      "description": "Universal License Recognition (Endorsement). No exam required. Est. 14-45 days.",
+      "url": "/transfer/electrician/california/florida",
+      "keywords": [
+        "Electrician License",
+        "Electrician",
+        "California",
+        "Florida",
+        "Universal License Recognition (Endorsement)",
+        "transfer license"
+      ]
+    },
+    {
+      "type": "transfer",
+      "title": "Electrician: California → New York",
+      "description": "Full New Application Required. Exam required. Est. 30-90 days.",
+      "url": "/transfer/electrician/california/new-york",
+      "keywords": [
+        "Electrician License",
+        "Electrician",
+        "California",
+        "New York",
+        "Full New Application Required",
+        "transfer license"
+      ]
+    },
+    {
+      "type": "transfer",
+      "title": "Electrician: California → Ohio",
+      "description": "Universal License Recognition (Endorsement). Exam required. Est. 14-45 days.",
+      "url": "/transfer/electrician/california/ohio",
+      "keywords": [
+        "Electrician License",
+        "Electrician",
+        "California",
+        "Ohio",
+        "Universal License Recognition (Endorsement)",
+        "transfer license"
+      ]
+    },
+    {
+      "type": "transfer",
+      "title": "Electrician: California → Texas",
+      "description": "Universal License Recognition (Endorsement). Exam required. Est. 14-45 days.",
+      "url": "/transfer/electrician/california/texas",
+      "keywords": [
+        "Electrician License",
+        "Electrician",
+        "California",
+        "Texas",
+        "Universal License Recognition (Endorsement)",
+        "transfer license"
+      ]
+    },
+    {
+      "type": "transfer",
+      "title": "Electrician: Florida → California",
+      "description": "Full New Application Required. Exam required. Est. 30-90 days.",
+      "url": "/transfer/electrician/florida/california",
+      "keywords": [
+        "Electrician License",
+        "Electrician",
+        "Florida",
+        "California",
+        "Full New Application Required",
+        "transfer license"
+      ]
+    },
+    {
+      "type": "transfer",
+      "title": "Electrician: Florida → New York",
+      "description": "Full New Application Required. Exam required. Est. 30-90 days.",
+      "url": "/transfer/electrician/florida/new-york",
+      "keywords": [
+        "Electrician License",
+        "Electrician",
+        "Florida",
+        "New York",
+        "Full New Application Required",
+        "transfer license"
+      ]
+    },
+    {
+      "type": "transfer",
+      "title": "Electrician: Florida → Ohio",
+      "description": "Universal License Recognition (Endorsement). Exam required. Est. 14-45 days.",
+      "url": "/transfer/electrician/florida/ohio",
+      "keywords": [
+        "Electrician License",
+        "Electrician",
+        "Florida",
+        "Ohio",
+        "Universal License Recognition (Endorsement)",
+        "transfer license"
+      ]
+    },
+    {
+      "type": "transfer",
+      "title": "Electrician: Florida → Texas",
+      "description": "Universal License Recognition (Endorsement). Exam required. Est. 14-45 days.",
+      "url": "/transfer/electrician/florida/texas",
+      "keywords": [
+        "Electrician License",
+        "Electrician",
+        "Florida",
+        "Texas",
+        "Universal License Recognition (Endorsement)",
+        "transfer license"
+      ]
+    },
+    {
+      "type": "transfer",
+      "title": "Electrician: New York → California",
+      "description": "Full New Application Required. Exam required. Est. 30-90 days.",
+      "url": "/transfer/electrician/new-york/california",
+      "keywords": [
+        "Electrician License",
+        "Electrician",
+        "New York",
+        "California",
+        "Full New Application Required",
+        "transfer license"
+      ]
+    },
+    {
+      "type": "transfer",
+      "title": "Electrician: New York → Florida",
+      "description": "Universal License Recognition (Endorsement). No exam required. Est. 14-45 days.",
+      "url": "/transfer/electrician/new-york/florida",
+      "keywords": [
+        "Electrician License",
+        "Electrician",
+        "New York",
+        "Florida",
+        "Universal License Recognition (Endorsement)",
+        "transfer license"
+      ]
+    },
+    {
+      "type": "transfer",
+      "title": "Electrician: New York → Ohio",
+      "description": "Universal License Recognition (Endorsement). Exam required. Est. 14-45 days.",
+      "url": "/transfer/electrician/new-york/ohio",
+      "keywords": [
+        "Electrician License",
+        "Electrician",
+        "New York",
+        "Ohio",
+        "Universal License Recognition (Endorsement)",
+        "transfer license"
+      ]
+    },
+    {
+      "type": "transfer",
+      "title": "Electrician: New York → Texas",
+      "description": "Universal License Recognition (Endorsement). Exam required. Est. 14-45 days.",
+      "url": "/transfer/electrician/new-york/texas",
+      "keywords": [
+        "Electrician License",
+        "Electrician",
+        "New York",
+        "Texas",
+        "Universal License Recognition (Endorsement)",
+        "transfer license"
+      ]
+    },
+    {
+      "type": "transfer",
+      "title": "Electrician: Ohio → California",
+      "description": "Full New Application Required. Exam required. Est. 30-90 days.",
+      "url": "/transfer/electrician/ohio/california",
+      "keywords": [
+        "Electrician License",
+        "Electrician",
+        "Ohio",
+        "California",
+        "Full New Application Required",
+        "transfer license"
+      ]
+    },
+    {
+      "type": "transfer",
+      "title": "Electrician: Ohio → Florida",
+      "description": "Universal License Recognition (Endorsement). No exam required. Est. 14-45 days.",
+      "url": "/transfer/electrician/ohio/florida",
+      "keywords": [
+        "Electrician License",
+        "Electrician",
+        "Ohio",
+        "Florida",
+        "Universal License Recognition (Endorsement)",
+        "transfer license"
+      ]
+    },
+    {
+      "type": "transfer",
+      "title": "Electrician: Ohio → New York",
+      "description": "Full New Application Required. Exam required. Est. 30-90 days.",
+      "url": "/transfer/electrician/ohio/new-york",
+      "keywords": [
+        "Electrician License",
+        "Electrician",
+        "Ohio",
+        "New York",
+        "Full New Application Required",
+        "transfer license"
+      ]
+    },
+    {
+      "type": "transfer",
+      "title": "Electrician: Ohio → Texas",
+      "description": "Universal License Recognition (Endorsement). Exam required. Est. 14-45 days.",
+      "url": "/transfer/electrician/ohio/texas",
+      "keywords": [
+        "Electrician License",
+        "Electrician",
+        "Ohio",
+        "Texas",
+        "Universal License Recognition (Endorsement)",
+        "transfer license"
+      ]
+    },
+    {
+      "type": "transfer",
+      "title": "Electrician: Texas → California",
+      "description": "Full New Application Required. Exam required. Est. 30-90 days.",
+      "url": "/transfer/electrician/texas/california",
+      "keywords": [
+        "Electrician License",
+        "Electrician",
+        "Texas",
+        "California",
+        "Full New Application Required",
+        "transfer license"
+      ]
+    },
+    {
+      "type": "transfer",
+      "title": "Electrician: Texas → Florida",
+      "description": "Universal License Recognition (Endorsement). No exam required. Est. 14-45 days.",
+      "url": "/transfer/electrician/texas/florida",
+      "keywords": [
+        "Electrician License",
+        "Electrician",
+        "Texas",
+        "Florida",
+        "Universal License Recognition (Endorsement)",
+        "transfer license"
+      ]
+    },
+    {
+      "type": "transfer",
+      "title": "Electrician: Texas → New York",
+      "description": "Full New Application Required. Exam required. Est. 30-90 days.",
+      "url": "/transfer/electrician/texas/new-york",
+      "keywords": [
+        "Electrician License",
+        "Electrician",
+        "Texas",
+        "New York",
+        "Full New Application Required",
+        "transfer license"
+      ]
+    },
+    {
+      "type": "transfer",
+      "title": "Electrician: Texas → Ohio",
+      "description": "Universal License Recognition (Endorsement). Exam required. Est. 14-45 days.",
+      "url": "/transfer/electrician/texas/ohio",
+      "keywords": [
+        "Electrician License",
+        "Electrician",
+        "Texas",
+        "Ohio",
+        "Universal License Recognition (Endorsement)",
+        "transfer license"
+      ]
+    },
+    {
+      "type": "transfer",
+      "title": "HVAC Technician: California → Florida",
+      "description": "Universal License Recognition (Endorsement). No exam required. Est. 14-45 days.",
+      "url": "/transfer/hvac-technician/california/florida",
+      "keywords": [
+        "HVAC Technician License",
+        "HVAC Technician",
+        "California",
+        "Florida",
+        "Universal License Recognition (Endorsement)",
+        "transfer license"
+      ]
+    },
+    {
+      "type": "transfer",
+      "title": "HVAC Technician: California → New York",
+      "description": "Full New Application Required. Exam required. Est. 30-90 days.",
+      "url": "/transfer/hvac-technician/california/new-york",
+      "keywords": [
+        "HVAC Technician License",
+        "HVAC Technician",
+        "California",
+        "New York",
+        "Full New Application Required",
+        "transfer license"
+      ]
+    },
+    {
+      "type": "transfer",
+      "title": "HVAC Technician: California → Ohio",
+      "description": "Universal License Recognition (Endorsement). Exam required. Est. 14-45 days.",
+      "url": "/transfer/hvac-technician/california/ohio",
+      "keywords": [
+        "HVAC Technician License",
+        "HVAC Technician",
+        "California",
+        "Ohio",
+        "Universal License Recognition (Endorsement)",
+        "transfer license"
+      ]
+    },
+    {
+      "type": "transfer",
+      "title": "HVAC Technician: California → Texas",
+      "description": "Universal License Recognition (Endorsement). Exam required. Est. 14-45 days.",
+      "url": "/transfer/hvac-technician/california/texas",
+      "keywords": [
+        "HVAC Technician License",
+        "HVAC Technician",
+        "California",
+        "Texas",
+        "Universal License Recognition (Endorsement)",
+        "transfer license"
+      ]
+    },
+    {
+      "type": "transfer",
+      "title": "HVAC Technician: Florida → California",
+      "description": "Full New Application Required. Exam required. Est. 30-90 days.",
+      "url": "/transfer/hvac-technician/florida/california",
+      "keywords": [
+        "HVAC Technician License",
+        "HVAC Technician",
+        "Florida",
+        "California",
+        "Full New Application Required",
+        "transfer license"
+      ]
+    },
+    {
+      "type": "transfer",
+      "title": "HVAC Technician: Florida → New York",
+      "description": "Full New Application Required. Exam required. Est. 30-90 days.",
+      "url": "/transfer/hvac-technician/florida/new-york",
+      "keywords": [
+        "HVAC Technician License",
+        "HVAC Technician",
+        "Florida",
+        "New York",
+        "Full New Application Required",
+        "transfer license"
+      ]
+    },
+    {
+      "type": "transfer",
+      "title": "HVAC Technician: Florida → Ohio",
+      "description": "Universal License Recognition (Endorsement). Exam required. Est. 14-45 days.",
+      "url": "/transfer/hvac-technician/florida/ohio",
+      "keywords": [
+        "HVAC Technician License",
+        "HVAC Technician",
+        "Florida",
+        "Ohio",
+        "Universal License Recognition (Endorsement)",
+        "transfer license"
+      ]
+    },
+    {
+      "type": "transfer",
+      "title": "HVAC Technician: Florida → Texas",
+      "description": "Universal License Recognition (Endorsement). Exam required. Est. 14-45 days.",
+      "url": "/transfer/hvac-technician/florida/texas",
+      "keywords": [
+        "HVAC Technician License",
+        "HVAC Technician",
+        "Florida",
+        "Texas",
+        "Universal License Recognition (Endorsement)",
+        "transfer license"
+      ]
+    },
+    {
+      "type": "transfer",
+      "title": "HVAC Technician: New York → California",
+      "description": "Full New Application Required. Exam required. Est. 30-90 days.",
+      "url": "/transfer/hvac-technician/new-york/california",
+      "keywords": [
+        "HVAC Technician License",
+        "HVAC Technician",
+        "New York",
+        "California",
+        "Full New Application Required",
+        "transfer license"
+      ]
+    },
+    {
+      "type": "transfer",
+      "title": "HVAC Technician: New York → Florida",
+      "description": "Universal License Recognition (Endorsement). No exam required. Est. 14-45 days.",
+      "url": "/transfer/hvac-technician/new-york/florida",
+      "keywords": [
+        "HVAC Technician License",
+        "HVAC Technician",
+        "New York",
+        "Florida",
+        "Universal License Recognition (Endorsement)",
+        "transfer license"
+      ]
+    },
+    {
+      "type": "transfer",
+      "title": "HVAC Technician: New York → Ohio",
+      "description": "Universal License Recognition (Endorsement). Exam required. Est. 14-45 days.",
+      "url": "/transfer/hvac-technician/new-york/ohio",
+      "keywords": [
+        "HVAC Technician License",
+        "HVAC Technician",
+        "New York",
+        "Ohio",
+        "Universal License Recognition (Endorsement)",
+        "transfer license"
+      ]
+    },
+    {
+      "type": "transfer",
+      "title": "HVAC Technician: New York → Texas",
+      "description": "Universal License Recognition (Endorsement). Exam required. Est. 14-45 days.",
+      "url": "/transfer/hvac-technician/new-york/texas",
+      "keywords": [
+        "HVAC Technician License",
+        "HVAC Technician",
+        "New York",
+        "Texas",
+        "Universal License Recognition (Endorsement)",
+        "transfer license"
+      ]
+    },
+    {
+      "type": "transfer",
+      "title": "HVAC Technician: Ohio → California",
+      "description": "Full New Application Required. Exam required. Est. 30-90 days.",
+      "url": "/transfer/hvac-technician/ohio/california",
+      "keywords": [
+        "HVAC Technician License",
+        "HVAC Technician",
+        "Ohio",
+        "California",
+        "Full New Application Required",
+        "transfer license"
+      ]
+    },
+    {
+      "type": "transfer",
+      "title": "HVAC Technician: Ohio → Florida",
+      "description": "Universal License Recognition (Endorsement). No exam required. Est. 14-45 days.",
+      "url": "/transfer/hvac-technician/ohio/florida",
+      "keywords": [
+        "HVAC Technician License",
+        "HVAC Technician",
+        "Ohio",
+        "Florida",
+        "Universal License Recognition (Endorsement)",
+        "transfer license"
+      ]
+    },
+    {
+      "type": "transfer",
+      "title": "HVAC Technician: Ohio → New York",
+      "description": "Full New Application Required. Exam required. Est. 30-90 days.",
+      "url": "/transfer/hvac-technician/ohio/new-york",
+      "keywords": [
+        "HVAC Technician License",
+        "HVAC Technician",
+        "Ohio",
+        "New York",
+        "Full New Application Required",
+        "transfer license"
+      ]
+    },
+    {
+      "type": "transfer",
+      "title": "HVAC Technician: Ohio → Texas",
+      "description": "Universal License Recognition (Endorsement). Exam required. Est. 14-45 days.",
+      "url": "/transfer/hvac-technician/ohio/texas",
+      "keywords": [
+        "HVAC Technician License",
+        "HVAC Technician",
+        "Ohio",
+        "Texas",
+        "Universal License Recognition (Endorsement)",
+        "transfer license"
+      ]
+    },
+    {
+      "type": "transfer",
+      "title": "HVAC Technician: Texas → California",
+      "description": "Full New Application Required. Exam required. Est. 30-90 days.",
+      "url": "/transfer/hvac-technician/texas/california",
+      "keywords": [
+        "HVAC Technician License",
+        "HVAC Technician",
+        "Texas",
+        "California",
+        "Full New Application Required",
+        "transfer license"
+      ]
+    },
+    {
+      "type": "transfer",
+      "title": "HVAC Technician: Texas → Florida",
+      "description": "Universal License Recognition (Endorsement). No exam required. Est. 14-45 days.",
+      "url": "/transfer/hvac-technician/texas/florida",
+      "keywords": [
+        "HVAC Technician License",
+        "HVAC Technician",
+        "Texas",
+        "Florida",
+        "Universal License Recognition (Endorsement)",
+        "transfer license"
+      ]
+    },
+    {
+      "type": "transfer",
+      "title": "HVAC Technician: Texas → New York",
+      "description": "Full New Application Required. Exam required. Est. 30-90 days.",
+      "url": "/transfer/hvac-technician/texas/new-york",
+      "keywords": [
+        "HVAC Technician License",
+        "HVAC Technician",
+        "Texas",
+        "New York",
+        "Full New Application Required",
+        "transfer license"
+      ]
+    },
+    {
+      "type": "transfer",
+      "title": "HVAC Technician: Texas → Ohio",
+      "description": "Universal License Recognition (Endorsement). Exam required. Est. 14-45 days.",
+      "url": "/transfer/hvac-technician/texas/ohio",
+      "keywords": [
+        "HVAC Technician License",
+        "HVAC Technician",
+        "Texas",
+        "Ohio",
+        "Universal License Recognition (Endorsement)",
+        "transfer license"
+      ]
+    },
+    {
+      "type": "transfer",
+      "title": "Nurse: California → Florida",
+      "description": "Licensure by Endorsement. No exam required. Est. 14-45 days.",
+      "url": "/transfer/nurse/california/florida",
+      "keywords": [
+        "Registered Nurse (RN) License",
+        "Nurse",
+        "California",
+        "Florida",
+        "Licensure by Endorsement",
+        "transfer license"
+      ]
+    },
+    {
+      "type": "transfer",
+      "title": "Nurse: California → New York",
+      "description": "Licensure by Endorsement. No exam required. Est. 14-45 days.",
+      "url": "/transfer/nurse/california/new-york",
+      "keywords": [
+        "Registered Nurse (RN) License",
+        "Nurse",
+        "California",
+        "New York",
+        "Licensure by Endorsement",
+        "transfer license"
+      ]
+    },
+    {
+      "type": "transfer",
+      "title": "Nurse: California → Ohio",
+      "description": "Licensure by Endorsement. No exam required. Est. 14-45 days.",
+      "url": "/transfer/nurse/california/ohio",
+      "keywords": [
+        "Registered Nurse (RN) License",
+        "Nurse",
+        "California",
+        "Ohio",
+        "Licensure by Endorsement",
+        "transfer license"
+      ]
+    },
+    {
+      "type": "transfer",
+      "title": "Nurse: California → Texas",
+      "description": "Licensure by Endorsement. No exam required. Est. 14-45 days.",
+      "url": "/transfer/nurse/california/texas",
+      "keywords": [
+        "Registered Nurse (RN) License",
+        "Nurse",
+        "California",
+        "Texas",
+        "Licensure by Endorsement",
+        "transfer license"
+      ]
+    },
+    {
+      "type": "transfer",
+      "title": "Nurse: Florida → California",
+      "description": "Licensure by Endorsement. No exam required. Est. 14-45 days.",
+      "url": "/transfer/nurse/florida/california",
+      "keywords": [
+        "Registered Nurse (RN) License",
+        "Nurse",
+        "Florida",
+        "California",
+        "Licensure by Endorsement",
+        "transfer license"
+      ]
+    },
+    {
+      "type": "transfer",
+      "title": "Nurse: Florida → New York",
+      "description": "Licensure by Endorsement. No exam required. Est. 14-45 days.",
+      "url": "/transfer/nurse/florida/new-york",
+      "keywords": [
+        "Registered Nurse (RN) License",
+        "Nurse",
+        "Florida",
+        "New York",
+        "Licensure by Endorsement",
+        "transfer license"
+      ]
+    },
+    {
+      "type": "transfer",
+      "title": "Nurse: Florida → Ohio",
+      "description": "Nurse Licensure Compact (multistate privilege). No exam required. Est. 5-15 days.",
+      "url": "/transfer/nurse/florida/ohio",
+      "keywords": [
+        "Registered Nurse (RN) License",
+        "Nurse",
+        "Florida",
+        "Ohio",
+        "Nurse Licensure Compact (multistate privilege)",
+        "transfer license"
+      ]
+    },
+    {
+      "type": "transfer",
+      "title": "Nurse: Florida → Texas",
+      "description": "Nurse Licensure Compact (multistate privilege). No exam required. Est. 5-15 days.",
+      "url": "/transfer/nurse/florida/texas",
+      "keywords": [
+        "Registered Nurse (RN) License",
+        "Nurse",
+        "Florida",
+        "Texas",
+        "Nurse Licensure Compact (multistate privilege)",
+        "transfer license"
+      ]
+    },
+    {
+      "type": "transfer",
+      "title": "Nurse: New York → California",
+      "description": "Licensure by Endorsement. No exam required. Est. 14-45 days.",
+      "url": "/transfer/nurse/new-york/california",
+      "keywords": [
+        "Registered Nurse (RN) License",
+        "Nurse",
+        "New York",
+        "California",
+        "Licensure by Endorsement",
+        "transfer license"
+      ]
+    },
+    {
+      "type": "transfer",
+      "title": "Nurse: New York → Florida",
+      "description": "Licensure by Endorsement. No exam required. Est. 14-45 days.",
+      "url": "/transfer/nurse/new-york/florida",
+      "keywords": [
+        "Registered Nurse (RN) License",
+        "Nurse",
+        "New York",
+        "Florida",
+        "Licensure by Endorsement",
+        "transfer license"
+      ]
+    },
+    {
+      "type": "transfer",
+      "title": "Nurse: New York → Ohio",
+      "description": "Licensure by Endorsement. No exam required. Est. 14-45 days.",
+      "url": "/transfer/nurse/new-york/ohio",
+      "keywords": [
+        "Registered Nurse (RN) License",
+        "Nurse",
+        "New York",
+        "Ohio",
+        "Licensure by Endorsement",
+        "transfer license"
+      ]
+    },
+    {
+      "type": "transfer",
+      "title": "Nurse: New York → Texas",
+      "description": "Licensure by Endorsement. No exam required. Est. 14-45 days.",
+      "url": "/transfer/nurse/new-york/texas",
+      "keywords": [
+        "Registered Nurse (RN) License",
+        "Nurse",
+        "New York",
+        "Texas",
+        "Licensure by Endorsement",
+        "transfer license"
+      ]
+    },
+    {
+      "type": "transfer",
+      "title": "Nurse: Ohio → California",
+      "description": "Licensure by Endorsement. No exam required. Est. 14-45 days.",
+      "url": "/transfer/nurse/ohio/california",
+      "keywords": [
+        "Registered Nurse (RN) License",
+        "Nurse",
+        "Ohio",
+        "California",
+        "Licensure by Endorsement",
+        "transfer license"
+      ]
+    },
+    {
+      "type": "transfer",
+      "title": "Nurse: Ohio → Florida",
+      "description": "Nurse Licensure Compact (multistate privilege). No exam required. Est. 5-15 days.",
+      "url": "/transfer/nurse/ohio/florida",
+      "keywords": [
+        "Registered Nurse (RN) License",
+        "Nurse",
+        "Ohio",
+        "Florida",
+        "Nurse Licensure Compact (multistate privilege)",
+        "transfer license"
+      ]
+    },
+    {
+      "type": "transfer",
+      "title": "Nurse: Ohio → New York",
+      "description": "Licensure by Endorsement. No exam required. Est. 14-45 days.",
+      "url": "/transfer/nurse/ohio/new-york",
+      "keywords": [
+        "Registered Nurse (RN) License",
+        "Nurse",
+        "Ohio",
+        "New York",
+        "Licensure by Endorsement",
+        "transfer license"
+      ]
+    },
+    {
+      "type": "transfer",
+      "title": "Nurse: Ohio → Texas",
+      "description": "Nurse Licensure Compact (multistate privilege). No exam required. Est. 5-15 days.",
+      "url": "/transfer/nurse/ohio/texas",
+      "keywords": [
+        "Registered Nurse (RN) License",
+        "Nurse",
+        "Ohio",
+        "Texas",
+        "Nurse Licensure Compact (multistate privilege)",
+        "transfer license"
+      ]
+    },
+    {
+      "type": "transfer",
+      "title": "Nurse: Texas → California",
+      "description": "Licensure by Endorsement. No exam required. Est. 14-45 days.",
+      "url": "/transfer/nurse/texas/california",
+      "keywords": [
+        "Registered Nurse (RN) License",
+        "Nurse",
+        "Texas",
+        "California",
+        "Licensure by Endorsement",
+        "transfer license"
+      ]
+    },
+    {
+      "type": "transfer",
+      "title": "Nurse: Texas → Florida",
+      "description": "Nurse Licensure Compact (multistate privilege). No exam required. Est. 5-15 days.",
+      "url": "/transfer/nurse/texas/florida",
+      "keywords": [
+        "Registered Nurse (RN) License",
+        "Nurse",
+        "Texas",
+        "Florida",
+        "Nurse Licensure Compact (multistate privilege)",
+        "transfer license"
+      ]
+    },
+    {
+      "type": "transfer",
+      "title": "Nurse: Texas → New York",
+      "description": "Licensure by Endorsement. No exam required. Est. 14-45 days.",
+      "url": "/transfer/nurse/texas/new-york",
+      "keywords": [
+        "Registered Nurse (RN) License",
+        "Nurse",
+        "Texas",
+        "New York",
+        "Licensure by Endorsement",
+        "transfer license"
+      ]
+    },
+    {
+      "type": "transfer",
+      "title": "Nurse: Texas → Ohio",
+      "description": "Nurse Licensure Compact (multistate privilege). No exam required. Est. 5-15 days.",
+      "url": "/transfer/nurse/texas/ohio",
+      "keywords": [
+        "Registered Nurse (RN) License",
+        "Nurse",
+        "Texas",
+        "Ohio",
+        "Nurse Licensure Compact (multistate privilege)",
+        "transfer license"
+      ]
+    },
+    {
+      "type": "transfer",
+      "title": "Plumber: California → Florida",
+      "description": "Universal License Recognition (Endorsement). Exam required. Est. 14-45 days.",
+      "url": "/transfer/plumber/california/florida",
+      "keywords": [
+        "Plumber License",
+        "Plumber",
+        "California",
+        "Florida",
+        "Universal License Recognition (Endorsement)",
+        "transfer license"
+      ]
+    },
+    {
+      "type": "transfer",
+      "title": "Plumber: California → New York",
+      "description": "Full New Application Required. Exam required. Est. 30-90 days.",
+      "url": "/transfer/plumber/california/new-york",
+      "keywords": [
+        "Plumber License",
+        "Plumber",
+        "California",
+        "New York",
+        "Full New Application Required",
+        "transfer license"
+      ]
+    },
+    {
+      "type": "transfer",
+      "title": "Plumber: California → Ohio",
+      "description": "Universal License Recognition (Endorsement). Exam required. Est. 14-45 days.",
+      "url": "/transfer/plumber/california/ohio",
+      "keywords": [
+        "Plumber License",
+        "Plumber",
+        "California",
+        "Ohio",
+        "Universal License Recognition (Endorsement)",
+        "transfer license"
+      ]
+    },
+    {
+      "type": "transfer",
+      "title": "Plumber: California → Texas",
+      "description": "Universal License Recognition (Endorsement). Exam required. Est. 14-45 days.",
+      "url": "/transfer/plumber/california/texas",
+      "keywords": [
+        "Plumber License",
+        "Plumber",
+        "California",
+        "Texas",
+        "Universal License Recognition (Endorsement)",
+        "transfer license"
+      ]
+    },
+    {
+      "type": "transfer",
+      "title": "Plumber: Florida → California",
+      "description": "Full New Application Required. Exam required. Est. 30-90 days.",
+      "url": "/transfer/plumber/florida/california",
+      "keywords": [
+        "Plumber License",
+        "Plumber",
+        "Florida",
+        "California",
+        "Full New Application Required",
+        "transfer license"
+      ]
+    },
+    {
+      "type": "transfer",
+      "title": "Plumber: Florida → New York",
+      "description": "Full New Application Required. Exam required. Est. 30-90 days.",
+      "url": "/transfer/plumber/florida/new-york",
+      "keywords": [
+        "Plumber License",
+        "Plumber",
+        "Florida",
+        "New York",
+        "Full New Application Required",
+        "transfer license"
+      ]
+    },
+    {
+      "type": "transfer",
+      "title": "Plumber: Florida → Ohio",
+      "description": "Universal License Recognition (Endorsement). Exam required. Est. 14-45 days.",
+      "url": "/transfer/plumber/florida/ohio",
+      "keywords": [
+        "Plumber License",
+        "Plumber",
+        "Florida",
+        "Ohio",
+        "Universal License Recognition (Endorsement)",
+        "transfer license"
+      ]
+    },
+    {
+      "type": "transfer",
+      "title": "Plumber: Florida → Texas",
+      "description": "Universal License Recognition (Endorsement). Exam required. Est. 14-45 days.",
+      "url": "/transfer/plumber/florida/texas",
+      "keywords": [
+        "Plumber License",
+        "Plumber",
+        "Florida",
+        "Texas",
+        "Universal License Recognition (Endorsement)",
+        "transfer license"
+      ]
+    },
+    {
+      "type": "transfer",
+      "title": "Plumber: New York → California",
+      "description": "Full New Application Required. Exam required. Est. 30-90 days.",
+      "url": "/transfer/plumber/new-york/california",
+      "keywords": [
+        "Plumber License",
+        "Plumber",
+        "New York",
+        "California",
+        "Full New Application Required",
+        "transfer license"
+      ]
+    },
+    {
+      "type": "transfer",
+      "title": "Plumber: New York → Florida",
+      "description": "Universal License Recognition (Endorsement). Exam required. Est. 14-45 days.",
+      "url": "/transfer/plumber/new-york/florida",
+      "keywords": [
+        "Plumber License",
+        "Plumber",
+        "New York",
+        "Florida",
+        "Universal License Recognition (Endorsement)",
+        "transfer license"
+      ]
+    },
+    {
+      "type": "transfer",
+      "title": "Plumber: New York → Ohio",
+      "description": "Universal License Recognition (Endorsement). Exam required. Est. 14-45 days.",
+      "url": "/transfer/plumber/new-york/ohio",
+      "keywords": [
+        "Plumber License",
+        "Plumber",
+        "New York",
+        "Ohio",
+        "Universal License Recognition (Endorsement)",
+        "transfer license"
+      ]
+    },
+    {
+      "type": "transfer",
+      "title": "Plumber: New York → Texas",
+      "description": "Universal License Recognition (Endorsement). Exam required. Est. 14-45 days.",
+      "url": "/transfer/plumber/new-york/texas",
+      "keywords": [
+        "Plumber License",
+        "Plumber",
+        "New York",
+        "Texas",
+        "Universal License Recognition (Endorsement)",
+        "transfer license"
+      ]
+    },
+    {
+      "type": "transfer",
+      "title": "Plumber: Ohio → California",
+      "description": "Full New Application Required. Exam required. Est. 30-90 days.",
+      "url": "/transfer/plumber/ohio/california",
+      "keywords": [
+        "Plumber License",
+        "Plumber",
+        "Ohio",
+        "California",
+        "Full New Application Required",
+        "transfer license"
+      ]
+    },
+    {
+      "type": "transfer",
+      "title": "Plumber: Ohio → Florida",
+      "description": "Universal License Recognition (Endorsement). Exam required. Est. 14-45 days.",
+      "url": "/transfer/plumber/ohio/florida",
+      "keywords": [
+        "Plumber License",
+        "Plumber",
+        "Ohio",
+        "Florida",
+        "Universal License Recognition (Endorsement)",
+        "transfer license"
+      ]
+    },
+    {
+      "type": "transfer",
+      "title": "Plumber: Ohio → New York",
+      "description": "Full New Application Required. Exam required. Est. 30-90 days.",
+      "url": "/transfer/plumber/ohio/new-york",
+      "keywords": [
+        "Plumber License",
+        "Plumber",
+        "Ohio",
+        "New York",
+        "Full New Application Required",
+        "transfer license"
+      ]
+    },
+    {
+      "type": "transfer",
+      "title": "Plumber: Ohio → Texas",
+      "description": "Universal License Recognition (Endorsement). Exam required. Est. 14-45 days.",
+      "url": "/transfer/plumber/ohio/texas",
+      "keywords": [
+        "Plumber License",
+        "Plumber",
+        "Ohio",
+        "Texas",
+        "Universal License Recognition (Endorsement)",
+        "transfer license"
+      ]
+    },
+    {
+      "type": "transfer",
+      "title": "Plumber: Texas → California",
+      "description": "Full New Application Required. Exam required. Est. 30-90 days.",
+      "url": "/transfer/plumber/texas/california",
+      "keywords": [
+        "Plumber License",
+        "Plumber",
+        "Texas",
+        "California",
+        "Full New Application Required",
+        "transfer license"
+      ]
+    },
+    {
+      "type": "transfer",
+      "title": "Plumber: Texas → Florida",
+      "description": "Universal License Recognition (Endorsement). Exam required. Est. 14-45 days.",
+      "url": "/transfer/plumber/texas/florida",
+      "keywords": [
+        "Plumber License",
+        "Plumber",
+        "Texas",
+        "Florida",
+        "Universal License Recognition (Endorsement)",
+        "transfer license"
+      ]
+    },
+    {
+      "type": "transfer",
+      "title": "Plumber: Texas → New York",
+      "description": "Full New Application Required. Exam required. Est. 30-90 days.",
+      "url": "/transfer/plumber/texas/new-york",
+      "keywords": [
+        "Plumber License",
+        "Plumber",
+        "Texas",
+        "New York",
+        "Full New Application Required",
+        "transfer license"
+      ]
+    },
+    {
+      "type": "transfer",
+      "title": "Plumber: Texas → Ohio",
+      "description": "Universal License Recognition (Endorsement). Exam required. Est. 14-45 days.",
+      "url": "/transfer/plumber/texas/ohio",
+      "keywords": [
+        "Plumber License",
+        "Plumber",
+        "Texas",
+        "Ohio",
+        "Universal License Recognition (Endorsement)",
+        "transfer license"
+      ]
+    },
+    {
+      "type": "guide",
+      "title": "Reciprocity vs. Endorsement vs. Comity: What's the Real Difference?",
+      "description": "The three pathways regulators use to recognize an out-of-state license are not interchangeable. Here's what actually differs and why it matters for your application.",
+      "url": "/guides/reciprocity-vs-endorsement-vs-comity",
+      "keywords": [
+        "Reciprocity vs. Endorsement vs. Comity: What's the Real Difference?",
+        "Fundamentals",
+        "guide"
+      ]
+    },
+    {
+      "type": "guide",
+      "title": "Universal License Recognition (ULR) Laws, Explained",
+      "description": "Since 2019, over half of US states have passed some version of a Universal License Recognition law. Here's what it does — and does not — guarantee you.",
+      "url": "/guides/universal-license-recognition-explained",
+      "keywords": [
+        "Universal License Recognition (ULR) Laws, Explained",
+        "Policy",
+        "guide"
+      ]
+    },
+    {
+      "type": "guide",
+      "title": "How to Request License Verification From Your Home State",
+      "description": "Nearly every interstate license transfer starts with a verification request. A step-by-step walkthrough of how to request one without delays.",
+      "url": "/guides/how-to-request-license-verification",
+      "keywords": [
+        "How to Request License Verification From Your Home State",
+        "How-To",
+        "guide"
+      ]
+    },
+    {
+      "type": "blog",
+      "title": "2026 Mid-Year Update: Which States Added Universal License Recognition Laws",
+      "description": "A running log of every state that has enacted, expanded, or proposed Universal License Recognition legislation so far in 2026.",
+      "url": "/blog/2026-ulr-state-tracker-update",
+      "keywords": [
+        "2026 Mid-Year Update: Which States Added Universal License Recognition Laws",
+        "Policy Update",
+        "update"
+      ]
+    },
+    {
+      "type": "blog",
+      "title": "What Changed in the Nurse Licensure Compact in 2026",
+      "description": "New member states, implementation delays, and what they mean for traveling and relocating nurses.",
+      "url": "/blog/nurse-licensure-compact-2026-changes",
+      "keywords": [
+        "What Changed in the Nurse Licensure Compact in 2026",
+        "Healthcare",
+        "update"
+      ]
+    }
+  ]
+}

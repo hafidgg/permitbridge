@@ -1,0 +1,396 @@
+{
+  "profession": "registered-nurse",
+  "sourceState": "california",
+  "destinationState": "new-york",
+  "licenseType": "RN",
+  "transferMechanism": {
+    "value": "endorsement",
+    "sourceUrl": "https://www.op.nysed.gov/professions/registered-professional-nursing/endorsement-nursing-licenses",
+    "sourceTitle": "Endorsement of Nursing Licenses - RPN",
+    "sourceName": "New York State Education Department, Office of the Professions",
+    "verifiedAt": "2026-08-10",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.95,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": "endorsement",
+        "changedAt": "2026-08-10",
+        "reason": "Phase 3.1: first population from real official-source research.",
+        "sourceUrl": "https://www.op.nysed.gov/professions/registered-professional-nursing/endorsement-nursing-licenses",
+        "reviewer": null
+      }
+    ],
+    "notes": "Neither state is an NLC member. NYSED's own page: nurse licensed in another state submits Form 1 + $143 fee for licensure by endorsement."
+  },
+  "endorsementProcess": {
+    "value": "Submit Form 1 (Application for Licensure, $143 fee) via the NY.gov portal; Form 2 (Certification of Professional Education) sent directly from the nursing school; Form 3 or Nursys verification of the CA license.",
+    "sourceUrl": "https://www.op.nysed.gov/professions/registered-professional-nursing/endorsement-nursing-licenses",
+    "sourceTitle": "Endorsement of Nursing Licenses - RPN",
+    "sourceName": "New York State Education Department, Office of the Professions",
+    "verifiedAt": "2026-08-10",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.92,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": "Submit Form 1 (Application for Licensure, $143 fee) via the NY.gov portal; Form 2 (Certification of Professional Education) sent directly from the nursing school; Form 3 or Nursys verification of the CA license.",
+        "changedAt": "2026-08-10",
+        "reason": "Phase 3.1: first population from real official-source research.",
+        "sourceUrl": "https://www.op.nysed.gov/professions/registered-professional-nursing/endorsement-nursing-licenses",
+        "reviewer": null
+      }
+    ],
+    "notes": null
+  },
+  "reciprocityAgreementExists": {
+    "value": {
+      "status": "not_applicable"
+    },
+    "sourceUrl": "https://www.op.nysed.gov/professions/registered-professional-nursing/endorsement-nursing-licenses",
+    "sourceTitle": "Endorsement of Nursing Licenses - RPN",
+    "sourceName": "New York State Education Department, Office of the Professions",
+    "verifiedAt": "2026-08-10",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.85,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": {
+          "status": "not_applicable"
+        },
+        "changedAt": "2026-08-10",
+        "reason": "Phase 3.1: first population from real official-source research.",
+        "sourceUrl": "https://www.op.nysed.gov/professions/registered-professional-nursing/endorsement-nursing-licenses",
+        "reviewer": null
+      }
+    ],
+    "notes": null
+  },
+  "universalRecognitionApplies": {
+    "value": {
+      "status": "not_applicable"
+    },
+    "sourceUrl": "https://www.op.nysed.gov/professions/registered-professional-nursing/endorsement-nursing-licenses",
+    "sourceTitle": "Endorsement of Nursing Licenses - RPN",
+    "sourceName": "New York State Education Department, Office of the Professions",
+    "verifiedAt": "2026-08-10",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.75,
+    "confidenceLevel": "likely",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": {
+          "status": "not_applicable"
+        },
+        "changedAt": "2026-08-10",
+        "reason": "Phase 3.1: first population from real official-source research.",
+        "sourceUrl": "https://www.op.nysed.gov/professions/registered-professional-nursing/endorsement-nursing-licenses",
+        "reviewer": null
+      }
+    ],
+    "notes": null
+  },
+  "examRequirement": {
+    "value": {
+      "status": "not_required"
+    },
+    "sourceUrl": "https://www.op.nysed.gov/professions/registered-professional-nursing/license-requirements",
+    "sourceTitle": "NYS Nursing: RN License Requirements",
+    "sourceName": "New York State Education Department, Office of the Professions",
+    "verifiedAt": "2026-08-10",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.85,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": {
+          "status": "not_required"
+        },
+        "changedAt": "2026-08-10",
+        "reason": "Phase 3.1: first population from real official-source research.",
+        "sourceUrl": "https://www.op.nysed.gov/professions/registered-professional-nursing/license-requirements",
+        "reviewer": null
+      }
+    ],
+    "notes": "Endorsement applicant must have already passed NCLEX-RN/SBTPE; not retaken."
+  },
+  "experienceRequirement": {
+    "value": "Unknown",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "sourceName": null,
+    "verifiedAt": null,
+    "verificationMethod": null,
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0,
+    "confidenceLevel": "unknown",
+    "history": [],
+    "notes": "No specific minimum-recent-practice-hours requirement for NY RN endorsement was found in official NYSED sources reviewed this session."
+  },
+  "applicationFeeUsd": {
+    "value": 143,
+    "sourceUrl": "https://www.op.nysed.gov/professions/registered-professional-nursing/endorsement-nursing-licenses",
+    "sourceTitle": "Endorsement of Nursing Licenses - RPN",
+    "sourceName": "New York State Education Department, Office of the Professions",
+    "verifiedAt": "2026-08-10",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.93,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": 143,
+        "changedAt": "2026-08-10",
+        "reason": "Phase 3.1: first population from real official-source research.",
+        "sourceUrl": "https://www.op.nysed.gov/professions/registered-professional-nursing/endorsement-nursing-licenses",
+        "reviewer": null
+      }
+    ],
+    "notes": "Reuses the exact figure/source already verified and conflict-resolved in Phase 2.5/2.6 for this field on New York's own ProfessionStateFacts record."
+  },
+  "otherRequiredFees": {
+    "value": "Unknown",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "sourceName": null,
+    "verifiedAt": null,
+    "verificationMethod": null,
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0,
+    "confidenceLevel": "unknown",
+    "history": [],
+    "notes": "No additional fees confirmed via official NYSED sources beyond the $143 Form 1 fee."
+  },
+  "backgroundCheckRequirement": {
+    "value": "Unknown",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "sourceName": null,
+    "verifiedAt": null,
+    "verificationMethod": null,
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0,
+    "confidenceLevel": "unknown",
+    "history": [],
+    "notes": "GENUINE UNRESOLVED SIGNAL, not a confirmed fact: multiple independent secondary sources (not cited as evidence here) claim New York does not require fingerprinting/background checks for RN endorsement, relying instead on self-disclosure -- but no directly-quoted official NYSED statement confirming this was found in this session. Per Phase 3.1 Step 2's strict sourcing rule, this stays honestly Unknown rather than asserted from secondary sources alone."
+  },
+  "fingerprintingRequirement": {
+    "value": "Unknown",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "sourceName": null,
+    "verifiedAt": null,
+    "verificationMethod": null,
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0,
+    "confidenceLevel": "unknown",
+    "history": [],
+    "notes": "Same as backgroundCheckRequirement above -- genuine signal from secondary sources, no direct official confirmation found this session, left honestly Unknown."
+  },
+  "licenseVerificationRequirement": {
+    "value": {
+      "status": "required"
+    },
+    "sourceUrl": "https://www.op.nysed.gov/professions/registered-professional-nursing/endorsement-nursing-licenses",
+    "sourceTitle": "Endorsement of Nursing Licenses - RPN",
+    "sourceName": "New York State Education Department, Office of the Professions",
+    "verifiedAt": "2026-08-10",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.9,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": {
+          "status": "required"
+        },
+        "changedAt": "2026-08-10",
+        "reason": "Phase 3.1: first population from real official-source research.",
+        "sourceUrl": "https://www.op.nysed.gov/professions/registered-professional-nursing/endorsement-nursing-licenses",
+        "reviewer": null
+      }
+    ],
+    "notes": "Nursys verification (if CA participated) or Form 3 for the original CA license."
+  },
+  "documentsRequired": {
+    "value": "Form 1, Form 2 (from nursing school directly), Form 3 or Nursys verification.",
+    "sourceUrl": "https://www.op.nysed.gov/professions/registered-professional-nursing/endorsement-nursing-licenses",
+    "sourceTitle": "Endorsement of Nursing Licenses - RPN",
+    "sourceName": "New York State Education Department, Office of the Professions",
+    "verifiedAt": "2026-08-10",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.85,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": "Form 1, Form 2 (from nursing school directly), Form 3 or Nursys verification.",
+        "changedAt": "2026-08-10",
+        "reason": "Phase 3.1: first population from real official-source research.",
+        "sourceUrl": "https://www.op.nysed.gov/professions/registered-professional-nursing/endorsement-nursing-licenses",
+        "reviewer": null
+      }
+    ],
+    "notes": null
+  },
+  "goodStandingRequirement": {
+    "value": {
+      "status": "required"
+    },
+    "sourceUrl": "https://www.op.nysed.gov/professions/registered-professional-nursing/license-requirements",
+    "sourceTitle": "NYS Nursing: RN License Requirements",
+    "sourceName": "New York State Education Department, Office of the Professions",
+    "verifiedAt": "2026-08-10",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.8,
+    "confidenceLevel": "likely",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": {
+          "status": "required"
+        },
+        "changedAt": "2026-08-10",
+        "reason": "Phase 3.1: first population from real official-source research.",
+        "sourceUrl": "https://www.op.nysed.gov/professions/registered-professional-nursing/license-requirements",
+        "reviewer": null
+      }
+    ],
+    "notes": "'Good moral character' explicitly required per NYSED's own requirements page."
+  },
+  "disciplinaryDisclosureRequirement": {
+    "value": {
+      "status": "required"
+    },
+    "sourceUrl": "https://www.op.nysed.gov/professions/registered-professional-nursing/license-requirements",
+    "sourceTitle": "NYS Nursing: RN License Requirements",
+    "sourceName": "New York State Education Department, Office of the Professions",
+    "verifiedAt": "2026-08-10",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.75,
+    "confidenceLevel": "likely",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": {
+          "status": "required"
+        },
+        "changedAt": "2026-08-10",
+        "reason": "Phase 3.1: first population from real official-source research.",
+        "sourceUrl": "https://www.op.nysed.gov/professions/registered-professional-nursing/license-requirements",
+        "reviewer": null
+      }
+    ],
+    "notes": null
+  },
+  "processingTime": {
+    "value": "Unknown",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "sourceName": null,
+    "verifiedAt": null,
+    "verificationMethod": null,
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0,
+    "confidenceLevel": "unknown",
+    "history": [],
+    "notes": "Multiple secondary sources suggested 6-8 weeks, but no official NYSED-published range was directly confirmed this session -- left honestly Unknown rather than citing a commercial estimate as authoritative."
+  },
+  "temporaryPermitAvailability": {
+    "value": {
+      "status": "not_applicable"
+    },
+    "sourceUrl": "https://www.trustedhealth.com/nurse-licensure-guide/new-york",
+    "sourceTitle": "New York Nursing License & Board of Nursing Guide",
+    "sourceName": "TrustedHealth (secondary source, used for discovery only)",
+    "verifiedAt": "2026-08-10",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.5,
+    "confidenceLevel": "uncertain",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": {
+          "status": "not_applicable"
+        },
+        "changedAt": "2026-08-10",
+        "reason": "Phase 3.1: first population from real official-source research.",
+        "sourceUrl": "https://www.trustedhealth.com/nurse-licensure-guide/new-york",
+        "reviewer": null
+      }
+    ],
+    "notes": "Secondary source states limited permits are 'generally only granted to RNs obtaining licensure by EXAMINATION,' not endorsement -- used for discovery only per Step 2; deliberately low confidence, needs direct NYSED confirmation before Verified status could ever apply."
+  },
+  "compactStatus": {
+    "value": "Not applicable -- neither state participates in the NLC.",
+    "sourceUrl": "https://www.op.nysed.gov/professions/registered-professional-nursing/license-requirements",
+    "sourceTitle": "NYS Nursing: RN License Requirements",
+    "sourceName": "New York State Education Department, Office of the Professions",
+    "verifiedAt": "2026-08-10",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.9,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": "Not applicable -- neither state participates in the NLC.",
+        "changedAt": "2026-08-10",
+        "reason": "Phase 3.1: first population from real official-source research.",
+        "sourceUrl": "https://www.op.nysed.gov/professions/registered-professional-nursing/license-requirements",
+        "reviewer": null
+      }
+    ],
+    "notes": null
+  },
+  "exceptions": {
+    "value": "Unknown",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "sourceName": null,
+    "verifiedAt": null,
+    "verificationMethod": null,
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0,
+    "confidenceLevel": "unknown",
+    "history": [],
+    "notes": "No additional exceptions researched in this pass."
+  },
+  "conflicts": [],
+  "lastFullReviewAt": null
+}

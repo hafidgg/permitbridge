@@ -1,0 +1,19 @@
+{
+  "id": "new-york-fee-schedule",
+  "agencyName": "New York State Education Department, Office of the Professions",
+  "website": "https://www.op.nysed.gov/professions/registered-professional-nursing/endorsement-nursing-licenses",
+  "jurisdiction": "new-york",
+  "professionsCovered": [
+    "registered-nurse"
+  ],
+  "sourceType": "official-board",
+  "official": true,
+  "authorityLevel": "authoritative",
+  "authorityRationale": "NYSED Office of the Professions' own dedicated nursing-endorsement page, explicitly stating the Form 1 application fee for RNs/LPNs licensed elsewhere.",
+  "reliabilityScore": 0.95,
+  "reliabilityRationale": "Primary official, profession-specific endorsement page. Note: a separate, generic multi-profession NYSED fee chart (opfeechart.pdf) lists a differently-labeled '$50 Endorsement (Relocation)' line whose profession scope is unclear from context; the profession-specific nursing endorsement page is preferred as the more directly on-topic and unambiguous source, and this discrepancy is documented rather than silently ignored (see field notes).",
+  "lastCrawl": null,
+  "lastManualVerification": "2026-08-09",
+  "fieldsUsingThisSource": 1,
+  "specificity": "profession-specific"
+}

@@ -1,0 +1,19 @@
+{
+  "slug": "ohio",
+  "name": "Ohio",
+  "abbreviation": "OH",
+  "region": "Midwest",
+  "licensingAuthorityNote": "Ohio trade licenses for larger jurisdictions go through the Ohio Construction Industry Licensing Board (OCILB); some smaller municipalities license independently.",
+  "isUlrState": true,
+  "ulrEnactedYear": 2024,
+  "populationRank": 7,
+  "faqs": [
+    {
+      "question": "Did Ohio recently change its out-of-state licensing rules?",
+      "answer": "Yes. Ohio adopted a Universal License Recognition law in 2024, requiring recognition of out-of-state occupational licenses for applicants with at least one year of active, good-standing licensure, subject to Ohio's application process."
+    }
+  ],
+  "updatedAt": "2026-08-05",
+  "sourceUrl": "https://com.ohio.gov/divisions-and-programs/industrial-compliance/licensing/construction-industry-licensing",
+  "verifiedAt": "2026-08-05"
+}

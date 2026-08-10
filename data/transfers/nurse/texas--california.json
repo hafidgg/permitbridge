@@ -1,0 +1,27 @@
+{
+  "profession": "nurse",
+  "fromState": "texas",
+  "toState": "california",
+  "pathway": "endorsement",
+  "pathwayLabel": "Licensure by Endorsement",
+  "examRequired": false,
+  "additionalHoursRequired": 0,
+  "feeUsd": 465,
+  "estimatedProcessingDays": [
+    14,
+    45
+  ],
+  "minimumYearsLicensed": 0,
+  "difficultyScore": 4,
+  "portabilityScore": 68,
+  "steps": [
+    "Confirm your Nurse license is active and in good standing in Texas.",
+    "Submit a license verification request from Texas through the appropriate national registry or the state board directly.",
+    "File an application for licensure by endorsement with California's licensing board.",
+    "Pay the California application fee (approx. $465) and submit supporting documents.",
+    "Await processing — typically 14-45 days in California."
+  ],
+  "notes": "California's nurse licensing requirements are administered per the state's licensing authority. Most trade licenses in California are issued by the Contractors State License Board (CSLB); healthcare licenses go through the relevant state board (e.g., Board of Registered Nursing). Always confirm current rules directly with the official board before applying, since requirements change.",
+  "officialSourceName": "California State Licensing Board",
+  "updatedAt": "2026-08-07"
+}

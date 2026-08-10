@@ -1,0 +1,19 @@
+{
+  "id": "florida-fee-schedule",
+  "agencyName": "Florida Board of Nursing",
+  "website": "https://floridasnursing.gov/category/post-template-toggle/fees/",
+  "jurisdiction": "florida",
+  "professionsCovered": [
+    "registered-nurse"
+  ],
+  "sourceType": "official-board",
+  "official": true,
+  "authorityLevel": "authoritative",
+  "authorityRationale": "The Florida Board of Nursing's own official .gov fee category page, with fee amounts organized by distinct application type (exam vs. mobile/endorsement vs. renewal).",
+  "reliabilityScore": 0.93,
+  "reliabilityRationale": "Official government fee listing; individual sub-page permalinks on this site appear unstable (one linked sub-page 404'd during this research), so the category archive page itself is cited as the more stable authoritative URL.",
+  "lastCrawl": null,
+  "lastManualVerification": "2026-08-09",
+  "fieldsUsingThisSource": 1,
+  "specificity": "field-specific"
+}

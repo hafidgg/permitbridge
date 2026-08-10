@@ -1,0 +1,19 @@
+{
+  "id": "georgia-regulations-justia-mirror-410-4-01",
+  "agencyName": "Georgia Board of Nursing (regulation text mirrored by Justia)",
+  "website": "https://regulations.justia.com/states/georgia/department-410/chapter-410-4/rule-410-4-01",
+  "jurisdiction": "georgia",
+  "professionsCovered": [
+    "registered-nurse"
+  ],
+  "sourceType": "official-government",
+  "official": true,
+  "authorityLevel": "authoritative",
+  "authorityRationale": "Justia mirrors the verbatim official Georgia Compiled Rules and Regulations text (Rule 410-4-.01, Reinstatement). Same classification rationale as georgia-regulations-justia-mirror.",
+  "specificity": "field-specific",
+  "reliabilityScore": 0.85,
+  "reliabilityRationale": "Verbatim regulation mirror, not original government hosting.",
+  "lastCrawl": null,
+  "lastManualVerification": "2026-08-10",
+  "fieldsUsingThisSource": 0
+}

@@ -1,0 +1,17 @@
+{
+  "id": "catsol-secondary",
+  "agencyName": "CatSol (commercial travel-nurse staffing site, NOT an official source)",
+  "website": "https://catsol.com/guides/california-rn-license-guide/",
+  "jurisdiction": "california",
+  "professionsCovered": ["registered-nurse"],
+  "sourceType": "secondary",
+  "official": false,
+  "authorityLevel": "supplementary",
+  "specificity": "field-specific",
+  "authorityRationale": "A commercial travel-nurse staffing site. Used only for discovery of a processing-time estimate in Phase 3.1, since rn.ca.gov's own Processing Times page publishes rolling cohort dates rather than a static range.",
+  "reliabilityScore": 0.45,
+  "reliabilityRationale": "Commercial site, not an official source. Needs re-confirmation directly against rn.ca.gov/times.shtml before this field could ever be marked Verified.",
+  "lastCrawl": null,
+  "lastManualVerification": "2026-08-10",
+  "fieldsUsingThisSource": 0
+}

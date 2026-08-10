@@ -1,0 +1,27 @@
+{
+  "profession": "nurse",
+  "fromState": "california",
+  "toState": "new-york",
+  "pathway": "endorsement",
+  "pathwayLabel": "Licensure by Endorsement",
+  "examRequired": false,
+  "additionalHoursRequired": 0,
+  "feeUsd": 400,
+  "estimatedProcessingDays": [
+    14,
+    45
+  ],
+  "minimumYearsLicensed": 0,
+  "difficultyScore": 4,
+  "portabilityScore": 68,
+  "steps": [
+    "Confirm your Nurse license is active and in good standing in California.",
+    "Submit a license verification request from California through the appropriate national registry or the state board directly.",
+    "File an application for licensure by endorsement with New York's licensing board.",
+    "Pay the New York application fee (approx. $400) and submit supporting documents.",
+    "Await processing — typically 14-45 days in New York."
+  ],
+  "notes": "New York's nurse licensing requirements are administered per the state's licensing authority. New York does not license general contractors at the state level; licensing is handled by individual cities and counties (e.g., NYC Department of Buildings). Trade licenses (electrical, plumbing) are also frequently local rather than statewide. Always confirm current rules directly with the official board before applying, since requirements change.",
+  "officialSourceName": "New York State Licensing Board",
+  "updatedAt": "2026-08-07"
+}

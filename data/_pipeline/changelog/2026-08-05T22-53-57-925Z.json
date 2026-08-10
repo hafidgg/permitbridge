@@ -1,0 +1,208 @@
+{
+  "summary": {
+    "runId": "2026-08-05T22-53-57-925Z",
+    "startedAt": "2026-08-05T22:53:57.927Z",
+    "finishedAt": "2026-08-05T22:54:00.201Z",
+    "mode": "mock",
+    "sourcesChecked": 8,
+    "fetchErrors": 0,
+    "recordsExtracted": 8,
+    "validationErrors": 0,
+    "changesAutoApplied": 7,
+    "changesPendingApproval": 1,
+    "transfersRegenerated": 1,
+    "searchIndexDocuments": 115
+  },
+  "appliedDiffs": [
+    {
+      "entityKind": "state",
+      "entitySlug": "california",
+      "sourceId": "ca-cslb-contractor",
+      "hasChanges": true,
+      "changes": [
+        {
+          "path": "updatedAt",
+          "before": "2026-06-10",
+          "after": "2026-08-05",
+          "risk": "low"
+        },
+        {
+          "path": "sourceUrl",
+          "after": "https://www.cslb.ca.gov/Contractors/Applicants/Out_Of_State_Applicants.aspx",
+          "risk": "low"
+        },
+        {
+          "path": "verifiedAt",
+          "after": "2026-08-05",
+          "risk": "low"
+        }
+      ],
+      "highestRisk": "low"
+    },
+    {
+      "entityKind": "state",
+      "entitySlug": "texas",
+      "sourceId": "tx-tdlr-ulr",
+      "hasChanges": true,
+      "changes": [
+        {
+          "path": "updatedAt",
+          "before": "2026-06-12",
+          "after": "2026-08-05",
+          "risk": "low"
+        },
+        {
+          "path": "sourceUrl",
+          "after": "https://www.tdlr.texas.gov/military/",
+          "risk": "low"
+        },
+        {
+          "path": "verifiedAt",
+          "after": "2026-08-05",
+          "risk": "low"
+        }
+      ],
+      "highestRisk": "low"
+    },
+    {
+      "entityKind": "state",
+      "entitySlug": "florida",
+      "sourceId": "fl-dbpr-reciprocity",
+      "hasChanges": true,
+      "changes": [
+        {
+          "path": "updatedAt",
+          "before": "2026-06-18",
+          "after": "2026-08-05",
+          "risk": "low"
+        },
+        {
+          "path": "sourceUrl",
+          "after": "https://www.myfloridalicense.com/",
+          "risk": "low"
+        },
+        {
+          "path": "verifiedAt",
+          "after": "2026-08-05",
+          "risk": "low"
+        }
+      ],
+      "highestRisk": "low"
+    },
+    {
+      "entityKind": "state",
+      "entitySlug": "ohio",
+      "sourceId": "oh-com-ocilb",
+      "hasChanges": true,
+      "changes": [
+        {
+          "path": "updatedAt",
+          "before": "2026-06-05",
+          "after": "2026-08-05",
+          "risk": "low"
+        },
+        {
+          "path": "sourceUrl",
+          "after": "https://com.ohio.gov/divisions-and-programs/industrial-compliance/licensing/construction-industry-licensing",
+          "risk": "low"
+        },
+        {
+          "path": "verifiedAt",
+          "after": "2026-08-05",
+          "risk": "low"
+        }
+      ],
+      "highestRisk": "low"
+    },
+    {
+      "entityKind": "profession",
+      "entitySlug": "nurse",
+      "sourceId": "ncsbn-nlc-map",
+      "hasChanges": true,
+      "changes": [
+        {
+          "path": "sourceUrl",
+          "after": "https://www.ncsbn.org/nurse-licensure-compact.htm",
+          "risk": "low"
+        },
+        {
+          "path": "verifiedAt",
+          "after": "2026-08-05",
+          "risk": "low"
+        }
+      ],
+      "highestRisk": "low"
+    },
+    {
+      "entityKind": "profession",
+      "entitySlug": "contractor",
+      "sourceId": "nascla-accepting-states",
+      "hasChanges": true,
+      "changes": [
+        {
+          "path": "sourceUrl",
+          "after": "https://nascla.org/page/AcceptingStates",
+          "risk": "low"
+        },
+        {
+          "path": "verifiedAt",
+          "after": "2026-08-05",
+          "risk": "low"
+        }
+      ],
+      "highestRisk": "low"
+    },
+    {
+      "entityKind": "profession",
+      "entitySlug": "hvac-technician",
+      "sourceId": "epa-608-federal",
+      "hasChanges": true,
+      "changes": [
+        {
+          "path": "sourceUrl",
+          "after": "https://www.epa.gov/section608-technician-certification",
+          "risk": "low"
+        },
+        {
+          "path": "verifiedAt",
+          "after": "2026-08-05",
+          "risk": "low"
+        }
+      ],
+      "highestRisk": "low"
+    }
+  ],
+  "pendingDiffs": [
+    {
+      "entityKind": "state",
+      "entitySlug": "new-york",
+      "sourceId": "ny-dos-licensing",
+      "hasChanges": true,
+      "changes": [
+        {
+          "path": "isUlrState",
+          "before": false,
+          "after": true,
+          "risk": "high"
+        },
+        {
+          "path": "updatedAt",
+          "before": "2026-05-28",
+          "after": "2026-08-05",
+          "risk": "low"
+        },
+        {
+          "path": "sourceUrl",
+          "after": "https://dos.ny.gov/professional-licensing",
+          "risk": "low"
+        },
+        {
+          "path": "verifiedAt",
+          "after": "2026-08-05",
+          "risk": "low"
+        }
+      ],
+      "highestRisk": "high"
+    }
+  ]
+}

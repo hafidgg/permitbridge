@@ -1,0 +1,26 @@
+{
+  "profession": "nurse",
+  "fromState": "texas",
+  "toState": "florida",
+  "pathway": "compact",
+  "pathwayLabel": "Nurse Licensure Compact (multistate privilege)",
+  "examRequired": false,
+  "additionalHoursRequired": 0,
+  "feeUsd": 285,
+  "estimatedProcessingDays": [
+    5,
+    15
+  ],
+  "minimumYearsLicensed": 0,
+  "difficultyScore": 2,
+  "portabilityScore": 84,
+  "steps": [
+    "Confirm your Nurse license is active and in good standing in Texas.",
+    "Verify Florida is a compact member state and set it as your primary state of residence.",
+    "Update your address with your home-state nursing board so your multistate privilege applies to the new state.",
+    "Await processing — typically 5-15 days in Florida."
+  ],
+  "notes": "Florida's nurse licensing requirements are administered per the state's licensing authority. Florida trade licenses are issued by the Department of Business and Professional Regulation (DBPR); healthcare licenses go through the Department of Health. Always confirm current rules directly with the official board before applying, since requirements change.",
+  "officialSourceName": "Florida State Licensing Board",
+  "updatedAt": "2026-08-07"
+}

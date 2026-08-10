@@ -1,0 +1,19 @@
+{
+  "id": "nurse-org-board-directory",
+  "agencyName": "Nurse.org (aggregator, cross-checked against NCSBN)",
+  "website": "https://nurse.org/education/state-board-nursing-directory/",
+  "jurisdiction": "national",
+  "professionsCovered": [
+    "registered-nurse"
+  ],
+  "reliabilityScore": 0.75,
+  "reliabilityRationale": "Not itself a government source \u2014 it is a commercial nursing-career media site. Reliability is elevated above a typical blog because its board directory was cross-checked against the NCSBN member directory during this research pass and the two agreed on every one of the 50 states checked. Still lower than a .gov/official-board source; board name/URL facts sourced from it should be treated as 'likely' rather than 'verified' until a human independently re-confirms a sample.",
+  "lastCrawl": null,
+  "lastManualVerification": "2026-08-07",
+  "fieldsUsingThisSource": 80,
+  "sourceType": "secondary",
+  "official": false,
+  "authorityLevel": "supplementary",
+  "authorityRationale": "Nurse.org is a commercial nursing-career media company, not a government body, licensing board, or compact organization. It does not issue, administer, or govern any licensing fact itself. Its board directory was cross-checked against the NCSBN member list during Phase 1 research and the two agreed, which is why reliabilityScore is elevated to 0.75 rather than a typical blog's ~0.3-0.5 \u2014 but per the Verification Policy, a secondary source can never by itself be sufficient to mark a field Verified, regardless of reliabilityScore.",
+  "specificity": "national-general"
+}

@@ -1,0 +1,17 @@
+{
+  "id": "trustedhealth-secondary",
+  "agencyName": "TrustedHealth (commercial travel-nurse staffing site, NOT an official source)",
+  "website": "https://www.trustedhealth.com/nurse-licensure-guide/new-york",
+  "jurisdiction": "new-york",
+  "professionsCovered": ["registered-nurse"],
+  "sourceType": "secondary",
+  "official": false,
+  "authorityLevel": "supplementary",
+  "specificity": "field-specific",
+  "authorityRationale": "A commercial travel-nurse staffing site. Used only for discovery in Phase 3.1, per the explicit instruction that such sites may inform discovery but must never be treated as authoritative evidence.",
+  "reliabilityScore": 0.5,
+  "reliabilityRationale": "Commercial site, not an official source. Needs direct NYSED re-confirmation before any field citing it could ever be marked Verified.",
+  "lastCrawl": null,
+  "lastManualVerification": "2026-08-10",
+  "fieldsUsingThisSource": 0
+}

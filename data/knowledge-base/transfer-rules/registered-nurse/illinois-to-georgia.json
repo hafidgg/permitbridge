@@ -1,0 +1,456 @@
+{
+  "profession": "registered-nurse",
+  "sourceState": "illinois",
+  "destinationState": "georgia",
+  "licenseType": "RN",
+  "transferMechanism": {
+    "value": "endorsement",
+    "sourceUrl": "https://sos.ga.gov/page/faqs-nursing",
+    "sourceTitle": "FAQs for Nursing",
+    "sourceName": "Georgia Board of Nursing",
+    "verifiedAt": "2026-08-10",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.93,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": "endorsement",
+        "changedAt": "2026-08-10",
+        "reason": "Phase 3.1: first population from real official-source research.",
+        "sourceUrl": "https://sos.ga.gov/page/faqs-nursing",
+        "reviewer": null
+      }
+    ],
+    "notes": "Illinois is not an NLC member, so it has no multistate license for Georgia's compact membership to interact with. GA's own FAQ: 'If you have never been licensed in Georgia but you are/have been licensed in another state you should apply for licensure by endorsement.'"
+  },
+  "endorsementProcess": {
+    "value": "Apply via the GOALS portal (Registered Nurse by Endorsement); submit signed/notarized application by mail, Nursys or direct license verification, GAPS/Idemia fingerprinting, and the fee.",
+    "sourceUrl": "https://advantismed.com/nursing-license/georgia",
+    "sourceTitle": "Georgia Nursing License Renewal & Application Guide 2026",
+    "sourceName": "Advantis Medical (secondary source, used for discovery only)",
+    "verifiedAt": "2026-08-10",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.6,
+    "confidenceLevel": "likely",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": "Apply via the GOALS portal (Registered Nurse by Endorsement); submit signed/notarized application by mail, Nursys or direct license verification, GAPS/Idemia fingerprinting, and the fee.",
+        "changedAt": "2026-08-10",
+        "reason": "Phase 3.1: first population from real official-source research.",
+        "sourceUrl": "https://advantismed.com/nursing-license/georgia",
+        "reviewer": null
+      }
+    ],
+    "notes": "Discovery-only secondary source for the process narrative; the underlying legal requirement (below) is independently confirmed via Georgia's own regulation text (GA Comp. R. & Regs. 410-3-.01)."
+  },
+  "reciprocityAgreementExists": {
+    "value": {
+      "status": "not_applicable"
+    },
+    "sourceUrl": "https://sos.ga.gov/page/faqs-nursing",
+    "sourceTitle": "FAQs for Nursing",
+    "sourceName": "Georgia Board of Nursing",
+    "verifiedAt": "2026-08-10",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.85,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": {
+          "status": "not_applicable"
+        },
+        "changedAt": "2026-08-10",
+        "reason": "Phase 3.1: first population from real official-source research.",
+        "sourceUrl": "https://sos.ga.gov/page/faqs-nursing",
+        "reviewer": null
+      }
+    ],
+    "notes": null
+  },
+  "universalRecognitionApplies": {
+    "value": {
+      "status": "not_applicable"
+    },
+    "sourceUrl": "https://sos.ga.gov/page/faqs-nursing",
+    "sourceTitle": "FAQs for Nursing",
+    "sourceName": "Georgia Board of Nursing",
+    "verifiedAt": "2026-08-10",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.7,
+    "confidenceLevel": "likely",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": {
+          "status": "not_applicable"
+        },
+        "changedAt": "2026-08-10",
+        "reason": "Phase 3.1: first population from real official-source research.",
+        "sourceUrl": "https://sos.ga.gov/page/faqs-nursing",
+        "reviewer": null
+      }
+    ],
+    "notes": null
+  },
+  "examRequirement": {
+    "value": {
+      "status": "not_required"
+    },
+    "sourceUrl": "https://sos.ga.gov/page/faqs-nursing",
+    "sourceTitle": "FAQs for Nursing",
+    "sourceName": "Georgia Board of Nursing",
+    "verifiedAt": "2026-08-10",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.85,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": {
+          "status": "not_required"
+        },
+        "changedAt": "2026-08-10",
+        "reason": "Phase 3.1: first population from real official-source research.",
+        "sourceUrl": "https://sos.ga.gov/page/faqs-nursing",
+        "reviewer": null
+      }
+    ],
+    "notes": "Endorsement applicant must already hold a valid out-of-state license (implying NCLEX already passed); not retaken."
+  },
+  "experienceRequirement": {
+    "value": {
+      "status": "conditional",
+      "conditions": [
+        {
+          "description": "A Board-approved reentry program (40 hours didactic + 160 hours clinical study, per Ga. Comp. R. & Regs. 410-4-.03) is required if the applicant has NOT documented at least 500 hours of licensed RN practice within the 4 years immediately preceding the application date.",
+          "category": "practice_gap"
+        }
+      ]
+    },
+    "sourceUrl": "https://sos.ga.gov/sites/default/files/forms/38%20Form%20-%20Reentry%20Packet%20(RN).pdf",
+    "sourceTitle": "Reentry Proposal Instructions (RN)",
+    "sourceName": "Georgia Board of Nursing",
+    "verifiedAt": "2026-08-10",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.95,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": {
+          "status": "conditional",
+          "conditions": [
+            {
+              "description": "A Board-approved reentry program (40 hours didactic + 160 hours clinical study, per Ga. Comp. R. & Regs. 410-4-.03) is required if the applicant has NOT documented at least 500 hours of licensed RN practice within the 4 years immediately preceding the application date.",
+              "category": "practice_gap"
+            }
+          ]
+        },
+        "changedAt": "2026-08-10",
+        "reason": "Phase 3.1: first population from real official-source research.",
+        "sourceUrl": "https://sos.ga.gov/sites/default/files/forms/38%20Form%20-%20Reentry%20Packet%20(RN).pdf",
+        "reviewer": null
+      }
+    ],
+    "notes": "Directly quoted from Georgia's own official regulation text (410-4-.03), hosted by the Georgia Secretary of State. This is the clearest, most precisely-sourced conditional requirement found across all 5 transfers in this batch."
+  },
+  "applicationFeeUsd": {
+    "value": 75,
+    "sourceUrl": "https://sos.ga.gov/sites/default/files/forms/38%20Reference%20-%20GBON%20Fee%20Schedule.pdf",
+    "sourceTitle": "Georgia Board of Nursing Fee Schedule",
+    "sourceName": "Georgia Board of Nursing",
+    "verifiedAt": "2026-08-10",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.93,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": 75,
+        "changedAt": "2026-08-10",
+        "reason": "Phase 3.1: first population from real official-source research.",
+        "sourceUrl": "https://sos.ga.gov/sites/default/files/forms/38%20Reference%20-%20GBON%20Fee%20Schedule.pdf",
+        "reviewer": null
+      }
+    ],
+    "notes": "Reuses the exact figure/source already verified in Phase 2.5 for this field on Georgia's own ProfessionStateFacts record -- 'Endorsement: $75.00' on the GBON's own fee schedule."
+  },
+  "otherRequiredFees": {
+    "value": "Unknown",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "sourceName": null,
+    "verifiedAt": null,
+    "verificationMethod": null,
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0,
+    "confidenceLevel": "unknown",
+    "history": [],
+    "notes": "GAPS/Idemia fingerprinting fee not itemized in sources reviewed this session."
+  },
+  "backgroundCheckRequirement": {
+    "value": {
+      "status": "required"
+    },
+    "sourceUrl": "https://regulations.justia.com/states/georgia/department-410/chapter-410-3/rule-410-3-02",
+    "sourceTitle": "Ga. Comp. R. & Regs. 410-3-.02 - Licensure by Endorsement (LPN/RN pattern)",
+    "sourceName": "Georgia Board of Nursing (via Justia regulation mirror)",
+    "verifiedAt": "2026-08-10",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.85,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": {
+          "status": "required"
+        },
+        "changedAt": "2026-08-10",
+        "reason": "Phase 3.1: first population from real official-source research.",
+        "sourceUrl": "https://regulations.justia.com/states/georgia/department-410/chapter-410-3/rule-410-3-02",
+        "reviewer": null
+      }
+    ],
+    "notes": "410-3-.02(1)(c): endorsement applicant must complete registration 'to cause the submission of a criminal background check as required by O.C.G.A. 43-26-7(d)(3).' Source is a regulation-text mirror (Justia), not sos.ga.gov directly, since the primary GA rules browser page for this specific numbered rule returned only a table of contents in this session's search -- confidence reflects this (0.85, not higher)."
+  },
+  "fingerprintingRequirement": {
+    "value": {
+      "status": "required"
+    },
+    "sourceUrl": "https://regulations.justia.com/states/georgia/department-410/chapter-410-3/rule-410-3-02",
+    "sourceTitle": "Ga. Comp. R. & Regs. 410-3-.02",
+    "sourceName": "Georgia Board of Nursing (via Justia regulation mirror)",
+    "verifiedAt": "2026-08-10",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.8,
+    "confidenceLevel": "likely",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": {
+          "status": "required"
+        },
+        "changedAt": "2026-08-10",
+        "reason": "Phase 3.1: first population from real official-source research.",
+        "sourceUrl": "https://regulations.justia.com/states/georgia/department-410/chapter-410-3/rule-410-3-02",
+        "reviewer": null
+      }
+    ],
+    "notes": null
+  },
+  "licenseVerificationRequirement": {
+    "value": {
+      "status": "required"
+    },
+    "sourceUrl": "https://sos.ga.gov/page/faqs-nursing",
+    "sourceTitle": "FAQs for Nursing",
+    "sourceName": "Georgia Board of Nursing",
+    "verifiedAt": "2026-08-10",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.85,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": {
+          "status": "required"
+        },
+        "changedAt": "2026-08-10",
+        "reason": "Phase 3.1: first population from real official-source research.",
+        "sourceUrl": "https://sos.ga.gov/page/faqs-nursing",
+        "reviewer": null
+      }
+    ],
+    "notes": "Nursys or direct board-to-board verification, per Vivian Health's paraphrase of GBON's own stated process (secondary corroboration; GA's own FAQ page confirms endorsement generally requires license verification without itemizing the exact mechanism in the snippet reviewed)."
+  },
+  "documentsRequired": {
+    "value": "Unknown",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "sourceName": null,
+    "verifiedAt": null,
+    "verificationMethod": null,
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0,
+    "confidenceLevel": "unknown",
+    "history": [],
+    "notes": "Detailed document checklist not fully itemized from official sources this session beyond the background-check registration and reentry-proposal paperwork (when applicable)."
+  },
+  "goodStandingRequirement": {
+    "value": {
+      "status": "required"
+    },
+    "sourceUrl": "https://regulations.justia.com/states/georgia/department-410/chapter-410-3/rule-410-3-02",
+    "sourceTitle": "Ga. Comp. R. & Regs. 410-3-.02",
+    "sourceName": "Georgia Board of Nursing (via Justia regulation mirror)",
+    "verifiedAt": "2026-08-10",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.8,
+    "confidenceLevel": "likely",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": {
+          "status": "required"
+        },
+        "changedAt": "2026-08-10",
+        "reason": "Phase 3.1: first population from real official-source research.",
+        "sourceUrl": "https://regulations.justia.com/states/georgia/department-410/chapter-410-3/rule-410-3-02",
+        "reviewer": null
+      }
+    ],
+    "notes": null
+  },
+  "disciplinaryDisclosureRequirement": {
+    "value": {
+      "status": "required"
+    },
+    "sourceUrl": "https://regulations.justia.com/states/georgia/department-410/chapter-410-4/rule-410-4-01",
+    "sourceTitle": "Ga. Comp. R. & Regs. 410-4-.01",
+    "sourceName": "Georgia Board of Nursing (via Justia regulation mirror)",
+    "verifiedAt": "2026-08-10",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.75,
+    "confidenceLevel": "likely",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": {
+          "status": "required"
+        },
+        "changedAt": "2026-08-10",
+        "reason": "Phase 3.1: first population from real official-source research.",
+        "sourceUrl": "https://regulations.justia.com/states/georgia/department-410/chapter-410-4/rule-410-4-01",
+        "reviewer": null
+      }
+    ],
+    "notes": "An applicant under investigation for a Nurse Practice Act violation may not be issued a license until resolved."
+  },
+  "processingTime": {
+    "value": "Applications are typically reviewed within 15 business days of receipt of all required documents (longer if disciplinary/criminal history requires review).",
+    "sourceUrl": "https://sos.ga.gov/page/faqs-nursing",
+    "sourceTitle": "FAQs for Nursing",
+    "sourceName": "Georgia Board of Nursing",
+    "verifiedAt": "2026-08-10",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.85,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": "Applications are typically reviewed within 15 business days of receipt of all required documents (longer if disciplinary/criminal history requires review).",
+        "changedAt": "2026-08-10",
+        "reason": "Phase 3.1: first population from real official-source research.",
+        "sourceUrl": "https://sos.ga.gov/page/faqs-nursing",
+        "reviewer": null
+      }
+    ],
+    "notes": null
+  },
+  "temporaryPermitAvailability": {
+    "value": {
+      "status": "required"
+    },
+    "sourceUrl": "https://www.law.cornell.edu/regulations/georgia/Ga-Comp-R-Regs-R-510-3-.03",
+    "sourceTitle": "Ga. Comp. R. & Regs. 510-3-.03 - Temporary License",
+    "sourceName": "Georgia Board of Nursing (via Cornell Law regulation mirror)",
+    "verifiedAt": "2026-08-10",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.8,
+    "confidenceLevel": "likely",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": {
+          "status": "required"
+        },
+        "changedAt": "2026-08-10",
+        "reason": "Phase 3.1: first population from real official-source research.",
+        "sourceUrl": "https://www.law.cornell.edu/regulations/georgia/Ga-Comp-R-Regs-R-510-3-.03",
+        "reviewer": null
+      }
+    ],
+    "notes": "'An endorsement applicant may submit a written request for a temporary license,' per Georgia's own regulation text (mirrored by Cornell Law)."
+  },
+  "compactStatus": {
+    "value": "Not applicable to this specific transfer -- Illinois is not an NLC member, so Georgia's compact membership provides no shortcut here; standard endorsement applies regardless.",
+    "sourceUrl": "https://sos.ga.gov/page/faqs-nursing",
+    "sourceTitle": "FAQs for Nursing",
+    "sourceName": "Georgia Board of Nursing",
+    "verifiedAt": "2026-08-10",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.85,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": "Not applicable to this specific transfer -- Illinois is not an NLC member, so Georgia's compact membership provides no shortcut here; standard endorsement applies regardless.",
+        "changedAt": "2026-08-10",
+        "reason": "Phase 3.1: first population from real official-source research.",
+        "sourceUrl": "https://sos.ga.gov/page/faqs-nursing",
+        "reviewer": null
+      }
+    ],
+    "notes": null
+  },
+  "exceptions": {
+    "value": "Military spouses and transitioning service members have a distinct eligibility pathway referenced in Georgia's endorsement regulation (410-3-.02(1)), not researched in detail in this pass.",
+    "sourceUrl": "https://regulations.justia.com/states/georgia/department-410/chapter-410-3/rule-410-3-02",
+    "sourceTitle": "Ga. Comp. R. & Regs. 410-3-.02",
+    "sourceName": "Georgia Board of Nursing (via Justia regulation mirror)",
+    "verifiedAt": "2026-08-10",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.7,
+    "confidenceLevel": "likely",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": "Military spouses and transitioning service members have a distinct eligibility pathway referenced in Georgia's endorsement regulation (410-3-.02(1)), not researched in detail in this pass.",
+        "changedAt": "2026-08-10",
+        "reason": "Phase 3.1: first population from real official-source research.",
+        "sourceUrl": "https://regulations.justia.com/states/georgia/department-410/chapter-410-3/rule-410-3-02",
+        "reviewer": null
+      }
+    ],
+    "notes": null
+  },
+  "conflicts": [],
+  "lastFullReviewAt": null
+}

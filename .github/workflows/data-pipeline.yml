@@ -1,0 +1,77 @@
+name: Data Pipeline
+
+# Scheduled + manually-triggerable job that checks every official source in
+# data/_pipeline/sources/registry.json, auto-applies low/medium risk changes,
+# and opens a Pull Request for review whenever ANYTHING changed — including
+# high-risk changes, which additionally get queued in data/_pipeline/pending/
+# for a human to explicitly approve via `npm run pipeline:approve` before
+# they're merged.
+#
+# The live site is never modified directly by this workflow: it only ever
+# proposes a PR against the `main` branch. Deployment happens through your
+# normal Vercel/Cloudflare Pages flow once that PR is merged.
+
+on:
+  schedule:
+    # Every Monday 09:00 UTC. Individual sources still control their own
+    # effective cadence via checkIntervalDays in the registry — this cron
+    # just sets the outer polling frequency.
+    - cron: "0 9 * * 1"
+  workflow_dispatch: {}
+
+jobs:
+  run-pipeline:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run data pipeline (live mode)
+        run: npm run pipeline
+        env:
+          NODE_ENV: production
+
+      - name: Check for changes
+        id: git-check
+        run: |
+          if [[ -n "$(git status --porcelain)" ]]; then
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Open Pull Request with changes
+        if: steps.git-check.outputs.changed == 'true'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: "chore(data): scheduled pipeline update"
+          title: "🔄 Scheduled data pipeline update"
+          body: |
+            Automated run of the PermitBridge data pipeline.
+
+            - Low/medium-risk changes were auto-applied to `/data` and are included in this diff.
+            - High-risk changes (pathway type, exam requirement, ULR status, compact membership) were
+              queued in `data/_pipeline/pending/` and are **not** included here until approved locally
+              via `npm run pipeline:approve`.
+            - See `data/_pipeline/changelog/` for the full run report.
+
+            Please review the diff carefully before merging — this PR changes information real people
+            rely on to make licensing decisions.
+          branch: pipeline/scheduled-update
+          delete-branch: true
+          labels: |
+            data-pipeline
+            needs-review

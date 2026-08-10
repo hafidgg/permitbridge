@@ -1,0 +1,98 @@
+name: Source Monitor
+
+# Runs the monitoring engine (lib/monitoring/) on a GitHub Actions runner,
+# which has a normal writable filesystem — unlike Vercel's deployed
+# Serverless Functions, which are read-only except for an ephemeral /tmp
+# (confirmed the hard way: the first authenticated live invocation of
+# /api/cron/source-monitor returned 500 with EROFS when it tried to write
+# data/knowledge-base/monitoring/registry.json).
+#
+# This workflow NEVER approves or publishes anything. It only ever:
+#   - updates MonitoredSource health tracking (lastCheckedAt, etc.)
+#   - creates new DetectedChange records, always status=pending_verification
+# Both are monitoring METADATA, not production facts — which is exactly why
+# this workflow commits directly to main (Step 5's strict path-allowlist
+# below makes that safe) rather than opening a PR like data-pipeline.yml
+# does for actual fact/value changes.
+
+on:
+  schedule:
+    # Monday 10:00 UTC — deliberately offset 1 hour from data-pipeline.yml's
+    # Monday 09:00 UTC run, so the two workflows never race on the same
+    # checkout. Individual sources still control their own real cadence via
+    # checkFrequencyDays; this is just the outer polling frequency.
+    - cron: "0 10 * * 1"
+  workflow_dispatch: {}
+
+jobs:
+  run-source-monitor:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run monitoring cycle (live mode)
+        run: npm run monitor -- --mode=live
+        env:
+          NODE_ENV: production
+
+      - name: Validate data integrity
+        run: npm run validate-data
+
+      - name: Enforce commit path allowlist (Step 5 safety check)
+        id: path-check
+        run: |
+          set -euo pipefail
+          CHANGED="$(git status --porcelain)"
+          if [ -z "$CHANGED" ]; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "No changes — nothing to commit."
+            exit 0
+          fi
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+          echo "Changed paths:"
+          echo "$CHANGED"
+
+          DISALLOWED=""
+          while IFS= read -r line; do
+            path="${line:3}"
+            case "$path" in
+              data/knowledge-base/monitoring/*) ;;
+              *) DISALLOWED="$DISALLOWED
+          $path" ;;
+            esac
+          done <<< "$CHANGED"
+
+          if [ -n "$DISALLOWED" ]; then
+            echo "::error::Monitoring run modified files outside the allowed data/knowledge-base/monitoring/ path — refusing to commit:"
+            echo "$DISALLOWED"
+            exit 1
+          fi
+
+      - name: Commit and push monitoring state
+        if: steps.path-check.outputs.changed == 'true'
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/knowledge-base/monitoring/
+          git commit -m "chore(monitoring): scheduled source-monitor update
+
+          Automated run of the PermitBridge source-monitoring engine.
+          Every DetectedChange created here remains pending_verification —
+          nothing in this commit changes a published fact. Review with:
+            npm run monitor:changes
+            npm run monitor:review"
+          git push

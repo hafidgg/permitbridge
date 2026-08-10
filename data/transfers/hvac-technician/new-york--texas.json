@@ -1,0 +1,30 @@
+{
+  "profession": "hvac-technician",
+  "fromState": "new-york",
+  "toState": "texas",
+  "pathway": "none",
+  "pathwayLabel": "Full New Application Required",
+  "examRequired": true,
+  "examName": "NASCLA Accredited Examination for Commercial General Building Contractors",
+  "additionalHoursRequired": 32,
+  "feeUsd": 235,
+  "estimatedProcessingDays": [
+    30,
+    90
+  ],
+  "minimumYearsLicensed": 2,
+  "difficultyScore": 8,
+  "portabilityScore": 21,
+  "steps": [
+    "Confirm your HVAC Technician license is active and in good standing in New York.",
+    "Submit a license verification request from New York through the appropriate national registry or the state board directly.",
+    "File an application for full new application required with Texas's licensing board.",
+    "Register for and pass the required exam: NASCLA Accredited Examination for Commercial General Building Contractors.",
+    "Complete 32 additional training/CE hours required by Texas.",
+    "Pay the Texas application fee (approx. $235) and submit supporting documents.",
+    "Await processing — typically 30-90 days in Texas."
+  ],
+  "notes": "Texas's hvac technician licensing requirements are administered per the state's licensing authority. Texas does not have a single statewide general contractor license; licensing is trade-specific (electrical, plumbing, HVAC) and administered by the Texas Department of Licensing and Regulation (TDLR). Unlike states with a broad Universal License Recognition law, Texas gives TDLR discretionary authority (Occupations Code §51.4041) to waive requirements for holders of a \"substantially equivalent\" out-of-state license, rather than a guaranteed \"shall issue\" right. Texas's clearest guaranteed out-of-state recognition applies specifically to military service members and military spouses, not the general public. Always confirm current rules directly with the official board before applying, since requirements change.",
+  "officialSourceName": "Texas State Licensing Board",
+  "updatedAt": "2026-08-07"
+}

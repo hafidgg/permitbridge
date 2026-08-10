@@ -1,0 +1,19 @@
+{
+  "id": "florida-multistate-upgrade-form",
+  "agencyName": "Florida Board of Nursing",
+  "website": "https://floridasnursing.gov/applications/multistate-upgrade-app.pdf",
+  "jurisdiction": "florida",
+  "professionsCovered": [
+    "registered-nurse"
+  ],
+  "sourceType": "official-board",
+  "official": true,
+  "authorityLevel": "authoritative",
+  "authorityRationale": "The Florida Board's own official multistate-upgrade application form and instructions.",
+  "specificity": "field-specific",
+  "reliabilityScore": 0.96,
+  "reliabilityRationale": "Primary official application document.",
+  "lastCrawl": null,
+  "lastManualVerification": "2026-08-10",
+  "fieldsUsingThisSource": 0
+}

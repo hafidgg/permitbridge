@@ -1,0 +1,147 @@
+{
+  "$schema": "./registry.schema.json",
+  "description": "Registry of official sources the PermitBridge data pipeline checks. Each entry maps one government/authoritative page to the entity (profession or state) it is authoritative for, plus regex-based extraction hints. Edit this file to add a new source \u2014 no code changes required for simple field updates.",
+  "sources": [
+    {
+      "id": "ca-cslb-contractor",
+      "entityKind": "state",
+      "entitySlug": "california",
+      "category": "state_licensing_board",
+      "name": "California Contractors State License Board \u2014 Out-of-State Applicants",
+      "url": "https://www.cslb.ca.gov/Contractors/Applicants/Out_Of_State_Applicants.aspx",
+      "checkIntervalDays": 30,
+      "enabled": true,
+      "extract": [
+        {
+          "field": "isUlrState",
+          "pattern": "universal\\s+(?:license\\s+)?recognition|recognizes?\\s+(?:an?\\s+)?out-of-state\\s+.*?licens|licensure\\s+by\\s+reciprocity",
+          "transform": "boolean_presence",
+          "fallbackWhenAbsent": false
+        }
+      ],
+      "notes": "CSLB does not currently publish broad reciprocity; page is checked mainly for policy-language changes."
+    },
+    {
+      "id": "tx-tdlr-ulr",
+      "entityKind": "state",
+      "entitySlug": "texas",
+      "category": "state_licensing_board",
+      "name": "Texas Department of Licensing and Regulation \u2014 Military & Out-of-State License Recognition",
+      "url": "https://www.tdlr.texas.gov/military/",
+      "checkIntervalDays": 30,
+      "enabled": true,
+      "extract": [
+        {
+          "field": "isUlrState",
+          "pattern": "universal\\s+(?:license\\s+)?recognition|recognizes?\\s+(?:an?\\s+)?out-of-state\\s+.*?licens|licensure\\s+by\\s+reciprocity",
+          "transform": "boolean_presence",
+          "fallbackWhenAbsent": false
+        }
+      ]
+    },
+    {
+      "id": "fl-dbpr-reciprocity",
+      "entityKind": "state",
+      "entitySlug": "florida",
+      "category": "state_licensing_board",
+      "name": "Florida DBPR \u2014 Licensure by Endorsement",
+      "url": "https://www.myfloridalicense.com/",
+      "checkIntervalDays": 30,
+      "enabled": true,
+      "extract": [
+        {
+          "field": "isUlrState",
+          "pattern": "universal\\s+(?:license\\s+)?recognition|recognizes?\\s+(?:an?\\s+)?out-of-state\\s+.*?licens|licensure\\s+by\\s+reciprocity",
+          "transform": "boolean_presence",
+          "fallbackWhenAbsent": false
+        }
+      ]
+    },
+    {
+      "id": "ny-dos-licensing",
+      "entityKind": "state",
+      "entitySlug": "new-york",
+      "category": "state_licensing_board",
+      "name": "New York Department of State \u2014 Business & Licensing Services",
+      "url": "https://dos.ny.gov/professional-licensing",
+      "checkIntervalDays": 45,
+      "enabled": true,
+      "extract": [
+        {
+          "field": "isUlrState",
+          "pattern": "universal\\s+(?:license\\s+)?recognition|recognizes?\\s+(?:an?\\s+)?out-of-state\\s+.*?licens|licensure\\s+by\\s+reciprocity",
+          "transform": "boolean_presence",
+          "fallbackWhenAbsent": false
+        }
+      ]
+    },
+    {
+      "id": "oh-com-ocilb",
+      "entityKind": "state",
+      "entitySlug": "ohio",
+      "category": "state_licensing_board",
+      "name": "Ohio Construction Industry Licensing Board",
+      "url": "https://com.ohio.gov/divisions-and-programs/industrial-compliance/licensing/construction-industry-licensing",
+      "checkIntervalDays": 30,
+      "enabled": true,
+      "extract": [
+        {
+          "field": "isUlrState",
+          "pattern": "universal\\s+(?:license\\s+)?recognition|recognizes?\\s+(?:an?\\s+)?out-of-state\\s+.*?licens|licensure\\s+by\\s+reciprocity",
+          "transform": "boolean_presence",
+          "fallbackWhenAbsent": false
+        }
+      ]
+    },
+    {
+      "id": "ncsbn-nlc-map",
+      "entityKind": "profession",
+      "entitySlug": "nurse",
+      "category": "national_compact_registry",
+      "name": "NCSBN \u2014 Nurse Licensure Compact Member State Map",
+      "url": "https://www.ncsbn.org/nurse-licensure-compact.htm",
+      "checkIntervalDays": 14,
+      "enabled": true,
+      "extract": [
+        {
+          "field": "compactListPageChanged",
+          "pattern": "current\\s+compact\\s+states",
+          "transform": "boolean_presence",
+          "fallbackWhenAbsent": false
+        }
+      ],
+      "notes": "Presence-only tripwire: flags that the NCSBN page changed so a human can review and manually update profession.compactStates (the curated member list), rather than the pipeline guessing the new list from page text. Compact membership is high-impact, so this source has the shortest check interval in the registry."
+    },
+    {
+      "id": "nascla-accepting-states",
+      "entityKind": "profession",
+      "entitySlug": "contractor",
+      "category": "professional_association",
+      "name": "NASCLA \u2014 States Accepting the Accredited Commercial Exam",
+      "url": "https://nascla.org/page/AcceptingStates",
+      "checkIntervalDays": 30,
+      "enabled": true,
+      "extract": [
+        {
+          "field": "acceptedStatesListPageChanged",
+          "pattern": "accredited\\s+examination",
+          "transform": "boolean_presence",
+          "fallbackWhenAbsent": false
+        }
+      ],
+      "notes": "Presence-only tripwire, same pattern as ncsbn-nlc-map: signals the page changed so a human can manually update profession.commonExamAcceptedStates with the confirmed list."
+    },
+    {
+      "id": "epa-608-federal",
+      "entityKind": "profession",
+      "entitySlug": "hvac-technician",
+      "category": "federal_agency",
+      "name": "EPA Section 608 Technician Certification",
+      "url": "https://www.epa.gov/section608-technician-certification",
+      "checkIntervalDays": 180,
+      "enabled": true,
+      "extract": [],
+      "notes": "Federal certification, does not vary by state \u2014 checked infrequently since it almost never changes. Kept in the registry mainly as a change-detection tripwire."
+    }
+  ]
+}

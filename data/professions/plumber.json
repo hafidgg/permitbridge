@@ -1,0 +1,25 @@
+{
+  "slug": "plumber",
+  "name": "Plumber License",
+  "shortName": "Plumber",
+  "category": "Skilled Trades",
+  "icon": "wrench",
+  "description": "How to transfer a journeyman or master plumber license between US states.",
+  "longDescription": "Plumbing licenses are regulated state-by-state (and sometimes locally), with wide variation in required apprenticeship hours, journeyman-to-master progression rules, and exam content. Some states honor reciprocity agreements with specific neighboring states; others require the full local exam regardless of out-of-state experience.",
+  "averageTransferDays": [21, 75],
+  "hasNationalCompact": false,
+  "commonExam": "State-specific plumbing trade + business/law exam",
+  "commonExamAcceptedStates": [],
+  "faqs": [
+    {
+      "question": "Can a master plumber license transfer to any state?",
+      "answer": "No. Master plumber classifications and hour requirements differ enough between states that most receiving states require verification of experience hours and, frequently, a local trade or business/law exam even for master-level applicants."
+    },
+    {
+      "question": "Which states have plumber reciprocity agreements?",
+      "answer": "Reciprocity is typically bilateral and limited to specific state pairs rather than nationwide. Always confirm directly with the receiving state's plumbing board, since agreements can be added or dropped with little notice."
+    }
+  ],
+  "relatedProfessions": ["hvac-technician", "electrician", "contractor"],
+  "updatedAt": "2026-05-30"
+}

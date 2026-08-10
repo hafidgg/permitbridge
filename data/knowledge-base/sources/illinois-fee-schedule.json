@@ -1,0 +1,19 @@
+{
+  "id": "illinois-fee-schedule",
+  "agencyName": "Illinois Department of Financial and Professional Regulation (IDFPR)",
+  "website": "https://idfpr.illinois.gov/content/dam/soi/en/web/idfpr/renewals/apply/forms/RN-EN.pdf",
+  "jurisdiction": "illinois",
+  "professionsCovered": [
+    "registered-nurse"
+  ],
+  "sourceType": "official-board",
+  "official": true,
+  "authorityLevel": "authoritative",
+  "authorityRationale": "IDFPR's own official RN endorsement instruction sheet, explicitly separating Examination / Endorsement / Restoration / Temporary Permit fees by name.",
+  "reliabilityScore": 0.96,
+  "reliabilityRationale": "Primary official application-instruction document with unambiguous per-category fee labeling.",
+  "lastCrawl": null,
+  "lastManualVerification": "2026-08-09",
+  "fieldsUsingThisSource": 1,
+  "specificity": "field-specific"
+}

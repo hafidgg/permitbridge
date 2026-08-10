@@ -1,0 +1,19 @@
+{
+  "id": "georgia-regulations-justia-mirror",
+  "agencyName": "Georgia Board of Nursing (regulation text mirrored by Justia)",
+  "website": "https://regulations.justia.com/states/georgia/department-410/chapter-410-3/rule-410-3-02",
+  "jurisdiction": "georgia",
+  "professionsCovered": [
+    "registered-nurse"
+  ],
+  "sourceType": "official-government",
+  "official": true,
+  "authorityLevel": "authoritative",
+  "authorityRationale": "Justia mirrors the verbatim, official Georgia Compiled Rules and Regulations text -- not a commercial nursing site or blog (the category this project excludes). Classified official-government rather than secondary because the CONTENT is the actual regulation, not third-party interpretation. Preferred alternative would be rules.sos.georgia.gov directly, which returned only a table-of-contents page in this session's searches -- confidence on fields citing this source is capped slightly below the sos.ga.gov-hosted PDF sources to reflect the one-step remove from the primary host.",
+  "specificity": "field-specific",
+  "reliabilityScore": 0.85,
+  "reliabilityRationale": "Verbatim regulation mirror, not original government hosting.",
+  "lastCrawl": null,
+  "lastManualVerification": "2026-08-10",
+  "fieldsUsingThisSource": 0
+}

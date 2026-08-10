@@ -1,0 +1,19 @@
+{
+  "id": "california-temp-license-rule",
+  "agencyName": "California Board of Registered Nursing (BRN)",
+  "website": "https://rn.ca.gov/applicants/lic-temp.shtml",
+  "jurisdiction": "california",
+  "professionsCovered": [
+    "registered-nurse"
+  ],
+  "sourceType": "official-board",
+  "official": true,
+  "authorityLevel": "authoritative",
+  "authorityRationale": "BRN's own official Temporary Licenses page.",
+  "specificity": "field-specific",
+  "reliabilityScore": 0.97,
+  "reliabilityRationale": "Primary official page dedicated specifically to this fact.",
+  "lastCrawl": null,
+  "lastManualVerification": "2026-08-10",
+  "fieldsUsingThisSource": 0
+}

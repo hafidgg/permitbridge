@@ -1,0 +1,293 @@
+{
+  "profession": "registered-nurse",
+  "state": "california",
+  "licensingBoard": {
+    "value": "California Board of Registered Nursing",
+    "sourceUrl": "https://www.rn.ca.gov/",
+    "sourceTitle": "California Board of Registered Nursing \u2014 Official Site",
+    "sourceName": "California Board of Registered Nursing",
+    "verifiedAt": "2026-08-08",
+    "verificationMethod": "cross_referenced_multiple_sources",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.95,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": "California Board of Registered Nursing",
+        "changedAt": "2026-08-07",
+        "reason": "Initial value recorded during Phase 1 knowledge-base research",
+        "sourceUrl": "https://nurse.org/education/state-board-nursing-directory/",
+        "reviewer": null
+      },
+      {
+        "previousValue": "California Board of Registered Nursing",
+        "newValue": "California Board of Registered Nursing",
+        "changedAt": "2026-08-08",
+        "reason": "Phase 2.2 Batch 2: Directly confirmed via multiple independent rn.ca.gov-hosted documents (e.g. the Board's own 2026 Sunset Review PDF at rn.ca.gov/pdfs/forms/sunset2026.pdf), plus rn.ca.gov/consumers/whatisbrn.shtml. The board's own self-published materials confirm both its name and that rn.ca.gov is its live official site.",
+        "sourceUrl": "https://www.rn.ca.gov/",
+        "reviewer": null
+      }
+    ],
+    "notes": null
+  },
+  "officialWebsite": {
+    "value": "https://www.rn.ca.gov/",
+    "sourceUrl": "https://www.rn.ca.gov/",
+    "sourceTitle": "California Board of Registered Nursing \u2014 Official Site",
+    "sourceName": "California Board of Registered Nursing",
+    "verifiedAt": "2026-08-08",
+    "verificationMethod": "cross_referenced_multiple_sources",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.95,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": "https://www.rn.ca.gov/",
+        "changedAt": "2026-08-07",
+        "reason": "Initial value recorded during Phase 1 knowledge-base research",
+        "sourceUrl": "https://nurse.org/education/state-board-nursing-directory/",
+        "reviewer": null
+      },
+      {
+        "previousValue": "https://www.rn.ca.gov/",
+        "newValue": "https://www.rn.ca.gov/",
+        "changedAt": "2026-08-08",
+        "reason": "Phase 2.2 Batch 2: source upgraded from secondary (nurse.org directory) to direct confirmation. Directly confirmed via multiple independent rn.ca.gov-hosted documents (e.g. the Board's own 2026 Sunset Review PDF at rn.ca.gov/pdfs/forms/sunset2026.pdf), plus rn.ca.gov/consumers/whatisbrn.shtml. The board's own self-published materials confirm both its name and that rn.ca.gov is its live official site.",
+        "sourceUrl": "https://www.rn.ca.gov/",
+        "reviewer": null
+      }
+    ],
+    "notes": null
+  },
+  "licenseTransferPage": {
+    "value": "Unknown",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "sourceName": null,
+    "verifiedAt": null,
+    "verificationMethod": null,
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0,
+    "confidenceLevel": "unknown",
+    "history": [],
+    "notes": "Not yet individually verified \u2014 the board's homepage above is known, but the specific endorsement/reciprocity sub-page has not been located and confirmed for this state."
+  },
+  "reciprocityRules": {
+    "value": "Unknown",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "sourceName": null,
+    "verifiedAt": null,
+    "verificationMethod": null,
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0,
+    "confidenceLevel": "unknown",
+    "history": [],
+    "notes": "Not yet individually researched for this state."
+  },
+  "endorsementRules": {
+    "value": "Unknown",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "sourceName": null,
+    "verifiedAt": null,
+    "verificationMethod": null,
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0,
+    "confidenceLevel": "unknown",
+    "history": [],
+    "notes": "Not yet individually researched for this state. All non-compact states are known to require licensure by endorsement in general (see compactMembership), but state-specific procedural detail is unverified."
+  },
+  "universalLicenseRecognitionStatus": {
+    "value": "Unknown",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "sourceName": null,
+    "verifiedAt": null,
+    "verificationMethod": null,
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0,
+    "confidenceLevel": "unknown",
+    "history": [],
+    "notes": "Nursing licensure operates primarily through the NLC compact system rather than general ULR law; a state's general ULR law (if any) may still apply as a fallback for non-compact applicants but has not been checked here."
+  },
+  "compactMembership": {
+    "value": false,
+    "sourceUrl": "https://www.nursecompact.com/",
+    "sourceTitle": "Nurse Licensure Compact \u2014 Official Site",
+    "sourceName": "NCSBN (National Council of State Boards of Nursing)",
+    "verifiedAt": "2026-08-08",
+    "verificationMethod": "cross_referenced_multiple_sources",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.9,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": false,
+        "changedAt": "2026-08-07",
+        "reason": "Initial value recorded during Phase 1 knowledge-base research",
+        "sourceUrl": "https://www.nursecompact.com/",
+        "reviewer": null
+      },
+      {
+        "previousValue": false,
+        "newValue": false,
+        "changedAt": "2026-08-08",
+        "reason": "Phase 2.2 Batch 1: re-confirmed live against nursecompact.com (official NLC site) plus corroborating sources (Wikipedia Nurse Licensure Compact article, NCSBN's own NLC_Map.pdf, Prolink 2026 NLC guide). Value unchanged \u2014 status remains pending_verification because no human reviewer has signed off; this is NOT the same as 'verified'. See VERIFICATION_POLICY.md.",
+        "sourceUrl": "https://www.nursecompact.com/",
+        "reviewer": null
+      }
+    ],
+    "notes": "Cross-referenced: nursecompact.com, ncsbn.org/public-files/NLC_Map.pdf, en.wikipedia.org/wiki/Nurse_Licensure_Compact (2026-08-08)"
+  },
+  "requiredExams": {
+    "value": "NCLEX-RN",
+    "sourceUrl": "https://www.ncsbn.org/exams/nclex.page",
+    "sourceTitle": "NCLEX Examinations",
+    "sourceName": "NCSBN (National Council of State Boards of Nursing)",
+    "verifiedAt": "2026-08-08",
+    "verificationMethod": "cross_referenced_multiple_sources",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.95,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": "NCLEX-RN",
+        "changedAt": "2026-08-07",
+        "reason": "Initial value recorded during Phase 1 knowledge-base research",
+        "sourceUrl": "https://www.ncsbn.org/exams/nclex.page",
+        "reviewer": null
+      },
+      {
+        "previousValue": "NCLEX-RN",
+        "newValue": "NCLEX-RN",
+        "changedAt": "2026-08-08",
+        "reason": "Phase 2.2 Batch 1: re-confirmed live against NCSBN's official 2026 NCLEX-RN Test Plan and NCSBN publications page. Value unchanged. Status remains pending_verification (no human reviewer).",
+        "sourceUrl": "https://www.ncsbn.org/exams/nclex.page",
+        "reviewer": null
+      }
+    ],
+    "notes": "Cross-referenced: ncsbn.org/publications/2026-nclex-rn-test-plan, nclex.com 2026 RN Test Plan PDF (2026-08-08)"
+  },
+  "requiredExperience": {
+    "value": "Unknown",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "sourceName": null,
+    "verifiedAt": null,
+    "verificationMethod": null,
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0,
+    "confidenceLevel": "unknown",
+    "history": [],
+    "notes": "Not yet individually researched for this state."
+  },
+  "requiredEducation": {
+    "value": "Unknown",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "sourceName": null,
+    "verifiedAt": null,
+    "verificationMethod": null,
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0,
+    "confidenceLevel": "unknown",
+    "history": [],
+    "notes": "Not yet individually researched for this state. Nationally, an accredited nursing education program (diploma, ADN, or BSN) is required, but state-specific accreditation recognition rules are unverified."
+  },
+  "requiredDocuments": {
+    "value": "Unknown",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "sourceName": null,
+    "verifiedAt": null,
+    "verificationMethod": null,
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0,
+    "confidenceLevel": "unknown",
+    "history": [],
+    "notes": "Not yet individually researched for this state."
+  },
+  "processingTime": {
+    "value": "Unknown",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "sourceName": null,
+    "verifiedAt": null,
+    "verificationMethod": null,
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0,
+    "confidenceLevel": "unknown",
+    "history": [],
+    "notes": "Not yet individually researched for this state."
+  },
+  "rnEndorsementFeeUsd": {
+    "value": 350,
+    "sourceUrl": "https://www.rn.ca.gov/pdfs/regulations/proposedlang-fees2018.pdf",
+    "sourceTitle": "California Code of Regulations, Title 16, Division 14, Section 1417 - Fees",
+    "sourceName": "California Board of Registered Nursing",
+    "verifiedAt": "2026-08-09",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.93,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": 350,
+        "changedAt": "2026-08-09",
+        "reason": "Phase 2.5: first population of this field from an official primary source. 16 CCR 1417(g): 'Application Fee for Endorsement by a Registered Nurse in Another State, District or Territory of the United States: $350.' Distinct from the $300/$350 exam-pathway fee (1417 b/c) and the $190 biennial renewal fee (1417 i) -- this is specifically the endorsement fee, matching this field's clarified definition.",
+        "sourceUrl": "https://www.rn.ca.gov/pdfs/regulations/proposedlang-fees2018.pdf",
+        "reviewer": null
+      }
+    ],
+    "notes": "16 CCR 1417(g): 'Application Fee for Endorsement by a Registered Nurse in Another State, District or Territory of the United States: $350.' Distinct from the $300/$350 exam-pathway fee (1417 b/c) and the $190 biennial renewal fee (1417 i) -- this is specifically the endorsement fee, matching this field's clarified definition."
+  },
+  "renewalFeeUsd": {
+    "value": "Unknown",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "sourceName": null,
+    "verifiedAt": null,
+    "verificationMethod": null,
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0,
+    "confidenceLevel": "unknown",
+    "history": [],
+    "notes": "Not yet individually researched for this state."
+  },
+  "continuingEducationRequirements": {
+    "value": "Unknown",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "sourceName": null,
+    "verifiedAt": null,
+    "verificationMethod": null,
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0,
+    "confidenceLevel": "unknown",
+    "history": [],
+    "notes": "Not yet individually researched for this state."
+  },
+  "conflicts": [],
+  "lastFullReviewAt": null
+}

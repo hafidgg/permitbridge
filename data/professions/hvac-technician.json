@@ -1,0 +1,51 @@
+{
+  "slug": "hvac-technician",
+  "name": "HVAC Technician License",
+  "shortName": "HVAC Technician",
+  "category": "Skilled Trades",
+  "icon": "thermometer",
+  "description": "How to transfer an HVAC (heating, ventilation, and air conditioning) contractor license between US states.",
+  "longDescription": "HVAC licensing sits at the intersection of state contractor law and federal EPA refrigerant handling certification. The EPA Section 608 certification is federally recognized nationwide and does not need to be retaken, but the state or local HVAC contractor license itself must usually be re-applied for, and requirements range from a simple endorsement to a full local exam.",
+  "averageTransferDays": [
+    21,
+    80
+  ],
+  "hasNationalCompact": false,
+  "commonExam": "NASCLA Accredited Examination for Commercial General Building Contractors",
+  "commonExamAcceptedStates": [
+    "Alabama",
+    "Arizona",
+    "Arkansas",
+    "Florida",
+    "Georgia",
+    "Louisiana",
+    "Mississippi",
+    "Nevada",
+    "New Mexico",
+    "North Carolina",
+    "Oregon",
+    "South Carolina",
+    "Tennessee",
+    "Utah",
+    "Virginia",
+    "West Virginia"
+  ],
+  "faqs": [
+    {
+      "question": "Does my EPA 608 certification transfer to a new state?",
+      "answer": "Yes. EPA Section 608 refrigerant handling certification is federal and valid nationwide for life. Only your state or local HVAC contractor license needs to be re-established when you move."
+    },
+    {
+      "question": "Do I need a new HVAC license for every state I work in?",
+      "answer": "Generally yes, unless the state offers reciprocity or accepts a common exam like NASCLA. Many states also add a local business and law exam on top of any trade exam waiver."
+    }
+  ],
+  "relatedProfessions": [
+    "electrician",
+    "plumber",
+    "contractor"
+  ],
+  "updatedAt": "2026-08-07",
+  "sourceUrl": "https://www.nascla.org/nascla-commercial-exam-participating-state-agencies",
+  "verifiedAt": "2026-08-07"
+}

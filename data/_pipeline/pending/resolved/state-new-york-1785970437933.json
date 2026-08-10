@@ -1,0 +1,54 @@
+{
+  "id": "state-new-york-1785970437933",
+  "createdAt": "2026-08-05T22:53:57.933Z",
+  "diff": {
+    "entityKind": "state",
+    "entitySlug": "new-york",
+    "sourceId": "ny-dos-licensing",
+    "hasChanges": true,
+    "changes": [
+      {
+        "path": "isUlrState",
+        "before": false,
+        "after": true,
+        "risk": "high"
+      },
+      {
+        "path": "updatedAt",
+        "before": "2026-05-28",
+        "after": "2026-08-05",
+        "risk": "low"
+      },
+      {
+        "path": "sourceUrl",
+        "after": "https://dos.ny.gov/professional-licensing",
+        "risk": "low"
+      },
+      {
+        "path": "verifiedAt",
+        "after": "2026-08-05",
+        "risk": "low"
+      }
+    ],
+    "highestRisk": "high"
+  },
+  "proposedRecord": {
+    "slug": "new-york",
+    "name": "New York",
+    "abbreviation": "NY",
+    "region": "Northeast",
+    "licensingAuthorityNote": "New York does not license general contractors at the state level; licensing is handled by individual cities and counties (e.g., NYC Department of Buildings). Trade licenses (electrical, plumbing) are also frequently local rather than statewide.",
+    "isUlrState": true,
+    "populationRank": 4,
+    "faqs": [
+      {
+        "question": "Is there a statewide contractor license in New York?",
+        "answer": "No. New York leaves general contractor licensing to individual municipalities, so an out-of-state contractor may need separate approval in each city or county where they plan to work."
+      }
+    ],
+    "updatedAt": "2026-08-05",
+    "sourceUrl": "https://dos.ny.gov/professional-licensing",
+    "verifiedAt": "2026-08-05"
+  },
+  "status": "approved"
+}

@@ -1,0 +1,5 @@
+# Note: this static file is a fallback. The canonical robots rules are
+# generated dynamically by app/robots.ts (Next.js Metadata API).
+User-agent: *
+Allow: /
+Sitemap: https://www.permitbridge.com/sitemap.xml

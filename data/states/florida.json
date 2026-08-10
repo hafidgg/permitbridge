@@ -1,0 +1,19 @@
+{
+  "slug": "florida",
+  "name": "Florida",
+  "abbreviation": "FL",
+  "region": "South",
+  "licensingAuthorityNote": "Florida trade licenses are issued by the Department of Business and Professional Regulation (DBPR); healthcare licenses go through the Department of Health.",
+  "isUlrState": true,
+  "ulrEnactedYear": 2024,
+  "populationRank": 3,
+  "faqs": [
+    {
+      "question": "Does Florida accept the NASCLA exam for contractors?",
+      "answer": "Yes, Florida is one of the states that accepts the NASCLA Accredited Examination for Commercial General Building Contractors in place of its own trade exam for qualifying applicants."
+    }
+  ],
+  "updatedAt": "2026-08-05",
+  "sourceUrl": "https://www.myfloridalicense.com/",
+  "verifiedAt": "2026-08-05"
+}

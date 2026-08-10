@@ -1,0 +1,19 @@
+{
+  "id": "ncsbn-nurse-compact",
+  "agencyName": "NCSBN (National Council of State Boards of Nursing)",
+  "website": "https://www.nursecompact.com/",
+  "jurisdiction": "national",
+  "professionsCovered": [
+    "registered-nurse"
+  ],
+  "reliabilityScore": 0.95,
+  "reliabilityRationale": "The official site operated by NCSBN, the body that administers the Nurse Licensure Compact itself \u2014 the single most authoritative possible source for compact membership status. Not scored a full 1.0 only because compact 'enacted' vs. 'implemented' status can lag on any site (see Massachusetts, deliberately excluded from our member list for exactly this reason).",
+  "lastCrawl": null,
+  "lastManualVerification": "2026-08-07",
+  "fieldsUsingThisSource": 50,
+  "sourceType": "official-compact",
+  "official": true,
+  "authorityLevel": "authoritative",
+  "authorityRationale": "nursecompact.com is the official site operated by NCSBN specifically to administer and publish Nurse Licensure Compact membership status \u2014 this is not a third party describing the compact, it IS the compact's own official record. Authoritative specifically for compactMembership facts; would not automatically extend authority to unrelated facts (e.g. a specific state's fee schedule) that this source does not itself govern or publish.",
+  "specificity": "national-general"
+}

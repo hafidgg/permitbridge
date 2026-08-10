@@ -1,0 +1,443 @@
+{
+  "profession": "registered-nurse",
+  "sourceState": "california",
+  "destinationState": "texas",
+  "licenseType": "RN",
+  "transferMechanism": {
+    "value": "endorsement",
+    "sourceUrl": "https://www.bon.texas.gov/licensure_endorsement.asp.html",
+    "sourceTitle": "Licensure - Endorsement Information",
+    "sourceName": "Texas Board of Nursing (TXBON)",
+    "verifiedAt": "2026-08-10",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.95,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": "endorsement",
+        "changedAt": "2026-08-10",
+        "reason": "Phase 3.1: first population from real official-source research.",
+        "sourceUrl": "https://www.bon.texas.gov/licensure_endorsement.asp.html",
+        "reviewer": null
+      }
+    ],
+    "notes": "California is not an NLC member, so the CA nurse holds no multistate license to leverage. TXBON Rule 217.1(12): endorsement is 'the process of issuing a permanent license without further examination to a nurse from another jurisdiction... after determination is made that the applicant meets the same standards as those required of Texas nurses.'"
+  },
+  "endorsementProcess": {
+    "value": "Submit online endorsement application via the Texas Nurse Portal per Rule 217.5(a) eligibility criteria; requires Nursys license verification, fingerprinting, and passing the Texas Nursing Jurisprudence Exam.",
+    "sourceUrl": "https://bon.texas.gov/applications_endorsement.asp.html",
+    "sourceTitle": "Application Forms - Endorsement",
+    "sourceName": "Texas Board of Nursing (TXBON)",
+    "verifiedAt": "2026-08-10",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.9,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": "Submit online endorsement application via the Texas Nurse Portal per Rule 217.5(a) eligibility criteria; requires Nursys license verification, fingerprinting, and passing the Texas Nursing Jurisprudence Exam.",
+        "changedAt": "2026-08-10",
+        "reason": "Phase 3.1: first population from real official-source research.",
+        "sourceUrl": "https://bon.texas.gov/applications_endorsement.asp.html",
+        "reviewer": null
+      }
+    ],
+    "notes": null
+  },
+  "reciprocityAgreementExists": {
+    "value": {
+      "status": "not_applicable"
+    },
+    "sourceUrl": "https://www.bon.texas.gov/licensure_endorsement.asp.html",
+    "sourceTitle": "Licensure - Endorsement Information",
+    "sourceName": "Texas Board of Nursing (TXBON)",
+    "verifiedAt": "2026-08-10",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.85,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": {
+          "status": "not_applicable"
+        },
+        "changedAt": "2026-08-10",
+        "reason": "Phase 3.1: first population from real official-source research.",
+        "sourceUrl": "https://www.bon.texas.gov/licensure_endorsement.asp.html",
+        "reviewer": null
+      }
+    ],
+    "notes": "Texas's pathway for out-of-state nurses is endorsement under Rule 217, not a bilateral agreement."
+  },
+  "universalRecognitionApplies": {
+    "value": {
+      "status": "not_applicable"
+    },
+    "sourceUrl": "https://www.bon.texas.gov/licensure_endorsement.asp.html",
+    "sourceTitle": "Licensure - Endorsement Information",
+    "sourceName": "Texas Board of Nursing (TXBON)",
+    "verifiedAt": "2026-08-10",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.7,
+    "confidenceLevel": "likely",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": {
+          "status": "not_applicable"
+        },
+        "changedAt": "2026-08-10",
+        "reason": "Phase 3.1: first population from real official-source research.",
+        "sourceUrl": "https://www.bon.texas.gov/licensure_endorsement.asp.html",
+        "reviewer": null
+      }
+    ],
+    "notes": "Texas does not have a broad Universal License Recognition law for nursing specifically (see this project's own Phase 2.x research on Texas's general-occupation ULR status, which found Texas lacks a true general ULR statute); endorsement under Board Rule is the applicable pathway."
+  },
+  "examRequirement": {
+    "value": {
+      "status": "required"
+    },
+    "sourceUrl": "https://www.renewrn.net/license-transfer/texas",
+    "sourceTitle": "Texas Nursing License by Endorsement (2026)",
+    "sourceName": "RenewRN (secondary source, used for discovery only)",
+    "verifiedAt": "2026-08-10",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.55,
+    "confidenceLevel": "uncertain",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": {
+          "status": "required"
+        },
+        "changedAt": "2026-08-10",
+        "reason": "Phase 3.1: first population from real official-source research.",
+        "sourceUrl": "https://www.renewrn.net/license-transfer/texas",
+        "reviewer": null
+      }
+    ],
+    "notes": "IMPORTANT DISTINCTION: NCLEX-RN is NOT retaken (endorsement waives it). However, Texas requires the separate Texas Nursing Jurisprudence Examination before a permanent license issues. Marked 'required' referring specifically to the jurisprudence exam. NOTE: this specific field's primary citation is a secondary/commercial source (renewrn.net) used for discovery, per Phase 3.1 Step 2 -- confidence is deliberately capped lower (0.55) to reflect that this needs re-confirmation against bon.texas.gov/licensure_nursing_jurisprudence.asp.html directly before this field could ever be marked Verified."
+  },
+  "experienceRequirement": {
+    "value": {
+      "status": "conditional",
+      "conditions": [
+        {
+          "description": "Required (Six-Month Permit / Rule 217.5(c) compliance) if the applicant passed the NCLEX-RN or SBTPE more than 4 years ago AND has not practiced as an RN in the US or a Canadian province within the last 4 years.",
+          "category": "practice_gap"
+        }
+      ]
+    },
+    "sourceUrl": "https://www.bon.texas.gov/pdfs/education_pdfs/education_programs/RN%20END%20INTL%20INSTRUCTIONS%208.22.pdf",
+    "sourceTitle": "Graduates Of International Programs - Endorsement Instructions",
+    "sourceName": "Texas Board of Nursing (TXBON)",
+    "verifiedAt": "2026-08-10",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.88,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": {
+          "status": "conditional",
+          "conditions": [
+            {
+              "description": "Required (Six-Month Permit / Rule 217.5(c) compliance) if the applicant passed the NCLEX-RN or SBTPE more than 4 years ago AND has not practiced as an RN in the US or a Canadian province within the last 4 years.",
+              "category": "practice_gap"
+            }
+          ]
+        },
+        "changedAt": "2026-08-10",
+        "reason": "Phase 3.1: first population from real official-source research.",
+        "sourceUrl": "https://www.bon.texas.gov/pdfs/education_pdfs/education_programs/RN%20END%20INTL%20INSTRUCTIONS%208.22.pdf",
+        "reviewer": null
+      }
+    ],
+    "notes": null
+  },
+  "applicationFeeUsd": {
+    "value": 150,
+    "sourceUrl": "https://www.renewrn.net/license-transfer/texas",
+    "sourceTitle": "Texas Nursing License by Endorsement (2026)",
+    "sourceName": "RenewRN (secondary source, used for discovery only)",
+    "verifiedAt": "2026-08-10",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.6,
+    "confidenceLevel": "likely",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": 150,
+        "changedAt": "2026-08-10",
+        "reason": "Phase 3.1: first population from real official-source research.",
+        "sourceUrl": "https://www.renewrn.net/license-transfer/texas",
+        "reviewer": null
+      }
+    ],
+    "notes": "$150 endorsement application fee (includes the Nursing Jurisprudence Exam), per this secondary source. Not yet cross-confirmed against TXBON's own official 'RN Schedule of Fees' page (bon.texas.gov/forms.asp.html lists this as an available official form/schedule, but the specific current dollar figure was not independently extracted from it in this session) -- confidence capped accordingly; must be re-confirmed against the official fee schedule PDF directly before Verified status could ever apply."
+  },
+  "otherRequiredFees": {
+    "value": "DPS and FBI fingerprint fee, set by those agencies and paid separately (amount not published by TXBON as a fixed figure).",
+    "sourceUrl": "https://www.bon.texas.gov/licensure_endorsement.asp.html",
+    "sourceTitle": "Licensure - Endorsement Information",
+    "sourceName": "Texas Board of Nursing (TXBON)",
+    "verifiedAt": "2026-08-10",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.7,
+    "confidenceLevel": "likely",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": "DPS and FBI fingerprint fee, set by those agencies and paid separately (amount not published by TXBON as a fixed figure).",
+        "changedAt": "2026-08-10",
+        "reason": "Phase 3.1: first population from real official-source research.",
+        "sourceUrl": "https://www.bon.texas.gov/licensure_endorsement.asp.html",
+        "reviewer": null
+      }
+    ],
+    "notes": null
+  },
+  "backgroundCheckRequirement": {
+    "value": {
+      "status": "required"
+    },
+    "sourceUrl": "https://www.bon.texas.gov/licensure_endorsement.asp.html",
+    "sourceTitle": "Licensure - Endorsement Information",
+    "sourceName": "Texas Board of Nursing (TXBON)",
+    "verifiedAt": "2026-08-10",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.9,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": {
+          "status": "required"
+        },
+        "changedAt": "2026-08-10",
+        "reason": "Phase 3.1: first population from real official-source research.",
+        "sourceUrl": "https://www.bon.texas.gov/licensure_endorsement.asp.html",
+        "reviewer": null
+      }
+    ],
+    "notes": null
+  },
+  "fingerprintingRequirement": {
+    "value": {
+      "status": "required"
+    },
+    "sourceUrl": "https://www.bon.texas.gov/licensure_endorsement.asp.html",
+    "sourceTitle": "Licensure - Endorsement Information",
+    "sourceName": "Texas Board of Nursing (TXBON)",
+    "verifiedAt": "2026-08-10",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.9,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": {
+          "status": "required"
+        },
+        "changedAt": "2026-08-10",
+        "reason": "Phase 3.1: first population from real official-source research.",
+        "sourceUrl": "https://www.bon.texas.gov/licensure_endorsement.asp.html",
+        "reviewer": null
+      }
+    ],
+    "notes": "Processed through the FAST fingerprinting system; TXBON will not issue a license or temporary permit until complete."
+  },
+  "licenseVerificationRequirement": {
+    "value": {
+      "status": "required"
+    },
+    "sourceUrl": "https://www.bon.texas.gov/pdfs/education_pdfs/education_programs/RN%20END%20INTL%20INSTRUCTIONS%208.22.pdf",
+    "sourceTitle": "Graduates Of International Programs - Endorsement Instructions",
+    "sourceName": "Texas Board of Nursing (TXBON)",
+    "verifiedAt": "2026-08-10",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.9,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": {
+          "status": "required"
+        },
+        "changedAt": "2026-08-10",
+        "reason": "Phase 3.1: first population from real official-source research.",
+        "sourceUrl": "https://www.bon.texas.gov/pdfs/education_pdfs/education_programs/RN%20END%20INTL%20INSTRUCTIONS%208.22.pdf",
+        "reviewer": null
+      }
+    ],
+    "notes": "Via Nursys as of July 2025 (all US states/territories except Puerto Rico participate)."
+  },
+  "documentsRequired": {
+    "value": "Unknown",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "sourceName": null,
+    "verifiedAt": null,
+    "verificationMethod": null,
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0,
+    "confidenceLevel": "unknown",
+    "history": [],
+    "notes": "Detailed document checklist not yet fully itemized in this pass."
+  },
+  "goodStandingRequirement": {
+    "value": {
+      "status": "required"
+    },
+    "sourceUrl": "https://www.bon.texas.gov/licensure_endorsement.asp.html",
+    "sourceTitle": "Licensure - Endorsement Information",
+    "sourceName": "Texas Board of Nursing (TXBON)",
+    "verifiedAt": "2026-08-10",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.85,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": {
+          "status": "required"
+        },
+        "changedAt": "2026-08-10",
+        "reason": "Phase 3.1: first population from real official-source research.",
+        "sourceUrl": "https://www.bon.texas.gov/licensure_endorsement.asp.html",
+        "reviewer": null
+      }
+    ],
+    "notes": null
+  },
+  "disciplinaryDisclosureRequirement": {
+    "value": "Unknown",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "sourceName": null,
+    "verifiedAt": null,
+    "verificationMethod": null,
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0,
+    "confidenceLevel": "unknown",
+    "history": [],
+    "notes": "Not specifically itemized in the sources reviewed this session."
+  },
+  "processingTime": {
+    "value": "Board staff review: approximately 10 business days after the last required item is received (per TXBON's own instructions); temporary permit eligibility review: 15 business days.",
+    "sourceUrl": "https://www.bon.texas.gov/pdfs/education_pdfs/education_programs/RN%20END%20INTL%20INSTRUCTIONS%208.22.pdf",
+    "sourceTitle": "Graduates Of International Programs - Endorsement Instructions",
+    "sourceName": "Texas Board of Nursing (TXBON)",
+    "verifiedAt": "2026-08-10",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.85,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": "Board staff review: approximately 10 business days after the last required item is received (per TXBON's own instructions); temporary permit eligibility review: 15 business days.",
+        "changedAt": "2026-08-10",
+        "reason": "Phase 3.1: first population from real official-source research.",
+        "sourceUrl": "https://www.bon.texas.gov/pdfs/education_pdfs/education_programs/RN%20END%20INTL%20INSTRUCTIONS%208.22.pdf",
+        "reviewer": null
+      }
+    ],
+    "notes": null
+  },
+  "temporaryPermitAvailability": {
+    "value": {
+      "status": "required"
+    },
+    "sourceUrl": "https://www.bon.texas.gov/applications_six_month_permits_and_temporary_licenses.asp.html",
+    "sourceTitle": "Six Month Permits & Temporary Licenses",
+    "sourceName": "Texas Board of Nursing (TXBON)",
+    "verifiedAt": "2026-08-10",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.9,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": {
+          "status": "required"
+        },
+        "changedAt": "2026-08-10",
+        "reason": "Phase 3.1: first population from real official-source research.",
+        "sourceUrl": "https://www.bon.texas.gov/applications_six_month_permits_and_temporary_licenses.asp.html",
+        "reviewer": null
+      }
+    ],
+    "notes": "120-day temporary license issued based on the same endorsement application (not a separate application), typically within 15 business days."
+  },
+  "compactStatus": {
+    "value": "Not applicable to this transfer -- California is not an NLC member, so no compact pathway exists regardless of Texas's own membership.",
+    "sourceUrl": "https://www.bon.texas.gov/licensure_endorsement.asp.html",
+    "sourceTitle": "Licensure - Endorsement Information",
+    "sourceName": "Texas Board of Nursing (TXBON)",
+    "verifiedAt": "2026-08-10",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.9,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": "Not applicable to this transfer -- California is not an NLC member, so no compact pathway exists regardless of Texas's own membership.",
+        "changedAt": "2026-08-10",
+        "reason": "Phase 3.1: first population from real official-source research.",
+        "sourceUrl": "https://www.bon.texas.gov/licensure_endorsement.asp.html",
+        "reviewer": null
+      }
+    ],
+    "notes": null
+  },
+  "exceptions": {
+    "value": "Unknown",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "sourceName": null,
+    "verifiedAt": null,
+    "verificationMethod": null,
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0,
+    "confidenceLevel": "unknown",
+    "history": [],
+    "notes": "No additional exceptions researched in this pass."
+  },
+  "conflicts": [],
+  "lastFullReviewAt": null
+}

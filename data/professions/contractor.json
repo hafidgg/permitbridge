@@ -1,0 +1,55 @@
+{
+  "slug": "contractor",
+  "name": "General Contractor License",
+  "shortName": "Contractor",
+  "category": "Construction",
+  "icon": "hard-hat",
+  "description": "How to transfer a general contractor license between US states, including NASCLA and Universal License Recognition (ULR) laws.",
+  "longDescription": "General contractor licensing is the most-searched license-transfer topic in construction. Roughly half of US states now offer some form of reciprocity, endorsement, or comity, and the Universal License Recognition (ULR) movement has added a growing number of states that must recognize an out-of-state license in good standing, typically after one year of active licensure. However, ULR laws are broader-scope and do not remove state-specific business, law, or trade exams outright.",
+  "averageTransferDays": [
+    14,
+    90
+  ],
+  "hasNationalCompact": false,
+  "commonExam": "NASCLA Accredited Examination for Commercial General Building Contractors",
+  "commonExamAcceptedStates": [
+    "Alabama",
+    "Arizona",
+    "Arkansas",
+    "Florida",
+    "Georgia",
+    "Louisiana",
+    "Mississippi",
+    "Nevada",
+    "New Mexico",
+    "North Carolina",
+    "Oregon",
+    "South Carolina",
+    "Tennessee",
+    "Utah",
+    "Virginia",
+    "West Virginia"
+  ],
+  "faqs": [
+    {
+      "question": "What is Universal License Recognition (ULR)?",
+      "answer": "ULR laws require a state to recognize an out-of-state occupational license if the holder has been licensed for a minimum period (commonly one year) and is in good standing, though the receiving state can still require proof, fees, and sometimes a law exam."
+    },
+    {
+      "question": "Does a NASCLA exam let me skip the trade exam everywhere?",
+      "answer": "Only in the states that specifically accept the NASCLA Accredited Examination for Commercial General Building Contractors as a substitute for their own trade exam. Business and law exams are still typically state-specific."
+    },
+    {
+      "question": "How long does a contractor license transfer usually take?",
+      "answer": "Anywhere from about two weeks in states with strong reciprocity agreements to three months in states requiring a full new application and exam scheduling."
+    }
+  ],
+  "relatedProfessions": [
+    "electrician",
+    "plumber",
+    "hvac-technician"
+  ],
+  "updatedAt": "2026-08-07",
+  "sourceUrl": "https://www.nascla.org/nascla-commercial-exam-participating-state-agencies",
+  "verifiedAt": "2026-08-07"
+}

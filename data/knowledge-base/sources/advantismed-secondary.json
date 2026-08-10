@@ -1,0 +1,19 @@
+{
+  "id": "advantismed-secondary",
+  "agencyName": "Advantis Medical (commercial travel-nurse staffing site, NOT an official source)",
+  "website": "https://advantismed.com/nursing-license/georgia",
+  "jurisdiction": "georgia",
+  "professionsCovered": [
+    "registered-nurse"
+  ],
+  "sourceType": "secondary",
+  "official": false,
+  "authorityLevel": "supplementary",
+  "specificity": "field-specific",
+  "authorityRationale": "A commercial travel-nurse staffing site. Used only for discovery of the GOALS-portal process narrative in Phase 3.1.",
+  "reliabilityScore": 0.5,
+  "reliabilityRationale": "Commercial site, not an official source.",
+  "lastCrawl": null,
+  "lastManualVerification": "2026-08-10",
+  "fieldsUsingThisSource": 0
+}
