@@ -13,14 +13,14 @@
       "checkFrequencyDays": 30,
       "status": "active",
       "consecutiveFailures": 0,
-      "totalChecks": 0,
-      "successfulChecks": 0,
+      "totalChecks": 1,
+      "successfulChecks": 1,
       "failedChecks": 0,
-      "lastCheckedAt": null,
-      "lastSuccessfulFetchAt": null,
-      "lastChangedAt": null,
-      "lastContentHash": null,
-      "lastHttpStatus": null,
+      "lastCheckedAt": "2026-08-10T14:20:14.246Z",
+      "lastSuccessfulFetchAt": "2026-08-10T14:20:14.246Z",
+      "lastChangedAt": "2026-08-10T14:20:14.246Z",
+      "lastContentHash": "09e17211596cb981",
+      "lastHttpStatus": 200,
       "lastError": null,
       "relatedSourceRecordId": "florida-fee-schedule",
       "fieldMapping": {
@@ -32,6 +32,104 @@
         }
       },
       "notes": "First real monitoring pilot (post-Phase 4.7). Watches the exact same page and field already backing Florida's real, verified rnEndorsementFeeUsd=$110 (Phase 2.5). The extraction pattern anchors to the 'MOBILE Endorsement Fees' heading specifically to avoid the page's other, coincidentally-identical $110.00 figure under 'Licensing by Exam Fees' (a different, unrelated fee type) and the $100.00 under 'Multi-state Upgrade Fees' (which appears earlier on the page). Live-fetch confirmed against the real page on 2026-08-09 before this fixture/rule was written."
+    },
+    {
+      "id": "ny-endorsement-fee-monitor",
+      "url": "https://www.op.nysed.gov/professions/registered-professional-nursing/endorsement-nursing-licenses",
+      "title": "Endorsement of Nursing Licenses - RPN | Office of the Professions",
+      "jurisdiction": "new-york",
+      "profession": "registered-nurse",
+      "sourceType": "official-board",
+      "authority": "authoritative",
+      "specificity": "profession-specific",
+      "checkFrequencyDays": 30,
+      "status": "active",
+      "consecutiveFailures": 0,
+      "totalChecks": 0,
+      "successfulChecks": 0,
+      "failedChecks": 0,
+      "lastCheckedAt": null,
+      "lastSuccessfulFetchAt": null,
+      "lastChangedAt": null,
+      "lastContentHash": null,
+      "lastHttpStatus": null,
+      "lastError": null,
+      "relatedSourceRecordId": "new-york-fee-schedule",
+      "fieldMapping": {
+        "field": "rnEndorsementFeeUsd",
+        "extractRule": {
+          "field": "rnEndorsementFeeUsd",
+          "pattern": "Form 1 - Application for Licensure\\* along with the \\$(\\d+)",
+          "transform": "number"
+        }
+      },
+      "notes": "Phase 4.11. Watches the exact page/value already backing New York's real, verified rnEndorsementFeeUsd=$143 (Phase 2.5/2.6). Anchored to the specific 'Form 1 - Application for Licensure* along with the $X fee' sentence, which is the only dollar figure on the page \u2014 confirmed via a real live fetch on 2026-08-10."
+    },
+    {
+      "id": "ny-transfer-fee-monitor",
+      "url": "https://www.op.nysed.gov/professions/registered-professional-nursing/endorsement-nursing-licenses",
+      "title": "Endorsement of Nursing Licenses - RPN | Office of the Professions",
+      "jurisdiction": "california",
+      "profession": "registered-nurse",
+      "sourceType": "official-board",
+      "authority": "authoritative",
+      "specificity": "field-specific",
+      "checkFrequencyDays": 30,
+      "status": "active",
+      "consecutiveFailures": 0,
+      "totalChecks": 0,
+      "successfulChecks": 0,
+      "failedChecks": 0,
+      "lastCheckedAt": null,
+      "lastSuccessfulFetchAt": null,
+      "lastChangedAt": null,
+      "lastContentHash": null,
+      "lastHttpStatus": null,
+      "lastError": null,
+      "relatedSourceRecordId": null,
+      "fieldMapping": {
+        "field": "applicationFeeUsd",
+        "destinationJurisdiction": "new-york",
+        "extractRule": {
+          "field": "applicationFeeUsd",
+          "pattern": "Form 1 - Application for Licensure\\* along with the \\$(\\d+)",
+          "transform": "number"
+        }
+      },
+      "notes": "Phase 4.11. Same official source/value as ny-endorsement-fee-monitor, but targets the TransferRule california-to-new-york.applicationFeeUsd field ($143) instead of the RN-facts field \u2014 the real-world fact (NY's endorsement fee) is identical regardless of which schema asks about it, since NY requires endorsement uniformly regardless of the applicant's origin state. Kept as a SEPARATE MonitoredSource (not merged into ny-endorsement-fee-monitor) to preserve the 1-source-to-1-field-mapping design and keep each schema's provenance independently auditable."
+    },
+    {
+      "id": "florida-multistate-fee-monitor",
+      "url": "https://floridasnursing.gov/category/post-template-toggle/fees/",
+      "title": "Fees Archives - Florida Board of Nursing",
+      "jurisdiction": "texas",
+      "profession": "registered-nurse",
+      "sourceType": "official-board",
+      "authority": "authoritative",
+      "specificity": "field-specific",
+      "checkFrequencyDays": 30,
+      "status": "active",
+      "consecutiveFailures": 0,
+      "totalChecks": 0,
+      "successfulChecks": 0,
+      "failedChecks": 0,
+      "lastCheckedAt": null,
+      "lastSuccessfulFetchAt": null,
+      "lastChangedAt": null,
+      "lastContentHash": null,
+      "lastHttpStatus": null,
+      "lastError": null,
+      "relatedSourceRecordId": "florida-fee-schedule",
+      "fieldMapping": {
+        "field": "applicationFeeUsd",
+        "destinationJurisdiction": "florida",
+        "extractRule": {
+          "field": "applicationFeeUsd",
+          "pattern": "Multi-state Upgrade Fees[\\s\\S]{0,200}?\\$(\\d+(?:\\.\\d{2})?)",
+          "transform": "number"
+        }
+      },
+      "notes": "Phase 4.11. Same page as the existing florida-fee-schedule-monitor pilot, but a DELIBERATELY DISTINCT extraction rule anchored to the 'Multi-state Upgrade Fees' heading (not 'MOBILE Endorsement Fees') \u2014 targets TransferRule texas-to-florida.applicationFeeUsd ($100), a genuinely different real fee on the same page, not a blind reuse of the existing pilot's rule. Verified the two headings' figures don't cross-contaminate: the existing pilot's own fixture set (v2-changed, which changes ONLY the Endorsement figure) independently confirms this rule correctly reads $100 unchanged when the Endorsement figure changes elsewhere on the same page."
     }
   ]
 }
