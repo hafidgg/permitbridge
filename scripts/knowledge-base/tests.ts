@@ -1744,12 +1744,12 @@ function synthMonitoredSource(overrides: Partial<MonitoredSource> = {}): Monitor
 await test("the real on-disk registry currently exists and is empty — Phase 4.1 is infrastructure-only, no sources populated yet", () => {
   const registry = loadMonitoringRegistry();
   assertEqual(registry.version, 1);
-  // Updated after the first-real-source pilot: this invariant ("zero
-  // sources") only held through Phase 4.7. The registry now legitimately
-  // contains exactly the one intended pilot source — checked precisely,
-  // not just "non-empty," so a stray extra source would still be caught.
-  assertEqual(registry.sources.length, 1, "expected exactly the one real pilot source, no more");
-  assertEqual(registry.sources[0]?.id, "florida-fee-schedule-monitor");
+  // Updated after Phase 4.11's source expansion: the registry now
+  // legitimately contains 4 real sources (checked precisely, not just
+  // "non-empty") — the original pilot plus 3 individually-validated
+  // Phase 4.11 mappings.
+  assertEqual(registry.sources.length, 4, "expected exactly 4 real sources — the original pilot plus 3 Phase 4.11 mappings");
+  assert(registry.sources.some((s) => s.id === "florida-fee-schedule-monitor"), "the original pilot source must still be present");
 });
 
 await test("MonitoredSource reuses SourceType/AuthorityLevel/SourceSpecificity from knowledge-base types, not a redefinition", () => {
@@ -1768,7 +1768,7 @@ await test("addMonitoredSource adds a source to an in-memory registry without to
   // Confirm the real on-disk registry is untouched by this in-memory operation
   // — checked against its real current count (1, the pilot source, after
   // the first-real-source-pilot work), not a hardcoded 0.
-  assertEqual(loadMonitoringRegistry().sources.length, 1, "in-memory registry mutation must never touch the real file without an explicit save call");
+  assertEqual(loadMonitoringRegistry().sources.length, 4, "in-memory registry mutation must never touch the real file without an explicit save call — real count is 4 post-Phase-4.11, not 0/1");
 });
 
 await test("addMonitoredSource rejects a duplicate id", () => {
@@ -3384,11 +3384,10 @@ await test("production data (facts, transfer-rules, sources) remains completely 
   assert(!fs.existsSync(PILOT_LOCK_PATH));
 });
 
-await test("the REAL production registry now contains exactly the one intended pilot source, with correct identity and field mapping", () => {
+await test("the REAL production registry contains the original pilot source, with correct identity and field mapping (now alongside 3 Phase 4.11 additions)", () => {
   const realRegistry = JSON.parse(fs.readFileSync(path.join(process.cwd(), "data", "knowledge-base", "monitoring", "registry.json"), "utf-8"));
-  assertEqual(realRegistry.sources.length, 1, "exactly one real source — the explicit scope of this pilot");
-  const source = realRegistry.sources[0];
-  assertEqual(source.id, "florida-fee-schedule-monitor");
+  const source = realRegistry.sources.find((s: any) => s.id === "florida-fee-schedule-monitor");
+  assert(!!source, "the original pilot source must still be present");
   assertEqual(source.jurisdiction, "florida");
   assertEqual(source.profession, "registered-nurse");
   assertEqual(source.fieldMapping.field, "rnEndorsementFeeUsd");
@@ -3640,8 +3639,7 @@ await test("production data (facts, transfer-rules, sources, registry) remains c
   const fl = JSON.parse(fs.readFileSync(path.join(process.cwd(), "data", "knowledge-base", "facts", "registered-nurse", "florida.json"), "utf-8"));
   assertEqual(fl.rnEndorsementFeeUsd.value, 110);
   const realRegistry = JSON.parse(fs.readFileSync(path.join(process.cwd(), "data", "knowledge-base", "monitoring", "registry.json"), "utf-8"));
-  assertEqual(realRegistry.sources.length, 1);
-  assertEqual(realRegistry.sources[0].id, "florida-fee-schedule-monitor");
+  assert(realRegistry.sources.some((s: any) => s.id === "florida-fee-schedule-monitor"), "the original pilot source must still be present");
   assert(!fs.existsSync(PHASE48_CHANGES_DIR));
   assert(!fs.existsSync(PHASE48_REGISTRY_PATH));
   assert(!fs.existsSync(PHASE48_LOCK_PATH));
@@ -3683,6 +3681,17 @@ await test("[Workflow schedule] the new workflow's cron schedule does not exactl
   const newCron = newWorkflow.match(/cron:\s*"([^"]+)"/)?.[1];
   assert(!!existingCron && !!newCron, "expected both workflows to declare a cron schedule");
   assert(existingCron !== newCron, `expected different schedules to avoid an exact-time collision — got "${existingCron}" and "${newCron}"`);
+});
+
+await test("[PERMANENT — real GitHub Actions run caught this] .gitignore excludes data/_pipeline/cache/ contents (except .gitkeep) — the exact real-world cache-file leak the first live workflow run correctly refused to commit", () => {
+  const gitignore = fs.readFileSync(path.join(process.cwd(), ".gitignore"), "utf-8");
+  assert(gitignore.includes("data/_pipeline/cache/*"), "expected the cache directory's contents to be gitignored");
+  assert(gitignore.includes("!data/_pipeline/cache/.gitkeep"), "expected .gitkeep specifically to remain tracked, preserving the directory itself");
+});
+
+await test("[Real fetchLive cache side effect, documented] fetchMonitoredSource in 'live' mode reuses lib/pipeline/fetcher.ts's fetchLive(), which writes to data/_pipeline/cache/{id}.json as a side effect — confirmed this is real, not hypothetical, by inspecting fetcher.ts's own source", () => {
+  const fetcherSrc = fs.readFileSync(path.join(process.cwd(), "lib", "pipeline", "fetcher.ts"), "utf-8");
+  assert(fetcherSrc.includes("_pipeline") && fetcherSrc.includes("cache"), "expected fetcher.ts to reference the cache directory — confirms the real cause, not a guess");
 });
 
 await test("[Filesystem reality check] the local monitoring engine genuinely writes to a writable filesystem here (unlike Vercel) — confirmed by an actual write/read round-trip, the same operation that fails on Vercel", async () => {
@@ -3747,8 +3756,223 @@ await test("production data remains completely untouched by the entire Phase 4.9
   const fl = JSON.parse(fs.readFileSync(path.join(process.cwd(), "data", "knowledge-base", "facts", "registered-nurse", "florida.json"), "utf-8"));
   assertEqual(fl.rnEndorsementFeeUsd.value, 110);
   const realRegistry = JSON.parse(fs.readFileSync(path.join(process.cwd(), "data", "knowledge-base", "monitoring", "registry.json"), "utf-8"));
-  assertEqual(realRegistry.sources.length, 1);
-  assertEqual(realRegistry.sources[0].id, "florida-fee-schedule-monitor");
+  // Updated post-Phase-4.11: this invariant ("exactly 1 source") only held
+  // through Phase 4.9. The registry now legitimately contains 4 real,
+  // individually-validated sources — checked precisely below, not just
+  // "non-empty."
+  assert(realRegistry.sources.some((s: any) => s.id === "florida-fee-schedule-monitor"), "the original pilot source must still be present");
+});
+
+// ---------------------------------------------------------------------
+// 31. Phase 4.11 — Production Source Expansion & Field-Mapping
+//     (3 new real sources, individually live-verified before any fixture
+//     or rule was written; 2 candidates researched and REJECTED for
+//     genuine extraction-safety reasons, documented in the code itself)
+// ---------------------------------------------------------------------
+console.log("\nProduction Source Expansion & Field-Mapping (Phase 4.11):");
+
+const REAL_NY_FEE = JSON.parse(fs.readFileSync(path.join(process.cwd(), "data", "knowledge-base", "facts", "registered-nurse", "new-york.json"), "utf-8")).rnEndorsementFeeUsd.value;
+const REAL_NY_TRANSFER_FEE = JSON.parse(fs.readFileSync(path.join(process.cwd(), "data", "knowledge-base", "transfer-rules", "registered-nurse", "california-to-new-york.json"), "utf-8")).applicationFeeUsd.value;
+const REAL_FL_TRANSFER_FEE = JSON.parse(fs.readFileSync(path.join(process.cwd(), "data", "knowledge-base", "transfer-rules", "registered-nurse", "texas-to-florida.json"), "utf-8")).applicationFeeUsd.value;
+
+const NY_EXTRACT_RULE = { field: "rnEndorsementFeeUsd", pattern: "Form 1 - Application for Licensure\\* along with the \\$(\\d+)", transform: "number" as const };
+const FL_MULTISTATE_EXTRACT_RULE = { field: "applicationFeeUsd", pattern: "Multi-state Upgrade Fees[\\s\\S]{0,200}?\\$(\\d+(?:\\.\\d{2})?)", transform: "number" as const };
+
+const PHASE411_CHANGES_DIR = path.join(process.cwd(), "data", "knowledge-base", "monitoring", "changes-phase411-test-temp");
+function cleanupPhase411() {
+  fs.rmSync(PHASE411_CHANGES_DIR, { recursive: true, force: true });
+}
+
+async function testMappingSequence(args: {
+  label: string;
+  v1FixtureId: string;
+  v2FixtureId: string;
+  irrelevantFixtureId: string;
+  malformedFixtureId: string;
+  field: string;
+  extractRule: { field: string; pattern: string; transform: "number" };
+  currentValue: number;
+  expectedV2Value: number;
+}) {
+  // 1. current value -> NO_CHANGE
+  await test(`[${args.label}] current real fixture -> NO_CHANGE against the real current production value`, async () => {
+    const source = synthMonitoredSource({ id: args.v1FixtureId });
+    const outcome = await fetchMonitoredSource(source, "mock");
+    const detection = detectFieldChange({
+      field: args.field,
+      currentValue: args.currentValue,
+      extractRule: args.extractRule,
+      previousHash: null,
+      newHash: outcome.fetchResult.contentHash!,
+      fetchStatus: "ok",
+      rawText: outcome.fetchResult.rawText,
+    });
+    assertEqual(detection.classification, "NO_CHANGE", "the live-verified current value must match production exactly, per this phase's explicit pre-implementation live check");
+  });
+
+  // 2. changed value -> correct DetectedChange
+  await test(`[${args.label}] v2 (genuinely changed) fixture -> correct DetectedChange with the right proposed value`, async () => {
+    const source = synthMonitoredSource({ id: args.v2FixtureId });
+    const outcome = await fetchMonitoredSource(source, "mock");
+    const detection = detectFieldChange({
+      field: args.field,
+      currentValue: args.currentValue,
+      extractRule: args.extractRule,
+      previousHash: "some-prior-hash",
+      newHash: outcome.fetchResult.contentHash!,
+      fetchStatus: "ok",
+      rawText: outcome.fetchResult.rawText,
+    });
+    assertEqual(detection.proposedValue, args.expectedV2Value);
+    assert(detection.classification !== "NO_CHANGE");
+  });
+
+  // 3. irrelevant page change -> NO_CHANGE
+  await test(`[${args.label}] irrelevant page change -> NO_CHANGE (target value unaffected)`, async () => {
+    const source = synthMonitoredSource({ id: args.irrelevantFixtureId });
+    const outcome = await fetchMonitoredSource(source, "mock");
+    const detection = detectFieldChange({
+      field: args.field,
+      currentValue: args.currentValue,
+      extractRule: args.extractRule,
+      previousHash: "some-different-prior-hash",
+      newHash: outcome.fetchResult.contentHash!,
+      fetchStatus: "ok",
+      rawText: outcome.fetchResult.rawText,
+    });
+    assertEqual(detection.classification, "NO_CHANGE");
+  });
+
+  // 4. malformed/ambiguous source -> no guessed value
+  await test(`[${args.label}] malformed/ambiguous fixture -> classification without a guessed value`, async () => {
+    const source = synthMonitoredSource({ id: args.malformedFixtureId });
+    const outcome = await fetchMonitoredSource(source, "mock");
+    const detection = detectFieldChange({
+      field: args.field,
+      currentValue: args.currentValue,
+      extractRule: args.extractRule,
+      previousHash: "some-prior-hash",
+      newHash: outcome.fetchResult.contentHash!,
+      fetchStatus: "ok",
+      rawText: outcome.fetchResult.rawText,
+    });
+    assertEqual(detection.proposedValue, undefined, "must never guess when the target text has disappeared");
+  });
+}
+
+await testMappingSequence({
+  label: "NY rnEndorsementFeeUsd",
+  v1FixtureId: "ny-endorsement-fee-pilot-v1",
+  v2FixtureId: "ny-endorsement-fee-pilot-v2-changed",
+  irrelevantFixtureId: "ny-endorsement-fee-pilot-v1-irrelevant-change",
+  malformedFixtureId: "ny-endorsement-fee-pilot-v3-malformed",
+  field: "rnEndorsementFeeUsd",
+  extractRule: NY_EXTRACT_RULE,
+  currentValue: REAL_NY_FEE,
+  expectedV2Value: 160,
+});
+
+await testMappingSequence({
+  label: "NY TransferRule applicationFeeUsd",
+  v1FixtureId: "ny-endorsement-fee-pilot-v1",
+  v2FixtureId: "ny-endorsement-fee-pilot-v2-changed",
+  irrelevantFixtureId: "ny-endorsement-fee-pilot-v1-irrelevant-change",
+  malformedFixtureId: "ny-endorsement-fee-pilot-v3-malformed",
+  field: "applicationFeeUsd",
+  extractRule: { ...NY_EXTRACT_RULE, field: "applicationFeeUsd" },
+  currentValue: REAL_NY_TRANSFER_FEE,
+  expectedV2Value: 160,
+});
+
+await testMappingSequence({
+  label: "FL TransferRule applicationFeeUsd (Multi-state Upgrade)",
+  v1FixtureId: "florida-fee-schedule-pilot-v1",
+  v2FixtureId: "florida-fee-schedule-pilot-v2-multistate-changed",
+  irrelevantFixtureId: "florida-fee-schedule-pilot-v2-changed", // the EXISTING pilot's own "endorsement changed" fixture — proves this new rule is genuinely unaffected by that unrelated figure changing
+  malformedFixtureId: "florida-fee-schedule-pilot-v3-malformed",
+  field: "applicationFeeUsd",
+  extractRule: FL_MULTISTATE_EXTRACT_RULE,
+  currentValue: REAL_FL_TRANSFER_FEE,
+  expectedV2Value: 120,
+});
+
+await test("[Rejected candidates] Georgia and California extraction targets are NOT present in the production registry — documented rejections, not silent omissions", () => {
+  const realRegistry = JSON.parse(fs.readFileSync(path.join(process.cwd(), "data", "knowledge-base", "monitoring", "registry.json"), "utf-8"));
+  const ids = realRegistry.sources.map((s: any) => s.id);
+  assert(!ids.some((id: string) => id.includes("georgia")), "Georgia was rejected — word-form numbers ('fifteen') and inferential-only prose, not a safe regex target");
+  assert(!ids.some((id: string) => id.includes("california") && id.includes("exam")), "California examRequirement was rejected — a double-negative conditional sentence, not a safe declarative regex target");
+});
+
+await test("[Full orchestrator integration] a real cycle run against all 4 real production sources (mock mode, real fixtures matching their real ids' content) produces zero DetectedChanges — every live-verified value still matches production", async () => {
+  cleanupPhase411();
+  try {
+    const realRegistry = JSON.parse(fs.readFileSync(path.join(process.cwd(), "data", "knowledge-base", "monitoring", "registry.json"), "utf-8")) as MonitoredSourceRegistry;
+    // Point each real source's id at its matching real/synthetic fixture for this offline mock-mode integration test — mirrors exactly what "mode":"live" will do against the real URLs in GitHub Actions.
+    const idToFixture: Record<string, string> = {
+      "florida-fee-schedule-monitor": "florida-fee-schedule-pilot-v1", // the REAL Florida pilot fixture (MOBILE Endorsement Fees, $110) — NOT the generic Phase 4.2 placeholder fixture
+      "ny-endorsement-fee-monitor": "ny-endorsement-fee-pilot-v1",
+      "ny-transfer-fee-monitor": "ny-endorsement-fee-pilot-v1",
+      "florida-multistate-fee-monitor": "florida-fee-schedule-pilot-v1",
+    };
+    let allNoChange = true;
+    for (const source of realRegistry.sources) {
+      const fixtureId = idToFixture[source.id];
+      if (!fixtureId) continue; // skip anything unmapped rather than fail the whole test on an unrelated future source
+      const mockSource = { ...source, id: fixtureId };
+      const outcome = await fetchMonitoredSource(mockSource, "mock");
+      if (source.fieldMapping) {
+        const currentValue = loadFieldForChange({
+          profession: source.profession,
+          jurisdiction: source.jurisdiction,
+          destinationJurisdiction: source.fieldMapping.destinationJurisdiction,
+          field: source.fieldMapping.field,
+        })?.value;
+        const detection = detectFieldChange({
+          field: source.fieldMapping.field,
+          currentValue,
+          extractRule: source.fieldMapping.extractRule,
+          previousHash: null,
+          newHash: outcome.fetchResult.contentHash!,
+          fetchStatus: "ok",
+          rawText: outcome.fetchResult.rawText,
+        });
+        if (detection.classification !== "NO_CHANGE") allNoChange = false;
+      }
+    }
+    assert(allNoChange, "every one of the 4 real production sources must resolve to NO_CHANGE, matching this phase's live pre-verification");
+  } finally {
+    cleanupPhase411();
+  }
+});
+
+await test("[Existing pilot regression] the original Florida rnEndorsementFeeUsd mapping is completely unaffected by adding 3 new sources", async () => {
+  const source = synthMonitoredSource({ id: "florida-fee-schedule-pilot-v1" });
+  const outcome = await fetchMonitoredSource(source, "mock");
+  const detection = detectFieldChange({
+    field: "rnEndorsementFeeUsd",
+    currentValue: 110,
+    extractRule: { field: "rnEndorsementFeeUsd", pattern: "MOBILE Endorsement Fees[\\s\\S]{0,200}?\\$(\\d+(?:\\.\\d{2})?)", transform: "number" },
+    previousHash: null,
+    newHash: outcome.fetchResult.contentHash!,
+    fetchStatus: "ok",
+    rawText: outcome.fetchResult.rawText,
+  });
+  assertEqual(detection.classification, "NO_CHANGE");
+});
+
+await test("production facts and transfer-rules remain completely untouched by Phase 4.11 — only the monitoring registry changed, and only in the intended way", () => {
+  const fl = JSON.parse(fs.readFileSync(path.join(process.cwd(), "data", "knowledge-base", "facts", "registered-nurse", "florida.json"), "utf-8"));
+  assertEqual(fl.rnEndorsementFeeUsd.value, 110);
+  const ny = JSON.parse(fs.readFileSync(path.join(process.cwd(), "data", "knowledge-base", "facts", "registered-nurse", "new-york.json"), "utf-8"));
+  assertEqual(ny.rnEndorsementFeeUsd.value, 143);
+  const caNy = JSON.parse(fs.readFileSync(path.join(process.cwd(), "data", "knowledge-base", "transfer-rules", "registered-nurse", "california-to-new-york.json"), "utf-8"));
+  assertEqual(caNy.applicationFeeUsd.value, 143);
+  const txFl = JSON.parse(fs.readFileSync(path.join(process.cwd(), "data", "knowledge-base", "transfer-rules", "registered-nurse", "texas-to-florida.json"), "utf-8"));
+  assertEqual(txFl.applicationFeeUsd.value, 100);
+
+  const realRegistry = JSON.parse(fs.readFileSync(path.join(process.cwd(), "data", "knowledge-base", "monitoring", "registry.json"), "utf-8"));
+  assertEqual(realRegistry.sources.length, 4, "expected exactly 4 real sources: the original pilot + 3 new Phase 4.11 mappings");
+  assert(!fs.existsSync(PHASE411_CHANGES_DIR));
 });
 
 // ---------------------------------------------------------------------
