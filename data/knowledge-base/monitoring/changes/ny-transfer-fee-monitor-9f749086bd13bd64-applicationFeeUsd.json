@@ -1,0 +1,22 @@
+{
+  "id": "ny-transfer-fee-monitor-9f749086bd13bd64-applicationFeeUsd",
+  "sourceId": "ny-transfer-fee-monitor",
+  "jurisdiction": "california",
+  "destinationJurisdiction": "new-york",
+  "profession": "registered-nurse",
+  "field": "applicationFeeUsd",
+  "previousValue": 143,
+  "previousHash": null,
+  "newHash": "9f749086bd13bd64",
+  "detectedAt": "2026-08-11T14:00:36.747Z",
+  "classification": "POSSIBLE_FEE_CHANGE",
+  "evidence": {
+    "url": "https://www.op.nysed.gov/professions/registered-professional-nursing/endorsement-nursing-licenses",
+    "title": "Endorsement of Nursing Licenses - RPN | Office of the Professions",
+    "fetchedAt": "2026-08-11T14:00:36.747Z",
+    "extractedText": "Endorsement of Nursing Licenses - RPN | Office of the Professions Skip to main content The New York State Education Department (“SED”) Office of the Professions (“OP”) is alerting everyone to a vishing scam that has been brought to our attention. Phishing—or “vishing”—scams impersonate SED employees or websites attempting to collect licensure and personal information from the licensee. If you receive an inquiry which you believe to be suspicious do not provide any information. To verify if the i"
+  },
+  "confidence": 0,
+  "jurisdictionMismatch": false,
+  "status": "pending_verification"
+}
