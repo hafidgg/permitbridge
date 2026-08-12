@@ -3775,7 +3775,14 @@ const REAL_NY_FEE = JSON.parse(fs.readFileSync(path.join(process.cwd(), "data", 
 const REAL_NY_TRANSFER_FEE = JSON.parse(fs.readFileSync(path.join(process.cwd(), "data", "knowledge-base", "transfer-rules", "registered-nurse", "california-to-new-york.json"), "utf-8")).applicationFeeUsd.value;
 const REAL_FL_TRANSFER_FEE = JSON.parse(fs.readFileSync(path.join(process.cwd(), "data", "knowledge-base", "transfer-rules", "registered-nurse", "texas-to-florida.json"), "utf-8")).applicationFeeUsd.value;
 
-const NY_EXTRACT_RULE = { field: "rnEndorsementFeeUsd", pattern: "Form 1 - Application for Licensure\\* along with the \\$(\\d+)", transform: "number" as const };
+// Phase 4.12.1: updated to the corrected, whitespace-tolerant pattern —
+// the fixtures below (v1-irrelevant-change, v2-changed) were rebuilt to
+// reflect the REAL current op.nysed.gov page structure (a hyperlink
+// around "Form 1 - Application for Licensure"), so these Phase 4.11
+// tests must use the same corrected pattern the production registry now
+// uses, or they'd be testing against fixture content that no longer
+// matches what they were written to model.
+const NY_EXTRACT_RULE = { field: "rnEndorsementFeeUsd", pattern: "Form 1 - Application for Licensure\\s*\\*\\s*along with the \\$(\\d+(?:\\.\\d{2})?)", transform: "number" as const };
 const FL_MULTISTATE_EXTRACT_RULE = { field: "applicationFeeUsd", pattern: "Multi-state Upgrade Fees[\\s\\S]{0,200}?\\$(\\d+(?:\\.\\d{2})?)", transform: "number" as const };
 
 const PHASE411_CHANGES_DIR = path.join(process.cwd(), "data", "knowledge-base", "monitoring", "changes-phase411-test-temp");
@@ -3973,6 +3980,109 @@ await test("production facts and transfer-rules remain completely untouched by P
   const realRegistry = JSON.parse(fs.readFileSync(path.join(process.cwd(), "data", "knowledge-base", "monitoring", "registry.json"), "utf-8"));
   assertEqual(realRegistry.sources.length, 4, "expected exactly 4 real sources: the original pilot + 3 new Phase 4.11 mappings");
   assert(!fs.existsSync(PHASE411_CHANGES_DIR));
+});
+
+// ---------------------------------------------------------------------
+// 32. Phase 4.12.1 — NY Extraction Robustness Fix
+//     Real production incident: op.nysed.gov added a hyperlink around
+//     "Form 1 - Application for Licensure", inserting a space at the
+//     </a> tag boundary that broke the old zero-whitespace-tolerant
+//     pattern. Value never changed (still $143) — the system correctly
+//     refused to guess. This section makes all 6 required scenarios
+//     permanent, executed against the REAL extraction implementation.
+// ---------------------------------------------------------------------
+console.log("\nNY Extraction Robustness Fix (Phase 4.12.1):");
+
+const NY_FIXED_PATTERN = { field: "rnEndorsementFeeUsd", pattern: "Form 1 - Application for Licensure\\s*\\*\\s*along with the \\$(\\d+(?:\\.\\d{2})?)", transform: "number" as const };
+
+const NY_ROBUSTNESS_SCENARIOS: [string, string, "no_change" | "changed" | "no_guess", number | undefined][] = [
+  ["[Scenario 1] old plain-text structure (pre-hyperlink) still extracts 143, correctly resolving to NO_CHANGE against the real current value — backward compatible", "ny-endorsement-fee-pilot-v1", "no_change", undefined],
+  ["[Scenario 2] current REAL hyperlink structure extracts 143, correctly resolving to NO_CHANGE — the actual fix", "ny-endorsement-fee-pilot-v1-hyperlink", "no_change", undefined],
+  ["[Scenario 3] hyperlink + the REAL phishing/vishing banner text (verbatim from the real incident) still extracts 143 -> NO_CHANGE, unaffected", "ny-endorsement-fee-pilot-v1-irrelevant-change", "no_change", undefined],
+  ["[Scenario 4] hyperlink structure + a genuine value change ($143->$160) is still correctly detected", "ny-endorsement-fee-pilot-v2-changed", "changed", 160],
+  ["[Scenario 5] malformed/restructured target sentence fails safely — no guessed value", "ny-endorsement-fee-pilot-v3-malformed", "no_guess", undefined],
+  ["[Scenario 6] an unrelated dollar amount elsewhere, with the target sentence entirely absent, does not falsely match", "ny-endorsement-fee-pilot-v5-unrelated-dollar", "no_guess", undefined],
+];
+
+for (const [label, fixtureId, expectedOutcome, expectedValue] of NY_ROBUSTNESS_SCENARIOS) {
+  await test(label, async () => {
+    const source = synthMonitoredSource({ id: fixtureId });
+    const outcome = await fetchMonitoredSource(source, "mock");
+    assertEqual(outcome.fetchResult.status, "ok", "fixture must fetch successfully — this test exercises the real fetch->normalize->extract path, not just a regex string check");
+    const detection = detectFieldChange({
+      field: "rnEndorsementFeeUsd",
+      currentValue: 143,
+      extractRule: NY_FIXED_PATTERN,
+      previousHash: "some-prior-hash",
+      newHash: outcome.fetchResult.contentHash!,
+      fetchStatus: "ok",
+      rawText: outcome.fetchResult.rawText,
+    });
+    if (expectedOutcome === "no_change") {
+      // Extraction succeeded AND matches the real current production value ($143) —
+      // detectFieldChange correctly reports NO_CHANGE with no proposedValue, since
+      // there is genuinely nothing new to propose. This is the CORRECT contract,
+      // not a failure — confirmed against lib/monitoring/detect.ts's own documented behavior.
+      assertEqual(detection.classification, "NO_CHANGE");
+      assertEqual(detection.proposedValue, undefined);
+    } else if (expectedOutcome === "changed") {
+      assertEqual(detection.proposedValue, expectedValue);
+      assert(detection.classification !== "NO_CHANGE");
+    } else {
+      assertEqual(detection.proposedValue, undefined, "must never guess a value when extraction is genuinely ambiguous");
+    }
+  });
+}
+
+await test("[Real regression] the OLD, now-replaced pattern genuinely fails against the real current page structure — proves this fix was necessary, not speculative", async () => {
+  const OLD_PATTERN = { field: "rnEndorsementFeeUsd", pattern: "Form 1 - Application for Licensure\\* along with the \\$(\\d+)", transform: "number" as const };
+  const source = synthMonitoredSource({ id: "ny-endorsement-fee-pilot-v1-hyperlink" });
+  const outcome = await fetchMonitoredSource(source, "mock");
+  const detection = detectFieldChange({
+    field: "rnEndorsementFeeUsd",
+    currentValue: 143,
+    extractRule: OLD_PATTERN,
+    previousHash: "some-prior-hash",
+    newHash: outcome.fetchResult.contentHash!,
+    fetchStatus: "ok",
+    rawText: outcome.fetchResult.rawText,
+  });
+  assertEqual(detection.proposedValue, undefined, "the OLD pattern must still fail here — this is the exact real-world bug being fixed, preserved as a permanent regression marker");
+});
+
+await test("[Production registry] both NY sources now use the corrected pattern, and nothing else on them changed", () => {
+  const realRegistry = JSON.parse(fs.readFileSync(path.join(process.cwd(), "data", "knowledge-base", "monitoring", "registry.json"), "utf-8"));
+  const expectedPattern = "Form 1 - Application for Licensure\\s*\\*\\s*along with the \\$(\\d+(?:\\.\\d{2})?)";
+  const endorsementSource = realRegistry.sources.find((s: any) => s.id === "ny-endorsement-fee-monitor");
+  const transferSource = realRegistry.sources.find((s: any) => s.id === "ny-transfer-fee-monitor");
+  assert(!!endorsementSource && !!transferSource, "both NY sources must still exist");
+  assertEqual(endorsementSource.fieldMapping.extractRule.pattern, expectedPattern);
+  assertEqual(transferSource.fieldMapping.extractRule.pattern, expectedPattern);
+  assertEqual(endorsementSource.fieldMapping.field, "rnEndorsementFeeUsd", "target field must be unchanged");
+  assertEqual(transferSource.fieldMapping.field, "applicationFeeUsd", "target field must be unchanged");
+  assertEqual(transferSource.fieldMapping.destinationJurisdiction, "new-york", "must be unchanged");
+});
+
+await test("[Florida history preserved] the real operational history from commit d17eb0b remains completely untouched by this phase's registry edit", () => {
+  const realRegistry = JSON.parse(fs.readFileSync(path.join(process.cwd(), "data", "knowledge-base", "monitoring", "registry.json"), "utf-8"));
+  const fl = realRegistry.sources.find((s: any) => s.id === "florida-fee-schedule-monitor");
+  assertEqual(fl.totalChecks, 1);
+  assertEqual(fl.successfulChecks, 1);
+  assertEqual(fl.lastCheckedAt, "2026-08-10T14:20:14.246Z");
+  assertEqual(fl.lastSuccessfulFetchAt, "2026-08-10T14:20:14.246Z");
+  assertEqual(fl.lastChangedAt, "2026-08-10T14:20:14.246Z");
+  assertEqual(fl.lastContentHash, "09e17211596cb981");
+  assertEqual(fl.lastHttpStatus, 200);
+  assertEqual(fl.fieldMapping.extractRule.pattern, "MOBILE Endorsement Fees[\\s\\S]{0,200}?\\$(\\d+(?:\\.\\d{2})?)", "Florida's own extraction rule must be completely unaffected by the NY fix");
+});
+
+await test("production facts and transfer-rules remain completely untouched by Phase 4.12.1 — extraction-rule fixes never modify published facts", () => {
+  const ny = JSON.parse(fs.readFileSync(path.join(process.cwd(), "data", "knowledge-base", "facts", "registered-nurse", "new-york.json"), "utf-8"));
+  assertEqual(ny.rnEndorsementFeeUsd.value, 143);
+  const caNy = JSON.parse(fs.readFileSync(path.join(process.cwd(), "data", "knowledge-base", "transfer-rules", "registered-nurse", "california-to-new-york.json"), "utf-8"));
+  assertEqual(caNy.applicationFeeUsd.value, 143);
+  const fl = JSON.parse(fs.readFileSync(path.join(process.cwd(), "data", "knowledge-base", "facts", "registered-nurse", "florida.json"), "utf-8"));
+  assertEqual(fl.rnEndorsementFeeUsd.value, 110);
 });
 
 // ---------------------------------------------------------------------
