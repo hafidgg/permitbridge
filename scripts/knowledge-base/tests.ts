@@ -4076,6 +4076,51 @@ await test("[Florida history preserved] the real operational history from commit
   assertEqual(fl.fieldMapping.extractRule.pattern, "MOBILE Endorsement Fees[\\s\\S]{0,200}?\\$(\\d+(?:\\.\\d{2})?)", "Florida's own extraction rule must be completely unaffected by the NY fix");
 });
 
+await test("[PERMANENT — Phase 4.13.1, Finding #1] all 4 real monitored sources' operational history matches the authoritative commit 4232bb8 GitHub Actions run — a real regression (3 of 4 sources silently reverted to 'never checked' by Phase 4.12.1's registry edit) that this exact test now guards against permanently", () => {
+  const realRegistry = JSON.parse(fs.readFileSync(path.join(process.cwd(), "data", "knowledge-base", "monitoring", "registry.json"), "utf-8"));
+  const bySourceId = Object.fromEntries(realRegistry.sources.map((s: any) => [s.id, s]));
+
+  // Recovered directly from `git show 4232bb8:data/knowledge-base/monitoring/registry.json`
+  // — the real, authoritative GitHub Actions run that actually checked all 4 sources.
+  const AUTHORITATIVE_HISTORY: Record<string, { totalChecks: number; successfulChecks: number; failedChecks: number; lastCheckedAt: string; lastSuccessfulFetchAt: string; lastChangedAt: string; lastContentHash: string; lastHttpStatus: number }> = {
+    "florida-fee-schedule-monitor": {
+      totalChecks: 1, successfulChecks: 1, failedChecks: 0,
+      lastCheckedAt: "2026-08-10T14:20:14.246Z", lastSuccessfulFetchAt: "2026-08-10T14:20:14.246Z", lastChangedAt: "2026-08-10T14:20:14.246Z",
+      lastContentHash: "09e17211596cb981", lastHttpStatus: 200,
+    },
+    "ny-endorsement-fee-monitor": {
+      totalChecks: 1, successfulChecks: 1, failedChecks: 0,
+      lastCheckedAt: "2026-08-11T14:00:35.057Z", lastSuccessfulFetchAt: "2026-08-11T14:00:35.057Z", lastChangedAt: "2026-08-11T14:00:35.057Z",
+      lastContentHash: "9f749086bd13bd64", lastHttpStatus: 200,
+    },
+    "ny-transfer-fee-monitor": {
+      totalChecks: 1, successfulChecks: 1, failedChecks: 0,
+      lastCheckedAt: "2026-08-11T14:00:36.747Z", lastSuccessfulFetchAt: "2026-08-11T14:00:36.747Z", lastChangedAt: "2026-08-11T14:00:36.747Z",
+      lastContentHash: "9f749086bd13bd64", lastHttpStatus: 200,
+    },
+    "florida-multistate-fee-monitor": {
+      totalChecks: 1, successfulChecks: 1, failedChecks: 0,
+      lastCheckedAt: "2026-08-11T14:00:38.274Z", lastSuccessfulFetchAt: "2026-08-11T14:00:38.274Z", lastChangedAt: "2026-08-11T14:00:38.274Z",
+      lastContentHash: "09e17211596cb981", lastHttpStatus: 200,
+    },
+  };
+
+  for (const [sourceId, expected] of Object.entries(AUTHORITATIVE_HISTORY)) {
+    const source = bySourceId[sourceId];
+    assert(!!source, `expected ${sourceId} to still exist in the registry`);
+    for (const [field, expectedValue] of Object.entries(expected)) {
+      assertEqual(source[field], expectedValue, `${sourceId}.${field}: must match the authoritative 4232bb8 GitHub Actions run — a regression here means real operational history is being silently lost again`);
+    }
+  }
+
+  // The NY extraction-rule fix (Phase 4.12.1) must survive this history
+  // reconciliation untouched — history and extraction logic are
+  // independent concerns, and this test proves neither corrupts the other.
+  const NY_CORRECT_PATTERN = "Form 1 - Application for Licensure\\s*\\*\\s*along with the \\$(\\d+(?:\\.\\d{2})?)";
+  assertEqual(bySourceId["ny-endorsement-fee-monitor"].fieldMapping.extractRule.pattern, NY_CORRECT_PATTERN);
+  assertEqual(bySourceId["ny-transfer-fee-monitor"].fieldMapping.extractRule.pattern, NY_CORRECT_PATTERN);
+});
+
 await test("production facts and transfer-rules remain completely untouched by Phase 4.12.1 — extraction-rule fixes never modify published facts", () => {
   const ny = JSON.parse(fs.readFileSync(path.join(process.cwd(), "data", "knowledge-base", "facts", "registered-nurse", "new-york.json"), "utf-8"));
   assertEqual(ny.rnEndorsementFeeUsd.value, 143);
