@@ -32,12 +32,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.9,
   }));
 
-  const transferRoutes: MetadataRoute.Sitemap = getAllTransferRules().map((r) => ({
-    url: `${SITE_URL}/transfer/${r.profession}/${r.fromState}/${r.toState}`,
-    lastModified: r.updatedAt,
-    changeFrequency: "monthly",
-    priority: 0.85,
-  }));
+  // Content-trust hardening: only submit transfer pages that have real,
+  // individually-confirmed sourcing (rule.sourceUrl) — mirrors the noIndex
+  // logic in the page's own generateMetadata(). Pages without it remain
+  // reachable via direct navigation but aren't actively pushed to Google
+  // until they have real, checkable citations rather than a generic
+  // "{State} State Licensing Board" placeholder.
+  const transferRoutes: MetadataRoute.Sitemap = getAllTransferRules()
+    .filter((r) => !!r.sourceUrl)
+    .map((r) => ({
+      url: `${SITE_URL}/transfer/${r.profession}/${r.fromState}/${r.toState}`,
+      lastModified: r.updatedAt,
+      changeFrequency: "monthly",
+      priority: 0.85,
+    }));
 
   const guideRoutes: MetadataRoute.Sitemap = getAllGuides().map((g) => ({
     url: `${SITE_URL}/guides/${g.slug}`,

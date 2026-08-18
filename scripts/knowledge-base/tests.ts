@@ -41,7 +41,7 @@ import {
 } from "../../lib/monitoring/registry";
 import { fetchMonitoredSource } from "../../lib/monitoring/fetch";
 import { normalizeForHashing, computeStableHash, compareHashes } from "../../lib/monitoring/normalize";
-import { hashContent, htmlToText } from "../../lib/pipeline/fetcher";
+import { hashContent, htmlToText, fetchSource, ResponseTooLargeError, DEFAULT_FETCH_TIMEOUT_MS, DEFAULT_MAX_RESPONSE_BYTES } from "../../lib/pipeline/fetcher";
 import { detectFieldChange } from "../../lib/monitoring/detect";
 import { classifyFieldRisk, classifyFieldChangeCategory } from "../../lib/monitoring/field-classification";
 import { buildDetectedChange, buildDetectedChangeId, saveDetectedChange, loadDetectedChange, listDetectedChanges } from "../../lib/monitoring/change-record";
@@ -4128,6 +4128,259 @@ await test("production facts and transfer-rules remain completely untouched by P
   assertEqual(caNy.applicationFeeUsd.value, 143);
   const fl = JSON.parse(fs.readFileSync(path.join(process.cwd(), "data", "knowledge-base", "facts", "registered-nurse", "florida.json"), "utf-8"));
   assertEqual(fl.rnEndorsementFeeUsd.value, 110);
+});
+
+// ---------------------------------------------------------------------
+// 33. Phase 4.13.3 — Deterministic Clock Injection
+//     Root cause discovered in Phase 4.13.2: lib/pipeline/fetcher.ts used
+//     real wall-clock time (new Date()) for `fetchedAt` regardless of any
+//     injected `now`, causing lastCheckedAt to silently diverge from a
+//     test's injected clock — which is exactly why
+//     "[End-to-end demonstration]" (Phase 4.11's own test, far above)
+//     started failing purely from the passage of real time, with zero
+//     code change. This section makes the fix permanent.
+// ---------------------------------------------------------------------
+console.log("\nDeterministic Clock Injection (Phase 4.13.3):");
+
+await test("[PERMANENT — Phase 4.13.3] an injected now on runMonitoringCycle produces an EXACT, deterministic lastCheckedAt matching that injected value, not real wall-clock time", async () => {
+  const tempChangesDir = path.join(process.cwd(), "data", "knowledge-base", "monitoring", "changes-p4133-clock-test");
+  const tempRegistryPath = path.join(process.cwd(), "data", "knowledge-base", "monitoring", "registry-p4133-clock-test.json");
+  const tempLockPath = path.join(process.cwd(), "data", "knowledge-base", "monitoring", ".lock-p4133-clock-test");
+  try {
+    const registry: MonitoredSourceRegistry = { version: 1, sources: [synthMonitoredSource({ id: "synthetic-monitor-test-source", lastCheckedAt: null, checkFrequencyDays: 0 })] };
+    const injectedNow = new Date("2026-08-13T00:00:00Z");
+    await runMonitoringCycle({ mode: "mock", registry, changesDir: tempChangesDir, registryPath: tempRegistryPath, lockPath: tempLockPath, now: injectedNow });
+
+    const written = JSON.parse(fs.readFileSync(tempRegistryPath, "utf-8"));
+    assertEqual(written.sources[0].lastCheckedAt, "2026-08-13T00:00:00.000Z", "lastCheckedAt must EXACTLY match the injected now, not real wall-clock time");
+    assertEqual(written.sources[0].lastSuccessfulFetchAt, "2026-08-13T00:00:00.000Z");
+  } finally {
+    fs.rmSync(tempChangesDir, { recursive: true, force: true });
+    fs.rmSync(tempRegistryPath, { force: true });
+    fs.rmSync(tempLockPath, { force: true });
+  }
+});
+
+await test("[PERMANENT — Phase 4.13.3] a second monitoring cycle with a DIFFERENT injected now produces a correspondingly different, deterministic lastCheckedAt — proves this isn't a fluke of one specific timestamp", async () => {
+  const tempChangesDir = path.join(process.cwd(), "data", "knowledge-base", "monitoring", "changes-p4133-clock-test2");
+  const tempRegistryPath = path.join(process.cwd(), "data", "knowledge-base", "monitoring", "registry-p4133-clock-test2.json");
+  const tempLockPath = path.join(process.cwd(), "data", "knowledge-base", "monitoring", ".lock-p4133-clock-test2");
+  try {
+    const registry: MonitoredSourceRegistry = { version: 1, sources: [synthMonitoredSource({ id: "synthetic-monitor-test-source", lastCheckedAt: null, checkFrequencyDays: 0 })] };
+    const injectedNow = new Date("2030-01-01T12:34:56.789Z"); // deliberately a very different, far-future timestamp
+    await runMonitoringCycle({ mode: "mock", registry, changesDir: tempChangesDir, registryPath: tempRegistryPath, lockPath: tempLockPath, now: injectedNow });
+
+    const written = JSON.parse(fs.readFileSync(tempRegistryPath, "utf-8"));
+    assertEqual(written.sources[0].lastCheckedAt, "2030-01-01T12:34:56.789Z");
+    assertEqual(written.sources[0].lastSuccessfulFetchAt, "2030-01-01T12:34:56.789Z");
+  } finally {
+    fs.rmSync(tempChangesDir, { recursive: true, force: true });
+    fs.rmSync(tempRegistryPath, { force: true });
+    fs.rmSync(tempLockPath, { force: true });
+  }
+});
+
+await test("[PERMANENT — Phase 4.13.3] existing behavior WITHOUT an injected now remains valid — lastCheckedAt still defaults to real current time, unchanged for production callers", async () => {
+  const tempChangesDir = path.join(process.cwd(), "data", "knowledge-base", "monitoring", "changes-p4133-clock-test3");
+  const tempRegistryPath = path.join(process.cwd(), "data", "knowledge-base", "monitoring", "registry-p4133-clock-test3.json");
+  const tempLockPath = path.join(process.cwd(), "data", "knowledge-base", "monitoring", ".lock-p4133-clock-test3");
+  try {
+    const registry: MonitoredSourceRegistry = { version: 1, sources: [synthMonitoredSource({ id: "synthetic-monitor-test-source", lastCheckedAt: null, checkFrequencyDays: 0 })] };
+    const beforeCall = Date.now();
+    await runMonitoringCycle({ mode: "mock", registry, changesDir: tempChangesDir, registryPath: tempRegistryPath, lockPath: tempLockPath }); // no `now` supplied — production default path
+    const afterCall = Date.now();
+
+    const written = JSON.parse(fs.readFileSync(tempRegistryPath, "utf-8"));
+    const recordedMs = new Date(written.sources[0].lastCheckedAt).getTime();
+    assert(recordedMs >= beforeCall && recordedMs <= afterCall, `expected lastCheckedAt to fall within the real wall-clock window of this call (${beforeCall}..${afterCall}), got ${recordedMs} — production behavior (no injected now) must be completely unchanged`);
+  } finally {
+    fs.rmSync(tempChangesDir, { recursive: true, force: true });
+    fs.rmSync(tempRegistryPath, { force: true });
+    fs.rmSync(tempLockPath, { force: true });
+  }
+});
+
+await test("production data (facts, transfer-rules, sources, registry) remains completely untouched by the entire Phase 4.13.3 clock-injection test suite", () => {
+  const fl = JSON.parse(fs.readFileSync(path.join(process.cwd(), "data", "knowledge-base", "facts", "registered-nurse", "florida.json"), "utf-8"));
+  assertEqual(fl.rnEndorsementFeeUsd.value, 110);
+  const realRegistry = JSON.parse(fs.readFileSync(path.join(process.cwd(), "data", "knowledge-base", "monitoring", "registry.json"), "utf-8"));
+  assertEqual(realRegistry.sources.length, 4);
+});
+
+// ---------------------------------------------------------------------
+// 34. Phase 4.13.5 — Fetch Timeout & Response-Size Cap
+//     Real bug confirmed via live reproduction in Phase 4.13.4: fetchLive()
+//     had zero internal timeout (confirmed hang against a mocked
+//     never-resolving fetch) and zero response-size limit (confirmed a
+//     fake Content-Length header was never even read, and an actual 50MB
+//     body was accepted without any interruption). This section makes
+//     both fixes permanent, using short overrides so these tests run in
+//     milliseconds, never literally waiting the real 15s production default.
+// ---------------------------------------------------------------------
+console.log("\nFetch Timeout & Response-Size Cap (Phase 4.13.5):");
+
+function withMockedFetch<T>(mockImpl: typeof fetch, fn: () => Promise<T>): Promise<T> {
+  const original = globalThis.fetch;
+  (globalThis as any).fetch = mockImpl;
+  return fn().finally(() => {
+    globalThis.fetch = original;
+  });
+}
+
+await test("[Defaults] the exported timeout/size-cap defaults match the evidence-based values chosen this phase — a change here should be a deliberate decision, not silent drift", () => {
+  assertEqual(DEFAULT_FETCH_TIMEOUT_MS, 15_000);
+  assertEqual(DEFAULT_MAX_RESPONSE_BYTES, 2 * 1024 * 1024);
+});
+
+await test("[Timeout, fast-testable] a fetch that never resolves is aborted within a short OVERRIDDEN timeout, not the real 15s production default — proves the mechanism works without slowing the test suite down", async () => {
+  await withMockedFetch(
+    // Realistic mock: never resolves on its own, but DOES actively listen
+    // to the AbortSignal and reject accordingly — exactly like real
+    // fetch() implementations do. A mock that ignores the signal entirely
+    // can't test abort behavior at all (confirmed the hard way while
+    // writing this test: such a mock leaves the awaited promise eternally
+    // suspended with nothing else keeping Node's event loop alive, so the
+    // process just exits silently once the loop empties, never reaching
+    // any assertion — a false negative, not a real pass or fail).
+    ((_url: string, options?: { signal?: AbortSignal }) =>
+      new Promise((_resolve, reject) => {
+        options?.signal?.addEventListener("abort", () => {
+          const err = new Error("The operation was aborted.");
+          err.name = "AbortError";
+          reject(err);
+        });
+      })) as any,
+    async () => {
+      const start = Date.now();
+      // Override timeoutMs to 100ms for this test only — the PRODUCTION default (15_000ms) is completely unaffected by this override, verified separately below.
+      const result = await fetchSource({ id: "test-timeout", url: "https://example.invalid/timeout" }, "live", undefined, 100, DEFAULT_MAX_RESPONSE_BYTES);
+      const elapsed = Date.now() - start;
+      assertEqual(result.status, "error");
+      assert(!!result.error?.includes("timed out"), `expected a clear timeout error message, got: ${result.error}`);
+      // Real math: 3 attempts x 100ms timeout each (300ms) + backoff between attempts (500+1000=1500ms) = ~1800ms minimum, plus real scheduling overhead.
+      // Generously bounded at 8s — still dramatically faster than the unfixed 46.5s+ this would have taken against the real 15s-per-attempt production default.
+      assert(elapsed < 8000, `expected the overridden short timeout to resolve quickly (got ${elapsed}ms) — proves the abort mechanism actually fires, not just that we gave up waiting in the test`);
+    }
+  );
+});
+
+await test("[Response-size cap, fast-testable] a response streaming beyond an OVERRIDDEN small cap is rejected as an error, never silently truncated or accepted", async () => {
+  const oversizedChunk = new TextEncoder().encode("x".repeat(2000)); // 2000 bytes
+  await withMockedFetch(
+    (async () => ({
+      status: 200,
+      ok: true,
+      headers: { get: () => null },
+      body: {
+        getReader: () => {
+          let served = false;
+          return {
+            read: async () => {
+              if (served) return { done: true, value: undefined };
+              served = true;
+              return { done: false, value: oversizedChunk };
+            },
+            cancel: async () => {},
+            releaseLock: () => {},
+          };
+        },
+      },
+    })) as any,
+    async () => {
+      // Override maxResponseBytes to 500 — the actual chunk (2000 bytes) exceeds it, so this must be rejected.
+      const result = await fetchSource({ id: "test-oversized", url: "https://example.invalid/big" }, "live", undefined, DEFAULT_FETCH_TIMEOUT_MS, 500);
+      assertEqual(result.status, "error");
+      assert(!!result.error?.includes("exceeded"), `expected a clear size-cap error message, got: ${result.error}`);
+    }
+  );
+});
+
+await test("[Response-size cap] a response comfortably under the cap succeeds normally — the cap doesn't false-positive on ordinary content", async () => {
+  // Live-mode caching writes to data/_pipeline/cache/{id}.json and persists
+  // across runs — clean any stale cache from a prior run of this exact
+  // test first, or a matching contentHash would short-circuit to
+  // "not_modified" instead of "ok", which is a test-isolation artifact,
+  // not a real behavior to assert on here.
+  const cacheFile = path.join(process.cwd(), "data", "_pipeline", "cache", "test-small.json");
+  fs.rmSync(cacheFile, { force: true });
+  const smallChunk = new TextEncoder().encode("<html><body>Fee: $110</body></html>");
+  await withMockedFetch(
+    (async () => ({
+      status: 200,
+      ok: true,
+      headers: { get: () => null },
+      body: {
+        getReader: () => {
+          let served = false;
+          return {
+            read: async () => {
+              if (served) return { done: true, value: undefined };
+              served = true;
+              return { done: false, value: smallChunk };
+            },
+            cancel: async () => {},
+            releaseLock: () => {},
+          };
+        },
+      },
+    })) as any,
+    async () => {
+      const result = await fetchSource({ id: "test-small", url: "https://example.invalid/small" }, "live", undefined, DEFAULT_FETCH_TIMEOUT_MS, 500);
+      assertEqual(result.status, "ok");
+      assert(!!result.rawText?.includes("110"), "expected the small, well-under-cap response to be read and processed normally");
+    }
+  );
+  fs.rmSync(cacheFile, { force: true }); // leave no trace for future runs either
+});
+
+await test("[No regression] a too-large response is never retried — ResponseTooLargeError short-circuits immediately instead of burning through all 3 retry attempts for a structurally-wrong page", async () => {
+  let fetchCallCount = 0;
+  const oversizedChunk = new TextEncoder().encode("x".repeat(2000));
+  await withMockedFetch(
+    (async () => {
+      fetchCallCount++;
+      return {
+        status: 200,
+        ok: true,
+        headers: { get: () => null },
+        body: {
+          getReader: () => {
+            let served = false;
+            return {
+              read: async () => {
+                if (served) return { done: true, value: undefined };
+                served = true;
+                return { done: false, value: oversizedChunk };
+              },
+              cancel: async () => {},
+              releaseLock: () => {},
+            };
+          },
+        },
+      };
+    }) as any,
+    async () => {
+      await fetchSource({ id: "test-no-retry", url: "https://example.invalid/big2" }, "live", undefined, DEFAULT_FETCH_TIMEOUT_MS, 500);
+      assertEqual(fetchCallCount, 1, "an oversized response should fail fast on the first attempt, not retry 3 times for a page that's structurally too large regardless of retrying");
+    }
+  );
+});
+
+await test("[Mock mode unaffected] fetchSource in mock mode is completely unaffected by the new live-mode-only timeout/size-cap machinery — a real, existing fixture still fetches normally", async () => {
+  const result = await fetchSource({ id: "florida-fee-schedule-pilot-v1", url: "https://example-test.invalid/unused" }, "mock");
+  assertEqual(result.status, "ok");
+  assert(!!result.rawText?.includes("110"), "expected the real pilot fixture to still read correctly, unaffected by any of this phase's changes");
+});
+
+await test("production data (facts, transfer-rules, sources, registry) and the workflow files remain completely untouched by the entire Phase 4.13.5 test suite", () => {
+  const fl = JSON.parse(fs.readFileSync(path.join(process.cwd(), "data", "knowledge-base", "facts", "registered-nurse", "florida.json"), "utf-8"));
+  assertEqual(fl.rnEndorsementFeeUsd.value, 110);
+  const realRegistry = JSON.parse(fs.readFileSync(path.join(process.cwd(), "data", "knowledge-base", "monitoring", "registry.json"), "utf-8"));
+  assertEqual(realRegistry.sources.length, 4);
+  const workflow = fs.readFileSync(path.join(process.cwd(), ".github", "workflows", "source-monitor.yml"), "utf-8");
+  assert(workflow.includes("timeout-minutes: 10"), "expected the new workflow timeout to be present");
+  const dataPipelineWorkflow = fs.readFileSync(path.join(process.cwd(), ".github", "workflows", "data-pipeline.yml"), "utf-8");
+  assert(!dataPipelineWorkflow.includes("timeout-minutes"), "data-pipeline.yml is explicitly out of this phase's scope and must remain untouched");
 });
 
 // ---------------------------------------------------------------------

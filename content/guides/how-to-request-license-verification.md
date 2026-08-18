@@ -4,7 +4,7 @@ Almost every interstate license application requires the receiving state to conf
 
 ## Step 1: Identify the Verification Method Your Profession Uses
 
-Some professions verify through a national registry (nursing uses Nursys, for example); most skilled trades require a direct request to the issuing state's licensing board, often through an online portal or a signed paper form.
+Some professions verify through a national registry — nursing uses [Nursys](https://www.nursys.com/), the official verification database operated by the National Council of State Boards of Nursing (NCSBN); most skilled trades require a direct request to the issuing state's licensing board, often through an online portal or a signed paper form.
 
 ## Step 2: Request Early
 

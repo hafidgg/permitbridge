@@ -53,7 +53,19 @@ export default async function StatePage({ params }: { params: Promise<{ slug: st
           {state.isUlrState && <Badge variant="success">Universal License Recognition ({state.ulrEnactedYear})</Badge>}
         </div>
         <p className="mt-3 max-w-2xl text-muted-foreground">{state.licensingAuthorityNote}</p>
-        <p className="mt-4 text-xs text-muted-foreground">Updated {formatDate(state.updatedAt)}</p>
+        <div className="mt-4 flex flex-wrap items-center gap-3 text-xs text-muted-foreground">
+          <span>Updated {formatDate(state.updatedAt)}</span>
+          {state.sourceUrl && (
+            <a
+              href={state.sourceUrl}
+              target="_blank"
+              rel="noopener noreferrer nofollow"
+              className="inline-flex items-center gap-1 rounded-full border border-border px-3 py-1 text-foreground hover:bg-muted"
+            >
+              Official source ↗
+            </a>
+          )}
+        </div>
 
         <section className="mt-12">
           <h2 className="mb-6 text-2xl font-bold tracking-tight">License Transfers Into {state.name}</h2>

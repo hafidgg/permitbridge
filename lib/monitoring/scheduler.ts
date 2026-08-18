@@ -29,6 +29,7 @@ export interface RunSourceCheckOptions {
   registry?: MonitoredSourceRegistry;
   registryPath?: string;
   changesDir?: string;
+  now?: Date;
 }
 
 export interface RunSourceCheckResult {
@@ -45,11 +46,12 @@ export interface RunSourceCheckResult {
  */
 export async function runSourceCheck(sourceId: string, options: RunSourceCheckOptions): Promise<RunSourceCheckResult> {
   const dryRun = options.dryRun ?? false;
+  const now = options.now ?? new Date();
   const registry = options.registry ?? loadMonitoringRegistry();
   const source = registry.sources.find((s) => s.id === sourceId);
   if (!source) return { found: false };
 
-  const outcome = await processDueSource(source, registry, { mode: options.mode, dryRun, changesDir: options.changesDir });
+  const outcome = await processDueSource(source, registry, { mode: options.mode, dryRun, changesDir: options.changesDir }, now);
 
   if (!dryRun) {
     saveMonitoringRegistry(outcome.updatedRegistry, options.registryPath);

@@ -27,6 +27,17 @@ on:
 jobs:
   run-source-monitor:
     runs-on: ubuntu-latest
+    # Phase 4.13.5: real observed run durations for this exact workflow
+    # have been 27-39 seconds (from actual completed runs on this
+    # project). The fetch-level timeout added in fetcher.ts this same
+    # phase bounds the worst realistic case too: even if every one of the
+    # 4 real sources hung completely (3 retries x 15s timeout each, plus
+    # inter-attempt backoff, plus the polite between-source delay), the
+    # whole cycle is now mathematically bounded to roughly 3-4 minutes,
+    # not indefinitely. 10 minutes gives comfortable headroom over that
+    # worst case while remaining dramatically tighter than GitHub's
+    # 360-minute default.
+    timeout-minutes: 10
     permissions:
       contents: write
 

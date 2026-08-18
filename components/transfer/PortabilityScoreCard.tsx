@@ -20,6 +20,10 @@ export function PortabilityScoreCard({ rule }: { rule: TransferRule }) {
           {label}
         </Badge>
       </div>
+      <p className="mt-2 text-xs text-muted-foreground">
+        PermitBridge&apos;s own estimate, based on the exam, fee, and processing-time factors below — not an official
+        government rating.
+      </p>
 
       <div className="mt-6 h-2 w-full overflow-hidden rounded-full bg-muted">
         <div

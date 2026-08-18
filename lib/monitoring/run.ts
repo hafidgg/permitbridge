@@ -141,10 +141,11 @@ export interface ProcessSourceOutcome {
 export async function processDueSource(
   source: MonitoredSourceRegistry["sources"][number],
   registry: MonitoredSourceRegistry,
-  options: Pick<MonitoringCycleOptions, "mode" | "dryRun" | "changesDir">
+  options: Pick<MonitoringCycleOptions, "mode" | "dryRun" | "changesDir">,
+  now: Date
 ): Promise<ProcessSourceOutcome> {
   const dryRun = options.dryRun ?? false;
-  const outcome = await fetchMonitoredSource(source, options.mode);
+  const outcome = await fetchMonitoredSource(source, options.mode, now);
 
   const mapping = source.fieldMapping;
   const currentValue = mapping
@@ -235,7 +236,7 @@ async function runMonitoringCycleInner(options: MonitoringCycleOptions): Promise
   let changesQueued = 0;
 
   for (const source of dueSources) {
-    const outcome = await processDueSource(source, registry, options);
+    const outcome = await processDueSource(source, registry, options, now);
     registry = outcome.updatedRegistry;
     changesDetected += outcome.changeDetectedIncrement;
     changesQueued += outcome.changeQueuedIncrement;

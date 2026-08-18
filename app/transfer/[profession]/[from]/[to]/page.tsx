@@ -59,6 +59,13 @@ export async function generateMetadata({ params }: { params: Promise<TransferPar
     title: `${profession.shortName} License: Transfer From ${from.name} to ${to.name}`,
     description: `${rule.pathwayLabel} — ${rule.examRequired ? "exam required" : "no exam required"}, est. ${rule.estimatedProcessingDays[0]}-${rule.estimatedProcessingDays[1]} days, ${rule.feeUsd} USD fee. Full step-by-step guide for ${profession.shortName.toLowerCase()}s moving from ${from.name} to ${to.name}.`,
     path: `/transfer/${profession.slug}/${from.slug}/${to.slug}`,
+    // Content-trust hardening: a page whose figures were never individually
+    // confirmed against a live official source (no sourceUrl) shouldn't be
+    // actively submitted to Google for indexing — it stays reachable via
+    // direct link/navigation, but isn't presented to search as an
+    // authoritative answer until it has real, checkable sourcing. Mirrors
+    // the sitemap's own exclusion of these same records (app/sitemap.ts).
+    noIndex: !rule.sourceUrl,
   });
 }
 
@@ -115,9 +122,26 @@ export default async function TransferPage({ params }: { params: Promise<Transfe
         </p>
         <div className="mt-4 flex flex-wrap gap-2">
           <Badge variant="outline">{rule.pathwayLabel}</Badge>
-          <Badge variant="outline">Source: {rule.officialSourceName}</Badge>
+          {rule.sourceUrl ? (
+            <a href={rule.sourceUrl} target="_blank" rel="noopener noreferrer nofollow">
+              <Badge variant="outline" className="hover:bg-muted">
+                Source: {rule.officialSourceName} ↗
+              </Badge>
+            </a>
+          ) : (
+            <Badge variant="outline" className="border-amber-500/50 text-amber-700 dark:text-amber-400">
+              Estimated — pending official source verification
+            </Badge>
+          )}
           <Badge variant="outline">Updated {formatDate(rule.updatedAt)}</Badge>
         </div>
+        {!rule.sourceUrl && (
+          <p className="mt-3 max-w-2xl text-sm text-muted-foreground">
+            The figures on this page are current best estimates and have not yet been individually confirmed against an
+            official {to.name} licensing source. Always verify exact fees, exam requirements, and processing times directly
+            with {to.name}&apos;s licensing authority before relying on them.
+          </p>
+        )}
 
         <div className="mt-8">
           <PortabilityScoreCard rule={rule} />

@@ -8,4 +8,4 @@ For nurses relocating between two compact states, the multistate privilege conti
 
 ## Where to Check Current Status
 
-Because implementation dates differ from enactment dates, always confirm current multistate licensure status directly with your state's board of nursing or the NLC's official compact map before relying on it for an upcoming move.
+Because implementation dates differ from enactment dates, always confirm current multistate licensure status directly with your state's board of nursing or the [NLC's official compact map](https://www.nursecompact.com/) before relying on it for an upcoming move.

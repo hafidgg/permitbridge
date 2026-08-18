@@ -16,4 +16,4 @@ Comity is a narrower legal courtesy where a state agrees to honor another state'
 
 ## Why This Matters for Your Application
 
-The pathway your target state actually uses determines what evidence you need, whether an exam is required, and how long the process takes. Always confirm the specific pathway — by name — with the receiving state's board rather than assuming based on what a neighboring state does.
+The pathway your target state actually uses determines what evidence you need, whether an exam is required, and how long the process takes. These three terms are used inconsistently across states — the same word can mean different things in different licensing statutes. Always confirm the specific pathway — by name, using the state's own terminology — directly with the receiving state's licensing board rather than assuming based on what a neighboring state does or what this guide's general definitions imply.

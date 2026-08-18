@@ -9,6 +9,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { ProfessionIcon } from "@/components/profession/ProfessionIcon";
 import { portabilityLabel, formatDate } from "@/lib/utils";
 import { getAllProfessions, getProfessionBySlug, getAllStates, getTransferRulesForProfession } from "@/lib/data";
+import { getAllPublicTransferRuleSlugs } from "@/lib/knowledge-base/transfer-rule-data";
 import { buildMetadata, articleJsonLd } from "@/lib/seo";
 import { JsonLd } from "@/components/seo/JsonLd";
 
@@ -35,6 +36,14 @@ export default async function ProfessionPage({ params }: { params: Promise<{ slu
   const states = getAllStates();
   const rules = getTransferRulesForProfession(profession.slug);
   const relatedProfessions = getAllProfessions().filter((p) => profession.relatedProfessions.includes(p.slug));
+  // Internal-linking fix: the old-pipeline "nurse" profession and the
+  // knowledge-base's "registered-nurse" verified transfer pages use
+  // different slugs and were never cross-linked anywhere in the site —
+  // confirmed via a full link-graph audit, these 5 real, sourced pages had
+  // zero incoming links from anywhere a real visitor could reach. They're
+  // genuinely better-sourced content about the same real-world need this
+  // page's own visitors have, so linking them here is honest, not filler.
+  const verifiedNurseTransfers = profession.slug === "nurse" ? getAllPublicTransferRuleSlugs() : [];
 
   return (
     <div>
@@ -67,6 +76,13 @@ export default async function ProfessionPage({ params }: { params: Promise<{ slu
           </Badge>
           {profession.hasNationalCompact && <Badge variant="success">{profession.compactName}</Badge>}
           <Badge variant="outline">Updated {formatDate(profession.updatedAt)}</Badge>
+          {profession.sourceUrl && (
+            <a href={profession.sourceUrl} target="_blank" rel="noopener noreferrer nofollow">
+              <Badge variant="outline" className="hover:bg-muted">
+                Official source ↗
+              </Badge>
+            </a>
+          )}
         </div>
 
         <section className="mt-12">
@@ -121,6 +137,29 @@ export default async function ProfessionPage({ params }: { params: Promise<{ slu
             ))}
           </div>
         </section>
+
+        {verifiedNurseTransfers.length > 0 && (
+          <section className="mt-12 rounded-xl border border-border bg-muted/20 p-6">
+            <h2 className="mb-2 text-xl font-bold tracking-tight">Verified, Source-Checked RN Transfer Guides</h2>
+            <p className="mb-4 max-w-2xl text-sm text-muted-foreground">
+              These specific state-to-state guides were individually confirmed against official state nursing board
+              sources, with citations you can check yourself — more thoroughly verified than the general table above.
+            </p>
+            <div className="flex flex-wrap gap-3">
+              {verifiedNurseTransfers.map((t) => {
+                const fromName = states.find((s) => s.slug === t.sourceState)?.name ?? t.sourceState;
+                const toName = states.find((s) => s.slug === t.destinationState)?.name ?? t.destinationState;
+                return (
+                  <Link key={t.transfer} href={`/${t.profession}/${t.transfer}`}>
+                    <Badge variant="outline" className="px-4 py-2 text-sm hover:bg-muted">
+                      {fromName} → {toName}
+                    </Badge>
+                  </Link>
+                );
+              })}
+            </div>
+          </section>
+        )}
 
         {relatedProfessions.length > 0 && (
           <section className="mt-12">

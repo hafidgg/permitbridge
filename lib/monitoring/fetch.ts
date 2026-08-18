@@ -41,9 +41,9 @@ export interface MonitoredFetchOutcome {
   >;
 }
 
-export async function fetchMonitoredSource(source: MonitoredSource, mode: "live" | "mock"): Promise<MonitoredFetchOutcome> {
-  const fetchResult = await fetchSource({ id: source.id, url: source.url }, mode);
-  const now = fetchResult.fetchedAt;
+export async function fetchMonitoredSource(source: MonitoredSource, mode: "live" | "mock", now?: Date): Promise<MonitoredFetchOutcome> {
+  const fetchResult = await fetchSource({ id: source.id, url: source.url }, mode, now);
+  const checkedAt = fetchResult.fetchedAt;
   const totalChecks = source.totalChecks + 1;
 
   // Phase 4.7: "paused" is a deliberate human decision — never automatically
@@ -61,9 +61,9 @@ export async function fetchMonitoredSource(source: MonitoredSource, mode: "live"
     return {
       fetchResult,
       updatedFields: {
-        lastCheckedAt: now,
-        lastSuccessfulFetchAt: now,
-        lastChangedAt: contentActuallyChanged ? now : (source.lastChangedAt ?? null),
+        lastCheckedAt: checkedAt,
+        lastSuccessfulFetchAt: checkedAt,
+        lastChangedAt: contentActuallyChanged ? checkedAt : (source.lastChangedAt ?? null),
         lastContentHash: fetchResult.contentHash ?? source.lastContentHash ?? null,
         lastHttpStatus: fetchResult.httpStatus ?? null,
         lastError: null,
@@ -82,8 +82,8 @@ export async function fetchMonitoredSource(source: MonitoredSource, mode: "live"
     return {
       fetchResult,
       updatedFields: {
-        lastCheckedAt: now,
-        lastSuccessfulFetchAt: now,
+        lastCheckedAt: checkedAt,
+        lastSuccessfulFetchAt: checkedAt,
         lastChangedAt: source.lastChangedAt ?? null, // unchanged, by definition of not_modified
         lastContentHash: source.lastContentHash ?? null, // unchanged, by definition of not_modified
         lastHttpStatus: fetchResult.httpStatus ?? null,
@@ -104,7 +104,7 @@ export async function fetchMonitoredSource(source: MonitoredSource, mode: "live"
   return {
     fetchResult,
     updatedFields: {
-      lastCheckedAt: now,
+      lastCheckedAt: checkedAt,
       lastSuccessfulFetchAt: source.lastSuccessfulFetchAt ?? null,
       lastChangedAt: source.lastChangedAt ?? null,
       lastContentHash: source.lastContentHash ?? null,

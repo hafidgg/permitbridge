@@ -8,7 +8,7 @@ ULR laws do not waive state-specific exams outright, do not eliminate applicatio
 
 ## Why the Pace of Change Matters
 
-Since the first wave of ULR laws around 2019, most of the growth has happened in the last two years, with several states adding or expanding recognition in 2024 and 2025. This means guidance written even a year ago may already be out of date for a given state and profession.
+[Arizona became the first state to enact a Universal License Recognition law, in 2019](https://compacts.csg.org/understanding-arizonas-universal-occupational-licensing-recognition-bill/); most of the growth since has happened in the last two years, with several states adding or expanding recognition in 2024 and 2025. This means guidance written even a year ago may already be out of date for a given state and profession.
 
 ## How to Use a ULR Law in Practice
 
