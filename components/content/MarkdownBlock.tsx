@@ -8,8 +8,10 @@
  * visible, clickable citations to authoritative sources (Section 14.16) —
  * previously [text](url) syntax rendered as literal, unclickable text.
  */
+import type { ReactNode } from "react";
+
 function renderInlineLinks(text: string, keyPrefix: string) {
-  const parts: Array<string | JSX.Element> = [];
+  const parts: Array<string | ReactNode> = [];
   const linkPattern = /\[([^\]]+)\]\(([^)]+)\)/g;
   let lastIndex = 0;
   let match: RegExpExecArray | null;
