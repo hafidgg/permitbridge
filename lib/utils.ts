@@ -47,4 +47,4 @@ export function portabilityLabel(score: number): { label: string; tone: "success
  * read it, with today's placeholder as the fallback so behavior is
  * unchanged until a real domain is set as an environment variable.
  */
-export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.permitbridge.com";
+export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.getpermitbridge.com";

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { buildMetadata } from "@/lib/seo";
 import { SITE_NAME } from "@/lib/constants";
-import { formatDate } from "@/lib/utils";
+import { formatDate, SITE_URL } from "@/lib/utils";
 
 export const metadata: Metadata = buildMetadata({
   title: "Privacy Policy",
@@ -22,8 +22,8 @@ export default function PrivacyPage() {
 
         <div className="prose-permitbridge mt-8">
           <p>
-            This Privacy Policy explains how {SITE_NAME} ("we," "us") handles information when you visit
-            permitbridge.com (the "Site"). {SITE_NAME} does not require account creation, and we collect the minimum
+            This Privacy Policy explains how {SITE_NAME} ("we," "us") handles information when you visit{" "}
+            {SITE_URL.replace(/^https?:\/\//, "")} (the "Site"). {SITE_NAME} does not require account creation, and we collect the minimum
             information necessary to operate and improve the Site.
           </p>
 
