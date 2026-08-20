@@ -63,7 +63,7 @@ import {
 } from "../../lib/knowledge-base/transfer-review";
 import { buildTransferPublicationReport } from "../../lib/knowledge-base/transfer-review-queue";
 import { buildTransferReviewQueue } from "../../lib/knowledge-base/transfer-review-queue";
-import { getAllPublicTransferRuleSlugs, getPublicTransferRule, summarizeEvidence, getSourceByUrl } from "../../lib/knowledge-base/transfer-rule-data";
+import { getAllPublicTransferRuleSlugs, getPublicTransferRule, summarizeEvidence, getSourceByUrl, ALL_TRANSFER_FIELD_KEYS } from "../../lib/knowledge-base/transfer-rule-data";
 import { FIELD_LABELS as PAGE_FIELD_LABELS } from "../../lib/knowledge-base/transfer-rule-labels";
 import {
   SYNTHETIC_REVIEW_SOURCE,
@@ -1595,17 +1595,16 @@ await test("real review queue contains exactly 69 items (one per populated, non-
 // ---------------------------------------------------------------------
 console.log("\nFirst Public Product / RN Transfer Pages (Phase 3.3):");
 
-await test("all 5 expected routes resolve via getAllPublicTransferRuleSlugs — the exact whitelist generateStaticParams() uses", () => {
+await test("public routes correctly exclude any record that fails the real quality gate (Phase 2B.1) — 4 publishable RN transfers, not 5, even though 5 files exist on disk", () => {
   const slugs = getAllPublicTransferRuleSlugs();
   const actual = slugs.map((s) => `${s.profession}/${s.transfer}`).sort();
   const expected = [
     "registered-nurse/texas-to-florida",
-    "registered-nurse/california-to-texas",
     "registered-nurse/texas-to-california",
     "registered-nurse/california-to-new-york",
     "registered-nurse/illinois-to-georgia",
   ].sort();
-  assertEqual(actual, expected, "expected exactly these 5 routes, no more, no fewer");
+  assertEqual(actual, expected, "california-to-texas must be excluded — its examRequirement and applicationFeeUsd rely solely on a non-official secondary source (RenewRN.net), which fails isTransferRulePublishable()");
 });
 
 await test("nonexistent transfer resolves to undefined (the exact condition the page's notFound() checks)", () => {
@@ -1613,11 +1612,16 @@ await test("nonexistent transfer resolves to undefined (the exact condition the 
   assertEqual(result, undefined, "a transfer with no real data must resolve to undefined, never a fabricated fallback");
 });
 
-await test("California -> Texas correctly evaluates as blocked (page would show the blocked notice)", () => {
-  const rule = getPublicTransferRule("registered-nurse", "california-to-texas")!;
-  const summary = summarizeEvidence(rule);
+await test("California -> Texas: the underlying rule STILL correctly evaluates as non-publishable at the data level (raw file read, bypassing the public gate) — proves the fix didn't just hide the symptom, the root evaluation is unchanged", () => {
+  const raw = JSON.parse(fs.readFileSync(path.join(process.cwd(), "data", "knowledge-base", "transfer-rules", "registered-nurse", "california-to-texas.json"), "utf-8"));
+  const summary = summarizeEvidence(raw);
   assertEqual(summary.publishable, false);
   assertEqual(summary.coverageClass, "insufficient_evidence");
+});
+
+await test("[PERMANENT — Phase 2B.1] California -> Texas is now correctly UNREACHABLE via the public API — getPublicTransferRule returns undefined, not a rule with a 'blocked' UI notice that Google could still index", () => {
+  const result = getPublicTransferRule("registered-nurse", "california-to-texas");
+  assertEqual(result, undefined, "a rule that fails isTransferRulePublishable() must never be returned by the public lookup function, regardless of whether the .json file exists on disk");
 });
 
 await test("the other 4 real transfers evaluate as publishable (page would NOT show the blocked notice)", () => {
@@ -1634,13 +1638,13 @@ await test("Unknown fields remain present and visible in the data every page row
   assertEqual(rule.backgroundCheckRequirement.value, "Unknown");
 });
 
-await test("secondary sources are correctly identifiable per field (what the page's 'Secondary Source' badge relies on)", () => {
-  const rule = getPublicTransferRule("registered-nurse", "california-to-texas")!;
-  const source = getSourceByUrl(rule.examRequirement.sourceUrl!);
+await test("secondary sources are correctly identifiable per field (what the page's 'Secondary Source' badge relies on) — read directly from the raw file, since california-to-texas is no longer publicly retrievable (Phase 2B.1)", () => {
+  const raw = JSON.parse(fs.readFileSync(path.join(process.cwd(), "data", "knowledge-base", "transfer-rules", "registered-nurse", "california-to-texas.json"), "utf-8"));
+  const source = getSourceByUrl(raw.examRequirement.sourceUrl!);
   assertEqual(source?.authorityLevel, "supplementary", "examRequirement's source must be identifiable as secondary");
 });
 
-await test("human verification is never falsely displayed — zero fields have status='verified' across all 5 real pages", () => {
+await test("human verification is never falsely displayed — zero fields have status='verified' across every currently-publishable RN page", () => {
   const slugs = getAllPublicTransferRuleSlugs();
   for (const s of slugs) {
     const rule = getPublicTransferRule(s.profession, s.transfer)! as any;
@@ -1657,8 +1661,8 @@ await test("source links correspond to the correct field — sourceName on the f
   assertEqual(source?.agencyName, field.sourceName, "the field's own sourceName must match the resolved SourceRecord it links to");
 });
 
-await test("directional independence holds for the pages: California->Texas and Texas->California are distinct routes with distinct data", () => {
-  const caTx = getPublicTransferRule("registered-nurse", "california-to-texas")!;
+await test("directional independence holds for the pages: California->Texas and Texas->California are distinct routes with distinct data (California->Texas read directly from its raw file, since it's no longer publicly retrievable per Phase 2B.1)", () => {
+  const caTx = JSON.parse(fs.readFileSync(path.join(process.cwd(), "data", "knowledge-base", "transfer-rules", "registered-nurse", "california-to-texas.json"), "utf-8"));
   const txCa = getPublicTransferRule("registered-nurse", "texas-to-california")!;
   assert(caTx.applicationFeeUsd.value !== txCa.applicationFeeUsd.value, "the two directional pages must show different fee values");
 });
@@ -1682,7 +1686,7 @@ await test("no invented fields: FIELD_LABELS (what the page renders) exactly mat
   assertEqual(labelKeys, realFieldKeys, "FIELD_LABELS must cover exactly the real schema — no invented fields, none silently dropped");
 });
 
-await test("metadata source exists for every real transfer page (getPublicTransferRule succeeds for all 5, feeding generateMetadata)", () => {
+await test("metadata source exists for every currently-publishable transfer page (getPublicTransferRule succeeds for all of them, feeding generateMetadata)", () => {
   const slugs = getAllPublicTransferRuleSlugs();
   for (const s of slugs) {
     const rule = getPublicTransferRule(s.profession, s.transfer);
@@ -1690,7 +1694,7 @@ await test("metadata source exists for every real transfer page (getPublicTransf
   }
 });
 
-await test("sitemap contains exactly the 5 intended public transfer pages — no more, no fewer, correctly dated", () => {
+await test("sitemap contains exactly the 4 currently-publishable RN transfer pages — no more, no fewer, correctly dated, and california-to-texas is correctly excluded (Phase 2B.1)", () => {
   // Deliberately does NOT import app/sitemap.ts directly: that file
   // transitively imports lib/data.ts, which correctly uses the REAL
   // "server-only" package (a pre-existing file, unmodified) — and the
@@ -1701,7 +1705,8 @@ await test("sitemap contains exactly the 5 intended public transfer pages — no
   // file's "Phase 3.3" comment block) against the same underlying data
   // functions, which is what actually matters for this assertion.
   const slugs = getAllPublicTransferRuleSlugs();
-  assertEqual(slugs.length, 5, "expected exactly 5 knowledge-base transfer routes");
+  assertEqual(slugs.length, 4, "expected exactly 4 knowledge-base transfer routes now that the real quality gate is wired into discovery — 5 files exist on disk, but california-to-texas fails the gate");
+  assert(!slugs.some((s) => s.transfer === "california-to-texas"), "california-to-texas must never appear in the sitemap — it fails isTransferRulePublishable()");
   for (const s of slugs) {
     const rule = getPublicTransferRule(s.profession, s.transfer)!;
     const summary = summarizeEvidence(rule);
@@ -1714,6 +1719,83 @@ await test("real production TransferRule data was not modified by Phase 3.3 (UI-
   assertEqual(rule.applicationFeeUsd.value, 75, "Georgia's fee must remain unchanged from Phase 3.1");
   assertEqual(rule.experienceRequirement.confidence, 0.95, "the 500-hour rule's confidence must remain unchanged");
   assertEqual(rule.experienceRequirement.reviewer, null, "reviewer must still be null — Phase 3.3 built UI only, no review occurred");
+});
+
+// ---------------------------------------------------------------------
+// Phase 2B.1 — Real Indexability Quality Gate
+//     getAllPublicTransferRuleSlugs()/getPublicTransferRule() now filter
+//     through the EXISTING isTransferRulePublishable() gate (not a new,
+//     duplicate one) — closing a real gap where a .json file's mere
+//     existence was sufficient to make a page public, regardless of
+//     whether it actually passed the same publishability check the page
+//     itself already used for on-page "pending review" labeling.
+// ---------------------------------------------------------------------
+console.log("\nReal Indexability Quality Gate (Phase 2B.1):");
+
+function buildSyntheticPublishableRnRule(overrides: Record<string, unknown> = {}): any {
+  // Minimal, fully-populated, officially-sourced synthetic rule — a
+  // known-good baseline so each gate test can break exactly ONE thing at
+  // a time and prove the gate reacts to that one thing specifically.
+  const goodField = (value: unknown) => ({
+    value, sourceUrl: "https://op.nysed.gov/professions/registered-professional-nursing/endorsement-nursing-licenses",
+    sourceTitle: "Endorsement of Nursing Licenses", sourceName: "New York State Education Department (NYSED)",
+    verifiedAt: "2026-08-20", verificationMethod: "official_document_review", reviewer: null,
+    status: "pending_verification", confidence: 0.9, confidenceLevel: "verified", history: [], notes: null,
+  });
+  const base: Record<string, unknown> = {
+    profession: "registered-nurse", sourceState: "test-source", destinationState: "test-destination", licenseType: "RN",
+    conflicts: [], lastFullReviewAt: null,
+  };
+  for (const key of ALL_TRANSFER_FIELD_KEYS) {
+    base[key] = goodField(key === "applicationFeeUsd" ? 100 : key === "examRequirement" ? { status: "not_required" } : "test value");
+  }
+  return { ...base, ...overrides };
+}
+
+const syntheticUnknownField = { value: "Unknown", sourceUrl: null, sourceTitle: null, sourceName: null, verifiedAt: null, verificationMethod: null, reviewer: null, status: "pending_verification", confidence: 0, confidenceLevel: "unknown", history: [], notes: null };
+
+await test("[PERMANENT — Phase 2B.1] a synthetic rule with every field properly sourced from an official source PASSES the real gate", () => {
+  const rule = buildSyntheticPublishableRnRule();
+  const result = isTransferRulePublishable(rule, getSourceByUrl, new Set(["registered-nurse"]));
+  assertEqual(result.publishable, true, `expected PASS, got blocking reasons: ${result.blockingReasons.join("; ")}`);
+});
+
+await test("[PERMANENT — Phase 2B.1] a rule with a CRITICAL field set to Unknown still PASSES the real gate — this is the existing, deliberate Partial Data Policy (see transfer-review.ts's own doc comment: 'an AI-researched, evidence-backed, honestly-labeled rule is allowed to exist publicly'), NOT a gap. Unknown fields need no sourceUrl by design (validateTransferRule's Rule 4 explicitly exempts them) — only a POPULATED-but-weakly-sourced field, or an unresolved conflict, blocks publication.", () => {
+  const rule = buildSyntheticPublishableRnRule({ applicationFeeUsd: syntheticUnknownField });
+  const result = isTransferRulePublishable(rule, getSourceByUrl, new Set(["registered-nurse"]));
+  assertEqual(result.publishable, true, "Unknown critical fields are intentionally allowed to publish — this documents the real, existing behavior rather than assuming otherwise");
+});
+
+await test("[PERMANENT — Phase 2B.1] a rule with a CRITICAL field backed only by a non-official (supplementary) source FAILS the real gate — this is the exact real-world California->Texas scenario, reproduced synthetically", () => {
+  const supplementarySource = loadAllSources().find((s) => s.authorityLevel === "supplementary");
+  assert(!!supplementarySource, "test fixture assumption: at least one real supplementary-authority source must exist to run this test meaningfully");
+  const rule = buildSyntheticPublishableRnRule({
+    examRequirement: { ...buildSyntheticPublishableRnRule().examRequirement, sourceUrl: supplementarySource!.website, sourceName: supplementarySource!.agencyName },
+  });
+  const result = isTransferRulePublishable(rule, getSourceByUrl, new Set(["registered-nurse"]));
+  assertEqual(result.publishable, false, "a critical field sourced only from a supplementary-authority source must fail the gate");
+});
+
+await test("[PERMANENT — Phase 2B.1] the 3 Phase 2B pending records remain completely unpublished — not in the public slug list, not retrievable, regardless of their real, honest research quality", () => {
+  const slugs = getAllPublicTransferRuleSlugs();
+  const pendingTransfers = ["georgia-to-illinois", "new-york-to-california", "california-to-florida"];
+  for (const t of pendingTransfers) {
+    assert(!slugs.some((s) => s.transfer === t), `${t} must not appear in the public slug list — it lives in transfer-rules-pending/, which no public function reads`);
+    assertEqual(getPublicTransferRule("registered-nurse", t), undefined, `${t} must not be retrievable via getPublicTransferRule`);
+  }
+});
+
+await test("[PERMANENT — Phase 2B.1] the pending directory is structurally separate from the live directory — a file existing in transfer-rules-pending/ can never accidentally satisfy generateStaticParams()", () => {
+  const pendingDir = path.join(process.cwd(), "data", "knowledge-base", "transfer-rules-pending", "registered-nurse");
+  assert(fs.existsSync(pendingDir), "the pending directory should exist with the 3 Phase 2B research records");
+  const pendingFiles = fs.readdirSync(pendingDir).filter((f) => f.endsWith(".json"));
+  assertEqual(pendingFiles.length, 3, "expected exactly the 3 Phase 2B pending records");
+  const liveDir = path.join(process.cwd(), "data", "knowledge-base", "transfer-rules", "registered-nurse");
+  const liveFiles = fs.readdirSync(liveDir).filter((f) => f.endsWith(".json"));
+  assertEqual(liveFiles.length, 5, "the live directory must still contain exactly the original 5 files — Phase 2B.1 only added a filter, it never moved or deleted a live file");
+  for (const f of pendingFiles) {
+    assert(!liveFiles.includes(f), `${f} must not exist in BOTH directories`);
+  }
 });
 
 // ---------------------------------------------------------------------

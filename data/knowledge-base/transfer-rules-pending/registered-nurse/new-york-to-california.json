@@ -1,0 +1,414 @@
+{
+  "profession": "registered-nurse",
+  "sourceState": "new-york",
+  "destinationState": "california",
+  "licenseType": "RN",
+  "transferMechanism": {
+    "value": "endorsement",
+    "sourceUrl": "https://rn.ca.gov/pdfs/regulations/isor-1410_5.pdf",
+    "sourceTitle": "Title 16 CCR 1410.5 Coursework Exemptions for Out-of-State Applicants \u2014 Initial Statement of Reasons",
+    "sourceName": "California Board of Registered Nursing (BRN)",
+    "verifiedAt": "2026-08-20",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.9,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": "endorsement",
+        "changedAt": "2026-08-20",
+        "reason": "Phase 2B pilot: first population from real official-source research.",
+        "sourceUrl": "https://rn.ca.gov/pdfs/regulations/isor-1410_5.pdf",
+        "reviewer": null
+      }
+    ],
+    "notes": "California is not an NLC member (confirmed via CA's own per-state fact record), so every out-of-state RN, including from New York, must obtain a single-state CA license via endorsement."
+  },
+  "endorsementProcess": {
+    "value": "Apply through the BRN's endorsement process (BreEZe online system); verify the New York license and original licensing state via Nursys; complete Live Scan (in-state) or FD-258 card (out-of-state) fingerprinting through California DOJ/FBI.",
+    "sourceUrl": "https://rn.ca.gov/applicants/lic-end.shtml?vm=r",
+    "sourceTitle": "Licensure by Endorsement",
+    "sourceName": "California Board of Registered Nursing (BRN)",
+    "verifiedAt": "2026-08-20",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.85,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": "Apply through the BRN's endorsement process (BreEZe online system); verify the New York license and original licensing state via Nursys; complete Live Scan (in-state) or FD-258 card (out-of-state) fingerprinting through California DOJ/FBI.",
+        "changedAt": "2026-08-20",
+        "reason": "Phase 2B pilot: first population from real official-source research.",
+        "sourceUrl": "https://rn.ca.gov/applicants/lic-end.shtml?vm=r",
+        "reviewer": null
+      }
+    ],
+    "notes": null
+  },
+  "reciprocityAgreementExists": {
+    "value": {
+      "status": "not_applicable"
+    },
+    "sourceUrl": "https://rn.ca.gov/pdfs/regulations/isor-1410_5.pdf",
+    "sourceTitle": "Title 16 CCR 1410.5 \u2014 Initial Statement of Reasons",
+    "sourceName": "California Board of Registered Nursing (BRN)",
+    "verifiedAt": "2026-08-20",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.85,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": {
+          "status": "not_applicable"
+        },
+        "changedAt": "2026-08-20",
+        "reason": "Phase 2B pilot: first population from real official-source research.",
+        "sourceUrl": "https://rn.ca.gov/pdfs/regulations/isor-1410_5.pdf",
+        "reviewer": null
+      }
+    ],
+    "notes": "California uses uniform endorsement for all out-of-state applicants; no bespoke bilateral reciprocity agreement with New York specifically."
+  },
+  "universalRecognitionApplies": {
+    "value": "Unknown",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "sourceName": null,
+    "verifiedAt": null,
+    "verificationMethod": null,
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0,
+    "confidenceLevel": "unknown",
+    "history": [],
+    "notes": "This session's research did not surface a confirmed, current California Universal License Recognition law applicable specifically to nursing. Marked Unknown rather than assumed."
+  },
+  "examRequirement": {
+    "value": {
+      "status": "not_required"
+    },
+    "sourceUrl": "https://www.nursinglicensure.org/state/nursing-license-california/",
+    "sourceTitle": "California Nursing License Requirements 2026",
+    "sourceName": "nursinglicensure.org (secondary, corroborates BRN's own stated endorsement pathway)",
+    "verifiedAt": "2026-08-20",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.7,
+    "confidenceLevel": "likely",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": {
+          "status": "not_required"
+        },
+        "changedAt": "2026-08-20",
+        "reason": "Phase 2B pilot: first population from real official-source research.",
+        "sourceUrl": "https://www.nursinglicensure.org/state/nursing-license-california/",
+        "reviewer": null
+      }
+    ],
+    "notes": "Endorsement applicant must already hold a current, active out-of-state RN license (NCLEX already passed); not retaken."
+  },
+  "applicationFeeUsd": {
+    "value": 350,
+    "sourceUrl": "https://www.rn.ca.gov/pdfs/regulations/proposedlang-fees2018.pdf",
+    "sourceTitle": "California Code of Regulations, Title 16, Division 14, Section 1417 \u2014 Fees",
+    "sourceName": "California Board of Registered Nursing",
+    "verifiedAt": "2026-08-20",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.93,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": 350,
+        "changedAt": "2026-08-20",
+        "reason": "Phase 2B: reused California's own already-verified per-state endorsement fee (data/knowledge-base/facts/registered-nurse/california.json, verified 2026-08-09) rather than re-deriving it \u2014 16 CCR 1417(g) states this exact figure specifically for endorsement, distinct from the exam-pathway and renewal fees.",
+        "sourceUrl": "https://www.rn.ca.gov/pdfs/regulations/proposedlang-fees2018.pdf",
+        "reviewer": null
+      }
+    ],
+    "notes": "REUSED from California's existing verified base fact, per Phase 2B's data-reuse architecture."
+  },
+  "otherRequiredFees": {
+    "value": 50,
+    "sourceUrl": "https://www.nursinglicensure.org/state/nursing-license-california/",
+    "sourceTitle": "California Nursing License Requirements 2026",
+    "sourceName": "nursinglicensure.org (secondary)",
+    "verifiedAt": "2026-08-20",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.6,
+    "confidenceLevel": "likely",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": 50,
+        "changedAt": "2026-08-20",
+        "reason": "Phase 2B pilot: first population from real official-source research.",
+        "sourceUrl": "https://www.nursinglicensure.org/state/nursing-license-california/",
+        "reviewer": null
+      }
+    ],
+    "notes": "Optional temporary license fee ($50, 6-month validity) \u2014 separate from the mandatory $350 endorsement application fee. Lower confidence: secondary source, not cross-checked against BRN's own fee regulation text for this specific line item."
+  },
+  "backgroundCheckRequirement": {
+    "value": {
+      "status": "required"
+    },
+    "sourceUrl": "https://advantismed.com/nursing-license/california",
+    "sourceTitle": "California Nursing License & Renewal Guide 2026",
+    "sourceName": "Advantis Medical (secondary, corroborates BRN's own stated DOJ/FBI fingerprint requirement)",
+    "verifiedAt": "2026-08-20",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.75,
+    "confidenceLevel": "likely",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": {
+          "status": "required"
+        },
+        "changedAt": "2026-08-20",
+        "reason": "Phase 2B pilot: first population from real official-source research.",
+        "sourceUrl": "https://advantismed.com/nursing-license/california",
+        "reviewer": null
+      }
+    ],
+    "notes": null
+  },
+  "fingerprintingRequirement": {
+    "value": {
+      "status": "required"
+    },
+    "sourceUrl": "https://advantismed.com/nursing-license/california",
+    "sourceTitle": "California Nursing License & Renewal Guide 2026",
+    "sourceName": "Advantis Medical (secondary)",
+    "verifiedAt": "2026-08-20",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.75,
+    "confidenceLevel": "likely",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": {
+          "status": "required"
+        },
+        "changedAt": "2026-08-20",
+        "reason": "Phase 2B pilot: first population from real official-source research.",
+        "sourceUrl": "https://advantismed.com/nursing-license/california",
+        "reviewer": null
+      }
+    ],
+    "notes": "Out-of-state applicants use an FD-258 fingerprint card process; California's own materials describe this as the most common source of endorsement delays."
+  },
+  "licenseVerificationRequirement": {
+    "value": {
+      "status": "required"
+    },
+    "sourceUrl": "https://www.nursinglicensure.org/state/nursing-license-california/",
+    "sourceTitle": "California Nursing License Requirements 2026",
+    "sourceName": "nursinglicensure.org (secondary)",
+    "verifiedAt": "2026-08-20",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.7,
+    "confidenceLevel": "likely",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": {
+          "status": "required"
+        },
+        "changedAt": "2026-08-20",
+        "reason": "Phase 2B pilot: first population from real official-source research.",
+        "sourceUrl": "https://www.nursinglicensure.org/state/nursing-license-california/",
+        "reviewer": null
+      }
+    ],
+    "notes": "Via Nursys or direct board-to-board verification."
+  },
+  "documentsRequired": {
+    "value": "Unknown",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "sourceName": null,
+    "verifiedAt": null,
+    "verificationMethod": null,
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0,
+    "confidenceLevel": "unknown",
+    "history": [],
+    "notes": "Detailed document checklist not fully itemized from an official BRN source with high confidence this session."
+  },
+  "goodStandingRequirement": {
+    "value": {
+      "status": "required"
+    },
+    "sourceUrl": "https://www.besmith.com/blog/insights/your-complete-guide-to-getting-a-california-rn-license-by-endorsement/",
+    "sourceTitle": "California RN License Endorsement Guide",
+    "sourceName": "B.E. Smith (secondary)",
+    "verifiedAt": "2026-08-20",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.65,
+    "confidenceLevel": "likely",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": {
+          "status": "required"
+        },
+        "changedAt": "2026-08-20",
+        "reason": "Phase 2B pilot: first population from real official-source research.",
+        "sourceUrl": "https://www.besmith.com/blog/insights/your-complete-guide-to-getting-a-california-rn-license-by-endorsement/",
+        "reviewer": null
+      }
+    ],
+    "notes": null
+  },
+  "disciplinaryDisclosureRequirement": {
+    "value": "Unknown",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "sourceName": null,
+    "verifiedAt": null,
+    "verificationMethod": null,
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0,
+    "confidenceLevel": "unknown",
+    "history": [],
+    "notes": "Not itemized with a specific citable CA regulation this session."
+  },
+  "processingTime": {
+    "value": "Standard processing is typically six to eight weeks; original credential evaluations can take up to 90 days.",
+    "sourceUrl": "https://californianp.org/nursing-license-by-endorsement/",
+    "sourceTitle": "Essential Requirements for California Nursing License by Endorsement",
+    "sourceName": "California Nurse Practitioner (secondary, NP-focused but describes the shared BRN endorsement pipeline)",
+    "verifiedAt": "2026-08-20",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.55,
+    "confidenceLevel": "uncertain",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": "Standard processing is typically six to eight weeks; original credential evaluations can take up to 90 days.",
+        "changedAt": "2026-08-20",
+        "reason": "Phase 2B pilot: first population from real official-source research.",
+        "sourceUrl": "https://californianp.org/nursing-license-by-endorsement/",
+        "reviewer": null
+      }
+    ],
+    "notes": "MODERATE-LOW CONFIDENCE \u2014 secondary-source estimate, not an official BRN-published processing-time figure; source is NP-focused, applied here to the shared RN/NP endorsement process with appropriate caution."
+  },
+  "temporaryPermitAvailability": {
+    "value": {
+      "status": "available"
+    },
+    "sourceUrl": "https://www.nursinglicensure.org/state/nursing-license-california/",
+    "sourceTitle": "California Nursing License Requirements 2026",
+    "sourceName": "nursinglicensure.org (secondary)",
+    "verifiedAt": "2026-08-20",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.65,
+    "confidenceLevel": "likely",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": {
+          "status": "available"
+        },
+        "changedAt": "2026-08-20",
+        "reason": "Phase 2B pilot: first population from real official-source research.",
+        "sourceUrl": "https://www.nursinglicensure.org/state/nursing-license-california/",
+        "reviewer": null
+      }
+    ],
+    "notes": "A temporary license, valid 6 months, is available for $50; not issued until DOJ/FBI fingerprint results are received."
+  },
+  "compactStatus": {
+    "value": "Not applicable \u2014 neither California nor New York is an NLC member. Both states' compact status is irrelevant to this transfer; standard endorsement applies regardless.",
+    "sourceUrl": "https://www.nursecompact.com/",
+    "sourceTitle": "Nurse Licensure Compact \u2014 Official Site",
+    "sourceName": "NCSBN (National Council of State Boards of Nursing)",
+    "verifiedAt": "2026-08-20",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.9,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": "Not applicable \u2014 neither California nor New York is an NLC member. Both states' compact status is irrelevant to this transfer; standard endorsement applies regardless.",
+        "changedAt": "2026-08-20",
+        "reason": "Phase 2B pilot: first population from real official-source research.",
+        "sourceUrl": "https://www.nursecompact.com/",
+        "reviewer": null
+      }
+    ],
+    "notes": "A genuinely distinct case from the project's other 5 RN pairs \u2014 this is the first pair where NEITHER state is an NLC member."
+  },
+  "exceptions": {
+    "value": "California law (16 CCR 1410.5, effective October 2023) exempts applicants who have completed CA's required anatomy/physiology/microbiology theory coursework and have at least 2 years of RN practice in another state from the laboratory-component requirement that otherwise applies to out-of-state applicants.",
+    "sourceUrl": "https://rn.ca.gov/pdfs/regulations/notice-1410_5.pdf",
+    "sourceTitle": "Notice of Proposed Action \u2014 CCR 1410.5 Coursework Exemptions for Out-of-State Applicants",
+    "sourceName": "California Board of Registered Nursing (BRN)",
+    "verifiedAt": "2026-08-20",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.9,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": "California law (16 CCR 1410.5, effective October 2023) exempts applicants who have completed CA's required anatomy/physiology/microbiology theory coursework and have at least 2 years of RN practice in another state from the laboratory-component requirement that otherwise applies to out-of-state applicants.",
+        "changedAt": "2026-08-20",
+        "reason": "Phase 2B pilot: first population from real official-source research.",
+        "sourceUrl": "https://rn.ca.gov/pdfs/regulations/notice-1410_5.pdf",
+        "reviewer": null
+      }
+    ],
+    "notes": "Directly sourced from California's own official regulatory notice \u2014 the strongest-sourced field in this new record."
+  },
+  "conflicts": [],
+  "lastFullReviewAt": null,
+  "experienceRequirement": {
+    "value": "Unknown",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "sourceName": null,
+    "verifiedAt": null,
+    "verificationMethod": null,
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0,
+    "confidenceLevel": "unknown",
+    "history": [],
+    "notes": "CA materials found a 2-year practice condition tied specifically to the CCR 1410.5 coursework/lab exemption (captured in the exceptions field) \u2014 this is distinct from a general minimum-experience eligibility requirement for endorsement itself, which was not confirmed either way this session."
+  }
+}

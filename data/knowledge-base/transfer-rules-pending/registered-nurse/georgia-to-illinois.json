@@ -1,0 +1,396 @@
+{
+  "profession": "registered-nurse",
+  "sourceState": "georgia",
+  "destinationState": "illinois",
+  "licenseType": "RN",
+  "transferMechanism": {
+    "value": "endorsement",
+    "sourceUrl": "https://www.nursinglicensure.org/state/nursing-license-illinois/",
+    "sourceTitle": "Illinois Nursing License Requirements 2026",
+    "sourceName": "Illinois Department of Financial and Professional Regulation (via secondary aggregator corroborating IDFPR's own process)",
+    "verifiedAt": "2026-08-20",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.75,
+    "confidenceLevel": "likely",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": "endorsement",
+        "changedAt": "2026-08-20",
+        "reason": "Phase 2B pilot: first population from real official-source research.",
+        "sourceUrl": "https://www.nursinglicensure.org/state/nursing-license-illinois/",
+        "reviewer": null
+      }
+    ],
+    "notes": "Illinois is not an NLC member (confirmed via IL's own per-state fact record, nursecompact.com-sourced), so endorsement is the only path regardless of Georgia's own compact membership."
+  },
+  "endorsementProcess": {
+    "value": "Apply via IDFPR Online Services (Licensure by Endorsement); submit license verification via Nursys (Georgia participates), transcripts, and complete IDFPR-approved fingerprint-based background check.",
+    "sourceUrl": "https://idfpr.illinois.gov/content/dam/soi/en/web/idfpr/renewals/apply/forms/RN-EN.pdf",
+    "sourceTitle": "Registered Nurse Examination/Endorsement/Restoration Instruction Sheet",
+    "sourceName": "Illinois Department of Financial and Professional Regulation (IDFPR)",
+    "verifiedAt": "2026-08-20",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.8,
+    "confidenceLevel": "likely",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": "Apply via IDFPR Online Services (Licensure by Endorsement); submit license verification via Nursys (Georgia participates), transcripts, and complete IDFPR-approved fingerprint-based background check.",
+        "changedAt": "2026-08-20",
+        "reason": "Phase 2B pilot: first population from real official-source research.",
+        "sourceUrl": "https://idfpr.illinois.gov/content/dam/soi/en/web/idfpr/renewals/apply/forms/RN-EN.pdf",
+        "reviewer": null
+      }
+    ],
+    "notes": "Reuses IDFPR's own official instruction sheet, the same primary source already verified for Illinois's base endorsement fee."
+  },
+  "reciprocityAgreementExists": {
+    "value": {
+      "status": "not_applicable"
+    },
+    "sourceUrl": "https://idfpr.illinois.gov/content/dam/soi/en/web/idfpr/renewals/apply/forms/RN-EN.pdf",
+    "sourceTitle": "Registered Nurse Examination/Endorsement/Restoration Instruction Sheet",
+    "sourceName": "Illinois Department of Financial and Professional Regulation (IDFPR)",
+    "verifiedAt": "2026-08-20",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.8,
+    "confidenceLevel": "likely",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": {
+          "status": "not_applicable"
+        },
+        "changedAt": "2026-08-20",
+        "reason": "Phase 2B pilot: first population from real official-source research.",
+        "sourceUrl": "https://idfpr.illinois.gov/content/dam/soi/en/web/idfpr/renewals/apply/forms/RN-EN.pdf",
+        "reviewer": null
+      }
+    ],
+    "notes": "Illinois uses uniform endorsement for all out-of-state applicants; no bespoke bilateral reciprocity agreement with Georgia specifically."
+  },
+  "universalRecognitionApplies": {
+    "value": "Unknown",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "sourceName": null,
+    "verifiedAt": null,
+    "verificationMethod": null,
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0,
+    "confidenceLevel": "unknown",
+    "history": [],
+    "notes": "Illinois HB 5608 ('Universal Recognition of Licenses Act') was introduced in 2024 for GENERAL occupational licenses; this session's research could not confirm current enactment status or whether it applies to nursing specifically (nursing often has its own carve-out where general ULR laws exist). Marked Unknown per the no-fabrication rule rather than assumed either way."
+  },
+  "examRequirement": {
+    "value": {
+      "status": "not_required"
+    },
+    "sourceUrl": "https://www.professionallicensedefensellc.com/multistate-nurse-licensure-in-illinois",
+    "sourceTitle": "Multistate Nurse Licensure in Illinois",
+    "sourceName": "Illinois-licensed attorney summary of IDFPR endorsement process (secondary)",
+    "verifiedAt": "2026-08-20",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.7,
+    "confidenceLevel": "likely",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": {
+          "status": "not_required"
+        },
+        "changedAt": "2026-08-20",
+        "reason": "Phase 2B pilot: first population from real official-source research.",
+        "sourceUrl": "https://www.professionallicensedefensellc.com/multistate-nurse-licensure-in-illinois",
+        "reviewer": null
+      }
+    ],
+    "notes": "Endorsement applicant must already hold an active out-of-state RN license (implying NCLEX already passed); not retaken. Corroborated across every source reviewed this session."
+  },
+  "applicationFeeUsd": {
+    "value": 50,
+    "sourceUrl": "https://idfpr.illinois.gov/content/dam/soi/en/web/idfpr/renewals/apply/forms/RN-EN.pdf",
+    "sourceTitle": "Registered Nurse Examination/Endorsement/Restoration Instruction Sheet",
+    "sourceName": "Illinois Department of Financial and Professional Regulation (IDFPR)",
+    "verifiedAt": "2026-08-20",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.93,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": 50,
+        "changedAt": "2026-08-20",
+        "reason": "Phase 2B: reused Illinois's own already-verified per-state endorsement fee (data/knowledge-base/facts/registered-nurse/illinois.json, verified 2026-08-09) rather than re-deriving it \u2014 official IDFPR PDF states 'Endorsement - $50.00' as a distinct line item.",
+        "sourceUrl": "https://idfpr.illinois.gov/content/dam/soi/en/web/idfpr/renewals/apply/forms/RN-EN.pdf",
+        "reviewer": null
+      }
+    ],
+    "notes": "REUSED from Illinois's existing verified base fact, per Phase 2B's data-reuse architecture."
+  },
+  "otherRequiredFees": {
+    "value": "Unknown",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "sourceName": null,
+    "verifiedAt": null,
+    "verificationMethod": null,
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0,
+    "confidenceLevel": "unknown",
+    "history": [],
+    "notes": "Fingerprint vendor fee not itemized with confidence; secondary sources gave inconsistent combined totals ($100-$170) that could not be attributed to a specific official fee schedule this session."
+  },
+  "backgroundCheckRequirement": {
+    "value": {
+      "status": "required"
+    },
+    "sourceUrl": "https://advantismed.com/nursing-license/illinois",
+    "sourceTitle": "Illinois Nursing License Renewal & Application Guide 2026",
+    "sourceName": "Advantis Medical (secondary, corroborates IDFPR's own stated fingerprint requirement)",
+    "verifiedAt": "2026-08-20",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.7,
+    "confidenceLevel": "likely",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": {
+          "status": "required"
+        },
+        "changedAt": "2026-08-20",
+        "reason": "Phase 2B pilot: first population from real official-source research.",
+        "sourceUrl": "https://advantismed.com/nursing-license/illinois",
+        "reviewer": null
+      }
+    ],
+    "notes": null
+  },
+  "fingerprintingRequirement": {
+    "value": {
+      "status": "required"
+    },
+    "sourceUrl": "https://advantismed.com/nursing-license/illinois",
+    "sourceTitle": "Illinois Nursing License Renewal & Application Guide 2026",
+    "sourceName": "Advantis Medical (secondary)",
+    "verifiedAt": "2026-08-20",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.7,
+    "confidenceLevel": "likely",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": {
+          "status": "required"
+        },
+        "changedAt": "2026-08-20",
+        "reason": "Phase 2B pilot: first population from real official-source research.",
+        "sourceUrl": "https://advantismed.com/nursing-license/illinois",
+        "reviewer": null
+      }
+    ],
+    "notes": "Out-of-state applicants use the OOS-FP Card Scan process (FD-258 card mailed to an IL Live Scan vendor)."
+  },
+  "licenseVerificationRequirement": {
+    "value": {
+      "status": "required"
+    },
+    "sourceUrl": "https://www.trustedhealth.com/nurse-licensure-guide/illinois",
+    "sourceTitle": "Illinois Nursing License & Board of Nursing Guide",
+    "sourceName": "Trusted Health (secondary, describes IDFPR's own stated Nursys-based process)",
+    "verifiedAt": "2026-08-20",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.7,
+    "confidenceLevel": "likely",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": {
+          "status": "required"
+        },
+        "changedAt": "2026-08-20",
+        "reason": "Phase 2B pilot: first population from real official-source research.",
+        "sourceUrl": "https://www.trustedhealth.com/nurse-licensure-guide/illinois",
+        "reviewer": null
+      }
+    ],
+    "notes": null
+  },
+  "documentsRequired": {
+    "value": "Unknown",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "sourceName": null,
+    "verifiedAt": null,
+    "verificationMethod": null,
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0,
+    "confidenceLevel": "unknown",
+    "history": [],
+    "notes": "Detailed document checklist not fully itemized from an official IDFPR source with high confidence this session."
+  },
+  "goodStandingRequirement": {
+    "value": {
+      "status": "required"
+    },
+    "sourceUrl": "https://idfpr.illinois.gov/content/dam/soi/en/web/idfpr/renewals/apply/forms/RN-EN.pdf",
+    "sourceTitle": "Registered Nurse Examination/Endorsement/Restoration Instruction Sheet",
+    "sourceName": "Illinois Department of Financial and Professional Regulation (IDFPR)",
+    "verifiedAt": "2026-08-20",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.75,
+    "confidenceLevel": "likely",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": {
+          "status": "required"
+        },
+        "changedAt": "2026-08-20",
+        "reason": "Phase 2B pilot: first population from real official-source research.",
+        "sourceUrl": "https://idfpr.illinois.gov/content/dam/soi/en/web/idfpr/renewals/apply/forms/RN-EN.pdf",
+        "reviewer": null
+      }
+    ],
+    "notes": null
+  },
+  "disciplinaryDisclosureRequirement": {
+    "value": "Unknown",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "sourceName": null,
+    "verifiedAt": null,
+    "verificationMethod": null,
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0,
+    "confidenceLevel": "unknown",
+    "history": [],
+    "notes": "Not itemized with a specific citable IL regulation this session."
+  },
+  "processingTime": {
+    "value": "Typically several weeks; multiple non-official sources report a range of roughly 4-6 weeks once a complete application is submitted, though this could not be confirmed against IDFPR's own published figure this session.",
+    "sourceUrl": "https://nomadhealth.com/faqs/licensure-and-certifications/illinois-nurse-license",
+    "sourceTitle": "Illinois Nursing License Guide: Getting Licensed for Travel Nursing",
+    "sourceName": "Nomad Health (secondary, not an official IDFPR figure)",
+    "verifiedAt": "2026-08-20",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.5,
+    "confidenceLevel": "uncertain",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": "Typically several weeks; multiple non-official sources report a range of roughly 4-6 weeks once a complete application is submitted, though this could not be confirmed against IDFPR's own published figure this session.",
+        "changedAt": "2026-08-20",
+        "reason": "Phase 2B pilot: first population from real official-source research.",
+        "sourceUrl": "https://nomadhealth.com/faqs/licensure-and-certifications/illinois-nurse-license",
+        "reviewer": null
+      }
+    ],
+    "notes": "LOWER CONFIDENCE \u2014 secondary-source estimate only, not confirmed against an official IDFPR-published processing-time figure."
+  },
+  "temporaryPermitAvailability": {
+    "value": {
+      "status": "available"
+    },
+    "sourceUrl": "https://www.nursinglicensure.org/state/nursing-license-illinois/",
+    "sourceTitle": "Illinois Nursing License Requirements 2026",
+    "sourceName": "Illinois Department of Financial and Professional Regulation (via secondary aggregator)",
+    "verifiedAt": "2026-08-20",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.7,
+    "confidenceLevel": "likely",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": {
+          "status": "available"
+        },
+        "changedAt": "2026-08-20",
+        "reason": "Phase 2B pilot: first population from real official-source research.",
+        "sourceUrl": "https://www.nursinglicensure.org/state/nursing-license-illinois/",
+        "reviewer": null
+      }
+    ],
+    "notes": "RN endorsement applicants may request a temporary permit to practice while the full application processes; exact current fee not confirmed this session."
+  },
+  "compactStatus": {
+    "value": "Not applicable \u2014 Illinois is not an NLC member, so Georgia's own compact membership provides no shortcut for entering Illinois; standard endorsement applies regardless of the applicant's origin state.",
+    "sourceUrl": "https://www.nursecompact.com/",
+    "sourceTitle": "Nurse Licensure Compact \u2014 Official Site",
+    "sourceName": "NCSBN (National Council of State Boards of Nursing)",
+    "verifiedAt": "2026-08-20",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.9,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": "Not applicable \u2014 Illinois is not an NLC member, so Georgia's own compact membership provides no shortcut for entering Illinois; standard endorsement applies regardless of the applicant's origin state.",
+        "changedAt": "2026-08-20",
+        "reason": "Phase 2B pilot: first population from real official-source research.",
+        "sourceUrl": "https://www.nursecompact.com/",
+        "reviewer": null
+      }
+    ],
+    "notes": "Mirrors the identical reasoning already documented (reversed direction) in the existing illinois-to-georgia.json record."
+  },
+  "exceptions": {
+    "value": "Unknown",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "sourceName": null,
+    "verifiedAt": null,
+    "verificationMethod": null,
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0,
+    "confidenceLevel": "unknown",
+    "history": [],
+    "notes": "Illinois materials reference distinct pathways for foreign-educated and military-affiliated applicants, but no Georgia-specific exception was identified this session."
+  },
+  "conflicts": [],
+  "lastFullReviewAt": null,
+  "experienceRequirement": {
+    "value": "Unknown",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "sourceName": null,
+    "verifiedAt": null,
+    "verificationMethod": null,
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0,
+    "confidenceLevel": "unknown",
+    "history": [],
+    "notes": "Not itemized as a distinct minimum-duration-of-practice requirement in the official IDFPR endorsement materials reviewed this session (distinct from Georgia-side reentry requirements, which are captured on Illinois-to-Georgia direction, not this one)."
+  }
+}

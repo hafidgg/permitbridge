@@ -5,6 +5,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { GoogleAnalytics } from "@/components/seo/GoogleAnalytics";
+import { GoogleTagManagerHead, GoogleTagManagerBody } from "@/components/seo/GoogleTagManager";
 import { organizationJsonLd, websiteJsonLd } from "@/lib/seo";
 import { SITE_NAME, SITE_DESCRIPTION } from "@/lib/constants";
 import { SITE_URL } from "@/lib/utils";
@@ -76,6 +77,8 @@ export default function SiteRootLayout({ children }: { children: React.ReactNode
   return (
     <html lang="en" className={inter.variable}>
       <body className="flex min-h-screen flex-col font-sans">
+        <GoogleTagManagerHead />
+        <GoogleTagManagerBody />
         <JsonLd data={organizationJsonLd()} />
         <JsonLd data={websiteJsonLd()} />
         <a

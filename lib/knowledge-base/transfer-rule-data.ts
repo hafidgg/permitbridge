@@ -40,14 +40,31 @@ export interface PublicTransferRuleSlug {
 }
 
 /**
- * The whitelist the page's generateStaticParams() uses. Reads ONLY the
- * files that actually exist on disk — there is no code path that can
- * fabricate a 6th entry. This is what "No Mass Generation" (Step 17) and
- * "no fabricated fallback pages" actually mean in code, not just intent.
+ * The whitelist the page's generateStaticParams() uses — and, since
+ * sitemap.ts and everything else derives from this same function, the
+ * single authoritative gate for the entire public-discovery surface
+ * (page generation, sitemap, and by extension metadata, since a record
+ * that never gets a generated page never gets metadata either).
+ *
+ * Phase 2B.1: this now ALSO filters through isTransferRulePublishable()
+ * — the real, existing quality gate this whole file already imports and
+ * already uses for on-page "pending human review" labeling
+ * (summarizeEvidence(), below). Before this fix, a record only needed to
+ * exist as a .json file on disk to become public; there was no code path
+ * enforcing that it also pass the same publishability check the page
+ * itself relies on to decide what to honestly tell a reader. This closes
+ * that gap using the exact same function, not a second, duplicate one.
+ *
+ * Still reads ONLY the files that actually exist on disk — there is no
+ * code path that can fabricate an entry; this only ever REMOVES entries
+ * that fail the gate, never adds one.
  */
 export function getAllPublicTransferRuleSlugs(): PublicTransferRuleSlug[] {
   if (!fs.existsSync(TRANSFER_RULES_ROOT)) return [];
   const slugs: PublicTransferRuleSlug[] = [];
+  const sources = loadAllSources();
+  const sourceByUrl = new Map(sources.map((s) => [s.website, s]));
+  const resolveSource = (url: string) => sourceByUrl.get(url);
 
   for (const profession of fs.readdirSync(TRANSFER_RULES_ROOT)) {
     const dir = path.join(TRANSFER_RULES_ROOT, profession);
@@ -55,6 +72,10 @@ export function getAllPublicTransferRuleSlugs(): PublicTransferRuleSlug[] {
     for (const file of fs.readdirSync(dir)) {
       if (!file.endsWith(".json")) continue;
       const rule: TransferRule = JSON.parse(fs.readFileSync(path.join(dir, file), "utf-8"));
+
+      const { publishable } = isTransferRulePublishable(rule, resolveSource, KNOWN_PROFESSION_SLUGS);
+      if (!publishable) continue; // fails the real quality gate — never public, regardless of the file existing on disk
+
       slugs.push({
         profession,
         transfer: `${rule.sourceState}-to-${rule.destinationState}`,
@@ -66,12 +87,27 @@ export function getAllPublicTransferRuleSlugs(): PublicTransferRuleSlug[] {
   return slugs;
 }
 
+/**
+ * Phase 2B.1: same gate as getAllPublicTransferRuleSlugs(), applied here
+ * too — defense-in-depth. In practice, generateStaticParams()'s
+ * dynamicParams=false already 404s any slug this function would refuse
+ * anyway, but this ensures a direct call to this function (from a future
+ * code path that doesn't go through the slug list first) can never
+ * return a rule that fails the real quality gate.
+ */
 export function getPublicTransferRule(profession: string, transferSlug: string): TransferRule | undefined {
   const parsed = parseTransferRuleSlug(`${profession}/${transferSlug}`);
   if (!parsed) return undefined;
   const filePath = path.join(TRANSFER_RULES_ROOT, profession, `${parsed.sourceState}-to-${parsed.destinationState}.json`);
   if (!fs.existsSync(filePath)) return undefined;
-  return JSON.parse(fs.readFileSync(filePath, "utf-8")) as TransferRule;
+  const rule = JSON.parse(fs.readFileSync(filePath, "utf-8")) as TransferRule;
+
+  const sources = loadAllSources();
+  const sourceByUrl = new Map(sources.map((s) => [s.website, s]));
+  const { publishable } = isTransferRulePublishable(rule, (url) => sourceByUrl.get(url), KNOWN_PROFESSION_SLUGS);
+  if (!publishable) return undefined;
+
+  return rule;
 }
 
 export function getSourceByUrl(url: string): SourceRecord | undefined {
