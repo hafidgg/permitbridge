@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "./globals.css";
+import "../globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { JsonLd } from "@/components/seo/JsonLd";
@@ -47,6 +47,11 @@ export const metadata: Metadata = {
     title: `${SITE_NAME} — Professional License Transfer Reference`,
     description: SITE_DESCRIPTION,
   },
+  alternates: {
+    types: {
+      "application/rss+xml": `${SITE_URL}/feed.xml`,
+    },
+  },
   twitter: {
     card: "summary_large_image",
     title: `${SITE_NAME} — Professional License Transfer Reference`,
@@ -54,7 +59,20 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+/**
+ * Root layout for every real content page (everything except /embed/*).
+ *
+ * This is a genuine Next.js "root layout" — (site) is a route group, so
+ * this file defines <html>/<body> for this whole segment tree, exactly
+ * like app/layout.tsx used to for the entire app. Splitting it out this
+ * way (rather than the previous single shared layout with a runtime
+ * headers()-based branch) restores every one of these pages to its
+ * original static/SSG rendering — headers() is a dynamic API, and using
+ * it anywhere in a shared root layout previously forced the ENTIRE site
+ * to render dynamically per-request, a real regression caught in this
+ * session's build output and fixed here.
+ */
+export default function SiteRootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={inter.variable}>
       <body className="flex min-h-screen flex-col font-sans">

@@ -22,6 +22,7 @@ export const FOOTER_LINKS = {
     { href: "/states", label: "All States" },
     { href: "/guides", label: "Guides" },
     { href: "/search", label: "Search" },
+    { href: "/feed.xml", label: "RSS Feed" },
   ],
   Legal: [
     { href: "/privacy", label: "Privacy Policy" },

@@ -33,6 +33,21 @@ const nextConfig = {
           { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=()" },
         ],
       },
+      {
+        // System 4 — the embeddable widget deliberately needs to be
+        // frameable by third-party sites, unlike every other route.
+        // Modern browsers prioritize a Content-Security-Policy
+        // frame-ancestors directive over the legacy X-Frame-Options
+        // header when both are present (the general rule above still
+        // sends X-Frame-Options: DENY for this path too, since Next.js
+        // merges — rather than overrides — headers from multiple
+        // matching rules; this CSP directive is what actually makes
+        // embedding work in any current browser). Scoped to exactly
+        // /embed/* — every other route keeps the strict DENY with no
+        // exception.
+        source: "/embed/:path*",
+        headers: [{ key: "Content-Security-Policy", value: "frame-ancestors *;" }],
+      },
     ];
   },
   async redirects() {

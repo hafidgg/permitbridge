@@ -1,0 +1,84 @@
+name: GSC Monitor
+
+# Optional, weekly Search Console monitoring. Does nothing unless the repo
+# owner has explicitly set both GSC_MONITORING_ENABLED=true and the
+# GSC_SERVICE_ACCOUNT_JSON secret — scripts/monitoring/gsc-monitor.ts exits
+# cleanly (not an error) when either is missing, so this workflow is safe to
+# have enabled by default even before anyone configures GSC access.
+#
+# Read-only against Google's API (Search Analytics query endpoint has no
+# write/mutation operations at all) — this workflow can only ever read
+# real numbers Google already computed, never influence rankings, clicks,
+# or impressions in any way.
+#
+# Commits only data/gsc-snapshots/latest.json (a monitoring artifact, not
+# a production fact) — same path-allowlist safety pattern as
+# source-monitor.yml.
+
+on:
+  schedule:
+    # Sunday 11:00 UTC — offset from both source-monitor.yml (Monday
+    # 10:00) and data-pipeline.yml (Monday 09:00) so none of the three
+    # scheduled workflows ever race on the same checkout.
+    - cron: "0 11 * * 0"
+  workflow_dispatch: {}
+
+jobs:
+  run-gsc-monitor:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run GSC monitoring (no-op if not configured)
+        run: npx tsx scripts/monitoring/gsc-monitor.ts
+        env:
+          GSC_MONITORING_ENABLED: ${{ vars.GSC_MONITORING_ENABLED }}
+          GSC_SERVICE_ACCOUNT_JSON: ${{ secrets.GSC_SERVICE_ACCOUNT_JSON }}
+
+      - name: Enforce commit path allowlist
+        id: path-check
+        run: |
+          set -euo pipefail
+          CHANGED="$(git status --porcelain)"
+          if [ -z "$CHANGED" ]; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+          DISALLOWED=""
+          while IFS= read -r line; do
+            path="${line:3}"
+            case "$path" in
+              data/gsc-snapshots/*) ;;
+              *) DISALLOWED="$DISALLOWED
+          $path" ;;
+            esac
+          done <<< "$CHANGED"
+          if [ -n "$DISALLOWED" ]; then
+            echo "Refusing to commit — disallowed path(s) changed:"
+            echo "$DISALLOWED"
+            exit 1
+          fi
+
+      - name: Commit snapshot
+        if: steps.path-check.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/gsc-snapshots/
+          git commit -m "chore(gsc): weekly Search Console snapshot"
+          git push
