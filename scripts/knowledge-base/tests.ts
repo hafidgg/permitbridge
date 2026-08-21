@@ -507,10 +507,10 @@ await test("field reconciliation sum check passes: authoritative + secondary + n
   assertEqual(recon.totalFields, 750, "expected 750 total RN fields");
 });
 
-await test("source reconciliation sum check passes: officialReferenced + secondaryReferenced + unused === totalSourceRecords (80 after Phase 2B.2 registered 1 new source for New York->California's upgrade)", () => {
+await test("source reconciliation sum check passes: officialReferenced + secondaryReferenced + unused === totalSourceRecords (81 after Phase 2B.3 registered 1 new source for Georgia->Illinois's upgrade)", () => {
   const recon = computeSourceReconciliation();
   assert(recon.sumCheckPasses, `expected sumCheck (${recon.sumCheck}) to equal totalSourceRecords (${recon.totalSourceRecords})`);
-  assertEqual(recon.totalSourceRecords, 80, "expected 80 total source records (79 after Phase 3.1 + 1 new: california-applicant-faqs, Phase 2B.2)");
+  assertEqual(recon.totalSourceRecords, 81, "expected 81 total source records (80 after Phase 2B.2 + 1 new: illinois-certification-request, Phase 2B.3)");
 });
 
 await test("trust dashboard's fieldsUsingAuthoritativeSources/fieldsUsingSecondarySources exactly match the independently-computed field reconciliation", () => {
@@ -1102,7 +1102,7 @@ await test("10. Reconciliation remains consistent after the rename", () => {
   assert(fieldRecon.sumCheckPasses, "field reconciliation sum check must still pass");
   const sourceRecon = computeSourceReconciliation();
   assert(sourceRecon.sumCheckPasses, "source reconciliation sum check must still pass");
-  assertEqual(sourceRecon.totalSourceRecords, 80, "source record count as of this test's original writing (Phase 2.7) — grew further in Phase 3.1 and Phase 2B.2, which is expected and not a rename-related regression; this assertion documents Phase 2.7's own baseline moment, now updated to avoid false-failing on later legitimate growth");
+  assertEqual(sourceRecon.totalSourceRecords, 81, "source record count as of this test's original writing (Phase 2.7) — grew further in Phase 3.1, Phase 2B.2, and Phase 2B.3, which is expected and not a rename-related regression; this assertion documents Phase 2.7's own baseline moment, now updated to avoid false-failing on later legitimate growth");
 });
 
 // ---------------------------------------------------------------------
@@ -1282,9 +1282,9 @@ const realSourceByUrl = new Map(sources.map((s) => [s.website, s]));
 const realResolveSource = (url: string) => realSourceByUrl.get(url);
 const realKnownProfessions = new Set(["registered-nurse"]);
 
-await test("exactly 6 real transfer rule files exist on disk, no more, no fewer (5 originally in Phase 3.1 + 1 published in Phase 2B.2: new-york-to-california)", () => {
+await test("exactly 7 real transfer rule files exist on disk, no more, no fewer (6 after Phase 2B.2 + 1 published in Phase 2B.3: georgia-to-illinois)", () => {
   const files = fs.readdirSync(REAL_TRANSFER_RULES_DIR).filter((f) => f.endsWith(".json"));
-  assertEqual(files.length, 6, "expected exactly 6 real transfer rule files after Phase 2B.2's publication");
+  assertEqual(files.length, 7, "expected exactly 7 real transfer rule files after Phase 2B.3's publication");
 });
 
 await test("A->B is independent from B->A using REAL data (Texas<->California)", () => {
@@ -1328,6 +1328,15 @@ await test("source jurisdiction matches destination context for all real rules (
       const criticalFieldsWithIssues = jurisdictionIssues.filter((i) => CRITICAL_TRANSFER_RULE_FIELDS.some((f) => i.message.startsWith(f)));
       assertEqual(criticalFieldsWithIssues, [], `${file}: expected zero jurisdiction/source-resolution issues on CRITICAL fields specifically`);
       assertEqual(jurisdictionIssues.length, 6, `${file}: expected exactly 6 known, non-blocking Rule 7 warnings on non-critical fields — a real remaining quality gap for future improvement, not a regression`);
+    } else if (file === "georgia-to-illinois.json") {
+      // Phase 2B.3: all 9 CRITICAL fields upgraded to genuine registered
+      // idfpr.illinois.gov sources this session — 2 NON-critical fields
+      // (temporaryPermitAvailability, processingTime) still cite real
+      // but unregistered sources from the original Phase 2B research.
+      // Same honest, documented, non-blocking pattern as New York->California.
+      const criticalFieldsWithIssues = jurisdictionIssues.filter((i) => CRITICAL_TRANSFER_RULE_FIELDS.some((f) => i.message.startsWith(f)));
+      assertEqual(criticalFieldsWithIssues, [], `${file}: expected zero jurisdiction/source-resolution issues on CRITICAL fields specifically`);
+      assertEqual(jurisdictionIssues.length, 2, `${file}: expected exactly 2 known, non-blocking Rule 7 warnings on non-critical fields — a real remaining quality gap for future improvement, not a regression`);
     } else {
       assertEqual(jurisdictionIssues, [], `${file}: expected zero jurisdiction/source-resolution issues`);
     }
@@ -1414,8 +1423,8 @@ await test("slugs are deterministic for all 5 real transfer rules and match thei
   }
 });
 
-await test("Trust Dashboard metrics reconcile: total sources grew from 79 to 80 (1 new authoritative source for New York->California's Phase 2B.2 upgrade)", () => {
-  assertEqual(sources.length, 80, "expected 80 total sources after Phase 2B.2 (79 before + 1 new: california-applicant-faqs)");
+await test("Trust Dashboard metrics reconcile: total sources grew from 80 to 81 (1 new authoritative source for Georgia->Illinois's Phase 2B.3 upgrade)", () => {
+  assertEqual(sources.length, 81, "expected 81 total sources after Phase 2B.3 (80 before + 1 new: illinois-certification-request)");
   const secondarySources = sources.filter((s) => s.authorityLevel === "supplementary");
   assert(secondarySources.length >= 5, "expected at least the 5 secondary discovery-only sources registered in Phase 3.1");
 });
@@ -1598,9 +1607,9 @@ await test("real publication report correctly blocks california-to-texas (the on
   }
 });
 
-await test("real review queue contains exactly 83 items (one per populated, non-Verified field across all 6 real rules)", () => {
+await test("real review queue contains exactly 95 items (one per populated, non-Verified field across all 7 real rules)", () => {
   const queue = buildTransferReviewQueue();
-  assertEqual(queue.length, 83, "expected 83 queue items after Phase 2B.2 (69 from the original 5 rules + 14 populated, non-Verified fields on the newly-published New York->California rule)");
+  assertEqual(queue.length, 95, "expected 95 queue items after Phase 2B.3 (83 from the prior 6 rules + 12 populated, non-Verified fields on the newly-published Georgia->Illinois rule)");
   const highPriority = queue.filter((i) => i.priority === "High");
   assert(highPriority.length > 0, "expected at least some High-priority (critical field) queue items");
 });
@@ -1610,7 +1619,7 @@ await test("real review queue contains exactly 83 items (one per populated, non-
 // ---------------------------------------------------------------------
 console.log("\nFirst Public Product / RN Transfer Pages (Phase 3.3):");
 
-await test("public routes correctly exclude any record that fails the real quality gate (Phase 2B.1) — 5 publishable RN transfers, not 6, even though 6 files exist on disk (Phase 2B.2 added new-york-to-california, genuinely passing)", () => {
+await test("public routes correctly exclude any record that fails the real quality gate (Phase 2B.1) — 6 publishable RN transfers, not 7, even though 7 files exist on disk (Phase 2B.3 added georgia-to-illinois, genuinely passing)", () => {
   const slugs = getAllPublicTransferRuleSlugs();
   const actual = slugs.map((s) => `${s.profession}/${s.transfer}`).sort();
   const expected = [
@@ -1619,8 +1628,9 @@ await test("public routes correctly exclude any record that fails the real quali
     "registered-nurse/california-to-new-york",
     "registered-nurse/illinois-to-georgia",
     "registered-nurse/new-york-to-california",
+    "registered-nurse/georgia-to-illinois",
   ].sort();
-  assertEqual(actual, expected, "california-to-texas must still be excluded (unchanged); new-york-to-california must now be included — all 9 of its critical fields were upgraded to genuine registered rn.ca.gov sources in Phase 2B.2");
+  assertEqual(actual, expected, "california-to-texas must still be excluded (unchanged); georgia-to-illinois must now be included — all 9 of its critical fields were upgraded to genuine registered idfpr.illinois.gov sources in Phase 2B.3");
 });
 
 await test("nonexistent transfer resolves to undefined (the exact condition the page's notFound() checks)", () => {
@@ -1710,7 +1720,7 @@ await test("metadata source exists for every currently-publishable transfer page
   }
 });
 
-await test("sitemap contains exactly the 5 currently-publishable RN transfer pages — no more, no fewer, correctly dated, california-to-texas still excluded, new-york-to-california now included (Phase 2B.2)", () => {
+await test("sitemap contains exactly the 6 currently-publishable RN transfer pages — no more, no fewer, correctly dated, california-to-texas still excluded, georgia-to-illinois now included (Phase 2B.3)", () => {
   // Deliberately does NOT import app/sitemap.ts directly: that file
   // transitively imports lib/data.ts, which correctly uses the REAL
   // "server-only" package (a pre-existing file, unmodified) — and the
@@ -1721,9 +1731,9 @@ await test("sitemap contains exactly the 5 currently-publishable RN transfer pag
   // file's "Phase 3.3" comment block) against the same underlying data
   // functions, which is what actually matters for this assertion.
   const slugs = getAllPublicTransferRuleSlugs();
-  assertEqual(slugs.length, 5, "expected exactly 5 knowledge-base transfer routes — 6 files exist on disk, california-to-texas still fails the gate, new-york-to-california now genuinely passes it");
+  assertEqual(slugs.length, 6, "expected exactly 6 knowledge-base transfer routes — 7 files exist on disk, california-to-texas still fails the gate, georgia-to-illinois now genuinely passes it");
   assert(!slugs.some((s) => s.transfer === "california-to-texas"), "california-to-texas must never appear in the sitemap — it fails isTransferRulePublishable()");
-  assert(slugs.some((s) => s.transfer === "new-york-to-california"), "new-york-to-california must now appear in the sitemap — Phase 2B.2 upgraded it to genuinely pass the real quality gate");
+  assert(slugs.some((s) => s.transfer === "georgia-to-illinois"), "georgia-to-illinois must now appear in the sitemap — Phase 2B.3 upgraded it to genuinely pass the real quality gate");
   for (const s of slugs) {
     const rule = getPublicTransferRule(s.profession, s.transfer)!;
     const summary = summarizeEvidence(rule);
@@ -1793,23 +1803,23 @@ await test("[PERMANENT — Phase 2B.1] a rule with a CRITICAL field backed only 
   assertEqual(result.publishable, false, "a critical field sourced only from a supplementary-authority source must fail the gate");
 });
 
-await test("[PERMANENT — Phase 2B.1/2B.2] the 2 remaining Phase 2B pending records stay completely unpublished — not in the public slug list, not retrievable; new-york-to-california graduated to the live directory in Phase 2B.2 and is correctly excluded from this check", () => {
+await test("[PERMANENT — Phase 2B.1/2B.2/2B.3] the 1 remaining Phase 2B pending record stays completely unpublished — not in the public slug list, not retrievable; new-york-to-california and georgia-to-illinois graduated to the live directory and are correctly excluded from this check", () => {
   const slugs = getAllPublicTransferRuleSlugs();
-  const pendingTransfers = ["georgia-to-illinois", "california-to-florida"];
+  const pendingTransfers = ["california-to-florida"];
   for (const t of pendingTransfers) {
     assert(!slugs.some((s) => s.transfer === t), `${t} must not appear in the public slug list — it lives in transfer-rules-pending/, which no public function reads`);
     assertEqual(getPublicTransferRule("registered-nurse", t), undefined, `${t} must not be retrievable via getPublicTransferRule`);
   }
 });
 
-await test("[PERMANENT — Phase 2B.1/2B.2] the pending directory is structurally separate from the live directory — a file existing in transfer-rules-pending/ can never accidentally satisfy generateStaticParams()", () => {
+await test("[PERMANENT — Phase 2B.1/2B.2/2B.3] the pending directory is structurally separate from the live directory — a file existing in transfer-rules-pending/ can never accidentally satisfy generateStaticParams()", () => {
   const pendingDir = path.join(process.cwd(), "data", "knowledge-base", "transfer-rules-pending", "registered-nurse");
-  assert(fs.existsSync(pendingDir), "the pending directory should exist with the 2 remaining Phase 2B research records");
+  assert(fs.existsSync(pendingDir), "the pending directory should exist with the 1 remaining Phase 2B research record");
   const pendingFiles = fs.readdirSync(pendingDir).filter((f) => f.endsWith(".json"));
-  assertEqual(pendingFiles.length, 2, "expected exactly 2 remaining Phase 2B pending records — new-york-to-california graduated to the live directory in Phase 2B.2");
+  assertEqual(pendingFiles.length, 1, "expected exactly 1 remaining Phase 2B pending record — new-york-to-california and georgia-to-illinois graduated to the live directory in Phase 2B.2/2B.3");
   const liveDir = path.join(process.cwd(), "data", "knowledge-base", "transfer-rules", "registered-nurse");
   const liveFiles = fs.readdirSync(liveDir).filter((f) => f.endsWith(".json"));
-  assertEqual(liveFiles.length, 6, "the live directory now contains the original 5 files + new-york-to-california, published in Phase 2B.2");
+  assertEqual(liveFiles.length, 7, "the live directory now contains the original 5 files + new-york-to-california (2B.2) + georgia-to-illinois (2B.3)");
   for (const f of pendingFiles) {
     assert(!liveFiles.includes(f), `${f} must not exist in BOTH directories`);
   }

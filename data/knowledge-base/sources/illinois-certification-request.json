@@ -1,0 +1,19 @@
+{
+  "id": "illinois-certification-request",
+  "agencyName": "Illinois Department of Financial and Professional Regulation (IDFPR)",
+  "website": "https://idfpr.illinois.gov/req-cert.html",
+  "jurisdiction": "illinois",
+  "professionsCovered": [
+    "registered-nurse"
+  ],
+  "sourceType": "official-board",
+  "official": true,
+  "authorityLevel": "authoritative",
+  "authorityRationale": "IDFPR's own official 'How to Request a Certification of Licensure' page — explicitly states all nursing license verifications must go through Nursys, not directly to IDFPR.",
+  "specificity": "field-specific",
+  "reliabilityScore": 0.93,
+  "reliabilityRationale": "Official IDFPR page, directly hosted on idfpr.illinois.gov, found via direct research this session (Phase 2B.3).",
+  "lastCrawl": null,
+  "lastManualVerification": "2026-08-21",
+  "fieldsUsingThisSource": 0
+}
