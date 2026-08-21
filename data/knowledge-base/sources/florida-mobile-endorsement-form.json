@@ -1,0 +1,19 @@
+{
+  "id": "florida-mobile-endorsement-form",
+  "agencyName": "Florida Board of Nursing",
+  "website": "https://floridasnursing.gov/applications/MOBILEApp-BoardofNursing-DH-5102-MQA.pdf",
+  "jurisdiction": "florida",
+  "professionsCovered": [
+    "registered-nurse"
+  ],
+  "sourceType": "official-board",
+  "official": true,
+  "authorityLevel": "authoritative",
+  "authorityRationale": "Florida Board of Nursing's own official MOBILE Endorsement application form (DH-5102) — the actual document applicants submit, stating eligibility conditions directly (active unencumbered license in another jurisdiction, no disciplinary action within 5 years).",
+  "specificity": "field-specific",
+  "reliabilityScore": 0.96,
+  "reliabilityRationale": "Primary application-form document hosted directly by the board itself, originally identified during Phase 2B research and now formally registered (Phase 2B.4).",
+  "lastCrawl": null,
+  "lastManualVerification": "2026-08-21",
+  "fieldsUsingThisSource": 0
+}

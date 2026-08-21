@@ -1,0 +1,19 @@
+{
+  "id": "florida-endorsement-transaction-form",
+  "agencyName": "Florida Board of Nursing",
+  "website": "https://floridasnursing.gov/forms/sd-nursing-endorsement-transaction.pdf",
+  "jurisdiction": "florida",
+  "professionsCovered": [
+    "registered-nurse"
+  ],
+  "sourceType": "official-board",
+  "official": true,
+  "authorityLevel": "authoritative",
+  "authorityRationale": "Florida Board of Nursing's own official endorsement self-declaration form — explicitly states license verification must be requested via Nursys (or the issuing jurisdiction directly), and that NCLEX scores are transferred for endorsement rather than the exam being retaken.",
+  "specificity": "field-specific",
+  "reliabilityScore": 0.95,
+  "reliabilityRationale": "Primary application-adjacent document hosted directly by the board itself, found via direct research this session (Phase 2B.4).",
+  "lastCrawl": null,
+  "lastManualVerification": "2026-08-21",
+  "fieldsUsingThisSource": 0
+}

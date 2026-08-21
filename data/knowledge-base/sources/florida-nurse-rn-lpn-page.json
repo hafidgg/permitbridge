@@ -1,0 +1,19 @@
+{
+  "id": "florida-nurse-rn-lpn-page",
+  "agencyName": "Florida Board of Nursing",
+  "website": "https://floridasnursing.gov/nurse-rn-lpn/",
+  "jurisdiction": "florida",
+  "professionsCovered": [
+    "registered-nurse"
+  ],
+  "sourceType": "official-board",
+  "official": true,
+  "authorityLevel": "authoritative",
+  "authorityRationale": "Florida Board of Nursing's own official RN/LPN licensing page — describes the MOBILE Endorsement pathway, electronic Livescan fingerprinting requirement (mandatory per 2024 HB 975), and endorsement eligibility.",
+  "specificity": "field-specific",
+  "reliabilityScore": 0.95,
+  "reliabilityRationale": "Official board page, directly hosted on floridasnursing.gov, originally identified during Phase 2B research and now formally registered (Phase 2B.4).",
+  "lastCrawl": null,
+  "lastManualVerification": "2026-08-21",
+  "fieldsUsingThisSource": 0
+}

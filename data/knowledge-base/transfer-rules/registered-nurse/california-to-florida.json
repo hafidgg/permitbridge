@@ -8,11 +8,11 @@
     "sourceUrl": "https://floridasnursing.gov/nurse-rn-lpn/",
     "sourceTitle": "Nursing (RN & LPN) \u2014 Florida Board of Nursing",
     "sourceName": "Florida Board of Nursing",
-    "verifiedAt": "2026-08-20",
+    "verifiedAt": "2026-08-21",
     "verificationMethod": "official_document_review",
     "reviewer": null,
     "status": "pending_verification",
-    "confidence": 0.9,
+    "confidence": 0.88,
     "confidenceLevel": "verified",
     "history": [
       {
@@ -22,9 +22,17 @@
         "reason": "Phase 2B pilot: first population from real official-source research.",
         "sourceUrl": "https://floridasnursing.gov/nurse-rn-lpn/",
         "reviewer": null
+      },
+      {
+        "previousValue": "endorsement",
+        "newValue": "endorsement",
+        "changedAt": "2026-08-21",
+        "reason": "Phase 2B.4: upgraded/registered a genuine official Florida Board of Nursing source (Florida Board of Nursing -> now properly registered), found via direct research this session.",
+        "sourceUrl": "https://floridasnursing.gov/nurse-rn-lpn/",
+        "reviewer": null
       }
     ],
-    "notes": "California is not an NLC member, so a California-licensed nurse holds no multistate compact privilege \u2014 Florida's simplified 'Multistate License Upgrade' path does not apply; standard MOBILE Endorsement (Fla. Stat. 456.0145) applies instead, the same pathway used regardless of origin state for any non-compact-licensed applicant."
+    "notes": "Official FBON page confirms California is not an NLC member, so the standard MOBILE Endorsement pathway (not the simplified Multistate License Upgrade) applies."
   },
   "endorsementProcess": {
     "value": "Apply via the Florida Health Source portal under MOBILE Endorsement (s. 456.0145, Florida Statutes); provide license verification from California via Nursys, complete electronic Livescan fingerprinting (mandatory per 2024's House Bill 975), and pay the applicable fee.",
@@ -94,15 +102,15 @@
     "value": {
       "status": "not_required"
     },
-    "sourceUrl": "https://www.nursinglicensure.org/state/nursing-license-florida/",
-    "sourceTitle": "Florida Nursing License Requirements 2026",
-    "sourceName": "nursinglicensure.org (secondary, corroborates the Board's own stated endorsement pathway)",
-    "verifiedAt": "2026-08-20",
+    "sourceUrl": "https://floridasnursing.gov/forms/sd-nursing-endorsement-transaction.pdf",
+    "sourceTitle": "Endorsement Self-Declaration/Transaction Form \u2014 Florida Board of Nursing",
+    "sourceName": "Florida Board of Nursing",
+    "verifiedAt": "2026-08-21",
     "verificationMethod": "official_document_review",
     "reviewer": null,
     "status": "pending_verification",
-    "confidence": 0.7,
-    "confidenceLevel": "likely",
+    "confidence": 0.88,
+    "confidenceLevel": "verified",
     "history": [
       {
         "previousValue": null,
@@ -113,9 +121,21 @@
         "reason": "Phase 2B pilot: first population from real official-source research.",
         "sourceUrl": "https://www.nursinglicensure.org/state/nursing-license-florida/",
         "reviewer": null
+      },
+      {
+        "previousValue": {
+          "status": "not_required"
+        },
+        "newValue": {
+          "status": "not_required"
+        },
+        "changedAt": "2026-08-21",
+        "reason": "Phase 2B.4: upgraded/registered a genuine official Florida Board of Nursing source (nursinglicensure.org (secondary, corroborates the Board's own stated endorsement pathway) -> now properly registered), found via direct research this session.",
+        "sourceUrl": "https://floridasnursing.gov/forms/sd-nursing-endorsement-transaction.pdf",
+        "reviewer": null
       }
     ],
-    "notes": "Applicants already licensed as an RN in another state who apply by endorsement do not retake the NCLEX."
+    "notes": "Official FBON form states explicitly: applicants who passed the NCLEX may have exam scores transferred to Florida for endorsement \u2014 confirming the exam is not retaken."
   },
   "applicationFeeUsd": {
     "value": 110,
@@ -161,11 +181,11 @@
     "sourceUrl": "https://floridasnursing.gov/nurse-rn-lpn/",
     "sourceTitle": "Nursing (RN & LPN) \u2014 Florida Board of Nursing",
     "sourceName": "Florida Board of Nursing",
-    "verifiedAt": "2026-08-20",
+    "verifiedAt": "2026-08-21",
     "verificationMethod": "official_document_review",
     "reviewer": null,
     "status": "pending_verification",
-    "confidence": 0.85,
+    "confidence": 0.88,
     "confidenceLevel": "verified",
     "history": [
       {
@@ -177,9 +197,21 @@
         "reason": "Phase 2B pilot: first population from real official-source research.",
         "sourceUrl": "https://floridasnursing.gov/nurse-rn-lpn/",
         "reviewer": null
+      },
+      {
+        "previousValue": {
+          "status": "required"
+        },
+        "newValue": {
+          "status": "required"
+        },
+        "changedAt": "2026-08-21",
+        "reason": "Phase 2B.4: upgraded/registered a genuine official Florida Board of Nursing source (Florida Board of Nursing -> now properly registered), found via direct research this session.",
+        "sourceUrl": "https://floridasnursing.gov/nurse-rn-lpn/",
+        "reviewer": null
       }
     ],
-    "notes": "Florida HB 975 (2024 session) made electronic fingerprinting mandatory; application cannot be approved without it."
+    "notes": "Official FBON page confirms electronic Livescan fingerprinting is mandatory (Florida HB 975, 2024 session) before an application can be approved."
   },
   "fingerprintingRequirement": {
     "value": {
@@ -188,11 +220,11 @@
     "sourceUrl": "https://floridasnursing.gov/nurse-rn-lpn/",
     "sourceTitle": "Nursing (RN & LPN) \u2014 Florida Board of Nursing",
     "sourceName": "Florida Board of Nursing",
-    "verifiedAt": "2026-08-20",
+    "verifiedAt": "2026-08-21",
     "verificationMethod": "official_document_review",
     "reviewer": null,
     "status": "pending_verification",
-    "confidence": 0.85,
+    "confidence": 0.88,
     "confidenceLevel": "verified",
     "history": [
       {
@@ -204,23 +236,35 @@
         "reason": "Phase 2B pilot: first population from real official-source research.",
         "sourceUrl": "https://floridasnursing.gov/nurse-rn-lpn/",
         "reviewer": null
+      },
+      {
+        "previousValue": {
+          "status": "required"
+        },
+        "newValue": {
+          "status": "required"
+        },
+        "changedAt": "2026-08-21",
+        "reason": "Phase 2B.4: upgraded/registered a genuine official Florida Board of Nursing source (Florida Board of Nursing -> now properly registered), found via direct research this session.",
+        "sourceUrl": "https://floridasnursing.gov/nurse-rn-lpn/",
+        "reviewer": null
       }
     ],
-    "notes": "Must be completed electronically via Livescan \u2014 paper cards are not accepted, per Florida's own MOBILE application form."
+    "notes": "Same official FBON citation as backgroundCheckRequirement."
   },
   "licenseVerificationRequirement": {
     "value": {
       "status": "required"
     },
-    "sourceUrl": "https://www.nursinglicensure.org/state/nursing-license-florida/",
-    "sourceTitle": "Florida Nursing License Requirements 2026",
-    "sourceName": "nursinglicensure.org (secondary)",
-    "verifiedAt": "2026-08-20",
+    "sourceUrl": "https://floridasnursing.gov/forms/sd-nursing-endorsement-transaction.pdf",
+    "sourceTitle": "Endorsement Self-Declaration/Transaction Form \u2014 Florida Board of Nursing",
+    "sourceName": "Florida Board of Nursing",
+    "verifiedAt": "2026-08-21",
     "verificationMethod": "official_document_review",
     "reviewer": null,
     "status": "pending_verification",
-    "confidence": 0.7,
-    "confidenceLevel": "likely",
+    "confidence": 0.88,
+    "confidenceLevel": "verified",
     "history": [
       {
         "previousValue": null,
@@ -231,9 +275,21 @@
         "reason": "Phase 2B pilot: first population from real official-source research.",
         "sourceUrl": "https://www.nursinglicensure.org/state/nursing-license-florida/",
         "reviewer": null
+      },
+      {
+        "previousValue": {
+          "status": "required"
+        },
+        "newValue": {
+          "status": "required"
+        },
+        "changedAt": "2026-08-21",
+        "reason": "Phase 2B.4: upgraded/registered a genuine official Florida Board of Nursing source (nursinglicensure.org (secondary) -> now properly registered), found via direct research this session.",
+        "sourceUrl": "https://floridasnursing.gov/forms/sd-nursing-endorsement-transaction.pdf",
+        "reviewer": null
       }
     ],
-    "notes": "Nursys handles verification for most states, including California."
+    "notes": "Same official FBON form states explicitly: \"Verification of every license you hold or have held is required. You may request verification of your license at www.nursys.com...\""
   },
   "documentsRequired": {
     "value": "Unknown",
@@ -256,12 +312,12 @@
     "sourceUrl": "https://floridasnursing.gov/applications/MOBILEApp-BoardofNursing-DH-5102-MQA.pdf",
     "sourceTitle": "Board of Nursing Mobile Opportunity by Interstate Licensure Endorsement (application form)",
     "sourceName": "Florida Board of Nursing",
-    "verifiedAt": "2026-08-20",
+    "verifiedAt": "2026-08-21",
     "verificationMethod": "official_document_review",
     "reviewer": null,
     "status": "pending_verification",
-    "confidence": 0.8,
-    "confidenceLevel": "likely",
+    "confidence": 0.88,
+    "confidenceLevel": "verified",
     "history": [
       {
         "previousValue": null,
@@ -272,9 +328,21 @@
         "reason": "Phase 2B pilot: first population from real official-source research.",
         "sourceUrl": "https://floridasnursing.gov/applications/MOBILEApp-BoardofNursing-DH-5102-MQA.pdf",
         "reviewer": null
+      },
+      {
+        "previousValue": {
+          "status": "required"
+        },
+        "newValue": {
+          "status": "required"
+        },
+        "changedAt": "2026-08-21",
+        "reason": "Phase 2B.4: upgraded/registered a genuine official Florida Board of Nursing source (Florida Board of Nursing -> now properly registered), found via direct research this session.",
+        "sourceUrl": "https://floridasnursing.gov/applications/MOBILEApp-BoardofNursing-DH-5102-MQA.pdf",
+        "reviewer": null
       }
     ],
-    "notes": "Must hold an active, unencumbered license in another jurisdiction."
+    "notes": "Official FBON MOBILE application form itself requires an active, unencumbered license in another jurisdiction."
   },
   "disciplinaryDisclosureRequirement": {
     "value": {
@@ -283,12 +351,12 @@
     "sourceUrl": "https://floridasnursing.gov/applications/MOBILEApp-BoardofNursing-DH-5102-MQA.pdf",
     "sourceTitle": "Board of Nursing Mobile Opportunity by Interstate Licensure Endorsement (application form)",
     "sourceName": "Florida Board of Nursing",
-    "verifiedAt": "2026-08-20",
+    "verifiedAt": "2026-08-21",
     "verificationMethod": "official_document_review",
     "reviewer": null,
     "status": "pending_verification",
-    "confidence": 0.75,
-    "confidenceLevel": "likely",
+    "confidence": 0.88,
+    "confidenceLevel": "verified",
     "history": [
       {
         "previousValue": null,
@@ -299,9 +367,21 @@
         "reason": "Phase 2B pilot: first population from real official-source research.",
         "sourceUrl": "https://floridasnursing.gov/applications/MOBILEApp-BoardofNursing-DH-5102-MQA.pdf",
         "reviewer": null
+      },
+      {
+        "previousValue": {
+          "status": "required"
+        },
+        "newValue": {
+          "status": "required"
+        },
+        "changedAt": "2026-08-21",
+        "reason": "Phase 2B.4: upgraded/registered a genuine official Florida Board of Nursing source (Florida Board of Nursing -> now properly registered), found via direct research this session.",
+        "sourceUrl": "https://floridasnursing.gov/applications/MOBILEApp-BoardofNursing-DH-5102-MQA.pdf",
+        "reviewer": null
       }
     ],
-    "notes": "Must not have had disciplinary action in the five years preceding application, per the official MOBILE application form itself."
+    "notes": "Same official FBON form: no disciplinary action in the five years preceding application."
   },
   "processingTime": {
     "value": "Florida's own materials describe issuance in 'under 30 days,' though timing depends on how promptly the applicant completes all requirements (fingerprinting, verification, etc.).",
