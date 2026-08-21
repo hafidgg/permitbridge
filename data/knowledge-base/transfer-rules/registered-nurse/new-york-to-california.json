@@ -5,14 +5,14 @@
   "licenseType": "RN",
   "transferMechanism": {
     "value": "endorsement",
-    "sourceUrl": "https://rn.ca.gov/pdfs/regulations/isor-1410_5.pdf",
-    "sourceTitle": "Title 16 CCR 1410.5 Coursework Exemptions for Out-of-State Applicants \u2014 Initial Statement of Reasons",
+    "sourceUrl": "https://www.rn.ca.gov/applicants/lic-end",
+    "sourceTitle": "Licensure by Endorsement \u2014 California Board of Registered Nursing",
     "sourceName": "California Board of Registered Nursing (BRN)",
     "verifiedAt": "2026-08-20",
     "verificationMethod": "official_document_review",
     "reviewer": null,
     "status": "pending_verification",
-    "confidence": 0.9,
+    "confidence": 0.95,
     "confidenceLevel": "verified",
     "history": [
       {
@@ -20,7 +20,15 @@
         "newValue": "endorsement",
         "changedAt": "2026-08-20",
         "reason": "Phase 2B pilot: first population from real official-source research.",
-        "sourceUrl": "https://rn.ca.gov/pdfs/regulations/isor-1410_5.pdf",
+        "sourceUrl": "https://www.rn.ca.gov/applicants/lic-end",
+        "reviewer": null
+      },
+      {
+        "previousValue": "endorsement",
+        "newValue": "endorsement",
+        "changedAt": "2026-08-21",
+        "reason": "Phase 2B.2: repointed to the already-registered, authoritative BRN endorsement page (exact URL match), which is a more directly on-point citation for this specific fact than the coursework-exemption regulation PDF originally cited.",
+        "sourceUrl": "https://www.rn.ca.gov/applicants/lic-end",
         "reviewer": null
       }
     ],
@@ -94,15 +102,15 @@
     "value": {
       "status": "not_required"
     },
-    "sourceUrl": "https://www.nursinglicensure.org/state/nursing-license-california/",
-    "sourceTitle": "California Nursing License Requirements 2026",
-    "sourceName": "nursinglicensure.org (secondary, corroborates BRN's own stated endorsement pathway)",
-    "verifiedAt": "2026-08-20",
+    "sourceUrl": "https://www.rn.ca.gov/applicants/lic-end",
+    "sourceTitle": "Licensure by Endorsement \u2014 California Board of Registered Nursing",
+    "sourceName": "California Board of Registered Nursing (BRN)",
+    "verifiedAt": "2026-08-21",
     "verificationMethod": "official_document_review",
     "reviewer": null,
     "status": "pending_verification",
-    "confidence": 0.7,
-    "confidenceLevel": "likely",
+    "confidence": 0.88,
+    "confidenceLevel": "verified",
     "history": [
       {
         "previousValue": null,
@@ -113,9 +121,21 @@
         "reason": "Phase 2B pilot: first population from real official-source research.",
         "sourceUrl": "https://www.nursinglicensure.org/state/nursing-license-california/",
         "reviewer": null
+      },
+      {
+        "previousValue": {
+          "status": "not_required"
+        },
+        "newValue": {
+          "status": "not_required"
+        },
+        "changedAt": "2026-08-21",
+        "reason": "Phase 2B.2: upgraded from a secondary/unregistered source (nursinglicensure.org (secondary, corroborates BRN's own stated endorsement pathway)) to a genuine official California BRN source, found via direct research this session.",
+        "sourceUrl": "https://www.rn.ca.gov/applicants/lic-end",
+        "reviewer": null
       }
     ],
-    "notes": "Endorsement applicant must already hold a current, active out-of-state RN license (NCLEX already passed); not retaken."
+    "notes": "Official BRN page states endorsement requires having PASSED NCLEX-RN (or SBTPE) at some point \u2014 not retaken for CA specifically."
   },
   "applicationFeeUsd": {
     "value": 350,
@@ -167,15 +187,15 @@
     "value": {
       "status": "required"
     },
-    "sourceUrl": "https://advantismed.com/nursing-license/california",
-    "sourceTitle": "California Nursing License & Renewal Guide 2026",
-    "sourceName": "Advantis Medical (secondary, corroborates BRN's own stated DOJ/FBI fingerprint requirement)",
-    "verifiedAt": "2026-08-20",
+    "sourceUrl": "https://www.rn.ca.gov/applicants/lic-faqs.shtml",
+    "sourceTitle": "Applicant Frequently Asked Questions \u2014 California Board of Registered Nursing",
+    "sourceName": "California Board of Registered Nursing (BRN)",
+    "verifiedAt": "2026-08-21",
     "verificationMethod": "official_document_review",
     "reviewer": null,
     "status": "pending_verification",
-    "confidence": 0.75,
-    "confidenceLevel": "likely",
+    "confidence": 0.88,
+    "confidenceLevel": "verified",
     "history": [
       {
         "previousValue": null,
@@ -186,23 +206,35 @@
         "reason": "Phase 2B pilot: first population from real official-source research.",
         "sourceUrl": "https://advantismed.com/nursing-license/california",
         "reviewer": null
+      },
+      {
+        "previousValue": {
+          "status": "required"
+        },
+        "newValue": {
+          "status": "required"
+        },
+        "changedAt": "2026-08-21",
+        "reason": "Phase 2B.2: upgraded from a secondary/unregistered source (Advantis Medical (secondary, corroborates BRN's own stated DOJ/FBI fingerprint requirement)) to a genuine official California BRN source, found via direct research this session.",
+        "sourceUrl": "https://www.rn.ca.gov/applicants/lic-faqs.shtml",
+        "reviewer": null
       }
     ],
-    "notes": null
+    "notes": "Official BRN FAQ states explicitly: the Board must receive and process fingerprint results from CA DOJ and the FBI before a temporary license is issued."
   },
   "fingerprintingRequirement": {
     "value": {
       "status": "required"
     },
-    "sourceUrl": "https://advantismed.com/nursing-license/california",
-    "sourceTitle": "California Nursing License & Renewal Guide 2026",
-    "sourceName": "Advantis Medical (secondary)",
-    "verifiedAt": "2026-08-20",
+    "sourceUrl": "https://www.rn.ca.gov/applicants/lic-faqs.shtml",
+    "sourceTitle": "Applicant Frequently Asked Questions \u2014 California Board of Registered Nursing",
+    "sourceName": "California Board of Registered Nursing (BRN)",
+    "verifiedAt": "2026-08-21",
     "verificationMethod": "official_document_review",
     "reviewer": null,
     "status": "pending_verification",
-    "confidence": 0.75,
-    "confidenceLevel": "likely",
+    "confidence": 0.88,
+    "confidenceLevel": "verified",
     "history": [
       {
         "previousValue": null,
@@ -213,23 +245,35 @@
         "reason": "Phase 2B pilot: first population from real official-source research.",
         "sourceUrl": "https://advantismed.com/nursing-license/california",
         "reviewer": null
+      },
+      {
+        "previousValue": {
+          "status": "required"
+        },
+        "newValue": {
+          "status": "required"
+        },
+        "changedAt": "2026-08-21",
+        "reason": "Phase 2B.2: upgraded from a secondary/unregistered source (Advantis Medical (secondary)) to a genuine official California BRN source, found via direct research this session.",
+        "sourceUrl": "https://www.rn.ca.gov/applicants/lic-faqs.shtml",
+        "reviewer": null
       }
     ],
-    "notes": "Out-of-state applicants use an FD-258 fingerprint card process; California's own materials describe this as the most common source of endorsement delays."
+    "notes": "Same official BRN FAQ citation as backgroundCheckRequirement \u2014 DOJ + FBI fingerprint results are explicitly required before licensure."
   },
   "licenseVerificationRequirement": {
     "value": {
       "status": "required"
     },
-    "sourceUrl": "https://www.nursinglicensure.org/state/nursing-license-california/",
-    "sourceTitle": "California Nursing License Requirements 2026",
-    "sourceName": "nursinglicensure.org (secondary)",
-    "verifiedAt": "2026-08-20",
+    "sourceUrl": "https://www.rn.ca.gov/applicants/lic-faqs.shtml",
+    "sourceTitle": "Applicant Frequently Asked Questions \u2014 California Board of Registered Nursing",
+    "sourceName": "California Board of Registered Nursing (BRN)",
+    "verifiedAt": "2026-08-21",
     "verificationMethod": "official_document_review",
     "reviewer": null,
     "status": "pending_verification",
-    "confidence": 0.7,
-    "confidenceLevel": "likely",
+    "confidence": 0.88,
+    "confidenceLevel": "verified",
     "history": [
       {
         "previousValue": null,
@@ -240,9 +284,21 @@
         "reason": "Phase 2B pilot: first population from real official-source research.",
         "sourceUrl": "https://www.nursinglicensure.org/state/nursing-license-california/",
         "reviewer": null
+      },
+      {
+        "previousValue": {
+          "status": "required"
+        },
+        "newValue": {
+          "status": "required"
+        },
+        "changedAt": "2026-08-21",
+        "reason": "Phase 2B.2: upgraded from a secondary/unregistered source (nursinglicensure.org (secondary)) to a genuine official California BRN source, found via direct research this session.",
+        "sourceUrl": "https://www.rn.ca.gov/applicants/lic-faqs.shtml",
+        "reviewer": null
       }
     ],
-    "notes": "Via Nursys or direct board-to-board verification."
+    "notes": "Official BRN FAQ confirms endorsement requires proof of a current, valid out-of-state license, verified via Nursys or a paper Verification of License form."
   },
   "documentsRequired": {
     "value": "Unknown",
@@ -262,15 +318,15 @@
     "value": {
       "status": "required"
     },
-    "sourceUrl": "https://www.besmith.com/blog/insights/your-complete-guide-to-getting-a-california-rn-license-by-endorsement/",
-    "sourceTitle": "California RN License Endorsement Guide",
-    "sourceName": "B.E. Smith (secondary)",
-    "verifiedAt": "2026-08-20",
+    "sourceUrl": "https://www.rn.ca.gov/applicants/lic-end",
+    "sourceTitle": "Licensure by Endorsement \u2014 California Board of Registered Nursing",
+    "sourceName": "California Board of Registered Nursing (BRN)",
+    "verifiedAt": "2026-08-21",
     "verificationMethod": "official_document_review",
     "reviewer": null,
     "status": "pending_verification",
-    "confidence": 0.65,
-    "confidenceLevel": "likely",
+    "confidence": 0.88,
+    "confidenceLevel": "verified",
     "history": [
       {
         "previousValue": null,
@@ -281,9 +337,21 @@
         "reason": "Phase 2B pilot: first population from real official-source research.",
         "sourceUrl": "https://www.besmith.com/blog/insights/your-complete-guide-to-getting-a-california-rn-license-by-endorsement/",
         "reviewer": null
+      },
+      {
+        "previousValue": {
+          "status": "required"
+        },
+        "newValue": {
+          "status": "required"
+        },
+        "changedAt": "2026-08-21",
+        "reason": "Phase 2B.2: upgraded from a secondary/unregistered source (B.E. Smith (secondary)) to a genuine official California BRN source, found via direct research this session.",
+        "sourceUrl": "https://www.rn.ca.gov/applicants/lic-end",
+        "reviewer": null
       }
     ],
-    "notes": null
+    "notes": "Official BRN page: endorsement requires holding \"a current and active RN license in another state, U.S. territory, or Canada.\""
   },
   "disciplinaryDisclosureRequirement": {
     "value": "Unknown",

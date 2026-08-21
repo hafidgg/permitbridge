@@ -1,0 +1,19 @@
+{
+  "id": "california-applicant-faqs",
+  "agencyName": "California Board of Registered Nursing (BRN)",
+  "website": "https://www.rn.ca.gov/applicants/lic-faqs.shtml",
+  "jurisdiction": "california",
+  "professionsCovered": [
+    "registered-nurse"
+  ],
+  "sourceType": "official-board",
+  "official": true,
+  "authorityLevel": "authoritative",
+  "authorityRationale": "BRN's own official Applicant Frequently Asked Questions page — explicitly confirms the DOJ/FBI fingerprint requirement and license-verification process for endorsement applicants.",
+  "specificity": "field-specific",
+  "reliabilityScore": 0.95,
+  "reliabilityRationale": "Official board FAQ page, directly hosted on rn.ca.gov, found via direct research this session (Phase 2B.2).",
+  "lastCrawl": null,
+  "lastManualVerification": "2026-08-21",
+  "fieldsUsingThisSource": 0
+}
