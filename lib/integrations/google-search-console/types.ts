@@ -36,6 +36,14 @@ export interface GscSearchAnalyticsQuery {
  * never anything that implies click/impression manipulation is possible
  * or intended.
  */
+export interface GscTopQueryRow {
+  query: string;
+  page: string;
+  clicks: number;
+  impressions: number;
+  position: number;
+}
+
 export interface GscSnapshot {
   generatedAt: string;
   siteUrl: string;
@@ -46,4 +54,15 @@ export interface GscSnapshot {
     averagePosition: number;
   };
   topPages: Array<{ page: string; clicks: number; impressions: number; position: number }>;
+  /**
+   * Phase 2C.2: real query+page rows from GSC's Search Analytics API
+   * (dimensions: ["query", "page"]) — added alongside the existing
+   * totals/topPages queries, not replacing them. Optional specifically
+   * for backward compatibility: snapshots persisted before this phase
+   * (data/gsc-snapshots/latest.json, if it ever existed with real data)
+   * won't have this field, and compareSnapshots() must keep working
+   * correctly whether it's present or not — never require historical
+   * snapshots to be regenerated.
+   */
+  topQueries?: GscTopQueryRow[];
 }

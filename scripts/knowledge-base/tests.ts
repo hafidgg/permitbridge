@@ -18,6 +18,8 @@ import { isAuthoritativeForField } from "../../lib/knowledge-base/authority-mapp
 import { RN_CORE_FIELDS } from "../../lib/knowledge-base/rn-core-fields";
 import { computeCoreFieldStats } from "../../lib/knowledge-base/rn-core-audit";
 import { resolveSourceConflict } from "../../lib/knowledge-base/conflict";
+import { normalizeTopQueries } from "../../lib/integrations/google-search-console/queries";
+import { compareSnapshots } from "../../lib/integrations/google-search-console/alerts";
 import type { ConflictSourceSnapshot } from "../../types/knowledge-base";
 import { buildTransferRuleSlug, parseTransferRuleSlug, validateTransferRule, isTransferRuleValid } from "../../lib/knowledge-base/transfer-rule-schema";
 import {
@@ -4503,6 +4505,125 @@ await test("production data (facts, transfer-rules, sources, registry) and the w
 });
 
 // ---------------------------------------------------------------------
+// GSC Query Collection (Phase 2C.2)
+//     normalizeTopQueries() and compareSnapshots() are pure functions —
+//     every test below is fully deterministic, using synthetic fixtures
+//     only, exactly as required (real GSC credentials are never needed
+//     to verify this normalization/comparison logic). No network calls,
+//     no real query data is ever fabricated into a snapshot.
+// ---------------------------------------------------------------------
+console.log("\nGSC Query Collection (Phase 2C.2):");
+
+await test("[PERMANENT — Phase 2C.2] normalizeTopQueries() correctly maps real dimensions:['query','page'] rows into GscTopQueryRow[]", () => {
+  const rows = [
+    { keys: ["texas rn license california", "/registered-nurse/texas-to-california"], clicks: 12, impressions: 340, position: 8.2 },
+    { keys: ["florida nursing endorsement fee", "/registered-nurse/california-to-florida"], clicks: 5, impressions: 190, position: 14.1 },
+  ];
+  const result = normalizeTopQueries(rows);
+  assertEqual(result.length, 2);
+  assertEqual(result[0]!.query, "texas rn license california");
+  assertEqual(result[0]!.page, "/registered-nurse/texas-to-california");
+  assertEqual(result[0]!.clicks, 12);
+});
+
+await test("[PERMANENT — Phase 2C.2] multiple distinct queries mapping to the SAME page are all preserved as separate rows", () => {
+  const rows = [
+    { keys: ["rn license transfer texas to california", "/registered-nurse/texas-to-california"], clicks: 3, impressions: 50, position: 12 },
+    { keys: ["texas nurse license reciprocity", "/registered-nurse/texas-to-california"], clicks: 7, impressions: 80, position: 6.5 },
+  ];
+  const result = normalizeTopQueries(rows);
+  assertEqual(result.length, 2, "two distinct queries for the same page must both be kept, not merged/deduped");
+  assert(result.every((r) => r.page === "/registered-nurse/texas-to-california"), "both rows should reference the same page");
+});
+
+await test("[PERMANENT — Phase 2C.2] the SAME query appearing for multiple distinct pages is preserved as separate rows", () => {
+  const rows = [
+    { keys: ["rn license reciprocity", "/registered-nurse/texas-to-california"], clicks: 4, impressions: 60, position: 10 },
+    { keys: ["rn license reciprocity", "/registered-nurse/georgia-to-illinois"], clicks: 2, impressions: 40, position: 15 },
+  ];
+  const result = normalizeTopQueries(rows);
+  assertEqual(result.length, 2, "the same query across two different pages must both be kept, not merged/deduped");
+});
+
+await test("[PERMANENT — Phase 2C.2] an empty query response produces an empty array, never fabricated data", () => {
+  assertEqual(normalizeTopQueries([]), []);
+});
+
+await test("[PERMANENT — Phase 2C.2] a missing (undefined) rows field — exactly what GSC returns for a property with zero query data — produces an empty array, not an error", () => {
+  assertEqual(normalizeTopQueries(undefined), []);
+});
+
+await test("[PERMANENT — Phase 2C.2] malformed rows (missing/non-string dimension values) are silently dropped, never fabricated into a placeholder query or page", () => {
+  const rows = [
+    { keys: ["a real query", "/a-real-page"], clicks: 1, impressions: 10, position: 5 },
+    { keys: ["only one key"], clicks: 99, impressions: 999, position: 1 } as any, // malformed: missing the page dimension
+    { keys: [undefined, "/some-page"], clicks: 1, impressions: 1, position: 1 } as any, // malformed: query is not a string
+  ];
+  const result = normalizeTopQueries(rows);
+  assertEqual(result.length, 1, "only the one well-formed row should survive — malformed rows must never produce a fabricated/placeholder query or page");
+  assertEqual(result[0]!.query, "a real query");
+});
+
+await test("[PERMANENT — Phase 2C.2] topQueries are deterministically ordered by clicks descending, regardless of the API's raw response order", () => {
+  const rows = [
+    { keys: ["low traffic query", "/page-a"], clicks: 2, impressions: 20, position: 20 },
+    { keys: ["high traffic query", "/page-b"], clicks: 50, impressions: 500, position: 3 },
+    { keys: ["medium traffic query", "/page-c"], clicks: 10, impressions: 100, position: 10 },
+  ];
+  const result = normalizeTopQueries(rows);
+  assertEqual(result.map((r) => r.clicks), [50, 10, 2], "expected strictly descending click order regardless of input order");
+});
+
+await test("[PERMANENT — Phase 2C.2] a GscSnapshot WITHOUT topQueries (old, pre-Phase-2C.2 snapshot shape) does not break compareSnapshots() — full backward compatibility, no regeneration required", () => {
+  const oldPrevious = {
+    generatedAt: "2026-08-01T00:00:00.000Z",
+    siteUrl: "sc-domain:getpermitbridge.com",
+    totals: { clicks: 10, impressions: 100, ctr: 0.1, averagePosition: 12 },
+    topPages: [{ page: "/", clicks: 10, impressions: 100, position: 12 }],
+    // topQueries deliberately absent — simulates a real snapshot persisted before this phase existed
+  };
+  const current = {
+    generatedAt: "2026-08-21T00:00:00.000Z",
+    siteUrl: "sc-domain:getpermitbridge.com",
+    totals: { clicks: 12, impressions: 110, ctr: 0.11, averagePosition: 11 },
+    topPages: [{ page: "/", clicks: 12, impressions: 110, position: 11 }],
+    topQueries: [{ query: "permitbridge", page: "/", clicks: 12, impressions: 110, position: 11 }],
+  };
+  const alerts = compareSnapshots(oldPrevious as any, current as any);
+  assert(Array.isArray(alerts), "compareSnapshots must return normally, not throw, when the previous snapshot predates topQueries");
+});
+
+await test("[PERMANENT — Phase 2C.2] compareSnapshots() also behaves normally when BOTH snapshots have topQueries populated", () => {
+  const previous = {
+    generatedAt: "2026-08-14T00:00:00.000Z",
+    siteUrl: "sc-domain:getpermitbridge.com",
+    totals: { clicks: 10, impressions: 100, ctr: 0.1, averagePosition: 12 },
+    topPages: [{ page: "/", clicks: 10, impressions: 100, position: 12 }],
+    topQueries: [{ query: "permitbridge", page: "/", clicks: 10, impressions: 100, position: 12 }],
+  };
+  const current = {
+    generatedAt: "2026-08-21T00:00:00.000Z",
+    siteUrl: "sc-domain:getpermitbridge.com",
+    totals: { clicks: 11, impressions: 105, ctr: 0.105, averagePosition: 11.5 },
+    topPages: [{ page: "/", clicks: 11, impressions: 105, position: 11.5 }],
+    topQueries: [{ query: "permitbridge", page: "/", clicks: 11, impressions: 105, position: 11.5 }],
+  };
+  const alerts = compareSnapshots(previous as any, current as any);
+  assert(Array.isArray(alerts), "compareSnapshots must return normally when both snapshots have topQueries");
+});
+
+await test("[PERMANENT — Phase 2C.2] the existing totals/topPages query logic is completely unchanged — buildSnapshot still issues exactly 3 parallel queries, not a replacement of the original 2", () => {
+  const queriesSource = fs.readFileSync(path.join(process.cwd(), "lib", "integrations", "google-search-console", "queries.ts"), "utf-8");
+  // Only inspect actual querySearchAnalytics(...) call lines — excludes
+  // JSDoc comment lines that happen to mention "dimensions:" in prose.
+  const callLines = queriesSource.split("\n").filter((line) => line.includes("querySearchAnalytics("));
+  const dimensionCalls = callLines.flatMap((line) => [...line.matchAll(/dimensions:\s*(\[[^\]]*\])/g)].map((m) => (m[1] ?? "").replace(/\s/g, "")));
+  assert(dimensionCalls.includes("[]"), "the original totals query (dimensions: []) must still exist, unmodified");
+  assert(dimensionCalls.includes('["page"]'), "the original topPages query (dimensions: [\"page\"]) must still exist, unmodified");
+  assert(dimensionCalls.includes('["query","page"]'), "the new Phase 2C.2 query (dimensions: [\"query\", \"page\"]) must exist");
+  assertEqual(dimensionCalls.length, 3, "expected exactly 3 parallel Search Analytics queries — the 2 original ones plus the 1 new one, no more");
+});
+
 console.log(`\n${"─".repeat(60)}`);
 console.log(`Results: ${passed} passed, ${failed} failed (${passed + failed} total)`);
 if (failed > 0) {
