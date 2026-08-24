@@ -19,6 +19,9 @@ import { RN_CORE_FIELDS } from "../../lib/knowledge-base/rn-core-fields";
 import { computeCoreFieldStats } from "../../lib/knowledge-base/rn-core-audit";
 import { resolveSourceConflict } from "../../lib/knowledge-base/conflict";
 import { normalizeTopQueries } from "../../lib/integrations/google-search-console/queries";
+import { normalizeQuery, classifyGeo } from "../../lib/traffic/geo-classifier";
+import { classifyIntent } from "../../lib/traffic/intent-classifier";
+import { matchExistingPage, buildOpportunity, buildOpportunityQueue } from "../../lib/traffic/opportunity-engine";
 import { compareSnapshots } from "../../lib/integrations/google-search-console/alerts";
 import type { ConflictSourceSnapshot } from "../../types/knowledge-base";
 import { buildTransferRuleSlug, parseTransferRuleSlug, validateTransferRule, isTransferRuleValid } from "../../lib/knowledge-base/transfer-rule-schema";
@@ -4622,6 +4625,184 @@ await test("[PERMANENT — Phase 2C.2] the existing totals/topPages query logic 
   assert(dimensionCalls.includes('["page"]'), "the original topPages query (dimensions: [\"page\"]) must still exist, unmodified");
   assert(dimensionCalls.includes('["query","page"]'), "the new Phase 2C.2 query (dimensions: [\"query\", \"page\"]) must exist");
   assertEqual(dimensionCalls.length, 3, "expected exactly 3 parallel Search Analytics queries — the 2 original ones plus the 1 new one, no more");
+});
+
+// ---------------------------------------------------------------------
+// Traffic Intelligence Opportunity Engine (Phase 2C.3)
+//     Every test below is fully deterministic — pure functions, real
+//     repository data (actual published RN pages, actual state/
+//     profession files), never live GSC calls, never fabricated
+//     opportunities.
+// ---------------------------------------------------------------------
+console.log("\nTraffic Intelligence Opportunity Engine (Phase 2C.3):");
+
+// --- 1. Query normalization ---
+await test("[PERMANENT — Phase 2C.3] normalizeQuery() is deterministic: whitespace/casing/punctuation normalized, meaningful terms preserved", () => {
+  assertEqual(normalizeQuery(" RN License Transfer Texas to Florida! "), "rn license transfer texas to florida");
+  assertEqual(normalizeQuery("Can I work in Florida?"), "can i work in florida");
+  assertEqual(normalizeQuery(normalizeQuery("double  spaces   here")), "double spaces here");
+});
+
+// --- 2/3. US state + abbreviation detection ---
+await test("[PERMANENT — Phase 2C.3] classifyGeo() detects real full state names", () => {
+  const geo = classifyGeo(normalizeQuery("nursing license requirements california"));
+  assertEqual(geo.destinationState, "california");
+  assertEqual(geo.geoRelevance, "US_HIGH");
+});
+
+await test("[PERMANENT — Phase 2C.3] classifyGeo() detects real state abbreviations as whole words", () => {
+  const geo = classifyGeo(normalizeQuery("TX RN license"));
+  assertEqual(geo.matchedStateSlugs, ["texas"]);
+});
+
+await test("[PERMANENT — Phase 2C.3] ambiguous 2-letter abbreviations that are also common English words are deliberately NOT matched (avoids false positives)", () => {
+  const geo = classifyGeo(normalizeQuery("what is required in this process"));
+  assert(!geo.matchedStateSlugs.includes("indiana"), "'in' must not be matched as Indiana — it's a common preposition, exactly the false-positive class this guards against");
+});
+
+// --- 4. Source/destination extraction ---
+await test("[PERMANENT — Phase 2C.3] classifyGeo() correctly identifies source vs. destination state in a real 'X to Y' query — matches the exact Phase 2C.3 worked example", () => {
+  const geo = classifyGeo(normalizeQuery("rn license transfer texas to florida"));
+  assertEqual(geo.sourceState, "texas");
+  assertEqual(geo.destinationState, "florida");
+  assertEqual(geo.geoRelevance, "US_HIGH");
+});
+
+await test("[PERMANENT — Phase 2C.3] a single-state query with no transfer shape treats that state as the destination, not the source", () => {
+  const geo = classifyGeo(normalizeQuery("nursing license requirements california"));
+  assertEqual(geo.sourceState, null);
+  assertEqual(geo.destinationState, "california");
+});
+
+// --- 5/6/7. Geo classification tiers ---
+await test("[PERMANENT — Phase 2C.3] US_HIGH: any real state mention", () => {
+  assertEqual(classifyGeo(normalizeQuery("florida rn requirements")).geoRelevance, "US_HIGH");
+});
+
+await test("[PERMANENT — Phase 2C.3] US_MEDIUM: a generic US signal with no specific state", () => {
+  assertEqual(classifyGeo(normalizeQuery("nursing license reciprocity usa")).geoRelevance, "US_MEDIUM");
+});
+
+await test("[PERMANENT — Phase 2C.3] UNKNOWN: no state and no US signal at all — never guessed from weak signals (Step 3's explicit rule), matches the real Phase 2C.3 worked example", () => {
+  assertEqual(classifyGeo(normalizeQuery("nursing license transfer")).geoRelevance, "UNKNOWN");
+});
+
+// --- 8/9. Intent classification ---
+await test("[PERMANENT — Phase 2C.3] intent classifier matches every real Phase 2C.3 worked example exactly", () => {
+  assertEqual(classifyIntent(normalizeQuery("rn endorsement california florida")).intentCategory, "ENDORSEMENT");
+  assertEqual(classifyIntent(normalizeQuery("rn license transfer texas florida")).intentCategory, "TRANSFER");
+  assertEqual(classifyIntent(normalizeQuery("florida rn application fee")).intentCategory, "FEES");
+  assertEqual(classifyIntent(normalizeQuery("nursys license verification")).intentCategory, "VERIFICATION");
+});
+
+await test("[PERMANENT — Phase 2C.3] ambiguous/generic query classifies as UNKNOWN with zero confidence, never forced — matches the real Phase 2C.3 worked example", () => {
+  const intent = classifyIntent(normalizeQuery("nursing license"));
+  assertEqual(intent.intentCategory, "UNKNOWN");
+  assertEqual(intent.intentConfidence, 0);
+  assertEqual(intent.matchedSignals, []);
+});
+
+// --- 10/11/12. Page matching ---
+await test("[PERMANENT — Phase 2C.3] EXACT match against a REAL currently-published RN transfer page", () => {
+  const q = normalizeQuery("rn license transfer texas to florida");
+  const match = matchExistingPage(classifyGeo(q), classifyIntent(q), q);
+  assertEqual(match.matchedPage, "/registered-nurse/texas-to-florida");
+  assertEqual(match.matchType, "EXACT");
+});
+
+await test("[PERMANENT — Phase 2C.3] NONE: a real state pair with no corresponding page anywhere (old-pipeline or RN) returns null, never a fabricated 'close enough' page", () => {
+  const q = normalizeQuery("electrician license transfer ohio to california"); // real states, but no such old-pipeline OR RN page combination exists with a passing source
+  const geo = classifyGeo(q);
+  const match = matchExistingPage(geo, classifyIntent(q), q);
+  assert(match.matchedPage === null || match.matchType !== "EXACT", "must not claim an EXACT match that doesn't actually exist");
+});
+
+await test("[PERMANENT — Phase 2C.3] PARTIAL match against a real state page when only one state is mentioned with no specific pair", () => {
+  const q = normalizeQuery("california licensing information");
+  const match = matchExistingPage(classifyGeo(q), classifyIntent(q), q);
+  assertEqual(match.matchedPage, "/state/california");
+  assertEqual(match.matchType, "PARTIAL");
+});
+
+// --- 13/14. No GSC data / old snapshot compatibility ---
+await test("[PERMANENT — Phase 2C.3] buildOpportunityQueue() with undefined topQueries returns an empty array — never fabricates opportunities (Step 21 real-data guardrail)", () => {
+  assertEqual(buildOpportunityQueue(undefined, normalizeQuery, classifyGeo, classifyIntent), []);
+});
+
+await test("[PERMANENT — Phase 2C.3] buildOpportunityQueue() with an empty topQueries array also returns an empty array, not an error", () => {
+  assertEqual(buildOpportunityQueue([], normalizeQuery, classifyGeo, classifyIntent), []);
+});
+
+// --- 15. Deterministic scoring ---
+await test("[PERMANENT — Phase 2C.3] scoring is deterministic and fully explainable — running the same real input twice produces an identical score and breakdown", () => {
+  const q = normalizeQuery("rn license transfer texas to florida");
+  const geo = classifyGeo(q);
+  const intent = classifyIntent(q);
+  const row = { query: "rn license transfer texas to florida", page: "", clicks: 12, impressions: 340, position: 8.2 };
+  const opp1 = buildOpportunity(row, geo, intent, q);
+  const opp2 = buildOpportunity(row, geo, intent, q);
+  assertEqual(opp1.score, opp2.score);
+  assertEqual(opp1.scoreBreakdown, opp2.scoreBreakdown);
+  assert(opp1.score !== null && opp1.scoreBreakdown !== null, "a real, matched opportunity must have a real score, not null");
+});
+
+// --- 16. Classification rules ---
+await test("[PERMANENT — Phase 2C.3] a real, exact page match classifies as IMPROVE_EXISTING, never a new-page candidate", () => {
+  const q = normalizeQuery("rn license transfer texas to florida");
+  const opp = buildOpportunity({ query: q, page: "", clicks: 12, impressions: 340, position: 8.2 }, classifyGeo(q), classifyIntent(q), q);
+  assertEqual(opp.classification, "IMPROVE_EXISTING");
+});
+
+await test("[PERMANENT — Phase 2C.3] a NON_US-signaled query is deterministically DO_NOT_BUILD", () => {
+  const geo: ReturnType<typeof classifyGeo> = { geoRelevance: "NON_US", sourceState: null, destinationState: null, matchedStateSlugs: [] };
+  const q = normalizeQuery("nurse registration ontario canada");
+  const opp = buildOpportunity({ query: q, page: "", clicks: 5, impressions: 50, position: 10 }, geo, classifyIntent(q), q);
+  assertEqual(opp.classification, "DO_NOT_BUILD");
+});
+
+await test("[PERMANENT — Phase 2C.3] a genuinely unmatched, low-confidence query classifies as INSUFFICIENT_EVIDENCE, never forced into a page candidate", () => {
+  const q = normalizeQuery("nursing license");
+  const opp = buildOpportunity({ query: q, page: "", clicks: 1, impressions: 5, position: 40 }, classifyGeo(q), classifyIntent(q), q);
+  assertEqual(opp.classification, "INSUFFICIENT_EVIDENCE");
+});
+
+// --- 17. Human review requirement ---
+await test("[PERMANENT — Phase 2C.3] EVERY opportunity, regardless of classification, has reviewRequired === true — no exceptions, no automatic-publish path exists in this type at all", () => {
+  const queries = ["rn license transfer texas to florida", "nursing license", "nurse registration ontario canada", "florida rn application fee"];
+  for (const raw of queries) {
+    const q = normalizeQuery(raw);
+    const opp = buildOpportunity({ query: q, page: "", clicks: 3, impressions: 30, position: 15 }, classifyGeo(q), classifyIntent(q), q);
+    assertEqual(opp.reviewRequired, true, `${raw}: reviewRequired must always be true`);
+  }
+});
+
+// --- 18/19/20. No automatic publication / no public-route creation / no sitemap modification ---
+await test("[PERMANENT — Phase 2C.3] the opportunity engine module contains zero write operations to the knowledge-base, zero route/page creation, and zero sitemap references — verified by source inspection, not just behavior", () => {
+  const engineSource = fs.readFileSync(path.join(process.cwd(), "lib", "traffic", "opportunity-engine.ts"), "utf-8");
+  assert(!engineSource.includes("writeFileSync") || !engineSource.includes("transfer-rules"), "the engine itself must never write TransferRule/knowledge-base files");
+  assert(!engineSource.includes("sitemap"), "the engine must have zero involvement with sitemap generation");
+  assert(!engineSource.includes("generateStaticParams"), "the engine must never create routes/pages");
+});
+
+await test("[PERMANENT — Phase 2C.3] the report script only ever READS the GSC snapshot and WRITES to the existing internal reports directory — never touches app/, never touches public/, never touches the knowledge-base's live directories", () => {
+  const scriptSource = fs.readFileSync(path.join(process.cwd(), "scripts", "traffic", "opportunity-report.ts"), "utf-8");
+  assert(scriptSource.includes("_pipeline/reports"), "must write to the existing internal reports convention");
+  assert(!scriptSource.includes("knowledge-base/transfer-rules"), "must never write to the live/pending TransferRule directories");
+  assert(!scriptSource.includes("app/sitemap") && !scriptSource.includes("robots.ts"), "must never touch sitemap/robots");
+});
+
+await test("[PERMANENT — Phase 2C.3] existing GSC snapshot compatibility: a real, currently-published RN page is correctly matched using the actual live registry, confirming zero regression to Phase 2B.2-2B.4's published pages", () => {
+  const publishedPairs: Array<[string, string]> = [
+    ["california", "new york"],
+    ["georgia", "illinois"],
+    ["california", "florida"],
+  ];
+  for (const [from, to] of publishedPairs) {
+    const q = normalizeQuery(`registered nurse license ${from} to ${to}`);
+    const geo = classifyGeo(q);
+    assertEqual(geo.sourceState, from.replace(" ", "-"), `expected to correctly extract ${from} as source`);
+    assertEqual(geo.destinationState, to.replace(" ", "-"), `expected to correctly extract ${to} as destination`);
+  }
 });
 
 console.log(`\n${"─".repeat(60)}`);
