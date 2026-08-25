@@ -34,14 +34,14 @@ const FIELD_KEYS: (keyof ProfessionStateFacts)[] = [
   "continuingEducationRequirements",
 ];
 
-export function buildVerificationQueue(professionFilter?: string): VerificationQueueItem[] {
+export function buildVerificationQueue(professionFilter: string = "registered-nurse"): VerificationQueueItem[] {
   const sources = loadAllSources();
   const sourceByUrl = new Map(sources.map((s) => [s.website, s]));
 
   const queue: VerificationQueueItem[] = [];
   if (!fs.existsSync(FACTS_DIR)) return queue;
 
-  const professionDirs = professionFilter ? [professionFilter] : fs.readdirSync(FACTS_DIR);
+  const professionDirs = [professionFilter];
 
   for (const professionSlug of professionDirs) {
     const dir = path.join(FACTS_DIR, professionSlug);

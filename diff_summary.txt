@@ -1,0 +1,5 @@
+ lib/knowledge-base/queue.ts          |   4 +-
+ lib/knowledge-base/reconciliation.ts |  12 ++-
+ lib/knowledge-base/trust.ts          |  23 ++---
+ scripts/knowledge-base/tests.ts      | 175 ++++++++++++++++++++++++++++++++++-
+ 4 files changed, 193 insertions(+), 21 deletions(-)

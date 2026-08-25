@@ -140,8 +140,14 @@ export interface SourceReconciliation {
   referencedSourceIds: string[];
 }
 
-export function computeSourceReconciliation(): SourceReconciliation {
-  const sources = loadAllSources();
+export function computeSourceReconciliation(professionSlug: string = "registered-nurse"): SourceReconciliation {
+  // Filters via the SourceRecord's own professionsCovered field — no
+  // schema change needed, this field already existed. A source belongs
+  // to a profession's reconciliation report if and only if it lists that
+  // profession, so RN's report never counts an electrician-only source
+  // (or vice versa) even though both live in the same flat sources/
+  // directory.
+  const sources = loadAllSources().filter((s) => s.professionsCovered.includes(professionSlug));
 
   const officialSourceRecords = sources.filter((s) => s.authorityLevel === "authoritative").length;
   const secondarySourceRecords = sources.filter((s) => s.authorityLevel === "supplementary").length;
@@ -170,7 +176,7 @@ export function computeSourceReconciliation(): SourceReconciliation {
 
 export function writeMetricAuditReport(professionSlug: string): { jsonPath: string; mdPath: string } {
   const fieldRecon = computeFieldReconciliation(professionSlug);
-  const sourceRecon = computeSourceReconciliation();
+  const sourceRecon = computeSourceReconciliation(professionSlug);
 
   const reportsDir = path.join(process.cwd(), "data", "_pipeline", "reports");
   fs.mkdirSync(reportsDir, { recursive: true });

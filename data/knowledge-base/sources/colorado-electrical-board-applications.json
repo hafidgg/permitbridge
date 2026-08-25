@@ -1,0 +1,19 @@
+{
+  "id": "colorado-electrical-board-applications",
+  "agencyName": "Colorado Department of Regulatory Agencies (DORA), State Electrical Board",
+  "website": "https://dpo.colorado.gov/Electrical/Applications",
+  "jurisdiction": "colorado",
+  "professionsCovered": [
+    "electrician"
+  ],
+  "sourceType": "official-board",
+  "official": true,
+  "authorityLevel": "authoritative",
+  "authorityRationale": "DORA's own live Electrical Board Applications and Forms page — the direct, primary source for reciprocity eligibility, the exact 14-state Journeyman qualifying-state list, and exam-waiver conditions. Found and used in Phase 2D.2 specifically because it is more directly on-point than the general regulation text alone.",
+  "specificity": "field-specific",
+  "reliabilityScore": 0.95,
+  "reliabilityRationale": "Official, live DORA application page — the most directly on-point source found across the entire Phase 2D electrician research (both 2D.1 and 2D.2).",
+  "lastCrawl": null,
+  "lastManualVerification": "2026-08-25",
+  "fieldsUsingThisSource": 9
+}

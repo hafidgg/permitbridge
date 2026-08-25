@@ -1,0 +1,262 @@
+{
+  "profession": "electrician",
+  "state": "colorado",
+  "licenseTier": "master",
+  "licensingBoard": {
+    "value": "Colorado Department of Regulatory Agencies (DORA), State Electrical Board",
+    "sourceUrl": "https://dpo.colorado.gov/Electrical/Applications",
+    "sourceTitle": "Electrical Board: Applications and Forms",
+    "sourceName": "Colorado Department of Regulatory Agencies (DORA), State Electrical Board",
+    "verifiedAt": "2026-08-25",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.95,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": "Colorado Department of Regulatory Agencies (DORA), State Electrical Board",
+        "changedAt": "2026-08-25",
+        "reason": "Phase 2D.3.2: initial population from official sources verified in Phase 2D.1/2D.2.",
+        "sourceUrl": "https://dpo.colorado.gov/Electrical/Applications",
+        "reviewer": null
+      }
+    ],
+    "notes": null
+  },
+  "officialWebsite": {
+    "value": "https://dpo.colorado.gov/",
+    "sourceUrl": "https://dpo.colorado.gov/Electrical/Applications",
+    "sourceTitle": "Electrical Board: Applications and Forms",
+    "sourceName": "Colorado Department of Regulatory Agencies (DORA), State Electrical Board",
+    "verifiedAt": "2026-08-25",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.9,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": "https://dpo.colorado.gov/",
+        "changedAt": "2026-08-25",
+        "reason": "Phase 2D.3.2: initial population from official sources verified in Phase 2D.1/2D.2.",
+        "sourceUrl": "https://dpo.colorado.gov/Electrical/Applications",
+        "reviewer": null
+      }
+    ],
+    "notes": null
+  },
+  "licenseTransferPage": {
+    "value": "https://dpo.colorado.gov/Electrical/Applications",
+    "sourceUrl": "https://dpo.colorado.gov/Electrical/Applications",
+    "sourceTitle": "Electrical Board: Applications and Forms",
+    "sourceName": "Colorado Department of Regulatory Agencies (DORA), State Electrical Board",
+    "verifiedAt": "2026-08-25",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.95,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": "https://dpo.colorado.gov/Electrical/Applications",
+        "changedAt": "2026-08-25",
+        "reason": "Phase 2D.3.2: initial population from official sources verified in Phase 2D.1/2D.2.",
+        "sourceUrl": "https://dpo.colorado.gov/Electrical/Applications",
+        "reviewer": null
+      }
+    ],
+    "notes": null
+  },
+  "universalLicenseRecognitionStatus": {
+    "value": "Unknown",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "sourceName": null,
+    "verifiedAt": null,
+    "verificationMethod": null,
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0,
+    "confidenceLevel": "unknown",
+    "history": [],
+    "notes": "Phase 2D.1/2D.2 research focused specifically on the NERA reciprocity mechanism (see reciprocityRules) and did not separately investigate whether Colorado has a distinct Universal License Recognition statute for electricians. Absence of a finding is not evidence of absence \u2014 left Unknown rather than assumed false."
+  },
+  "compactMembership": {
+    "value": false,
+    "sourceUrl": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?ruleVersionId=9814&fileName=3+CCR+710-1",
+    "sourceTitle": "3 CCR 710-1 \u2014 State Electrical Board Rules and Regulations",
+    "sourceName": "Colorado Secretary of State (official regulation text, State Electrical Board rules)",
+    "verifiedAt": "2026-08-25",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.85,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": false,
+        "changedAt": "2026-08-25",
+        "reason": "Phase 2D.3.2: initial population from official sources verified in Phase 2D.1/2D.2.",
+        "sourceUrl": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?ruleVersionId=9814&fileName=3+CCR+710-1",
+        "reviewer": null
+      }
+    ],
+    "notes": "Colorado's electrician reciprocity operates via NERA (National Electrical Reciprocal Alliance) bylaws \u2014 a voluntary multi-state reciprocity ARRANGEMENT that still requires applying for and being issued a separate Colorado license, NOT a single multistate license practiced across member states without a new license (the defining feature of a true compact, e.g. the Nurse Licensure Compact). Recorded as false to avoid conflating NERA with a compact under this field's actual schema meaning."
+  },
+  "reciprocityRules": {
+    "value": "A Colorado master electrician's license may not be granted by reciprocity.",
+    "sourceUrl": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?ruleVersionId=9814&fileName=3+CCR+710-1",
+    "sourceTitle": "3 CCR 710-1 \u2014 State Electrical Board Rules and Regulations",
+    "sourceName": "Colorado Secretary of State (official regulation text, State Electrical Board rules)",
+    "verifiedAt": "2026-08-25",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.97,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": "A Colorado master electrician's license may not be granted by reciprocity.",
+        "changedAt": "2026-08-25",
+        "reason": "Phase 2D.3.2: initial population from official sources verified in Phase 2D.1/2D.2.",
+        "sourceUrl": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?ruleVersionId=9814&fileName=3+CCR+710-1",
+        "reviewer": null
+      }
+    ],
+    "notes": "Verbatim quotation from the official Colorado State Electrical Board regulation text (3 CCR 710-1) \u2014 the single highest-confidence finding across the entire Phase 2D research pass. Confirmed as a full, unconditional exclusion: the official DORA Applications page's 'Electrician Licensure By Reciprocity' section addresses Journeyman only, with no Master pathway of any kind mentioned."
+  },
+  "endorsementRules": {
+    "value": "Unknown",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "sourceName": null,
+    "verifiedAt": null,
+    "verificationMethod": null,
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0,
+    "confidenceLevel": "unknown",
+    "history": [],
+    "notes": "No Master-level endorsement pathway was identified as existing in Phase 2D.1/2D.2 research \u2014 reciprocity is confirmed excluded, and no alternative named pathway (endorsement, ULR, etc.) was found or confirmed absent."
+  },
+  "requiredExams": {
+    "value": "Unknown",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "sourceName": null,
+    "verifiedAt": null,
+    "verificationMethod": null,
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0,
+    "confidenceLevel": "unknown",
+    "history": [],
+    "notes": "Not researched this session \u2014 Phase 2D.1/2D.2 focused specifically on reciprocity eligibility, which does not apply to this tier. Colorado's original (non-reciprocal) Master licensure pathway's exam requirements were not independently verified against an official source."
+  },
+  "requiredExperience": {
+    "value": "Unknown",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "sourceName": null,
+    "verifiedAt": null,
+    "verificationMethod": null,
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0,
+    "confidenceLevel": "unknown",
+    "history": [],
+    "notes": "Not researched this session for the same reason \u2014 reciprocity does not apply to this tier, so no reciprocity-specific experience condition exists to record, and the original-licensure experience path was not independently verified against an official source."
+  },
+  "requiredEducation": {
+    "value": "Unknown",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "sourceName": null,
+    "verifiedAt": null,
+    "verificationMethod": null,
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0,
+    "confidenceLevel": "unknown",
+    "history": [],
+    "notes": "Phase 2D.1/2D.2 research focused on reciprocity eligibility, not original-licensure education requirements \u2014 not researched this session."
+  },
+  "requiredDocuments": {
+    "value": "Unknown",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "sourceName": null,
+    "verifiedAt": null,
+    "verificationMethod": null,
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0,
+    "confidenceLevel": "unknown",
+    "history": [],
+    "notes": "Not researched this session."
+  },
+  "processingTime": {
+    "value": "Unknown",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "sourceName": null,
+    "verifiedAt": null,
+    "verificationMethod": null,
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0,
+    "confidenceLevel": "unknown",
+    "history": [],
+    "notes": "Not researched this session."
+  },
+  "endorsementFeeUsd": {
+    "value": "Unknown",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "sourceName": null,
+    "verifiedAt": null,
+    "verificationMethod": null,
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0,
+    "confidenceLevel": "unknown",
+    "history": [],
+    "notes": "Not applicable via reciprocity (no reciprocity pathway exists for this tier); original-licensure fee not researched this session."
+  },
+  "renewalFeeUsd": {
+    "value": "Unknown",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "sourceName": null,
+    "verifiedAt": null,
+    "verificationMethod": null,
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0,
+    "confidenceLevel": "unknown",
+    "history": [],
+    "notes": "Not researched this session."
+  },
+  "continuingEducationRequirements": {
+    "value": "Unknown",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "sourceName": null,
+    "verifiedAt": null,
+    "verificationMethod": null,
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0,
+    "confidenceLevel": "unknown",
+    "history": [],
+    "notes": "Not researched this session."
+  },
+  "conflicts": [],
+  "lastFullReviewAt": null
+}

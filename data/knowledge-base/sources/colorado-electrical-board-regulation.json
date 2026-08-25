@@ -1,0 +1,19 @@
+{
+  "id": "colorado-electrical-board-regulation",
+  "agencyName": "Colorado Secretary of State (State Electrical Board Rules)",
+  "website": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?ruleVersionId=9814&fileName=3+CCR+710-1",
+  "jurisdiction": "colorado",
+  "professionsCovered": [
+    "electrician"
+  ],
+  "sourceType": "official-government",
+  "official": true,
+  "authorityLevel": "authoritative",
+  "authorityRationale": "The actual, literal regulation text (3 CCR 710-1) governing the Colorado State Electrical Board, hosted by the Colorado Secretary of State — the single strongest source class found across all of Phase 2D's research. Contains the verbatim statement that a Colorado master electrician's license may not be granted by reciprocity.",
+  "specificity": "field-specific",
+  "reliabilityScore": 0.97,
+  "reliabilityRationale": "Primary statutory/regulatory text itself, not a summary or application page — the highest possible reliability class for this kind of fact.",
+  "lastCrawl": null,
+  "lastManualVerification": "2026-08-25",
+  "fieldsUsingThisSource": 3
+}

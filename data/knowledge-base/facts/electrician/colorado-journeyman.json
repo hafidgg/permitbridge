@@ -1,0 +1,280 @@
+{
+  "profession": "electrician",
+  "state": "colorado",
+  "licenseTier": "journeyman",
+  "licensingBoard": {
+    "value": "Colorado Department of Regulatory Agencies (DORA), State Electrical Board",
+    "sourceUrl": "https://dpo.colorado.gov/Electrical/Applications",
+    "sourceTitle": "Electrical Board: Applications and Forms",
+    "sourceName": "Colorado Department of Regulatory Agencies (DORA), State Electrical Board",
+    "verifiedAt": "2026-08-25",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.95,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": "Colorado Department of Regulatory Agencies (DORA), State Electrical Board",
+        "changedAt": "2026-08-25",
+        "reason": "Phase 2D.3.2: initial population from official sources verified in Phase 2D.1/2D.2.",
+        "sourceUrl": "https://dpo.colorado.gov/Electrical/Applications",
+        "reviewer": null
+      }
+    ],
+    "notes": null
+  },
+  "officialWebsite": {
+    "value": "https://dpo.colorado.gov/",
+    "sourceUrl": "https://dpo.colorado.gov/Electrical/Applications",
+    "sourceTitle": "Electrical Board: Applications and Forms",
+    "sourceName": "Colorado Department of Regulatory Agencies (DORA), State Electrical Board",
+    "verifiedAt": "2026-08-25",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.9,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": "https://dpo.colorado.gov/",
+        "changedAt": "2026-08-25",
+        "reason": "Phase 2D.3.2: initial population from official sources verified in Phase 2D.1/2D.2.",
+        "sourceUrl": "https://dpo.colorado.gov/Electrical/Applications",
+        "reviewer": null
+      }
+    ],
+    "notes": null
+  },
+  "licenseTransferPage": {
+    "value": "https://dpo.colorado.gov/Electrical/Applications",
+    "sourceUrl": "https://dpo.colorado.gov/Electrical/Applications",
+    "sourceTitle": "Electrical Board: Applications and Forms",
+    "sourceName": "Colorado Department of Regulatory Agencies (DORA), State Electrical Board",
+    "verifiedAt": "2026-08-25",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.95,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": "https://dpo.colorado.gov/Electrical/Applications",
+        "changedAt": "2026-08-25",
+        "reason": "Phase 2D.3.2: initial population from official sources verified in Phase 2D.1/2D.2.",
+        "sourceUrl": "https://dpo.colorado.gov/Electrical/Applications",
+        "reviewer": null
+      }
+    ],
+    "notes": null
+  },
+  "universalLicenseRecognitionStatus": {
+    "value": "Unknown",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "sourceName": null,
+    "verifiedAt": null,
+    "verificationMethod": null,
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0,
+    "confidenceLevel": "unknown",
+    "history": [],
+    "notes": "Phase 2D.1/2D.2 research focused specifically on the NERA reciprocity mechanism (see reciprocityRules) and did not separately investigate whether Colorado has a distinct Universal License Recognition statute for electricians. Absence of a finding is not evidence of absence \u2014 left Unknown rather than assumed false."
+  },
+  "compactMembership": {
+    "value": false,
+    "sourceUrl": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?ruleVersionId=9814&fileName=3+CCR+710-1",
+    "sourceTitle": "3 CCR 710-1 \u2014 State Electrical Board Rules and Regulations",
+    "sourceName": "Colorado Secretary of State (official regulation text, State Electrical Board rules)",
+    "verifiedAt": "2026-08-25",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.85,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": false,
+        "changedAt": "2026-08-25",
+        "reason": "Phase 2D.3.2: initial population from official sources verified in Phase 2D.1/2D.2.",
+        "sourceUrl": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?ruleVersionId=9814&fileName=3+CCR+710-1",
+        "reviewer": null
+      }
+    ],
+    "notes": "Colorado's electrician reciprocity operates via NERA (National Electrical Reciprocal Alliance) bylaws \u2014 a voluntary multi-state reciprocity ARRANGEMENT that still requires applying for and being issued a separate Colorado license, NOT a single multistate license practiced across member states without a new license (the defining feature of a true compact, e.g. the Nurse Licensure Compact). Recorded as false to avoid conflating NERA with a compact under this field's actual schema meaning."
+  },
+  "reciprocityRules": {
+    "value": "Colorado follows National Electrical Reciprocal Alliance (NERA) bylaws for the Journeyman Electrician license. A journeyman or master electrician certificate from a qualifying state may be reciprocated to a Colorado journeyman license without a written examination, provided the certificate is current/active/in good standing, was obtained by a state-administered examination (not by grandfathering without an exam), and has been held for at least 1 year. Qualifying states (14): Alaska, Arkansas, Idaho, Iowa, Minnesota, Montana, Nebraska, New Hampshire, New Mexico, North Dakota, Oklahoma, South Dakota, Utah, Wyoming.",
+    "sourceUrl": "https://dpo.colorado.gov/Electrical/Applications",
+    "sourceTitle": "Electrical Board: Applications and Forms",
+    "sourceName": "Colorado Department of Regulatory Agencies (DORA), State Electrical Board",
+    "verifiedAt": "2026-08-25",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.93,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": "Colorado follows National Electrical Reciprocal Alliance (NERA) bylaws for the Journeyman Electrician license. A journeyman or master electrician certificate from a qualifying state may be reciprocated to a Colorado journeyman license without a written examination, provided the certificate is current/active/in good standing, was obtained by a state-administered examination (not by grandfathering without an exam), and has been held for at least 1 year. Qualifying states (14): Alaska, Arkansas, Idaho, Iowa, Minnesota, Montana, Nebraska, New Hampshire, New Mexico, North Dakota, Oklahoma, South Dakota, Utah, Wyoming.",
+        "changedAt": "2026-08-25",
+        "reason": "Phase 2D.3.2: initial population from official sources verified in Phase 2D.1/2D.2.",
+        "sourceUrl": "https://dpo.colorado.gov/Electrical/Applications",
+        "reviewer": null
+      }
+    ],
+    "notes": "The 14-state list is independently corroborated by a secondary source (contractorlicenserequirements.com/expertce.com) citing the same count, but the official DORA Applications page is the primary source for this field."
+  },
+  "endorsementRules": {
+    "value": "Unknown",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "sourceName": null,
+    "verifiedAt": null,
+    "verificationMethod": null,
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0,
+    "confidenceLevel": "unknown",
+    "history": [],
+    "notes": "Colorado's own materials describe this mechanism as 'reciprocity' specifically, not 'endorsement' \u2014 no separate endorsement pathway was identified in Phase 2D.1/2D.2 research."
+  },
+  "requiredExams": {
+    "value": "No written examination required for reciprocal applicants who meet NERA eligibility conditions.",
+    "sourceUrl": "https://dpo.colorado.gov/Electrical/Applications",
+    "sourceTitle": "Electrical Board: Applications and Forms",
+    "sourceName": "Colorado Department of Regulatory Agencies (DORA), State Electrical Board",
+    "verifiedAt": "2026-08-25",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.85,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": "No written examination required for reciprocal applicants who meet NERA eligibility conditions.",
+        "changedAt": "2026-08-25",
+        "reason": "Phase 2D.3.2: initial population from official sources verified in Phase 2D.1/2D.2.",
+        "sourceUrl": "https://dpo.colorado.gov/Electrical/Applications",
+        "reviewer": null
+      }
+    ],
+    "notes": "A secondary source (Buildforce) separately claims reciprocal applicants must still pass a 'Colorado-specific portion' \u2014 this was NOT independently confirmed against the official DORA page's exact text in Phase 2D.1/2D.2, and appears to directly conflict with the official page's plain 'no written examination' statement. Flagged as an open discrepancy rather than silently resolved either way; the official source is weighted higher here."
+  },
+  "requiredExperience": {
+    "value": "For the RECIPROCITY pathway specifically (distinct from Colorado's own original-licensure experience requirements): must have held the qualifying journeyman or master certificate for at least 1 year in the issuing state.",
+    "sourceUrl": "https://dpo.colorado.gov/Electrical/Applications",
+    "sourceTitle": "Electrical Board: Applications and Forms",
+    "sourceName": "Colorado Department of Regulatory Agencies (DORA), State Electrical Board",
+    "verifiedAt": "2026-08-25",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.9,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": "For the RECIPROCITY pathway specifically (distinct from Colorado's own original-licensure experience requirements): must have held the qualifying journeyman or master certificate for at least 1 year in the issuing state.",
+        "changedAt": "2026-08-25",
+        "reason": "Phase 2D.3.2: initial population from official sources verified in Phase 2D.1/2D.2.",
+        "sourceUrl": "https://dpo.colorado.gov/Electrical/Applications",
+        "reviewer": null
+      }
+    ],
+    "notes": "Colorado's ORIGINAL (non-reciprocal) journeyman licensure requires 8,000 hours / 4 years of supervised experience plus 288 classroom hours \u2014 but that figure describes the standard path for someone with NO prior out-of-state license, not the reciprocity eligibility condition itself, and was sourced only via a secondary source (contractorlicenserequirements.com) in Phase 2D.1, not independently confirmed against an official page. Not recorded as this field's value to avoid conflating the two distinct pathways."
+  },
+  "requiredEducation": {
+    "value": "Unknown",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "sourceName": null,
+    "verifiedAt": null,
+    "verificationMethod": null,
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0,
+    "confidenceLevel": "unknown",
+    "history": [],
+    "notes": "Phase 2D.1/2D.2 research focused on reciprocity eligibility, not original-licensure education requirements \u2014 not researched this session."
+  },
+  "requiredDocuments": {
+    "value": "Unknown",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "sourceName": null,
+    "verifiedAt": null,
+    "verificationMethod": null,
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0,
+    "confidenceLevel": "unknown",
+    "history": [],
+    "notes": "Not itemized from an official DORA source in Phase 2D.1/2D.2 research."
+  },
+  "processingTime": {
+    "value": "Unknown",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "sourceName": null,
+    "verifiedAt": null,
+    "verificationMethod": null,
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0,
+    "confidenceLevel": "unknown",
+    "history": [],
+    "notes": "Not addressed in any official source reviewed in Phase 2D.1/2D.2."
+  },
+  "endorsementFeeUsd": {
+    "value": "Unknown",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "sourceName": null,
+    "verifiedAt": null,
+    "verificationMethod": null,
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0,
+    "confidenceLevel": "unknown",
+    "history": [],
+    "notes": "Explicitly confirmed as unresolved in Phase 2D.2: 'fee: NOT independently confirmed against the official page's fee schedule.'"
+  },
+  "renewalFeeUsd": {
+    "value": "Unknown",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "sourceName": null,
+    "verifiedAt": null,
+    "verificationMethod": null,
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0,
+    "confidenceLevel": "unknown",
+    "history": [],
+    "notes": "Not addressed in Phase 2D.1/2D.2 research."
+  },
+  "continuingEducationRequirements": {
+    "value": "Unknown",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "sourceName": null,
+    "verifiedAt": null,
+    "verificationMethod": null,
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0,
+    "confidenceLevel": "unknown",
+    "history": [],
+    "notes": "Not addressed in Phase 2D.1/2D.2 research (this research focused on reciprocity eligibility, not renewal requirements)."
+  },
+  "conflicts": [],
+  "lastFullReviewAt": null
+}

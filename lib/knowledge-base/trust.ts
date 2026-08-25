@@ -44,16 +44,13 @@ const ALL_METHODS: (VerificationMethod | "none")[] = [
   "none",
 ];
 
-function loadAllFactFiles(): ProfessionStateFacts[] {
-  if (!fs.existsSync(FACTS_DIR)) return [];
+function loadAllFactFiles(professionSlug: string): ProfessionStateFacts[] {
+  const dir = path.join(FACTS_DIR, professionSlug);
+  if (!fs.existsSync(dir) || !fs.statSync(dir).isDirectory()) return [];
   const facts: ProfessionStateFacts[] = [];
-  for (const professionSlug of fs.readdirSync(FACTS_DIR)) {
-    const dir = path.join(FACTS_DIR, professionSlug);
-    if (!fs.statSync(dir).isDirectory()) continue;
-    for (const file of fs.readdirSync(dir)) {
-      if (!file.endsWith(".json")) continue;
-      facts.push(JSON.parse(fs.readFileSync(path.join(dir, file), "utf-8")) as ProfessionStateFacts);
-    }
+  for (const file of fs.readdirSync(dir)) {
+    if (!file.endsWith(".json")) continue;
+    facts.push(JSON.parse(fs.readFileSync(path.join(dir, file), "utf-8")) as ProfessionStateFacts);
   }
   return facts;
 }
@@ -62,8 +59,8 @@ function daysSince(isoDate: string): number {
   return Math.floor((Date.now() - new Date(isoDate + "T00:00:00Z").getTime()) / 86400000);
 }
 
-export function computeTrustReport(): TrustReport {
-  const allFacts = loadAllFactFiles();
+export function computeTrustReport(professionSlug: string = "registered-nurse"): TrustReport {
+  const allFacts = loadAllFactFiles(professionSlug);
   const sources = loadAllSources();
   const sourceByUrl = new Map(sources.map((s) => [s.website, s]));
   const authoritativeSourcesCount = sources.filter((s) => s.authorityLevel === "authoritative").length;
@@ -179,8 +176,8 @@ export function computeTrustReport(): TrustReport {
   };
 }
 
-export function writeTrustReport(): { jsonPath: string; mdPath: string; report: TrustReport } {
-  const report = computeTrustReport();
+export function writeTrustReport(professionSlug: string = "registered-nurse"): { jsonPath: string; mdPath: string; report: TrustReport } {
+  const report = computeTrustReport(professionSlug);
   const reportsDir = path.join(process.cwd(), "data", "_pipeline", "reports");
   fs.mkdirSync(reportsDir, { recursive: true });
 
