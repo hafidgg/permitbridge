@@ -60,7 +60,7 @@ export function classifyFieldRisk(field: string, schema: FieldSchema): RiskLevel
   return "medium";
 }
 
-const FEE_FIELDS = new Set(["rnEndorsementFeeUsd", "renewalFeeUsd", "applicationFeeUsd", "otherRequiredFees"]);
+const FEE_FIELDS = new Set(["endorsementFeeUsd", "renewalFeeUsd", "applicationFeeUsd", "otherRequiredFees"]);
 const PROCESSING_TIME_FIELDS = new Set(["processingTime"]);
 const COMPACT_FIELDS = new Set(["compactMembership", "compactStatus"]);
 const ULR_FIELDS = new Set(["universalLicenseRecognitionStatus", "universalRecognitionApplies"]);

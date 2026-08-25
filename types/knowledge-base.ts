@@ -128,6 +128,31 @@ export interface ProfessionStateFacts {
   profession: string; // profession slug
   state: string; // state slug
 
+  /**
+   * Phase 2D.3.1: optional license-rank/tier discriminator, added
+   * specifically so a profession with genuinely distinct license levels
+   * per state (e.g. electrician: Journeyman vs. Master — confirmed in
+   * real Phase 2D.1/2D.2 research to have MATERIALLY DIFFERENT
+   * reciprocity rules in at least one state, Colorado) can be
+   * represented as separate ProfessionStateFacts records for the same
+   * profession+state pair, one per tier, without conflating their facts
+   * into a single misleading record.
+   *
+   * Deliberately a free-text string, not a union of fixed values (e.g.
+   * NOT `"journeyman" | "master"`): real research already surfaced 4
+   * distinct Colorado electrician tiers (Residential Wireman, Journeyman,
+   * Master, Contractor), and other professions may have entirely
+   * different tier names. Hardcoding a closed set here would just
+   * relocate the same RN-shaped-assumption problem this phase exists to
+   * fix, one level down.
+   *
+   * Optional and absent/undefined for every existing profession+state
+   * record (RN has no tier distinction — one license level per state) —
+   * fully backward compatible, no migration required for any existing
+   * file.
+   */
+  licenseTier?: string;
+
   licensingBoard: VerifiedField<string>;
   officialWebsite: VerifiedField<string>;
   licenseTransferPage: VerifiedField<string>;
@@ -149,7 +174,7 @@ export interface ProfessionStateFacts {
    * already-licensed nurse pays to obtain licensure in this state BY
    * ENDORSEMENT. Not the exam fee, not the renewal fee.
    */
-  rnEndorsementFeeUsd: VerifiedField<number>;
+  endorsementFeeUsd: VerifiedField<number>;
   renewalFeeUsd: VerifiedField<number>;
   continuingEducationRequirements: VerifiedField<string>;
 

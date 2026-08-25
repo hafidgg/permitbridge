@@ -184,7 +184,7 @@ export interface TrafficOpportunity {
  * proven across Phase 2B.2-2B.4.
  */
 const RN_FACTS_DIR = path.join(process.cwd(), "data", "knowledge-base", "facts", "registered-nurse");
-const CORE_RN_FACT_FIELDS = ["licensingBoard", "officialWebsite", "compactMembership", "rnEndorsementFeeUsd", "requiredExams"];
+const CORE_RN_FACT_FIELDS = ["licensingBoard", "officialWebsite", "compactMembership", "endorsementFeeUsd", "requiredExams"];
 
 function assessDataReadiness(sourceState: string | null, destinationState: string | null, isNurseQuery: boolean): DataReadiness {
   if (!isNurseQuery) return "UNKNOWN"; // this engine only has real fact-completeness data for RN currently

@@ -33,7 +33,7 @@ const TRACKED_FIELDS: (keyof ProfessionStateFacts)[] = [
   "requiredEducation",
   "requiredDocuments",
   "processingTime",
-  "rnEndorsementFeeUsd",
+  "endorsementFeeUsd",
   "renewalFeeUsd",
   "continuingEducationRequirements",
 ];

@@ -1,9 +1,10 @@
+
 {
   "id": "ny-endorsement-fee-monitor-9f749086bd13bd64-rnEndorsementFeeUsd",
   "sourceId": "ny-endorsement-fee-monitor",
   "jurisdiction": "new-york",
   "profession": "registered-nurse",
-  "field": "rnEndorsementFeeUsd",
+  "field": "endorsementFeeUsd",
   "previousValue": 143,
   "previousHash": null,
   "newHash": "9f749086bd13bd64",

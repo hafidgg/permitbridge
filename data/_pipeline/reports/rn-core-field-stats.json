@@ -92,7 +92,7 @@
       "missingCoverage": 50
     },
     {
-      "field": "rnEndorsementFeeUsd",
+      "field": "endorsementFeeUsd",
       "purpose": "The fee an already-licensed nurse pays to obtain RN licensure in this state BY ENDORSEMENT — i.e. the practical cost of the transfer itself. Explicitly clarified in Phase 2.5 (see data/_pipeline/reports/phase-2.5-*.md for the full ambiguity-resolution note): this is NOT the fee for initial licensure by examination (new nursing graduates, not a portability scenario this dataset covers), and NOT the ongoing renewal fee (tracked separately as renewalFeeUsd). If a state publishes only a single undifferentiated 'licensure fee' with no distinction between exam and endorsement applicants, that figure may be used, but the field's source evidence must say so explicitly.",
       "authorityRequirement": "Tier 1 (State Licensing Authority)",
       "totalStates": 50,

@@ -27,7 +27,7 @@ export interface PolicyCheckResult {
  * being "authoritative" in general is not enough — it must be
  * authoritative FOR THIS SPECIFIC FIELD per authority-mapping.ts. NCSBN
  * is authoritative for `requiredExams`; it is NOT authoritative for a
- * state's `rnEndorsementFeeUsd` just because it's an official national
+ * state's `endorsementFeeUsd` just because it's an official national
  * organization. Passing no `fieldPath` falls back to the old
  * general-authority check for backward compatibility with Phase 2.1 code.
  */

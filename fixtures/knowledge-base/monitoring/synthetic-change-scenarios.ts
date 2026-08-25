@@ -47,7 +47,7 @@ export const MEDIUM_RISK_CURRENT_VALUE = "4-8 weeks";
 // --- Scenario 4: HIGH RISK (a critical/core fee field, confidently extracted) ---
 export const HIGH_RISK_OLD_TEXT = "Endorsement application fee: $110.";
 export const HIGH_RISK_NEW_TEXT = "Endorsement application fee: $125.";
-export const HIGH_RISK_FIELD = "rnEndorsementFeeUsd"; // RN_CORE_FIELDS -> risk "high"
+export const HIGH_RISK_FIELD = "endorsementFeeUsd"; // RN_CORE_FIELDS -> risk "high"
 export const HIGH_RISK_EXTRACT_RULE: ExtractRule = {
   field: HIGH_RISK_FIELD,
   pattern: "Endorsement application fee: \\$(\\d+)",
@@ -59,7 +59,7 @@ export const HIGH_RISK_EXPECTED_PROPOSED_VALUE = 125;
 // --- Scenario 5: AMBIGUOUS (page changed, field's category is known, but no confident value extractable — Section 13's exact "Fees have changed." example) ---
 export const AMBIGUOUS_OLD_TEXT = "Endorsement application fee: $110.";
 export const AMBIGUOUS_NEW_TEXT = "Fees have changed. Please see the fee schedule PDF for current amounts.";
-export const AMBIGUOUS_FIELD = "rnEndorsementFeeUsd";
+export const AMBIGUOUS_FIELD = "endorsementFeeUsd";
 export const AMBIGUOUS_EXTRACT_RULE: ExtractRule = {
   field: AMBIGUOUS_FIELD,
   pattern: "Endorsement application fee: \\$(\\d+)", // will NOT match the new text
@@ -70,7 +70,7 @@ export const AMBIGUOUS_CURRENT_VALUE = 110;
 // --- Scenario 6: EXTRACTION FAILURE (malformed regex pattern -> applyRule throws -> PARSER_ERROR) ---
 export const EXTRACTION_FAILURE_TEXT = "Endorsement application fee: $110.";
 export const EXTRACTION_FAILURE_OLD_HASH = hashContent("Endorsement application fee: $100.");
-export const EXTRACTION_FAILURE_FIELD = "rnEndorsementFeeUsd";
+export const EXTRACTION_FAILURE_FIELD = "endorsementFeeUsd";
 export const EXTRACTION_FAILURE_EXTRACT_RULE: ExtractRule = {
   field: EXTRACTION_FAILURE_FIELD,
   pattern: "[invalid(regex", // deliberately malformed — new RegExp() throws

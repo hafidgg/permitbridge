@@ -24,14 +24,14 @@
       "lastError": null,
       "relatedSourceRecordId": "florida-fee-schedule",
       "fieldMapping": {
-        "field": "rnEndorsementFeeUsd",
+        "field": "endorsementFeeUsd",
         "extractRule": {
-          "field": "rnEndorsementFeeUsd",
+          "field": "endorsementFeeUsd",
           "pattern": "MOBILE Endorsement Fees[\\s\\S]{0,200}?\\$(\\d+(?:\\.\\d{2})?)",
           "transform": "number"
         }
       },
-      "notes": "First real monitoring pilot (post-Phase 4.7). Watches the exact same page and field already backing Florida's real, verified rnEndorsementFeeUsd=$110 (Phase 2.5). The extraction pattern anchors to the 'MOBILE Endorsement Fees' heading specifically to avoid the page's other, coincidentally-identical $110.00 figure under 'Licensing by Exam Fees' (a different, unrelated fee type) and the $100.00 under 'Multi-state Upgrade Fees' (which appears earlier on the page). Live-fetch confirmed against the real page on 2026-08-09 before this fixture/rule was written."
+      "notes": "First real monitoring pilot (post-Phase 4.7). Watches the exact same page and field already backing Florida's real, verified endorsementFeeUsd=$110 (Phase 2.5). The extraction pattern anchors to the 'MOBILE Endorsement Fees' heading specifically to avoid the page's other, coincidentally-identical $110.00 figure under 'Licensing by Exam Fees' (a different, unrelated fee type) and the $100.00 under 'Multi-state Upgrade Fees' (which appears earlier on the page). Live-fetch confirmed against the real page on 2026-08-09 before this fixture/rule was written."
     },
     {
       "id": "ny-endorsement-fee-monitor",
@@ -56,14 +56,14 @@
       "lastError": null,
       "relatedSourceRecordId": "new-york-fee-schedule",
       "fieldMapping": {
-        "field": "rnEndorsementFeeUsd",
+        "field": "endorsementFeeUsd",
         "extractRule": {
-          "field": "rnEndorsementFeeUsd",
+          "field": "endorsementFeeUsd",
           "pattern": "Form 1 - Application for Licensure\\s*\\*\\s*along with the \\$(\\d+(?:\\.\\d{2})?)",
           "transform": "number"
         }
       },
-      "notes": "Phase 4.11. Watches the exact page/value already backing New York's real, verified rnEndorsementFeeUsd=$143 (Phase 2.5/2.6). Anchored to the specific 'Form 1 - Application for Licensure* along with the $X fee' sentence, which is the only dollar figure on the page \u2014 confirmed via a real live fetch on 2026-08-10."
+      "notes": "Phase 4.11. Watches the exact page/value already backing New York's real, verified endorsementFeeUsd=$143 (Phase 2.5/2.6). Anchored to the specific 'Form 1 - Application for Licensure* along with the $X fee' sentence, which is the only dollar figure on the page \u2014 confirmed via a real live fetch on 2026-08-10."
     },
     {
       "id": "ny-transfer-fee-monitor",

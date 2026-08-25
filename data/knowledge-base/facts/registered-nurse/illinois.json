@@ -237,7 +237,7 @@
     "history": [],
     "notes": "Not yet individually researched for this state."
   },
-  "rnEndorsementFeeUsd": {
+  "endorsementFeeUsd": {
     "value": 50,
     "sourceUrl": "https://idfpr.illinois.gov/content/dam/soi/en/web/idfpr/renewals/apply/forms/RN-EN.pdf",
     "sourceTitle": "Registered Nurse Examination/Endorsement/Restoration Instruction Sheet",

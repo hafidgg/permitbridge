@@ -237,7 +237,7 @@
     "history": [],
     "notes": "Not yet individually researched for this state."
   },
-  "rnEndorsementFeeUsd": {
+  "endorsementFeeUsd": {
     "value": 110,
     "sourceUrl": "https://floridasnursing.gov/category/post-template-toggle/fees/",
     "sourceTitle": "Fees - Florida Board of Nursing",

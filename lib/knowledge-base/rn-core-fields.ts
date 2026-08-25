@@ -18,7 +18,7 @@
 import type { ProfessionStateFacts } from "@/types/knowledge-base";
 import { FIELD_AUTHORITY_MAP, TIER_LABELS, type SourceTier } from "./authority-mapping";
 
-export type RnFieldKey = Exclude<keyof ProfessionStateFacts, "profession" | "state" | "conflicts" | "lastFullReviewAt">;
+export type RnFieldKey = Exclude<keyof ProfessionStateFacts, "profession" | "state" | "conflicts" | "lastFullReviewAt" | "licenseTier">;
 
 export interface RnCoreFieldDefinition {
   field: RnFieldKey;
@@ -78,7 +78,7 @@ export const RN_CORE_FIELDS: RnCoreFieldDefinition[] = [
     authorityTiers: FIELD_AUTHORITY_MAP.processingTime,
   },
   {
-    field: "rnEndorsementFeeUsd",
+    field: "endorsementFeeUsd",
     purpose:
       "The fee an already-licensed nurse pays to obtain RN licensure in this state BY ENDORSEMENT — i.e. the practical " +
       "cost of the transfer itself. Explicitly clarified in Phase 2.5 (see data/_pipeline/reports/phase-2.5-*.md for the " +
@@ -86,7 +86,7 @@ export const RN_CORE_FIELDS: RnCoreFieldDefinition[] = [
       "not a portability scenario this dataset covers), and NOT the ongoing renewal fee (tracked separately as " +
       "renewalFeeUsd). If a state publishes only a single undifferentiated 'licensure fee' with no distinction between " +
       "exam and endorsement applicants, that figure may be used, but the field's source evidence must say so explicitly.",
-    authorityTiers: FIELD_AUTHORITY_MAP.rnEndorsementFeeUsd,
+    authorityTiers: FIELD_AUTHORITY_MAP.endorsementFeeUsd,
   },
 ];
 

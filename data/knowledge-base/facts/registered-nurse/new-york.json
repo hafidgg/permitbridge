@@ -237,7 +237,7 @@
     "history": [],
     "notes": "Not yet individually researched for this state."
   },
-  "rnEndorsementFeeUsd": {
+  "endorsementFeeUsd": {
     "value": 143,
     "sourceUrl": "https://www.op.nysed.gov/professions/registered-professional-nursing/endorsement-nursing-licenses",
     "sourceTitle": "Endorsement of Nursing Licenses - RPN",
@@ -290,7 +290,7 @@
   },
   "conflicts": [
     {
-      "field": "rnEndorsementFeeUsd",
+      "field": "endorsementFeeUsd",
       "sourceA": {
         "value": "50",
         "url": "https://www.op.nysed.gov/sites/op/files/documents/opfeechart.pdf",

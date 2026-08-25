@@ -237,7 +237,7 @@
     "history": [],
     "notes": "Not yet individually researched for this state."
   },
-  "rnEndorsementFeeUsd": {
+  "endorsementFeeUsd": {
     "value": "Unknown",
     "sourceUrl": null,
     "sourceTitle": null,

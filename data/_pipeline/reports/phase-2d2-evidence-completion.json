@@ -1,0 +1,70 @@
+{
+  "phase": "2D.2",
+  "generatedAt": "2026-08-25T00:00:00.000Z",
+  "purpose": "Resolve the two specific open contradictions Phase 2D.1 identified for Virginia and Colorado. Research only — zero pages published, zero TransferRule records created, zero production changes.",
+  "preflightNote": "This sandbox has no live .git access this session; the local Phase 2D.1 report was NOT assumed to be the published GitHub state (it never was committed/pushed, per that phase's own final report). No code or production file was touched before or during this research.",
+  "states": [
+    {
+      "state": "Virginia",
+      "abbreviation": "VA",
+      "profession": "electrician",
+      "openQuestionFromPhase2D1": "DPOR vs. DOLI — which agency actually issues individual Journeyman/Master licenses?",
+      "resolution": "RESOLVED — DPOR is the correct, real issuing authority for individual Journeyman/Master licenses. DOLI's real, confirmed role is limited to APPRENTICE registration only (before licensure), not issuing the Journeyman/Master license itself. This is now corroborated by multiple independent sources including a direct official DPOR regulatory document (A501-27TRADEREGS.pdf) covering Journeyman electrician licensing requirements directly. The one earlier secondary source claiming DOLI issues the licenses themselves is now assessed as inaccurate given the weight of corroborating evidence.",
+      "officialAuthority": "Virginia Department of Professional and Occupational Regulation (DPOR), Board for Contractors / Tradesman Program",
+      "licensingLevel": "STATE — statewide license, DPOR-issued",
+      "officialSources": [
+        { "url": "https://www.dpor.virginia.gov/sites/default/files/boards/Tradesman/Tradesmen%20reciprocal%20agreements.pdf", "title": "Tradesmen Reciprocal Agreements", "authorityLevel": "official-board (primary, most directly on-point)" },
+        { "url": "https://www.dpor.virginia.gov/sites/default/files/boards/Tradesman/A501-27TRADEREGS.pdf", "title": "Board for Contractors — Individual License and Certification Regulations", "authorityLevel": "official-regulation" }
+      ],
+      "criticalFactsVerified": {
+        "reciprocityJourneyman": "CONFIRMED — real bilateral agreements with Kentucky (Journeyman+Master) and West Virginia (Journeyman+Master).",
+        "reciprocityMaster": "CONFIRMED — real bilateral agreements with Kentucky, Maryland (MASTER ONLY, not Journeyman), and West Virginia.",
+        "qualifyingStatesByRank": "CONFIRMED, rank-specific: Kentucky (both ranks), Maryland (Master only), West Virginia (both ranks). North Carolina's agreement is Contractor-specific, not an individual Journeyman/Master agreement.",
+        "examRequirement": "CONFIRMED — reciprocal applicants still sit the Virginia-specific exam section; only the national portion is waived.",
+        "additionalPathway": "CONFIRMED — Universal License Recognition (ULR) exists as a separate, broader pathway alongside the 3 named bilateral agreements.",
+        "issuingAuthority": "RESOLVED this pass — DPOR, not DOLI, for the actual license."
+      },
+      "remainingUnknowns": ["Exact current fee schedule (only secondary-sourced, $90-$195 range, not independently confirmed against a DPOR fee page)", "Full experience-requirement text directly from a DPOR regulatory source (currently only secondary-sourced)"],
+      "decision": "BUILD_CANDIDATE",
+      "decisionRationale": "The single blocking contradiction from Phase 2D.1 (issuing authority) is now resolved with high confidence via a direct official DPOR regulatory PDF plus multiple independent corroborating sources. The core facts a real searcher needs (which states, which ranks, what the process involves) are backed by a dedicated official DPOR document — the strongest source class available. Remaining unknowns (fee, full experience text) are minor, non-blocking details that a content builder can note as pending confirmation rather than facts that would make the page inaccurate if omitted or marked Unknown.",
+      "reviewRequired": true
+    },
+    {
+      "state": "Colorado",
+      "abbreviation": "CO",
+      "profession": "electrician",
+      "openQuestionFromPhase2D1": "Full scope of the Master-license reciprocity exclusion, and the exact qualifying-state list for Journeyman reciprocity.",
+      "resolution": "RESOLVED — found a more directly on-point official source (DORA's own live Applications page, not just the general regulation text) that gives the complete, exact 14-state Journeyman list, independently corroborated by a separate secondary source that also states '14 specific states.' The Master exclusion is confirmed as a full, unconditional exclusion — the official Applications page's entire 'Electrician Licensure By Reciprocity' section addresses Journeyman only, with no Master pathway mentioned at all, consistent with the regulation text's unqualified statement.",
+      "officialAuthority": "Colorado Department of Regulatory Agencies (DORA), Division of Professions and Occupations (DPO), State Electrical Board",
+      "licensingLevel": "STATE — statewide license under Colorado Revised Statutes Title 12 Article 115",
+      "officialSources": [
+        { "url": "https://dpo.colorado.gov/Electrical/Applications", "title": "Electrical Board: Applications and Forms", "authorityLevel": "official-board (direct DORA/DPO application page — the most directly on-point source found for this state)" },
+        { "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?ruleVersionId=9814&fileName=3+CCR+710-1", "title": "3 CCR 710-1 — State Electrical Board Rules", "authorityLevel": "official-regulation" }
+      ],
+      "criticalFactsVerified": {
+        "journeymanReciprocity": "CONFIRMED — Colorado follows National Electrical Reciprocal Alliance (NERA) bylaws.",
+        "qualifyingStates": "CONFIRMED, exact list of 14: Alaska, Arkansas, Idaho, Iowa, Minnesota, Montana, Nebraska, New Hampshire, New Mexico, North Dakota, Oklahoma, South Dakota, Utah, Wyoming.",
+        "masterReciprocity": "CONFIRMED, fully excluded — no Master pathway via reciprocity exists at all; the official Applications page's reciprocity section covers Journeyman exclusively.",
+        "examRequirement": "CONFIRMED — no written exam required when NERA conditions are met.",
+        "eligibilityConditions": "CONFIRMED — license must be current/active/good standing, obtained by state-administered examination (not grandfathering), and held at least 1 year.",
+        "fee": "NOT independently confirmed against the official page's fee schedule this session — still Unknown."
+      },
+      "remainingUnknowns": ["Exact reciprocity fee amount"],
+      "decision": "BUILD_CANDIDATE",
+      "decisionRationale": "The single blocking gap from Phase 2D.1 (the exact qualifying-state list, previously contradicted between two secondary sources) is now resolved with high confidence via a direct, live DORA/DPO application page — the most authoritative and directly on-point source class possible, independently corroborated by a separate secondary source citing the same count (14 states). The Master exclusion — the most important content-integrity fact for this state — is confirmed unconditionally. Only the exact fee remains unresolved, a minor operational detail, not a fact whose absence would make the page inaccurate (it can be marked Unknown/pending per Rule 5's own standard).",
+      "reviewRequired": true
+    }
+  ],
+  "summary": {
+    "virginiaBuildCandidate": true,
+    "coloradoBuildCandidate": true,
+    "firstPageToBuildIfAny": "Neither page is being built in this phase — Phase 2D.2 is evidence-completion only, per its own explicit scope. If asked to proceed to content, Colorado is marginally the stronger starting point: its qualifying-state list and Master-exclusion facts are now backed by the single most directly on-point official source found across the entire Phase 2D research (a live DORA application page, not just a general regulation), and Colorado has no unresolved issuing-authority question the way Virginia did before this pass.",
+    "schemaChangeNeeded": false,
+    "electricianKnowledgeBaseNeeded": true,
+    "electricianKnowledgeBaseNote": "Confirmed again this phase: data/knowledge-base/facts/electrician/ and data/knowledge-base/transfer-rules/electrician/ do not exist yet (per Phase 2D.1's pre-flight finding, unchanged this session — no files were created or modified besides this report). Building either Virginia or Colorado as a real page would require creating this structure from scratch, reusing the existing TransferRule/VerifiedField/SourceRecord types (confirmed generic and reusable, no schema change needed) but with zero pre-existing base facts to build on, unlike RN's Phase 2B.2-2B.4 pattern.",
+    "publicPageChanged": false,
+    "sitemapChanged": false,
+    "committed": false,
+    "pushed": false
+  }
+}

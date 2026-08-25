@@ -136,7 +136,7 @@
     },
     {
       "state": "california",
-      "field": "rnEndorsementFeeUsd",
+      "field": "endorsementFeeUsd",
       "currentValue": 350,
       "authoritativeSource": "California Board of Registered Nursing",
       "sourceUrl": "https://www.rn.ca.gov/pdfs/regulations/proposedlang-fees2018.pdf",
@@ -257,7 +257,7 @@
     },
     {
       "state": "florida",
-      "field": "rnEndorsementFeeUsd",
+      "field": "endorsementFeeUsd",
       "currentValue": 110,
       "authoritativeSource": "Florida Board of Nursing",
       "sourceUrl": "https://floridasnursing.gov/category/post-template-toggle/fees/",
@@ -312,7 +312,7 @@
     },
     {
       "state": "georgia",
-      "field": "rnEndorsementFeeUsd",
+      "field": "endorsementFeeUsd",
       "currentValue": 75,
       "authoritativeSource": "Georgia Board of Nursing",
       "sourceUrl": "https://sos.ga.gov/sites/default/files/forms/38%20Reference%20-%20GBON%20Fee%20Schedule.pdf",
@@ -411,7 +411,7 @@
     },
     {
       "state": "illinois",
-      "field": "rnEndorsementFeeUsd",
+      "field": "endorsementFeeUsd",
       "currentValue": 50,
       "authoritativeSource": "Illinois Department of Financial and Professional Regulation (IDFPR)",
       "sourceUrl": "https://idfpr.illinois.gov/content/dam/soi/en/web/idfpr/renewals/apply/forms/RN-EN.pdf",
@@ -884,7 +884,7 @@
     },
     {
       "state": "new-york",
-      "field": "rnEndorsementFeeUsd",
+      "field": "endorsementFeeUsd",
       "currentValue": 143,
       "authoritativeSource": "New York State Education Department, Office of the Professions",
       "sourceUrl": "https://www.op.nysed.gov/professions/registered-professional-nursing/endorsement-nursing-licenses",

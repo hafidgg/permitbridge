@@ -1,0 +1,161 @@
+{
+  "phase": "2D.1",
+  "generatedAt": "2026-08-25T00:00:00.000Z",
+  "purpose": "GSC-driven official-source research validation for 5 real electrician-licensing queries. Research only — zero pages published, zero TransferRule records created, zero production changes.",
+  "summary": {
+    "statesResearched": 5,
+    "buildCandidate": 0,
+    "needsMoreResearch": 4,
+    "doNotBuildAsPhrased": 1,
+    "note": "Zero states reached an unconditional BUILD_CANDIDATE this pass. Every state has real, usable official sources, but each also surfaced at least one factual complication (rank-specific limits, terminology mismatch, or unresolved secondary-source conflict) that STEP 5's 'both GSC demand AND official validity' bar requires resolving with one more targeted, narrow lookup before publication — not a full re-research."
+  },
+  "states": [
+    {
+      "state": "Alabama",
+      "abbreviation": "AL",
+      "profession": "electrician",
+      "gscQueries": [
+        { "query": "alabama electrical license reciprocity", "impressions": 1, "clicks": 0, "position": 63 }
+      ],
+      "intent": "ENDORSEMENT/RECIPROCITY",
+      "contentGap": true,
+      "officialAuthority": "Alabama Electrical Contractors Board (AECB)",
+      "licensingLevel": "STATE (statewide license required for Electrical Contractor work) — but note: local city/county business-license overlays may still apply on top of the state license, per a non-official source; not independently confirmed against an AECB page this session",
+      "officialSources": [
+        { "url": "https://aecb.alabama.gov/wp-content/uploads/2022/11/EC-App.Rec-11.1.22.pdf", "title": "Reciprocity Application", "authorityLevel": "official-board (primary application document)" },
+        { "url": "https://aecb.alabama.gov/wp-content/uploads/2022/05/ECBApp8-6-20.pdf", "title": "Electrical Contractors Board Application (experience/exam requirements)", "authorityLevel": "official-board" }
+      ],
+      "fieldEvidence": {
+        "reciprocityStatus": "CONFIRMED — real, named bilateral-style agreement (a shared exam-waiver arrangement, not a blanket license-honoring agreement) with Georgia, Louisiana, Mississippi, North Carolina, South Carolina, Tennessee, Virginia, or any state administering the NASCLA Electrical Contractor Exam. Source: AECB reciprocity application PDF (official).",
+        "reciprocityScope": "CONFIRMED — applies to the ELECTRICAL CONTRACTOR license specifically (the AECB reciprocity PDF is titled for Contractor applications). Whether an equivalent formal reciprocity path exists for the separate Journeyman Electrician license (which AECB also issues, with its own $35 fee) was NOT confirmed against an AECB source this session — UNKNOWN.",
+        "examRequirement": "CONFIRMED — reciprocal applicants still must pass the Alabama Business and Law exam even when the trade exam is waived. Source: AECB PDF.",
+        "experienceRequirement": "CONFIRMED — 8,000 hours of qualifying electrical experience (with an education substitution option up to 2,000 of those hours). Source: AECB PDF.",
+        "fee": "CONFIRMED — $315 reciprocity fee (Contractor). Separate Journeyman fees ($35 application/exam/license/renewal) found via a non-official secondary source (contractortests.com) — NOT independently verified against an AECB fee schedule this session.",
+        "verification": "CONFIRMED — an original letter (no faxes/copies/online) from the origin state's board, confirming good standing and a passing exam score of 70+, sent directly board-to-board. Source: AECB PDF.",
+        "backgroundCheck": "UNKNOWN — not addressed in the AECB documents reviewed this session.",
+        "disciplinaryDisclosure": "CONFIRMED — no outstanding complaints with any licensing agency is a stated condition. Source: AECB PDF."
+      },
+      "unknownFields": ["Journeyman-specific reciprocity path (as distinct from Contractor)", "backgroundCheck/fingerprinting requirement", "exact local-jurisdiction overlay requirements"],
+      "sourceCompleteness": "HIGH for Electrical Contractor; UNKNOWN for Journeyman Electrician specifically",
+      "buildCandidate": "NEEDS_MORE_RESEARCH",
+      "reason": "GSC signal is real but thin (1 impression). Official evidence for the Contractor-level reciprocity pathway is strong (two primary AECB PDFs). However, the query's likely searcher intent (an individual electrician, not necessarily a contracting business) is not cleanly resolved — AECB issues a SEPARATE Journeyman Electrician credential with no confirmed reciprocity pathway of its own in the sources reviewed. Publishing a page titled 'Alabama Electrical License Reciprocity' without resolving which license type it covers risks exactly the misleading-generalization problem STEP 3 warns against.",
+      "reviewRequired": true
+    },
+    {
+      "state": "Arkansas",
+      "abbreviation": "AR",
+      "profession": "electrician",
+      "gscQueries": [
+        { "query": "arkansas electrical license reciprocity", "impressions": 1, "clicks": 0, "position": 77 }
+      ],
+      "intent": "ENDORSEMENT/RECIPROCITY",
+      "contentGap": true,
+      "officialAuthority": "Arkansas Board of Electrical Examiners (within the Arkansas Department of Labor and Licensing)",
+      "licensingLevel": "STATE — statewide license; once issued, a licensee may work in any Arkansas municipality without further local exams (per Ark. Code, cited by a secondary source summarizing the statute — the statute itself was not independently pulled this session).",
+      "officialSources": [
+        { "url": "https://labor.arkansas.gov/labor/code-enforcement/electrical-inspection-and-licensing/", "title": "Electrical Inspection and Licensing", "authorityLevel": "official-board" }
+      ],
+      "fieldEvidence": {
+        "reciprocityStatus": "PARTIALLY CONFIRMED — the official labor.arkansas.gov page confirms reciprocity exists and states 'The Board only reciprocates an original license from the issuing state on this list,' but the specific list of qualifying states was NOT captured from the official page directly this session (only referenced indirectly).",
+        "reciprocityScope": "CONTRADICTORY BETWEEN SECONDARY SOURCES — one non-official source describes a fairly broad Journeyman reciprocity list; a different non-official source states Arkansas recognizes MASTER-level reciprocity only with Oregon and South Dakota (or Oregon and North Dakota per a third source — the two secondary sources disagree with each other on this specific detail). Not resolved by an official primary source this session.",
+        "examRequirement": "UNKNOWN whether waived for reciprocal applicants specifically — not addressed in the official page reviewed.",
+        "experienceRequirement": "CONFIRMED (for original, non-reciprocal licensure) — 4-year DOL-registered apprenticeship for Journeyman; degree + 2 years or 12,000-16,000 OJT hours for Master. Source: secondary (ServiceTitan), not independently verified against the official page's text this session.",
+        "fee": "CONFIRMED for Contractor classification specifically — $100/year, per a secondary source (Mike Holt) that quotes Arkansas Code directly.",
+        "verification": "Reciprocal applicants apply directly to the Board; hold a current license in the originating state. Source: secondary (contractorlicenserequirements.com), not independently confirmed against an official page this session.",
+        "contractorLicenseNote": "CONFIRMED — reciprocity does NOT typically extend to Contractor-level licenses, which are handled by a SEPARATE agency (Arkansas Contractors Licensing Board), distinct from the Board of Electrical Examiners that handles individual Journeyman/Master credentials. Multiple independent secondary sources agree on this structural point."
+      },
+      "unknownFields": ["Exact list of reciprocal states (found only via secondary sources with internal disagreement)", "exam waiver details", "fee for individual (non-Contractor) reciprocal applicants", "background check/fingerprinting"],
+      "sourceCompleteness": "MEDIUM — the regulating authority and the existence of a real reciprocity mechanism are officially confirmed, but the specific qualifying-state list and several fields rely only on secondary sources that disagree with each other.",
+      "buildCandidate": "NEEDS_MORE_RESEARCH",
+      "reason": "Real official confirmation that Arkansas reciprocity exists and is state-administered — but the single most decision-relevant fact for a reader (which states actually qualify) is not resolved to primary-source confidence, and two secondary sources materially disagree with each other on it. A targeted next step (pulling Arkansas's own 'Administrative Rules of the Board of Electrical Examiners' PDF, referenced but not fetched this session) would likely resolve this quickly.",
+      "reviewRequired": true
+    },
+    {
+      "state": "Colorado",
+      "abbreviation": "CO",
+      "profession": "electrician",
+      "gscQueries": [
+        { "query": "colorado electrical license reciprocity", "impressions": 1, "clicks": 0, "position": 68 }
+      ],
+      "intent": "ENDORSEMENT/RECIPROCITY",
+      "contentGap": true,
+      "officialAuthority": "Colorado Department of Regulatory Agencies (DORA), State Electrical Board",
+      "licensingLevel": "STATE — statewide license under Colorado Revised Statutes Title 12 Article 115; no local-jurisdiction complication surfaced this session.",
+      "officialSources": [
+        { "url": "https://www.sos.state.co.us/CCR/GenerateRulePdf.do?ruleVersionId=9814&fileName=3+CCR+710-1", "title": "3 CCR 710-1 — State Electrical Board Rules (official Colorado Secretary of State regulation text)", "authorityLevel": "official-regulation (primary statutory/regulatory text, the strongest source class found in this entire research pass)" }
+      ],
+      "fieldEvidence": {
+        "reciprocityStatus": "CONFIRMED directly from the regulation text itself — reciprocity exists for the JOURNEYMAN license specifically.",
+        "reciprocityScope": "CONFIRMED, and CRITICAL — the official rule states verbatim: 'A Colorado master electrician's license may not be granted by reciprocity.' Master-level reciprocity does NOT exist in Colorado, by explicit regulatory text. This directly matches STEP 3's warning: a page titled generically 'Colorado Electrical License Reciprocity' would be misleading unless it explicitly distinguishes Journeyman (reciprocity exists) from Master (reciprocity does NOT exist).",
+        "examRequirement": "PARTIALLY CONFIRMED — secondary sources state reciprocal applicants must still pass a 'Colorado-specific portion'; not independently located in the regulation text excerpt reviewed this session.",
+        "experienceRequirement": "CONFIRMED (for original licensure, not reciprocity specifically) — 8,000 hours / 4 years plus 288 classroom hours for Journeyman. Source: secondary (contractorlicenserequirements.com).",
+        "eligibilityCondition": "CONFIRMED — applicant must have held the license at least one year in the origin state, and the origin license must have been obtained BY EXAMINATION, not by grandfathering. Source: secondary (Buildforce), consistent with the official regulation's general tenor but the specific 1-year/no-grandfathering conditions were not independently re-confirmed in the primary regulation excerpt this session.",
+        "qualifyingStates": "CONTRADICTORY BETWEEN SECONDARY SOURCES — one source names only Wyoming, New Mexico, and Nebraska (attributing this to a 'NERA' agreement); another lists a much longer set (Alaska, Arkansas, Idaho, Iowa, Massachusetts, Minnesota, Montana, Nebraska, New Hampshire...). Not resolved by the official regulation excerpt reviewed this session — the specific state list requires a direct DORA lookup."
+      },
+      "unknownFields": ["Exact qualifying-state list (secondary sources disagree)", "fee amount", "verification process specifics"],
+      "sourceCompleteness": "HIGH for the existence/rank-limitation of reciprocity (backed by the actual regulation text); MEDIUM for the specific qualifying-state list and fee.",
+      "buildCandidate": "NEEDS_MORE_RESEARCH",
+      "reason": "This is the strongest official source found across all 5 states (the literal regulation text, hosted by the Colorado Secretary of State) and confirms a real, important, non-obvious fact (Master excluded from reciprocity) that a generic page would likely get wrong. But the qualifying-state list — the single fact a real searcher most wants — is not yet resolved to primary-source confidence. High-value target for a follow-up, narrowly-scoped DORA lookup.",
+      "reviewRequired": true
+    },
+    {
+      "state": "Utah",
+      "abbreviation": "UT",
+      "profession": "electrician",
+      "gscQueries": [
+        { "query": "utah electrical license reciprocity", "impressions": 1, "clicks": 0, "position": 65 }
+      ],
+      "intent": "ENDORSEMENT/RECIPROCITY",
+      "contentGap": true,
+      "officialAuthority": "Utah Division of Professional Licensing (DOPL), within the Utah Department of Commerce",
+      "licensingLevel": "STATE — statewide license under Utah Code Title 58 Chapter 55.",
+      "officialSources": [
+        { "url": "https://commerce.utah.gov/dopl/electrical/apply-for-a-license/journeyman-electrician/out-of-state-by-endorsement/", "title": "Journeyman Electrician Out of State Applicants Applying by Endorsement", "authorityLevel": "official-board (direct DOPL application page)" }
+      ],
+      "fieldEvidence": {
+        "terminologyFinding": "CRITICAL, CONFIRMED FROM THE OFFICIAL SOURCE ITSELF — Utah's own official DOPL page is titled 'Applying by ENDORSEMENT,' not reciprocity. Multiple independent secondary sources explicitly and consistently state Utah does NOT have traditional state-to-state reciprocity agreements. This is exactly the STEP 3 scenario: the real GSC query uses the word 'reciprocity,' but the actual regulatory mechanism Utah offers is endorsement — a legally distinct process (destination state reviews and issues its own new license) rather than a bilateral agreement directly honoring another state's license.",
+        "reciprocityStatus": "ONE CONFIRMED REAL BILATERAL AGREEMENT EXISTS — with Oregon specifically, covering both Journeyman and Master/General Supervising Electrician levels, evidenced by a real bilateral PDF hosted on Oregon's own official government site (oregon.gov/bcd), which is itself strong corroborating evidence since it's a DIFFERENT state's official government document independently describing the same agreement.",
+        "endorsementStatus": "CONFIRMED — a real, broader Journeyman endorsement pathway exists via DOPL's official 'out-of-state by endorsement' page; qualifying-state list was seen in a secondary source (Housecall Pro, dated to an August 2025 DOPL exam overhaul) but not independently re-verified against the current DOPL page's live content this session.",
+        "examRequirement": "UNCLEAR — the Oregon-Utah bilateral PDF requires the original license to have been obtained BY EXAMINATION at 75%+; whether Utah's broader endorsement path also waives the Utah exam entirely, or only partially, was not confirmed this session.",
+        "fee": "UNKNOWN — not confirmed this session.",
+        "verification": "CONFIRMED (for the Oregon bilateral path) — official Verification of License form completed by the issuing board; license must be current/active/good standing. Source: Oregon.gov PDF."
+      },
+      "unknownFields": ["Fee", "full current endorsement qualifying-state list from DOPL's live page", "exam waiver scope for the broader endorsement path"],
+      "sourceCompleteness": "MEDIUM-HIGH — the most important fact (reciprocity vs. endorsement terminology) is resolved with high confidence directly from Utah's own official page plus independent corroboration from Oregon's official page. Several operational details (fee, full state list) remain unconfirmed.",
+      "buildCandidate": "NEEDS_MORE_RESEARCH",
+      "reason": "This is arguably the most important finding of the entire Phase 2D.1 pass: publishing a page literally titled 'Utah Electrical License Reciprocity' would misrepresent Utah's actual regulatory framework, which the state's own official page describes as ENDORSEMENT. Any future content decision for Utah must either retitle around 'endorsement' (matching official terminology) or explicitly clarify the reciprocity/endorsement distinction in the body — this is a real content-integrity finding, not a blocker to eventual publication.",
+      "reviewRequired": true
+    },
+    {
+      "state": "Virginia",
+      "abbreviation": "VA",
+      "profession": "electrician",
+      "gscQueries": [
+        { "query": "virginia electrical license reciprocity", "impressions": 2, "clicks": 0, "position": 61.5 }
+      ],
+      "intent": "ENDORSEMENT/RECIPROCITY",
+      "contentGap": true,
+      "officialAuthority": "Virginia Department of Professional and Occupational Regulation (DPOR), Board for Contractors (Tradesman Program)",
+      "licensingLevel": "STATE — a single statewide license, confirmed by an independent secondary source and consistent with DPOR's own site structure.",
+      "officialSources": [
+        { "url": "https://www.dpor.virginia.gov/sites/default/files/boards/Tradesman/Tradesmen%20reciprocal%20agreements.pdf", "title": "Tradesmen Reciprocal Agreements", "authorityLevel": "official-board (primary document, the strongest and most directly on-point source found for any of the 5 states — a dedicated official PDF literally listing every real reciprocal agreement)" },
+        { "url": "https://www.dpor.virginia.gov/Applicants", "title": "Applicants", "authorityLevel": "official-board" },
+        { "url": "https://www.dpor.virginia.gov/Boards/Tradesmen", "title": "Tradesmen Program", "authorityLevel": "official-board" }
+      ],
+      "fieldEvidence": {
+        "reciprocityStatus": "CONFIRMED DIRECTLY FROM THE OFFICIAL PDF — real, named, rank-specific bilateral examination-reciprocity agreements exist with: Kentucky (Electrician/Master <-> VA Journeyman/Master), Maryland (Master <-> VA Master only), West Virginia (Journeyman/Master <-> VA Journeyman/Master), and a Contractor-specific arrangement with North Carolina.",
+        "reciprocityScope": "CONFIRMED, RANK-SPECIFIC — the Maryland agreement is Master-only (does not cover Journeyman); this level of granularity is directly stated in the official PDF itself, not inferred.",
+        "additionalPathway": "CONFIRMED — Virginia separately offers Universal License Recognition (ULR), a distinct, broader pathway for out-of-state licensees generally, per DPOR's own homepage and Applicants page. This means a Virginia page would need to distinguish THREE distinct real mechanisms: (1) the 4 named bilateral reciprocity agreements, (2) general endorsement/comity, and (3) ULR — all real and officially confirmed to exist, but legally distinct.",
+        "examRequirement": "CONFIRMED — even reciprocal applicants must still sit for the Virginia-specific exam section (state law/building code amendments); only the NATIONAL portion of the exam is waived. Source: official DPOR PDF plus secondary corroboration.",
+        "experienceRequirement": "CONFIRMED (for original, non-reciprocal licensure) — 2 to 10 years depending on formal training hours for Journeyman; 1 year as VA Journeyman + 10 years total trade experience for Master. Source: secondary (Buildforce), not independently re-verified against a DPOR experience-requirement page this session.",
+        "fee": "PARTIALLY CONFIRMED — a secondary source states $90-$195 depending on license class; not independently verified against an official DPOR fee schedule this session.",
+        "governingAuthorityComplexity": "UNRESOLVED CONTRADICTION BETWEEN SOURCES — one secondary source claims individual Journeyman/Master certifications are issued by a SEPARATE agency, the Department of Labor and Industry (DOLI), distinct from DPOR (which it says handles only Contractor licenses). This directly conflicts with DPOR's own official 'Tradesmen Program' page, which describes DPOR's Board for Contractors as regulating individual tradesmen directly. This conflict was NOT resolved this session and should be treated as a real open question, not assumed either way."
+      },
+      "unknownFields": ["Exact fee schedule (confirmed only via secondary source)", "whether DOLI has any real distinct regulatory role for individual electricians (unresolved contradiction)"],
+      "sourceCompleteness": "HIGH — the core reciprocity facts (which states, which ranks, which conditions) are confirmed directly from a dedicated official DPOR PDF, the single strongest and most directly on-point primary source found in this entire research pass.",
+      "buildCandidate": "NEEDS_MORE_RESEARCH",
+      "reason": "The strongest evidentiary case of the 5 states — official source, rank-specific, directly on-point. Held back from an outright BUILD_CANDIDATE only because of the one unresolved DPOR-vs-DOLI regulatory-authority contradiction between sources, which should be cleared up (a single follow-up lookup) before publication to avoid stating the wrong issuing authority.",
+      "reviewRequired": true
+    }
+  ]
+}

@@ -31,7 +31,7 @@ export type SourceTier = 1 | 2 | 3 | 4;
  * not be a real field. A real build (`next build` with noUncheckedIndexedAccess)
  * caught the previous generic-Record version failing exactly this distinction.
  */
-export type ProfessionFactFieldKey = Exclude<keyof ProfessionStateFacts, "profession" | "state" | "conflicts" | "lastFullReviewAt">;
+export type ProfessionFactFieldKey = Exclude<keyof ProfessionStateFacts, "profession" | "state" | "conflicts" | "lastFullReviewAt" | "licenseTier">;
 
 export const TIER_LABELS: Record<SourceTier, string> = {
   1: "State Licensing Authority",
@@ -68,7 +68,7 @@ export const FIELD_AUTHORITY_MAP: Record<ProfessionFactFieldKey, SourceTier[]> =
   requiredEducation: [1, 3], // state board sets the requirement, but NCSBN test-plan docs are also acceptable evidence
   requiredDocuments: [1],
   processingTime: [1],
-  rnEndorsementFeeUsd: [1],
+  endorsementFeeUsd: [1],
   renewalFeeUsd: [1],
   continuingEducationRequirements: [1],
 };

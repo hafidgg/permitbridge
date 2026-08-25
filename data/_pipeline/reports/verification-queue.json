@@ -150,7 +150,7 @@
     {
       "profession": "registered-nurse",
       "state": "alabama",
-      "fieldPath": "rnEndorsementFeeUsd",
+      "fieldPath": "endorsementFeeUsd",
       "currentValue": "Unknown",
       "currentStatus": "pending_verification",
       "sourceUrl": null,
@@ -330,7 +330,7 @@
     {
       "profession": "registered-nurse",
       "state": "alaska",
-      "fieldPath": "rnEndorsementFeeUsd",
+      "fieldPath": "endorsementFeeUsd",
       "currentValue": "Unknown",
       "currentStatus": "pending_verification",
       "sourceUrl": null,
@@ -510,7 +510,7 @@
     {
       "profession": "registered-nurse",
       "state": "arizona",
-      "fieldPath": "rnEndorsementFeeUsd",
+      "fieldPath": "endorsementFeeUsd",
       "currentValue": "Unknown",
       "currentStatus": "pending_verification",
       "sourceUrl": null,
@@ -690,7 +690,7 @@
     {
       "profession": "registered-nurse",
       "state": "arkansas",
-      "fieldPath": "rnEndorsementFeeUsd",
+      "fieldPath": "endorsementFeeUsd",
       "currentValue": "Unknown",
       "currentStatus": "pending_verification",
       "sourceUrl": null,
@@ -870,7 +870,7 @@
     {
       "profession": "registered-nurse",
       "state": "california",
-      "fieldPath": "rnEndorsementFeeUsd",
+      "fieldPath": "endorsementFeeUsd",
       "currentValue": 350,
       "currentStatus": "pending_verification",
       "sourceUrl": "https://www.rn.ca.gov/pdfs/regulations/proposedlang-fees2018.pdf",
@@ -1050,7 +1050,7 @@
     {
       "profession": "registered-nurse",
       "state": "colorado",
-      "fieldPath": "rnEndorsementFeeUsd",
+      "fieldPath": "endorsementFeeUsd",
       "currentValue": "Unknown",
       "currentStatus": "pending_verification",
       "sourceUrl": null,
@@ -1230,7 +1230,7 @@
     {
       "profession": "registered-nurse",
       "state": "connecticut",
-      "fieldPath": "rnEndorsementFeeUsd",
+      "fieldPath": "endorsementFeeUsd",
       "currentValue": "Unknown",
       "currentStatus": "pending_verification",
       "sourceUrl": null,
@@ -1410,7 +1410,7 @@
     {
       "profession": "registered-nurse",
       "state": "delaware",
-      "fieldPath": "rnEndorsementFeeUsd",
+      "fieldPath": "endorsementFeeUsd",
       "currentValue": "Unknown",
       "currentStatus": "pending_verification",
       "sourceUrl": null,
@@ -1590,7 +1590,7 @@
     {
       "profession": "registered-nurse",
       "state": "florida",
-      "fieldPath": "rnEndorsementFeeUsd",
+      "fieldPath": "endorsementFeeUsd",
       "currentValue": 110,
       "currentStatus": "pending_verification",
       "sourceUrl": "https://floridasnursing.gov/category/post-template-toggle/fees/",
@@ -1770,7 +1770,7 @@
     {
       "profession": "registered-nurse",
       "state": "georgia",
-      "fieldPath": "rnEndorsementFeeUsd",
+      "fieldPath": "endorsementFeeUsd",
       "currentValue": 75,
       "currentStatus": "pending_verification",
       "sourceUrl": "https://sos.ga.gov/sites/default/files/forms/38%20Reference%20-%20GBON%20Fee%20Schedule.pdf",
@@ -1950,7 +1950,7 @@
     {
       "profession": "registered-nurse",
       "state": "hawaii",
-      "fieldPath": "rnEndorsementFeeUsd",
+      "fieldPath": "endorsementFeeUsd",
       "currentValue": "Unknown",
       "currentStatus": "pending_verification",
       "sourceUrl": null,
@@ -2130,7 +2130,7 @@
     {
       "profession": "registered-nurse",
       "state": "idaho",
-      "fieldPath": "rnEndorsementFeeUsd",
+      "fieldPath": "endorsementFeeUsd",
       "currentValue": "Unknown",
       "currentStatus": "pending_verification",
       "sourceUrl": null,
@@ -2310,7 +2310,7 @@
     {
       "profession": "registered-nurse",
       "state": "illinois",
-      "fieldPath": "rnEndorsementFeeUsd",
+      "fieldPath": "endorsementFeeUsd",
       "currentValue": 50,
       "currentStatus": "pending_verification",
       "sourceUrl": "https://idfpr.illinois.gov/content/dam/soi/en/web/idfpr/renewals/apply/forms/RN-EN.pdf",
@@ -2490,7 +2490,7 @@
     {
       "profession": "registered-nurse",
       "state": "indiana",
-      "fieldPath": "rnEndorsementFeeUsd",
+      "fieldPath": "endorsementFeeUsd",
       "currentValue": "Unknown",
       "currentStatus": "pending_verification",
       "sourceUrl": null,
@@ -2670,7 +2670,7 @@
     {
       "profession": "registered-nurse",
       "state": "iowa",
-      "fieldPath": "rnEndorsementFeeUsd",
+      "fieldPath": "endorsementFeeUsd",
       "currentValue": "Unknown",
       "currentStatus": "pending_verification",
       "sourceUrl": null,
@@ -2850,7 +2850,7 @@
     {
       "profession": "registered-nurse",
       "state": "kansas",
-      "fieldPath": "rnEndorsementFeeUsd",
+      "fieldPath": "endorsementFeeUsd",
       "currentValue": "Unknown",
       "currentStatus": "pending_verification",
       "sourceUrl": null,
@@ -3030,7 +3030,7 @@
     {
       "profession": "registered-nurse",
       "state": "kentucky",
-      "fieldPath": "rnEndorsementFeeUsd",
+      "fieldPath": "endorsementFeeUsd",
       "currentValue": "Unknown",
       "currentStatus": "pending_verification",
       "sourceUrl": null,
@@ -3210,7 +3210,7 @@
     {
       "profession": "registered-nurse",
       "state": "louisiana",
-      "fieldPath": "rnEndorsementFeeUsd",
+      "fieldPath": "endorsementFeeUsd",
       "currentValue": "Unknown",
       "currentStatus": "pending_verification",
       "sourceUrl": null,
@@ -3390,7 +3390,7 @@
     {
       "profession": "registered-nurse",
       "state": "maine",
-      "fieldPath": "rnEndorsementFeeUsd",
+      "fieldPath": "endorsementFeeUsd",
       "currentValue": "Unknown",
       "currentStatus": "pending_verification",
       "sourceUrl": null,
@@ -3570,7 +3570,7 @@
     {
       "profession": "registered-nurse",
       "state": "maryland",
-      "fieldPath": "rnEndorsementFeeUsd",
+      "fieldPath": "endorsementFeeUsd",
       "currentValue": "Unknown",
       "currentStatus": "pending_verification",
       "sourceUrl": null,
@@ -3750,7 +3750,7 @@
     {
       "profession": "registered-nurse",
       "state": "massachusetts",
-      "fieldPath": "rnEndorsementFeeUsd",
+      "fieldPath": "endorsementFeeUsd",
       "currentValue": "Unknown",
       "currentStatus": "pending_verification",
       "sourceUrl": null,
@@ -3930,7 +3930,7 @@
     {
       "profession": "registered-nurse",
       "state": "michigan",
-      "fieldPath": "rnEndorsementFeeUsd",
+      "fieldPath": "endorsementFeeUsd",
       "currentValue": "Unknown",
       "currentStatus": "pending_verification",
       "sourceUrl": null,
@@ -4110,7 +4110,7 @@
     {
       "profession": "registered-nurse",
       "state": "minnesota",
-      "fieldPath": "rnEndorsementFeeUsd",
+      "fieldPath": "endorsementFeeUsd",
       "currentValue": "Unknown",
       "currentStatus": "pending_verification",
       "sourceUrl": null,
@@ -4290,7 +4290,7 @@
     {
       "profession": "registered-nurse",
       "state": "mississippi",
-      "fieldPath": "rnEndorsementFeeUsd",
+      "fieldPath": "endorsementFeeUsd",
       "currentValue": "Unknown",
       "currentStatus": "pending_verification",
       "sourceUrl": null,
@@ -4470,7 +4470,7 @@
     {
       "profession": "registered-nurse",
       "state": "missouri",
-      "fieldPath": "rnEndorsementFeeUsd",
+      "fieldPath": "endorsementFeeUsd",
       "currentValue": "Unknown",
       "currentStatus": "pending_verification",
       "sourceUrl": null,
@@ -4650,7 +4650,7 @@
     {
       "profession": "registered-nurse",
       "state": "montana",
-      "fieldPath": "rnEndorsementFeeUsd",
+      "fieldPath": "endorsementFeeUsd",
       "currentValue": "Unknown",
       "currentStatus": "pending_verification",
       "sourceUrl": null,
@@ -4830,7 +4830,7 @@
     {
       "profession": "registered-nurse",
       "state": "nebraska",
-      "fieldPath": "rnEndorsementFeeUsd",
+      "fieldPath": "endorsementFeeUsd",
       "currentValue": "Unknown",
       "currentStatus": "pending_verification",
       "sourceUrl": null,
@@ -5010,7 +5010,7 @@
     {
       "profession": "registered-nurse",
       "state": "nevada",
-      "fieldPath": "rnEndorsementFeeUsd",
+      "fieldPath": "endorsementFeeUsd",
       "currentValue": "Unknown",
       "currentStatus": "pending_verification",
       "sourceUrl": null,
@@ -5190,7 +5190,7 @@
     {
       "profession": "registered-nurse",
       "state": "new-hampshire",
-      "fieldPath": "rnEndorsementFeeUsd",
+      "fieldPath": "endorsementFeeUsd",
       "currentValue": "Unknown",
       "currentStatus": "pending_verification",
       "sourceUrl": null,
@@ -5370,7 +5370,7 @@
     {
       "profession": "registered-nurse",
       "state": "new-jersey",
-      "fieldPath": "rnEndorsementFeeUsd",
+      "fieldPath": "endorsementFeeUsd",
       "currentValue": "Unknown",
       "currentStatus": "pending_verification",
       "sourceUrl": null,
@@ -5550,7 +5550,7 @@
     {
       "profession": "registered-nurse",
       "state": "new-mexico",
-      "fieldPath": "rnEndorsementFeeUsd",
+      "fieldPath": "endorsementFeeUsd",
       "currentValue": "Unknown",
       "currentStatus": "pending_verification",
       "sourceUrl": null,
@@ -5730,7 +5730,7 @@
     {
       "profession": "registered-nurse",
       "state": "new-york",
-      "fieldPath": "rnEndorsementFeeUsd",
+      "fieldPath": "endorsementFeeUsd",
       "currentValue": 143,
       "currentStatus": "pending_verification",
       "sourceUrl": "https://www.op.nysed.gov/professions/registered-professional-nursing/endorsement-nursing-licenses",
@@ -5910,7 +5910,7 @@
     {
       "profession": "registered-nurse",
       "state": "north-carolina",
-      "fieldPath": "rnEndorsementFeeUsd",
+      "fieldPath": "endorsementFeeUsd",
       "currentValue": "Unknown",
       "currentStatus": "pending_verification",
       "sourceUrl": null,
@@ -6090,7 +6090,7 @@
     {
       "profession": "registered-nurse",
       "state": "north-dakota",
-      "fieldPath": "rnEndorsementFeeUsd",
+      "fieldPath": "endorsementFeeUsd",
       "currentValue": "Unknown",
       "currentStatus": "pending_verification",
       "sourceUrl": null,
@@ -6270,7 +6270,7 @@
     {
       "profession": "registered-nurse",
       "state": "ohio",
-      "fieldPath": "rnEndorsementFeeUsd",
+      "fieldPath": "endorsementFeeUsd",
       "currentValue": "Unknown",
       "currentStatus": "pending_verification",
       "sourceUrl": null,
@@ -6450,7 +6450,7 @@
     {
       "profession": "registered-nurse",
       "state": "oklahoma",
-      "fieldPath": "rnEndorsementFeeUsd",
+      "fieldPath": "endorsementFeeUsd",
       "currentValue": "Unknown",
       "currentStatus": "pending_verification",
       "sourceUrl": null,
@@ -6630,7 +6630,7 @@
     {
       "profession": "registered-nurse",
       "state": "oregon",
-      "fieldPath": "rnEndorsementFeeUsd",
+      "fieldPath": "endorsementFeeUsd",
       "currentValue": "Unknown",
       "currentStatus": "pending_verification",
       "sourceUrl": null,
@@ -6810,7 +6810,7 @@
     {
       "profession": "registered-nurse",
       "state": "pennsylvania",
-      "fieldPath": "rnEndorsementFeeUsd",
+      "fieldPath": "endorsementFeeUsd",
       "currentValue": "Unknown",
       "currentStatus": "pending_verification",
       "sourceUrl": null,
@@ -6990,7 +6990,7 @@
     {
       "profession": "registered-nurse",
       "state": "rhode-island",
-      "fieldPath": "rnEndorsementFeeUsd",
+      "fieldPath": "endorsementFeeUsd",
       "currentValue": "Unknown",
       "currentStatus": "pending_verification",
       "sourceUrl": null,
@@ -7170,7 +7170,7 @@
     {
       "profession": "registered-nurse",
       "state": "south-carolina",
-      "fieldPath": "rnEndorsementFeeUsd",
+      "fieldPath": "endorsementFeeUsd",
       "currentValue": "Unknown",
       "currentStatus": "pending_verification",
       "sourceUrl": null,
@@ -7350,7 +7350,7 @@
     {
       "profession": "registered-nurse",
       "state": "south-dakota",
-      "fieldPath": "rnEndorsementFeeUsd",
+      "fieldPath": "endorsementFeeUsd",
       "currentValue": "Unknown",
       "currentStatus": "pending_verification",
       "sourceUrl": null,
@@ -7530,7 +7530,7 @@
     {
       "profession": "registered-nurse",
       "state": "tennessee",
-      "fieldPath": "rnEndorsementFeeUsd",
+      "fieldPath": "endorsementFeeUsd",
       "currentValue": "Unknown",
       "currentStatus": "pending_verification",
       "sourceUrl": null,
@@ -7710,7 +7710,7 @@
     {
       "profession": "registered-nurse",
       "state": "texas",
-      "fieldPath": "rnEndorsementFeeUsd",
+      "fieldPath": "endorsementFeeUsd",
       "currentValue": "Unknown",
       "currentStatus": "pending_verification",
       "sourceUrl": null,
@@ -7890,7 +7890,7 @@
     {
       "profession": "registered-nurse",
       "state": "utah",
-      "fieldPath": "rnEndorsementFeeUsd",
+      "fieldPath": "endorsementFeeUsd",
       "currentValue": "Unknown",
       "currentStatus": "pending_verification",
       "sourceUrl": null,
@@ -8070,7 +8070,7 @@
     {
       "profession": "registered-nurse",
       "state": "vermont",
-      "fieldPath": "rnEndorsementFeeUsd",
+      "fieldPath": "endorsementFeeUsd",
       "currentValue": "Unknown",
       "currentStatus": "pending_verification",
       "sourceUrl": null,
@@ -8250,7 +8250,7 @@
     {
       "profession": "registered-nurse",
       "state": "virginia",
-      "fieldPath": "rnEndorsementFeeUsd",
+      "fieldPath": "endorsementFeeUsd",
       "currentValue": "Unknown",
       "currentStatus": "pending_verification",
       "sourceUrl": null,
@@ -8430,7 +8430,7 @@
     {
       "profession": "registered-nurse",
       "state": "washington",
-      "fieldPath": "rnEndorsementFeeUsd",
+      "fieldPath": "endorsementFeeUsd",
       "currentValue": "Unknown",
       "currentStatus": "pending_verification",
       "sourceUrl": null,
@@ -8610,7 +8610,7 @@
     {
       "profession": "registered-nurse",
       "state": "west-virginia",
-      "fieldPath": "rnEndorsementFeeUsd",
+      "fieldPath": "endorsementFeeUsd",
       "currentValue": "Unknown",
       "currentStatus": "pending_verification",
       "sourceUrl": null,
@@ -8790,7 +8790,7 @@
     {
       "profession": "registered-nurse",
       "state": "wisconsin",
-      "fieldPath": "rnEndorsementFeeUsd",
+      "fieldPath": "endorsementFeeUsd",
       "currentValue": "Unknown",
       "currentStatus": "pending_verification",
       "sourceUrl": null,
@@ -8970,7 +8970,7 @@
     {
       "profession": "registered-nurse",
       "state": "wyoming",
-      "fieldPath": "rnEndorsementFeeUsd",
+      "fieldPath": "endorsementFeeUsd",
       "currentValue": "Unknown",
       "currentStatus": "pending_verification",
       "sourceUrl": null,

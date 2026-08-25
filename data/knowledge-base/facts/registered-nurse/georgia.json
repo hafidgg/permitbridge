@@ -237,7 +237,7 @@
     "history": [],
     "notes": "Not yet individually researched for this state."
   },
-  "rnEndorsementFeeUsd": {
+  "endorsementFeeUsd": {
     "value": 75,
     "sourceUrl": "https://sos.ga.gov/sites/default/files/forms/38%20Reference%20-%20GBON%20Fee%20Schedule.pdf",
     "sourceTitle": "Georgia Board of Nursing Fee Schedule",

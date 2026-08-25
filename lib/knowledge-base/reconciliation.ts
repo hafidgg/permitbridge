@@ -42,7 +42,7 @@ const FIELD_KEYS: (keyof ProfessionStateFacts)[] = [
   "requiredEducation",
   "requiredDocuments",
   "processingTime",
-  "rnEndorsementFeeUsd",
+  "endorsementFeeUsd",
   "renewalFeeUsd",
   "continuingEducationRequirements",
 ];

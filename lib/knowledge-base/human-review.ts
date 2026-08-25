@@ -45,7 +45,7 @@ function shortEvidence(fieldKey: RnFieldKey, stateName: string, value: unknown, 
   if (fieldKey === "requiredExams") {
     return `${sourceAgency} confirms NCLEX-RN as the national licensure exam requirement, applicable in ${stateName}.`;
   }
-  if (fieldKey === "rnEndorsementFeeUsd") {
+  if (fieldKey === "endorsementFeeUsd") {
     return `${sourceAgency} states the RN licensure-by-endorsement application fee as $${value} (not the exam-pathway or renewal fee).`;
   }
   if (fieldKey === "licensingBoard") {
