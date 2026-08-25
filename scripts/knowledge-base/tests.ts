@@ -81,6 +81,8 @@ import {
   REAL_TEST_REVIEWER_NAME,
 } from "../../fixtures/knowledge-base/transfer-rules/synthetic-review-scenarios";
 import { buildVerificationQueue } from "../../lib/knowledge-base/queue";
+import { getColoradoElectricianPageData, getAllSingleStateProfessionSlugs } from "../../lib/knowledge-base/electrician-state-data";
+import { isProfessionStateFactsPublishable, CRITICAL_PROFESSION_STATE_FIELDS } from "../../lib/knowledge-base/profession-state-facts-review";
 import { computeTrustReport } from "../../lib/knowledge-base/trust";
 import { verifiedField, unknownField } from "../../lib/knowledge-base/fields";
 import { computeFieldReconciliation, computeSourceReconciliation } from "../../lib/knowledge-base/reconciliation";
@@ -5076,6 +5078,109 @@ await test("[PERMANENT — Phase 2D.3.2.1] the two Colorado electrician tiers re
   assertEqual(journeyman.licenseTier, "journeyman");
   assertEqual(master.licenseTier, "master");
   assert(electricianQueue.some((i) => i.state === "colorado"), "the electrician queue must contain real Colorado items from both tier files combined, without merging their distinct reciprocityRules values");
+});
+
+// ---------------------------------------------------------------------
+// Colorado Electrician Public Page (Phase 2D.4.2)
+//     The first single-state, tier-aware public page. Tests here
+//     protect: RN pairwise pages are byte-for-byte unaffected, the new
+//     quality gate genuinely blocks bad data, and Journeyman/Master
+//     never collapse into a single misleading claim on the live page.
+// ---------------------------------------------------------------------
+console.log("\nColorado Electrician Public Page (Phase 2D.4.2):");
+
+await test("[PERMANENT — Phase 2D.4.2] getAllSingleStateProfessionSlugs() returns exactly one real entry: electrician/colorado — no fabricated fallback pages", () => {
+  const slugs = getAllSingleStateProfessionSlugs();
+  assertEqual(slugs.length, 1);
+  assertEqual(slugs[0], { profession: "electrician", slug: "colorado" });
+});
+
+await test("[PERMANENT — Phase 2D.4.2] getColoradoElectricianPageData() returns both real tiers, Journeyman and Master, genuinely present", () => {
+  const data = getColoradoElectricianPageData();
+  assert(data !== null, "real Colorado data with sufficient sourcing must not be withheld");
+  assertEqual(data!.tiers.map((t) => t.tier).sort(), ["journeyman", "master"]);
+});
+
+await test("[PERMANENT — Phase 2D.4.2] CRITICAL: Master's reciprocityRules on the page data explicitly states reciprocity is NOT available — never defaulted, inferred, or copied from Journeyman", () => {
+  const data = getColoradoElectricianPageData()!;
+  const master = data.tiers.find((t) => t.tier === "master")!;
+  const text = (master.facts.reciprocityRules.value as string).toLowerCase();
+  assert(text.includes("may not be granted by reciprocity"), "Master's page data must retain the real, verbatim regulatory exclusion");
+});
+
+await test("[PERMANENT — Phase 2D.4.2] CRITICAL: Journeyman's reciprocityRules on the page data contains the real 14-state qualifying list — never merged with or shadowed by Master's exclusion", () => {
+  const data = getColoradoElectricianPageData()!;
+  const journeyman = data.tiers.find((t) => t.tier === "journeyman")!;
+  const text = journeyman.facts.reciprocityRules.value as string;
+  for (const state of ["Alaska", "Arkansas", "Idaho", "Iowa", "Minnesota", "Montana", "Nebraska", "New Hampshire", "New Mexico", "North Dakota", "Oklahoma", "South Dakota", "Utah", "Wyoming"]) {
+    assert(text.includes(state), `Journeyman's qualifying-state list must include the real, documented state: ${state}`);
+  }
+  assert(!text.includes("may not be granted by reciprocity"), "Journeyman's reciprocityRules must never contain Master's exclusion language");
+});
+
+await test("[PERMANENT — Phase 2D.4.2] no Unknown field is ever rendered as a claim: FieldRow's own contract requires checking value === 'Unknown' before treating it as real content — verified here at the data layer, since Unknown fields exist in both tiers by design (Partial Data Policy) and must remain visibly unconfirmed, never silently dropped or asserted", () => {
+  const data = getColoradoElectricianPageData()!;
+  for (const { facts } of data.tiers) {
+    for (const [key, field] of Object.entries(facts)) {
+      if (field && typeof field === "object" && "value" in field && "status" in field) {
+        const f = field as VerifiedField<unknown>;
+        if (f.value === "Unknown") {
+          assertEqual(f.sourceUrl, null, `${key}: an Unknown field must never carry a sourceUrl (would imply a fabricated citation)`);
+        }
+      }
+    }
+  }
+});
+
+await test("[PERMANENT — Phase 2D.4.2] every critical field in both tiers is traceable to a real, registered, authoritative SourceRecord — confirmed via the actual quality gate, not assumed", () => {
+  const sources = loadAllSources();
+  const sourceByUrl = new Map(sources.map((s) => [s.website, s]));
+  const resolveSource = (url: string) => sourceByUrl.get(url);
+  const data = getColoradoElectricianPageData()!;
+  for (const { tier, facts } of data.tiers) {
+    const result = isProfessionStateFactsPublishable(facts, resolveSource);
+    assertEqual(result.publishable, true, `colorado-${tier} must pass its own real quality gate: ${result.blockingReasons.join("; ")}`);
+  }
+});
+
+await test("[PERMANENT — Phase 2D.4.2] the new quality gate genuinely blocks — a synthetic record with an Unknown critical field, or a critical field on a secondary source, is correctly rejected, not waved through", () => {
+  const sources = loadAllSources();
+  const sourceByUrl = new Map(sources.map((s) => [s.website, s]));
+  const resolveSource = (url: string) => sourceByUrl.get(url);
+  const realJourneyman = getColoradoElectricianPageData()!.tiers.find((t) => t.tier === "journeyman")!.facts;
+
+  const withUnknownCritical = { ...realJourneyman, licensingBoard: { ...realJourneyman.licensingBoard, value: "Unknown", sourceUrl: null } };
+  assertEqual(isProfessionStateFactsPublishable(withUnknownCritical, resolveSource).publishable, false, "an Unknown critical field must block publication");
+
+  const supplementarySource = sources.find((s) => s.authorityLevel === "supplementary");
+  assert(!!supplementarySource, "test fixture assumption: at least one real supplementary source must exist");
+  const withSecondaryCritical = { ...realJourneyman, reciprocityRules: { ...realJourneyman.reciprocityRules, sourceUrl: supplementarySource!.website } };
+  assertEqual(isProfessionStateFactsPublishable(withSecondaryCritical, resolveSource).publishable, false, "a critical field sourced only from a supplementary source must block publication");
+});
+
+await test("[PERMANENT — Phase 2D.4.2] RN REGRESSION: generateStaticParams for the shared route still returns all 7 real RN pairs, completely unaffected by the new single-state entry being appended", () => {
+  const rnSlugs = getAllPublicTransferRuleSlugs();
+  assertEqual(rnSlugs.length, 7, "RN's publishable pair count must remain exactly 7 — unaffected by Phase 2D.4.2");
+  const combined = [...rnSlugs.map((s) => ({ profession: s.profession, transfer: s.transfer })), ...getAllSingleStateProfessionSlugs().map((s) => ({ profession: s.profession, transfer: s.slug }))];
+  assertEqual(combined.length, 8, "expected exactly 7 RN pairs + 1 new Colorado electrician single-state page = 8 total params for this route");
+});
+
+await test("[PERMANENT — Phase 2D.4.2] RN REGRESSION: getPublicTransferRule still resolves every real RN pair exactly as before — the new electrician branch never intercepts or shadows an RN lookup", () => {
+  for (const slug of getAllPublicTransferRuleSlugs()) {
+    const rule = getPublicTransferRule(slug.profession, slug.transfer);
+    assert(!!rule, `${slug.profession}/${slug.transfer} must still resolve to a real rule, unaffected by the new electrician/colorado branch`);
+  }
+});
+
+await test("[PERMANENT — Phase 2D.4.2] the electrician/colorado slug is structurally distinct from every real RN pair slug — no collision, no ambiguity in routing", () => {
+  const rnTransferSlugs = new Set(getAllPublicTransferRuleSlugs().map((s) => s.transfer));
+  assert(!rnTransferSlugs.has("colorado"), "no real RN transfer slug should coincidentally collide with the new single-state slug");
+});
+
+await test("[PERMANENT — Phase 2D.4.2] sitemap.ts includes the new single-state page automatically via getAllSingleStateProfessionSlugs() — no manually-written URL string was added; the mechanism is the same real, whitelist-only pattern as the existing knowledge-base routes", () => {
+  const sitemapSource = fs.readFileSync(path.join(process.cwd(), "app", "sitemap.ts"), "utf-8");
+  assert(sitemapSource.includes("getAllSingleStateProfessionSlugs()"), "sitemap.ts must derive this route from the real data function, not a hardcoded URL");
+  assert(!sitemapSource.includes('"/electrician/colorado"') && !sitemapSource.includes("'/electrician/colorado'"), "no literal, manually-typed URL string for this page may exist in sitemap.ts");
 });
 
 

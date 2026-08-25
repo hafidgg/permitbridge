@@ -8,7 +8,9 @@ import { EvidenceStatusBadge } from "@/components/transfer-knowledge-base/Eviden
 import { QuickAnswer } from "@/components/transfer-knowledge-base/QuickAnswer";
 import { RequirementRow } from "@/components/transfer-knowledge-base/RequirementRow";
 import { TrustMethodologySection } from "@/components/transfer-knowledge-base/TrustMethodologySection";
+import { ColoradoElectricianContent } from "@/components/electrician-state/ColoradoElectricianContent";
 import { getAllPublicTransferRuleSlugs, getPublicTransferRule, getSourceByUrl, summarizeEvidence, CRITICAL_TRANSFER_RULE_FIELDS, ALL_TRANSFER_FIELD_KEYS } from "@/lib/knowledge-base/transfer-rule-data";
+import { getColoradoElectricianPageData, getAllSingleStateProfessionSlugs } from "@/lib/knowledge-base/electrician-state-data";
 import { getAllStates, getAllProfessions } from "@/lib/data";
 import { FIELD_LABELS, MECHANISM_LABEL, stateDisplayName } from "@/lib/knowledge-base/transfer-rule-labels";
 import { buildMetadata, articleJsonLd, faqJsonLd } from "@/lib/seo";
@@ -27,8 +29,22 @@ interface PageParams {
   transfer: string;
 }
 
+/**
+ * Phase 2D.4.2: this route now serves two genuinely different data
+ * shapes at the same URL pattern — pairwise TransferRule pages (RN,
+ * "texas-to-california") and single-state ProfessionStateFacts pages
+ * (electrician, "colorado") — confirmed in Phase 2D.4/2D.4.1's
+ * architecture review to be the only way to reach the required
+ * /electrician/colorado URL through Next.js's existing route structure.
+ * isSingleStateSlug() is the ONE guard everything below branches on;
+ * every existing RN code path below it is completely untouched.
+ */
+function isSingleStateSlug(profession: string, transfer: string): boolean {
+  return profession === "electrician" && transfer === "colorado";
+}
+
 export function generateStaticParams() {
-  return getAllPublicTransferRuleSlugs().map((s) => ({ profession: s.profession, transfer: s.transfer }));
+  return [...getAllPublicTransferRuleSlugs().map((s) => ({ profession: s.profession, transfer: s.transfer })), ...getAllSingleStateProfessionSlugs().map((s) => ({ profession: s.profession, transfer: s.slug }))];
 }
 
 const stateName = stateDisplayName;
@@ -54,6 +70,18 @@ function loadRuleOr404(params: PageParams): TransferRule {
 
 export async function generateMetadata({ params }: { params: Promise<PageParams> }): Promise<Metadata> {
   const resolvedParams = await params;
+
+  if (isSingleStateSlug(resolvedParams.profession, resolvedParams.transfer)) {
+    const data = getColoradoElectricianPageData();
+    if (!data) return {};
+    return buildMetadata({
+      title: "Colorado Electrician License Reciprocity — Journeyman vs. Master",
+      description:
+        "What it actually takes to reciprocate an out-of-state electrician license into Colorado — Journeyman and Master are genuinely different, sourced directly from the Colorado State Electrical Board.",
+      path: `/${resolvedParams.profession}/${resolvedParams.transfer}`,
+    });
+  }
+
   const rule = getPublicTransferRule(resolvedParams.profession, resolvedParams.transfer);
   if (!rule) return {};
   const from = stateName(rule.sourceState);
@@ -69,6 +97,33 @@ export async function generateMetadata({ params }: { params: Promise<PageParams>
 
 export default async function TransferRulePage({ params }: { params: Promise<PageParams> }) {
   const resolvedParams = await params;
+
+  if (isSingleStateSlug(resolvedParams.profession, resolvedParams.transfer)) {
+    const data = getColoradoElectricianPageData();
+    if (!data) notFound();
+    return (
+      <div>
+        <Breadcrumbs
+          items={[
+            { name: "Professions", url: "/professions" },
+            { name: "Electrician", url: "/profession/electrician" },
+            { name: "Colorado", url: `/${resolvedParams.profession}/${resolvedParams.transfer}` },
+          ]}
+        />
+        <JsonLd
+          data={articleJsonLd({
+            title: "Colorado Electrician License Reciprocity — Journeyman vs. Master",
+            description: "What it actually takes to reciprocate an out-of-state electrician license into Colorado, by license tier.",
+            path: `/${resolvedParams.profession}/${resolvedParams.transfer}`,
+            publishedAt: "2026-08-25",
+            updatedAt: "2026-08-25",
+          })}
+        />
+        <ColoradoElectricianContent tiers={data.tiers} />
+      </div>
+    );
+  }
+
   const rule = loadRuleOr404(resolvedParams);
   const summary = summarizeEvidence(rule);
   const from = stateName(rule.sourceState);
