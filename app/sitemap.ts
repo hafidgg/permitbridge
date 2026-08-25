@@ -4,6 +4,32 @@ import { getAllPublicTransferRuleSlugs, getPublicTransferRule, summarizeEvidence
 import { getAllSingleStateProfessionSlugs, getColoradoElectricianPageData } from "@/lib/knowledge-base/electrician-state-data";
 import { SITE_URL } from "@/lib/utils";
 
+/**
+ * Phase 2D.5.2 — production investigation confirmed the root cause of a
+ * stale live /sitemap.xml is NOT a bug in this file or its data sources
+ * (getAllPublicTransferRuleSlugs() was directly executed against the
+ * exact deployed code and produced the correct, current 7 RN pairs + the
+ * new Colorado electrician page — confirmed by direct invocation, not
+ * assumed) — it's that Next.js 15's documented default for metadata
+ * route files (sitemap.ts, robots.ts, icon.tsx, etc.) is "static, built
+ * once, unchanged until a full rebuild" (confirmed against Next.js's own
+ * official v15 release notes: "Special Route Handlers like sitemap.ts...
+ * remain static by default unless they use dynamic functions or dynamic
+ * config options" — this is a DIFFERENT rule from the v15 change to
+ * plain GET Route Handlers, which this file is not).
+ *
+ * This single line does not fix an already-stale cached response by
+ * itself — that requires an infrastructure-level action (a fresh
+ * production deploy), not a code change. What it does is convert this
+ * file from Next.js's default "purely static, tied to a single build"
+ * behavior into Incremental Static Regeneration: the sitemap will now
+ * genuinely re-run (calling the exact same getAllPublicTransferRuleSlugs()
+ * etc. above, completely unchanged) at most once per hour, so if a
+ * future deploy's sitemap response ever gets stuck behind a stale cache
+ * again, it self-corrects within an hour instead of indefinitely.
+ */
+export const revalidate = 3600;
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes: MetadataRoute.Sitemap = [
     { url: `${SITE_URL}/`, changeFrequency: "weekly", priority: 1 },
