@@ -24,6 +24,32 @@ import type { VerifiedField } from "@/types/knowledge-base";
 // there is no code path that can serve a 6th, non-existent transfer.
 export const dynamicParams = false;
 
+/**
+ * Phase 2D.7.3 — cache/ISR protection, added after a real production
+ * incident (Phase 2D.7.1): Vercel's Edge/CDN served stale HTML for
+ * /electrician/colorado for roughly 15+ minutes after a successful
+ * deploy, resolved only by a manual Redeploy. This mirrors the same
+ * protection already applied to app/sitemap.ts (Phase 2D.5.2) for the
+ * same reason.
+ *
+ * IMPORTANT — what this does NOT do:
+ * The licensing data this route renders (data/knowledge-base/facts/...
+ * and data/knowledge-base/sources/...) is BUILD-TIME data — it is
+ * bundled into the deployment artifact at `next build`, not fetched
+ * live at request time. Setting revalidate = 3600 does NOT mean these
+ * JSON files "update themselves" after an hour, and it will NEVER show
+ * a licensing-rule change that hasn't also gone through a real
+ * deployment. A genuine fact change always requires, in order: editing
+ * the data, running the test suite, `git commit`, `git push`, and a
+ * new Vercel deployment — exactly as every prior phase (2D.1-2D.6) has
+ * done. This setting exists ONLY to guard against a repeat of the
+ * Phase 2D.7.1 stale-cache incident after a deployment has ALREADY
+ * succeeded — it is cache protection, not a live data-refresh
+ * mechanism. A future developer must not assume "wait an hour" is ever
+ * a substitute for shipping a real deployment.
+ */
+export const revalidate = 3600;
+
 interface PageParams {
   profession: string;
   transfer: string;
