@@ -10,7 +10,7 @@ import { RequirementRow } from "@/components/transfer-knowledge-base/Requirement
 import { TrustMethodologySection } from "@/components/transfer-knowledge-base/TrustMethodologySection";
 import { ColoradoElectricianContent } from "@/components/electrician-state/ColoradoElectricianContent";
 import { getAllPublicTransferRuleSlugs, getPublicTransferRule, getSourceByUrl, summarizeEvidence, CRITICAL_TRANSFER_RULE_FIELDS, ALL_TRANSFER_FIELD_KEYS } from "@/lib/knowledge-base/transfer-rule-data";
-import { getColoradoElectricianPageData, getAllSingleStateProfessionSlugs } from "@/lib/knowledge-base/electrician-state-data";
+import { getElectricianStatePageData, getAllSingleStateProfessionSlugs } from "@/lib/knowledge-base/electrician-state-data";
 import { getAllStates, getAllProfessions } from "@/lib/data";
 import { FIELD_LABELS, MECHANISM_LABEL, stateDisplayName } from "@/lib/knowledge-base/transfer-rule-labels";
 import { buildMetadata, articleJsonLd, faqJsonLd } from "@/lib/seo";
@@ -33,14 +33,15 @@ interface PageParams {
  * Phase 2D.4.2: this route now serves two genuinely different data
  * shapes at the same URL pattern — pairwise TransferRule pages (RN,
  * "texas-to-california") and single-state ProfessionStateFacts pages
- * (electrician, "colorado") — confirmed in Phase 2D.4/2D.4.1's
- * architecture review to be the only way to reach the required
- * /electrician/colorado URL through Next.js's existing route structure.
+ * (electrician, "colorado", "virginia" — Phase 2D.6.3 generalized this
+ * from Colorado-only) — confirmed in Phase 2D.4/2D.4.1's architecture
+ * review to be the only way to reach the required /electrician/{state}
+ * URLs through Next.js's existing route structure.
  * isSingleStateSlug() is the ONE guard everything below branches on;
  * every existing RN code path below it is completely untouched.
  */
 function isSingleStateSlug(profession: string, transfer: string): boolean {
-  return profession === "electrician" && transfer === "colorado";
+  return profession === "electrician" && (transfer === "colorado" || transfer === "virginia");
 }
 
 export function generateStaticParams() {
@@ -72,12 +73,12 @@ export async function generateMetadata({ params }: { params: Promise<PageParams>
   const resolvedParams = await params;
 
   if (isSingleStateSlug(resolvedParams.profession, resolvedParams.transfer)) {
-    const data = getColoradoElectricianPageData();
+    const data = getElectricianStatePageData(resolvedParams.transfer);
     if (!data) return {};
+    const stateName = resolvedParams.transfer.charAt(0).toUpperCase() + resolvedParams.transfer.slice(1);
     return buildMetadata({
-      title: "Colorado Electrician License Reciprocity — Journeyman vs. Master",
-      description:
-        "What it actually takes to reciprocate an out-of-state electrician license into Colorado — Journeyman and Master are genuinely different, sourced directly from the Colorado State Electrical Board.",
+      title: `${stateName} Electrician License Reciprocity — Journeyman vs. Master`,
+      description: `What it actually takes to reciprocate an out-of-state electrician license into ${stateName} — Journeyman and Master are genuinely different, sourced directly from the ${stateName} licensing board.`,
       path: `/${resolvedParams.profession}/${resolvedParams.transfer}`,
     });
   }
@@ -99,27 +100,28 @@ export default async function TransferRulePage({ params }: { params: Promise<Pag
   const resolvedParams = await params;
 
   if (isSingleStateSlug(resolvedParams.profession, resolvedParams.transfer)) {
-    const data = getColoradoElectricianPageData();
+    const data = getElectricianStatePageData(resolvedParams.transfer);
     if (!data) notFound();
+    const stateName = resolvedParams.transfer.charAt(0).toUpperCase() + resolvedParams.transfer.slice(1);
     return (
       <div>
         <Breadcrumbs
           items={[
             { name: "Professions", url: "/professions" },
             { name: "Electrician", url: "/profession/electrician" },
-            { name: "Colorado", url: `/${resolvedParams.profession}/${resolvedParams.transfer}` },
+            { name: stateName, url: `/${resolvedParams.profession}/${resolvedParams.transfer}` },
           ]}
         />
         <JsonLd
           data={articleJsonLd({
-            title: "Colorado Electrician License Reciprocity — Journeyman vs. Master",
-            description: "What it actually takes to reciprocate an out-of-state electrician license into Colorado, by license tier.",
+            title: `${stateName} Electrician License Reciprocity — Journeyman vs. Master`,
+            description: `What it actually takes to reciprocate an out-of-state electrician license into ${stateName}, by license tier.`,
             path: `/${resolvedParams.profession}/${resolvedParams.transfer}`,
             publishedAt: "2026-08-25",
             updatedAt: "2026-08-25",
           })}
         />
-        <ColoradoElectricianContent tiers={data.tiers} />
+        <ColoradoElectricianContent state={resolvedParams.transfer} tiers={data.tiers} />
       </div>
     );
   }

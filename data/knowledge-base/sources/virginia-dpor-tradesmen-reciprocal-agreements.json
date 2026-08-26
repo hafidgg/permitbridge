@@ -1,0 +1,19 @@
+{
+  "id": "virginia-dpor-tradesmen-reciprocal-agreements",
+  "agencyName": "Virginia Department of Professional and Occupational Regulation (DPOR), Board for Contractors",
+  "website": "https://www.dpor.virginia.gov/sites/default/files/boards/Tradesman/Tradesmen%20reciprocal%20agreements.pdf",
+  "jurisdiction": "virginia",
+  "professionsCovered": [
+    "electrician"
+  ],
+  "sourceType": "official-board",
+  "official": true,
+  "authorityLevel": "authoritative",
+  "authorityRationale": "DPOR's own dedicated PDF listing every real, named, rank-specific bilateral reciprocal agreement (Kentucky, Maryland, West Virginia) — the single strongest and most directly on-point source found across the entire Phase 2D electrician research pass (2D.1, 2D.2). States the exact qualifying state and license rank for each agreement explicitly, not inferred.",
+  "specificity": "field-specific",
+  "reliabilityScore": 0.96,
+  "reliabilityRationale": "A primary document whose sole purpose is listing these exact reciprocal agreements — found and used in Phase 2D.1/2D.2 specifically because of its direct, unambiguous relevance.",
+  "lastCrawl": null,
+  "lastManualVerification": "2026-08-25",
+  "fieldsUsingThisSource": 10
+}

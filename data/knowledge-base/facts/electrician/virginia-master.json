@@ -1,0 +1,280 @@
+{
+  "profession": "electrician",
+  "state": "virginia",
+  "licenseTier": "master",
+  "licensingBoard": {
+    "value": "Virginia Department of Professional and Occupational Regulation (DPOR), Board for Contractors",
+    "sourceUrl": "https://www.dpor.virginia.gov/sites/default/files/boards/Tradesman/A501-27TRADEREGS.pdf",
+    "sourceTitle": "Board for Contractors \u2014 Individual License and Certification Regulations (A501-27)",
+    "sourceName": "Virginia Department of Professional and Occupational Regulation (DPOR), Board for Contractors",
+    "verifiedAt": "2026-08-25",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.94,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": "Virginia Department of Professional and Occupational Regulation (DPOR), Board for Contractors",
+        "changedAt": "2026-08-25",
+        "reason": "Phase 2D.6.2: initial population from official DPOR sources verified in Phase 2D.1/2D.2.",
+        "sourceUrl": "https://www.dpor.virginia.gov/sites/default/files/boards/Tradesman/A501-27TRADEREGS.pdf",
+        "reviewer": null
+      }
+    ],
+    "notes": "DPOR (not DOLI) confirmed as the real issuing authority for individual Journeyman/Master licenses \u2014 the one open contradiction from Phase 2D.1, resolved in Phase 2D.2. DOLI's real, confirmed role is limited to apprentice registration only, prior to licensure."
+  },
+  "officialWebsite": {
+    "value": "https://www.dpor.virginia.gov/Boards/Tradesmen",
+    "sourceUrl": "https://www.dpor.virginia.gov/sites/default/files/boards/Tradesman/A501-27TRADEREGS.pdf",
+    "sourceTitle": "Board for Contractors \u2014 Individual License and Certification Regulations (A501-27)",
+    "sourceName": "Virginia Department of Professional and Occupational Regulation (DPOR), Board for Contractors",
+    "verifiedAt": "2026-08-25",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.9,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": "https://www.dpor.virginia.gov/Boards/Tradesmen",
+        "changedAt": "2026-08-25",
+        "reason": "Phase 2D.6.2: initial population from official DPOR sources verified in Phase 2D.1/2D.2.",
+        "sourceUrl": "https://www.dpor.virginia.gov/sites/default/files/boards/Tradesman/A501-27TRADEREGS.pdf",
+        "reviewer": null
+      }
+    ],
+    "notes": null
+  },
+  "licenseTransferPage": {
+    "value": "https://www.dpor.virginia.gov/sites/default/files/boards/Tradesman/Tradesmen%20reciprocal%20agreements.pdf",
+    "sourceUrl": "https://www.dpor.virginia.gov/sites/default/files/boards/Tradesman/Tradesmen%20reciprocal%20agreements.pdf",
+    "sourceTitle": "Tradesmen Reciprocal Agreements",
+    "sourceName": "Virginia Department of Professional and Occupational Regulation (DPOR), Board for Contractors",
+    "verifiedAt": "2026-08-25",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.95,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": "https://www.dpor.virginia.gov/sites/default/files/boards/Tradesman/Tradesmen%20reciprocal%20agreements.pdf",
+        "changedAt": "2026-08-25",
+        "reason": "Phase 2D.6.2: initial population from official DPOR sources verified in Phase 2D.1/2D.2.",
+        "sourceUrl": "https://www.dpor.virginia.gov/sites/default/files/boards/Tradesman/Tradesmen%20reciprocal%20agreements.pdf",
+        "reviewer": null
+      }
+    ],
+    "notes": null
+  },
+  "universalLicenseRecognitionStatus": {
+    "value": true,
+    "sourceUrl": "https://www.dpor.virginia.gov/sites/default/files/boards/Tradesman/Tradesmen%20reciprocal%20agreements.pdf",
+    "sourceTitle": "Tradesmen Reciprocal Agreements",
+    "sourceName": "Virginia Department of Professional and Occupational Regulation (DPOR), Board for Contractors",
+    "verifiedAt": "2026-08-25",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.85,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": true,
+        "changedAt": "2026-08-25",
+        "reason": "Phase 2D.6.2: initial population from official DPOR sources verified in Phase 2D.1/2D.2.",
+        "sourceUrl": "https://www.dpor.virginia.gov/sites/default/files/boards/Tradesman/Tradesmen%20reciprocal%20agreements.pdf",
+        "reviewer": null
+      }
+    ],
+    "notes": "CONFIRMED \u2014 Virginia separately offers Universal License Recognition (ULR) as a distinct, broader pathway for out-of-state licensees generally, per DPOR's own homepage/Applicants page. This is a genuinely SEPARATE mechanism from the 3 named bilateral reciprocal agreements below (Kentucky/Maryland/West Virginia) \u2014 an applicant from a state NOT on the bilateral list may still have a real ULR pathway, not covered by this record's reciprocityRules field. Not conflated with, or used to broaden, the bilateral agreement list."
+  },
+  "compactMembership": {
+    "value": false,
+    "sourceUrl": "https://www.dpor.virginia.gov/sites/default/files/boards/Tradesman/Tradesmen%20reciprocal%20agreements.pdf",
+    "sourceTitle": "Tradesmen Reciprocal Agreements",
+    "sourceName": "Virginia Department of Professional and Occupational Regulation (DPOR), Board for Contractors",
+    "verifiedAt": "2026-08-25",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.85,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": false,
+        "changedAt": "2026-08-25",
+        "reason": "Phase 2D.6.2: initial population from official DPOR sources verified in Phase 2D.1/2D.2.",
+        "sourceUrl": "https://www.dpor.virginia.gov/sites/default/files/boards/Tradesman/Tradesmen%20reciprocal%20agreements.pdf",
+        "reviewer": null
+      }
+    ],
+    "notes": "Virginia's electrician reciprocity operates via named bilateral agreements and ULR \u2014 neither is a single multistate compact license practiced across member states without a new license (the defining feature of a true compact). Recorded as false to avoid conflating these real mechanisms with a compact under this field's actual schema meaning."
+  },
+  "reciprocityRules": {
+    "value": "Virginia has real, named bilateral reciprocal examination agreements for the Master Electrician license with exactly three states: Kentucky (Master <-> VA Master), Maryland (Master Electrical Tradesman <-> VA Master \u2014 Master-only, this agreement does not cover Journeyman), and West Virginia (Master <-> VA Master). A separate Universal License Recognition (ULR) pathway may independently apply to applicants from other states \u2014 see universalLicenseRecognitionStatus.",
+    "sourceUrl": "https://www.dpor.virginia.gov/sites/default/files/boards/Tradesman/Tradesmen%20reciprocal%20agreements.pdf",
+    "sourceTitle": "Tradesmen Reciprocal Agreements",
+    "sourceName": "Virginia Department of Professional and Occupational Regulation (DPOR), Board for Contractors",
+    "verifiedAt": "2026-08-25",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.95,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": "Virginia has real, named bilateral reciprocal examination agreements for the Master Electrician license with exactly three states: Kentucky (Master <-> VA Master), Maryland (Master Electrical Tradesman <-> VA Master \u2014 Master-only, this agreement does not cover Journeyman), and West Virginia (Master <-> VA Master). A separate Universal License Recognition (ULR) pathway may independently apply to applicants from other states \u2014 see universalLicenseRecognitionStatus.",
+        "changedAt": "2026-08-25",
+        "reason": "Phase 2D.6.2: initial population from official DPOR sources verified in Phase 2D.1/2D.2.",
+        "sourceUrl": "https://www.dpor.virginia.gov/sites/default/files/boards/Tradesman/Tradesmen%20reciprocal%20agreements.pdf",
+        "reviewer": null
+      }
+    ],
+    "notes": "All three states and the Master-only nature of the Maryland agreement are stated directly in the official DPOR PDF, not inferred. No other state is named in the source for Master, so no other state is listed here."
+  },
+  "endorsementRules": {
+    "value": "Unknown",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "sourceName": null,
+    "verifiedAt": null,
+    "verificationMethod": null,
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0,
+    "confidenceLevel": "unknown",
+    "history": [],
+    "notes": "Same as Journeyman \u2014 a separate general 'endorsement' pathway distinct from both reciprocity and ULR was not confirmed in Phase 2D.1/2D.2 research."
+  },
+  "requiredExams": {
+    "value": "Even reciprocal applicants must still sit for the Virginia-specific exam section (state law and building code amendments) \u2014 only the national portion of the exam is waived.",
+    "sourceUrl": "https://www.dpor.virginia.gov/sites/default/files/boards/Tradesman/Tradesmen%20reciprocal%20agreements.pdf",
+    "sourceTitle": "Tradesmen Reciprocal Agreements",
+    "sourceName": "Virginia Department of Professional and Occupational Regulation (DPOR), Board for Contractors",
+    "verifiedAt": "2026-08-25",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.85,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": "Even reciprocal applicants must still sit for the Virginia-specific exam section (state law and building code amendments) \u2014 only the national portion of the exam is waived.",
+        "changedAt": "2026-08-25",
+        "reason": "Phase 2D.6.2: initial population from official DPOR sources verified in Phase 2D.1/2D.2.",
+        "sourceUrl": "https://www.dpor.virginia.gov/sites/default/files/boards/Tradesman/Tradesmen%20reciprocal%20agreements.pdf",
+        "reviewer": null
+      }
+    ],
+    "notes": "Same official confirmation as Journeyman \u2014 the DPOR PDF's exam-waiver scope applies to reciprocal applicants generally, not stated as rank-specific."
+  },
+  "requiredExperience": {
+    "value": "Unknown",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "sourceName": null,
+    "verifiedAt": null,
+    "verificationMethod": null,
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0,
+    "confidenceLevel": "unknown",
+    "history": [],
+    "notes": "Phase 2D.1/2D.2 confirmed original (non-reciprocal) Master experience requirements (1 year as VA Journeyman + 10 years total trade experience) only via a secondary source (Buildforce), not independently verified against a DPOR page \u2014 and that figure describes original licensure, not the reciprocity-specific eligibility condition. Left Unknown rather than conflating the two distinct pathways."
+  },
+  "requiredEducation": {
+    "value": "Unknown",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "sourceName": null,
+    "verifiedAt": null,
+    "verificationMethod": null,
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0,
+    "confidenceLevel": "unknown",
+    "history": [],
+    "notes": "Not independently confirmed against an official DPOR source this session."
+  },
+  "requiredDocuments": {
+    "value": "Unknown",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "sourceName": null,
+    "verifiedAt": null,
+    "verificationMethod": null,
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0,
+    "confidenceLevel": "unknown",
+    "history": [],
+    "notes": "Not itemized from an official DPOR source in Phase 2D.1/2D.2 research."
+  },
+  "processingTime": {
+    "value": "Unknown",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "sourceName": null,
+    "verifiedAt": null,
+    "verificationMethod": null,
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0,
+    "confidenceLevel": "unknown",
+    "history": [],
+    "notes": "Not addressed in any official source reviewed in Phase 2D.1/2D.2."
+  },
+  "endorsementFeeUsd": {
+    "value": "Unknown",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "sourceName": null,
+    "verifiedAt": null,
+    "verificationMethod": null,
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0,
+    "confidenceLevel": "unknown",
+    "history": [],
+    "notes": "Explicitly confirmed as only secondary-sourced in Phase 2D.1 ($90-$195 range) \u2014 not independently verified against an official DPOR fee schedule. Left Unknown per the no-fabrication policy."
+  },
+  "renewalFeeUsd": {
+    "value": "Unknown",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "sourceName": null,
+    "verifiedAt": null,
+    "verificationMethod": null,
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0,
+    "confidenceLevel": "unknown",
+    "history": [],
+    "notes": "Not addressed in Phase 2D.1/2D.2 research."
+  },
+  "continuingEducationRequirements": {
+    "value": "Unknown",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "sourceName": null,
+    "verifiedAt": null,
+    "verificationMethod": null,
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0,
+    "confidenceLevel": "unknown",
+    "history": [],
+    "notes": "Not addressed in Phase 2D.1/2D.2 research."
+  },
+  "conflicts": [],
+  "lastFullReviewAt": null
+}

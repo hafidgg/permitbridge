@@ -1,0 +1,19 @@
+{
+  "id": "virginia-dpor-board-contractors-regulations",
+  "agencyName": "Virginia Department of Professional and Occupational Regulation (DPOR), Board for Contractors",
+  "website": "https://www.dpor.virginia.gov/sites/default/files/boards/Tradesman/A501-27TRADEREGS.pdf",
+  "jurisdiction": "virginia",
+  "professionsCovered": [
+    "electrician"
+  ],
+  "sourceType": "official-government",
+  "official": true,
+  "authorityLevel": "authoritative",
+  "authorityRationale": "DPOR's own regulatory text (A501-27) governing individual tradesman licensing (Journeyman/Master electrician) — confirms DPOR, not DOLI, is the real issuing authority for individual licenses (the Phase 2D.1 open question, resolved in Phase 2D.2 via this document plus independent corroboration).",
+  "specificity": "field-specific",
+  "reliabilityScore": 0.94,
+  "reliabilityRationale": "Primary regulatory text directly from the issuing board, resolving the one governing-authority contradiction found in Phase 2D.1 research.",
+  "lastCrawl": null,
+  "lastManualVerification": "2026-08-25",
+  "fieldsUsingThisSource": 4
+}

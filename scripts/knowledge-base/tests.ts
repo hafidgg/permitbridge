@@ -81,7 +81,7 @@ import {
   REAL_TEST_REVIEWER_NAME,
 } from "../../fixtures/knowledge-base/transfer-rules/synthetic-review-scenarios";
 import { buildVerificationQueue } from "../../lib/knowledge-base/queue";
-import { getColoradoElectricianPageData, getAllSingleStateProfessionSlugs } from "../../lib/knowledge-base/electrician-state-data";
+import { getColoradoElectricianPageData, getAllSingleStateProfessionSlugs, getElectricianStatePageData } from "../../lib/knowledge-base/electrician-state-data";
 import { isProfessionStateFactsPublishable, CRITICAL_PROFESSION_STATE_FIELDS } from "../../lib/knowledge-base/profession-state-facts-review";
 import { computeTrustReport } from "../../lib/knowledge-base/trust";
 import { verifiedField, unknownField } from "../../lib/knowledge-base/fields";
@@ -1441,8 +1441,8 @@ await test("slugs are deterministic for all 5 real transfer rules and match thei
   }
 });
 
-await test("Trust Dashboard metrics reconcile: total sources grew from 84 to 86 (2 new authoritative Colorado electrician sources, Phase 2D.3.2) — this counts raw rows in the single flat sources/ table, a genuinely different kind of number from the per-profession trust/reconciliation reports fixed in Phase 2D.3.2.1, so growth here from a new profession's real sources is expected and correct, not a conflation to hide", () => {
-  assertEqual(sources.length, 86, "expected 86 total sources after Phase 2D.3.2 (84 before + 2 new: colorado-electrical-board-applications, colorado-electrical-board-regulation)");
+await test("Trust Dashboard metrics reconcile: total sources grew from 86 to 88 (2 new authoritative Virginia electrician sources, Phase 2D.6.2) — this counts raw rows in the single flat sources/ table, a genuinely different kind of number from the per-profession trust/reconciliation reports fixed in Phase 2D.3.2.1, so growth here from a second state's real sources is expected and correct, not a conflation to hide", () => {
+  assertEqual(sources.length, 88, "expected 88 total sources after Phase 2D.6.2 (86 before + 2 new: virginia-dpor-tradesmen-reciprocal-agreements, virginia-dpor-board-contractors-regulations)");
   const secondarySources = sources.filter((s) => s.authorityLevel === "supplementary");
   assert(secondarySources.length >= 5, "expected at least the 5 secondary discovery-only sources registered in Phase 3.1");
 });
@@ -5027,10 +5027,10 @@ await test("[PERMANENT — Phase 2D.3.2.1] computeTrustReport() called with no a
   assertEqual(defaultReport.totalFields, explicitRnReport.totalFields, "the default call must be byte-for-byte identical to an explicit registered-nurse call — proves the default really is RN, not silently 'all professions'");
 });
 
-await test("[PERMANENT — Phase 2D.3.2.1] computeTrustReport('electrician') reads ONLY the 2 real Colorado electrician files — completely separate totals from the RN report, never summed together", () => {
+await test("[PERMANENT — Phase 2D.3.2.1/2D.6.3] computeTrustReport('electrician') reads ONLY real electrician files — completely separate totals from the RN report, never summed together (4 files x 15 tracked fields = 60, after Phase 2D.6.3 added Virginia)", () => {
   const rnReport = computeTrustReport("registered-nurse");
   const electricianReport = computeTrustReport("electrician");
-  assertEqual(electricianReport.totalFields, 2 * 15, "2 Colorado electrician files x 15 tracked fields = 30 — must not include any of RN's 50 files");
+  assertEqual(electricianReport.totalFields, 4 * 15, "4 electrician files (colorado x2, virginia x2) x 15 tracked fields = 60 — must not include any of RN's 50 files");
   assert(electricianReport.totalFields !== rnReport.totalFields, "electrician and RN totals must be genuinely different numbers, not coincidentally merged");
 });
 
@@ -5044,7 +5044,7 @@ await test("[PERMANENT — Phase 2D.3.2.1] computeSourceReconciliation() called 
   const explicitRnRecon = computeSourceReconciliation("registered-nurse");
   assertEqual(defaultRecon.totalSourceRecords, explicitRnRecon.totalSourceRecords, "the default call must match an explicit registered-nurse call exactly");
   const electricianRecon = computeSourceReconciliation("electrician");
-  assertEqual(electricianRecon.totalSourceRecords, 2, "electrician's source reconciliation must count exactly the 2 real Colorado electrician sources, filtered via professionsCovered — never RN's 86");
+  assertEqual(electricianRecon.totalSourceRecords, 4, "electrician's source reconciliation must count exactly the 4 real electrician sources (2 Colorado + 2 Virginia), filtered via professionsCovered — never RN's sources");
   assert(defaultRecon.totalSourceRecords !== electricianRecon.totalSourceRecords, "RN and electrician source counts must never be conflated into the same number");
 });
 
@@ -5089,10 +5089,10 @@ await test("[PERMANENT — Phase 2D.3.2.1] the two Colorado electrician tiers re
 // ---------------------------------------------------------------------
 console.log("\nColorado Electrician Public Page (Phase 2D.4.2):");
 
-await test("[PERMANENT — Phase 2D.4.2] getAllSingleStateProfessionSlugs() returns exactly one real entry: electrician/colorado — no fabricated fallback pages", () => {
+await test("[PERMANENT — Phase 2D.4.2/2D.6.3] getAllSingleStateProfessionSlugs() returns exactly the real, currently-publishable entries — 2 today (colorado, virginia) — no fabricated fallback pages", () => {
   const slugs = getAllSingleStateProfessionSlugs();
-  assertEqual(slugs.length, 1);
-  assertEqual(slugs[0], { profession: "electrician", slug: "colorado" });
+  assertEqual(slugs.length, 2);
+  assert(slugs.some((s) => s.profession === "electrician" && s.slug === "colorado"));
 });
 
 await test("[PERMANENT — Phase 2D.4.2] getColoradoElectricianPageData() returns both real tiers, Journeyman and Master, genuinely present", () => {
@@ -5158,11 +5158,11 @@ await test("[PERMANENT — Phase 2D.4.2] the new quality gate genuinely blocks �
   assertEqual(isProfessionStateFactsPublishable(withSecondaryCritical, resolveSource).publishable, false, "a critical field sourced only from a supplementary source must block publication");
 });
 
-await test("[PERMANENT — Phase 2D.4.2] RN REGRESSION: generateStaticParams for the shared route still returns all 7 real RN pairs, completely unaffected by the new single-state entry being appended", () => {
+await test("[PERMANENT — Phase 2D.4.2] RN REGRESSION: generateStaticParams for the shared route still returns all 7 real RN pairs, completely unaffected by single-state entries being appended (now 2: colorado + virginia)", () => {
   const rnSlugs = getAllPublicTransferRuleSlugs();
-  assertEqual(rnSlugs.length, 7, "RN's publishable pair count must remain exactly 7 — unaffected by Phase 2D.4.2");
+  assertEqual(rnSlugs.length, 7, "RN's publishable pair count must remain exactly 7");
   const combined = [...rnSlugs.map((s) => ({ profession: s.profession, transfer: s.transfer })), ...getAllSingleStateProfessionSlugs().map((s) => ({ profession: s.profession, transfer: s.slug }))];
-  assertEqual(combined.length, 8, "expected exactly 7 RN pairs + 1 new Colorado electrician single-state page = 8 total params for this route");
+  assertEqual(combined.length, 9, "expected exactly 7 RN pairs + colorado + virginia = 9 total params for this route");
 });
 
 await test("[PERMANENT — Phase 2D.4.2] RN REGRESSION: getPublicTransferRule still resolves every real RN pair exactly as before — the new electrician branch never intercepts or shadows an RN lookup", () => {
@@ -5181,6 +5181,105 @@ await test("[PERMANENT — Phase 2D.4.2] sitemap.ts includes the new single-stat
   const sitemapSource = fs.readFileSync(path.join(process.cwd(), "app", "sitemap.ts"), "utf-8");
   assert(sitemapSource.includes("getAllSingleStateProfessionSlugs()"), "sitemap.ts must derive this route from the real data function, not a hardcoded URL");
   assert(!sitemapSource.includes('"/electrician/colorado"') && !sitemapSource.includes("'/electrician/colorado'"), "no literal, manually-typed URL string for this page may exist in sitemap.ts");
+});
+
+// ---------------------------------------------------------------------
+// Virginia Electrician Public Page (Phase 2D.6.3)
+//     Generalization regression tests: Colorado must be completely
+//     unaffected by adding Virginia, Virginia's genuinely different
+//     rank+state-specific rules must render correctly and separately,
+//     and RN must remain untouched throughout.
+// ---------------------------------------------------------------------
+console.log("\nVirginia Electrician Public Page (Phase 2D.6.3):");
+
+await test("[PERMANENT — Phase 2D.6.3] getAllSingleStateProfessionSlugs() now returns exactly two real entries: electrician/colorado AND electrician/virginia — discovered automatically, not hardcoded", () => {
+  const slugs = getAllSingleStateProfessionSlugs();
+  assertEqual(slugs.length, 2);
+  assert(slugs.some((s) => s.slug === "colorado"));
+  assert(slugs.some((s) => s.slug === "virginia"));
+});
+
+await test("[PERMANENT — Phase 2D.6.3] REGRESSION: getColoradoElectricianPageData() (the Phase 2D.4.2 backward-compatible alias) still returns identical Colorado data after generalization — Colorado is completely unaffected by adding Virginia", () => {
+  const data = getColoradoElectricianPageData();
+  assert(data !== null);
+  assertEqual(data!.state, "colorado");
+  assertEqual(data!.tiers.map((t) => t.tier).sort(), ["journeyman", "master"]);
+});
+
+await test("[PERMANENT — Phase 2D.6.3] getElectricianStatePageData('virginia') returns both real tiers, genuinely present", () => {
+  const data = getElectricianStatePageData("virginia");
+  assert(data !== null, "real Virginia data with sufficient sourcing must not be withheld");
+  assertEqual(data!.tiers.map((t) => t.tier).sort(), ["journeyman", "master"]);
+});
+
+await test("[PERMANENT — Phase 2D.6.3] CRITICAL: Virginia Journeyman's reciprocityRules names Kentucky and West Virginia but explicitly EXCLUDES Maryland — the real, rank-specific rule, never generalized from Colorado's simpler uniform-list pattern", () => {
+  const data = getElectricianStatePageData("virginia")!;
+  const journeyman = data.tiers.find((t) => t.tier === "journeyman")!;
+  const text = journeyman.facts.reciprocityRules.value as string;
+  assert(text.includes("Kentucky"), "must include real, confirmed Kentucky agreement");
+  assert(text.includes("West Virginia"), "must include real, confirmed West Virginia agreement");
+  assert(text.toLowerCase().includes("does not cover journeyman") || text.toLowerCase().includes("does not qualify"), "must explicitly state Maryland's Journeyman exclusion, not just omit it silently");
+});
+
+await test("[PERMANENT — Phase 2D.6.3] CRITICAL: Virginia Master's reciprocityRules includes all three states — Kentucky, Maryland, AND West Virginia — genuinely different from Journeyman's list, never copied or merged", () => {
+  const data = getElectricianStatePageData("virginia")!;
+  const master = data.tiers.find((t) => t.tier === "master")!;
+  const text = master.facts.reciprocityRules.value as string;
+  for (const state of ["Kentucky", "Maryland", "West Virginia"]) {
+    assert(text.includes(state), `Master's list must include ${state}`);
+  }
+  const journeyman = data.tiers.find((t) => t.tier === "journeyman")!;
+  assert(journeyman.facts.reciprocityRules.value !== master.facts.reciprocityRules.value, "Journeyman and Master reciprocityRules must be genuinely distinct text, never the same value shared across tiers");
+});
+
+await test("[PERMANENT — Phase 2D.6.3] CRITICAL: ULR (Universal License Recognition) is tracked as a field genuinely SEPARATE from reciprocityRules for Virginia — never merged into the bilateral-agreement text, so a reader from a non-listed state isn't told 'no path exists' when ULR may apply", () => {
+  const data = getElectricianStatePageData("virginia")!;
+  for (const { facts } of data.tiers) {
+    assertEqual(facts.universalLicenseRecognitionStatus.value, true, "Virginia's ULR field must be populated true, confirmed via official DPOR source");
+    assert(!!facts.universalLicenseRecognitionStatus.sourceUrl, "ULR claim must be traceable to a real source");
+    const reciprocityText = (facts.reciprocityRules.value as string).toLowerCase();
+    assert(!reciprocityText.includes("ulr covers all states") && !reciprocityText.includes("any state may use ulr"), "reciprocityRules text must not conflate ULR's broader availability into the specific 3-state bilateral list");
+  }
+});
+
+await test("[PERMANENT — Phase 2D.6.3] every critical field in both Virginia tiers passes the real quality gate — confirmed via direct invocation, not assumed", () => {
+  const sources = loadAllSources();
+  const sourceByUrl = new Map(sources.map((s) => [s.website, s]));
+  const resolveSource = (url: string) => sourceByUrl.get(url);
+  const data = getElectricianStatePageData("virginia")!;
+  for (const { tier, facts } of data.tiers) {
+    const result = isProfessionStateFactsPublishable(facts, resolveSource);
+    assertEqual(result.publishable, true, `virginia-${tier} must pass its own real quality gate: ${result.blockingReasons.join("; ")}`);
+  }
+});
+
+await test("[PERMANENT — Phase 2D.6.3] RN REGRESSION: generateStaticParams for the shared route now returns 7 RN pairs + 2 single-state pages = 9 total, RN's 7 completely unaffected", () => {
+  const rnSlugs = getAllPublicTransferRuleSlugs();
+  assertEqual(rnSlugs.length, 7, "RN's publishable pair count must remain exactly 7 — unaffected by Phase 2D.6.3");
+  const combined = [...rnSlugs.map((s) => ({ profession: s.profession, transfer: s.transfer })), ...getAllSingleStateProfessionSlugs().map((s) => ({ profession: s.profession, transfer: s.slug }))];
+  assertEqual(combined.length, 9, "expected exactly 7 RN pairs + colorado + virginia = 9 total params for this route");
+});
+
+await test("[PERMANENT — Phase 2D.6.3] RN REGRESSION: getPublicTransferRule still resolves every real RN pair exactly as before — the generalized electrician branch never intercepts or shadows an RN lookup", () => {
+  for (const slug of getAllPublicTransferRuleSlugs()) {
+    const rule = getPublicTransferRule(slug.profession, slug.transfer);
+    assert(!!rule, `${slug.profession}/${slug.transfer} must still resolve to a real rule, unaffected by Phase 2D.6.3`);
+  }
+});
+
+await test("[PERMANENT — Phase 2D.6.3] no RN content leakage: neither Virginia's nor Colorado's page data contains any reference to 'Registered Nurse', 'RN', or nursing-specific terminology — confirmed by direct content inspection, not just route isolation", () => {
+  for (const state of ["colorado", "virginia"]) {
+    const data = getElectricianStatePageData(state)!;
+    for (const { facts } of data.tiers) {
+      const allText = JSON.stringify(facts).toLowerCase();
+      assert(!allText.includes("registered nurse") && !allText.includes("nursys") && !allText.includes("nclex"), `${state}: electrician page data must contain zero RN-specific terminology`);
+    }
+  }
+});
+
+await test("[PERMANENT — Phase 2D.6.3] sitemap.ts still derives Virginia automatically via the same whitelist function — no manually-written '/electrician/virginia' URL string exists", () => {
+  const sitemapSource = fs.readFileSync(path.join(process.cwd(), "app", "sitemap.ts"), "utf-8");
+  assert(!sitemapSource.includes('"/electrician/virginia"') && !sitemapSource.includes("'/electrician/virginia'"), "no literal, manually-typed URL string for Virginia may exist in sitemap.ts");
 });
 
 

@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { getAllProfessions, getAllStates, getAllTransferRules, getAllGuides, getAllBlogPosts } from "@/lib/data";
 import { getAllPublicTransferRuleSlugs, getPublicTransferRule, summarizeEvidence } from "@/lib/knowledge-base/transfer-rule-data";
-import { getAllSingleStateProfessionSlugs, getColoradoElectricianPageData } from "@/lib/knowledge-base/electrician-state-data";
+import { getAllSingleStateProfessionSlugs, getElectricianStatePageData } from "@/lib/knowledge-base/electrician-state-data";
 import { SITE_URL } from "@/lib/utils";
 
 /**
@@ -111,7 +111,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // publishable entry (electrician/colorado today), never a manually
   // written URL.
   const singleStateProfessionRoutes: MetadataRoute.Sitemap = getAllSingleStateProfessionSlugs().map((s) => {
-    const data = getColoradoElectricianPageData()!; // safe: getAllSingleStateProfessionSlugs() only returns entries that already passed this same lookup
+    const data = getElectricianStatePageData(s.slug)!; // safe: getAllSingleStateProfessionSlugs() only returns entries that already passed this same lookup
     const latestVerifiedAt = data.tiers
       .flatMap((t) => Object.values(t.facts))
       .filter((v): v is { verifiedAt: string | null } => !!v && typeof v === "object" && "verifiedAt" in v)
