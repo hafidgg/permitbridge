@@ -1,0 +1,17 @@
+{
+  "id": "texas-tdlr-alabama-reciprocity-announcement",
+  "agencyName": "Texas Department of Licensing and Regulation (TDLR)",
+  "website": "https://www.tdlr.texas.gov/news/2026/03/20/texas-expands-electrician-reciprocity-with-alabama-to-support-skilled-workforce-and-economic-growth/",
+  "jurisdiction": "texas",
+  "professionsCovered": ["electrician"],
+  "sourceType": "official-government",
+  "official": true,
+  "authorityLevel": "authoritative",
+  "authorityRationale": "Official TDLR announcement (~2026-03-20) explicitly stating the Alabama agreement covers BOTH journeyman and master electricians: 'These agreements will allow licensed journeyman and master electricians to work in either state.' Confirms both tiers directly, even though the primary out-of-state.htm page had not yet been updated (Phase 2F.1 finding).",
+  "specificity": "field-specific",
+  "reliabilityScore": 0.95,
+  "reliabilityRationale": "Direct official TDLR announcement, explicit on both license tiers.",
+  "lastCrawl": null,
+  "lastManualVerification": "2026-08-27",
+  "fieldsUsingThisSource": 0
+}

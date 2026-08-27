@@ -1,0 +1,17 @@
+{
+  "id": "texas-tdlr-iowa-reciprocity-announcement",
+  "agencyName": "Texas Department of Licensing and Regulation (TDLR)",
+  "website": "https://www.tdlr.texas.gov/media/pressrelease/2026-02-05-Master-Electrician-Reciprocity-Iowa.pdf",
+  "jurisdiction": "texas",
+  "professionsCovered": ["electrician"],
+  "sourceType": "official-government",
+  "official": true,
+  "authorityLevel": "authoritative",
+  "authorityRationale": "Official TDLR press release, dated 2026-02-05, explicitly stating: 'Texas currently has master electrician reciprocity agreements with Arkansas, Iowa, Louisiana, Nebraska, and North Carolina.' Confirms Iowa-Master reciprocity directly, even though the primary out-of-state.htm page had not yet been updated to list it (Phase 2F.1 finding).",
+  "specificity": "field-specific",
+  "reliabilityScore": 0.95,
+  "reliabilityRationale": "Direct official TDLR announcement with an explicit, unambiguous statement of the current agreement list at time of publication.",
+  "lastCrawl": null,
+  "lastManualVerification": "2026-08-27",
+  "fieldsUsingThisSource": 0
+}

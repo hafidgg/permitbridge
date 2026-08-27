@@ -1,0 +1,17 @@
+{
+  "id": "texas-tdlr-ohio-reciprocity-announcement",
+  "agencyName": "Texas Department of Licensing and Regulation (TDLR)",
+  "website": "https://www.tdlr.texas.gov/news/2026/06/05/texas-expands-electrician-reciprocity-with-ohio-to-support-skilled-workforce-and-economic-growth/",
+  "jurisdiction": "texas",
+  "professionsCovered": ["electrician"],
+  "sourceType": "official-government",
+  "official": true,
+  "authorityLevel": "authoritative",
+  "authorityRationale": "Official TDLR announcement (dated 2026-06-04/06-05) explicitly stating the Ohio agreement covers master electricians and master electrical contractors only: 'This agreement will allow licensed master electricians and master electrical contractors to work in either state.' Journeyman is NOT mentioned in this announcement — per Phase 2F.1, Ohio-Journeyman reciprocity is explicitly UNKNOWN, not confirmed and not denied.",
+  "specificity": "field-specific",
+  "reliabilityScore": 0.95,
+  "reliabilityRationale": "Direct official TDLR announcement — explicit about Master, silent on Journeyman, which is exactly why Journeyman must remain Unknown rather than inferred either way.",
+  "lastCrawl": null,
+  "lastManualVerification": "2026-08-27",
+  "fieldsUsingThisSource": 0
+}

@@ -1,0 +1,289 @@
+{
+  "profession": "electrician",
+  "state": "texas",
+  "licenseTier": "journeyman",
+  "licensingBoard": {
+    "value": "Texas Department of Licensing and Regulation (TDLR)",
+    "sourceUrl": "https://www.tdlr.texas.gov/electricians/out-of-state.htm",
+    "sourceTitle": "Transfer Your Out-of-State Electrician License to Texas",
+    "sourceName": "Texas Department of Licensing and Regulation (TDLR)",
+    "verifiedAt": "2026-08-27",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.95,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": "Texas Department of Licensing and Regulation (TDLR)",
+        "changedAt": "2026-08-27",
+        "reason": "Phase 2F.2: initial population from official TDLR sources verified in Phase 2F/2F.1.",
+        "sourceUrl": "https://www.tdlr.texas.gov/electricians/out-of-state.htm",
+        "reviewer": null
+      }
+    ],
+    "notes": null
+  },
+  "officialWebsite": {
+    "value": "https://www.tdlr.texas.gov/electricians/",
+    "sourceUrl": "https://www.tdlr.texas.gov/electricians/out-of-state.htm",
+    "sourceTitle": "Transfer Your Out-of-State Electrician License to Texas",
+    "sourceName": "Texas Department of Licensing and Regulation (TDLR)",
+    "verifiedAt": "2026-08-27",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.9,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": "https://www.tdlr.texas.gov/electricians/",
+        "changedAt": "2026-08-27",
+        "reason": "Phase 2F.2: initial population from official TDLR sources verified in Phase 2F/2F.1.",
+        "sourceUrl": "https://www.tdlr.texas.gov/electricians/out-of-state.htm",
+        "reviewer": null
+      }
+    ],
+    "notes": null
+  },
+  "licenseTransferPage": {
+    "value": "https://www.tdlr.texas.gov/electricians/out-of-state.htm",
+    "sourceUrl": "https://www.tdlr.texas.gov/electricians/out-of-state.htm",
+    "sourceTitle": "Transfer Your Out-of-State Electrician License to Texas",
+    "sourceName": "Texas Department of Licensing and Regulation (TDLR)",
+    "verifiedAt": "2026-08-27",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.95,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": "https://www.tdlr.texas.gov/electricians/out-of-state.htm",
+        "changedAt": "2026-08-27",
+        "reason": "Phase 2F.2: initial population from official TDLR sources verified in Phase 2F/2F.1.",
+        "sourceUrl": "https://www.tdlr.texas.gov/electricians/out-of-state.htm",
+        "reviewer": null
+      }
+    ],
+    "notes": null
+  },
+  "universalLicenseRecognitionStatus": {
+    "value": "Unknown",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "sourceName": null,
+    "verifiedAt": null,
+    "verificationMethod": null,
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0,
+    "confidenceLevel": "unknown",
+    "history": [],
+    "notes": "Phase 2F/2F.1 research focused specifically on TDLR's named bilateral reciprocity agreements \u2014 a separate, broader Universal License Recognition pathway (as Virginia has) was not confirmed to exist or not exist for Texas electricians this session."
+  },
+  "compactMembership": {
+    "value": false,
+    "sourceUrl": "https://www.tdlr.texas.gov/electricians/out-of-state.htm",
+    "sourceTitle": "Transfer Your Out-of-State Electrician License to Texas",
+    "sourceName": "Texas Department of Licensing and Regulation (TDLR)",
+    "verifiedAt": "2026-08-27",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.85,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": false,
+        "changedAt": "2026-08-27",
+        "reason": "Phase 2F.2: initial population from official TDLR sources verified in Phase 2F/2F.1.",
+        "sourceUrl": "https://www.tdlr.texas.gov/electricians/out-of-state.htm",
+        "reviewer": null
+      }
+    ],
+    "notes": "Texas's electrician reciprocity operates via named bilateral agreements with individual states, not a single multistate compact license practiced across member states without a new license (the defining feature of a true compact). Recorded as false to avoid conflating these bilateral agreements with a compact under this field's actual schema meaning."
+  },
+  "reciprocityRules": {
+    "value": "Texas has confirmed Journeyman Electrician reciprocity agreements with: Alaska, Arkansas, Idaho, Iowa, Montana, Nebraska, New Mexico, Oklahoma, South Dakota, Wyoming, and Alabama. North Carolina and Louisiana have Master-only agreements with Texas \u2014 their Journeyman reciprocity status is not confirmed by any official TDLR source found. Ohio's official March/June 2026 TDLR announcement explicitly confirms Master-level reciprocity but does not mention Journeyman \u2014 Ohio Journeyman reciprocity is UNKNOWN, neither confirmed nor denied by any official source found.",
+    "sourceUrl": "https://www.tdlr.texas.gov/electricians/out-of-state.htm",
+    "sourceTitle": "Transfer Your Out-of-State Electrician License to Texas",
+    "sourceName": "Texas Department of Licensing and Regulation (TDLR)",
+    "verifiedAt": "2026-08-27",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.92,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": "Texas has confirmed Journeyman Electrician reciprocity agreements with: Alaska, Arkansas, Idaho, Iowa, Montana, Nebraska, New Mexico, Oklahoma, South Dakota, Wyoming, and Alabama. North Carolina and Louisiana have Master-only agreements with Texas \u2014 their Journeyman reciprocity status is not confirmed by any official TDLR source found. Ohio's official March/June 2026 TDLR announcement explicitly confirms Master-level reciprocity but does not mention Journeyman \u2014 Ohio Journeyman reciprocity is UNKNOWN, neither confirmed nor denied by any official source found.",
+        "changedAt": "2026-08-27",
+        "reason": "Phase 2F.2: initial population from official TDLR sources verified in Phase 2F/2F.1.",
+        "sourceUrl": "https://www.tdlr.texas.gov/electricians/out-of-state.htm",
+        "reviewer": null
+      }
+    ],
+    "notes": "Alaska/Arkansas/Idaho/Iowa/Montana/Nebraska/NewMexico/Oklahoma/SouthDakota/Wyoming confirmed directly by TDLR's primary out-of-state.htm page. Alabama confirmed by the official 2026-03-20 TDLR announcement (explicitly names both journeyman and master). Ohio-Journeyman deliberately left as an open, explicit Unknown per Phase 2F.1's finding \u2014 the official Ohio announcement only names 'master electricians and master electrical contractors,' never mentioning journeyman either way."
+  },
+  "endorsementRules": {
+    "value": "Unknown",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "sourceName": null,
+    "verifiedAt": null,
+    "verificationMethod": null,
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0,
+    "confidenceLevel": "unknown",
+    "history": [],
+    "notes": "TDLR's official materials use the term 'reciprocity' specifically for these named agreements; a separately-named general 'endorsement' pathway distinct from reciprocity was not confirmed in Phase 2F/2F.1 research."
+  },
+  "requiredExams": {
+    "value": "Applicants must have taken and passed the reciprocal state's own statewide examination for electrical work \u2014 Texas does not require a separate Texas exam under reciprocity, but TDLR verifies the original exam was passed via a letter of good standing from the issuing state.",
+    "sourceUrl": "https://www.tdlr.texas.gov/electricians/out-of-state.htm",
+    "sourceTitle": "Transfer Your Out-of-State Electrician License to Texas",
+    "sourceName": "Texas Department of Licensing and Regulation (TDLR)",
+    "verifiedAt": "2026-08-27",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.9,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": "Applicants must have taken and passed the reciprocal state's own statewide examination for electrical work \u2014 Texas does not require a separate Texas exam under reciprocity, but TDLR verifies the original exam was passed via a letter of good standing from the issuing state.",
+        "changedAt": "2026-08-27",
+        "reason": "Phase 2F.2: initial population from official TDLR sources verified in Phase 2F/2F.1.",
+        "sourceUrl": "https://www.tdlr.texas.gov/electricians/out-of-state.htm",
+        "reviewer": null
+      }
+    ],
+    "notes": null
+  },
+  "requiredExperience": {
+    "value": "Must have held the reciprocal license for at least 1 year, and have at least 8,000 hours of experience under the supervision of a master electrician.",
+    "sourceUrl": "https://www.tdlr.texas.gov/electricians/out-of-state.htm",
+    "sourceTitle": "Transfer Your Out-of-State Electrician License to Texas",
+    "sourceName": "Texas Department of Licensing and Regulation (TDLR)",
+    "verifiedAt": "2026-08-27",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.92,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": "Must have held the reciprocal license for at least 1 year, and have at least 8,000 hours of experience under the supervision of a master electrician.",
+        "changedAt": "2026-08-27",
+        "reason": "Phase 2F.2: initial population from official TDLR sources verified in Phase 2F/2F.1.",
+        "sourceUrl": "https://www.tdlr.texas.gov/electricians/out-of-state.htm",
+        "reviewer": null
+      }
+    ],
+    "notes": null
+  },
+  "requiredEducation": {
+    "value": "Unknown",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "sourceName": null,
+    "verifiedAt": null,
+    "verificationMethod": null,
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0,
+    "confidenceLevel": "unknown",
+    "history": [],
+    "notes": "Not separately addressed from the experience/exam requirements in the official sources reviewed."
+  },
+  "requiredDocuments": {
+    "value": "A letter of good standing from the issuing state's licensing authority, confirming the applicant passed the statewide electrical exam, holds a current Journeyman Electrician license, and is in good standing.",
+    "sourceUrl": "https://www.tdlr.texas.gov/electricians/out-of-state.htm",
+    "sourceTitle": "Transfer Your Out-of-State Electrician License to Texas",
+    "sourceName": "Texas Department of Licensing and Regulation (TDLR)",
+    "verifiedAt": "2026-08-27",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.9,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": "A letter of good standing from the issuing state's licensing authority, confirming the applicant passed the statewide electrical exam, holds a current Journeyman Electrician license, and is in good standing.",
+        "changedAt": "2026-08-27",
+        "reason": "Phase 2F.2: initial population from official TDLR sources verified in Phase 2F/2F.1.",
+        "sourceUrl": "https://www.tdlr.texas.gov/electricians/out-of-state.htm",
+        "reviewer": null
+      }
+    ],
+    "notes": null
+  },
+  "processingTime": {
+    "value": "Unknown",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "sourceName": null,
+    "verifiedAt": null,
+    "verificationMethod": null,
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0,
+    "confidenceLevel": "unknown",
+    "history": [],
+    "notes": "Not stated in any official TDLR source reviewed this session."
+  },
+  "endorsementFeeUsd": {
+    "value": "Unknown",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "sourceName": null,
+    "verifiedAt": null,
+    "verificationMethod": null,
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0,
+    "confidenceLevel": "unknown",
+    "history": [],
+    "notes": "Not independently confirmed against an official TDLR fee schedule this session \u2014 a secondary source cited $30, not used per the no-fabrication policy."
+  },
+  "renewalFeeUsd": {
+    "value": "Unknown",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "sourceName": null,
+    "verifiedAt": null,
+    "verificationMethod": null,
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0,
+    "confidenceLevel": "unknown",
+    "history": [],
+    "notes": "Not addressed in official sources reviewed this session."
+  },
+  "continuingEducationRequirements": {
+    "value": "Unknown",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "sourceName": null,
+    "verifiedAt": null,
+    "verificationMethod": null,
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0,
+    "confidenceLevel": "unknown",
+    "history": [],
+    "notes": "Not addressed in official sources reviewed this session."
+  },
+  "conflicts": [],
+  "lastFullReviewAt": null
+}

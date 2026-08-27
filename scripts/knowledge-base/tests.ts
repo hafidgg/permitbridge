@@ -1441,8 +1441,8 @@ await test("slugs are deterministic for all 5 real transfer rules and match thei
   }
 });
 
-await test("Trust Dashboard metrics reconcile: total sources grew from 86 to 88 (2 new authoritative Virginia electrician sources, Phase 2D.6.2) — this counts raw rows in the single flat sources/ table, a genuinely different kind of number from the per-profession trust/reconciliation reports fixed in Phase 2D.3.2.1, so growth here from a second state's real sources is expected and correct, not a conflation to hide", () => {
-  assertEqual(sources.length, 88, "expected 88 total sources after Phase 2D.6.2 (86 before + 2 new: virginia-dpor-tradesmen-reciprocal-agreements, virginia-dpor-board-contractors-regulations)");
+await test("Trust Dashboard metrics reconcile: total sources grew from 88 to 92 (4 new authoritative Texas electrician sources, Phase 2F.2) — this counts raw rows in the single flat sources/ table, a genuinely different kind of number from the per-profession trust/reconciliation reports fixed in Phase 2D.3.2.1, so growth here from a third state's real sources is expected and correct, not a conflation to hide", () => {
+  assertEqual(sources.length, 92, "expected 92 total sources after Phase 2F.2 (88 before + 4 new: texas-tdlr-out-of-state-page, texas-tdlr-iowa-reciprocity-announcement, texas-tdlr-alabama-reciprocity-announcement, texas-tdlr-ohio-reciprocity-announcement)");
   const secondarySources = sources.filter((s) => s.authorityLevel === "supplementary");
   assert(secondarySources.length >= 5, "expected at least the 5 secondary discovery-only sources registered in Phase 3.1");
 });
@@ -5030,7 +5030,7 @@ await test("[PERMANENT — Phase 2D.3.2.1] computeTrustReport() called with no a
 await test("[PERMANENT — Phase 2D.3.2.1/2D.6.3] computeTrustReport('electrician') reads ONLY real electrician files — completely separate totals from the RN report, never summed together (4 files x 15 tracked fields = 60, after Phase 2D.6.3 added Virginia)", () => {
   const rnReport = computeTrustReport("registered-nurse");
   const electricianReport = computeTrustReport("electrician");
-  assertEqual(electricianReport.totalFields, 4 * 15, "4 electrician files (colorado x2, virginia x2) x 15 tracked fields = 60 — must not include any of RN's 50 files");
+  assertEqual(electricianReport.totalFields, 6 * 15, "6 electrician files (colorado x2, virginia x2, texas x2) x 15 tracked fields = 90 — must not include any of RN's 50 files");
   assert(electricianReport.totalFields !== rnReport.totalFields, "electrician and RN totals must be genuinely different numbers, not coincidentally merged");
 });
 
@@ -5044,7 +5044,7 @@ await test("[PERMANENT — Phase 2D.3.2.1] computeSourceReconciliation() called 
   const explicitRnRecon = computeSourceReconciliation("registered-nurse");
   assertEqual(defaultRecon.totalSourceRecords, explicitRnRecon.totalSourceRecords, "the default call must match an explicit registered-nurse call exactly");
   const electricianRecon = computeSourceReconciliation("electrician");
-  assertEqual(electricianRecon.totalSourceRecords, 4, "electrician's source reconciliation must count exactly the 4 real electrician sources (2 Colorado + 2 Virginia), filtered via professionsCovered — never RN's sources");
+  assertEqual(electricianRecon.totalSourceRecords, 8, "electrician's source reconciliation must count exactly the 8 real electrician sources (2 Colorado + 2 Virginia + 4 Texas), filtered via professionsCovered — never RN's sources");
   assert(defaultRecon.totalSourceRecords !== electricianRecon.totalSourceRecords, "RN and electrician source counts must never be conflated into the same number");
 });
 
@@ -5089,9 +5089,9 @@ await test("[PERMANENT — Phase 2D.3.2.1] the two Colorado electrician tiers re
 // ---------------------------------------------------------------------
 console.log("\nColorado Electrician Public Page (Phase 2D.4.2):");
 
-await test("[PERMANENT — Phase 2D.4.2/2D.6.3] getAllSingleStateProfessionSlugs() returns exactly the real, currently-publishable entries — 2 today (colorado, virginia) — no fabricated fallback pages", () => {
+await test("[PERMANENT — Phase 2D.4.2/2D.6.3/2F.2] getAllSingleStateProfessionSlugs() returns exactly the real, currently-publishable entries — 3 today (colorado, virginia, texas) — no fabricated fallback pages", () => {
   const slugs = getAllSingleStateProfessionSlugs();
-  assertEqual(slugs.length, 2);
+  assertEqual(slugs.length, 3);
   assert(slugs.some((s) => s.profession === "electrician" && s.slug === "colorado"));
 });
 
@@ -5158,11 +5158,11 @@ await test("[PERMANENT — Phase 2D.4.2] the new quality gate genuinely blocks �
   assertEqual(isProfessionStateFactsPublishable(withSecondaryCritical, resolveSource).publishable, false, "a critical field sourced only from a supplementary source must block publication");
 });
 
-await test("[PERMANENT — Phase 2D.4.2] RN REGRESSION: generateStaticParams for the shared route still returns all 7 real RN pairs, completely unaffected by single-state entries being appended (now 2: colorado + virginia)", () => {
+await test("[PERMANENT — Phase 2D.4.2] RN REGRESSION: generateStaticParams for the shared route still returns all 7 real RN pairs, completely unaffected by single-state entries being appended (now 3: colorado + virginia + texas)", () => {
   const rnSlugs = getAllPublicTransferRuleSlugs();
   assertEqual(rnSlugs.length, 7, "RN's publishable pair count must remain exactly 7");
   const combined = [...rnSlugs.map((s) => ({ profession: s.profession, transfer: s.transfer })), ...getAllSingleStateProfessionSlugs().map((s) => ({ profession: s.profession, transfer: s.slug }))];
-  assertEqual(combined.length, 9, "expected exactly 7 RN pairs + colorado + virginia = 9 total params for this route");
+  assertEqual(combined.length, 10, "expected exactly 7 RN pairs + colorado + virginia + texas = 10 total params for this route");
 });
 
 await test("[PERMANENT — Phase 2D.4.2] RN REGRESSION: getPublicTransferRule still resolves every real RN pair exactly as before — the new electrician branch never intercepts or shadows an RN lookup", () => {
@@ -5192,9 +5192,9 @@ await test("[PERMANENT — Phase 2D.4.2] sitemap.ts includes the new single-stat
 // ---------------------------------------------------------------------
 console.log("\nVirginia Electrician Public Page (Phase 2D.6.3):");
 
-await test("[PERMANENT — Phase 2D.6.3] getAllSingleStateProfessionSlugs() now returns exactly two real entries: electrician/colorado AND electrician/virginia — discovered automatically, not hardcoded", () => {
+await test("[PERMANENT — Phase 2D.6.3] getAllSingleStateProfessionSlugs() now returns real entries including electrician/colorado AND electrician/virginia — discovered automatically, not hardcoded (grew to 3 total after Phase 2F.2 added texas)", () => {
   const slugs = getAllSingleStateProfessionSlugs();
-  assertEqual(slugs.length, 2);
+  assertEqual(slugs.length, 3);
   assert(slugs.some((s) => s.slug === "colorado"));
   assert(slugs.some((s) => s.slug === "virginia"));
 });
@@ -5253,11 +5253,11 @@ await test("[PERMANENT — Phase 2D.6.3] every critical field in both Virginia t
   }
 });
 
-await test("[PERMANENT — Phase 2D.6.3] RN REGRESSION: generateStaticParams for the shared route now returns 7 RN pairs + 2 single-state pages = 9 total, RN's 7 completely unaffected", () => {
+await test("[PERMANENT — Phase 2D.6.3] RN REGRESSION: generateStaticParams for the shared route now returns 7 RN pairs + 3 single-state pages = 10 total, RN's 7 completely unaffected", () => {
   const rnSlugs = getAllPublicTransferRuleSlugs();
-  assertEqual(rnSlugs.length, 7, "RN's publishable pair count must remain exactly 7 — unaffected by Phase 2D.6.3");
+  assertEqual(rnSlugs.length, 7, "RN's publishable pair count must remain exactly 7 — unaffected by Phase 2F.2");
   const combined = [...rnSlugs.map((s) => ({ profession: s.profession, transfer: s.transfer })), ...getAllSingleStateProfessionSlugs().map((s) => ({ profession: s.profession, transfer: s.slug }))];
-  assertEqual(combined.length, 9, "expected exactly 7 RN pairs + colorado + virginia = 9 total params for this route");
+  assertEqual(combined.length, 10, "expected exactly 7 RN pairs + colorado + virginia + texas = 10 total params for this route");
 });
 
 await test("[PERMANENT — Phase 2D.6.3] RN REGRESSION: getPublicTransferRule still resolves every real RN pair exactly as before — the generalized electrician branch never intercepts or shadows an RN lookup", () => {
@@ -5280,6 +5280,103 @@ await test("[PERMANENT — Phase 2D.6.3] no RN content leakage: neither Virginia
 await test("[PERMANENT — Phase 2D.6.3] sitemap.ts still derives Virginia automatically via the same whitelist function — no manually-written '/electrician/virginia' URL string exists", () => {
   const sitemapSource = fs.readFileSync(path.join(process.cwd(), "app", "sitemap.ts"), "utf-8");
   assert(!sitemapSource.includes('"/electrician/virginia"') && !sitemapSource.includes("'/electrician/virginia'"), "no literal, manually-typed URL string for Virginia may exist in sitemap.ts");
+});
+
+// ---------------------------------------------------------------------
+// Texas Electrician Public Data (Phase 2F.2)
+//     Officially-sourced reciprocity data for a third electrician
+//     state, with a genuinely mixed-confidence case (Ohio: confirmed
+//     for Master, explicitly Unknown for Journeyman) — the real-world
+//     test of whether this architecture can honestly represent partial
+//     certainty without ever collapsing Unknown into a guessed YES/NO.
+// ---------------------------------------------------------------------
+console.log("\nTexas Electrician Public Data (Phase 2F.2):");
+
+await test("[PERMANENT — Phase 2F.2] getAllSingleStateProfessionSlugs() now returns exactly three real entries: colorado, virginia, texas — discovered automatically, not hardcoded into any route file", () => {
+  const slugs = getAllSingleStateProfessionSlugs();
+  assertEqual(slugs.length, 3);
+  assert(slugs.some((s) => s.slug === "texas"));
+});
+
+await test("[PERMANENT — Phase 2F.2] REGRESSION: Colorado and Virginia data are completely unaffected by adding Texas", () => {
+  assert(getColoradoElectricianPageData() !== null);
+  const va = getElectricianStatePageData("virginia");
+  assert(va !== null && va.tiers.length === 2);
+});
+
+await test("[PERMANENT — Phase 2F.2] getElectricianStatePageData('texas') returns both real tiers, genuinely present, and passes the real quality gate", () => {
+  const data = getElectricianStatePageData("texas");
+  assert(data !== null, "real Texas data with sufficient sourcing must not be withheld");
+  assertEqual(data!.tiers.map((t) => t.tier).sort(), ["journeyman", "master"]);
+});
+
+await test("[PERMANENT — Phase 2F.2] CRITICAL: Ohio appears in Texas Master's confirmed-agreement sentence but is EXPLICITLY excluded from Texas Journeyman's confirmed-agreement sentence — the mixed-confidence case is represented honestly, not merged either direction", () => {
+  const data = getElectricianStatePageData("texas")!;
+  const journeyman = data.tiers.find((t) => t.tier === "journeyman")!;
+  const master = data.tiers.find((t) => t.tier === "master")!;
+  const jText = journeyman.facts.reciprocityRules.value as string;
+  const mText = master.facts.reciprocityRules.value as string;
+
+  const jConfirmedSentence = jText.split(".")[0]!;
+  assert(!jConfirmedSentence.includes("Ohio"), "Ohio must NOT appear in Journeyman's confirmed-states sentence — it is not confirmed for Journeyman");
+  assert(jText.toUpperCase().includes("UNKNOWN") && jText.includes("Ohio"), "Journeyman's text must explicitly state Ohio is Unknown, not silently omit it");
+
+  const mConfirmedSentence = mText.split(".")[0]!;
+  assert(mConfirmedSentence.includes("Ohio"), "Ohio MUST appear in Master's confirmed-states sentence — it is officially confirmed for Master");
+});
+
+await test("[PERMANENT — Phase 2F.2] CRITICAL: North Carolina and Louisiana appear in Texas Master's confirmed list but are explicitly marked not-confirmed for Journeyman — never silently promoted to a false YES", () => {
+  const data = getElectricianStatePageData("texas")!;
+  const journeyman = data.tiers.find((t) => t.tier === "journeyman")!;
+  const master = data.tiers.find((t) => t.tier === "master")!;
+  const jConfirmedSentence = (journeyman.facts.reciprocityRules.value as string).split(".")[0]!;
+  const mConfirmedSentence = (master.facts.reciprocityRules.value as string).split(".")[0]!;
+
+  assert(mConfirmedSentence.includes("North Carolina") && mConfirmedSentence.includes("Louisiana"), "North Carolina and Louisiana must be in Master's confirmed sentence");
+  assert(!jConfirmedSentence.includes("North Carolina") && !jConfirmedSentence.includes("Louisiana"), "North Carolina and Louisiana must NOT be in Journeyman's confirmed sentence — no official source confirms this");
+});
+
+await test("[PERMANENT — Phase 2F.2] CRITICAL: Louisiana's residency special condition is preserved verbatim and is not generalized to any other state", () => {
+  const data = getElectricianStatePageData("texas")!;
+  const master = data.tiers.find((t) => t.tier === "master")!;
+  const docsText = master.facts.requiredDocuments.value as string;
+  assert(docsText.toLowerCase().includes("louisiana") && docsText.toLowerCase().includes("resident"), "the Louisiana residency condition must be present verbatim");
+  const journeyman = data.tiers.find((t) => t.tier === "journeyman")!;
+  const jDocsText = journeyman.facts.requiredDocuments;
+  if (jDocsText.value !== "Unknown") {
+    assert(!(jDocsText.value as string).toLowerCase().includes("resident"), "the Louisiana residency condition must never be generalized onto Journeyman's requirements");
+  }
+});
+
+await test("[PERMANENT — Phase 2F.2] every populated field in both Texas tiers is traceable to a real, registered, authoritative TDLR SourceRecord — confirmed via the actual quality gate, not assumed", () => {
+  const sources = loadAllSources();
+  const sourceByUrl = new Map(sources.map((s) => [s.website, s]));
+  const resolveSource = (url: string) => sourceByUrl.get(url);
+  const data = getElectricianStatePageData("texas")!;
+  for (const { tier, facts } of data.tiers) {
+    const result = isProfessionStateFactsPublishable(facts, resolveSource);
+    assertEqual(result.publishable, true, `texas-${tier} must pass its own real quality gate: ${result.blockingReasons.join("; ")}`);
+  }
+});
+
+await test("[PERMANENT — Phase 2F.2] no RN content leakage: Texas electrician page data contains zero reference to 'Registered Nurse', 'RN', or nursing-specific terminology", () => {
+  const data = getElectricianStatePageData("texas")!;
+  for (const { facts } of data.tiers) {
+    const allText = JSON.stringify(facts).toLowerCase();
+    assert(!allText.includes("registered nurse") && !allText.includes("nursys") && !allText.includes("nclex"), "Texas electrician page data must contain zero RN-specific terminology");
+  }
+});
+
+await test("[PERMANENT — Phase 2F.2] RN REGRESSION: generateStaticParams for the shared route now returns 7 RN pairs + 3 single-state pages = 10 total, RN's 7 completely unaffected", () => {
+  const rnSlugs = getAllPublicTransferRuleSlugs();
+  assertEqual(rnSlugs.length, 7, "RN's publishable pair count must remain exactly 7 — unaffected by Phase 2F.2");
+  const combined = [...rnSlugs.map((s) => ({ profession: s.profession, transfer: s.transfer })), ...getAllSingleStateProfessionSlugs().map((s) => ({ profession: s.profession, transfer: s.slug }))];
+  assertEqual(combined.length, 10, "expected exactly 7 RN pairs + colorado + virginia + texas = 10 total params for this route");
+});
+
+await test("[PERMANENT — Phase 2F.2] sitemap.ts still derives Texas automatically via the same whitelist function — no manually-written '/electrician/texas' URL string exists", () => {
+  const sitemapSource = fs.readFileSync(path.join(process.cwd(), "app", "sitemap.ts"), "utf-8");
+  assert(!sitemapSource.includes('"/electrician/texas"') && !sitemapSource.includes("'/electrician/texas'"), "no literal, manually-typed URL string for Texas may exist in sitemap.ts");
 });
 
 

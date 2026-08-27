@@ -1,0 +1,19 @@
+{
+  "id": "texas-tdlr-out-of-state-page",
+  "agencyName": "Texas Department of Licensing and Regulation (TDLR)",
+  "website": "https://www.tdlr.texas.gov/electricians/out-of-state.htm",
+  "jurisdiction": "texas",
+  "professionsCovered": [
+    "electrician"
+  ],
+  "sourceType": "official-board",
+  "official": true,
+  "authorityLevel": "authoritative",
+  "authorityRationale": "TDLR's own primary reciprocity page — the direct, official listing of reciprocal states by license tier. Confirmed in Phase 2F.1 to be accurate but not yet updated for 3 agreements announced via separate press releases (Iowa-Master, Alabama, Ohio).",
+  "specificity": "field-specific",
+  "reliabilityScore": 0.93,
+  "reliabilityRationale": "Official primary source, but Phase 2F.1 confirmed it lags behind more recent official press releases for specific new agreements — still authoritative for the states it does list.",
+  "lastCrawl": null,
+  "lastManualVerification": "2026-08-27",
+  "fieldsUsingThisSource": 16
+}
