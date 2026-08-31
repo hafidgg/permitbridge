@@ -1,0 +1,52 @@
+name: Read-Only Source Watch (Phase 3.4)
+
+# Phase 3.4 — SCHEDULED READ-ONLY MONITORING ONLY.
+#
+# This workflow is deliberately a SEPARATE file from source-monitor.yml,
+# not a modification of it — source-monitor.yml has permissions:
+# contents: write and commits/pushes DetectedChange records; this
+# workflow must never do either. It calls ONLY
+# lib/monitoring/read-only-watch.ts's watchOfficialSource(), which
+# imports exclusively fetchSource() and applyRule() (pure read/extract
+# functions — confirmed in Phase 3.2K/3.2O/3.3 to perform zero
+# knowledge-base writes). It never imports decide(), evaluateForPersistence(),
+# applyAndPersistAutomated(), the kill switch, or the scheduler/run.ts
+# entry point that source-monitor.yml uses.
+#
+# permissions: contents: read is the whole point of this file — even if
+# something upstream ever tried to git-commit here, the GITHUB_TOKEN
+# this workflow receives is structurally incapable of pushing anything.
+
+on:
+  schedule:
+    # Daily 11:00 UTC — deliberately offset from source-monitor.yml's
+    # Monday 10:00 UTC and data-pipeline.yml's Monday 09:00 UTC, so none
+    # of the three ever race on the same checkout. Daily (rather than
+    # weekly) is intentionally more frequent than the existing
+    # monitoring cadence, since this job is pure read-only observation
+    # with no write-path risk to weigh against faster detection.
+    - cron: "0 11 * * *"
+  workflow_dispatch: {}
+
+jobs:
+  read-only-watch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run read-only watch (Washington WAC 296-46B-909)
+        run: npm run watch:washington

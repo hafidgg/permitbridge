@@ -29,6 +29,7 @@
     "monitor:review": "tsx scripts/monitoring/review.ts",
     "monitor:rollback": "tsx scripts/monitoring/rollback.ts",
     "monitor": "tsx scripts/monitoring/run.ts",
+    "watch:washington": "tsx scripts/monitoring/watch-washington.ts",
     "monitor:dry-run": "tsx scripts/monitoring/dry-run.ts",
     "monitor:health": "tsx scripts/monitoring/health.ts"
   },
