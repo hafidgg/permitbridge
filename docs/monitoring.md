@@ -31,14 +31,21 @@ No module upstream of "Human Review" can ever write to `data/knowledge-base/fact
 
 ## Sources and field mappings
 
-`data/knowledge-base/monitoring/registry.json` holds the list of `MonitoredSource` records. As of this writing there is **exactly one**: the Florida Board of Nursing's fee page, mapped to `rnEndorsementFeeUsd`.
+`data/knowledge-base/monitoring/registry.json` holds the list of `MonitoredSource` records. As of this writing there are **four**, all Registered Nurse fee pages:
+
+| Source ID | Jurisdiction | Field |
+|---|---|---|
+| `florida-fee-schedule-monitor` | Florida | `endorsementFeeUsd` |
+| `ny-endorsement-fee-monitor` | New York | `endorsementFeeUsd` |
+| `ny-transfer-fee-monitor` | California | `applicationFeeUsd` |
+| `florida-multistate-fee-monitor` | Texas | `applicationFeeUsd` |
 
 A source's `fieldMapping` (optional) connects it to a real fact:
 
 ```json
 {
-  "field": "rnEndorsementFeeUsd",
-  "extractRule": { "field": "rnEndorsementFeeUsd", "pattern": "...", "transform": "number" }
+  "field": "endorsementFeeUsd",
+  "extractRule": { "field": "endorsementFeeUsd", "pattern": "...", "transform": "number" }
 }
 ```
 
@@ -83,27 +90,11 @@ npm run monitor:review        # interactive: walk pending changes, approve/rejec
 npm run monitor:rollback -- --id <changeId> --reviewer "<name>" --reason "<reason>"
 ```
 
-## The cron endpoint
+## The scheduled workflow (GitHub Actions)
 
-`GET /api/cron/source-monitor`, protected by the `CRON_SECRET` environment variable. The request must carry:
+`.github/workflows/source-monitor.yml` runs the real monitoring cycle on a schedule (Monday 10:00 UTC) and via manual `workflow_dispatch`. This is the actual production trigger — `vercel.json`'s `crons` array is deliberately empty; no Vercel Cron / `/api/cron` endpoint is in use for this pipeline.
 
-```
-Authorization: Bearer <CRON_SECRET>
-```
-
-The endpoint **fails closed**: if `CRON_SECRET` isn't set on the server at all, every request is rejected (401) — there is no "open" fallback. It never echoes the secret, never logs it, and never returns filesystem paths or stack traces in its response body.
-
-Responses:
-- `200` — cycle ran; body includes `sourcesConsidered`, `sourcesChecked`, `changesDetected`, `failures`, `duration`.
-- `401` — missing or wrong secret.
-- `409` — a cycle is already in progress (the advisory lock is held); safe to retry later.
-- `500` — an unexpected internal failure (details logged server-side only).
-
-### Vercel Cron configuration
-
-`vercel.json` schedules a daily trigger (`0 6 * * *`, 6am UTC) — compatible with Vercel's Hobby-plan once-per-day cron limit. The daily trigger is intentionally more frequent than any individual source's `checkFrequencyDays`; the scheduler's own due-check logic decides which sources actually get fetched on a given day, so a 30-day-interval source is still only fetched roughly once a month even though the endpoint itself is called daily.
-
-**To enable in production**: set `CRON_SECRET` in the Vercel project's environment variables (Settings → Environment Variables). Vercel automatically sends it as the `Authorization: Bearer` header for its own scheduled invocations once the variable is set — no additional configuration needed.
+The workflow has `permissions: contents: write` (it needs to commit new `DetectedChange` records to `data/knowledge-base/monitoring/`), but a strict path-allowlist step refuses to commit — and fails the whole job (`exit 1`) — if the run touched anything outside `data/knowledge-base/monitoring/*`. This is a real, tested safety boundary, not just a convention: it's what currently stands between this pipeline and ever accidentally committing a change to `data/knowledge-base/facts/`.
 
 ## Investigating a failed source
 
@@ -127,6 +118,25 @@ All five are non-mutating with respect to production facts except `approve`.
 
 ## Known limitations
 
-- Currently monitors one source, one field (a deliberate, proven pilot — see the corresponding phase report before adding more).
 - The advisory lock has no staleness/timeout recovery.
 - `mark_unavailable` doesn't yet update the related `MonitoredSource.status`.
+- The optional automated-approval path (below) is field-agnostic and pre-validated but is not wired into this production cycle — it remains a deliberately separate, unactivated system.
+
+## Read-only official-source watch (Phase 3.3–3.6)
+
+A second, structurally simpler monitoring mechanism exists alongside the review-workflow pipeline above: `lib/monitoring/read-only-watch.ts`'s `watchOfficialSource()`. It imports *only* `fetchSource()` and `applyRule()` — pure read/extract functions with zero knowledge of `DetectedChange`, the review queue, or any fact file. It returns exactly one of three results: `NO_CHANGE`, `CHANGE_DETECTED`, or `SOURCE_UNAVAILABLE`.
+
+Currently watches one source: Washington's WAC 296-46B-909 (electrical/telecommunications contractor license fee), confirmed live at $353.90 as of this writing. Run via `.github/workflows/read-only-source-watch.yml` (daily 11:00 UTC + manual `workflow_dispatch`), which has **only** `permissions: contents: read` — it cannot commit or push anything, structurally, regardless of what the script itself does.
+
+```bash
+npm run watch:washington              # live fetch against the real source
+npm run watch:washington -- --mode=mock  # fixture-based, for local testing without network access
+```
+
+On `CHANGE_DETECTED`, the script prints the old value, new value, and evidence to the workflow log and exits `0` — it takes no further action. A human must then run the existing review workflow (`npm run monitor:review`) manually to investigate and, if warranted, approve a real update through the normal `applyFieldReview()` path above. This mechanism cannot itself change any file in `data/knowledge-base/`.
+
+## Automated-approval path (built, not activated)
+
+A third, more capable subsystem exists in `lib/monitoring/` and `lib/monitoring/poc/`: a full evidence → decision → safety-gate → automated-persistence chain (`decision-engine.ts`, `safety-gate.ts`, `value-validation.ts`, `automated-persistence.ts`, `poc/auto-update-orchestrator.ts`) capable of writing a genuinely `auto_verified` field update with **no human reviewer** — for cases meeting a strict bar: an explicit, non-conflicting, non-stale, type-and-shape-validated value from an authoritative source. It reuses `updateField()` (never duplicates it) and produces `status: "auto_verified"` — a status deliberately distinct from `"verified"` (human sign-off) and still eligible for later human review, never silently treated as equivalent.
+
+This path is real, tested end-to-end (including against the real Washington source, in an isolated synthetic namespace), and gated by an explicit kill switch (`lib/monitoring/poc/kill-switch.ts`'s `isAutomaticPersistenceEnabled()`, default `OFF`, fail-closed on any missing or invalid `AUTO_UPDATE_ENABLED` value). **It is not wired into `run.ts`, the scheduler, or any GitHub Actions workflow as of this writing** — activating it is a deliberate, separate decision, not a side effect of anything documented above. See the Phase 3.2 series of reports for the complete safety audit.
