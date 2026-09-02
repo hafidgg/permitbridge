@@ -34,6 +34,12 @@ jobs:
     timeout-minutes: 10
     permissions:
       contents: read
+      # Phase 3.7B: the ONLY additional permission this workflow gains.
+      # issues: write cannot touch any file in the repository — it can
+      # only create/read/comment on GitHub Issues, which live entirely
+      # outside data/knowledge-base/ and outside git history. This does
+      # NOT grant any path to modifying code, facts, or the registry.
+      issues: write
 
     steps:
       - name: Checkout
@@ -49,4 +55,74 @@ jobs:
         run: npm ci
 
       - name: Run read-only watch (Washington WAC 296-46B-909)
-        run: npm run watch:washington
+        id: watch
+        run: |
+          set +e
+          npm run watch:washington | tee /tmp/watch-output.log
+          exit_code=${PIPESTATUS[0]}
+          if grep -q "CHANGE_DETECTED" /tmp/watch-output.log; then
+            echo "change_detected=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "change_detected=false" >> "$GITHUB_OUTPUT"
+          fi
+          exit $exit_code
+        shell: bash
+
+      # Phase 3.7B: fires ONLY when the prior step's own output (grepped
+      # directly from what watch-washington.ts already printed, via
+      # alertChangeDetected()'s ::warning::[CHANGE_DETECTED] line) shows
+      # a real change. This step does not re-run the fetch, re-parse
+      # anything, or make its own decision about whether a change
+      # occurred — it is a pure notification layer on top of a result
+      # the read-only watch already computed. Still calls ONLY the
+      # GitHub Issues API — zero import of decide()/Safety
+      # Gate/Persistence/kill-switch, and issues: write cannot reach any
+      # repository file regardless.
+      - name: Create/update GitHub Issue on CHANGE_DETECTED
+        if: steps.watch.outputs.change_detected == 'true'
+        uses: actions/github-script@v9
+        with:
+          script: |
+            const sourceId = "wa-electrical-contractor-license-fee";
+            const label = "change-detected";
+            const titlePrefix = `[CHANGE_DETECTED] ${sourceId}`;
+
+            // Duplicate prevention: search OPEN issues with the exact
+            // label + title prefix before creating a new one. If found,
+            // add a comment instead — never spam a second issue for the
+            // same still-unresolved detection.
+            const existing = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: "open",
+              labels: label,
+            });
+            const match = existing.data.find((issue) => issue.title.startsWith(titlePrefix));
+
+            const body = [
+              `An official source value changed and was detected by the read-only monitor.`,
+              ``,
+              `- **Source:** ${sourceId}`,
+              `- **Workflow run:** ${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`,
+              `- **Detected:** ${new Date().toISOString()}`,
+              ``,
+              `No automatic action was taken. No production data was modified.`,
+              `A human must review this and start the existing verification/approval workflow manually (\`npm run monitor:review\`).`,
+            ].join("\n");
+
+            if (match) {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: match.number,
+                body: `Detected again:\n\n${body}`,
+              });
+            } else {
+              await github.rest.issues.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title: `${titlePrefix} — official value changed`,
+                body,
+                labels: [label],
+              });
+            }
