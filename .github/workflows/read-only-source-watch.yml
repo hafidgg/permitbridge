@@ -1,32 +1,14 @@
 name: Read-Only Source Watch (Phase 3.4)
 
-# Phase 3.4 — SCHEDULED READ-ONLY MONITORING ONLY.
-#
-# This workflow is deliberately a SEPARATE file from source-monitor.yml,
-# not a modification of it — source-monitor.yml has permissions:
-# contents: write and commits/pushes DetectedChange records; this
-# workflow must never do either. It calls ONLY
-# lib/monitoring/read-only-watch.ts's watchOfficialSource(), which
-# imports exclusively fetchSource() and applyRule() (pure read/extract
-# functions — confirmed in Phase 3.2K/3.2O/3.3 to perform zero
-# knowledge-base writes). It never imports decide(), evaluateForPersistence(),
-# applyAndPersistAutomated(), the kill switch, or the scheduler/run.ts
-# entry point that source-monitor.yml uses.
-#
-# permissions: contents: read is the whole point of this file — even if
-# something upstream ever tried to git-commit here, the GITHUB_TOKEN
-# this workflow receives is structurally incapable of pushing anything.
-
 on:
   schedule:
-    # Daily 11:00 UTC — deliberately offset from source-monitor.yml's
-    # Monday 10:00 UTC and data-pipeline.yml's Monday 09:00 UTC, so none
-    # of the three ever race on the same checkout. Daily (rather than
-    # weekly) is intentionally more frequent than the existing
-    # monitoring cadence, since this job is pure read-only observation
-    # with no write-path risk to weigh against faster detection.
     - cron: "0 11 * * *"
-  workflow_dispatch: {}
+  workflow_dispatch:
+    inputs:
+      test_source_id:
+        description: "OPTIONAL, TEST ONLY: override sourceId to consume a controlled fixture instead of the real source (e.g. wa-electrical-contractor-license-fee-controlled-399). Leave blank for normal real-source runs."
+        required: false
+        default: ""
 
 jobs:
   read-only-watch:
@@ -34,11 +16,6 @@ jobs:
     timeout-minutes: 10
     permissions:
       contents: read
-      # Phase 3.7B: the ONLY additional permission this workflow gains.
-      # issues: write cannot touch any file in the repository — it can
-      # only create/read/comment on GitHub Issues, which live entirely
-      # outside data/knowledge-base/ and outside git history. This does
-      # NOT grant any path to modifying code, facts, or the registry.
       issues: write
 
     steps:
@@ -56,9 +33,16 @@ jobs:
 
       - name: Run read-only watch (Washington WAC 296-46B-909)
         id: watch
+        env:
+          TEST_SOURCE_ID: ${{ inputs.test_source_id }}
         run: |
           set +e
-          npm run watch:washington | tee /tmp/watch-output.log
+          if [ -n "$TEST_SOURCE_ID" ]; then
+            echo "::warning::PHASE 3.7B CONTROLLED TEST RUN — using sourceId override: $TEST_SOURCE_ID (NOT the real Washington source check)"
+            npm run watch:washington -- --mode=mock --source-id="$TEST_SOURCE_ID" | tee /tmp/watch-output.log
+          else
+            npm run watch:washington | tee /tmp/watch-output.log
+          fi
           exit_code=${PIPESTATUS[0]}
           if grep -q "CHANGE_DETECTED" /tmp/watch-output.log; then
             echo "change_detected=true" >> "$GITHUB_OUTPUT"
@@ -68,16 +52,6 @@ jobs:
           exit $exit_code
         shell: bash
 
-      # Phase 3.7B: fires ONLY when the prior step's own output (grepped
-      # directly from what watch-washington.ts already printed, via
-      # alertChangeDetected()'s ::warning::[CHANGE_DETECTED] line) shows
-      # a real change. This step does not re-run the fetch, re-parse
-      # anything, or make its own decision about whether a change
-      # occurred — it is a pure notification layer on top of a result
-      # the read-only watch already computed. Still calls ONLY the
-      # GitHub Issues API — zero import of decide()/Safety
-      # Gate/Persistence/kill-switch, and issues: write cannot reach any
-      # repository file regardless.
       - name: Create/update GitHub Issue on CHANGE_DETECTED
         if: steps.watch.outputs.change_detected == 'true'
         uses: actions/github-script@v9
@@ -87,10 +61,6 @@ jobs:
             const label = "change-detected";
             const titlePrefix = `[CHANGE_DETECTED] ${sourceId}`;
 
-            // Duplicate prevention: search OPEN issues with the exact
-            // label + title prefix before creating a new one. If found,
-            // add a comment instead — never spam a second issue for the
-            // same still-unresolved detection.
             const existing = await github.rest.issues.listForRepo({
               owner: context.repo.owner,
               repo: context.repo.repo,
