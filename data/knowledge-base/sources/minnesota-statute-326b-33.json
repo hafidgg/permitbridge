@@ -1,0 +1,19 @@
+{
+  "id": "minnesota-statute-326b-33",
+  "agencyName": "Office of the Revisor of Statutes, State of Minnesota",
+  "website": "https://www.revisor.mn.gov/statutes/cite/326B.33",
+  "jurisdiction": "minnesota",
+  "professionsCovered": [
+    "electrician"
+  ],
+  "sourceType": "official-government",
+  "official": true,
+  "authorityLevel": "authoritative",
+  "authorityRationale": "Minnesota Statutes 326B.33, Subdivision 20 (Reciprocity), quoted directly: 'The commissioner may issue a personal license without requiring the applicant to pass an examination provided the applicant... holds a valid comparable license in the state participating in the agreement.' The literal statutory basis for exempting reciprocal electrician applicants from Minnesota's own exam — a stronger, positively-stated source than Arkansas's rules text, which never explicitly addressed this question.",
+  "specificity": "jurisdiction-general",
+  "reliabilityScore": 0.98,
+  "reliabilityRationale": "The codified state statute itself, hosted by the Minnesota Revisor's Office — the single highest-authority source class available, though the statute (326B.33) governs personal licensing across multiple CCLD-regulated trades, not electricians exclusively.",
+  "lastCrawl": null,
+  "lastManualVerification": "2026-09-04",
+  "fieldsUsingThisSource": 2
+}

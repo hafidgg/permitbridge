@@ -1,0 +1,19 @@
+{
+  "id": "minnesota-ccld-fee-schedule",
+  "agencyName": "Minnesota Department of Labor and Industry (DLI), Construction Codes and Licensing Division",
+  "website": "https://www.dli.mn.gov/sites/default/files/pdf/fees.pdf",
+  "jurisdiction": "minnesota",
+  "professionsCovered": [
+    "electrician"
+  ],
+  "sourceType": "official-government",
+  "official": true,
+  "authorityLevel": "authoritative",
+  "authorityRationale": "The literal CCLD licensing fee schedule PDF (updated July 1, 2025), read directly (not via automated summarization) — table row 'Class A journeyorker (AJ)... $53 renew' and 'Class A master (AM)... $93 renew', confirming the exact renewal fee figures cited elsewhere only in paraphrase.",
+  "specificity": "jurisdiction-general",
+  "reliabilityScore": 0.96,
+  "reliabilityRationale": "Primary fee-schedule document itself, directly quoted from the raw PDF text — covers every CCLD-licensed trade (boiler, electrical, plumbing, elevator, etc.) in one table, so jurisdiction-general rather than electrician-specific, but each row's figures are exact and unambiguous.",
+  "lastCrawl": null,
+  "lastManualVerification": "2026-09-04",
+  "fieldsUsingThisSource": 2
+}

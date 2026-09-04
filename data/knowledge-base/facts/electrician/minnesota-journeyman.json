@@ -1,0 +1,316 @@
+{
+  "profession": "electrician",
+  "state": "minnesota",
+  "licenseTier": "journeyman",
+  "licensingBoard": {
+    "value": "Minnesota Department of Labor and Industry (DLI), Construction Codes and Licensing Division",
+    "sourceUrl": "https://www.dli.mn.gov/workers/electrician-or-electrical-installer/electrical-licensing-basics",
+    "sourceTitle": "Electrical licensing basics",
+    "sourceName": "Minnesota Department of Labor and Industry (DLI), Construction Codes and Licensing Division",
+    "verifiedAt": "2026-09-04",
+    "verificationMethod": "ai_assisted_manual_research",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.9,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": "Minnesota Department of Labor and Industry (DLI), Construction Codes and Licensing Division",
+        "changedAt": "2026-09-04",
+        "reason": "Initial population from official Minnesota DLI sources (electrical licensing basics page, reciprocity page and application form, CCLD fee schedule, and Minnesota Statutes 326B.33).",
+        "sourceUrl": "https://www.dli.mn.gov/workers/electrician-or-electrical-installer/electrical-licensing-basics",
+        "reviewer": null
+      }
+    ],
+    "notes": null
+  },
+  "officialWebsite": {
+    "value": "https://www.dli.mn.gov/",
+    "sourceUrl": "https://www.dli.mn.gov/workers/electrician-or-electrical-installer/electrical-licensing-basics",
+    "sourceTitle": "Electrical licensing basics",
+    "sourceName": "Minnesota Department of Labor and Industry (DLI), Construction Codes and Licensing Division",
+    "verifiedAt": "2026-09-04",
+    "verificationMethod": "ai_assisted_manual_research",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.85,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": "https://www.dli.mn.gov/",
+        "changedAt": "2026-09-04",
+        "reason": "Initial population from official Minnesota DLI sources.",
+        "sourceUrl": "https://www.dli.mn.gov/workers/electrician-or-electrical-installer/electrical-licensing-basics",
+        "reviewer": null
+      }
+    ],
+    "notes": null
+  },
+  "licenseTransferPage": {
+    "value": "https://www.dli.mn.gov/workers/electrician-or-electrical-installer/electrical-license-reciprocity",
+    "sourceUrl": "https://www.dli.mn.gov/workers/electrician-or-electrical-installer/electrical-license-reciprocity",
+    "sourceTitle": "Electrical License Reciprocity",
+    "sourceName": "Minnesota Department of Labor and Industry (DLI), Construction Codes and Licensing Division",
+    "verifiedAt": "2026-09-04",
+    "verificationMethod": "ai_assisted_manual_research",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.9,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": "https://www.dli.mn.gov/workers/electrician-or-electrical-installer/electrical-license-reciprocity",
+        "changedAt": "2026-09-04",
+        "reason": "Initial population from official Minnesota DLI sources.",
+        "sourceUrl": "https://www.dli.mn.gov/workers/electrician-or-electrical-installer/electrical-license-reciprocity",
+        "reviewer": null
+      }
+    ],
+    "notes": null
+  },
+  "universalLicenseRecognitionStatus": {
+    "value": "Unknown",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "sourceName": null,
+    "verifiedAt": null,
+    "verificationMethod": null,
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0,
+    "confidenceLevel": "unknown",
+    "history": [],
+    "notes": "Research for this Minnesota expansion focused on DLI's own state-by-state reciprocity mechanism (see reciprocityRules); no separate Minnesota Universal License Recognition statute for electricians was independently identified. Absence of a finding is not evidence of absence — left Unknown rather than assumed false, matching the same caution applied in colorado-journeyman.json and arkansas-journeyman.json."
+  },
+  "compactMembership": {
+    "value": false,
+    "sourceUrl": "https://www.dli.mn.gov/workers/electrician-or-electrical-installer/electrical-license-reciprocity",
+    "sourceTitle": "Electrical License Reciprocity",
+    "sourceName": "Minnesota Department of Labor and Industry (DLI), Construction Codes and Licensing Division",
+    "verifiedAt": "2026-09-04",
+    "verificationMethod": "ai_assisted_manual_research",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.85,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": false,
+        "changedAt": "2026-09-04",
+        "reason": "Initial population from official Minnesota DLI sources.",
+        "sourceUrl": "https://www.dli.mn.gov/workers/electrician-or-electrical-installer/electrical-license-reciprocity",
+        "reviewer": null
+      }
+    ],
+    "notes": "Minnesota's mechanism issues a distinct 'personal license' to the applicant (Minnesota Statutes 326B.33, Subd. 20: 'The commissioner may issue a personal license...') via a state-by-state reciprocal agreement — not a single multistate license practiced across member states without a new license (the defining feature of a true compact, e.g. the Nurse Licensure Compact). Recorded as false to avoid conflating this reciprocal-agreement mechanism with a compact, matching the same reasoning already applied to Colorado's and Arkansas's reciprocity in their respective journeyman files."
+  },
+  "reciprocityRules": {
+    "value": "Minnesota may issue a Class A Journeyworker (AJ) electrician license WITHOUT examination to applicants who obtained their journeyworker license by examination in one of 9 reciprocating states: Alaska, Arkansas, Colorado, Iowa, Montana, Nebraska, North Dakota, South Dakota, and Wyoming. To qualify, the applicant must hold the equivalent-class license from the reciprocating state in current good standing, have held it for at least one year, and have passed the license examination in that state (not obtained via a reciprocal agreement with a city or other political subdivision). The applicant must not have failed an examination for the same or greater license class in Minnesota, and if a prior Minnesota license expired more than two years ago, the exam must be retaken. A $50 application fee applies.",
+    "sourceUrl": "https://www.dli.mn.gov/workers/electrician-or-electrical-installer/electrical-license-reciprocity",
+    "sourceTitle": "Electrical License Reciprocity",
+    "sourceName": "Minnesota Department of Labor and Industry (DLI), Construction Codes and Licensing Division",
+    "verifiedAt": "2026-09-04",
+    "verificationMethod": "ai_assisted_manual_research",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.95,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": "Minnesota may issue a Class A Journeyworker (AJ) electrician license without examination to applicants who obtained their journeyworker license by examination in one of 9 reciprocating states: Alaska, Arkansas, Colorado, Iowa, Montana, Nebraska, North Dakota, South Dakota, and Wyoming, subject to good-standing/1-year-held/tested conditions. A $50 application fee applies.",
+        "changedAt": "2026-09-04",
+        "reason": "Initial population from DLI's Electrical License Reciprocity page.",
+        "sourceUrl": "https://www.dli.mn.gov/workers/electrician-or-electrical-installer/electrical-license-reciprocity",
+        "reviewer": null
+      }
+    ],
+    "notes": "Corroborated verbatim by the official reciprocity application form (form CC0502, directly read from the raw PDF: per-state class table lists 'Alaska (AJ only)... Arkansas (AJ only)... Colorado (AJ only)... Iowa (AM, AJ)... Montana (AJ only)... Nebraska (AM, AJ)... North Dakota (AM, AJ)... South Dakota (AM, AJ)... Wyoming (AJ only)' — see minnesota-dli-electrical-reciprocity-application) and by the exam-exemption statute itself, Minnesota Statutes 326B.33, Subdivision 20 (see minnesota-statute-326b-33). Unlike Arkansas, Minnesota's structure has no asymmetric tier-downgrade rule for the 4 states that also carry Master (AM) reciprocity — see minnesota-master.json for the separate, narrower Master-tier list and its own edge case."
+  },
+  "endorsementRules": {
+    "value": "Unknown",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "sourceName": null,
+    "verifiedAt": null,
+    "verificationMethod": null,
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0,
+    "confidenceLevel": "unknown",
+    "history": [],
+    "notes": "Minnesota's own materials and statute describe this mechanism as 'reciprocity' specifically (Minn. Stat. 326B.33, Subd. 20 is titled 'Reciprocity') — no separate 'endorsement' pathway or terminology was identified, matching the same finding already recorded for Colorado and Arkansas."
+  },
+  "requiredExams": {
+    "value": "No Minnesota examination is required for reciprocal Class A Journeyworker applicants: Minnesota Statutes 326B.33, Subdivision 20 explicitly authorizes the commissioner to 'issue a personal license without requiring the applicant to pass an examination' provided the applicant holds a valid comparable license from a state participating in the reciprocal agreement. This is a positively stated statutory exemption, not an inference. For ORIGINAL (non-reciprocal) journeyworker licensure, a written exam ($50 exam fee) is required after accruing the necessary documented electrical work experience (Minnesota Rules 3800.3520, Subpart 1: 'As a precondition to issuance of any class of individual electrical license, an applicant is required to pass an examination').",
+    "sourceUrl": "https://www.revisor.mn.gov/statutes/cite/326B.33",
+    "sourceTitle": "Minnesota Statutes 326B.33, Subdivision 20 (Reciprocity)",
+    "sourceName": "Office of the Revisor of Statutes, State of Minnesota",
+    "verifiedAt": "2026-09-04",
+    "verificationMethod": "ai_assisted_manual_research",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.92,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": "No Minnesota examination is required for reciprocal Class A Journeyworker applicants, per Minnesota Statutes 326B.33, Subdivision 20's explicit exam exemption for holders of a valid comparable license from a participating state.",
+        "changedAt": "2026-09-04",
+        "reason": "Initial population from Minnesota Statutes 326B.33, Subdivision 20.",
+        "sourceUrl": "https://www.revisor.mn.gov/statutes/cite/326B.33",
+        "reviewer": null
+      }
+    ],
+    "notes": "Unlike Arkansas (where the exam-exemption for reciprocal applicants had to be inferred from the rule's silence and was flagged needs_review), Minnesota's statute states the exemption positively and explicitly — recorded here as verified, not needs_review."
+  },
+  "requiredExperience": {
+    "value": "For the RECIPROCITY pathway specifically: hold a current Class A Journeyworker (or equivalent) license from a reciprocating state in good standing, held for at least one year, and obtained by passing that state's license examination (not by a reciprocal agreement with a city or other political subdivision, nor by grandfathering without an exam).",
+    "sourceUrl": "https://www.dli.mn.gov/sites/default/files/pdf/ele_reciprocity.pdf",
+    "sourceTitle": "Individual Electrical License Reciprocity Application (Form CC0502)",
+    "sourceName": "Minnesota Department of Labor and Industry (DLI), Construction Codes and Licensing Division",
+    "verifiedAt": "2026-09-04",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.93,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": "For the RECIPROCITY pathway: hold a current Class A Journeyworker license from a reciprocating state in good standing, held at least one year, obtained by passing that state's exam.",
+        "changedAt": "2026-09-04",
+        "reason": "Initial population from Form CC0502's 'Reciprocity Requirements' section, read directly from the raw PDF text.",
+        "sourceUrl": "https://www.dli.mn.gov/sites/default/files/pdf/ele_reciprocity.pdf",
+        "reviewer": null
+      }
+    ],
+    "notes": "For ORIGINAL (non-reciprocal) Minnesota journeyworker licensure — not the reciprocity pathway — an applicant must accrue documented electrical work experience before testing and meet a minimum age of 17 (per DLI's electrical licensing basics page); the exact hour schedule is set by Minnesota Rules 3800.3520, which was not independently quoted verbatim here. Recorded here in notes rather than the main value, to keep the reciprocity-relevant fact primary — matching the same pathway-distinguishing treatment already used in colorado-journeyman.json and arkansas-journeyman.json."
+  },
+  "requiredEducation": {
+    "value": "Unknown",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "sourceName": null,
+    "verifiedAt": null,
+    "verificationMethod": null,
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0,
+    "confidenceLevel": "unknown",
+    "history": [],
+    "notes": "No standalone formal-education requirement distinct from the experience pathways already captured in requiredExperience was identified — matching the same scope decision already made in colorado-journeyman.json and arkansas-journeyman.json."
+  },
+  "requiredDocuments": {
+    "value": "Reciprocity applicants must submit DLI's Individual Electrical License Reciprocity Application (Form CC0502) along with the $50 application fee, providing the name, license number, date initially issued, and current expiration date of the equivalent license held in the reciprocating state.",
+    "sourceUrl": "https://www.dli.mn.gov/sites/default/files/pdf/ele_reciprocity.pdf",
+    "sourceTitle": "Individual Electrical License Reciprocity Application (Form CC0502)",
+    "sourceName": "Minnesota Department of Labor and Industry (DLI), Construction Codes and Licensing Division",
+    "verifiedAt": "2026-09-04",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.9,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": "Reciprocity applicants must submit Form CC0502 with the $50 application fee and the equivalent license's identifying details from the reciprocating state.",
+        "changedAt": "2026-09-04",
+        "reason": "Initial population from Form CC0502, read directly from the raw PDF text.",
+        "sourceUrl": "https://www.dli.mn.gov/sites/default/files/pdf/ele_reciprocity.pdf",
+        "reviewer": null
+      }
+    ],
+    "notes": null
+  },
+  "processingTime": {
+    "value": "Unknown",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "sourceName": null,
+    "verifiedAt": null,
+    "verificationMethod": null,
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0,
+    "confidenceLevel": "unknown",
+    "history": [],
+    "notes": "Not addressed in any official Minnesota source reviewed."
+  },
+  "endorsementFeeUsd": {
+    "value": 50,
+    "sourceUrl": "https://www.dli.mn.gov/sites/default/files/pdf/ele_reciprocity.pdf",
+    "sourceTitle": "Individual Electrical License Reciprocity Application (Form CC0502)",
+    "sourceName": "Minnesota Department of Labor and Industry (DLI), Construction Codes and Licensing Division",
+    "verifiedAt": "2026-09-04",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.95,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": 50,
+        "changedAt": "2026-09-04",
+        "reason": "Initial population from Form CC0502, printed directly on the form as 'Application Fee = $50.00'.",
+        "sourceUrl": "https://www.dli.mn.gov/sites/default/files/pdf/ele_reciprocity.pdf",
+        "reviewer": null
+      }
+    ],
+    "notes": "Minnesota's own reciprocity application fee (form CC0502) — the functional equivalent of this field's 'endorsement fee' concept, even though Minnesota's own terminology is 'reciprocity' not 'endorsement'. The same $50 amount applies to both Class A Journeyworker (AJ) and Class A Master (AM) reciprocal applications; a single combined form covers both classes. Not refundable per the form's own notice."
+  },
+  "renewalFeeUsd": {
+    "value": 53,
+    "sourceUrl": "https://www.dli.mn.gov/sites/default/files/pdf/fees.pdf",
+    "sourceTitle": "CCLD licensing fee schedule (updated July 1, 2025)",
+    "sourceName": "Minnesota Department of Labor and Industry (DLI), Construction Codes and Licensing Division",
+    "verifiedAt": "2026-09-04",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.96,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": 53,
+        "changedAt": "2026-09-04",
+        "reason": "Initial population from the CCLD fee schedule PDF, 'Electrical and elevator licenses' table row 'Class A journeyorker (AJ)... RENEW $53'.",
+        "sourceUrl": "https://www.dli.mn.gov/sites/default/files/pdf/fees.pdf",
+        "reviewer": null
+      }
+    ],
+    "notes": "Standard renewal fee for a Class A Journeyworker (AJ) license, on a 2-year renewal cycle; $73 if renewed late (per the same fee-schedule row)."
+  },
+  "continuingEducationRequirements": {
+    "value": "16 hours of DLI-approved continuing education per renewal cycle, at least 12 hours of which must relate to the National Electrical Code (NEC).",
+    "sourceUrl": "https://www.dli.mn.gov/workers/electrician-or-electrical-installer/electrical-licensing-basics",
+    "sourceTitle": "Electrical licensing basics",
+    "sourceName": "Minnesota Department of Labor and Industry (DLI), Construction Codes and Licensing Division",
+    "verifiedAt": "2026-09-04",
+    "verificationMethod": "ai_assisted_manual_research",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.85,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": "16 hours of DLI-approved continuing education per renewal cycle, at least 12 hours of which must relate to the National Electrical Code (NEC).",
+        "changedAt": "2026-09-04",
+        "reason": "Initial population from DLI's electrical licensing basics page.",
+        "sourceUrl": "https://www.dli.mn.gov/workers/electrician-or-electrical-installer/electrical-licensing-basics",
+        "reviewer": null
+      }
+    ],
+    "notes": null
+  },
+  "conflicts": [],
+  "lastFullReviewAt": null
+}

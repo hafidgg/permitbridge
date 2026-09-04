@@ -1,0 +1,19 @@
+{
+  "id": "minnesota-dli-electrical-licensing-basics",
+  "agencyName": "Minnesota Department of Labor and Industry (DLI), Construction Codes and Licensing Division",
+  "website": "https://www.dli.mn.gov/workers/electrician-or-electrical-installer/electrical-licensing-basics",
+  "jurisdiction": "minnesota",
+  "professionsCovered": [
+    "electrician"
+  ],
+  "sourceType": "official-board",
+  "official": true,
+  "authorityLevel": "authoritative",
+  "authorityRationale": "The DLI's own general electrical licensing overview page — used for the licensing board's identity, the original (non-reciprocal) journeyworker/master exam and experience pathways, and continuing education requirements.",
+  "specificity": "profession-specific",
+  "reliabilityScore": 0.9,
+  "reliabilityRationale": "Official DLI overview page covering electrician licensing specifically, though broader than a single-field page — content here was retrieved via an automated summarizing fetch rather than a direct read of raw text, so treated as slightly less precise than the reciprocity page/application/statute for exact wording.",
+  "lastCrawl": null,
+  "lastManualVerification": "2026-09-04",
+  "fieldsUsingThisSource": 6
+}

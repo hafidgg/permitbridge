@@ -1,0 +1,19 @@
+{
+  "id": "minnesota-dli-electrical-reciprocity-page",
+  "agencyName": "Minnesota Department of Labor and Industry (DLI), Construction Codes and Licensing Division",
+  "website": "https://www.dli.mn.gov/workers/electrician-or-electrical-installer/electrical-license-reciprocity",
+  "jurisdiction": "minnesota",
+  "professionsCovered": [
+    "electrician"
+  ],
+  "sourceType": "official-board",
+  "official": true,
+  "authorityLevel": "authoritative",
+  "authorityRationale": "The DLI's own dedicated electrical license reciprocity page — states the exact 9-state Journeyworker and 4-state Master reciprocal lists, the good-standing/1-year/tested conditions, and the $50 application fee. Content verified verbatim against the official reciprocity application form (minnesota-dli-electrical-reciprocity-application), which agrees exactly.",
+  "specificity": "field-specific",
+  "reliabilityScore": 0.95,
+  "reliabilityRationale": "Official, live DLI page dedicated specifically to electrical license reciprocity — directly analogous to the Colorado DORA Applications page and Arkansas's Electrical Inspection and Licensing page already used as primary sources for their respective reciprocal-state lists.",
+  "lastCrawl": null,
+  "lastManualVerification": "2026-09-04",
+  "fieldsUsingThisSource": 6
+}

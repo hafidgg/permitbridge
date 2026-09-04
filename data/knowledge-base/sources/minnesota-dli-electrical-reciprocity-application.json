@@ -1,0 +1,19 @@
+{
+  "id": "minnesota-dli-electrical-reciprocity-application",
+  "agencyName": "Minnesota Department of Labor and Industry (DLI), Construction Codes and Licensing Division",
+  "website": "https://www.dli.mn.gov/sites/default/files/pdf/ele_reciprocity.pdf",
+  "jurisdiction": "minnesota",
+  "professionsCovered": [
+    "electrician"
+  ],
+  "sourceType": "official-government",
+  "official": true,
+  "authorityLevel": "authoritative",
+  "authorityRationale": "The literal official reciprocity application form (CC0502, 'Individual Electrical License Reciprocity Application'), listing each reciprocating state with its exact qualifying license class(es) (AJ and/or AM) directly on the form itself — the primary administrative document an applicant actually submits, not a summary page.",
+  "specificity": "field-specific",
+  "reliabilityScore": 0.97,
+  "reliabilityRationale": "The actual application form issued by DLI, containing the per-state class table verbatim — the highest reliability class, matching the Colorado regulation-text and Arkansas rules-PDF precedent.",
+  "lastCrawl": null,
+  "lastManualVerification": "2026-09-04",
+  "fieldsUsingThisSource": 6
+}
