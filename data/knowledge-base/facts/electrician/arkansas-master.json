@@ -1,0 +1,298 @@
+{
+  "profession": "electrician",
+  "state": "arkansas",
+  "licenseTier": "master",
+  "licensingBoard": {
+    "value": "Arkansas Board of Electrical Examiners (Arkansas Department of Labor and Licensing)",
+    "sourceUrl": "https://labor.arkansas.gov/labor/code-enforcement/electrical-inspection-and-licensing/",
+    "sourceTitle": "Electrical Inspection and Licensing",
+    "sourceName": "Arkansas Department of Labor and Licensing, Board of Electrical Examiners",
+    "verifiedAt": "2026-09-04",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.95,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": "Arkansas Board of Electrical Examiners (Arkansas Department of Labor and Licensing)",
+        "changedAt": "2026-09-04",
+        "reason": "Initial population from official Arkansas Board of Electrical Examiners sources (17 CAR Part 210 administrative rules + the Board's licensing/reciprocal-agreements page).",
+        "sourceUrl": "https://labor.arkansas.gov/labor/code-enforcement/electrical-inspection-and-licensing/",
+        "reviewer": null
+      }
+    ],
+    "notes": null
+  },
+  "officialWebsite": {
+    "value": "https://labor.arkansas.gov/",
+    "sourceUrl": "https://labor.arkansas.gov/labor/code-enforcement/electrical-inspection-and-licensing/",
+    "sourceTitle": "Electrical Inspection and Licensing",
+    "sourceName": "Arkansas Department of Labor and Licensing, Board of Electrical Examiners",
+    "verifiedAt": "2026-09-04",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.9,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": "https://labor.arkansas.gov/",
+        "changedAt": "2026-09-04",
+        "reason": "Initial population from official Arkansas Board of Electrical Examiners sources.",
+        "sourceUrl": "https://labor.arkansas.gov/labor/code-enforcement/electrical-inspection-and-licensing/",
+        "reviewer": null
+      }
+    ],
+    "notes": null
+  },
+  "licenseTransferPage": {
+    "value": "https://labor.arkansas.gov/labor/code-enforcement/electrical-inspection-and-licensing/",
+    "sourceUrl": "https://labor.arkansas.gov/labor/code-enforcement/electrical-inspection-and-licensing/",
+    "sourceTitle": "Electrical Inspection and Licensing",
+    "sourceName": "Arkansas Department of Labor and Licensing, Board of Electrical Examiners",
+    "verifiedAt": "2026-09-04",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.95,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": "https://labor.arkansas.gov/labor/code-enforcement/electrical-inspection-and-licensing/",
+        "changedAt": "2026-09-04",
+        "reason": "Initial population from official Arkansas Board of Electrical Examiners sources.",
+        "sourceUrl": "https://labor.arkansas.gov/labor/code-enforcement/electrical-inspection-and-licensing/",
+        "reviewer": null
+      }
+    ],
+    "notes": null
+  },
+  "universalLicenseRecognitionStatus": {
+    "value": "Unknown",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "sourceName": null,
+    "verifiedAt": null,
+    "verificationMethod": null,
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0,
+    "confidenceLevel": "unknown",
+    "history": [],
+    "notes": "Research for this Arkansas expansion focused on the Board's own Reciprocal Agreements mechanism (see reciprocityRules); no separate Arkansas Universal License Recognition statute for electricians was independently identified. Absence of a finding is not evidence of absence — left Unknown rather than assumed false, matching the same caution applied in colorado-master.json."
+  },
+  "compactMembership": {
+    "value": false,
+    "sourceUrl": "https://labor.arkansas.gov/labor/code-enforcement/electrical-inspection-and-licensing/",
+    "sourceTitle": "Electrical Inspection and Licensing — Reciprocal Agreements",
+    "sourceName": "Arkansas Department of Labor and Licensing, Board of Electrical Examiners",
+    "verifiedAt": "2026-09-04",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.85,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": false,
+        "changedAt": "2026-09-04",
+        "reason": "Initial population from official Arkansas Board of Electrical Examiners sources.",
+        "sourceUrl": "https://labor.arkansas.gov/labor/code-enforcement/electrical-inspection-and-licensing/",
+        "reviewer": null
+      }
+    ],
+    "notes": "Arkansas's reciprocity operates via listed state-by-state reciprocal agreements (17 CAR 210-509 plus the Board's own Reciprocal Agreements roster) under which an applicant must still be issued a distinct Arkansas license — not a single multistate license practiced across member states without a new license (the defining feature of a true compact, e.g. the Nurse Licensure Compact). Recorded as false to avoid conflating this reciprocal-agreement mechanism with a compact, matching the same reasoning already applied to Colorado's NERA-based reciprocity in colorado-master.json."
+  },
+  "reciprocityRules": {
+    "value": "Arkansas recognizes a separate, smaller Master Reciprocal Agreement list of only 4 states: Iowa, North Dakota, Oregon, and Texas — distinct from the 17-state Journeyman Reciprocal Agreement list. Critically, a master license from any of the OTHER 15 states on the Journeyman list (including Iowa and Texas, which appear on both lists) reciprocates into Arkansas as a JOURNEYMAN license only, not a master license. Only Oregon and North Dakota have a genuine master-to-master reciprocal agreement with Arkansas: a master license from those two states reciprocates directly into an Arkansas master license. As with the journeyman list, only an original (non-reciprocated) out-of-state license qualifies — a license itself obtained by reciprocity in the issuing state cannot be re-reciprocated into Arkansas.",
+    "sourceUrl": "https://labor.arkansas.gov/labor/code-enforcement/electrical-inspection-and-licensing/",
+    "sourceTitle": "Electrical Inspection and Licensing — Reciprocal Agreements",
+    "sourceName": "Arkansas Department of Labor and Licensing, Board of Electrical Examiners",
+    "verifiedAt": "2026-09-04",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.9,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": "Arkansas recognizes a separate, smaller Master Reciprocal Agreement list of only 4 states: Iowa, North Dakota, Oregon, and Texas. A master license from any of the other 15 journeyman-list states reciprocates into Arkansas as a JOURNEYMAN license only. Only Oregon and North Dakota have a genuine master-to-master reciprocal agreement. Only an original (non-reciprocated) license qualifies.",
+        "changedAt": "2026-09-04",
+        "reason": "Initial population from the Board of Electrical Examiners' Reciprocal Agreements page.",
+        "sourceUrl": "https://labor.arkansas.gov/labor/code-enforcement/electrical-inspection-and-licensing/",
+        "reviewer": null
+      }
+    ],
+    "notes": "17 CAR 210-404(e)(2) codifies explicit reciprocity conditions (held 1 year, tested, good standing) for JOURNEYMAN applicants specifically — see arkansas-journeyman.json; the administrative rules text does not restate an equivalent explicit condition for master-tier reciprocity. The master-tier mechanics recorded here (the 4-state list and the Oregon/North Dakota master-to-master exception) come only from the Board's own Reciprocal Agreements page (retrieved 2026-09-04 via direct browser access, the page being Cloudflare-protected against automated fetch), not the codified rules. Whether the journeyman-tier's 1-year/tested/good-standing conditions also apply to master reciprocity is NOT confirmed and is not assumed here."
+  },
+  "endorsementRules": {
+    "value": "Unknown",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "sourceName": null,
+    "verifiedAt": null,
+    "verificationMethod": null,
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0,
+    "confidenceLevel": "unknown",
+    "history": [],
+    "notes": "Arkansas's own materials describe this mechanism as a 'Reciprocal Agreement' specifically (17 CAR 210-509; Board's Reciprocal Agreements page) — no separate 'endorsement' pathway or terminology was identified, matching the same finding already recorded for Colorado's NERA-based reciprocity in colorado-master.json."
+  },
+  "requiredExams": {
+    "value": "A written examination ($80 fee) is required for standard/apprenticeship-path master licensure, per 17 CAR 210-403(a),(c). No explicit examination exemption is stated for master reciprocity applicants anywhere in the rules text — the master qualification section (210-404(d)) does not even include a dedicated reciprocity subsection, unlike journeyman's 210-404(e)(2) — so whether reciprocal master applicants must sit Arkansas's exam is unconfirmed and inferred only from the rule's general structure.",
+    "sourceUrl": "https://labor.arkansas.gov/wp-content/uploads/17CARpt-210-Final.pdf",
+    "sourceTitle": "17 CAR Part 210 — Rules of the Board of Electrical Examiners of the State of Arkansas",
+    "sourceName": "Arkansas Board of Electrical Examiners (Arkansas Department of Labor and Licensing)",
+    "verifiedAt": "2026-09-04",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "needs_review",
+    "confidence": 0.6,
+    "confidenceLevel": "uncertain",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": "A written examination ($80 fee) is required for standard/apprenticeship-path master licensure, per 17 CAR 210-403(a),(c). No explicit examination exemption is stated for master reciprocity applicants.",
+        "changedAt": "2026-09-04",
+        "reason": "Initial population from 17 CAR Part 210 (examination requirements section).",
+        "sourceUrl": "https://labor.arkansas.gov/wp-content/uploads/17CARpt-210-Final.pdf",
+        "reviewer": null
+      }
+    ],
+    "notes": "Lower confidence than the equivalent journeyman field: master's qualification section (210-404(d)) has no dedicated reciprocity subsection at all (journeyman's 210-404(e)(2) does), so this is inferred purely from the rule's general structure, not from any master-specific text. Should be confirmed directly with the Board before being treated as certain."
+  },
+  "requiredExperience": {
+    "value": "Arkansas's rules do not codify a master-tier-specific reciprocity experience or testing condition (unlike the explicit condition set for journeyman reciprocity under 17 CAR 210-404(e)(2) — see arkansas-journeyman.json). For ORIGINAL (non-reciprocal) Arkansas master licensure: a degree in electrical engineering plus 2 years of construction-related experience; OR 6 years of construction industry experience (both residential and commercial) including 2 years as a licensed journeyman electrician; OR a board-approved equivalent combination of training and experience (17 CAR 210-404(d)).",
+    "sourceUrl": "https://labor.arkansas.gov/wp-content/uploads/17CARpt-210-Final.pdf",
+    "sourceTitle": "17 CAR Part 210 — Rules of the Board of Electrical Examiners of the State of Arkansas",
+    "sourceName": "Arkansas Board of Electrical Examiners (Arkansas Department of Labor and Licensing)",
+    "verifiedAt": "2026-09-04",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.85,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": "For ORIGINAL (non-reciprocal) Arkansas master licensure: a degree in electrical engineering plus 2 years of construction-related experience; OR 6 years of construction industry experience including 2 years as a licensed journeyman electrician; OR a board-approved equivalent combination (17 CAR 210-404(d)).",
+        "changedAt": "2026-09-04",
+        "reason": "Initial population from 17 CAR 210-404(d).",
+        "sourceUrl": "https://labor.arkansas.gov/wp-content/uploads/17CARpt-210-Final.pdf",
+        "reviewer": null
+      }
+    ],
+    "notes": "What IS confirmed about master-tier reciprocity specifically — the 4-state list and the Oregon/North Dakota master-to-master exception — is recorded in reciprocityRules, not here, since it is a tier-mapping rule rather than an experience/testing condition."
+  },
+  "requiredEducation": {
+    "value": "Unknown",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "sourceName": null,
+    "verifiedAt": null,
+    "verificationMethod": null,
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0,
+    "confidenceLevel": "unknown",
+    "history": [],
+    "notes": "No standalone formal-education requirement distinct from the pathways already captured in requiredExperience was identified — matching the same scope decision already made in colorado-master.json."
+  },
+  "requiredDocuments": {
+    "value": "Unknown",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "sourceName": null,
+    "verifiedAt": null,
+    "verificationMethod": null,
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0,
+    "confidenceLevel": "unknown",
+    "history": [],
+    "notes": "Unlike journeyman reciprocity (17 CAR 210-404(e)(2), which explicitly requires sister-state certification of license status/duration/testing — see arkansas-journeyman.json), the rules text contains no equivalent explicit documentation requirement for master-tier reciprocity specifically. Not assumed to be identical to the journeyman requirement without confirmation."
+  },
+  "processingTime": {
+    "value": "Unknown",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "sourceName": null,
+    "verifiedAt": null,
+    "verificationMethod": null,
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0,
+    "confidenceLevel": "unknown",
+    "history": [],
+    "notes": "Not addressed in any official Arkansas source reviewed."
+  },
+  "endorsementFeeUsd": {
+    "value": "Unknown",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "sourceName": null,
+    "verifiedAt": null,
+    "verificationMethod": null,
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0,
+    "confidenceLevel": "unknown",
+    "history": [],
+    "notes": "Arkansas's rules do not define a distinct 'endorsement' or 'reciprocity issuance' fee separate from the standard $80 master examination fee (17 CAR 210-403(c)) — and whether reciprocal applicants must even pay that exam fee is itself unconfirmed (see requiredExams). Not recorded here to avoid conflating the general exam fee with a reciprocity-specific fee, matching Colorado's own explicit 'NOT independently confirmed' treatment of this field in colorado-master.json."
+  },
+  "renewalFeeUsd": {
+    "value": 50,
+    "sourceUrl": "https://labor.arkansas.gov/wp-content/uploads/17CARpt-210-Final.pdf",
+    "sourceTitle": "17 CAR Part 210 — Rules of the Board of Electrical Examiners of the State of Arkansas",
+    "sourceName": "Arkansas Board of Electrical Examiners (Arkansas Department of Labor and Licensing)",
+    "verifiedAt": "2026-09-04",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.95,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": 50,
+        "changedAt": "2026-09-04",
+        "reason": "Initial population from 17 CAR 210-504(b)(1), the annual master electrician license renewal fee.",
+        "sourceUrl": "https://labor.arkansas.gov/wp-content/uploads/17CARpt-210-Final.pdf",
+        "reviewer": null
+      }
+    ],
+    "notes": "Annual renewal fee for a standard master electrician license. Distinct from the $25 journeyman/residential-journeyman/industrial-maintenance renewal fees (see arkansas-journeyman.json)."
+  },
+  "continuingEducationRequirements": {
+    "value": "8 hours of continuing education relating specifically to the National Electrical Code (NEC), required each NEC cycle before license renewal (17 CAR 210-1002 — applies equally to journeyman and master electrician licenses).",
+    "sourceUrl": "https://labor.arkansas.gov/wp-content/uploads/17CARpt-210-Final.pdf",
+    "sourceTitle": "17 CAR Part 210 — Rules of the Board of Electrical Examiners of the State of Arkansas",
+    "sourceName": "Arkansas Board of Electrical Examiners (Arkansas Department of Labor and Licensing)",
+    "verifiedAt": "2026-09-04",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.95,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": "8 hours of continuing education relating specifically to the National Electrical Code (NEC), required each NEC cycle before license renewal (17 CAR 210-1002).",
+        "changedAt": "2026-09-04",
+        "reason": "Initial population from 17 CAR 210-1002.",
+        "sourceUrl": "https://labor.arkansas.gov/wp-content/uploads/17CARpt-210-Final.pdf",
+        "reviewer": null
+      }
+    ],
+    "notes": null
+  },
+  "conflicts": [],
+  "lastFullReviewAt": null
+}

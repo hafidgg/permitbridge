@@ -1,0 +1,19 @@
+{
+  "id": "arkansas-electrical-licensing-page",
+  "agencyName": "Arkansas Department of Labor and Licensing, Board of Electrical Examiners",
+  "website": "https://labor.arkansas.gov/labor/code-enforcement/electrical-inspection-and-licensing/",
+  "jurisdiction": "arkansas",
+  "professionsCovered": [
+    "electrician"
+  ],
+  "sourceType": "official-board",
+  "official": true,
+  "authorityLevel": "authoritative",
+  "authorityRationale": "The Board of Electrical Examiners' own licensing page — the only source for the exact Journeyman and Master reciprocal-agreement state lists, the asymmetric Master-reciprocates-as-Journeyman rule (except Oregon and North Dakota), and the Wyoming apprenticeship-hours condition. This content is not present in the codified administrative rules text (17 CAR Part 210); it is the Board's own maintained reciprocal-agreements roster.",
+  "specificity": "field-specific",
+  "reliabilityScore": 0.95,
+  "reliabilityRationale": "Official, live Board of Electrical Examiners page — directly analogous to the Colorado DORA Applications page (colorado-electrical-board-applications) already used as the primary source for Colorado's exact reciprocal-state list.",
+  "lastCrawl": null,
+  "lastManualVerification": "2026-09-04",
+  "fieldsUsingThisSource": 10
+}

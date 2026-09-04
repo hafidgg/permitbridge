@@ -10,7 +10,7 @@ import { RequirementRow } from "@/components/transfer-knowledge-base/Requirement
 import { TrustMethodologySection } from "@/components/transfer-knowledge-base/TrustMethodologySection";
 import { ColoradoElectricianContent } from "@/components/electrician-state/ColoradoElectricianContent";
 import { getAllPublicTransferRuleSlugs, getPublicTransferRule, getSourceByUrl, summarizeEvidence, CRITICAL_TRANSFER_RULE_FIELDS, ALL_TRANSFER_FIELD_KEYS } from "@/lib/knowledge-base/transfer-rule-data";
-import { getElectricianStatePageData, getAllSingleStateProfessionSlugs } from "@/lib/knowledge-base/electrician-state-data";
+import { getElectricianStatePageData, getAllSingleStateProfessionSlugs, SUPPORTED_ELECTRICIAN_STATES } from "@/lib/knowledge-base/electrician-state-data";
 import { getAllStates, getAllProfessions } from "@/lib/data";
 import { FIELD_LABELS, MECHANISM_LABEL, stateDisplayName } from "@/lib/knowledge-base/transfer-rule-labels";
 import { buildMetadata, articleJsonLd, faqJsonLd } from "@/lib/seo";
@@ -65,9 +65,17 @@ interface PageParams {
  * URLs through Next.js's existing route structure.
  * isSingleStateSlug() is the ONE guard everything below branches on;
  * every existing RN code path below it is completely untouched.
+ *
+ * Derived from the same SUPPORTED_ELECTRICIAN_STATES whitelist that
+ * generateStaticParams()/sitemap.ts already use (electrician-state-data.ts)
+ * instead of a hand-maintained OR chain: the prior hardcoded chain only
+ * listed "colorado" and "virginia", silently missing "texas" even though
+ * Texas was added to the whitelist and to the sitemap in Phase 2F.2 — a
+ * real gap found while adding Arkansas, fixed here rather than repeated
+ * a fourth time.
  */
 function isSingleStateSlug(profession: string, transfer: string): boolean {
-  return profession === "electrician" && (transfer === "colorado" || transfer === "virginia");
+  return profession === "electrician" && (SUPPORTED_ELECTRICIAN_STATES as readonly string[]).includes(transfer);
 }
 
 export function generateStaticParams() {

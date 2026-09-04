@@ -1,0 +1,19 @@
+{
+  "id": "arkansas-electrical-board-rules",
+  "agencyName": "Arkansas Board of Electrical Examiners (Arkansas Department of Labor and Licensing)",
+  "website": "https://labor.arkansas.gov/wp-content/uploads/17CARpt-210-Final.pdf",
+  "jurisdiction": "arkansas",
+  "professionsCovered": [
+    "electrician"
+  ],
+  "sourceType": "official-board",
+  "official": true,
+  "authorityLevel": "authoritative",
+  "authorityRationale": "The literal administrative rules text (17 CAR Part 210) governing the Arkansas Board of Electrical Examiners, hosted directly by the Arkansas Department of Labor and Licensing. Contains the codified license-class definitions, examination/licensure qualification requirements (including the explicit journeyman reciprocity conditions at 17 CAR 210-404(e)(2)), and the full fee schedule (210-403, 210-504, 210-508).",
+  "specificity": "field-specific",
+  "reliabilityScore": 0.97,
+  "reliabilityRationale": "Primary regulatory text itself, not a summary or third-party application page — the highest reliability class, matching the Colorado regulation-text precedent (colorado-electrical-board-regulation).",
+  "lastCrawl": null,
+  "lastManualVerification": "2026-09-04",
+  "fieldsUsingThisSource": 9
+}

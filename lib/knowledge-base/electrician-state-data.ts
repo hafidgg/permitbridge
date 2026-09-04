@@ -27,7 +27,7 @@ const FACTS_DIR = path.join(process.cwd(), "data", "knowledge-base", "facts");
 const TIER_ORDER = ["journeyman", "master"] as const;
 
 /** States researched and approved through Phase 2D.1/2D.2/2D.6.1 for the electrician single-state page pattern. */
-const SUPPORTED_ELECTRICIAN_STATES = ["colorado", "virginia", "texas"] as const;
+export const SUPPORTED_ELECTRICIAN_STATES = ["colorado", "virginia", "texas", "arkansas"] as const;
 
 export interface ElectricianStatePageData {
   state: string;
