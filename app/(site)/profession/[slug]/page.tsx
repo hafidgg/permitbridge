@@ -10,8 +10,16 @@ import { ProfessionIcon } from "@/components/profession/ProfessionIcon";
 import { portabilityLabel, formatDate } from "@/lib/utils";
 import { getAllProfessions, getProfessionBySlug, getAllStates, getTransferRulesForProfession } from "@/lib/data";
 import { getAllPublicTransferRuleSlugs } from "@/lib/knowledge-base/transfer-rule-data";
+import { getAllSingleStateProfessionSlugs } from "@/lib/knowledge-base/electrician-state-data";
 import { buildMetadata, articleJsonLd } from "@/lib/seo";
 import { JsonLd } from "@/components/seo/JsonLd";
+
+function toTitleCase(slug: string): string {
+  return slug
+    .split("-")
+    .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+    .join(" ");
+}
 
 export function generateStaticParams() {
   return getAllProfessions().map((p) => ({ slug: p.slug }));
@@ -44,6 +52,14 @@ export default async function ProfessionPage({ params }: { params: Promise<{ slu
   // genuinely better-sourced content about the same real-world need this
   // page's own visitors have, so linking them here is honest, not filler.
   const verifiedNurseTransfers = profession.slug === "nurse" ? getAllPublicTransferRuleSlugs() : [];
+  // Same link-graph gap as the RN case above: the knowledge-base's real,
+  // sourced electrician single-state pages (/electrician/{state}) were
+  // never linked from this hub either — generateStaticParams/sitemap.ts
+  // both discover them via getAllSingleStateProfessionSlugs(), but this
+  // page still only rendered the old-pipeline state x state transfer grid,
+  // so every one of these pages (Colorado through Utah) had zero incoming
+  // links a real visitor could follow to reach them.
+  const electricianStatePages = profession.slug === "electrician" ? getAllSingleStateProfessionSlugs() : [];
 
   return (
     <div>
@@ -157,6 +173,25 @@ export default async function ProfessionPage({ params }: { params: Promise<{ slu
                   </Link>
                 );
               })}
+            </div>
+          </section>
+        )}
+
+        {electricianStatePages.length > 0 && (
+          <section className="mt-12 rounded-xl border border-border bg-muted/20 p-6">
+            <h2 className="mb-2 text-xl font-bold tracking-tight">Electrician License Reciprocity by State</h2>
+            <p className="mb-4 max-w-2xl text-sm text-muted-foreground">
+              Journeyman and Master requirements researched and sourced separately for each state below, since the two tiers often follow
+              different rules.
+            </p>
+            <div className="flex flex-wrap gap-3">
+              {electricianStatePages.map((s) => (
+                <Link key={s.slug} href={`/${s.profession}/${s.slug}`}>
+                  <Badge variant="outline" className="px-4 py-2 text-sm hover:bg-muted">
+                    {toTitleCase(s.slug)}
+                  </Badge>
+                </Link>
+              ))}
             </div>
           </section>
         )}
