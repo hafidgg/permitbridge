@@ -137,6 +137,7 @@ export default async function TransferRulePage({ params }: { params: Promise<Pag
     const data = getElectricianStatePageData(resolvedParams.transfer);
     if (!data) notFound();
     const stateName = resolvedParams.transfer.charAt(0).toUpperCase() + resolvedParams.transfer.slice(1);
+    const otherElectricianStates = getAllSingleStateProfessionSlugs().filter((s) => s.slug !== resolvedParams.transfer);
     return (
       <div>
         <Breadcrumbs
@@ -155,7 +156,7 @@ export default async function TransferRulePage({ params }: { params: Promise<Pag
             updatedAt: "2026-08-25",
           })}
         />
-        <ColoradoElectricianContent state={resolvedParams.transfer} tiers={data.tiers} />
+        <ColoradoElectricianContent state={resolvedParams.transfer} tiers={data.tiers} otherStates={otherElectricianStates} />
       </div>
     );
   }

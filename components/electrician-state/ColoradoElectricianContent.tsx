@@ -88,7 +88,15 @@ function toTitleCase(slug: string): string {
     .join(" ");
 }
 
-export function ColoradoElectricianContent({ state, tiers }: { state: string; tiers: Array<{ tier: string; facts: ProfessionStateFacts }> }) {
+export function ColoradoElectricianContent({
+  state,
+  tiers,
+  otherStates,
+}: {
+  state: string;
+  tiers: Array<{ tier: string; facts: ProfessionStateFacts }>;
+  otherStates: Array<{ profession: string; slug: string }>;
+}) {
   const stateName = toTitleCase(state);
   const journeyman = tiers.find((t) => t.tier === "journeyman")!;
   const master = tiers.find((t) => t.tier === "master")!;
@@ -125,6 +133,18 @@ export function ColoradoElectricianContent({ state, tiers }: { state: string; ti
             All Electrician Info
           </Link>
         </div>
+        {otherStates.length > 0 && (
+          <div className="mt-4">
+            <p className="mb-2 text-sm font-medium text-muted-foreground">Other electrician reciprocity states:</p>
+            <div className="flex flex-wrap gap-3 text-sm">
+              {otherStates.map((s) => (
+                <Link key={s.slug} href={`/${s.profession}/${s.slug}`} className="text-primary hover:underline">
+                  {toTitleCase(s.slug)}
+                </Link>
+              ))}
+            </div>
+          </div>
+        )}
       </section>
     </div>
   );
