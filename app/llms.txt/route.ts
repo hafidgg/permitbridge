@@ -1,5 +1,6 @@
 import { getAllProfessions, getAllStates } from "@/lib/data";
 import { getAllPublicTransferRuleSlugs } from "@/lib/knowledge-base/transfer-rule-data";
+import { getAllSingleStateProfessionSlugs } from "@/lib/knowledge-base/electrician-state-data";
 import { SITE_NAME, SITE_DESCRIPTION } from "@/lib/constants";
 import { SITE_URL } from "@/lib/utils";
 
@@ -15,10 +16,18 @@ import { SITE_URL } from "@/lib/utils";
  * list, so it can never silently drift out of sync with what the site
  * actually contains.
  */
+function toTitleCase(slug: string): string {
+  return slug
+    .split("-")
+    .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+    .join(" ");
+}
+
 export async function GET() {
   const professions = getAllProfessions();
   const states = getAllStates();
   const rnSlugs = getAllPublicTransferRuleSlugs();
+  const electricianStateSlugs = getAllSingleStateProfessionSlugs();
 
   const lines: string[] = [
     `# ${SITE_NAME}`,
@@ -31,7 +40,7 @@ export async function GET() {
     "",
     `- Covers ${professions.length} professions across ${states.length} US states, expanding over time.`,
     "- Every factual claim on a page is either backed by a cited official source (visible on the page, with a direct link) or explicitly marked as an estimate pending verification — PermitBridge does not present unsourced figures as confirmed fact.",
-    "- The most rigorously sourced content — individually verified against official state licensing board pages, with field-level citations — covers Registered Nurse (RN) license transfers.",
+    "- The most rigorously sourced content — individually verified against official state licensing board pages, with field-level citations — covers Registered Nurse (RN) license transfers and electrician license reciprocity by state.",
     "",
     "## Professions covered",
     "",
@@ -44,6 +53,10 @@ export async function GET() {
     "## Most authoritative content (field-level sourced RN transfer guides)",
     "",
     ...rnSlugs.map((s) => `- ${SITE_URL}/${s.profession}/${s.transfer}`),
+    "",
+    "## Most authoritative content (field-level sourced electrician reciprocity by state)",
+    "",
+    ...electricianStateSlugs.map((s) => `- ${SITE_URL}/${s.profession}/${s.slug}: ${toTitleCase(s.slug)}`),
     "",
     "## Other resources",
     "",
