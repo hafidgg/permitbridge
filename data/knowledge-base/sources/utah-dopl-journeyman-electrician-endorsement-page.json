@@ -1,0 +1,19 @@
+{
+  "id": "utah-dopl-journeyman-electrician-endorsement-page",
+  "agencyName": "Utah Division of Occupational and Professional Licensing (DOPL)",
+  "website": "https://commerce.utah.gov/dopl/electrical/apply-for-a-license/journeyman-electrician/out-of-state-by-endorsement/",
+  "jurisdiction": "utah",
+  "professionsCovered": [
+    "electrician"
+  ],
+  "sourceType": "official-board",
+  "official": true,
+  "authorityLevel": "authoritative",
+  "authorityRationale": "DOPL's own 'Journeyman Electrician Out of State Applicants Applying by Endorsement' page — confirmed to exist and to describe the endorsement pathway for out-of-state journeyman applicants. Every automated fetch returned HTTP 403; used here only to cite the page's own URL as the licenseTransferPage value, not for a unique quoted claim beyond what the Oregon agreement and R156-1-302 already establish.",
+  "specificity": "field-specific",
+  "reliabilityScore": 0.85,
+  "reliabilityRationale": "Official DOPL page, access-blocked to automated fetch throughout this research; used narrowly (licenseTransferPage only) since no distinct quoted content from it (beyond its existence) was obtained, unlike its Master-tier counterpart.",
+  "lastCrawl": null,
+  "lastManualVerification": "2026-09-04",
+  "fieldsUsingThisSource": 1
+}

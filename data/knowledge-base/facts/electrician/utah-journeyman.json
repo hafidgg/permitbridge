@@ -1,0 +1,289 @@
+{
+  "profession": "electrician",
+  "state": "utah",
+  "licenseTier": "journeyman",
+  "licensingBoard": {
+    "value": "Utah Division of Occupational and Professional Licensing (DOPL), Department of Commerce",
+    "sourceUrl": "https://www.oregon.gov/bcd/licensing/Documents/reciprocal-licenses/s-utah.pdf",
+    "sourceTitle": "Reciprocal Agreement — Utah Journeyman & Master and Oregon Journeyman & Supervisor Electrical Licenses (BCD# 73-0-452)",
+    "sourceName": "Utah Division of Occupational and Professional Licensing (DOPL) & Oregon Building Codes Division",
+    "verifiedAt": "2026-09-04",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.9,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": "Utah Division of Occupational and Professional Licensing (DOPL), Department of Commerce",
+        "changedAt": "2026-09-04",
+        "reason": "Initial population from the signed Utah-Oregon reciprocal agreement, which names the Division as a signing party, and from Utah Admin. Code R156-1-302 / R156-55b-305.",
+        "sourceUrl": "https://www.oregon.gov/bcd/licensing/Documents/reciprocal-licenses/s-utah.pdf",
+        "reviewer": null
+      }
+    ],
+    "notes": "DOPL's own site (commerce.utah.gov/dopl/, dopl.utah.gov) returned HTTP 403 on every automated fetch attempt throughout this research. This field is sourced instead to the signed interstate agreement, which formally names 'THE STATE OF UTAH, DIVISION OF OCCUPATIONAL AND PROFESSIONAL LICENSING' as a party with its full address."
+  },
+  "officialWebsite": {
+    "value": "https://dopl.utah.gov/",
+    "sourceUrl": "https://www.oregon.gov/bcd/licensing/Documents/reciprocal-licenses/s-utah.pdf",
+    "sourceTitle": "Reciprocal Agreement — Utah Journeyman & Master and Oregon Journeyman & Supervisor Electrical Licenses (BCD# 73-0-452)",
+    "sourceName": "Utah Division of Occupational and Professional Licensing (DOPL) & Oregon Building Codes Division",
+    "verifiedAt": "2026-09-04",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.8,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": "https://dopl.utah.gov/",
+        "changedAt": "2026-09-04",
+        "reason": "Initial population; DOPL uses both dopl.utah.gov and commerce.utah.gov/dopl/ interchangeably in search results and linked pages.",
+        "sourceUrl": "https://www.oregon.gov/bcd/licensing/Documents/reciprocal-licenses/s-utah.pdf",
+        "reviewer": null
+      }
+    ],
+    "notes": null
+  },
+  "licenseTransferPage": {
+    "value": "https://commerce.utah.gov/dopl/electrical/apply-for-a-license/journeyman-electrician/out-of-state-by-endorsement/",
+    "sourceUrl": "https://commerce.utah.gov/dopl/electrical/apply-for-a-license/journeyman-electrician/out-of-state-by-endorsement/",
+    "sourceTitle": "Journeyman Electrician Out of State Applicants Applying by Endorsement",
+    "sourceName": "Utah Division of Occupational and Professional Licensing (DOPL)",
+    "verifiedAt": "2026-09-04",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.75,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": "https://commerce.utah.gov/dopl/electrical/apply-for-a-license/journeyman-electrician/out-of-state-by-endorsement/",
+        "changedAt": "2026-09-04",
+        "reason": "Confirmed to exist and to be DOPL's page for out-of-state journeyman endorsement applicants.",
+        "sourceUrl": "https://commerce.utah.gov/dopl/electrical/apply-for-a-license/journeyman-electrician/out-of-state-by-endorsement/",
+        "reviewer": null
+      }
+    ],
+    "notes": "Every automated fetch of this page returned HTTP 403. Its existence and general subject were confirmed by the user accessing it directly, but no unique quoted state-list content was obtained from it beyond what the Oregon agreement and R156-1-302 already establish — unlike its Master-tier counterpart, which yielded a directly quoted exam requirement (see utah-master.json)."
+  },
+  "universalLicenseRecognitionStatus": {
+    "value": "Unknown",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "sourceName": null,
+    "verifiedAt": null,
+    "verificationMethod": null,
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0,
+    "confidenceLevel": "unknown",
+    "history": [],
+    "notes": "Research for this Utah expansion focused on the Oregon reciprocal agreement and the general endorsement statute (see reciprocityRules, endorsementRules); no separate Utah Universal License Recognition statute for electricians was independently identified. Absence of a finding is not evidence of absence — left Unknown, matching the same caution applied to every other electrician state file."
+  },
+  "compactMembership": {
+    "value": false,
+    "sourceUrl": "https://www.oregon.gov/bcd/licensing/Documents/reciprocal-licenses/s-utah.pdf",
+    "sourceTitle": "Reciprocal Agreement — Utah Journeyman & Master and Oregon Journeyman & Supervisor Electrical Licenses (BCD# 73-0-452)",
+    "sourceName": "Utah Division of Occupational and Professional Licensing (DOPL) & Oregon Building Codes Division",
+    "verifiedAt": "2026-09-04",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.85,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": false,
+        "changedAt": "2026-09-04",
+        "reason": "Initial population from the Utah-Oregon reciprocal agreement, which states both states 'shall issue... licenses... to individuals' — i.e., each state issues its own distinct license, not a single shared multistate credential.",
+        "sourceUrl": "https://www.oregon.gov/bcd/licensing/Documents/reciprocal-licenses/s-utah.pdf",
+        "reviewer": null
+      }
+    ],
+    "notes": "Both Utah's Oregon-reciprocity and general-endorsement mechanisms result in Utah issuing its own distinct Journeyman Electrician license — not a single multistate license practiced across member states without a new license (the defining feature of a true compact, e.g. the Nurse Licensure Compact). Recorded as false, matching the same reasoning already applied to every other electrician state file."
+  },
+  "reciprocityRules": {
+    "value": "Utah has exactly one formal, no-examination bilateral reciprocal agreement for journeyman electricians: with Oregon (Utah DOPL / Oregon Building Codes Division Agreement BCD# 73-0-452). Under this agreement, Utah issues a Journeyman Electrician license WITHOUT EXAMINATION to a holder of an Oregon journeyman electrician license/certificate (and Oregon reciprocates for Utah journeyman holders), provided: the original license was obtained BY EXAMINATION with a minimum score of 75%; it is current, active, and in good standing; and it was earned via at least 4 years (8,000 hours) of electrical trade experience under direct supervision of a licensed journeyman, plus completion of a 4-year electrical apprenticeship vocational education program (minimum 576 classroom hours) — or experience/education independently determined equivalent by the licensing state. All reciprocity applicants must still pay the required fees to the reviewing state. No other state-specific no-exam reciprocal agreement was found for Utah journeyman licensure; for every other state, applicants use Utah's broader ENDORSEMENT pathway instead (see endorsementRules), which does not guarantee an examination waiver.",
+    "sourceUrl": "https://www.oregon.gov/bcd/licensing/Documents/reciprocal-licenses/s-utah.pdf",
+    "sourceTitle": "Reciprocal Agreement — Utah Journeyman & Master and Oregon Journeyman & Supervisor Electrical Licenses (BCD# 73-0-452)",
+    "sourceName": "Utah Division of Occupational and Professional Licensing (DOPL) & Oregon Building Codes Division",
+    "verifiedAt": "2026-09-04",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.95,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": "Utah has exactly one formal, no-examination bilateral reciprocal agreement for journeyman electricians: with Oregon (Agreement BCD# 73-0-452), subject to a 75%+ original exam score, good-standing, and 4-year/8,000-hour experience plus apprenticeship-education conditions.",
+        "changedAt": "2026-09-04",
+        "reason": "Initial population, directly read from the raw text of the signed Utah-Oregon reciprocal agreement PDF.",
+        "sourceUrl": "https://www.oregon.gov/bcd/licensing/Documents/reciprocal-licenses/s-utah.pdf",
+        "reviewer": null
+      }
+    ],
+    "notes": "A commonly repeated secondary-source claim (multiple contractor-license aggregator blogs — servicetitan.com, contractorlicenserequirements.com, ultimateelectriciansguide.com, sparkshift.app, and others) states Utah has bilateral reciprocity with Arizona, Nevada, Idaho, Colorado, and Wyoming. This was actively investigated: the official DOPL 'equivalent states' endorsement-map PDFs referenced by the Journeyman and Master out-of-state-by-endorsement pages (endorsement-to-utah-journeyman-electrician.pdf, endorsement-to-utah-master-electrician.pdf) returned HTTP 403 on every automated fetch attempt (multiple tries, including a retry after the user manually accessed the surrounding HTML pages), and no official source confirming or denying this specific 5-state list was found anywhere. Even the search-engine synthesis of secondary sources flagged internal contradictions on this exact claim. It is NOT included as fact here — absence of confirmation is treated as absence, not silently assumed true. This gap should be revisited if the endorsement-map PDFs become reachable."
+  },
+  "endorsementRules": {
+    "value": "For any state OTHER than Oregon, an out-of-state journeyman electrician license holder must apply through Utah's general licensure-BY-ENDORSEMENT pathway (Utah Code 58-1-302; Utah Admin. Code R156-1-302, incorporated for electricians via R156-55b-305), not the narrower no-exam reciprocity pathway. Under this pathway, the license does not need to still be currently active, and the Division evaluates whether the applicant's prior licensed/lawful practice is still substantively relevant. However, R156-1-302 states the Division MAY require the applicant to pass one or more exams (business/law, jurisprudence, or professional) 'except if expressly provided otherwise in statute or rule' — meaning, unlike Oregon reciprocity, an examination is NOT guaranteed to be waived for endorsement applicants from other states.",
+    "sourceUrl": "https://www.law.cornell.edu/regulations/utah/Utah-Admin-Code-R156-1-302",
+    "sourceTitle": "Utah Admin. Code R156-1-302 — Licensure by Endorsement",
+    "sourceName": "Utah Department of Commerce, Division of Occupational and Professional Licensing (via Cornell Legal Information Institute mirror)",
+    "verifiedAt": "2026-09-04",
+    "verificationMethod": "ai_assisted_manual_research",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.75,
+    "confidenceLevel": "likely",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": "For any state other than Oregon, out-of-state journeyman applicants use Utah's general endorsement pathway (58-1-302 / R156-1-302), which does not guarantee an examination waiver, unlike Oregon reciprocity.",
+        "changedAt": "2026-09-04",
+        "reason": "Initial population from Utah Admin. Code R156-1-302, cited via a Cornell LII mirror since Utah's own rule-hosting sites were unreachable.",
+        "sourceUrl": "https://www.law.cornell.edu/regulations/utah/Utah-Admin-Code-R156-1-302",
+        "reviewer": null
+      }
+    ],
+    "notes": "Utah is the first of PermitBridge's electrician states where 'reciprocity' and 'endorsement' are genuinely distinct, separately governed pathways rather than interchangeable terminology — every prior state (Colorado, Virginia, Texas, Arkansas, Minnesota) left this field Unknown because no such distinction existed in their materials. Confidence set to 'likely' rather than 'verified' because the citation is a third-party (Cornell LII) mirror of the rule text, not Utah's own .gov page, which was unreachable throughout this research."
+  },
+  "requiredExams": {
+    "value": "Via the Oregon RECIPROCITY pathway: no additional Utah examination — the agreement issues the license 'without examination' provided the original Oregon exam score was at least 75%. Via the general ENDORSEMENT pathway (all other states): Utah Admin. Code R156-1-302 gives the Division discretion to require the applicant pass one or more exams, so a waiver is not guaranteed for journeyman endorsement applicants. Whether journeyman endorsement specifically always requires a Utah-specific exam (as master endorsement explicitly does — see utah-master.json) was not independently confirmed; not assumed to be identical to master's confirmed requirement without direct source text from the Journeyman Out-of-State by Endorsement page, which returned HTTP 403 on every automated fetch.",
+    "sourceUrl": "https://www.oregon.gov/bcd/licensing/Documents/reciprocal-licenses/s-utah.pdf",
+    "sourceTitle": "Reciprocal Agreement — Utah Journeyman & Master and Oregon Journeyman & Supervisor Electrical Licenses (BCD# 73-0-452)",
+    "sourceName": "Utah Division of Occupational and Professional Licensing (DOPL) & Oregon Building Codes Division",
+    "verifiedAt": "2026-09-04",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "needs_review",
+    "confidence": 0.75,
+    "confidenceLevel": "likely",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": "No Utah exam via Oregon reciprocity (confirmed, 'without examination'). Exam not guaranteed waived via general endorsement (R156-1-302 discretion). Journeyman-specific endorsement exam text not independently confirmed.",
+        "changedAt": "2026-09-04",
+        "reason": "Initial population from the Utah-Oregon reciprocal agreement (reciprocity portion, high confidence) and R156-1-302 (endorsement portion, lower confidence).",
+        "sourceUrl": "https://www.oregon.gov/bcd/licensing/Documents/reciprocal-licenses/s-utah.pdf",
+        "reviewer": null
+      }
+    ],
+    "notes": "Marked needs_review specifically because the ENDORSEMENT-pathway exam question for JOURNEYMAN (the more common case, since only Oregon qualifies for true reciprocity) remains genuinely open — the Master-tier equivalent of this field is fully confirmed and verified (see utah-master.json) precisely because that page's content was successfully relayed by the user, while the Journeyman page's was not."
+  },
+  "requiredExperience": {
+    "value": "For the Oregon RECIPROCITY pathway specifically: at least 4 years (8,000 hours) of electrical trade experience under the direct supervision of a licensed journeyman electrician, plus completion of a 4-year electrical apprenticeship vocational education program (minimum 576 classroom hours) — or experience/education independently determined equivalent by the licensing state.",
+    "sourceUrl": "https://www.oregon.gov/bcd/licensing/Documents/reciprocal-licenses/s-utah.pdf",
+    "sourceTitle": "Reciprocal Agreement — Utah Journeyman & Master and Oregon Journeyman & Supervisor Electrical Licenses (BCD# 73-0-452)",
+    "sourceName": "Utah Division of Occupational and Professional Licensing (DOPL) & Oregon Building Codes Division",
+    "verifiedAt": "2026-09-04",
+    "verificationMethod": "official_document_review",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.9,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": "For the RECIPROCITY pathway: 4 years (8,000 hours) supervised experience plus a 4-year apprenticeship program (576 classroom hours minimum), or equivalent as determined by the licensing state.",
+        "changedAt": "2026-09-04",
+        "reason": "Initial population, directly read from the raw text of the signed Utah-Oregon reciprocal agreement PDF.",
+        "sourceUrl": "https://www.oregon.gov/bcd/licensing/Documents/reciprocal-licenses/s-utah.pdf",
+        "reviewer": null
+      }
+    ],
+    "notes": "For ORIGINAL (non-reciprocal) Utah journeyman licensure, and for the general ENDORSEMENT pathway's specific experience requirements, exact primary-source text was not independently confirmed — DOPL's own pages describing this returned HTTP 403 on every automated fetch attempt throughout this research."
+  },
+  "requiredEducation": {
+    "value": "Unknown",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "sourceName": null,
+    "verifiedAt": null,
+    "verificationMethod": null,
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0,
+    "confidenceLevel": "unknown",
+    "history": [],
+    "notes": "The Oregon reciprocal agreement's apprenticeship-education condition (4-year program, 576 classroom hours) is captured under requiredExperience instead, matching the same pathway-distinguishing treatment used across every other electrician state file. No standalone formal-education requirement beyond that was confirmed."
+  },
+  "requiredDocuments": {
+    "value": "Unknown",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "sourceName": null,
+    "verifiedAt": null,
+    "verificationMethod": null,
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0,
+    "confidenceLevel": "unknown",
+    "history": [],
+    "notes": "The Oregon agreement references each state maintaining and exchanging qualification records, but does not itemize a specific applicant-facing document checklist. DOPL's own application-document pages returned HTTP 403 on every automated fetch attempt."
+  },
+  "processingTime": {
+    "value": "Unknown",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "sourceName": null,
+    "verifiedAt": null,
+    "verificationMethod": null,
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0,
+    "confidenceLevel": "unknown",
+    "history": [],
+    "notes": "Not addressed in any official Utah source reviewed."
+  },
+  "endorsementFeeUsd": {
+    "value": "Unknown",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "sourceName": null,
+    "verifiedAt": null,
+    "verificationMethod": null,
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0,
+    "confidenceLevel": "unknown",
+    "history": [],
+    "notes": "DOPL's fee schedule page could not be retrieved — blocked (HTTP 403) on every automated fetch attempt, and the user's own manual browser attempt to locate it was also unsuccessful. Secondary sources disagree with each other on the renewal fee ($64 vs $84), so no figure is recorded here rather than guessing between conflicting unofficial numbers."
+  },
+  "renewalFeeUsd": {
+    "value": "Unknown",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "sourceName": null,
+    "verifiedAt": null,
+    "verificationMethod": null,
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0,
+    "confidenceLevel": "unknown",
+    "history": [],
+    "notes": "Same fee-schedule access gap as endorsementFeeUsd. Secondary sources give conflicting figures ($64 vs $84) for the Journeyman/Master renewal fee — neither recorded here without official confirmation."
+  },
+  "continuingEducationRequirements": {
+    "value": "Unknown",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "sourceName": null,
+    "verifiedAt": null,
+    "verificationMethod": null,
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0,
+    "confidenceLevel": "unknown",
+    "history": [],
+    "notes": "Secondary sources (continuing-education course vendors, not DOPL itself) describe a 16-hour/2-year cycle (12 core + 4 flexible, renewing Nov 30 of even years), but none of this was confirmed against DOPL's own rule text or renewal page — both were unreachable throughout this research. Left Unknown rather than sourced to commercial CE-vendor content, which does not meet this project's authoritative-source bar."
+  },
+  "conflicts": [],
+  "lastFullReviewAt": null
+}

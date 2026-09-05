@@ -23,7 +23,6 @@ export interface AutomatedPersistenceFailure {
 }
 
 export function alertAutomatedPersistenceFailure(failure: AutomatedPersistenceFailure): void {
-  // eslint-disable-next-line no-console
   console.error(`::error::[AUTO-UPDATE FAILURE] stage=${failure.stage} source=${failure.sourceId}${failure.changeId ? ` changeId=${failure.changeId}` : ""} reason="${failure.reason}"`);
 }
 
@@ -47,6 +46,5 @@ export interface ReadOnlyChangeDetected {
 }
 
 export function alertChangeDetected(change: ReadOnlyChangeDetected): void {
-  // eslint-disable-next-line no-console
   console.error(`::warning::[CHANGE_DETECTED] source=${change.sourceId} oldValue=${change.oldValue} newValue=${change.newValue} detectedAt=${change.detectedAt} url=${change.sourceUrl}`);
 }

@@ -1,0 +1,19 @@
+{
+  "id": "utah-dopl-master-electrician-endorsement-page",
+  "agencyName": "Utah Division of Occupational and Professional Licensing (DOPL)",
+  "website": "https://dopl.utah.gov/electrical/apply-for-a-license/master-electrician/out-of-state-by-endorsement/",
+  "jurisdiction": "utah",
+  "professionsCovered": [
+    "electrician"
+  ],
+  "sourceType": "official-board",
+  "official": true,
+  "authorityLevel": "authoritative",
+  "authorityRationale": "DOPL's own 'Master Electrician Out of State Applicants Applying by Endorsement' page, directly quoted: 'All applicants will be required to pass the Utah Master Electrician Law and Rule examination' — a real, explicit exam requirement for endorsement applicants, distinct from Oregon's true no-exam reciprocity. Every automated fetch of this page and its linked state-equivalency PDF returned HTTP 403 throughout this research; the content used here was relayed after the user accessed the page directly in a browser, the same workaround used for Arkansas's Reciprocal Agreements page.",
+  "specificity": "field-specific",
+  "reliabilityScore": 0.93,
+  "reliabilityRationale": "Official DOPL page content, but access was mediated through the user's browser rather than a direct automated read of raw text (unlike the PDFs read directly via the Read tool) — reliability set slightly below those, at the same tier as other browser-relayed official content.",
+  "lastCrawl": null,
+  "lastManualVerification": "2026-09-04",
+  "fieldsUsingThisSource": 3
+}

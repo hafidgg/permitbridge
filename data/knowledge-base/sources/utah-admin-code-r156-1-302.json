@@ -1,0 +1,19 @@
+{
+  "id": "utah-admin-code-r156-1-302",
+  "agencyName": "Utah Department of Commerce, Division of Occupational and Professional Licensing (rule text mirrored by Cornell Law School's Legal Information Institute)",
+  "website": "https://www.law.cornell.edu/regulations/utah/Utah-Admin-Code-R156-1-302",
+  "jurisdiction": "utah",
+  "professionsCovered": [
+    "electrician"
+  ],
+  "sourceType": "secondary",
+  "official": false,
+  "authorityLevel": "supplementary",
+  "authorityRationale": "Utah Administrative Code R156-1-302 (Licensure by Endorsement), the general DOPL-wide rule that Electricians Licensing Act Rule R156-55b-305 explicitly incorporates by reference for electricians. Utah's own rule-hosting sites (rules.utah.gov, adminrules.utah.gov, le.utah.gov) were unreachable or returned 404/connection-refused throughout this research, so this is cited via Cornell Law School's Legal Information Institute — a non-government, non-profit legal-text mirror, not the .gov original. Marked official:false / authoritative:supplementary for that reason; used only for non-critical fields (endorsementRules, requiredExams context), never for licensingBoard or reciprocityRules.",
+  "specificity": "jurisdiction-general",
+  "reliabilityScore": 0.75,
+  "reliabilityRationale": "Cornell LII is a widely-cited, verbatim (non-commentary) mirror of state regulatory text used by courts and legal researchers, but it is a third-party republication, not the primary government source itself — reliability capped below the project's typical .gov-sourced facts for that reason.",
+  "lastCrawl": null,
+  "lastManualVerification": "2026-09-04",
+  "fieldsUsingThisSource": 1
+}

@@ -1,0 +1,19 @@
+{
+  "id": "utah-oregon-reciprocal-agreement",
+  "agencyName": "Utah Division of Occupational and Professional Licensing (DOPL) & Oregon Building Codes Division",
+  "website": "https://www.oregon.gov/bcd/licensing/Documents/reciprocal-licenses/s-utah.pdf",
+  "jurisdiction": "utah",
+  "professionsCovered": [
+    "electrician"
+  ],
+  "sourceType": "official-government",
+  "official": true,
+  "authorityLevel": "authoritative",
+  "authorityRationale": "The actual signed, bilaterally-executed interstate reciprocal agreement (BCD# 73-0-452) between Utah DOPL and Oregon's Building Codes Division, made pursuant to ORS 670.380 and Utah Code 58-1-302. Not a summary or third-party description — the literal governing document itself, naming both agencies as co-signing parties and stating the exact journeyman and master/general-supervising conditions verbatim. Hosted on Oregon's own .gov domain (the Utah-side equivalent pages were persistently blocked to automated fetch), but the document's authority derives from Utah DOPL's own signature on it.",
+  "specificity": "field-specific",
+  "reliabilityScore": 0.97,
+  "reliabilityRationale": "A jointly-executed government agreement, directly quoted from the raw PDF text — the highest reliability class, matching the Colorado regulation-text and Arkansas rules-PDF precedent.",
+  "lastCrawl": null,
+  "lastManualVerification": "2026-09-04",
+  "fieldsUsingThisSource": 11
+}
