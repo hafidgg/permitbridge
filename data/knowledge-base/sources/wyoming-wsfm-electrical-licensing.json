@@ -1,0 +1,19 @@
+{
+  "id": "wyoming-wsfm-electrical-licensing",
+  "agencyName": "Wyoming State Fire Marshal's Office, Department of Fire Prevention and Electrical Safety",
+  "website": "https://wsfm.wyo.gov/electrical-safety/licensing",
+  "jurisdiction": "wyoming",
+  "professionsCovered": [
+    "electrician"
+  ],
+  "sourceType": "official-board",
+  "official": true,
+  "authorityLevel": "authoritative",
+  "authorityRationale": "The department's own dedicated licensing page, explicitly naming a separate reciprocal-state list for Journeyman (17 states) and Master (3 states) electricians, plus exact exam-score thresholds, minimum license duration, one-time-reciprocity restriction, grandfathering exclusion, and failed-exam waiting period. Corroborated for the statutory framework by W.S. 35-9-126(d) (read via law.justia.com/codes.findlaw.com mirrors) and for exam-score/duration/good-standing detail by Wyo. Code R. Agency 041, Subagency 0001, Ch. 5 SS5-5 (read via law.cornell.edu mirror, effective 7/19/2023).",
+  "specificity": "field-specific",
+  "reliabilityScore": 0.93,
+  "reliabilityRationale": "Official department page, actively maintained (references an April 2025 fee-processing change and a July 2026 NEC-edition change), used as the single canonical source for both Wyoming electrician tiers. One point — whether the Wyoming exam itself is waived for reciprocal applicants — could not be independently confirmed against a clean verbatim read of the administrative rule text and is recorded as needs_review rather than silently resolved in either direction.",
+  "lastCrawl": null,
+  "lastManualVerification": "2026-09-07",
+  "fieldsUsingThisSource": 26
+}

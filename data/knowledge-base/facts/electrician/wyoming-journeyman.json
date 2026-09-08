@@ -1,0 +1,334 @@
+{
+  "profession": "electrician",
+  "state": "wyoming",
+  "licenseTier": "journeyman",
+  "licensingBoard": {
+    "value": "Wyoming State Fire Marshal's Office, Department of Fire Prevention and Electrical Safety",
+    "sourceUrl": "https://wsfm.wyo.gov/electrical-safety/licensing",
+    "sourceTitle": "Licensing",
+    "sourceName": "Wyoming State Fire Marshal's Office, Department of Fire Prevention and Electrical Safety",
+    "verifiedAt": "2026-09-07",
+    "verificationMethod": "ai_assisted_manual_research",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.93,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": "Wyoming State Fire Marshal's Office, Department of Fire Prevention and Electrical Safety",
+        "changedAt": "2026-09-07",
+        "reason": "Initial population from the official WSFM licensing page, per the Wyoming electrician reciprocity Evidence Report approved 2026-09-07.",
+        "sourceUrl": "https://wsfm.wyo.gov/electrical-safety/licensing",
+        "reviewer": null
+      }
+    ],
+    "notes": "Confirmed as the real issuing authority (not a generic 'State Electrical Board' name) directly from the department's own current licensing page and corroborated by the statutory citation W.S. 35-9-106(a)/35-9-126."
+  },
+  "officialWebsite": {
+    "value": "https://wsfm.wyo.gov/electrical-safety/licensing",
+    "sourceUrl": "https://wsfm.wyo.gov/electrical-safety/licensing",
+    "sourceTitle": "Licensing",
+    "sourceName": "Wyoming State Fire Marshal's Office, Department of Fire Prevention and Electrical Safety",
+    "verifiedAt": "2026-09-07",
+    "verificationMethod": "ai_assisted_manual_research",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.9,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": "https://wsfm.wyo.gov/electrical-safety/licensing",
+        "changedAt": "2026-09-07",
+        "reason": "Initial population from the official WSFM licensing page, per the Wyoming electrician reciprocity Evidence Report approved 2026-09-07.",
+        "sourceUrl": "https://wsfm.wyo.gov/electrical-safety/licensing",
+        "reviewer": null
+      }
+    ],
+    "notes": null
+  },
+  "licenseTransferPage": {
+    "value": "https://wsfm.wyo.gov/electrical-safety/licensing",
+    "sourceUrl": "https://wsfm.wyo.gov/electrical-safety/licensing",
+    "sourceTitle": "Licensing",
+    "sourceName": "Wyoming State Fire Marshal's Office, Department of Fire Prevention and Electrical Safety",
+    "verifiedAt": "2026-09-07",
+    "verificationMethod": "ai_assisted_manual_research",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.9,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": "https://wsfm.wyo.gov/electrical-safety/licensing",
+        "changedAt": "2026-09-07",
+        "reason": "Initial population from the official WSFM licensing page, per the Wyoming electrician reciprocity Evidence Report approved 2026-09-07.",
+        "sourceUrl": "https://wsfm.wyo.gov/electrical-safety/licensing",
+        "reviewer": null
+      }
+    ],
+    "notes": "Unlike Virginia (a dedicated reciprocal-agreements PDF) or Colorado (a dedicated Applications page), Wyoming publishes its reciprocity terms directly on the main licensing page — no separate reciprocity-specific URL was found."
+  },
+  "universalLicenseRecognitionStatus": {
+    "value": "Unknown",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "sourceName": null,
+    "verifiedAt": null,
+    "verificationMethod": null,
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0,
+    "confidenceLevel": "unknown",
+    "history": [],
+    "notes": "No evidence of a Wyoming universal-license-recognition mechanism separate from the named 17-state reciprocal-agreement list was found. Absence of a finding is not evidence of absence — left Unknown per the no-fabrication policy, matching how Colorado's own record treats this same field."
+  },
+  "compactMembership": {
+    "value": false,
+    "sourceUrl": "https://wsfm.wyo.gov/electrical-safety/licensing",
+    "sourceTitle": "Licensing",
+    "sourceName": "Wyoming State Fire Marshal's Office, Department of Fire Prevention and Electrical Safety",
+    "verifiedAt": "2026-09-07",
+    "verificationMethod": "ai_assisted_manual_research",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.85,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": false,
+        "changedAt": "2026-09-07",
+        "reason": "Initial population from the official WSFM licensing page, per the Wyoming electrician reciprocity Evidence Report approved 2026-09-07.",
+        "sourceUrl": "https://wsfm.wyo.gov/electrical-safety/licensing",
+        "reviewer": null
+      }
+    ],
+    "notes": "Wyoming's reciprocal-agreement network (named states, each requiring a separate application, fee, and Wyoming-issued license) is not a single multistate compact license practiced across member states without a new license — the defining feature of a true compact. Recorded as false to avoid conflating the two mechanisms."
+  },
+  "reciprocityRules": {
+    "value": "Wyoming's own official licensing page states: 'The State of Wyoming has a reciprocal Journeyman Electrician license agreement with the following states: Alaska, Arkansas, Colorado, Idaho, Maine, Minnesota, Montana, Nebraska, New Hampshire, New Mexico, North Dakota, Oklahoma, Oregon, South Dakota, Texas, Iowa and Utah.' To qualify, the applicant must have obtained their Journeyman license from that state by examination, with a score of 70% or greater, and have held it for at least 1 year from the date of examination; the license must be active and in good standing with no violations. Applicants reciprocating from Oregon or Utah must additionally have their origin licensing board email a license verification letter directly to the department (wsfm-licensing@wyo.gov) confirming license name/number, approval method, OJT/work-verification hours, education hours, standing history, exam date, initial issue date, and expiration. Reciprocation into Wyoming is permitted only one (1) time — if the reciprocated Wyoming license is allowed to lapse or expire, re-reciprocation is not permitted and the applicant must requalify by examination. Grandfathered origin-state licenses are not eligible for reciprocation. An applicant who has previously tested and failed a Wyoming Journeyman or Master exam is not eligible for a reciprocal license until they have held their primary-state license for 3 years. This is a unidirectional statement of what Wyoming itself recognizes (State -> Wyoming); it does not establish that any of these 17 states would in turn recognize a Wyoming license by reciprocity. Statutory basis: W.S. 35-9-126(d) authorizes the department to issue a reciprocal license where the applicant's out-of-state exam 'is equal to or exceeds' Wyoming's own exam — the statute itself does not name any state, delegating that determination to the department; the 17-state list exists, as far as this research could establish, only on the department's webpage, not verbatim in the statute or the two administrative rule sections read (Wyo. Code R. 041-5 SS5-3 and SS5-5). Cross-reference: the existing PermitBridge colorado-journeyman.json record, sourced independently to Colorado's own official DORA page, separately lists Wyoming among Colorado's 14 NERA-reciprocal states -- corroborating evidence for the Colorado/Wyoming relationship specifically, though not the basis for this record.",
+    "sourceUrl": "https://wsfm.wyo.gov/electrical-safety/licensing",
+    "sourceTitle": "Licensing",
+    "sourceName": "Wyoming State Fire Marshal's Office, Department of Fire Prevention and Electrical Safety",
+    "verifiedAt": "2026-09-07",
+    "verificationMethod": "ai_assisted_manual_research",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.9,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": "Wyoming's own official licensing page states the 17-state Journeyman reciprocal-agreement list, exam score/duration/good-standing conditions, Oregon/Utah verification-letter requirement, and the one-time/grandfathering/failed-exam restrictions.",
+        "changedAt": "2026-09-07",
+        "reason": "Initial population from the official WSFM licensing page, per the Wyoming electrician reciprocity Evidence Report approved 2026-09-07.",
+        "sourceUrl": "https://wsfm.wyo.gov/electrical-safety/licensing",
+        "reviewer": null
+      }
+    ],
+    "notes": "A third-party aggregator claim (not from any official Wyoming source, and not used as evidence) asserted Wyoming's reciprocal states are only 'Colorado, Montana, South Dakota, Utah, and Idaho' -- this directly contradicts the official page's own 17-state list and is recorded here only so it is not later mistaken for a superseding update. The 3 states appearing on BOTH the Journeyman and Master lists (Idaho, South Dakota, Iowa) were independently verified for each tier rather than assumed identical -- see wyoming-master.json's reciprocityRules for the genuinely different Master-tier conditions (75% score, Journeyman-history prerequisite)."
+  },
+  "endorsementRules": {
+    "value": "Unknown",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "sourceName": null,
+    "verifiedAt": null,
+    "verificationMethod": null,
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0,
+    "confidenceLevel": "unknown",
+    "history": [],
+    "notes": "Wyoming's own materials use the term 'reciprocal license' specifically, not 'endorsement' -- no separate endorsement pathway distinct from reciprocity was identified, matching Colorado's and Virginia's treatment of this field."
+  },
+  "requiredExams": {
+    "value": "The examination is based on the current edition of the National Electrical Code (2023 NEC currently; 2026 NEC adopted effective 2026-07-01). A reciprocal applicant's origin-state Journeyman exam must have been passed with a score of 70% or greater. Wyoming's own page states reciprocal licensure 'only exempts you from the exam not licensure requirements,' which is read here as meaning the Wyoming exam itself is waived for qualifying reciprocal applicants -- but this specific point (whether the Wyoming exam is waived under the codified rule, Wyo. Code R. 041-5 SS5-5, as distinct from the webpage's plain-language statement) could not be independently confirmed against a clean verbatim read of the rule text and is flagged needs_review rather than silently resolved.",
+    "sourceUrl": "https://wsfm.wyo.gov/electrical-safety/licensing",
+    "sourceTitle": "Licensing",
+    "sourceName": "Wyoming State Fire Marshal's Office, Department of Fire Prevention and Electrical Safety",
+    "verifiedAt": "2026-09-07",
+    "verificationMethod": "ai_assisted_manual_research",
+    "reviewer": null,
+    "status": "needs_review",
+    "confidence": 0.6,
+    "confidenceLevel": "likely",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": "Origin-state exam score >=70%; WY exam waiver stated on the webpage but not independently confirmed against the codified rule text.",
+        "changedAt": "2026-09-07",
+        "reason": "Initial population from the official WSFM licensing page, per the Wyoming electrician reciprocity Evidence Report approved 2026-09-07.",
+        "sourceUrl": "https://wsfm.wyo.gov/electrical-safety/licensing",
+        "reviewer": null
+      }
+    ],
+    "notes": "Approved 2026-09-07 to remain needs_review per explicit user instruction -- not a blocker, but should not be marked verified. Revisit only if a direct, non-AI-mediated read of the raw Wyo. Code R. 041-5 SS5-5 PDF becomes available."
+  },
+  "requiredExperience": {
+    "value": "Reciprocal applicants must still meet Wyoming's own underlying experience requirement: 4 years (8,000 hours) of work experience in the electrical wiring industry across residential, commercial, and industrial categories (no more than 75% in any one category), under the direct supervision of a qualifying electrician for a licensed electrical contractor. Separately, the origin-state Journeyman license itself must have been held for at least 1 year from the date of examination.",
+    "sourceUrl": "https://wsfm.wyo.gov/electrical-safety/licensing",
+    "sourceTitle": "Licensing",
+    "sourceName": "Wyoming State Fire Marshal's Office, Department of Fire Prevention and Electrical Safety",
+    "verifiedAt": "2026-09-07",
+    "verificationMethod": "ai_assisted_manual_research",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.85,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": "4 years (8,000 hours) OJT still required post-reciprocity; origin license held >=1 year.",
+        "changedAt": "2026-09-07",
+        "reason": "Initial population from the official WSFM licensing page, per the Wyoming electrician reciprocity Evidence Report approved 2026-09-07.",
+        "sourceUrl": "https://wsfm.wyo.gov/electrical-safety/licensing",
+        "reviewer": null
+      }
+    ],
+    "notes": null
+  },
+  "requiredEducation": {
+    "value": "144 hours per year, or 576 hours over a four-year apprenticeship, of electrically related classroom instruction. If 576 classroom hours cannot be documented, an applicant may qualify instead with evidence of 10 years and 20,000 hours of on-the-job training experience as a licensed journeyman or master electrician.",
+    "sourceUrl": "https://wsfm.wyo.gov/electrical-safety/licensing",
+    "sourceTitle": "Licensing",
+    "sourceName": "Wyoming State Fire Marshal's Office, Department of Fire Prevention and Electrical Safety",
+    "verifiedAt": "2026-09-07",
+    "verificationMethod": "ai_assisted_manual_research",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.85,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": "576 hrs classroom (or 10-yr/20,000-hr OJT alternative).",
+        "changedAt": "2026-09-07",
+        "reason": "Initial population from the official WSFM licensing page, per the Wyoming electrician reciprocity Evidence Report approved 2026-09-07.",
+        "sourceUrl": "https://wsfm.wyo.gov/electrical-safety/licensing",
+        "reviewer": null
+      }
+    ],
+    "notes": null
+  },
+  "requiredDocuments": {
+    "value": "Government-issued ID (driver's license, state ID, or passport); current Journeyman license card from the reciprocating state; apprenticeship/education transcript; a unique personal email address; CEU certificates documenting 16 hours (>=8 code-related) completed within the 3 years since the applicant's last license renewal. Applicants reciprocating from Oregon or Utah must additionally have their origin board email a license verification letter directly to wsfm-licensing@wyo.gov.",
+    "sourceUrl": "https://wsfm.wyo.gov/electrical-safety/licensing",
+    "sourceTitle": "Licensing",
+    "sourceName": "Wyoming State Fire Marshal's Office, Department of Fire Prevention and Electrical Safety",
+    "verifiedAt": "2026-09-07",
+    "verificationMethod": "ai_assisted_manual_research",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.85,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": "ID, current license card, apprentice transcript, CEU certificates; Oregon/Utah add a board-emailed verification letter.",
+        "changedAt": "2026-09-07",
+        "reason": "Initial population from the official WSFM licensing page, per the Wyoming electrician reciprocity Evidence Report approved 2026-09-07.",
+        "sourceUrl": "https://wsfm.wyo.gov/electrical-safety/licensing",
+        "reviewer": null
+      }
+    ],
+    "notes": null
+  },
+  "processingTime": {
+    "value": "Depending on application volume, processing can take up to 5 business days per step.",
+    "sourceUrl": "https://wsfm.wyo.gov/electrical-safety/licensing",
+    "sourceTitle": "Licensing",
+    "sourceName": "Wyoming State Fire Marshal's Office, Department of Fire Prevention and Electrical Safety",
+    "verifiedAt": "2026-09-07",
+    "verificationMethod": "ai_assisted_manual_research",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.8,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": "Up to 5 business days per processing step.",
+        "changedAt": "2026-09-07",
+        "reason": "Initial population from the official WSFM licensing page, per the Wyoming electrician reciprocity Evidence Report approved 2026-09-07.",
+        "sourceUrl": "https://wsfm.wyo.gov/electrical-safety/licensing",
+        "reviewer": null
+      }
+    ],
+    "notes": null
+  },
+  "endorsementFeeUsd": {
+    "value": 100,
+    "sourceUrl": "https://wsfm.wyo.gov/electrical-safety/licensing",
+    "sourceTitle": "Licensing",
+    "sourceName": "Wyoming State Fire Marshal's Office, Department of Fire Prevention and Electrical Safety",
+    "verifiedAt": "2026-09-07",
+    "verificationMethod": "ai_assisted_manual_research",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.7,
+    "confidenceLevel": "likely",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": 100,
+        "changedAt": "2026-09-07",
+        "reason": "Initial population from the official WSFM licensing page, per the Wyoming electrician reciprocity Evidence Report approved 2026-09-07.",
+        "sourceUrl": "https://wsfm.wyo.gov/electrical-safety/licensing",
+        "reviewer": null
+      }
+    ],
+    "notes": "This is the standard initial Journeyman license fee published on the page; no distinct, separately labeled 'reciprocal application fee' was found, so this value is recorded with 'likely' rather than full confidence that it applies unmodified to reciprocal applications. A 2.5% (min $1.00) card-processing surcharge applies to all credit/debit transactions, effective 2025-04-01."
+  },
+  "renewalFeeUsd": {
+    "value": 50,
+    "sourceUrl": "https://wsfm.wyo.gov/electrical-safety/licensing",
+    "sourceTitle": "Licensing",
+    "sourceName": "Wyoming State Fire Marshal's Office, Department of Fire Prevention and Electrical Safety",
+    "verifiedAt": "2026-09-07",
+    "verificationMethod": "ai_assisted_manual_research",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.85,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": 50,
+        "changedAt": "2026-09-07",
+        "reason": "Initial population from the official WSFM licensing page, per the Wyoming electrician reciprocity Evidence Report approved 2026-09-07.",
+        "sourceUrl": "https://wsfm.wyo.gov/electrical-safety/licensing",
+        "reviewer": null
+      }
+    ],
+    "notes": "License is valid for 3 years, renewing January 1st."
+  },
+  "continuingEducationRequirements": {
+    "value": "16 hours of approved update education prior to renewal, of which at least 8 hours must specifically cover the National Electrical Code. The same 16-hour/8-code-related requirement (within the preceding 3 years) must also be documented at the time of a reciprocal application.",
+    "sourceUrl": "https://wsfm.wyo.gov/electrical-safety/licensing",
+    "sourceTitle": "Licensing",
+    "sourceName": "Wyoming State Fire Marshal's Office, Department of Fire Prevention and Electrical Safety",
+    "verifiedAt": "2026-09-07",
+    "verificationMethod": "ai_assisted_manual_research",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.85,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": "16 CE hrs (>=8 code-related) at renewal and at reciprocal application.",
+        "changedAt": "2026-09-07",
+        "reason": "Initial population from the official WSFM licensing page, per the Wyoming electrician reciprocity Evidence Report approved 2026-09-07.",
+        "sourceUrl": "https://wsfm.wyo.gov/electrical-safety/licensing",
+        "reviewer": null
+      }
+    ],
+    "notes": null
+  },
+  "conflicts": [],
+  "lastFullReviewAt": null
+}
