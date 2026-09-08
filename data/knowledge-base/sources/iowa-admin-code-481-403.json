@@ -1,0 +1,19 @@
+{
+  "id": "iowa-admin-code-481-403",
+  "agencyName": "Iowa Legislative Services Agency (Iowa Administrative Code, Chapter 481—403, Education, administered by DIAL's Electrical Examining Board)",
+  "website": "https://www.legis.iowa.gov/docs/iac/chapter/08-06-2025.481.403.pdf",
+  "jurisdiction": "iowa",
+  "professionsCovered": [
+    "electrician"
+  ],
+  "sourceType": "official-government",
+  "official": true,
+  "authorityLevel": "authoritative",
+  "authorityRationale": "The codified chapter governing postsecondary electrical education program standards and continuing-education requirements (481—403), effective 5/22/24, published directly by Iowa's Legislative Services Agency at legis.iowa.gov. Contains the 18-hours-per-3-year-license continuing-education rule (403.201) and the postsecondary program hour minimums (403.102) cited in requiredEducation and continuingEducationRequirements.",
+  "specificity": "field-specific",
+  "reliabilityScore": 0.9,
+  "reliabilityRationale": "Primary codified regulatory text, same publisher and vintage as iowa-admin-code-481-401.",
+  "lastCrawl": null,
+  "lastManualVerification": "2026-09-08",
+  "fieldsUsingThisSource": 3
+}

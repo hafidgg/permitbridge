@@ -1,0 +1,19 @@
+{
+  "id": "iowa-admin-code-481-401",
+  "agencyName": "Iowa Legislative Services Agency (Iowa Administrative Code, Chapter 481—401, administered by DIAL's Electrical Examining Board)",
+  "website": "https://www.legis.iowa.gov/docs/iac/chapter/08-06-2025.481.401.pdf",
+  "jurisdiction": "iowa",
+  "professionsCovered": [
+    "electrician"
+  ],
+  "sourceType": "official-government",
+  "official": true,
+  "authorityLevel": "authoritative",
+  "authorityRationale": "The codified Iowa Administrative Code chapter governing electrician/electrical-contractor licensing requirements, procedures, and fees (481—401), effective 5/22/24 and current per the 7/9/25 IAC Supplement, published directly by Iowa's own Legislative Services Agency at legis.iowa.gov — a .gov original, not a third-party mirror (contrast with utah-admin-code-r156-1-302, which is cited via a Cornell Law School mirror because Utah's own rule-hosting sites were unreachable). Contains the actual reciprocal-licensing procedure (401.2(14) journeyman / 401.2(15) master), exam-score thresholds, the separate Licensure-by-Verification pathway (401.9), and the license-term/fee table (401.3).",
+  "specificity": "profession-specific",
+  "reliabilityScore": 0.93,
+  "reliabilityRationale": "Primary codified regulatory text from the state's own legislative publisher — the highest-reliability source type used in this dataset. The one caveat: its stated reciprocal-application conditions (apprenticeship-or-16,000-hours prong) diverge from the board's own reciprocity PDF, which does not mention that prong — see requiredExperience needs_review flag.",
+  "lastCrawl": null,
+  "lastManualVerification": "2026-09-08",
+  "fieldsUsingThisSource": 13
+}

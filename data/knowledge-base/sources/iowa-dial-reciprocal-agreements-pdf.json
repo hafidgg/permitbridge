@@ -1,0 +1,19 @@
+{
+  "id": "iowa-dial-reciprocal-agreements-pdf",
+  "agencyName": "Iowa Department of Inspections, Appeals & Licensing (DIAL), Electrical Examining Board",
+  "website": "https://dial.iowa.gov/media/7486/download?inline=",
+  "jurisdiction": "iowa",
+  "professionsCovered": [
+    "electrician"
+  ],
+  "sourceType": "official-board",
+  "official": true,
+  "authorityLevel": "authoritative",
+  "authorityRationale": "The board's own standalone document, titled 'Reciprocal Licensing Agreements with Other States' and dated 1/29/2026, stating the complete Journeyman and Master/Electrical-Contractor reciprocal-state lists verbatim, including the asymmetric per-state Iowa-tier mapping on the Master list. This is Iowa's sole published source identifying which states qualify and under what conditions — unlike Wyoming, Texas, or Minnesota, no HTML page restates this list, so this PDF is the load-bearing document for reciprocityRules on both tiers.",
+  "specificity": "field-specific",
+  "reliabilityScore": 0.85,
+  "reliabilityRationale": "Official board PDF, directly authored and dated by DIAL staff. Reliability set slightly below the board's main HTML hub because (a) it is a static downloadable document whose staleness can't be detected without opening the file, and (b) its own stated reciprocal-application conditions do not fully match Iowa's codified administrative rule on one point — see the requiredExperience needs_review flag in both Iowa electrician fact files.",
+  "lastCrawl": null,
+  "lastManualVerification": "2026-09-08",
+  "fieldsUsingThisSource": 6
+}

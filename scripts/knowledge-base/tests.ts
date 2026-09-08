@@ -1441,8 +1441,8 @@ await test("slugs are deterministic for all 5 real transfer rules and match thei
   }
 });
 
-await test("Trust Dashboard metrics reconcile: total sources grew from 88 to 104 (4 Texas + 2 Arkansas + 5 Minnesota + 4 Utah + 1 Wyoming new authoritative electrician sources) — this counts raw rows in the single flat sources/ table, a genuinely different kind of number from the per-profession trust/reconciliation reports fixed in Phase 2D.3.2.1, so growth here from a seventh state's real sources is expected and correct, not a conflation to hide", () => {
-  assertEqual(sources.length, 104, "expected 104 total sources: 88 + 4 Texas (Phase 2F.2) + 2 Arkansas + 5 Minnesota + 4 Utah (utah-oregon-reciprocal-agreement, utah-admin-code-r156-1-302, utah-dopl-master-electrician-endorsement-page, utah-dopl-journeyman-electrician-endorsement-page) + 1 Wyoming (wyoming-wsfm-electrical-licensing)");
+await test("Trust Dashboard metrics reconcile: total sources grew from 88 to 108 (4 Texas + 2 Arkansas + 5 Minnesota + 4 Utah + 1 Wyoming + 4 Iowa new authoritative electrician sources) — this counts raw rows in the single flat sources/ table, a genuinely different kind of number from the per-profession trust/reconciliation reports fixed in Phase 2D.3.2.1, so growth here from an eighth state's real sources is expected and correct, not a conflation to hide", () => {
+  assertEqual(sources.length, 108, "expected 108 total sources: 88 + 4 Texas (Phase 2F.2) + 2 Arkansas + 5 Minnesota + 4 Utah (utah-oregon-reciprocal-agreement, utah-admin-code-r156-1-302, utah-dopl-master-electrician-endorsement-page, utah-dopl-journeyman-electrician-endorsement-page) + 1 Wyoming (wyoming-wsfm-electrical-licensing) + 4 Iowa (iowa-dial-electrical-licensing, iowa-dial-reciprocal-agreements-pdf, iowa-admin-code-481-401, iowa-admin-code-481-403)");
   const secondarySources = sources.filter((s) => s.authorityLevel === "supplementary");
   assert(secondarySources.length >= 5, "expected at least the 5 secondary discovery-only sources registered in Phase 3.1");
 });
@@ -5027,10 +5027,10 @@ await test("[PERMANENT — Phase 2D.3.2.1] computeTrustReport() called with no a
   assertEqual(defaultReport.totalFields, explicitRnReport.totalFields, "the default call must be byte-for-byte identical to an explicit registered-nurse call — proves the default really is RN, not silently 'all professions'");
 });
 
-await test("[PERMANENT — Phase 2D.3.2.1/2D.6.3] computeTrustReport('electrician') reads ONLY real electrician files — completely separate totals from the RN report, never summed together (14 files x 15 tracked fields = 210, after Wyoming was added)", () => {
+await test("[PERMANENT — Phase 2D.3.2.1/2D.6.3] computeTrustReport('electrician') reads ONLY real electrician files — completely separate totals from the RN report, never summed together (16 files x 15 tracked fields = 240, after Iowa was added)", () => {
   const rnReport = computeTrustReport("registered-nurse");
   const electricianReport = computeTrustReport("electrician");
-  assertEqual(electricianReport.totalFields, 14 * 15, "14 electrician files (colorado x2, virginia x2, texas x2, arkansas x2, minnesota x2, utah x2, wyoming x2) x 15 tracked fields = 210 — must not include any of RN's 50 files");
+  assertEqual(electricianReport.totalFields, 16 * 15, "16 electrician files (colorado x2, virginia x2, texas x2, arkansas x2, minnesota x2, utah x2, wyoming x2, iowa x2) x 15 tracked fields = 240 — must not include any of RN's 50 files");
   assert(electricianReport.totalFields !== rnReport.totalFields, "electrician and RN totals must be genuinely different numbers, not coincidentally merged");
 });
 
@@ -5044,7 +5044,7 @@ await test("[PERMANENT — Phase 2D.3.2.1] computeSourceReconciliation() called 
   const explicitRnRecon = computeSourceReconciliation("registered-nurse");
   assertEqual(defaultRecon.totalSourceRecords, explicitRnRecon.totalSourceRecords, "the default call must match an explicit registered-nurse call exactly");
   const electricianRecon = computeSourceReconciliation("electrician");
-  assertEqual(electricianRecon.totalSourceRecords, 20, "electrician's source reconciliation must count exactly the 20 real electrician sources (2 Colorado + 2 Virginia + 4 Texas + 2 Arkansas + 5 Minnesota + 4 Utah + 1 Wyoming), filtered via professionsCovered — never RN's sources");
+  assertEqual(electricianRecon.totalSourceRecords, 24, "electrician's source reconciliation must count exactly the 24 real electrician sources (2 Colorado + 2 Virginia + 4 Texas + 2 Arkansas + 5 Minnesota + 4 Utah + 1 Wyoming + 4 Iowa), filtered via professionsCovered — never RN's sources");
   assert(defaultRecon.totalSourceRecords !== electricianRecon.totalSourceRecords, "RN and electrician source counts must never be conflated into the same number");
 });
 
@@ -5089,9 +5089,9 @@ await test("[PERMANENT — Phase 2D.3.2.1] the two Colorado electrician tiers re
 // ---------------------------------------------------------------------
 console.log("\nColorado Electrician Public Page (Phase 2D.4.2):");
 
-await test("[PERMANENT — Phase 2D.4.2/2D.6.3/2F.2] getAllSingleStateProfessionSlugs() returns exactly the real, currently-publishable entries — 7 today (colorado, virginia, texas, arkansas, minnesota, utah, wyoming) — no fabricated fallback pages", () => {
+await test("[PERMANENT — Phase 2D.4.2/2D.6.3/2F.2] getAllSingleStateProfessionSlugs() returns exactly the real, currently-publishable entries — 8 today (colorado, virginia, texas, arkansas, minnesota, utah, wyoming, iowa) — no fabricated fallback pages", () => {
   const slugs = getAllSingleStateProfessionSlugs();
-  assertEqual(slugs.length, 7);
+  assertEqual(slugs.length, 8);
   assert(slugs.some((s) => s.profession === "electrician" && s.slug === "colorado"));
 });
 
@@ -5158,11 +5158,11 @@ await test("[PERMANENT — Phase 2D.4.2] the new quality gate genuinely blocks �
   assertEqual(isProfessionStateFactsPublishable(withSecondaryCritical, resolveSource).publishable, false, "a critical field sourced only from a supplementary source must block publication");
 });
 
-await test("[PERMANENT — Phase 2D.4.2] RN REGRESSION: generateStaticParams for the shared route still returns all 7 real RN pairs, completely unaffected by single-state entries being appended (now 7: colorado + virginia + texas + arkansas + minnesota + utah + wyoming)", () => {
+await test("[PERMANENT — Phase 2D.4.2] RN REGRESSION: generateStaticParams for the shared route still returns all 7 real RN pairs, completely unaffected by single-state entries being appended (now 8: colorado + virginia + texas + arkansas + minnesota + utah + wyoming + iowa)", () => {
   const rnSlugs = getAllPublicTransferRuleSlugs();
   assertEqual(rnSlugs.length, 7, "RN's publishable pair count must remain exactly 7");
   const combined = [...rnSlugs.map((s) => ({ profession: s.profession, transfer: s.transfer })), ...getAllSingleStateProfessionSlugs().map((s) => ({ profession: s.profession, transfer: s.slug }))];
-  assertEqual(combined.length, 14, "expected exactly 7 RN pairs + colorado + virginia + texas + arkansas + minnesota + utah + wyoming = 14 total params for this route");
+  assertEqual(combined.length, 15, "expected exactly 7 RN pairs + colorado + virginia + texas + arkansas + minnesota + utah + wyoming + iowa = 15 total params for this route");
 });
 
 await test("[PERMANENT — Phase 2D.4.2] RN REGRESSION: getPublicTransferRule still resolves every real RN pair exactly as before — the new electrician branch never intercepts or shadows an RN lookup", () => {
@@ -5192,9 +5192,9 @@ await test("[PERMANENT — Phase 2D.4.2] sitemap.ts includes the new single-stat
 // ---------------------------------------------------------------------
 console.log("\nVirginia Electrician Public Page (Phase 2D.6.3):");
 
-await test("[PERMANENT — Phase 2D.6.3] getAllSingleStateProfessionSlugs() now returns real entries including electrician/colorado AND electrician/virginia — discovered automatically, not hardcoded (grew to 7 total: Phase 2F.2 added texas, then arkansas, then minnesota, then utah, then wyoming)", () => {
+await test("[PERMANENT — Phase 2D.6.3] getAllSingleStateProfessionSlugs() now returns real entries including electrician/colorado AND electrician/virginia — discovered automatically, not hardcoded (grew to 8 total: Phase 2F.2 added texas, then arkansas, then minnesota, then utah, then wyoming, then iowa)", () => {
   const slugs = getAllSingleStateProfessionSlugs();
-  assertEqual(slugs.length, 7);
+  assertEqual(slugs.length, 8);
   assert(slugs.some((s) => s.slug === "colorado"));
   assert(slugs.some((s) => s.slug === "virginia"));
 });
@@ -5253,11 +5253,11 @@ await test("[PERMANENT — Phase 2D.6.3] every critical field in both Virginia t
   }
 });
 
-await test("[PERMANENT — Phase 2D.6.3] RN REGRESSION: generateStaticParams for the shared route now returns 7 RN pairs + 7 single-state pages = 14 total, RN's 7 completely unaffected", () => {
+await test("[PERMANENT — Phase 2D.6.3] RN REGRESSION: generateStaticParams for the shared route now returns 7 RN pairs + 8 single-state pages = 15 total, RN's 7 completely unaffected", () => {
   const rnSlugs = getAllPublicTransferRuleSlugs();
   assertEqual(rnSlugs.length, 7, "RN's publishable pair count must remain exactly 7 — unaffected by Phase 2F.2");
   const combined = [...rnSlugs.map((s) => ({ profession: s.profession, transfer: s.transfer })), ...getAllSingleStateProfessionSlugs().map((s) => ({ profession: s.profession, transfer: s.slug }))];
-  assertEqual(combined.length, 14, "expected exactly 7 RN pairs + colorado + virginia + texas + arkansas + minnesota + utah + wyoming = 14 total params for this route");
+  assertEqual(combined.length, 15, "expected exactly 7 RN pairs + colorado + virginia + texas + arkansas + minnesota + utah + wyoming + iowa = 15 total params for this route");
 });
 
 await test("[PERMANENT — Phase 2D.6.3] RN REGRESSION: getPublicTransferRule still resolves every real RN pair exactly as before — the generalized electrician branch never intercepts or shadows an RN lookup", () => {
@@ -5292,9 +5292,9 @@ await test("[PERMANENT — Phase 2D.6.3] sitemap.ts still derives Virginia autom
 // ---------------------------------------------------------------------
 console.log("\nTexas Electrician Public Data (Phase 2F.2):");
 
-await test("[PERMANENT — Phase 2F.2] getAllSingleStateProfessionSlugs() now returns exactly seven real entries: colorado, virginia, texas, arkansas, minnesota, utah, wyoming — discovered automatically, not hardcoded into any route file", () => {
+await test("[PERMANENT — Phase 2F.2] getAllSingleStateProfessionSlugs() now returns exactly eight real entries: colorado, virginia, texas, arkansas, minnesota, utah, wyoming, iowa — discovered automatically, not hardcoded into any route file", () => {
   const slugs = getAllSingleStateProfessionSlugs();
-  assertEqual(slugs.length, 7);
+  assertEqual(slugs.length, 8);
   assert(slugs.some((s) => s.slug === "texas"));
 });
 
@@ -5425,11 +5425,11 @@ await test("[PERMANENT — Phase 2F.2] no RN content leakage: Texas electrician 
   }
 });
 
-await test("[PERMANENT — Phase 2F.2] RN REGRESSION: generateStaticParams for the shared route now returns 7 RN pairs + 7 single-state pages = 14 total, RN's 7 completely unaffected", () => {
+await test("[PERMANENT — Phase 2F.2] RN REGRESSION: generateStaticParams for the shared route now returns 7 RN pairs + 8 single-state pages = 15 total, RN's 7 completely unaffected", () => {
   const rnSlugs = getAllPublicTransferRuleSlugs();
   assertEqual(rnSlugs.length, 7, "RN's publishable pair count must remain exactly 7 — unaffected by Phase 2F.2");
   const combined = [...rnSlugs.map((s) => ({ profession: s.profession, transfer: s.transfer })), ...getAllSingleStateProfessionSlugs().map((s) => ({ profession: s.profession, transfer: s.slug }))];
-  assertEqual(combined.length, 14, "expected exactly 7 RN pairs + colorado + virginia + texas + arkansas + minnesota + utah + wyoming = 14 total params for this route");
+  assertEqual(combined.length, 15, "expected exactly 7 RN pairs + colorado + virginia + texas + arkansas + minnesota + utah + wyoming + iowa = 15 total params for this route");
 });
 
 await test("[PERMANENT — Phase 2F.2] sitemap.ts still derives Texas automatically via the same whitelist function — no manually-written '/electrician/texas' URL string exists", () => {
@@ -5514,6 +5514,124 @@ await test("[PERMANENT] no RN content leakage in Utah's electrician page data, a
   assert(journeyman.endorsementRules.value !== "Unknown" && master.endorsementRules.value !== "Unknown", "Utah must be the first electrician state with endorsementRules genuinely populated (not Unknown) for both tiers, since Utah's own materials distinguish reciprocity from endorsement");
   assertEqual(master.requiredExams.confidenceLevel, "verified", "Utah master requiredExams must be verified — DOPL's own page directly states endorsement applicants must pass the Utah Master Electrician Law and Rule exam");
   assertEqual(journeyman.requiredExams.status, "needs_review", "Utah journeyman requiredExams must remain needs_review — unlike master, the journeyman endorsement page's exam text could not be retrieved during this research");
+});
+
+// ---------------------------------------------------------------------
+// Iowa Electrician Public Data
+//     An eighth electrician state, and the first sourced only from a
+//     standalone PDF (no HTML page restates the reciprocal-state list)
+//     rather than a single HTML page. Also the first case where the
+//     Master-tier list uses the SAME 13 states as Journeyman but maps
+//     five of them to Iowa's Journeyman tier only, not Master — a real
+//     asymmetry preserved verbatim, not normalized away. requiredExperience
+//     is deliberately needs_review on both tiers: the reciprocity PDF and
+//     the codified rule (481-401.2(14)/(15)) state different requirement
+//     sets for the same reciprocal pathway.
+// ---------------------------------------------------------------------
+console.log("\nIowa Electrician Public Data:");
+
+await test("[PERMANENT] getAllSingleStateProfessionSlugs() includes electrician/iowa, and both iowa tiers (journeyman, master) pass the real quality gate", () => {
+  const slugs = getAllSingleStateProfessionSlugs();
+  assert(slugs.some((s) => s.slug === "iowa"), "iowa must appear in the whitelist output — its fact files must pass isProfessionStateFactsPublishable() for both tiers");
+  const data = getElectricianStatePageData("iowa");
+  assert(data !== null, "iowa fact files must pass the quality gate for both journeyman and master tiers");
+  assertEqual(data!.tiers.map((t) => t.tier).sort(), ["journeyman", "master"]);
+});
+
+await test("[PERMANENT] every populated critical field in both Iowa tiers is traceable to a real, registered, authoritative SourceRecord — confirmed via the actual quality gate, not assumed", () => {
+  const sources = loadAllSources();
+  const sourceByUrl = new Map(sources.map((s) => [s.website, s]));
+  const resolveSource = (url: string) => sourceByUrl.get(url);
+  const data = getElectricianStatePageData("iowa")!;
+  for (const { tier, facts } of data.tiers) {
+    const result = isProfessionStateFactsPublishable(facts, resolveSource);
+    assertEqual(result.publishable, true, `iowa-${tier} must pass its own real quality gate: ${result.blockingReasons.join("; ")}`);
+  }
+});
+
+await test("[PERMANENT] CRITICAL: Iowa Journeyman's and Master's reciprocal-state lists share the same 13-state universe, but the Master list's Iowa-tier mapping is genuinely asymmetric per state — never normalized to a clean Master-to-Master list", () => {
+  const data = getElectricianStatePageData("iowa")!;
+  const journeyman = data.tiers.find((t) => t.tier === "journeyman")!;
+  const master = data.tiers.find((t) => t.tier === "master")!;
+  const jText = journeyman.facts.reciprocityRules.value as string;
+  const mText = master.facts.reciprocityRules.value as string;
+
+  const thirteenStates = ["Alaska", "Arkansas", "Colorado", "Minnesota", "Montana", "Nebraska", "New Hampshire", "North Dakota", "Oklahoma", "South Dakota", "Texas", "Wisconsin", "Wyoming"];
+  for (const state of thirteenStates) {
+    assert(jText.includes(state), `Journeyman's reciprocal-state list must include the real, documented state: ${state}`);
+    assert(mText.includes(state), `Master's reciprocal-state list must include the real, documented state: ${state}`);
+  }
+  assert(jText !== mText, "Journeyman and Master reciprocityRules must be genuinely distinct text, never shared across tiers");
+
+  // The 5 states whose Master/Contractor license reciprocates only to Iowa Journeyman, never Master.
+  for (const state of ["Alaska", "Colorado", "Montana", "New Hampshire", "Oklahoma"]) {
+    assert(mText.includes(state), `Master's text must document ${state}'s asymmetric mapping, not silently drop it`);
+  }
+  assert(mText.toLowerCase().includes("asymmetr") || mText.toLowerCase().includes("only to iowa journeyman"), "Master's reciprocityRules must explicitly surface the asymmetric per-state tier mapping, not bury it silently in a plain list");
+});
+
+await test("[PERMANENT] CRITICAL: Iowa's requiredExperience is needs_review on BOTH tiers — the reciprocity PDF and the codified rule (481-401.2(14)/(15)) state different requirement sets for the same reciprocal pathway, and this must never be silently resolved in either direction", () => {
+  const data = getElectricianStatePageData("iowa")!;
+  const journeyman = data.tiers.find((t) => t.tier === "journeyman")!.facts;
+  const master = data.tiers.find((t) => t.tier === "master")!.facts;
+  assertEqual(journeyman.requiredExperience.status, "needs_review", "Iowa journeyman requiredExperience must remain needs_review — the apprenticeship-or-16,000-hours prong in 481-401.2(14) is absent from the reciprocity PDF's own text");
+  assertEqual(master.requiredExperience.status, "needs_review", "Iowa master requiredExperience must remain needs_review — the same document conflict applies to 481-401.2(15)");
+  assert((journeyman.requiredExperience.value as string).includes("16,000 hours"), "Iowa journeyman requiredExperience must document the 16,000-hour prong found only in the codified rule, not silently drop it");
+  assert((master.requiredExperience.value as string).includes("16,000 hours"), "Iowa master requiredExperience must document the same prong for its own tier");
+});
+
+await test("[PERMANENT] Iowa's requiredExams is NOT needs_review on either tier — unlike the requiredExperience conflict, the exam-waiver-for-reciprocal-applicants point is stated explicitly and unambiguously in the codified rule ('may be issued, without examination'), not inferred from webpage prose", () => {
+  const data = getElectricianStatePageData("iowa")!;
+  const journeyman = data.tiers.find((t) => t.tier === "journeyman")!.facts;
+  const master = data.tiers.find((t) => t.tier === "master")!.facts;
+  assertEqual(journeyman.requiredExams.confidenceLevel, "verified", "Iowa journeyman requiredExams must be verified — 481-401.2(14) states the exam waiver explicitly");
+  assert(journeyman.requiredExams.status !== "needs_review", "Iowa journeyman requiredExams must NOT be needs_review");
+  assertEqual(master.requiredExams.confidenceLevel, "verified", "Iowa master requiredExams must be verified — 481-401.2(15) states the exam waiver explicitly");
+  assert(master.requiredExams.status !== "needs_review", "Iowa master requiredExams must NOT be needs_review");
+  const jScore = (journeyman.requiredExams.value as string).match(/score of (\d+) or higher/)?.[1];
+  const mScore = (master.requiredExams.value as string).match(/score of (\d+) or higher/)?.[1];
+  assertEqual(jScore, "70", "Iowa journeyman's own exam-score requirement must be 70");
+  assertEqual(mScore, "70", "Iowa master's own exam-score requirement must also be 70 — unlike Wyoming's genuinely different 70/75 split, Iowa uses the identical threshold for both tiers, confirmed not assumed");
+});
+
+await test("[PERMANENT] Iowa is the only electrician state so far sourced from a standalone PDF for its reciprocal-state list, not an HTML page — licenseTransferPage must point at the PDF, and its notes must document that this excludes Iowa from an HTML-based automated watcher", () => {
+  const data = getElectricianStatePageData("iowa")!;
+  for (const { facts } of data.tiers) {
+    assertEqual(facts.licenseTransferPage.value, "https://dial.iowa.gov/media/7486/download?inline=", "Iowa's licenseTransferPage must point at the reciprocal-agreements PDF, not the HTML licensing page");
+    assert((facts.licenseTransferPage.notes ?? "").toLowerCase().includes("pdf"), "Iowa's licenseTransferPage notes must document the PDF-only publication format");
+  }
+});
+
+await test("[PERMANENT] Iowa's endorsementRules is genuinely populated (not Unknown) on both tiers — the codified 'Licensure by Verification' pathway (481-401.9) is a real, sourced, residency-based route distinct from the 13-state reciprocal-agreement list", () => {
+  const data = getElectricianStatePageData("iowa")!;
+  for (const { facts } of data.tiers) {
+    assert(facts.endorsementRules.value !== "Unknown", "Iowa's endorsementRules must be populated, not Unknown, since Iowa's own admin code names and defines this distinct pathway");
+    assert((facts.endorsementRules.value as string).toLowerCase().includes("residency"), "Iowa's endorsementRules must document the Iowa-residency requirement that distinguishes Licensure by Verification from reciprocal licensing");
+  }
+});
+
+await test("[PERMANENT] REGRESSION: Colorado, Virginia, Texas, Arkansas, Minnesota, Utah, and Wyoming electrician data are completely unaffected by adding Iowa", () => {
+  assert(getColoradoElectricianPageData() !== null);
+  for (const state of ["virginia", "texas", "arkansas", "minnesota", "utah", "wyoming"]) {
+    assert(getElectricianStatePageData(state) !== null, `${state} must remain publishable after Iowa was added`);
+  }
+});
+
+await test("[PERMANENT] no RN content leakage in Iowa's electrician page data, and no cross-tier leakage between Iowa journeyman and master", () => {
+  const data = getElectricianStatePageData("iowa")!;
+  for (const { facts } of data.tiers) {
+    const allText = JSON.stringify(facts).toLowerCase();
+    assert(!allText.includes("registered nurse") && !allText.includes("nursys") && !allText.includes("nclex"), "iowa: electrician page data must contain zero RN-specific terminology");
+  }
+  const journeyman = data.tiers.find((t) => t.tier === "journeyman")!.facts;
+  const master = data.tiers.find((t) => t.tier === "master")!.facts;
+  assert(journeyman.reciprocityRules.value !== master.reciprocityRules.value, "Iowa journeyman and master reciprocityRules must genuinely differ — same 13-state universe, but a materially different Iowa-tier mapping, not the same text duplicated across tiers");
+  assert(journeyman.endorsementFeeUsd.value === 75 && master.endorsementFeeUsd.value === 375, "Iowa journeyman and master fees must retain their own genuinely different values ($75 vs $375), never copied from one tier to the other");
+});
+
+await test("[PERMANENT] sitemap.ts derives Iowa automatically via the same whitelist function — no manually-written '/electrician/iowa' URL string exists", () => {
+  const sitemapSource = fs.readFileSync(path.join(process.cwd(), "app", "sitemap.ts"), "utf-8");
+  assert(!sitemapSource.includes('"/electrician/iowa"') && !sitemapSource.includes("'/electrician/iowa'"), "no literal, manually-typed URL string for Iowa may exist in sitemap.ts");
 });
 
 

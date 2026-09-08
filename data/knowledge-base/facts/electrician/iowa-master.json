@@ -1,0 +1,334 @@
+{
+  "profession": "electrician",
+  "state": "iowa",
+  "licenseTier": "master",
+  "licensingBoard": {
+    "value": "Iowa Electrical Examining Board, Department of Inspections, Appeals & Licensing (DIAL)",
+    "sourceUrl": "https://dial.iowa.gov/licenses/building/electrical-licensing",
+    "sourceTitle": "Electrical Licensing",
+    "sourceName": "Iowa Department of Inspections, Appeals & Licensing (DIAL), Electrical Examining Board",
+    "verifiedAt": "2026-09-08",
+    "verificationMethod": "ai_assisted_manual_research",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.93,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": "Iowa Electrical Examining Board, Department of Inspections, Appeals & Licensing (DIAL)",
+        "changedAt": "2026-09-08",
+        "reason": "Initial population from the official DIAL licensing page, per the Iowa electrician reciprocity Evidence Report approved 2026-09-08.",
+        "sourceUrl": "https://dial.iowa.gov/licenses/building/electrical-licensing",
+        "reviewer": null
+      }
+    ],
+    "notes": "Confirmed directly from the board's own current licensing page and corroborated by Iowa Admin. Code 481—401's chapter header ('Inspections and Appeals[481]') and Iowa Code chapter 103."
+  },
+  "officialWebsite": {
+    "value": "https://dial.iowa.gov/licenses/building/electrical-licensing",
+    "sourceUrl": "https://dial.iowa.gov/licenses/building/electrical-licensing",
+    "sourceTitle": "Electrical Licensing",
+    "sourceName": "Iowa Department of Inspections, Appeals & Licensing (DIAL), Electrical Examining Board",
+    "verifiedAt": "2026-09-08",
+    "verificationMethod": "ai_assisted_manual_research",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.9,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": "https://dial.iowa.gov/licenses/building/electrical-licensing",
+        "changedAt": "2026-09-08",
+        "reason": "Initial population from the official DIAL licensing page, per the Iowa electrician reciprocity Evidence Report approved 2026-09-08.",
+        "sourceUrl": "https://dial.iowa.gov/licenses/building/electrical-licensing",
+        "reviewer": null
+      }
+    ],
+    "notes": null
+  },
+  "licenseTransferPage": {
+    "value": "https://dial.iowa.gov/media/7486/download?inline=",
+    "sourceUrl": "https://dial.iowa.gov/media/7486/download?inline=",
+    "sourceTitle": "Reciprocal Licensing Agreements with Other States",
+    "sourceName": "Iowa Department of Inspections, Appeals & Licensing (DIAL), Electrical Examining Board",
+    "verifiedAt": "2026-09-08",
+    "verificationMethod": "ai_assisted_manual_research",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.9,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": "https://dial.iowa.gov/media/7486/download?inline=",
+        "changedAt": "2026-09-08",
+        "reason": "Initial population from the official DIAL reciprocal-agreements PDF, per the Iowa electrician reciprocity Evidence Report approved 2026-09-08.",
+        "sourceUrl": "https://dial.iowa.gov/media/7486/download?inline=",
+        "reviewer": null
+      }
+    ],
+    "notes": "No separate reciprocity-specific URL exists distinct from the main Journeyman/Master combined PDF."
+  },
+  "universalLicenseRecognitionStatus": {
+    "value": "Unknown",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "sourceName": null,
+    "verifiedAt": null,
+    "verificationMethod": null,
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0,
+    "confidenceLevel": "unknown",
+    "history": [],
+    "notes": "No evidence of an Iowa universal-license-recognition mechanism separate from the named 13-state reciprocal-agreement list and the separate Licensure-by-Verification pathway (see endorsementRules) was found. Absence of a finding is not evidence of absence -- left Unknown per the no-fabrication policy."
+  },
+  "compactMembership": {
+    "value": false,
+    "sourceUrl": "https://dial.iowa.gov/media/7486/download?inline=",
+    "sourceTitle": "Reciprocal Licensing Agreements with Other States",
+    "sourceName": "Iowa Department of Inspections, Appeals & Licensing (DIAL), Electrical Examining Board",
+    "verifiedAt": "2026-09-08",
+    "verificationMethod": "ai_assisted_manual_research",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.85,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": false,
+        "changedAt": "2026-09-08",
+        "reason": "Initial population from the official DIAL reciprocal-agreements PDF, per the Iowa electrician reciprocity Evidence Report approved 2026-09-08.",
+        "sourceUrl": "https://dial.iowa.gov/media/7486/download?inline=",
+        "reviewer": null
+      }
+    ],
+    "notes": "Iowa's reciprocal-agreement network requires a separate Iowa-issued license, application, and fee for each qualifying out-of-state license -- not a single multistate compact license practiced across member states without a new license. Recorded as false to avoid conflating the two mechanisms."
+  },
+  "reciprocityRules": {
+    "value": "Iowa's own official reciprocity document (same DIAL PDF as the Journeyman tier, dated 1/29/2026) lists the identical 13-state universe under a separate heading, 'Reciprocal Master or Electrical Contractor Licenses' -- but the Iowa-side target tier is NOT uniformly Master. This was verified independently of the Journeyman tier and is not assumed identical merely because the same 13 states appear on both lists. Verbatim per-state mappings: Alaska Master license reciprocates only to an Iowa Journeyman Class A license ('Alaska Master license may reciprocate to an Iowa Journeyman Class A license, or an Iowa Master Class A license may reciprocate to an Alaska Journeyman license'); Arkansas Master reciprocates to Iowa Master Class A; Colorado Master reciprocates only to Iowa Journeyman Class A; Minnesota Class A Master reciprocates to Iowa Master OR Journeyman Class A; Montana Master reciprocates only to Iowa Journeyman Class A; Nebraska Electrical Contractor reciprocates to Iowa Master Class A; New Hampshire Master reciprocates only to Iowa Journeyman Class A; North Dakota Class A Master reciprocates to Iowa Master OR Journeyman Class A; Oklahoma Electrical Contractor reciprocates only to Iowa Journeyman Class A; South Dakota Electrical Contractor reciprocates to Iowa Journeyman OR Master Class A; Texas Master Electrician reciprocates to Iowa Master Class A; Wisconsin Master Electrician reciprocates to Iowa Master OR Journeyman Class A; Wyoming Master Electrician reciprocates to Iowa Master OR Journeyman Class A. In plain terms: 5 of the 13 states (Alaska, Colorado, Montana, New Hampshire, Oklahoma) have their Master/Contractor license recognized only at Iowa's Journeyman Class A level, not Master. This asymmetry is exactly as printed in Iowa's own document and is preserved verbatim here rather than 'corrected' or normalized, since no alternate official text was found to resolve it -- a real oddity worth flagging to a reader rather than silently smoothing over. The PDF's stated qualifying conditions (exam score >=70%, 1-year continuous license hold, never failed the Iowa exam) and the codified-rule discrepancy (an apprenticeship-or-16,000-hours prong under Iowa Admin. Code 481-401.2(15), 'Reciprocal master licensing,' not mentioned in the PDF) apply the same way as documented for the Journeyman tier -- see requiredExperience, flagged needs_review for the same reason. This is a unidirectional statement of what Iowa itself recognizes (State -> Iowa); it does not establish that Alaska, Arkansas, Colorado, Minnesota, Montana, Nebraska, New Hampshire, North Dakota, Oklahoma, South Dakota, Texas, Wisconsin, or Wyoming would in turn recognize an Iowa Master license by reciprocity.",
+    "sourceUrl": "https://dial.iowa.gov/media/7486/download?inline=",
+    "sourceTitle": "Reciprocal Licensing Agreements with Other States",
+    "sourceName": "Iowa Department of Inspections, Appeals & Licensing (DIAL), Electrical Examining Board",
+    "verifiedAt": "2026-09-08",
+    "verificationMethod": "ai_assisted_manual_research",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.9,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": "Iowa's own official reciprocity PDF lists the same 13-state universe as Journeyman for the Master/Contractor tier, but with an asymmetric per-state Iowa-tier mapping: 5 states' Master/Contractor licenses reciprocate only to Iowa Journeyman Class A, not Master.",
+        "changedAt": "2026-09-08",
+        "reason": "Initial population from the official DIAL reciprocal-agreements PDF, per the Iowa electrician reciprocity Evidence Report approved 2026-09-08.",
+        "sourceUrl": "https://dial.iowa.gov/media/7486/download?inline=",
+        "reviewer": null
+      }
+    ],
+    "notes": "A synthesized web-search summary (not an official source, not used as evidence) claimed Iowa's Master reciprocity list was only 'Alaska, Arkansas, Colorado, Texas, and Wyoming' (5 states) -- this directly contradicts the official PDF's actual 13-state Master/Contractor list and is recorded here only so it is not later mistaken for a superseding update."
+  },
+  "endorsementRules": {
+    "value": "Distinct from 'reciprocal licensing' above, Iowa's codified rule (Iowa Admin. Code 481-401.9, 'Licensure by verification,' effective 5/22/24) provides a second, genuinely different path to an Iowa license that is NOT limited to the 13 states with a formal reciprocal agreement. Eligibility requires: the applicant holds a license, certification, or registration in at least one other issuing jurisdiction, held for at least 1 year; the scope of practice in that jurisdiction is substantially similar to Iowa's; the license is in good standing in every jurisdiction where held; and the applicant either establishes Iowa residency (maintains an Iowa residence, plus at least one of: homestead credit/military tax exemption, Iowa voter registration, an Iowa driver's license, or spending more days in Iowa than in any other state) or is married to an active-duty service member on an official permanent change of station to Iowa. The application requires a verification form completed by the transferring jurisdiction and sent directly to the board, plus complete criminal-history documentation. If the transferring jurisdiction previously took disciplinary action against the applicant, DIAL will neither issue nor deny the license until that matter is resolved (401.9(3)); the same holds for a pending complaint or investigation elsewhere (401.9(4)). A person whose license was revoked, or who voluntarily surrendered it, in another jurisdiction is ineligible for this pathway. For a Master-tier applicant this is potentially significant: a Master electrician from one of the 5 asymmetric-mapped states above (whose Master license only reciprocates to Iowa Journeyman under the reciprocal-agreement pathway) is not thereby limited to Journeyman -- Licensure by Verification is a separate route that could still be pursued for a Master-level Iowa license if its own residency-based eligibility criteria are met, though this was not independently confirmed against a real applicant scenario.",
+    "sourceUrl": "https://www.legis.iowa.gov/docs/iac/chapter/08-06-2025.481.401.pdf",
+    "sourceTitle": "Chapter 401 -- Electrician and Electrical Contractor Licensing Program: Licensing Requirements, Procedures, and Fees",
+    "sourceName": "Iowa Legislative Services Agency (Iowa Administrative Code, Chapter 481-401)",
+    "verifiedAt": "2026-09-08",
+    "verificationMethod": "ai_assisted_manual_research",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.85,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": "Iowa Admin. Code 481-401.9 'Licensure by verification' -- a residency-based pathway open to any state's license, genuinely distinct from the 13-state reciprocal-agreement list and potentially relevant to Master applicants affected by the asymmetric tier mapping.",
+        "changedAt": "2026-09-08",
+        "reason": "Initial population from Iowa Admin. Code 481-401.9, per the Iowa electrician reciprocity Evidence Report approved 2026-09-08.",
+        "sourceUrl": "https://www.legis.iowa.gov/docs/iac/chapter/08-06-2025.481.401.pdf",
+        "reviewer": null
+      }
+    ],
+    "notes": "The closing sentence about Licensure by Verification potentially offsetting the asymmetric mapping is analytical framing, not an independently confirmed real-world outcome -- flagged in the value text itself rather than silently asserted as fact."
+  },
+  "requiredExams": {
+    "value": "Iowa's own codified rule (481-401.2(15)) states a Master Class A license 'may be issued, without examination,' to a qualifying reciprocal applicant -- the same explicit, unambiguous exam-waiver language as the Journeyman tier (481-401.2(14)), so this is recorded at full confidence rather than needs_review. The prerequisite is that the applicant already passed a supervised written examination in the origin state with a score of 70 or higher -- Iowa uses the identical 70-or-higher threshold for both Journeyman and Master (unlike Wyoming's genuinely different 70%/75% split), confirmed directly by reading 481-401.2(15) rather than assumed from the Journeyman tier.",
+    "sourceUrl": "https://www.legis.iowa.gov/docs/iac/chapter/08-06-2025.481.401.pdf",
+    "sourceTitle": "Chapter 401 -- Electrician and Electrical Contractor Licensing Program: Licensing Requirements, Procedures, and Fees",
+    "sourceName": "Iowa Legislative Services Agency (Iowa Administrative Code, Chapter 481-401)",
+    "verifiedAt": "2026-09-08",
+    "verificationMethod": "ai_assisted_manual_research",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.9,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": "Reciprocal Master applicants are issued a license without a new Iowa exam, per 481-401.2(15), provided their origin-state exam score was >=70 -- the same threshold as Journeyman.",
+        "changedAt": "2026-09-08",
+        "reason": "Initial population from Iowa Admin. Code 481-401.2(15), per the Iowa electrician reciprocity Evidence Report approved 2026-09-08.",
+        "sourceUrl": "https://www.legis.iowa.gov/docs/iac/chapter/08-06-2025.481.401.pdf",
+        "reviewer": null
+      }
+    ],
+    "notes": "Approved 2026-09-08 to remain at full confidence -- the exam-waiver point itself is explicit in the codified rule text. The needs_review flag for this reciprocal pathway is instead attached to requiredExperience, where the actual document conflict lies."
+  },
+  "requiredExperience": {
+    "value": "Iowa's reciprocity PDF states only that the qualifying out-of-state Master (or Electrical Contractor) license must have been held for 1 continuous year, active and never expired, suspended, or revoked. Iowa's codified rule (481-401.2(15)) adds a condition the PDF's own text does not mention: the applicant must ALSO have either (a) completed an approved apprenticeship program, or (b) completed 16,000 hours of electrical work as an electrician licensed by the other state, documented by a sworn affidavit signed by the applicant -- the same structure as the Journeyman tier's 481-401.2(14), independently confirmed rather than assumed identical. Both documents are genuine primary Iowa sources, but they describe different requirement sets for what is nominally the same reciprocal pathway. It could not be independently confirmed whether DIAL requires the apprenticeship/16,000-hour documentation in practice for applicants who already meet the PDF's stated conditions. Recorded as needs_review rather than silently picking one document over the other.",
+    "sourceUrl": "https://www.legis.iowa.gov/docs/iac/chapter/08-06-2025.481.401.pdf",
+    "sourceTitle": "Chapter 401 -- Electrician and Electrical Contractor Licensing Program: Licensing Requirements, Procedures, and Fees",
+    "sourceName": "Iowa Legislative Services Agency (Iowa Administrative Code, Chapter 481-401)",
+    "verifiedAt": "2026-09-08",
+    "verificationMethod": "ai_assisted_manual_research",
+    "reviewer": null,
+    "status": "needs_review",
+    "confidence": 0.6,
+    "confidenceLevel": "likely",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": "1-year continuous license hold (per the PDF) plus an apprenticeship-or-16,000-hours prong (per 481-401.2(15)) not mentioned in the PDF -- flagged as an unresolved conflict between two primary sources, same structure as the Journeyman tier.",
+        "changedAt": "2026-09-08",
+        "reason": "Initial population, per the Iowa electrician reciprocity Evidence Report approved 2026-09-08 -- kept needs_review per explicit user instruction after reviewing the discrepancy.",
+        "sourceUrl": "https://www.legis.iowa.gov/docs/iac/chapter/08-06-2025.481.401.pdf",
+        "reviewer": null
+      }
+    ],
+    "notes": "Approved 2026-09-08 to remain needs_review -- not a blocker (requiredExperience is not a critical field for publication), but should not be marked verified. Revisit only if DIAL clarifies in writing whether the 16,000-hour/apprenticeship affidavit is actually required for reciprocal applicants who already meet the PDF's stated conditions."
+  },
+  "requiredEducation": {
+    "value": "Not specific to reciprocal applicants, who substitute their out-of-state credentials per requiredExperience -- this describes Iowa's own initial-licensure pathway for context. Iowa Admin. Code 481-401.2(3) requires a Class A Master applicant to have completed 1 year of experience as a licensed Journeyman electrician, in addition to passing the Master exam, as its own-state initial-licensure route. No separate classroom-hour requirement distinct from the Journeyman-level postsecondary education standard (see iowa-journeyman.json) was found specifically for Master.",
+    "sourceUrl": "https://www.legis.iowa.gov/docs/iac/chapter/08-06-2025.481.401.pdf",
+    "sourceTitle": "Chapter 401 -- Electrician and Electrical Contractor Licensing Program: Licensing Requirements, Procedures, and Fees",
+    "sourceName": "Iowa Legislative Services Agency (Iowa Administrative Code, Chapter 481-401)",
+    "verifiedAt": "2026-09-08",
+    "verificationMethod": "ai_assisted_manual_research",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.75,
+    "confidenceLevel": "likely",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": "1 year of experience as a licensed Journeyman electrician plus the Master exam (401.2(3)); no separate Master-specific classroom-hour rule found.",
+        "changedAt": "2026-09-08",
+        "reason": "Initial population from Iowa Admin. Code 481-401.2(3), per the Iowa electrician reciprocity Evidence Report approved 2026-09-08.",
+        "sourceUrl": "https://www.legis.iowa.gov/docs/iac/chapter/08-06-2025.481.401.pdf",
+        "reviewer": null
+      }
+    ],
+    "notes": "Describes Iowa's own-state initial-licensure pathway, not a reciprocal-applicant requirement -- reciprocal applicants rely on their out-of-state license plus the requiredExperience conditions instead."
+  },
+  "requiredDocuments": {
+    "value": "Per Iowa Admin. Code 481-401.2(15)d: a completed application for the Iowa license; a copy of the applicable out-of-state license clearly showing the license number and other identifying information; the applicable fee; and any other information requested by the board, which may include additional evidence that the out-of-state license is currently valid. Unlike the Journeyman subsection, 401.2(15)d does not explicitly cross-reference a sworn-affidavit subclause the same way -- but 401.2(15)e(2) still requires a sworn affidavit documenting 16,000 hours of electrical work if the applicant relies on that pathway rather than an approved apprenticeship program, so the same affidavit requirement effectively applies.",
+    "sourceUrl": "https://www.legis.iowa.gov/docs/iac/chapter/08-06-2025.481.401.pdf",
+    "sourceTitle": "Chapter 401 -- Electrician and Electrical Contractor Licensing Program: Licensing Requirements, Procedures, and Fees",
+    "sourceName": "Iowa Legislative Services Agency (Iowa Administrative Code, Chapter 481-401)",
+    "verifiedAt": "2026-09-08",
+    "verificationMethod": "ai_assisted_manual_research",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.8,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": "Application, copy of out-of-state license, fee, and (if relying on the 16,000-hour pathway) sworn affidavit per 401.2(15)e(2).",
+        "changedAt": "2026-09-08",
+        "reason": "Initial population from Iowa Admin. Code 481-401.2(15)d-e, per the Iowa electrician reciprocity Evidence Report approved 2026-09-08.",
+        "sourceUrl": "https://www.legis.iowa.gov/docs/iac/chapter/08-06-2025.481.401.pdf",
+        "reviewer": null
+      }
+    ],
+    "notes": null
+  },
+  "processingTime": {
+    "value": "Unknown",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "sourceName": null,
+    "verifiedAt": null,
+    "verificationMethod": null,
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0,
+    "confidenceLevel": "unknown",
+    "history": [],
+    "notes": "Not stated on the DIAL licensing page, the reciprocity PDF, the Electrical Licensing FAQ page, or the read sections of Iowa Admin. Code Chapter 401 -- recorded Unknown per the no-fabrication policy rather than guessed."
+  },
+  "endorsementFeeUsd": {
+    "value": 375,
+    "sourceUrl": "https://www.legis.iowa.gov/docs/iac/chapter/08-06-2025.481.401.pdf",
+    "sourceTitle": "Chapter 401 -- Electrician and Electrical Contractor Licensing Program: Licensing Requirements, Procedures, and Fees",
+    "sourceName": "Iowa Legislative Services Agency (Iowa Administrative Code, Chapter 481-401)",
+    "verifiedAt": "2026-09-08",
+    "verificationMethod": "ai_assisted_manual_research",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.7,
+    "confidenceLevel": "likely",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": 375,
+        "changedAt": "2026-09-08",
+        "reason": "Initial population from the Iowa Admin. Code 481-401.3(103) license-term/fee table (2026-2028 cycle), per the Iowa electrician reciprocity Evidence Report approved 2026-09-08.",
+        "sourceUrl": "https://www.legis.iowa.gov/docs/iac/chapter/08-06-2025.481.401.pdf",
+        "reviewer": null
+      }
+    ],
+    "notes": "This is the standard Master Electrician, Class A fee for the current 2026-2028, 3-year license term, per the 481-401.3(103) table and independently corroborated by DIAL's own 2026-2028 fee-schedule spreadsheet. No distinct, separately labeled 'reciprocal application fee' was found, so this value is recorded with 'likely' rather than full confidence that it applies unmodified to reciprocal applications."
+  },
+  "renewalFeeUsd": {
+    "value": 375,
+    "sourceUrl": "https://www.legis.iowa.gov/docs/iac/chapter/08-06-2025.481.401.pdf",
+    "sourceTitle": "Chapter 401 -- Electrician and Electrical Contractor Licensing Program: Licensing Requirements, Procedures, and Fees",
+    "sourceName": "Iowa Legislative Services Agency (Iowa Administrative Code, Chapter 481-401)",
+    "verifiedAt": "2026-09-08",
+    "verificationMethod": "ai_assisted_manual_research",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.85,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": 375,
+        "changedAt": "2026-09-08",
+        "reason": "Initial population from the Iowa Admin. Code 481-401.3(103) license-term/fee table, per the Iowa electrician reciprocity Evidence Report approved 2026-09-08.",
+        "sourceUrl": "https://www.legis.iowa.gov/docs/iac/chapter/08-06-2025.481.401.pdf",
+        "reviewer": null
+      }
+    ],
+    "notes": "License term is a flat 3 years at $375 per the 481-401.3(103) table; unlike Wyoming (where Journeyman and Master renew on different dates), Iowa's fee table gives both tiers the same 3-year term structure, just at different price points ($75 Journeyman vs. $375 Master)."
+  },
+  "continuingEducationRequirements": {
+    "value": "Iowa Admin. Code 481-403.201 requires each holder of a 3-year license to complete 18 hours of board-approved continuing education between issuance and the next renewal, prorated to 6 hours per year (or portion of a year) if the license was issued for less than 3 years -- the same requirement and hour count as the Journeyman tier, confirmed to apply per-license-holder rather than per-tier. No NEC-specific or code-specific hour carve-out was found in the read rule text. This is a renewal-cycle requirement for an ALREADY-ISSUED Iowa license -- no source found requires continuing-education hours as a condition of the INITIAL reciprocal application itself; neither the reciprocity PDF nor Iowa Admin. Code 481-401.2(15) mentions continuing education as a reciprocal-application requirement.",
+    "sourceUrl": "https://www.legis.iowa.gov/docs/iac/chapter/08-06-2025.481.403.pdf",
+    "sourceTitle": "Chapter 403 -- Electrician and Electrical Contractor Licensing Program: Education",
+    "sourceName": "Iowa Legislative Services Agency (Iowa Administrative Code, Chapter 481-403)",
+    "verifiedAt": "2026-09-08",
+    "verificationMethod": "ai_assisted_manual_research",
+    "reviewer": null,
+    "status": "pending_verification",
+    "confidence": 0.85,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": null,
+        "newValue": "18 CE hrs per 3-year license cycle (403.201), same as Journeyman; not required as a condition of initial reciprocal licensure, only for renewal of an Iowa-issued license.",
+        "changedAt": "2026-09-08",
+        "reason": "Initial population from Iowa Admin. Code 481-403.201, per the Iowa electrician reciprocity Evidence Report approved 2026-09-08.",
+        "sourceUrl": "https://www.legis.iowa.gov/docs/iac/chapter/08-06-2025.481.403.pdf",
+        "reviewer": null
+      }
+    ],
+    "notes": null
+  },
+  "conflicts": [],
+  "lastFullReviewAt": null
+}

@@ -1,6 +1,6 @@
 # PermitBridge Knowledge Base — Trust Dashboard
 
-Generated: 2026-09-07T22:58:22.444Z
+Generated: 2026-09-08T19:59:47.050Z
 
 **Verification coverage: 27.3%** of all tracked fields have any value (vs. "Unknown")
 **Average confidence (non-Unknown fields): 0.92**
@@ -28,7 +28,7 @@ Generated: 2026-09-07T22:58:22.444Z
 
 ## Source Authority
 
-- **Authoritative sources tracked:** 98
+- **Authoritative sources tracked:** 102
 - **Secondary sources tracked:** 6
 - **Fields citing an authoritative source:** 125
 - **Fields citing a secondary source:** 80
@@ -53,5 +53,5 @@ Generated: 2026-09-07T22:58:22.444Z
 
 ## Sources
 
-104 source(s) currently tracked in `data/knowledge-base/sources/`.
+108 source(s) currently tracked in `data/knowledge-base/sources/`.
 Sources with zero fields currently citing them: advantismed-secondary, alabama-nursing-board, alaska-nursing-board, arizona-nursing-board, arkansas-nursing-board, california-applicant-faqs, california-endorsement-rule, california-fingerprint-info, california-temp-license-rule, catsol-secondary, colorado-nursing-board, connecticut-nursing-board, delaware-nursing-board, florida-compact-info, florida-endorsement-transaction-form, florida-mobile-endorsement-form, florida-multistate-upgrade-form, florida-nurse-rn-lpn-page, georgia-nursing-faq, georgia-reentry-rule, georgia-regulations-cornell-mirror, georgia-regulations-justia-mirror-410-4-01, georgia-regulations-justia-mirror, hawaii-nursing-board, idaho-nursing-board, illinois-certification-request, indiana-nursing-board, iowa-nursing-board, kansas-nursing-board, kentucky-nursing-board, louisiana-nursing-board, maine-nursing-board, maryland-nursing-board, massachusetts-nursing-board, minnesota-nursing-board, mississippi-nursing-board, missouri-nursing-board, montana-nursing-board, nebraska-nursing-board, nevada-nursing-board, new-hampshire-nursing-board, new-jersey-nursing-board, new-mexico-nursing-board, new-york-fees-chart-general, new-york-license-requirements, north-dakota-nursing-board, oklahoma-nursing-board, oregon-nursing-board, renewrn-net-secondary, rhode-island-nursing-board, south-carolina-nursing-board, south-dakota-nursing-board, tennessee-nursing-board, texas-compact-info, texas-endorsement-application-forms, texas-endorsement-intl-instructions, texas-endorsement-rule, texas-tdlr-alabama-reciprocity-announcement, texas-tdlr-iowa-reciprocity-announcement, texas-tdlr-ohio-reciprocity-announcement, texas-temp-permits-page, trustedhealth-secondary, utah-nursing-board, vermont-nursing-board, virginia-nursing-board, washington-nursing-board, west-virginia-nursing-board, wisconsin-nursing-board, wyoming-nursing-board

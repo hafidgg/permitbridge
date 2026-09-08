@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-07T22:58:22.444Z",
+  "generatedAt": "2026-09-08T19:59:47.050Z",
   "totalFields": 750,
   "fieldsByStatus": {
     "verified": 0,
@@ -29,7 +29,7 @@
     "cross_referenced_multiple_sources": 120,
     "none": 545
   },
-  "sourcesTracked": 104,
+  "sourcesTracked": 108,
   "sourcesWithZeroFieldsUsingThem": [
     "advantismed-secondary",
     "alabama-nursing-board",
@@ -101,7 +101,7 @@
     "wisconsin-nursing-board",
     "wyoming-nursing-board"
   ],
-  "authoritativeSourcesCount": 98,
+  "authoritativeSourcesCount": 102,
   "secondarySourcesCount": 6,
   "fieldsUsingAuthoritativeSources": 125,
   "fieldsUsingSecondarySources": 80,

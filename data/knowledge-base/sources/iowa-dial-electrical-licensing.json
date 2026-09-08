@@ -1,0 +1,19 @@
+{
+  "id": "iowa-dial-electrical-licensing",
+  "agencyName": "Iowa Department of Inspections, Appeals & Licensing (DIAL), Electrical Examining Board",
+  "website": "https://dial.iowa.gov/licenses/building/electrical-licensing",
+  "jurisdiction": "iowa",
+  "professionsCovered": [
+    "electrician"
+  ],
+  "sourceType": "official-board",
+  "official": true,
+  "authorityLevel": "authoritative",
+  "authorityRationale": "The Electrical Examining Board's own licensing hub page under Iowa DIAL, identifying the board and its contact information, and linking every official form used by applicants (fee schedule, continuing-education forms, and the reciprocal-agreements PDF). Confirmed as the current issuing authority for Iowa Code chapter 103 and Iowa Admin. Code 481.",
+  "specificity": "profession-specific",
+  "reliabilityScore": 0.9,
+  "reliabilityRationale": "Official board page, actively maintained (references the 2026 renewal cycle beginning October 2025); used here for board identity and as the entry point that links to the reciprocity PDF and admin-code chapters cited elsewhere.",
+  "lastCrawl": null,
+  "lastManualVerification": "2026-09-08",
+  "fieldsUsingThisSource": 4
+}
