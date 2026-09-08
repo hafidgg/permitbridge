@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
     inputs:
       test_source_id:
-        description: "OPTIONAL, TEST ONLY: override sourceId to consume a controlled fixture instead of the real source (e.g. wa-electrical-contractor-license-fee-controlled-399). Leave blank for normal real-source runs."
+        description: "OPTIONAL, TEST ONLY: override sourceId to consume a controlled fixture instead of the real source (e.g. wa-electrical-contractor-license-fee-controlled-399). Only applies to the matrix job whose real sourceId this value starts with; every other job still runs its normal real-source check. Leave blank for normal real-source runs across all sources."
         required: false
         default: ""
 
@@ -17,6 +17,18 @@ jobs:
     permissions:
       contents: read
       issues: write
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - script: washington
+            sourceId: wa-electrical-contractor-license-fee
+          - script: texas
+            sourceId: tx-tdlr-electrician-reciprocity-fee
+          - script: minnesota
+            sourceId: mn-dli-electrician-reciprocity-fee
+          - script: wyoming
+            sourceId: wy-electrician-journeyman-reciprocal-fee
 
     steps:
       - name: Checkout
@@ -31,17 +43,17 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Run read-only watch (Washington WAC 296-46B-909)
+      - name: Run read-only watch (${{ matrix.sourceId }})
         id: watch
         env:
           TEST_SOURCE_ID: ${{ inputs.test_source_id }}
         run: |
           set +e
-          if [ -n "$TEST_SOURCE_ID" ]; then
-            echo "::warning::PHASE 3.7B CONTROLLED TEST RUN — using sourceId override: $TEST_SOURCE_ID (NOT the real Washington source check)"
-            npm run watch:washington -- --mode=mock --source-id="$TEST_SOURCE_ID" | tee /tmp/watch-output.log
+          if [ -n "$TEST_SOURCE_ID" ] && [[ "$TEST_SOURCE_ID" == "${{ matrix.sourceId }}"* ]]; then
+            echo "::warning::CONTROLLED TEST RUN for ${{ matrix.sourceId }} — using sourceId override: $TEST_SOURCE_ID (NOT the real source check)"
+            npm run watch:${{ matrix.script }} -- --mode=mock --source-id="$TEST_SOURCE_ID" | tee /tmp/watch-output.log
           else
-            npm run watch:washington | tee /tmp/watch-output.log
+            npm run watch:${{ matrix.script }} | tee /tmp/watch-output.log
           fi
           exit_code=${PIPESTATUS[0]}
           if grep -q "CHANGE_DETECTED" /tmp/watch-output.log; then
@@ -57,7 +69,7 @@ jobs:
         uses: actions/github-script@v9
         with:
           script: |
-            const sourceId = "wa-electrical-contractor-license-fee";
+            const sourceId = "${{ matrix.sourceId }}";
             const label = "change-detected";
             const titlePrefix = `[CHANGE_DETECTED] ${sourceId}`;
 
