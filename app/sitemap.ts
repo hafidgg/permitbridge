@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { getAllProfessions, getAllStates, getAllTransferRules, getAllGuides, getAllBlogPosts } from "@/lib/data";
 import { getAllPublicTransferRuleSlugs, getPublicTransferRule, summarizeEvidence } from "@/lib/knowledge-base/transfer-rule-data";
 import { getAllSingleStateProfessionSlugs, getElectricianStatePageData } from "@/lib/knowledge-base/electrician-state-data";
+import { LINKING_STRUCTURE_UPDATED_AT, latestOf } from "@/lib/knowledge-base/structural-updates";
 import { SITE_URL } from "@/lib/utils";
 
 /**
@@ -99,7 +100,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     const summary = summarizeEvidence(rule);
     return {
       url: `${SITE_URL}/${s.profession}/${s.transfer}`,
-      lastModified: summary.latestVerifiedAt ?? undefined,
+      lastModified: latestOf(summary.latestVerifiedAt, LINKING_STRUCTURE_UPDATED_AT),
       changeFrequency: "monthly" as const,
       priority: 0.7,
     };
@@ -121,7 +122,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       .at(-1);
     return {
       url: `${SITE_URL}/${s.profession}/${s.slug}`,
-      lastModified: latestVerifiedAt ?? undefined,
+      lastModified: latestOf(latestVerifiedAt, LINKING_STRUCTURE_UPDATED_AT),
       changeFrequency: "monthly" as const,
       priority: 0.7,
     };
