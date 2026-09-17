@@ -2,28 +2,31 @@
   "profession": "contractor",
   "fromState": "florida",
   "toState": "california",
-  "pathway": "none",
-  "pathwayLabel": "Full New Application Required",
+  "pathway": "endorsement",
+  "pathwayLabel": "NASCLA Exam-Based Waiver (Conditional)",
   "examRequired": true,
-  "examName": "NASCLA Accredited Examination for Commercial General Building Contractors",
+  "examName": "CSLB trade exam — waived only if your Florida license was originally earned via the NASCLA Commercial General Building Contractor exam",
   "additionalHoursRequired": 0,
-  "feeUsd": 465,
+  "feeUsd": 450,
   "estimatedProcessingDays": [
     30,
     90
   ],
-  "minimumYearsLicensed": 2,
-  "difficultyScore": 8,
-  "portabilityScore": 26,
+  "minimumYearsLicensed": 5,
+  "difficultyScore": 7,
+  "portabilityScore": 30,
   "steps": [
-    "Confirm your Contractor license is active and in good standing in Florida.",
-    "Submit a license verification request from Florida through the appropriate national registry or the state board directly.",
-    "File an application for full new application required with California's licensing board.",
-    "Register for and pass the required exam: NASCLA Accredited Examination for Commercial General Building Contractors.",
-    "Pay the California application fee (approx. $465) and submit supporting documents.",
-    "Await processing — typically 30-90 days in California."
+    "Confirm your Contractor license is active and in good standing in Florida, and check whether it was originally earned by passing the NASCLA Commercial General Building Contractor exam (2009 or later) rather than a Florida-specific trade exam.",
+    "Florida is not one of CSLB's five reciprocal-agreement states (Arizona, Louisiana, Mississippi, Nevada, North Carolina), so a state-to-state reciprocity waiver does not apply.",
+    "If your license was earned via the NASCLA exam: submit a Request for Verification of License from Florida's board, CSLB's Application for Original Contractor's License, a signed statement requesting the NASCLA exam waiver, and release your NASCLA exam results to CSLB. Your trade exam is waived, but you must have held a general building contractor license (or similar) in good standing for the previous 5 years.",
+    "If your license was NOT earned via the NASCLA exam: no waiver applies — you must complete a full original CSLB application, including CSLB's trade exam.",
+    "Pay the CSLB single-classification application fee ($450).",
+    "Await processing — CSLB does not publish a guaranteed timeline; budget for several weeks to a few months."
   ],
-  "notes": "California's contractor licensing requirements are administered per the state's licensing authority. Most trade licenses in California are issued by the Contractors State License Board (CSLB); healthcare licenses go through the relevant state board (e.g., Board of Registered Nursing). Always confirm current rules directly with the official board before applying, since requirements change.",
-  "officialSourceName": "California State Licensing Board",
-  "updatedAt": "2026-08-07"
+  "notes": "Confirmed directly from CSLB's official reciprocity pages: Florida is not on California's 5-state reciprocity list (AZ, LA, MS, NV, NC), so the standard reciprocity waiver does not apply. Separately, CSLB waives its trade exam — for applicants from any state, not just the 5 reciprocal ones — if the applicant's existing license was earned by passing the NASCLA Commercial General Building Contractor exam (2009 forward); Florida's own CILB reciprocity document confirms Florida accepts the NASCLA exam as equivalent to its own Division I trade exams, so a Florida contractor may hold a NASCLA-based license, but this is not guaranteed for every Florida licensee. The $450 figure is CSLB's published single-classification original-application fee; a Sole Owner applicant also owes a $200 initial license fee after the exam stage ($650 total), or $350 ($800 total) for a non-sole-owner entity — not included in feeUsd, which reflects the application fee only, consistent with this site's other records. Whether CSLB still requires its business/law exam portion even after a trade-exam waiver was not stated on the pages checked — treat that detail as unconfirmed rather than assumed either way.",
+  "officialSourceName": "California Contractors State License Board (CSLB)",
+  "updatedAt": "2026-09-17",
+  "sourceUrl": "https://www.cslb.ca.gov/Contractors/Applicants/Reciprocity/Reciprocity_Requirements.aspx",
+  "verifiedAt": "2026-09-17",
+  "confidence": 0.85
 }
