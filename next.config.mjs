@@ -54,6 +54,19 @@ const nextConfig = {
     return [
       { source: "/professions/:slug", destination: "/profession/:slug", permanent: true },
       { source: "/states/:slug", destination: "/state/:slug", permanent: true },
+      // Phase: noindex cleanup, nurse step. These 6 pairs are true
+      // duplicates — the legacy unsourced /transfer/nurse/{from}/{to}
+      // page and the newer sourced /registered-nurse/{from}-to-{to}
+      // knowledge-base page answer the exact same question. Consolidate
+      // onto the sourced page instead of leaving the legacy one noindexed
+      // forever. florida->california has no sourced counterpart yet, so
+      // it's intentionally left out of this batch.
+      { source: "/transfer/nurse/california/florida", destination: "/registered-nurse/california-to-florida", permanent: true },
+      { source: "/transfer/nurse/california/new-york", destination: "/registered-nurse/california-to-new-york", permanent: true },
+      { source: "/transfer/nurse/california/texas", destination: "/registered-nurse/california-to-texas", permanent: true },
+      { source: "/transfer/nurse/new-york/california", destination: "/registered-nurse/new-york-to-california", permanent: true },
+      { source: "/transfer/nurse/texas/california", destination: "/registered-nurse/texas-to-california", permanent: true },
+      { source: "/transfer/nurse/texas/florida", destination: "/registered-nurse/texas-to-florida", permanent: true },
     ];
   },
 };
