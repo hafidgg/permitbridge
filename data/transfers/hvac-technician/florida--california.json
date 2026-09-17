@@ -3,28 +3,30 @@
   "fromState": "florida",
   "toState": "california",
   "pathway": "none",
-  "pathwayLabel": "Full New Application Required",
+  "pathwayLabel": "Full New Application Required — No Reciprocity or Exam Waiver Available for C-20",
   "examRequired": true,
-  "examName": "NASCLA Accredited Examination for Commercial General Building Contractors",
-  "additionalHoursRequired": 32,
-  "feeUsd": 465,
+  "examName": "CSLB C-20 (Warm-Air Heating, Ventilating and Air-Conditioning) trade exam — no waiver route exists for this classification",
+  "additionalHoursRequired": 0,
+  "feeUsd": 450,
   "estimatedProcessingDays": [
     30,
     90
   ],
-  "minimumYearsLicensed": 2,
-  "difficultyScore": 8,
-  "portabilityScore": 21,
+  "minimumYearsLicensed": 4,
+  "difficultyScore": 9,
+  "portabilityScore": 15,
   "steps": [
-    "Confirm your HVAC Technician license is active and in good standing in Florida.",
-    "Submit a license verification request from Florida through the appropriate national registry or the state board directly.",
-    "File an application for full new application required with California's licensing board.",
-    "Register for and pass the required exam: NASCLA Accredited Examination for Commercial General Building Contractors.",
-    "Complete 32 additional training/CE hours required by California.",
-    "Pay the California application fee (approx. $465) and submit supporting documents.",
-    "Await processing — typically 30-90 days in California."
+    "Florida is not one of CSLB's five reciprocal-agreement states (Arizona, Louisiana, Mississippi, Nevada, North Carolina), so no state-to-state reciprocity waiver applies.",
+    "Unlike general contracting, C-20 has no broader exam-waiver alternative either: CSLB's NASCLA exam waiver is restricted to the General Building classification only and does not cover C-20 — confirmed directly from CSLB's own reciprocity page.",
+    "Even among CSLB's actual reciprocal partner states, C-20 coverage is inconsistent: only Arizona and Nevada have license classifications that map to C-20 on CSLB's official Reciprocal Classifications List. Louisiana and North Carolina have no C-20 mapping at all, despite being reciprocal partners for other classifications.",
+    "Because none of this applies to a Florida license, a full original CSLB application is required: document four years of qualifying C-20 experience, and pass the C-20 trade exam.",
+    "Pay the CSLB single-classification application fee ($450).",
+    "Await processing — CSLB does not publish a guaranteed timeline; budget for several weeks to a few months."
   ],
-  "notes": "California's hvac technician licensing requirements are administered per the state's licensing authority. Most trade licenses in California are issued by the Contractors State License Board (CSLB); healthcare licenses go through the relevant state board (e.g., Board of Registered Nursing). Always confirm current rules directly with the official board before applying, since requirements change.",
-  "officialSourceName": "California State Licensing Board",
-  "updatedAt": "2026-08-07"
+  "notes": "Confirmed directly from CSLB's official Reciprocal Classifications List (live-fetched): Florida is absent entirely, and even Louisiana and North Carolina — two of CSLB's five general reciprocal states — have no C-20 mapping at all. Only Arizona (C-39/C-39R/K-39/K-79/L-39/L-79) and Nevada (C-1f/C-21) map to C-20. Separately, CSLB's NASCLA-exam waiver (which does help a Florida contractor for General Building specifically, see the sourced florida-california contractor record) is explicitly restricted to 'CSLB General Building classification only' per CSLB's own reciprocity page — it does not extend to C-20, so there is no waiver alternative for HVAC the way there is for general contracting. The $450 fee and 4-year experience figure are CSLB's standard original-application requirements (same source used for the contractor pair), not classification-specific, so reused here rather than re-derived.",
+  "officialSourceName": "California Contractors State License Board (CSLB)",
+  "updatedAt": "2026-09-17",
+  "sourceUrl": "https://www.cslb.ca.gov/Contractors/Applicants/Reciprocity/Reciprocal_Classifications_List.aspx",
+  "verifiedAt": "2026-09-17",
+  "confidence": 0.85
 }
