@@ -85,6 +85,38 @@ export function generateStaticParams() {
 const stateName = stateDisplayName;
 
 /**
+ * Per-state meta descriptions for the single-state electrician pages.
+ * Numbers are pulled directly from each state's sourced reciprocityRules
+ * fact in the electrician knowledge-base facts directory (one JSON file
+ * per state/tier) — every figure here traces to a confidenceLevel:
+ * "verified" field, never a needs_review one. Colorado, Utah, and Iowa use bespoke phrasing instead
+ * of the generic "Journeyman from X, Master from Y" template because a
+ * flat number would misrepresent them: Colorado's Master tier has zero
+ * reciprocity states (not merely fewer), Utah has exactly one shared
+ * agreement (Oregon) covering both tiers, and Iowa's 13-state reciprocal
+ * list maps asymmetrically to its Master tier (only 8 of 13 states'
+ * Master/Contractor licenses reciprocate to Iowa Master — the other 5 land
+ * at Iowa Journeyman Class A only), so no single "N states" figure for
+ * Iowa Master would be accurate.
+ */
+const ELECTRICIAN_STATE_META_DESCRIPTIONS: Record<string, string> = {
+  colorado:
+    "Colorado electrician license reciprocity: Journeyman recognized from 14 states; Master not available by reciprocity. Sourced from Colorado's board.",
+  virginia:
+    "Virginia electrician license reciprocity: Journeyman recognized from 2 states, Master from 3. Sourced directly from Virginia's licensing board.",
+  texas:
+    "Texas electrician license reciprocity: Journeyman recognized from 11 states, Master from 7. Sourced directly from Texas's licensing board.",
+  arkansas:
+    "Arkansas electrician license reciprocity: Journeyman recognized from 17 states, Master from 4. Sourced directly from Arkansas's licensing board.",
+  minnesota:
+    "Minnesota electrician license reciprocity: Journeyman recognized from 9 states, Master from 4. Sourced directly from Minnesota's licensing board.",
+  utah: "Utah has exactly one electrician reciprocity agreement — with Oregon — covering both Journeyman and Master tiers. Sourced from Utah DOPL.",
+  wyoming:
+    "Wyoming electrician license reciprocity: Journeyman recognized from 17 states, Master from 3. Sourced directly from Wyoming's licensing board.",
+  iowa: "Iowa recognizes electrician licenses by reciprocity from 13 states; Master-tier eligibility varies by state. Sourced from Iowa's DIAL board.",
+};
+
+/**
  * The knowledge base tracks 50 states and a "registered-nurse" profession
  * slug; the LIVE site's simpler existing schema only has pages for 5
  * states and a "nurse" profession slug. Per Step 14 ("Only link to pages
@@ -111,8 +143,10 @@ export async function generateMetadata({ params }: { params: Promise<PageParams>
     if (!data) return {};
     const stateName = resolvedParams.transfer.charAt(0).toUpperCase() + resolvedParams.transfer.slice(1);
     return buildMetadata({
-      title: `${stateName} Electrician License Reciprocity — Journeyman vs. Master`,
-      description: `What it actually takes to reciprocate an out-of-state electrician license into ${stateName} — Journeyman and Master are genuinely different, sourced directly from the ${stateName} licensing board.`,
+      title: `${stateName} Electrician License Reciprocity`,
+      description:
+        ELECTRICIAN_STATE_META_DESCRIPTIONS[resolvedParams.transfer] ??
+        `What it actually takes to reciprocate an out-of-state electrician license into ${stateName} — Journeyman and Master are genuinely different, sourced directly from the ${stateName} licensing board.`,
       path: `/${resolvedParams.profession}/${resolvedParams.transfer}`,
     });
   }
