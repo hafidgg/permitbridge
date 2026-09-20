@@ -1,172 +1,165 @@
 {
-  "generatedAt": "2026-09-13T14:43:13.166Z",
+  "generatedAt": "2026-09-20T14:22:01.330Z",
   "siteUrl": "sc-domain:www.getpermitbridge.com",
   "totals": {
-    "clicks": 5,
-    "impressions": 1694,
-    "ctr": 0.0029515938606847697,
-    "averagePosition": 54.24262101534829
+    "clicks": 8,
+    "impressions": 1771,
+    "ctr": 0.004517221908526256,
+    "averagePosition": 48.103896103896105
   },
   "topPages": [
     {
       "page": "https://www.getpermitbridge.com/",
       "clicks": 1,
-      "impressions": 23,
-      "position": 34
+      "impressions": 27,
+      "position": 38
     },
     {
       "page": "https://www.getpermitbridge.com/blog/nurse-licensure-compact-2026-changes",
       "clicks": 1,
-      "impressions": 39,
-      "position": 68.25641025641026
+      "impressions": 37,
+      "position": 66
+    },
+    {
+      "page": "https://www.getpermitbridge.com/guides/reciprocity-vs-endorsement-vs-comity",
+      "clicks": 1,
+      "impressions": 43,
+      "position": 8.023255813953488
     },
     {
       "page": "https://www.getpermitbridge.com/profession/electrician",
       "clicks": 1,
-      "impressions": 407,
-      "position": 55.06388206388206
+      "impressions": 394,
+      "position": 52.41878172588832
     },
     {
       "page": "https://www.getpermitbridge.com/profession/hvac-technician",
       "clicks": 1,
-      "impressions": 74,
-      "position": 33.41891891891892
+      "impressions": 72,
+      "position": 33.763888888888886
+    },
+    {
+      "page": "https://www.getpermitbridge.com/registered-nurse/texas-to-california",
+      "clicks": 1,
+      "impressions": 46,
+      "position": 13.91304347826087
     },
     {
       "page": "https://www.getpermitbridge.com/registered-nurse/texas-to-florida",
       "clicks": 1,
-      "impressions": 40,
-      "position": 13.25
+      "impressions": 36,
+      "position": 11
+    },
+    {
+      "page": "https://www.getpermitbridge.com/transfer/electrician/ohio/texas",
+      "clicks": 1,
+      "impressions": 11,
+      "position": 75
     },
     {
       "page": "https://www.getpermitbridge.com/about",
       "clicks": 0,
-      "impressions": 15,
-      "position": 6.733333333333333
+      "impressions": 16,
+      "position": 6.8125
     },
     {
       "page": "https://www.getpermitbridge.com/blog",
       "clicks": 0,
       "impressions": 3,
-      "position": 30.333333333333332
+      "position": 7.333333333333333
     },
     {
       "page": "https://www.getpermitbridge.com/blog/2026-ulr-state-tracker-update",
       "clicks": 0,
-      "impressions": 11,
-      "position": 14.272727272727273
+      "impressions": 14,
+      "position": 11.642857142857142
     },
     {
       "page": "https://www.getpermitbridge.com/disclaimer",
       "clicks": 0,
-      "impressions": 9,
-      "position": 13.11111111111111
+      "impressions": 10,
+      "position": 12.3
+    },
+    {
+      "page": "https://www.getpermitbridge.com/electrician/arkansas",
+      "clicks": 0,
+      "impressions": 24,
+      "position": 17.375
     },
     {
       "page": "https://www.getpermitbridge.com/electrician/colorado",
       "clicks": 0,
-      "impressions": 95,
-      "position": 48.747368421052634
+      "impressions": 111,
+      "position": 42.8018018018018
+    },
+    {
+      "page": "https://www.getpermitbridge.com/electrician/iowa",
+      "clicks": 0,
+      "impressions": 22,
+      "position": 22.09090909090909
+    },
+    {
+      "page": "https://www.getpermitbridge.com/electrician/minnesota",
+      "clicks": 0,
+      "impressions": 6,
+      "position": 49.166666666666664
+    },
+    {
+      "page": "https://www.getpermitbridge.com/electrician/texas",
+      "clicks": 0,
+      "impressions": 12,
+      "position": 35
+    },
+    {
+      "page": "https://www.getpermitbridge.com/electrician/utah",
+      "clicks": 0,
+      "impressions": 25,
+      "position": 17.2
+    },
+    {
+      "page": "https://www.getpermitbridge.com/electrician/virginia",
+      "clicks": 0,
+      "impressions": 19,
+      "position": 52.94736842105263
+    },
+    {
+      "page": "https://www.getpermitbridge.com/electrician/wyoming",
+      "clicks": 0,
+      "impressions": 39,
+      "position": 29.17948717948718
     },
     {
       "page": "https://www.getpermitbridge.com/guides",
       "clicks": 0,
-      "impressions": 45,
-      "position": 64.06666666666666
+      "impressions": 47,
+      "position": 60.5531914893617
     },
     {
       "page": "https://www.getpermitbridge.com/guides/how-to-request-license-verification",
       "clicks": 0,
-      "impressions": 40,
-      "position": 59.825
-    },
-    {
-      "page": "https://www.getpermitbridge.com/guides/reciprocity-vs-endorsement-vs-comity",
-      "clicks": 0,
-      "impressions": 69,
-      "position": 9.565217391304348
+      "impressions": 44,
+      "position": 46.84090909090909
     },
     {
       "page": "https://www.getpermitbridge.com/privacy",
       "clicks": 0,
-      "impressions": 4,
-      "position": 16
+      "impressions": 7,
+      "position": 11
     },
     {
       "page": "https://www.getpermitbridge.com/profession/nurse",
       "clicks": 0,
-      "impressions": 270,
-      "position": 69.45925925925926
+      "impressions": 235,
+      "position": 69.88936170212766
     },
     {
       "page": "https://www.getpermitbridge.com/profession/plumber",
       "clicks": 0,
-      "impressions": 63,
-      "position": 46.53968253968254
-    },
-    {
-      "page": "https://www.getpermitbridge.com/professions",
-      "clicks": 0,
-      "impressions": 28,
-      "position": 54.25
-    },
-    {
-      "page": "https://www.getpermitbridge.com/registered-nurse/california-to-florida",
-      "clicks": 0,
-      "impressions": 18,
-      "position": 24.77777777777778
-    },
-    {
-      "page": "https://www.getpermitbridge.com/registered-nurse/california-to-texas",
-      "clicks": 0,
-      "impressions": 23,
-      "position": 32.608695652173914
-    },
-    {
-      "page": "https://www.getpermitbridge.com/registered-nurse/georgia-to-illinois",
-      "clicks": 0,
-      "impressions": 4,
-      "position": 5
-    },
-    {
-      "page": "https://www.getpermitbridge.com/registered-nurse/illinois-to-georgia",
-      "clicks": 0,
-      "impressions": 9,
-      "position": 21.22222222222222
-    },
-    {
-      "page": "https://www.getpermitbridge.com/registered-nurse/new-york-to-california",
-      "clicks": 0,
-      "impressions": 22,
-      "position": 20.181818181818183
-    },
-    {
-      "page": "https://www.getpermitbridge.com/registered-nurse/texas-to-california",
-      "clicks": 0,
-      "impressions": 39,
-      "position": 15.923076923076923
-    },
-    {
-      "page": "https://www.getpermitbridge.com/state/california",
-      "clicks": 0,
-      "impressions": 32,
-      "position": 76.6875
-    },
-    {
-      "page": "https://www.getpermitbridge.com/state/florida",
-      "clicks": 0,
-      "impressions": 56,
-      "position": 76.33928571428571
+      "impressions": 71,
+      "position": 41.2112676056338
     }
   ],
   "topQueries": [
-    {
-      "query": "alabama electrical license reciprocity",
-      "page": "https://www.getpermitbridge.com/profession/electrician",
-      "clicks": 0,
-      "impressions": 1,
-      "position": 63
-    },
     {
       "query": "alaska electrical license reciprocity",
       "page": "https://www.getpermitbridge.com/profession/electrician",
@@ -180,6 +173,20 @@
       "clicks": 0,
       "impressions": 1,
       "position": 62
+    },
+    {
+      "query": "apply for reciprocity",
+      "page": "https://www.getpermitbridge.com/guides",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 74
+    },
+    {
+      "query": "applying for reciprocity",
+      "page": "https://www.getpermitbridge.com/guides",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 78
     },
     {
       "query": "are nursing licenses by state",
@@ -196,11 +203,39 @@
       "position": 79.8
     },
     {
+      "query": "arkansas electrical license",
+      "page": "https://www.getpermitbridge.com/electrician/arkansas",
+      "clicks": 0,
+      "impressions": 2,
+      "position": 63.5
+    },
+    {
+      "query": "arkansas electrical license reciprocal states",
+      "page": "https://www.getpermitbridge.com/electrician/arkansas",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 48
+    },
+    {
+      "query": "arkansas electrical license reciprocal states",
+      "page": "https://www.getpermitbridge.com/profession/electrician",
+      "clicks": 0,
+      "impressions": 2,
+      "position": 73
+    },
+    {
+      "query": "arkansas electrical license reciprocity",
+      "page": "https://www.getpermitbridge.com/electrician/arkansas",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 44
+    },
+    {
       "query": "arkansas electrical license reciprocity",
       "page": "https://www.getpermitbridge.com/profession/electrician",
       "clicks": 0,
       "impressions": 2,
-      "position": 76.5
+      "position": 74.5
     },
     {
       "query": "arkansas journeyman electrical license reciprocity",
@@ -210,11 +245,18 @@
       "position": 70
     },
     {
+      "query": "arkansas residential electrical license",
+      "page": "https://www.getpermitbridge.com/electrician/arkansas",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 70
+    },
+    {
       "query": "automated license verification",
       "page": "https://www.getpermitbridge.com/guides/how-to-request-license-verification",
       "clicks": 0,
-      "impressions": 3,
-      "position": 77.33333333333333
+      "impressions": 2,
+      "position": 79.5
     },
     {
       "query": "bridge license",
@@ -255,7 +297,7 @@
       "query": "california electrical license reciprocity",
       "page": "https://www.getpermitbridge.com/profession/electrician",
       "clicks": 0,
-      "impressions": 2,
+      "impressions": 3,
       "position": 69
     },
     {
@@ -276,8 +318,8 @@
       "query": "california real estate license reciprocity",
       "page": "https://www.getpermitbridge.com/state/california",
       "clicks": 0,
-      "impressions": 2,
-      "position": 83.5
+      "impressions": 1,
+      "position": 88
     },
     {
       "query": "can i practice nursing in another state",
@@ -304,8 +346,8 @@
       "query": "can i transfer my plumbing license to another state",
       "page": "https://www.getpermitbridge.com/profession/plumber",
       "clicks": 0,
-      "impressions": 2,
-      "position": 60.5
+      "impressions": 3,
+      "position": 62
     },
     {
       "query": "can i transfer my plumbing license to another state",
@@ -347,7 +389,7 @@
       "page": "https://www.getpermitbridge.com/profession/electrician",
       "clicks": 0,
       "impressions": 5,
-      "position": 52
+      "position": 52.4
     },
     {
       "query": "can one use electrician's license from another state in california.",
@@ -357,11 +399,25 @@
       "position": 60
     },
     {
+      "query": "certified electrician in wyoming",
+      "page": "https://www.getpermitbridge.com/electrician/wyoming",
+      "clicks": 0,
+      "impressions": 4,
+      "position": 77.25
+    },
+    {
       "query": "colorado electrical license",
       "page": "https://www.getpermitbridge.com/electrician/colorado",
       "clicks": 0,
       "impressions": 1,
       "position": 70
+    },
+    {
+      "query": "colorado electrical license reciprocal states",
+      "page": "https://www.getpermitbridge.com/profession/electrician",
+      "clicks": 0,
+      "impressions": 2,
+      "position": 68.5
     },
     {
       "query": "colorado electrical license reciprocity",
@@ -374,8 +430,8 @@
       "query": "colorado electrical license reciprocity",
       "page": "https://www.getpermitbridge.com/profession/electrician",
       "clicks": 0,
-      "impressions": 2,
-      "position": 65
+      "impressions": 1,
+      "position": 62
     },
     {
       "query": "colorado electrical reciprocity",
@@ -437,92 +493,85 @@
       "query": "comity vs reciprocity",
       "page": "https://www.getpermitbridge.com/guides/reciprocity-vs-endorsement-vs-comity",
       "clicks": 0,
-      "impressions": 4,
-      "position": 4.25
+      "impressions": 2,
+      "position": 4.5
     },
     {
       "query": "compact nursing license states 2026",
       "page": "https://www.getpermitbridge.com/blog/nurse-licensure-compact-2026-changes",
       "clicks": 0,
-      "impressions": 2,
-      "position": 95
+      "impressions": 4,
+      "position": 94
+    },
+    {
+      "query": "compact nursing states 2026",
+      "page": "https://www.getpermitbridge.com/blog/nurse-licensure-compact-2026-changes",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 90
     },
     {
       "query": "contractor license reciprocity",
       "page": "https://www.getpermitbridge.com/state/california",
       "clicks": 0,
-      "impressions": 3,
-      "position": 85
-    },
-    {
-      "query": "contractor license reciprocity",
-      "page": "https://www.getpermitbridge.com/state/florida",
-      "clicks": 0,
-      "impressions": 1,
-      "position": 95
+      "impressions": 2,
+      "position": 83.5
     },
     {
       "query": "contractor license reciprocity",
       "page": "https://www.getpermitbridge.com/state/new-york",
       "clicks": 0,
-      "impressions": 4,
-      "position": 79.5
+      "impressions": 3,
+      "position": 78.66666666666667
     },
     {
       "query": "contractor license reciprocity",
+      "page": "https://www.getpermitbridge.com/state/ohio",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 84
+    },
+    {
+      "query": "contractor license reciprocity",
+      "page": "https://www.getpermitbridge.com/state/texas",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 99
+    },
+    {
+      "query": "contractor license reciprocity",
+      "page": "https://www.getpermitbridge.com/states",
+      "clicks": 0,
+      "impressions": 2,
+      "position": 77.5
+    },
+    {
+      "query": "contractor license reciprocity by state",
+      "page": "https://www.getpermitbridge.com/state/florida",
+      "clicks": 0,
+      "impressions": 2,
+      "position": 98
+    },
+    {
+      "query": "contractor license reciprocity by state",
       "page": "https://www.getpermitbridge.com/state/ohio",
       "clicks": 0,
       "impressions": 2,
-      "position": 90
-    },
-    {
-      "query": "contractor license reciprocity",
-      "page": "https://www.getpermitbridge.com/state/texas",
-      "clicks": 0,
-      "impressions": 3,
-      "position": 95.66666666666667
-    },
-    {
-      "query": "contractor license reciprocity",
-      "page": "https://www.getpermitbridge.com/states",
-      "clicks": 0,
-      "impressions": 3,
-      "position": 82.33333333333333
-    },
-    {
-      "query": "contractor license reciprocity by state",
-      "page": "https://www.getpermitbridge.com/state/florida",
-      "clicks": 0,
-      "impressions": 3,
-      "position": 96.66666666666667
-    },
-    {
-      "query": "contractor license reciprocity by state",
-      "page": "https://www.getpermitbridge.com/state/new-york",
-      "clicks": 0,
-      "impressions": 1,
-      "position": 93
-    },
-    {
-      "query": "contractor license reciprocity by state",
-      "page": "https://www.getpermitbridge.com/state/ohio",
-      "clicks": 0,
-      "impressions": 3,
-      "position": 96.66666666666667
+      "position": 97.5
     },
     {
       "query": "contractor license reciprocity by state",
       "page": "https://www.getpermitbridge.com/state/texas",
       "clicks": 0,
-      "impressions": 6,
-      "position": 94.33333333333333
+      "impressions": 3,
+      "position": 95
     },
     {
       "query": "contractor license reciprocity by state",
       "page": "https://www.getpermitbridge.com/states",
       "clicks": 0,
       "impressions": 6,
-      "position": 81.5
+      "position": 77.5
     },
     {
       "query": "contractor reciprocity by state",
@@ -567,39 +616,39 @@
       "position": 86
     },
     {
-      "query": "different electrician licenses",
+      "query": "dc electrical license reciprocity",
       "page": "https://www.getpermitbridge.com/profession/electrician",
       "clicks": 0,
       "impressions": 1,
-      "position": 75
+      "position": 51
     },
     {
       "query": "do electrician licenses transfer from state to state",
       "page": "https://www.getpermitbridge.com/profession/electrician",
       "clicks": 0,
-      "impressions": 4,
-      "position": 21.5
+      "impressions": 7,
+      "position": 16.857142857142858
     },
     {
       "query": "do plumbing licenses transfer to other states",
       "page": "https://www.getpermitbridge.com/",
       "clicks": 0,
-      "impressions": 1,
-      "position": 71
+      "impressions": 2,
+      "position": 69.5
     },
     {
       "query": "do plumbing licenses transfer to other states",
       "page": "https://www.getpermitbridge.com/profession/plumber",
       "clicks": 0,
-      "impressions": 1,
-      "position": 66
+      "impressions": 2,
+      "position": 65
     },
     {
       "query": "do plumbing licenses transfer to other states",
       "page": "https://www.getpermitbridge.com/states",
       "clicks": 0,
-      "impressions": 1,
-      "position": 73
+      "impressions": 3,
+      "position": 71.33333333333333
     },
     {
       "query": "does a nursing license transfer from state to state",
@@ -607,13 +656,6 @@
       "clicks": 0,
       "impressions": 1,
       "position": 88
-    },
-    {
-      "query": "does ohio have reciprocity",
-      "page": "https://www.getpermitbridge.com/state/ohio",
-      "clicks": 0,
-      "impressions": 1,
-      "position": 53
     },
     {
       "query": "electrical license reciprocity",
@@ -624,17 +666,24 @@
     },
     {
       "query": "electrical license reciprocity",
+      "page": "https://www.getpermitbridge.com/electrician/virginia",
+      "clicks": 0,
+      "impressions": 5,
+      "position": 77.8
+    },
+    {
+      "query": "electrical license reciprocity",
       "page": "https://www.getpermitbridge.com/profession/electrician",
       "clicks": 0,
-      "impressions": 31,
-      "position": 74.06451612903226
+      "impressions": 24,
+      "position": 74.58333333333333
     },
     {
       "query": "electrical license reciprocity by state",
       "page": "https://www.getpermitbridge.com/profession/electrician",
       "clicks": 0,
-      "impressions": 6,
-      "position": 75.66666666666667
+      "impressions": 7,
+      "position": 75.57142857142857
     },
     {
       "query": "electrical license reciprocity by state",
@@ -647,8 +696,8 @@
       "query": "electrical license reciprocity by state",
       "page": "https://www.getpermitbridge.com/states",
       "clicks": 0,
-      "impressions": 6,
-      "position": 90.33333333333333
+      "impressions": 8,
+      "position": 88.125
     },
     {
       "query": "electrical license reciprocity by state map",
@@ -656,13 +705,6 @@
       "clicks": 0,
       "impressions": 2,
       "position": 1
-    },
-    {
-      "query": "electrical license reciprocity map",
-      "page": "https://www.getpermitbridge.com/profession/electrician",
-      "clicks": 0,
-      "impressions": 1,
-      "position": 15
     },
     {
       "query": "electrical license reciprocity map",
@@ -675,8 +717,8 @@
       "query": "electrical license requirements by state",
       "page": "https://www.getpermitbridge.com/profession/electrician",
       "clicks": 0,
-      "impressions": 3,
-      "position": 86.66666666666667
+      "impressions": 2,
+      "position": 85
     },
     {
       "query": "electrical reciprocal",
@@ -707,11 +749,11 @@
       "position": 85
     },
     {
-      "query": "electrician certification requirements by state",
-      "page": "https://www.getpermitbridge.com/profession/electrician",
+      "query": "electrician journeyman license texas",
+      "page": "https://www.getpermitbridge.com/electrician/texas",
       "clicks": 0,
       "impressions": 1,
-      "position": 93
+      "position": 72
     },
     {
       "query": "electrician license reciprocity",
@@ -722,24 +764,31 @@
     },
     {
       "query": "electrician license reciprocity",
+      "page": "https://www.getpermitbridge.com/electrician/virginia",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 76
+    },
+    {
+      "query": "electrician license reciprocity",
       "page": "https://www.getpermitbridge.com/profession/electrician",
       "clicks": 0,
-      "impressions": 5,
-      "position": 67
+      "impressions": 4,
+      "position": 65.25
     },
     {
       "query": "electrician license reciprocity",
       "page": "https://www.getpermitbridge.com/states",
       "clicks": 0,
-      "impressions": 4,
-      "position": 94.5
+      "impressions": 2,
+      "position": 96
     },
     {
       "query": "electrician license requirements by state",
       "page": "https://www.getpermitbridge.com/profession/electrician",
       "clicks": 0,
-      "impressions": 2,
-      "position": 85.5
+      "impressions": 3,
+      "position": 85.33333333333333
     },
     {
       "query": "electrician licensing requirements by state",
@@ -770,39 +819,32 @@
       "position": 1.6666666666666665
     },
     {
-      "query": "florida broker license reciprocity",
-      "page": "https://www.getpermitbridge.com/state/florida",
-      "clicks": 0,
-      "impressions": 1,
-      "position": 93
-    },
-    {
       "query": "florida contractor license reciprocity",
       "page": "https://www.getpermitbridge.com/state/florida",
       "clicks": 0,
-      "impressions": 3,
-      "position": 67
+      "impressions": 2,
+      "position": 67.5
     },
     {
       "query": "florida contractors license reciprocity",
       "page": "https://www.getpermitbridge.com/state/florida",
       "clicks": 0,
-      "impressions": 2,
-      "position": 64
+      "impressions": 1,
+      "position": 66
     },
     {
       "query": "florida electrical license reciprocity",
       "page": "https://www.getpermitbridge.com/profession/electrician",
       "clicks": 0,
-      "impressions": 3,
+      "impressions": 2,
       "position": 69
     },
     {
       "query": "florida gc license reciprocity",
       "page": "https://www.getpermitbridge.com/state/florida",
       "clicks": 0,
-      "impressions": 4,
-      "position": 63.5
+      "impressions": 3,
+      "position": 62.333333333333336
     },
     {
       "query": "florida general contractor license reciprocity",
@@ -817,48 +859,6 @@
       "clicks": 0,
       "impressions": 2,
       "position": 76
-    },
-    {
-      "query": "florida hvac license reciprocity",
-      "page": "https://www.getpermitbridge.com/state/florida",
-      "clicks": 0,
-      "impressions": 1,
-      "position": 77
-    },
-    {
-      "query": "florida law license reciprocity",
-      "page": "https://www.getpermitbridge.com/state/florida",
-      "clicks": 0,
-      "impressions": 1,
-      "position": 55
-    },
-    {
-      "query": "florida license reciprocity",
-      "page": "https://www.getpermitbridge.com/states",
-      "clicks": 0,
-      "impressions": 1,
-      "position": 77
-    },
-    {
-      "query": "florida medical license reciprocity",
-      "page": "https://www.getpermitbridge.com/state/florida",
-      "clicks": 0,
-      "impressions": 1,
-      "position": 85
-    },
-    {
-      "query": "florida nursing license transfer from another state",
-      "page": "https://www.getpermitbridge.com/registered-nurse/california-to-florida",
-      "clicks": 0,
-      "impressions": 1,
-      "position": 42
-    },
-    {
-      "query": "florida pharmacy license reciprocity",
-      "page": "https://www.getpermitbridge.com/state/florida",
-      "clicks": 0,
-      "impressions": 1,
-      "position": 54
     }
   ]
 }
