@@ -22,7 +22,13 @@ export function buildMetadata({ title, description, path, image, noIndex }: Buil
   const ogImage = image ?? `${SITE_URL}/og-default.png`;
 
   return {
-    title: fullTitle,
+    // Bare `title`, not `fullTitle`: the root layout (app/(site)/layout.tsx)
+    // already declares a title.template ("%s | PermitBridge") that Next.js
+    // applies to this value automatically. Returning fullTitle here made
+    // the two stack into "X | PermitBridge | PermitBridge" on every page
+    // that uses buildMetadata(). Open Graph/Twitter titles aren't covered
+    // by Next's title-template mechanism, so they still need fullTitle.
+    title,
     description,
     alternates: { canonical: url },
     robots: noIndex ? { index: false, follow: false } : { index: true, follow: true },
