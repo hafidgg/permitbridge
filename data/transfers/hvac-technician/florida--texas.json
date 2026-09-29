@@ -3,28 +3,31 @@
   "fromState": "florida",
   "toState": "texas",
   "pathway": "none",
-  "pathwayLabel": "Full New Application Required",
+  "pathwayLabel": "Full Standard Application Required — No Reciprocity, No Abbreviated Out-of-State Path for This Classification",
   "examRequired": true,
-  "examName": "NASCLA Accredited Examination for Commercial General Building Contractors",
-  "additionalHoursRequired": 32,
-  "feeUsd": 235,
+  "examName": "TDLR/PSI Class A or Class B Environmental Air Conditioning exam — the same exam any first-time Texas applicant takes; no exam waiver exists outside the Georgia/South Carolina reciprocity agreements",
+  "additionalHoursRequired": 0,
+  "feeUsd": 115,
   "estimatedProcessingDays": [
     30,
     90
   ],
-  "minimumYearsLicensed": 2,
-  "difficultyScore": 8,
-  "portabilityScore": 21,
+  "minimumYearsLicensed": 4,
+  "difficultyScore": 7,
+  "portabilityScore": 35,
   "steps": [
-    "Confirm your HVAC Technician license is active and in good standing in Florida.",
-    "Submit a license verification request from Florida through the appropriate national registry or the state board directly.",
-    "File an application for full new application required with Texas's licensing board.",
-    "Register for and pass the required exam: NASCLA Accredited Examination for Commercial General Building Contractors.",
-    "Complete 32 additional training/CE hours required by Texas.",
-    "Pay the Texas application fee (approx. $235) and submit supporting documents.",
-    "Await processing — typically 30-90 days in Texas."
+    "Texas TDLR's Air Conditioning and Refrigeration (ACR) Contractor reciprocity is limited to Georgia and South Carolina — confirmed directly from the ACR002 license application's own reciprocity section (§19), which requires a letter of good standing specifically from one of those two states. Florida is not eligible for reciprocity under any circumstance.",
+    "A Florida ACR/HVAC license holder instead files the standard ACR002 application — the identical form any first-time applicant uses. Texas offers no separate, abbreviated out-of-state track for this classification (unlike Texas's plumbing license, which does have one).",
+    "Document at least 48 months (4 years) of qualifying practical experience within the preceding 72 months (6 years), verified on TDLR's own Experience Verification Form by someone other than the applicant. Experience gained while holding the Florida license should count toward this, but TDLR still requires its own verification paperwork regardless of the applicant's existing license.",
+    "Alternatively, substitute qualifying education (an A/C-related associate's or bachelor's degree, or a shorter certification program) for part of the experience requirement, per the form's own education-substitution table.",
+    "Submit the $115 non-refundable TDLR application fee.",
+    "Once TDLR approves the application, schedule and pass the PSI-administered Texas licensing exam for the applicable class (Class A or B). TDLR does not publish PSI's separate exam fee in its own materials.",
+    "Obtain the required certificate of insurance before the license is issued."
   ],
-  "notes": "Texas's hvac technician licensing requirements are administered per the state's licensing authority. Texas does not have a single statewide general contractor license; licensing is trade-specific (electrical, plumbing, HVAC) and administered by the Texas Department of Licensing and Regulation (TDLR). Unlike states with a broad Universal License Recognition law, Texas gives TDLR discretionary authority (Occupations Code §51.4041) to waive requirements for holders of a \"substantially equivalent\" out-of-state license, rather than a guaranteed \"shall issue\" right. Texas's clearest guaranteed out-of-state recognition applies specifically to military service members and military spouses, not the general public. Always confirm current rules directly with the official board before applying, since requirements change.",
-  "officialSourceName": "Texas State Licensing Board",
-  "updatedAt": "2026-08-07"
+  "notes": "Confirmed by direct pdftotext extraction of TDLR Form ACR002 (rev. October 2022, still the current form as of this research) after an earlier WebFetch summary of TDLR's HTML reciprocity pages proved directionally correct but lacked this level of detail. §19 of the form states reciprocity requires 'a letter of good standing from South Carolina or Georgia which also indicates you have taken and passed an exam to obtain the out of state license' — Florida is categorically excluded, not merely absent from a list. Outside of SC/GA, every applicant — regardless of home state — files the same ACR002 application and documents the same 48-month experience requirement; there is no partial-credit mechanism for an existing out-of-state license the way Texas's plumbing board offers. The $115 fee is TDLR's own filing fee only; PSI's separate exam-scheduling fee is not published in TDLR's materials and is omitted here. Effective-version check (2026-09-29): the ACR002 PDF served at the sourceUrl today still reads 'rev October 2022'; its $115 fee, Georgia/South Carolina-only reciprocity, and 48-of-72-months experience wording were re-confirmed in that download. The $115 contractor application fee also matches 16 Tex. Admin. Code §75.80(1), most recently amended effective 9/1/2024 (49 TexReg 6449) — read via Cornell LII's mirror of the TAC, not the Secretary of State's official TAC viewer, which did not return the rule text to an automated request. Unlike Florida's F.A.C., the Texas rule does not incorporate ACR002 by revision date, so there is no official effective-date record for the form itself; that the October 2022 form is the version TDLR currently expects is inferred from it being the one TDLR's own site serves, not independently verified.",
+  "officialSourceName": "Texas Department of Licensing and Regulation (TDLR), Air Conditioning and Refrigeration Contractors Program",
+  "updatedAt": "2026-09-29",
+  "sourceUrl": "https://www.tdlr.texas.gov/acr/forms/acr002%20contractor%20license%20application.pdf",
+  "verifiedAt": "2026-09-29",
+  "confidence": 0.85
 }

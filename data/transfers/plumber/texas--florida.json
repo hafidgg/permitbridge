@@ -2,28 +2,32 @@
   "profession": "plumber",
   "fromState": "texas",
   "toState": "florida",
-  "pathway": "reciprocity",
-  "pathwayLabel": "Universal License Recognition (Endorsement)",
-  "examRequired": true,
-  "examName": "State-specific plumbing trade + business/law exam",
+  "pathway": "endorsement",
+  "pathwayLabel": "Certification by Endorsement — 10-Year Licensure History (Option C) — Reciprocity Not Available for This Classification",
+  "examRequired": false,
+  "examName": "None required under Option C",
   "additionalHoursRequired": 0,
-  "feeUsd": 285,
+  "feeUsd": 350,
   "estimatedProcessingDays": [
-    14,
-    45
+    30,
+    90
   ],
-  "minimumYearsLicensed": 1,
+  "minimumYearsLicensed": 10,
   "difficultyScore": 5,
-  "portabilityScore": 50,
+  "portabilityScore": 55,
   "steps": [
-    "Confirm your Plumber license is active and in good standing in Texas.",
-    "Submit a license verification request from Texas through the appropriate national registry or the state board directly.",
-    "File an application for universal license recognition (endorsement) with Florida's licensing board.",
-    "Register for and pass the required exam: State-specific plumbing trade + business/law exam.",
-    "Pay the Florida application fee (approx. $285) and submit supporting documents.",
-    "Await processing — typically 14-45 days in Florida."
+    "Florida's Reciprocity form (DBPR CILB 32, limited to Louisiana, Mississippi, and North Carolina) does not offer Plumbing as a license category at all — confirmed directly from the form's own category checklist, which covers only General/Building/Residential Contractor. Reciprocity is not available to plumbing contractors in Florida regardless of home state.",
+    "The applicable route instead is DBPR CILB 10, Certification by Endorsement (Section 489.115(3), Florida Statutes), which does list Plumbing as a selectable category.",
+    "Within CILB 10, the NASCLA-based Option A does not apply to this classification — the form explicitly restricts it to 'General, Building, and Residential license' only. The applicable route for a Texas Master or Journeyman Plumber is Option C: hold a valid, current out-of-state license for at least 10 years, active now or within the last 2 years.",
+    "needs_review: CILB 10's 2-hour Florida Building Code course requirement is explicitly scoped in the document to General, Building, Residential, and Roofing Contractor applicants only — Plumbing is not listed. Whether Plumbing applicants face this requirement is not stated in the document.",
+    "Submit electronic fingerprints, a FICO-derived credit report, and proof of satisfaction of any liens, judgments, or bankruptcy.",
+    "Pay the $350 Endorsement application fee to the Florida Department of Business and Professional Regulation.",
+    "Await processing — DBPR does not publish a guaranteed timeline; budget for several weeks to a few months."
   ],
-  "notes": "Florida's plumber licensing requirements are administered per the state's licensing authority. Florida trade licenses are issued by the Department of Business and Professional Regulation (DBPR); healthcare licenses go through the Department of Health. Always confirm current rules directly with the official board before applying, since requirements change.",
-  "officialSourceName": "Florida State Licensing Board",
-  "updatedAt": "2026-08-07"
+  "notes": "Confirmed directly from DBPR CILB 32 (Reciprocity, Ref-17723) and CILB 10 (Endorsement, Ref-17718), current versions incorporated in Rule 61-35.010, F.A.C. (effective 2026-06-28) — the same two documents sourced for the shipped california-florida HVAC and contractor pairs, re-read here specifically for the Plumbing category and the Texas direction. CILB 32's own category checklist offers only General/Building/Residential Contractor for its reciprocal states (Louisiana, Mississippi, North Carolina) — no Plumbing option exists on that form at all, so Reciprocity is structurally unavailable to plumbing contractors in Florida, not just unavailable to Texas specifically. The current CILB 10 directs reciprocity applicants to CILB 32 ('For those applicants seeking licensure via reciprocity, please complete form CILB 32'), and lists Plumbing as a selectable category; its $350 fee is not category-specific. needs_review: whether the 2-hour Florida Building Code course applies to Plumbing applicants is genuinely unconfirmed — the current CILB 10 scopes that requirement to General/Building/Residential/Roofing only. CORRECTION HISTORY (check the rule's effective date before editing this claim again): (a) Original claim on the california-florida pairs: CILB 32 lists Louisiana, Mississippi, and North Carolina. (b) 2026-09-20: changed to Louisiana-only after an antiword extraction of a CILB 32 .doc found zero occurrences of 'Mississippi' or 'North Carolina'; this record was drafted in that state (Louisiana-only, $354 fee, older CILB 10 refId 13115). That extraction apparently used an older copy of the form; which version it read was not recorded. (c) 2026-09-29: re-verified before this record shipped, against the forms incorporated by reference in Rule 61-35.010, F.A.C. (latest effective date 2026-06-28; CILB 32 = Ref-17723, CILB 10 = Ref-17718), downloaded from flrules.org and extracted with antiword. The current CILB 32 names Louisiana, Mississippi, and North Carolina ('Louisiana or Mississippi' block and 'North Carolina' block, each General/Building/Residential only), restoring claim (a); the current CILB 10 fee is $350, not $354; and Plumbing is confirmed as a selectable category on the current CILB 10. This record's conclusion (no Plumbing reciprocity route in Florida for any home state) is unaffected by any of these changes.",
+  "officialSourceName": "Florida Department of Business and Professional Regulation, Construction Industry Licensing Board (DBPR CILB)",
+  "updatedAt": "2026-09-29",
+  "sourceUrl": "https://flrules.org/gateway/readRefFile.asp?refId=17718&filename=DBPR+CILB+10+-+Application+for+Certification+by+Endorsement_New+Final.doc",
+  "verifiedAt": "2026-09-29",
+  "confidence": 0.75
 }
