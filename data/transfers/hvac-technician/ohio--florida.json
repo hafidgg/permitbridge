@@ -2,26 +2,33 @@
   "profession": "hvac-technician",
   "fromState": "ohio",
   "toState": "florida",
-  "pathway": "reciprocity",
-  "pathwayLabel": "Universal License Recognition (Endorsement)",
+  "pathway": "endorsement",
+  "pathwayLabel": "Certification by Endorsement — 10-Year Licensure History (Option C) — Reciprocity Not Available for This Classification",
   "examRequired": false,
+  "examName": "None required under Option C",
   "additionalHoursRequired": 0,
-  "feeUsd": 285,
+  "feeUsd": 350,
   "estimatedProcessingDays": [
-    14,
-    45
+    30,
+    90
   ],
-  "minimumYearsLicensed": 1,
-  "difficultyScore": 3,
-  "portabilityScore": 76,
+  "minimumYearsLicensed": 10,
+  "difficultyScore": 5,
+  "portabilityScore": 55,
   "steps": [
-    "Confirm your HVAC Technician license is active and in good standing in Ohio.",
-    "Submit a license verification request from Ohio through the appropriate national registry or the state board directly.",
-    "File an application for universal license recognition (endorsement) with Florida's licensing board.",
-    "Pay the Florida application fee (approx. $285) and submit supporting documents.",
-    "Await processing — typically 14-45 days in Florida."
+    "Florida's Reciprocity form (DBPR CILB 32, limited to Louisiana, Mississippi, and North Carolina) offers no Air-Conditioning category at all, so reciprocity is unavailable to HVAC contractors in Florida regardless of home state. Ohio and Florida also have no reciprocity agreement with each other.",
+    "The applicable route is DBPR CILB 10, Certification by Endorsement (Section 489.115(3), Florida Statutes), which lists Class A and Class B Air-Conditioning as selectable categories.",
+    "Within CILB 10, the NASCLA-based route does not apply — the form restricts it to General, Building, and Residential licenses. The practical route for an Ohio HVAC contractor is Option C: hold a valid, current out-of-state contracting license for at least 10 years, active now or within the last 2 years, of a license type 'the same or similar as the license type being applied for.'",
+    "needs_review: Ohio's HVAC contractor license and Florida's Class A/B Air-Conditioning certification are both state contractor licenses, so Ohio's is plausibly 'similar' — but Ohio's license covers commercial work only, while Florida's Class A is unrestricted. Whether that satisfies Option C, and whether it maps to Class A or Class B, is CILB's determination.",
+    "needs_review: CILB 10's 2-hour Florida Building Code course requirement is scoped to General, Building, Residential, and Roofing applicants only — Air-Conditioning is not listed. Whether AC applicants face this requirement is not stated in the document and is not assumed here.",
+    "Submit verification of licensure showing at least 10 years and any discipline, a copy of Ohio's statutes/rules defining the HVAC contractor license, electronic fingerprints, a FICO-derived credit report, and proof of satisfaction of any liens, judgments, or bankruptcy.",
+    "Pay the $350 Endorsement application fee to the Florida Department of Business and Professional Regulation.",
+    "Await processing — DBPR does not publish a guaranteed timeline; budget for several weeks to a few months."
   ],
-  "notes": "Florida's hvac technician licensing requirements are administered per the state's licensing authority. Florida trade licenses are issued by the Department of Business and Professional Regulation (DBPR); healthcare licenses go through the Department of Health. Always confirm current rules directly with the official board before applying, since requirements change.",
-  "officialSourceName": "Florida State Licensing Board",
-  "updatedAt": "2026-08-07"
+  "notes": "Florida-side forms confirmed 2026-09-30 by antiword extraction of the versions incorporated in Rule 61-35.010, F.A.C. (effective 2026-06-28), downloaded from flrules.org: CILB 32 (Reciprocity, Ref-17723) lists Louisiana, Mississippi, and North Carolina for General/Building/Residential only, with no Air-Conditioning category; CILB 10 (Endorsement, Ref-17718) lists Class A and Class B Air-Conditioning, $350 fee, Options A/B/C for all categories, NASCLA limited to General/Building/Residential, 2-hour Building Code course scoped to General/Building/Residential/Roofing. Option C requires 'at least 10 years' of out-of-state licensure, active within the last 2 years, and that 'the license type must be the same or similar as the license type being applied for.' Ohio side: OCILB's Out-of-State Examination Application (form dated 9/2025, dam.assets.ohio.gov) states OCILB 'issues state licenses to Electrical, HVAC, Refrigeration, Plumbing, and Hydronics Contractors who perform commercial work', and the license must be assigned to a contracting company — i.e. a contractor-level license, the same level as Florida's certification. No Florida agreement exists among OCILB's published per-state reciprocity agreements (404 for a Florida file; HVAC agreements are with AL, KY, LA, MS, SC, TN, WV). needs_review: the 'same or similar' judgment (Ohio commercial-only vs. Florida's unrestricted Class A) is CILB's and is not resolved by either form; the 2-hour course question carries over from the other Florida HVAC records.",
+  "officialSourceName": "Florida Department of Business and Professional Regulation, Construction Industry Licensing Board (DBPR CILB)",
+  "updatedAt": "2026-09-30",
+  "sourceUrl": "https://flrules.org/gateway/readRefFile.asp?refId=17718&filename=DBPR+CILB+10+-+Application+for+Certification+by+Endorsement_New+Final.doc",
+  "verifiedAt": "2026-09-30",
+  "confidence": 0.8
 }
