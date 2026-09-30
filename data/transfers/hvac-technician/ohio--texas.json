@@ -3,28 +3,31 @@
   "fromState": "ohio",
   "toState": "texas",
   "pathway": "none",
-  "pathwayLabel": "Full New Application Required",
+  "pathwayLabel": "Standard Application Required — No Reciprocity; Out-of-State License Evaluated Case by Case",
   "examRequired": true,
-  "examName": "NASCLA Accredited Examination for Commercial General Building Contractors",
-  "additionalHoursRequired": 32,
-  "feeUsd": 235,
+  "examName": "TDLR/PSI Class A or Class B Environmental Air Conditioning exam — likely required; TDLR decides case by case whether an out-of-state license reduces any requirement",
+  "additionalHoursRequired": 0,
+  "feeUsd": 115,
   "estimatedProcessingDays": [
     30,
     90
   ],
-  "minimumYearsLicensed": 2,
-  "difficultyScore": 8,
-  "portabilityScore": 21,
+  "minimumYearsLicensed": 4,
+  "difficultyScore": 7,
+  "portabilityScore": 35,
   "steps": [
-    "Confirm your HVAC Technician license is active and in good standing in Ohio.",
-    "Submit a license verification request from Ohio through the appropriate national registry or the state board directly.",
-    "File an application for full new application required with Texas's licensing board.",
-    "Register for and pass the required exam: NASCLA Accredited Examination for Commercial General Building Contractors.",
-    "Complete 32 additional training/CE hours required by Texas.",
-    "Pay the Texas application fee (approx. $235) and submit supporting documents.",
-    "Await processing — typically 30-90 days in Texas."
+    "Texas TDLR's Air Conditioning and Refrigeration (ACR) Contractor reciprocity is limited to Georgia and South Carolina — the current ACR002 application states Texas 'currently reciprocates with Georgia and South Carolina only.' Ohio is not eligible, and Ohio's own reciprocity agreement with Texas covers Electrical only.",
+    "File the standard ACR002 contractor license application with the $115 non-refundable fee, including a copy of your current Ohio license and a list of the requirements you met to obtain it, as TDLR's out-of-state applicant page instructs.",
+    "TDLR evaluates the out-of-state license case by case: per its out-of-state page, 'TDLR will review and determine if you meet the Texas license requirements. Depending on the requirements of your current license, you may be required to complete some or all of the Texas requirements for licensure, including taking a licensing examination.'",
+    "needs_review: Texas classifies by equipment capacity (Class A any size; Class B up to 25 tons cooling / 1.5 million BTU/h heating), while Ohio's license is defined by type of work (commercial). Whether TDLR credits an Ohio commercial-only license, and toward which class, is not stated in TDLR's materials.",
+    "Unless TDLR waives it, document at least 48 months (4 years) of practical experience within the preceding 72 months (6 years) on TDLR's Experience Verification Form, or substitute qualifying education for part of it per the form's education table.",
+    "Expect to schedule and pass the PSI-administered Texas exam for the applicable class (A or B) once TDLR approves the application; PSI's exam fee is not published in TDLR's materials.",
+    "Obtain the required certificate of insurance before the license is issued."
   ],
-  "notes": "Texas's hvac technician licensing requirements are administered per the state's licensing authority. Texas does not have a single statewide general contractor license; licensing is trade-specific (electrical, plumbing, HVAC) and administered by the Texas Department of Licensing and Regulation (TDLR). Unlike states with a broad Universal License Recognition law, Texas gives TDLR discretionary authority (Occupations Code §51.4041) to waive requirements for holders of a \"substantially equivalent\" out-of-state license, rather than a guaranteed \"shall issue\" right. Texas's clearest guaranteed out-of-state recognition applies specifically to military service members and military spouses, not the general public. Always confirm current rules directly with the official board before applying, since requirements change.",
-  "officialSourceName": "Texas State Licensing Board",
-  "updatedAt": "2026-08-07"
+  "notes": "Confirmed 2026-09-30 by direct pdftotext extraction of the ACR002 PDF currently served by TDLR (rev. October 2022; server Last-Modified 2026-07-31; re-downloaded for this pair and byte-identical to the copy used for california-texas): reciprocity with Georgia and South Carolina only (§19), $115 fee, 48-of-72-months experience, Class A/B defined by capacity. TDLR's live out-of-state applicant page (tdlr.texas.gov/acr/acrstate.htm, re-checked for this pair) repeats the GA/SC-only reciprocity and says 'TDLR will review and determine if you meet the Texas license requirements. Depending on the requirements of your current license, you may be required to complete some or all of the Texas requirements for licensure, including taking a licensing examination.' Ohio side: OCILB's Out-of-State Examination Application (form dated 9/2025) describes Ohio's license as for 'Contractors who perform commercial work'; OCILB's Texas agreement covers Electrical only. needs_review (two items): (1) whether an Ohio license reduces any Texas requirement, including the exam, is a discretionary TDLR decision not determinable from published materials — examRequired is true as the default for every non-reciprocal applicant, not because a waiver is ruled out; (2) Ohio's commercial-only scope and Texas's capacity-based classes are different classification axes, and neither agency states how one maps to the other. The $115 fee is from TDLR's current form and live page; 16 TAC §75.80 (fees) was amended effective 2026-09-01 (51 TexReg 5778), but that amendment's full text has not been read because the Secretary of State's rules portal does not return rule text to automated requests. PSI's separate exam fee is not published by TDLR and is omitted.",
+  "officialSourceName": "Texas Department of Licensing and Regulation (TDLR), Air Conditioning and Refrigeration Contractors Program",
+  "updatedAt": "2026-09-30",
+  "sourceUrl": "https://www.tdlr.texas.gov/acr/forms/acr002%20contractor%20license%20application.pdf",
+  "verifiedAt": "2026-09-30",
+  "confidence": 0.75
 }
