@@ -117,6 +117,30 @@ function assertEqual<T>(actual: T, expected: T, message = "values are not equal"
   }
 }
 
+/**
+ * A monitored source's operational history only ever moves forward: each
+ * real scheduled run adds to its counters and advances its timestamps. So a
+ * known-good historical snapshot is a floor, not an exact value — asserting
+ * equality turns every legitimate new run into a false failure. Anything
+ * below the floor (or a reset to "never checked") is real history loss.
+ */
+function assertHistoryNotLost(
+  sourceId: string,
+  source: any,
+  floor: { totalChecks: number; successfulChecks: number; failedChecks: number; lastCheckedAt: string; lastSuccessfulFetchAt: string; lastChangedAt: string },
+) {
+  const lost = "a regression here means real operational history is being silently lost";
+  for (const field of ["totalChecks", "successfulChecks", "failedChecks"] as const) {
+    assert(typeof source[field] === "number" && source[field] >= floor[field], `${sourceId}.${field}: expected >= ${floor[field]}, got ${JSON.stringify(source[field])} — ${lost}`);
+  }
+  assert(source.totalChecks >= source.successfulChecks + source.failedChecks, `${sourceId}: totalChecks (${source.totalChecks}) is less than successfulChecks + failedChecks — counters are inconsistent`);
+  for (const field of ["lastCheckedAt", "lastSuccessfulFetchAt", "lastChangedAt"] as const) {
+    assert(typeof source[field] === "string" && !Number.isNaN(Date.parse(source[field])) && Date.parse(source[field]) >= Date.parse(floor[field]), `${sourceId}.${field}: expected a timestamp >= ${floor[field]}, got ${JSON.stringify(source[field])} — ${lost}`);
+  }
+  assert(typeof source.lastContentHash === "string" && source.lastContentHash.length > 0, `${sourceId}.lastContentHash: must be set once the source has been checked — ${lost}`);
+  assert(typeof source.lastHttpStatus === "number", `${sourceId}.lastHttpStatus: must be set once the source has been checked — ${lost}`);
+}
+
 console.log("\n▶ PermitBridge Knowledge Base — Phase 2.1 Test Suite\n");
 
 // ---------------------------------------------------------------------
@@ -4192,13 +4216,13 @@ await test("[Production registry] both NY sources now use the corrected pattern,
 await test("[Florida history preserved] the real operational history from commit d17eb0b remains completely untouched by this phase's registry edit", () => {
   const realRegistry = JSON.parse(fs.readFileSync(path.join(process.cwd(), "data", "knowledge-base", "monitoring", "registry.json"), "utf-8"));
   const fl = realRegistry.sources.find((s: any) => s.id === "florida-fee-schedule-monitor");
-  assertEqual(fl.totalChecks, 1);
-  assertEqual(fl.successfulChecks, 1);
-  assertEqual(fl.lastCheckedAt, "2026-08-10T14:20:14.246Z");
-  assertEqual(fl.lastSuccessfulFetchAt, "2026-08-10T14:20:14.246Z");
-  assertEqual(fl.lastChangedAt, "2026-08-10T14:20:14.246Z");
-  assertEqual(fl.lastContentHash, "09e17211596cb981");
-  assertEqual(fl.lastHttpStatus, 200);
+  // d17eb0b's history is a floor, not a fixed value: later real scheduled
+  // runs (e.g. 24e5937) legitimately advance it. Losing it would show up as
+  // counters or timestamps dropping below this floor.
+  assertHistoryNotLost("florida-fee-schedule-monitor", fl, {
+    totalChecks: 1, successfulChecks: 1, failedChecks: 0,
+    lastCheckedAt: "2026-08-10T14:20:14.246Z", lastSuccessfulFetchAt: "2026-08-10T14:20:14.246Z", lastChangedAt: "2026-08-10T14:20:14.246Z",
+  });
   assertEqual(fl.fieldMapping.extractRule.pattern, "MOBILE Endorsement Fees[\\s\\S]{0,200}?\\$(\\d+(?:\\.\\d{2})?)", "Florida's own extraction rule must be completely unaffected by the NY fix");
 });
 
@@ -4231,12 +4255,14 @@ await test("[PERMANENT — Phase 4.13.1, Finding #1] all 4 real monitored source
     },
   };
 
+  // The 4232bb8 run is the floor, not a fixed value: later real scheduled
+  // runs (e.g. 24e5937) legitimately advance counters, timestamps, and —
+  // when the watched page changes — the content hash. What must never
+  // happen is history moving backwards or being reset to "never checked".
   for (const [sourceId, expected] of Object.entries(AUTHORITATIVE_HISTORY)) {
     const source = bySourceId[sourceId];
     assert(!!source, `expected ${sourceId} to still exist in the registry`);
-    for (const [field, expectedValue] of Object.entries(expected)) {
-      assertEqual(source[field], expectedValue, `${sourceId}.${field}: must match the authoritative 4232bb8 GitHub Actions run — a regression here means real operational history is being silently lost again`);
-    }
+    assertHistoryNotLost(sourceId, source, expected);
   }
 
   // The NY extraction-rule fix (Phase 4.12.1) must survive this history
