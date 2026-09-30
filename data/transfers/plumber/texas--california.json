@@ -3,28 +3,31 @@
   "fromState": "texas",
   "toState": "california",
   "pathway": "none",
-  "pathwayLabel": "Full New Application Required",
+  "pathwayLabel": "Full New Application Required — No Reciprocity or Exam Waiver Available for C-36",
   "examRequired": true,
-  "examName": "State-specific plumbing trade + business/law exam",
-  "additionalHoursRequired": 32,
-  "feeUsd": 465,
+  "examName": "CSLB C-36 (Plumbing) trade exam plus the California Law and Business exam — no waiver route exists for a Texas license",
+  "additionalHoursRequired": 0,
+  "feeUsd": 450,
   "estimatedProcessingDays": [
     30,
     90
   ],
-  "minimumYearsLicensed": 2,
-  "difficultyScore": 8,
-  "portabilityScore": 21,
+  "minimumYearsLicensed": 4,
+  "difficultyScore": 9,
+  "portabilityScore": 15,
   "steps": [
-    "Confirm your Plumber license is active and in good standing in Texas.",
-    "Submit a license verification request from Texas through the appropriate national registry or the state board directly.",
-    "File an application for full new application required with California's licensing board.",
-    "Register for and pass the required exam: State-specific plumbing trade + business/law exam.",
-    "Complete 32 additional training/CE hours required by California.",
-    "Pay the California application fee (approx. $465) and submit supporting documents.",
-    "Await processing — typically 30-90 days in California."
+    "Texas is not one of CSLB's reciprocal-agreement states (Arizona, Louisiana, Mississippi, Nevada, North Carolina) and does not appear on CSLB's Reciprocal Classifications List, so no reciprocity trade-exam waiver applies.",
+    "CSLB's NASCLA exam waiver does not help: it is restricted to the B-General Building classification and does not cover C-36.",
+    "California's other exam waiver (Business and Professions Code §7065.1) applies only to qualifiers of licenses issued by CSLB itself, not to out-of-state licenses — so a Texas Journeyman or Master Plumber license does not qualify.",
+    "Unlike the reverse direction, the difference in license type is not a barrier here: CSLB qualifies C-36 applicants on documented experience, not on holding a particular license. File CSLB's Application for Original Contractor License (form 13A-1) with the $450 non-refundable application fee, documenting at least four years of journey-level (or higher) C-36 experience within the last 10 years on CSLB's Certification of Work Experience form. Work as a Texas Journeyman or Master Plumber can count, but must be documented on CSLB's own form.",
+    "Once the application is posted, pass the C-36 trade exam and the California Law and Business exam; exam fees are paid directly to the testing vendor and are not published in the application.",
+    "After passing, pay the initial license fee ($200 sole owner / $350 non-sole owner) and file the required $25,000 contractor's bond with CSLB.",
+    "Await processing — CSLB does not publish a guaranteed timeline; budget for several weeks to a few months."
   ],
-  "notes": "California's plumber licensing requirements are administered per the state's licensing authority. Most trade licenses in California are issued by the Contractors State License Board (CSLB); healthcare licenses go through the relevant state board (e.g., Board of Registered Nursing). Always confirm current rules directly with the official board before applying, since requirements change.",
-  "officialSourceName": "California State Licensing Board",
-  "updatedAt": "2026-08-07"
+  "notes": "Confirmed 2026-09-30 from live CSLB sources: the Reciprocity Requirements page lists five reciprocal states (Arizona, Louisiana, Mississippi, Nevada, North Carolina), none of them Texas, and limits the NASCLA waiver to General Building (B); the Reciprocal Classifications List has no Texas entry (that page also says \"California and three other states\" and names four, omitting Mississippi — an inconsistency on CSLB's own site that does not affect this pair). The C-36 classification is 16 CCR §832.36, read in full on CSLB's classification page. Fees, experience, bond and exam requirements are from CSLB form 13A-1 rev. 01/2026 (current PDF, downloaded and extracted directly): $450 application fee, $200/$350 initial license fee, four years of experience at no less than journeyman level within the last 10 years (T16 CCR §825), Law and Business plus trade exam (BPC §7065), $25,000 contractor's bond (BPC §7071.6). BPC §7065.1's exam waiver is limited to CSLB licensees ('licensee' per BPC §7096 = licensed under the Contractors chapter), so it does not reach a Texas license. The Texas side issues only individual plumber licenses (TSBPE Administrative Rules, March 2026, §365.1); that is not an obstacle in this direction because CSLB's eligibility test is experience-based. feeUsd is the application fee only and excludes the initial license fee and vendor exam fees.",
+  "officialSourceName": "California Contractors State License Board (CSLB)",
+  "updatedAt": "2026-09-30",
+  "sourceUrl": "https://www.cslb.ca.gov/Contractors/Applicants/Reciprocity/Reciprocity_Requirements.aspx",
+  "verifiedAt": "2026-09-30",
+  "confidence": 0.85
 }
