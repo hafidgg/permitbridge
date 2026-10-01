@@ -1,0 +1,20 @@
+{
+  "id": "ohio-ocilb-out-of-state-testing-application",
+  "agencyName": "Ohio Construction Industry Licensing Board (OCILB), Ohio Department of Commerce",
+  "website": "https://dam.assets.ohio.gov/image/upload/com.ohio.gov/DICO/OCILB/Out_of_State_Testing_Application_-_OCILB.pdf",
+  "jurisdiction": "ohio",
+  "professionsCovered": [
+    "hvac-technician",
+    "plumber"
+  ],
+  "sourceType": "official-board",
+  "official": true,
+  "authorityLevel": "authoritative",
+  "authorityRationale": "OCILB's own out-of-state testing application, hosted on Ohio's official state asset domain (ohio.gov, Department of Commerce/DICO path). Read directly 2026-10-01: opens 'The Ohio Construction Industry Licensing Board (OCILB), issues state licenses to Electrical, HVAC, Refrigeration, Plumbing, and Hydronics Contractors'.",
+  "specificity": "profession-specific",
+  "reliabilityScore": 0.9,
+  "reliabilityRationale": "Official primary document from the licensing agency itself, verified by direct read on 2026-10-01.",
+  "lastCrawl": null,
+  "lastManualVerification": "2026-10-01",
+  "fieldsUsingThisSource": 0
+}

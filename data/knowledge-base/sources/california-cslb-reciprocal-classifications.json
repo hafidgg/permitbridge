@@ -1,0 +1,21 @@
+{
+  "id": "california-cslb-reciprocal-classifications",
+  "agencyName": "Contractors State License Board (CSLB), State of California",
+  "website": "https://www.cslb.ca.gov/Contractors/Applicants/Reciprocity/Reciprocal_Classifications_List.aspx",
+  "jurisdiction": "california",
+  "professionsCovered": [
+    "hvac-technician",
+    "contractor",
+    "plumber"
+  ],
+  "sourceType": "official-board",
+  "official": true,
+  "authorityLevel": "authoritative",
+  "authorityRationale": "CSLB's own Reciprocal Classifications List on cslb.ca.gov. Read directly 2026-10-01: maps partner-state classifications to CSLB classifications (e.g. Arizona C-39 and Nevada C-1f/C-21 to C-20).",
+  "specificity": "field-specific",
+  "reliabilityScore": 0.9,
+  "reliabilityRationale": "Official primary document from the licensing agency itself, verified by direct read on 2026-10-01.",
+  "lastCrawl": null,
+  "lastManualVerification": "2026-10-01",
+  "fieldsUsingThisSource": 0
+}

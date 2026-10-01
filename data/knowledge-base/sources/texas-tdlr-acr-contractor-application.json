@@ -1,0 +1,19 @@
+{
+  "id": "texas-tdlr-acr-contractor-application",
+  "agencyName": "Texas Department of Licensing and Regulation (TDLR)",
+  "website": "https://www.tdlr.texas.gov/acr/forms/acr002%20contractor%20license%20application.pdf",
+  "jurisdiction": "texas",
+  "professionsCovered": [
+    "hvac-technician"
+  ],
+  "sourceType": "official-board",
+  "official": true,
+  "authorityLevel": "authoritative",
+  "authorityRationale": "TDLR's own Air Conditioning and Refrigeration Contractor License Application (ACR002), on tdlr.texas.gov. Read directly 2026-10-01: 'AIR CONDITIONING AND REFRIGERATION CONTRACTOR LICENSE APPLICATION INSTRUCTIONS'.",
+  "specificity": "profession-specific",
+  "reliabilityScore": 0.9,
+  "reliabilityRationale": "Official primary document from the licensing agency itself, verified by direct read on 2026-10-01.",
+  "lastCrawl": null,
+  "lastManualVerification": "2026-10-01",
+  "fieldsUsingThisSource": 0
+}

@@ -1,0 +1,21 @@
+{
+  "id": "california-cslb-reciprocity-requirements",
+  "agencyName": "Contractors State License Board (CSLB), State of California",
+  "website": "https://www.cslb.ca.gov/Contractors/Applicants/Reciprocity/Reciprocity_Requirements.aspx",
+  "jurisdiction": "california",
+  "professionsCovered": [
+    "contractor",
+    "hvac-technician",
+    "plumber"
+  ],
+  "sourceType": "official-board",
+  "official": true,
+  "authorityLevel": "authoritative",
+  "authorityRationale": "CSLB's own reciprocity requirements page on cslb.ca.gov. Read directly 2026-10-01: names the five reciprocal states (Arizona, Louisiana, Mississippi, Nevada, North Carolina) and the NASCLA exam-waiver procedure.",
+  "specificity": "profession-specific",
+  "reliabilityScore": 0.9,
+  "reliabilityRationale": "Official primary document from the licensing agency itself, verified by direct read on 2026-10-01.",
+  "lastCrawl": null,
+  "lastManualVerification": "2026-10-01",
+  "fieldsUsingThisSource": 0
+}

@@ -1,0 +1,19 @@
+{
+  "id": "texas-tsbpe-out-of-state-examination",
+  "agencyName": "Texas State Board of Plumbing Examiners (TSBPE)",
+  "website": "https://tsbpe.texas.gov/wp-content/uploads/forms/TSBPE_OutOfStateExaminationRequest.pdf",
+  "jurisdiction": "texas",
+  "professionsCovered": [
+    "plumber"
+  ],
+  "sourceType": "official-board",
+  "official": true,
+  "authorityLevel": "authoritative",
+  "authorityRationale": "TSBPE's own Out-of-State Examination Application (revised March 2026), on tsbpe.texas.gov. Read directly 2026-10-01: states minimum requirements (Journeyman/Master license held 2 years) and fees.",
+  "specificity": "profession-specific",
+  "reliabilityScore": 0.9,
+  "reliabilityRationale": "Official primary document from the licensing agency itself, verified by direct read on 2026-10-01.",
+  "lastCrawl": null,
+  "lastManualVerification": "2026-10-01",
+  "fieldsUsingThisSource": 0
+}

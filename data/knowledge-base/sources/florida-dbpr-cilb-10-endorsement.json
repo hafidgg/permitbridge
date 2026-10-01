@@ -1,0 +1,21 @@
+{
+  "id": "florida-dbpr-cilb-10-endorsement",
+  "agencyName": "Florida Department of Business and Professional Regulation, Construction Industry Licensing Board (DBPR CILB)",
+  "website": "https://flrules.org/gateway/readRefFile.asp?refId=17718&filename=DBPR+CILB+10+-+Application+for+Certification+by+Endorsement_New+Final.doc",
+  "jurisdiction": "florida",
+  "professionsCovered": [
+    "contractor",
+    "hvac-technician",
+    "plumber"
+  ],
+  "sourceType": "official-board",
+  "official": true,
+  "authorityLevel": "authoritative",
+  "authorityRationale": "DBPR CILB 10, 'Endorsement as Certified Contractor' (s. 489.115(3), F.S.), the form incorporated by reference in Rule 61-35.010, F.A.C., served from Florida's official administrative-rules site (flrules.org, Florida Department of State). Read directly 2026-10-01: header names DBPR / CILB; Options A-C endorsement criteria present.",
+  "specificity": "profession-specific",
+  "reliabilityScore": 0.9,
+  "reliabilityRationale": "Official primary document from the licensing agency itself, verified by direct read on 2026-10-01.",
+  "lastCrawl": null,
+  "lastManualVerification": "2026-10-01",
+  "fieldsUsingThisSource": 0
+}
