@@ -99,6 +99,15 @@ const stateName = stateDisplayName;
  * at Iowa Journeyman Class A only), so no single "N states" figure for
  * Iowa Master would be accurate.
  */
+/**
+ * Per-state <title> overrides, used only where GSC shows searchers phrasing
+ * the query differently from the default template. Utah: impressions come
+ * from "utah electrical license" (not "electrician"), at position ~22.
+ */
+const ELECTRICIAN_STATE_TITLES: Record<string, string> = {
+  utah: "Utah Electrical License Reciprocity & Transfer",
+};
+
 const ELECTRICIAN_STATE_META_DESCRIPTIONS: Record<string, string> = {
   colorado:
     "Colorado electrician license reciprocity: Journeyman recognized from 14 states; Master not available by reciprocity. Sourced from Colorado's board.",
@@ -110,7 +119,7 @@ const ELECTRICIAN_STATE_META_DESCRIPTIONS: Record<string, string> = {
     "Arkansas electrician license reciprocity: Journeyman recognized from 17 states, Master from 4. Sourced directly from Arkansas's licensing board.",
   minnesota:
     "Minnesota electrician license reciprocity: Journeyman recognized from 9 states, Master from 4. Sourced directly from Minnesota's licensing board.",
-  utah: "Utah has exactly one electrician reciprocity agreement — with Oregon — covering both Journeyman and Master tiers. Sourced from Utah DOPL.",
+  utah: "Utah electrical license reciprocity: Utah has exactly one agreement — with Oregon — covering both Journeyman and Master tiers. Sourced from Utah DOPL.",
   wyoming:
     "Wyoming electrician license reciprocity: Journeyman recognized from 17 states, Master from 3. Sourced directly from Wyoming's licensing board.",
   iowa: "Iowa recognizes electrician licenses by reciprocity from 13 states; Master-tier eligibility varies by state. Sourced from Iowa's DIAL board.",
@@ -145,7 +154,7 @@ export async function generateMetadata({ params }: { params: Promise<PageParams>
     if (!data) return {};
     const stateName = resolvedParams.transfer.charAt(0).toUpperCase() + resolvedParams.transfer.slice(1);
     return buildMetadata({
-      title: `${stateName} Electrician License Reciprocity`,
+      title: ELECTRICIAN_STATE_TITLES[resolvedParams.transfer] ?? `${stateName} Electrician License Reciprocity`,
       description:
         ELECTRICIAN_STATE_META_DESCRIPTIONS[resolvedParams.transfer] ??
         `What it actually takes to reciprocate an out-of-state electrician license into ${stateName} — Journeyman and Master are genuinely different, sourced directly from the ${stateName} licensing board.`,
