@@ -5660,6 +5660,10 @@ await test("[PERMANENT] sitemap.ts derives Iowa automatically via the same white
   assert(!sitemapSource.includes('"/electrician/iowa"') && !sitemapSource.includes("'/electrician/iowa'"), "no literal, manually-typed URL string for Iowa may exist in sitemap.ts");
 });
 
+// Guides (content/guides/*.md) hand-write their links to RN pair pages, but a pair page only exists if its
+// rule passes isTransferRulePublishable() — a file on disk is not enough. Added when the nursing-transfer
+// guide nearly shipped a link to registered-nurse/california-to-texas, which has a rule file but fails the gate.
+// If this fails: remove the link from the guide, or get the rule through the gate — never bypass the gate.
 await test("[PERMANENT] every RN pair page linked from a guide's markdown passes the real publish gate — guides hand-list pairs, so a gate change must never leave a guide linking to a 404", () => {
   const guidesDir = path.join(process.cwd(), "content", "guides");
   const publicRn = new Set(getAllPublicTransferRuleSlugs().filter((s) => s.profession === "registered-nurse").map((s) => s.transfer));
