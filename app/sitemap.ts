@@ -2,11 +2,12 @@ import type { MetadataRoute } from "next";
 import { getAllProfessions, getAllStates, getAllTransferRules, getAllGuides, getAllBlogPosts } from "@/lib/data";
 import { getAllPublicTransferRuleSlugs, getPublicTransferRule, summarizeEvidence, getSourceByUrl } from "@/lib/knowledge-base/transfer-rule-data";
 import { isTradeTransferPublishable } from "@/lib/knowledge-base/trade-transfer-gate";
+import { getIndexableTradeStateSummaries } from "@/lib/trade-state-summary";
 import { getAllSingleStateProfessionSlugs, getElectricianStatePageData } from "@/lib/knowledge-base/electrician-state-data";
 import { LINKING_STRUCTURE_UPDATED_AT, latestOf } from "@/lib/knowledge-base/structural-updates";
 import { SITE_URL } from "@/lib/utils";
 
-const KB_LINKED_PROFESSION_HUBS = new Set(["nurse", "electrician"]);
+const KB_LINKED_PROFESSION_HUBS = new Set(["nurse", "electrician", "hvac-technician", "plumber"]);
 
 /**
  * Phase 2D.5.2 — production investigation confirmed the root cause of a
@@ -51,7 +52,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const professionRoutes: MetadataRoute.Sitemap = getAllProfessions().map((p) => ({
     url: `${SITE_URL}/profession/${p.slug}`,
-    // nurse/electrician hubs render knowledge-base link sections, so linking-only changes must bump them too.
+    // these hubs render knowledge-base / summary-page link sections, so linking-only changes must bump them too.
     lastModified: KB_LINKED_PROFESSION_HUBS.has(p.slug) ? latestOf(p.updatedAt, LINKING_STRUCTURE_UPDATED_AT) : p.updatedAt,
     changeFrequency: "weekly",
     priority: 0.9,
@@ -131,5 +132,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     };
   });
 
-  return [...staticRoutes, ...professionRoutes, ...stateRoutes, ...transferRoutes, ...guideRoutes, ...blogRoutes, ...knowledgeBaseTransferRoutes, ...singleStateProfessionRoutes];
+  // Trade per-destination summaries (/hvac-technician/{state}, /plumber/{state}): only pages with at least one
+  // pair passing isTradeTransferPublishable(), dated by their newest pair.
+  const tradeStateSummaryRoutes: MetadataRoute.Sitemap = getIndexableTradeStateSummaries().map((s) => ({
+    url: `${SITE_URL}/${s.profession}/${s.destination.slug}`,
+    lastModified: latestOf(s.lastUpdated, LINKING_STRUCTURE_UPDATED_AT),
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  }));
+
+  return [...staticRoutes, ...professionRoutes, ...stateRoutes, ...transferRoutes, ...guideRoutes, ...blogRoutes, ...knowledgeBaseTransferRoutes, ...singleStateProfessionRoutes, ...tradeStateSummaryRoutes];
 }

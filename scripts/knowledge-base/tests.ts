@@ -5764,6 +5764,31 @@ await test("[PERMANENT] no sourced data/transfers record carries generate-transf
   }
 });
 
+// /hvac-technician/{state} and /plumber/{state} summarize data/transfers pairs per destination. They must be built
+// from the same gate as the pair pages, so a summary can never present (or index) a pair that its own detail page
+// wouldn't — the class of gap closed in 8e6ab26. Added with the first 8 summary pages (2026-10-01).
+// If this fails: route the surface through getTradeStateSummary()/getIndexableTradeStateSummaries() instead of
+// reading data/transfers directly — never filter on sourceUrl alone.
+await test("[PERMANENT] trade state summary pages and every surface listing them are built only from isTradeTransferPublishable() pairs", () => {
+  const read = (...p: string[]) => fs.readFileSync(path.join(process.cwd(), ...p), "utf-8");
+  const lib = read("lib", "trade-state-summary.ts");
+  assert(lib.includes("isTradeTransferPublishable(rule, getSourceByUrl).publishable"), "lib/trade-state-summary.ts must select pairs via isTradeTransferPublishable()");
+  assert(!/\.sourceUrl\)\s*continue|filter\(\(r\) => !!r\.sourceUrl\)/.test(lib), "summary selection must not fall back to a bare sourceUrl check");
+  for (const surface of [["app", "sitemap.ts"], ["lib", "search.ts"], ["app", "llms.txt", "route.ts"], ["app", "(site)", "profession", "[slug]", "page.tsx"]]) {
+    assert(read(...surface).includes("getIndexableTradeStateSummaries()"), `${surface.join("/")} must list summary pages via getIndexableTradeStateSummaries()`);
+  }
+  // Replicated on real data (the module itself imports "server-only"): every planned summary page has ≥1 passing pair.
+  const allSources = loadAllSources();
+  const resolve = (u: string) => allSources.find((x) => x.website === u);
+  for (const prof of ["hvac-technician", "plumber"]) {
+    for (const to of ["california", "florida", "ohio", "texas"]) {
+      const dir = path.join(process.cwd(), "data", "transfers", prof);
+      const passing = fs.readdirSync(dir).map((f) => JSON.parse(fs.readFileSync(path.join(dir, f), "utf-8"))).filter((r) => r.toState === to && isTradeTransferPublishable(r, resolve).publishable);
+      assert(passing.length >= 1, `/${prof}/${to} has no publishable pair and would be an empty, noindexed page`);
+    }
+  }
+});
+
 
 console.log(`Results: ${passed} passed, ${failed} failed (${passed + failed} total)`);
 if (failed > 0) {

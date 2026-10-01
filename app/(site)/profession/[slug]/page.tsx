@@ -11,6 +11,7 @@ import { portabilityLabel, formatDate } from "@/lib/utils";
 import { getAllProfessions, getProfessionBySlug, getAllStates, getTransferRulesForProfession, getGuideBySlug, NURSE_TRANSFER_GUIDE_SLUG } from "@/lib/data";
 import { getAllPublicTransferRuleSlugs } from "@/lib/knowledge-base/transfer-rule-data";
 import { getAllSingleStateProfessionSlugs } from "@/lib/knowledge-base/electrician-state-data";
+import { getIndexableTradeStateSummaries } from "@/lib/trade-state-summary";
 import { buildMetadata, articleJsonLd } from "@/lib/seo";
 import { JsonLd } from "@/components/seo/JsonLd";
 
@@ -61,6 +62,7 @@ export default async function ProfessionPage({ params }: { params: Promise<{ slu
   // so every one of these pages (Colorado through Utah) had zero incoming
   // links a real visitor could follow to reach them.
   const electricianStatePages = profession.slug === "electrician" ? getAllSingleStateProfessionSlugs() : [];
+  const tradeStateSummaries = getIndexableTradeStateSummaries().filter((s) => s.profession === profession.slug);
 
   return (
     <div>
@@ -199,6 +201,24 @@ export default async function ProfessionPage({ params }: { params: Promise<{ slu
                 <Link key={s.slug} href={`/${s.profession}/${s.slug}`}>
                   <Badge variant="outline" className="px-4 py-2 text-sm hover:bg-muted">
                     {toTitleCase(s.slug)}
+                  </Badge>
+                </Link>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {tradeStateSummaries.length > 0 && (
+          <section className="mt-12 rounded-xl border border-border bg-muted/20 p-6">
+            <h2 className="mb-2 text-xl font-bold tracking-tight">{profession.shortName} License Transfer by Destination State</h2>
+            <p className="mb-4 max-w-2xl text-sm text-muted-foreground">
+              What it takes to move an existing license into each state, built only from state pairs sourced directly from the destination board.
+            </p>
+            <div className="flex flex-wrap gap-3">
+              {tradeStateSummaries.map((s) => (
+                <Link key={s.destination.slug} href={`/${s.profession}/${s.destination.slug}`}>
+                  <Badge variant="outline" className="px-4 py-2 text-sm hover:bg-muted">
+                    {s.destination.name}
                   </Badge>
                 </Link>
               ))}

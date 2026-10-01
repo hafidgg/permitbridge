@@ -17,6 +17,7 @@ import {
 } from "@/lib/data";
 import { getAllPublicTransferRuleSlugs } from "@/lib/knowledge-base/transfer-rule-data";
 import { getAllSingleStateProfessionSlugs } from "@/lib/knowledge-base/electrician-state-data";
+import { getIndexableTradeStateSummaries } from "@/lib/trade-state-summary";
 
 function toTitleCase(slug: string): string {
   return slug
@@ -89,6 +90,17 @@ export function buildSearchIndex(): SearchDocument[] {
       description: `Journeyman and Master electrician license reciprocity and endorsement requirements for ${stateName}.`,
       url: `/${s.profession}/${s.slug}`,
       keywords: ["electrician", "journeyman", "master electrician", stateName, "license reciprocity"],
+    });
+  }
+
+  for (const s of getIndexableTradeStateSummaries()) {
+    const label = s.profession === "plumber" ? "Plumber" : "HVAC";
+    docs.push({
+      type: "transfer",
+      title: `${s.destination.name} ${label} License Reciprocity & Transfer`,
+      description: `Transferring an existing ${label.toLowerCase()} license into ${s.destination.name}, from ${s.pairs.map((p) => p.origin.name).join(", ")}.`,
+      url: `/${s.profession}/${s.destination.slug}`,
+      keywords: [label.toLowerCase(), s.profession === "plumber" ? "plumbing" : "air conditioning", s.destination.name, "license reciprocity", "license transfer"],
     });
   }
 
