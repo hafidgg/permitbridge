@@ -150,6 +150,23 @@ export function TradeStateSummaryPage({ profession, state }: { profession: Trade
           </div>
         </section>
 
+        {s.pendingOrigins.length > 0 && (
+          <section className="mt-10 rounded-lg border border-dashed border-border p-5">
+            <h2 className="mb-2 text-lg font-bold">Researched, pending an official answer from the board</h2>
+            <p className="mb-3 text-sm text-muted-foreground">
+              We researched these routes into {s.destination.name}, but each turns on a legal question the official documents don&apos;t settle. We
+              won&apos;t publish an answer until the board gives one.
+            </p>
+            <ul className="space-y-2 text-sm">
+              {s.pendingOrigins.map((p) => (
+                <li key={p.origin.slug}>
+                  <strong>From {p.origin.name}:</strong> <span className="text-muted-foreground">{p.question} (Question for the {p.board}.)</span>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
+
         {s.unverifiedOrigins.length > 0 && (
           <section className="mt-10 rounded-lg border border-dashed border-border p-5">
             <h2 className="mb-2 text-lg font-bold">Not yet researched</h2>

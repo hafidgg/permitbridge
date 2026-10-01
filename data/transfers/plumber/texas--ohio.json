@@ -25,5 +25,9 @@
   ],
   "notes": "Ohio's plumber licensing requirements are administered per the state's licensing authority. Ohio trade licenses for larger jurisdictions go through the Ohio Construction Industry Licensing Board (OCILB); some smaller municipalities license independently. Always confirm current rules directly with the official board before applying, since requirements change.",
   "officialSourceName": "Ohio State Licensing Board",
-  "updatedAt": "2026-08-07"
+  "updatedAt": "2026-08-07",
+  "pendingBoardAnswer": {
+    "board": "Ohio Construction Industry Licensing Board (OCILB)",
+    "question": "Whether a Texas individual Master Plumber license qualifies as an \"out-of-state trades contractors license\" under ORC 4796.01, which defines out-of-state licenses as issued \"to an individual\" while OCILB licenses contractors."
+  }
 }

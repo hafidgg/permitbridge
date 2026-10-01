@@ -95,6 +95,12 @@ export interface TransferRule {
   indexingHold?: string;
   /** Internal path of a page that covers this content more completely; rendered as a prominent link. */
   seeAlsoPath?: { path: string; label: string };
+  /**
+   * Set on an UNPUBLISHED pair that was researched but is blocked on a legal
+   * question only the board can answer: which board, and the question. Lets
+   * summaries say "pending an official answer" instead of "not yet researched".
+   */
+  pendingBoardAnswer?: { board: string; question: string };
 }
 
 export interface GuideSummary {

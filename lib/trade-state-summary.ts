@@ -31,8 +31,10 @@ export interface TradeStateSummary {
   pairs: TradeSummaryPair[];
   /** The destination's route, only when every passing pair agrees on it; otherwise null and rows carry their own. */
   shared: { pathway: PathwayType; feeUsd: number; examRequired: boolean; minimumYearsLicensed: number; source: SourceRecord } | null;
-  /** Origin states (among those the site covers) with no publishable pair into this destination. */
+  /** Origin states (among those the site covers) with no publishable pair and no research on record. */
   unverifiedOrigins: State[];
+  /** Origin states whose pair was researched but is blocked on an official answer from the board. */
+  pendingOrigins: Array<{ origin: State; board: string; question: string }>;
   lastUpdated: string;
 }
 
@@ -65,7 +67,15 @@ export function getTradeStateSummary(profession: TradeSummaryProfession, destina
     );
 
   const covered = new Set(pairs.map((p) => p.origin.slug));
-  const unverifiedOrigins = states.filter((s) => s.slug !== destinationSlug && !covered.has(s.slug)).sort((a, b) => a.name.localeCompare(b.name));
+  const pendingOrigins = getAllTransferRules()
+    .filter((r) => r.profession === profession && r.toState === destinationSlug && !covered.has(r.fromState) && r.pendingBoardAnswer)
+    .map((r) => ({ origin: states.find((s) => s.slug === r.fromState)!, ...r.pendingBoardAnswer! }))
+    .filter((p) => !!p.origin)
+    .sort((a, b) => a.origin.name.localeCompare(b.origin.name));
+  const pendingSlugs = new Set(pendingOrigins.map((p) => p.origin.slug));
+  const unverifiedOrigins = states
+    .filter((s) => s.slug !== destinationSlug && !covered.has(s.slug) && !pendingSlugs.has(s.slug))
+    .sort((a, b) => a.name.localeCompare(b.name));
 
   return {
     profession,
@@ -73,6 +83,7 @@ export function getTradeStateSummary(profession: TradeSummaryProfession, destina
     pairs,
     shared: agree ? { pathway: first.rule.pathway, feeUsd: first.rule.feeUsd, examRequired: first.rule.examRequired, minimumYearsLicensed: first.rule.minimumYearsLicensed, source: first.source } : null,
     unverifiedOrigins,
+    pendingOrigins,
     lastUpdated: pairs.map((p) => p.rule.updatedAt).sort().at(-1) ?? "",
   };
 }
