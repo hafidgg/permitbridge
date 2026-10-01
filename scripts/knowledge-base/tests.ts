@@ -5711,6 +5711,7 @@ await test("[PERMANENT] every /transfer page in the sitemap and every indexable 
   const realRule = JSON.parse(fs.readFileSync(path.join(process.cwd(), "data", "transfers", "hvac-technician", "california--florida.json"), "utf-8"));
   assert(isTradeTransferPublishable(realRule, resolve).publishable, "a real, registered-source trade rule must pass");
   assert(!isTradeTransferPublishable({ ...realRule, sourceUrl: undefined }, resolve).publishable, "no sourceUrl must fail");
+  assert(!isTradeTransferPublishable({ ...realRule, indexingHold: "test" }, resolve).publishable, "an indexingHold must fail even with a valid registered source");
   assert(!isTradeTransferPublishable({ ...realRule, sourceUrl: "https://example.com/unregistered" }, resolve).publishable, "an unregistered sourceUrl must fail — this is exactly the old gap");
   assert(!isTradeTransferPublishable({ ...realRule, fromState: "ohio", toState: "texas" }, resolve).publishable, "a source from neither state's jurisdiction must fail");
   const secondary = allSources.find((x) => x.authorityLevel === "supplementary")!;

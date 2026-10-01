@@ -88,6 +88,11 @@ export interface TransferRule {
    * rendered as fact (render via formatProcessingTime()).
    */
   processingDaysSourced?: boolean;
+  /**
+   * Set to a written reason to pull a sourced page out of the index while its
+   * content is being corrected. isTradeTransferPublishable() fails on it.
+   */
+  indexingHold?: string;
 }
 
 export interface GuideSummary {

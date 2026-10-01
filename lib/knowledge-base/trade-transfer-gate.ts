@@ -19,6 +19,9 @@ export function isTradeTransferPublishable(
   resolveSource: (url: string) => SourceRecord | undefined
 ): PublicationCheckResult {
   const reasons: string[] = [];
+  if (rule.indexingHold) {
+    reasons.push(`Indexing hold: ${rule.indexingHold}`);
+  }
   if (!rule.sourceUrl) {
     reasons.push("No sourceUrl.");
     return { publishable: false, blockingReasons: reasons };
