@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { getAllProfessions, getAllStates, getAllTransferRules, getAllGuides, getAllBlogPosts } from "@/lib/data";
-import { getAllPublicTransferRuleSlugs, getPublicTransferRule, summarizeEvidence } from "@/lib/knowledge-base/transfer-rule-data";
+import { getAllPublicTransferRuleSlugs, getPublicTransferRule, summarizeEvidence, getSourceByUrl } from "@/lib/knowledge-base/transfer-rule-data";
+import { isTradeTransferPublishable } from "@/lib/knowledge-base/trade-transfer-gate";
 import { getAllSingleStateProfessionSlugs, getElectricianStatePageData } from "@/lib/knowledge-base/electrician-state-data";
 import { LINKING_STRUCTURE_UPDATED_AT, latestOf } from "@/lib/knowledge-base/structural-updates";
 import { SITE_URL } from "@/lib/utils";
@@ -63,14 +64,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.9,
   }));
 
-  // Content-trust hardening: only submit transfer pages that have real,
-  // individually-confirmed sourcing (rule.sourceUrl) — mirrors the noIndex
-  // logic in the page's own generateMetadata(). Pages without it remain
-  // reachable via direct navigation but aren't actively pushed to Google
-  // until they have real, checkable citations rather than a generic
-  // "{State} State Licensing Board" placeholder.
+  // Content-trust hardening: only submit transfer pages that pass
+  // isTradeTransferPublishable() (registered, authoritative,
+  // jurisdiction-matched source) — mirrors the noIndex logic in the page's
+  // own generateMetadata(). Pages that fail remain reachable via direct
+  // navigation but aren't actively pushed to Google.
   const transferRoutes: MetadataRoute.Sitemap = getAllTransferRules()
-    .filter((r) => !!r.sourceUrl)
+    .filter((r) => isTradeTransferPublishable(r, getSourceByUrl).publishable)
     .map((r) => ({
       url: `${SITE_URL}/transfer/${r.profession}/${r.fromState}/${r.toState}`,
       lastModified: r.updatedAt,

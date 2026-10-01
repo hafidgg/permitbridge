@@ -1,3 +1,5 @@
+import { isTradeTransferPublishable } from "@/lib/knowledge-base/trade-transfer-gate";
+import { getSourceByUrl } from "@/lib/knowledge-base/transfer-rule-data";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
@@ -59,13 +61,12 @@ export async function generateMetadata({ params }: { params: Promise<TransferPar
     title: `${profession.shortName} License: Transfer From ${from.name} to ${to.name}`,
     description: `${rule.pathwayLabel} — ${rule.examRequired ? "exam required" : "no exam required"}, ${rule.processingDaysSourced ? `est. ${rule.estimatedProcessingDays[0]}-${rule.estimatedProcessingDays[1]} days` : "processing time not published by the board"}, ${rule.feeUsd} USD fee. Full step-by-step guide for ${profession.shortName.toLowerCase()}s moving from ${from.name} to ${to.name}.`,
     path: `/transfer/${profession.slug}/${from.slug}/${to.slug}`,
-    // Content-trust hardening: a page whose figures were never individually
-    // confirmed against a live official source (no sourceUrl) shouldn't be
-    // actively submitted to Google for indexing — it stays reachable via
-    // direct link/navigation, but isn't presented to search as an
-    // authoritative answer until it has real, checkable sourcing. Mirrors
-    // the sitemap's own exclusion of these same records (app/sitemap.ts).
-    noIndex: !rule.sourceUrl,
+    // Content-trust hardening: only pages whose sourceUrl is a registered,
+    // authoritative, jurisdiction-matched SourceRecord are indexable — see
+    // isTradeTransferPublishable(). Others stay reachable via direct
+    // link/navigation but aren't presented to search as an authoritative
+    // answer. Mirrors the sitemap's own filter (app/sitemap.ts).
+    noIndex: !isTradeTransferPublishable(rule, getSourceByUrl).publishable,
   });
 }
 

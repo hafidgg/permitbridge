@@ -10,6 +10,7 @@
  * Usage: npm test
  */
 import fs from "node:fs";
+import { isTradeTransferPublishable } from "../../lib/knowledge-base/trade-transfer-gate";
 import path from "node:path";
 import type { ProfessionStateFacts, SourceRecord, VerifiedField } from "../../types/knowledge-base";
 import { loadAllSources, recomputeSourceUsage } from "../../lib/knowledge-base/sources";
@@ -5689,6 +5690,31 @@ await test("[PERMANENT] every app/components/lib file that renders estimatedProc
     if (file.includes(path.join("lib", "data.ts")) || file.includes(path.join("lib", "knowledge-base"))) continue; // data loading / KB schema, not rendering
     assert(src.includes("processingDaysSourced"), `${path.relative(process.cwd(), file)} reads estimatedProcessingDays without checking processingDaysSourced`);
   }
+});
+
+// Trade transfer pages (/transfer/*, data/transfers/*) used to be indexed on `!!rule.sourceUrl` alone — any URL,
+// registered or not. Same gate-gap class as the RN california-to-texas incident (a page live without passing a real
+// gate). Found 2026-10-01: 24 of 28 sourced trade files cited sources that weren't registered SourceRecords. Fixed
+// by registering the 6 real sources and gating indexing (page noIndex + sitemap) on isTradeTransferPublishable().
+// If this fails: fix the data — register the source properly, correct its jurisdiction, or remove/replace the
+// sourceUrl — or let the page drop out of the index. Never bypass or loosen the gate to keep a page indexed.
+await test("[PERMANENT] every /transfer page in the sitemap and every indexable /transfer page passes isTradeTransferPublishable() — a bare sourceUrl is never enough to index a trade page", () => {
+  const sitemapSrc = fs.readFileSync(path.join(process.cwd(), "app", "sitemap.ts"), "utf-8");
+  const pageSrc = fs.readFileSync(path.join(process.cwd(), "app", "(site)", "transfer", "[profession]", "[from]", "[to]", "page.tsx"), "utf-8");
+  assert(sitemapSrc.includes(".filter((r) => isTradeTransferPublishable(r, getSourceByUrl).publishable)"), "app/sitemap.ts must filter trade transferRoutes through isTradeTransferPublishable()");
+  assert(pageSrc.includes("noIndex: !isTradeTransferPublishable(rule, getSourceByUrl).publishable"), "the /transfer page's noIndex must come from isTradeTransferPublishable()");
+  assert(!/filter\(\(r\) => !!r\.sourceUrl\)/.test(sitemapSrc) && !/noIndex: !rule\.sourceUrl/.test(pageSrc), "the old bare-sourceUrl indexing check must not return");
+  // Doesn't import app/sitemap.ts (it reaches the real "server-only" package, which throws under tsx — see the
+  // RN sitemap test above). The source-text checks above pin the wiring; these pin the gate's behavior on real data.
+  const allSources = loadAllSources();
+  const resolve = (u: string) => allSources.find((x) => x.website === u);
+  const realRule = JSON.parse(fs.readFileSync(path.join(process.cwd(), "data", "transfers", "hvac-technician", "california--florida.json"), "utf-8"));
+  assert(isTradeTransferPublishable(realRule, resolve).publishable, "a real, registered-source trade rule must pass");
+  assert(!isTradeTransferPublishable({ ...realRule, sourceUrl: undefined }, resolve).publishable, "no sourceUrl must fail");
+  assert(!isTradeTransferPublishable({ ...realRule, sourceUrl: "https://example.com/unregistered" }, resolve).publishable, "an unregistered sourceUrl must fail — this is exactly the old gap");
+  assert(!isTradeTransferPublishable({ ...realRule, fromState: "ohio", toState: "texas" }, resolve).publishable, "a source from neither state's jurisdiction must fail");
+  const secondary = allSources.find((x) => x.authorityLevel === "supplementary")!;
+  assert(!isTradeTransferPublishable({ ...realRule, sourceUrl: secondary.website, fromState: secondary.jurisdiction, toState: secondary.jurisdiction }, resolve).publishable, "a non-authoritative source must fail");
 });
 
 
