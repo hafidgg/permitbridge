@@ -114,7 +114,7 @@ const ELECTRICIAN_STATE_META_DESCRIPTIONS: Record<string, string> = {
   virginia:
     "Virginia electrician license reciprocity: Journeyman recognized from 2 states, Master from 3. Sourced directly from Virginia's licensing board.",
   texas:
-    "Texas electrician license reciprocity: Journeyman recognized from 11 states, Master from 7. Sourced directly from Texas's licensing board.",
+    "Texas electrician license reciprocity: Journeyman recognized from 10 states, Master from 7. Sourced directly from Texas's licensing board.",
   arkansas:
     "Arkansas electrician license reciprocity: Journeyman recognized from 17 states, Master from 4. Sourced directly from Arkansas's licensing board.",
   minnesota:

@@ -83,7 +83,7 @@
     "confidence": 0,
     "confidenceLevel": "unknown",
     "history": [],
-    "notes": "Phase 2F/2F.1 research focused specifically on TDLR's named bilateral reciprocity agreements \u2014 a separate, broader Universal License Recognition pathway (as Virginia has) was not confirmed to exist or not exist for Texas electricians this session."
+    "notes": "Phase 2F/2F.1 research focused specifically on TDLR's named bilateral reciprocity agreements — a separate, broader Universal License Recognition pathway (as Virginia has) was not confirmed to exist or not exist for Texas electricians this session."
   },
   "compactMembership": {
     "value": false,
@@ -109,11 +109,11 @@
     "notes": "Texas's electrician reciprocity operates via named bilateral agreements with individual states, not a single multistate compact license practiced across member states without a new license (the defining feature of a true compact). Recorded as false to avoid conflating these bilateral agreements with a compact under this field's actual schema meaning."
   },
   "reciprocityRules": {
-    "value": "Texas has confirmed Journeyman Electrician reciprocity agreements with: Alaska, Arkansas, Idaho, Iowa, Montana, Nebraska, New Mexico, Oklahoma, South Dakota, Wyoming, and Alabama. North Carolina and Louisiana have Master-only agreements with Texas \u2014 their Journeyman reciprocity status is not confirmed by any official TDLR source found. Ohio's official March/June 2026 TDLR announcement explicitly confirms Master-level reciprocity but does not mention Journeyman \u2014 Ohio Journeyman reciprocity is UNKNOWN, neither confirmed nor denied by any official source found.",
+    "value": "Texas has confirmed Journeyman Electrician reciprocity agreements with: Alabama, Alaska, Arkansas, Idaho, Iowa, Nebraska, New Mexico, Oklahoma, South Dakota, and Wyoming. TDLR's out-of-state page presents this as the complete list (\"Currently there are no reciprocal licensing agreements for any other license types\"), so Journeyman licenses from any other state, including Ohio, North Carolina and Louisiana (which have Master-only agreements with Texas), are not covered by reciprocity.",
     "sourceUrl": "https://www.tdlr.texas.gov/electricians/out-of-state.htm",
     "sourceTitle": "Transfer Your Out-of-State Electrician License to Texas",
     "sourceName": "Texas Department of Licensing and Regulation (TDLR)",
-    "verifiedAt": "2026-08-27",
+    "verifiedAt": "2026-10-01",
     "verificationMethod": "official_document_review",
     "reviewer": null,
     "status": "pending_verification",
@@ -122,14 +122,22 @@
     "history": [
       {
         "previousValue": null,
-        "newValue": "Texas has confirmed Journeyman Electrician reciprocity agreements with: Alaska, Arkansas, Idaho, Iowa, Montana, Nebraska, New Mexico, Oklahoma, South Dakota, Wyoming, and Alabama. North Carolina and Louisiana have Master-only agreements with Texas \u2014 their Journeyman reciprocity status is not confirmed by any official TDLR source found. Ohio's official March/June 2026 TDLR announcement explicitly confirms Master-level reciprocity but does not mention Journeyman \u2014 Ohio Journeyman reciprocity is UNKNOWN, neither confirmed nor denied by any official source found.",
+        "newValue": "Texas has confirmed Journeyman Electrician reciprocity agreements with: Alaska, Arkansas, Idaho, Iowa, Montana, Nebraska, New Mexico, Oklahoma, South Dakota, Wyoming, and Alabama. North Carolina and Louisiana have Master-only agreements with Texas — their Journeyman reciprocity status is not confirmed by any official TDLR source found. Ohio's official March/June 2026 TDLR announcement explicitly confirms Master-level reciprocity but does not mention Journeyman — Ohio Journeyman reciprocity is UNKNOWN, neither confirmed nor denied by any official source found.",
         "changedAt": "2026-08-27",
         "reason": "Phase 2F.2: initial population from official TDLR sources verified in Phase 2F/2F.1.",
         "sourceUrl": "https://www.tdlr.texas.gov/electricians/out-of-state.htm",
         "reviewer": null
+      },
+      {
+        "previousValue": "Texas has confirmed Journeyman Electrician reciprocity agreements with: Alaska, Arkansas, Idaho, Iowa, Montana, Nebraska, New Mexico, Oklahoma, South Dakota, Wyoming, and Alabama. North Carolina and Louisiana have Master-only agreements with Texas — their Journeyman reciprocity status is not confirmed by any official TDLR source found. Ohio's official March/June 2026 TDLR announcement explicitly confirms Master-level reciprocity but does not mention Journeyman — Ohio Journeyman reciprocity is UNKNOWN, neither confirmed nor denied by any official source found.",
+        "newValue": "Texas has confirmed Journeyman Electrician reciprocity agreements with: Alabama, Alaska, Arkansas, Idaho, Iowa, Nebraska, New Mexico, Oklahoma, South Dakota, and Wyoming. TDLR's out-of-state page presents this as the complete list (\"Currently there are no reciprocal licensing agreements for any other license types\"), so Journeyman licenses from any other state, including Ohio, North Carolina and Louisiana (which have Master-only agreements with Texas), are not covered by reciprocity.",
+        "changedAt": "2026-10-01",
+        "reason": "Re-verified verbatim against TDLR's current out-of-state.htm (raw HTML, 2026-10-01). (1) Montana removed: no longer on TDLR's Journeyman list. (2) Ohio Journeyman changed from Unknown to not covered: TDLR's Journeyman list is presented as closed ('no reciprocal licensing agreements for any other license types') and omits Ohio. The Ohio announcement names master licenses only and lists Texas's journeyman agreements without Ohio. The same closed-list reading applies to North Carolina and Louisiana.",
+        "sourceUrl": "https://www.tdlr.texas.gov/electricians/out-of-state.htm",
+        "reviewer": null
       }
     ],
-    "notes": "Alaska/Arkansas/Idaho/Iowa/Montana/Nebraska/NewMexico/Oklahoma/SouthDakota/Wyoming confirmed directly by TDLR's primary out-of-state.htm page. Alabama confirmed by the official 2026-03-20 TDLR announcement (explicitly names both journeyman and master). Ohio-Journeyman deliberately left as an open, explicit Unknown per Phase 2F.1's finding \u2014 the official Ohio announcement only names 'master electricians and master electrical contractors,' never mentioning journeyman either way."
+    "notes": "Journeyman list verified verbatim on TDLR's out-of-state.htm on 2026-10-01: 'Journeyman Electrician - Alabama, Alaska, Arkansas, Idaho, Iowa, Nebraska, New Mexico, Oklahoma, South Dakota and Wyoming. Other License Types - Currently there are no reciprocal licensing agreements for any other license types.' Montana was listed in the 2026-08-27 version of this record but is not on TDLR's current page. Ohio: the 2026-06-05 TDLR announcement covers 'licensed master electricians and master electrical contractors' and lists Texas's journeyman agreements without Ohio; together with TDLR's closed list, Ohio Journeyman is not covered (previously recorded as Unknown)."
   },
   "endorsementRules": {
     "value": "Unknown",
@@ -146,7 +154,7 @@
     "notes": "TDLR's official materials use the term 'reciprocity' specifically for these named agreements; a separately-named general 'endorsement' pathway distinct from reciprocity was not confirmed in Phase 2F/2F.1 research."
   },
   "requiredExams": {
-    "value": "Applicants must have taken and passed the reciprocal state's own statewide examination for electrical work \u2014 Texas does not require a separate Texas exam under reciprocity, but TDLR verifies the original exam was passed via a letter of good standing from the issuing state.",
+    "value": "Applicants must have taken and passed the reciprocal state's own statewide examination for electrical work — Texas does not require a separate Texas exam under reciprocity, but TDLR verifies the original exam was passed via a letter of good standing from the issuing state.",
     "sourceUrl": "https://www.tdlr.texas.gov/electricians/out-of-state.htm",
     "sourceTitle": "Transfer Your Out-of-State Electrician License to Texas",
     "sourceName": "Texas Department of Licensing and Regulation (TDLR)",
@@ -159,7 +167,7 @@
     "history": [
       {
         "previousValue": null,
-        "newValue": "Applicants must have taken and passed the reciprocal state's own statewide examination for electrical work \u2014 Texas does not require a separate Texas exam under reciprocity, but TDLR verifies the original exam was passed via a letter of good standing from the issuing state.",
+        "newValue": "Applicants must have taken and passed the reciprocal state's own statewide examination for electrical work — Texas does not require a separate Texas exam under reciprocity, but TDLR verifies the original exam was passed via a letter of good standing from the issuing state.",
         "changedAt": "2026-08-27",
         "reason": "Phase 2F.2: initial population from official TDLR sources verified in Phase 2F/2F.1.",
         "sourceUrl": "https://www.tdlr.texas.gov/electricians/out-of-state.htm",
@@ -254,7 +262,7 @@
     "confidence": 0,
     "confidenceLevel": "unknown",
     "history": [],
-    "notes": "Not independently confirmed against an official TDLR fee schedule this session \u2014 a secondary source cited $30, not used per the no-fabrication policy."
+    "notes": "Not independently confirmed against an official TDLR fee schedule this session — a secondary source cited $30, not used per the no-fabrication policy."
   },
   "renewalFeeUsd": {
     "value": "Unknown",

@@ -5404,7 +5404,11 @@ await test("[PERMANENT — Phase 2F.2] CRITICAL: Ohio appears in Texas Master's 
 
   const jConfirmedSentence = jText.split(".")[0]!;
   assert(!jConfirmedSentence.includes("Ohio"), "Ohio must NOT appear in Journeyman's confirmed-states sentence — it is not confirmed for Journeyman");
-  assert(jText.toUpperCase().includes("UNKNOWN") && jText.includes("Ohio"), "Journeyman's text must explicitly state Ohio is Unknown, not silently omit it");
+  // Updated 2026-10-01 (user-approved): was "must say Unknown". TDLR's current out-of-state page presents its
+  // Journeyman list as closed ("no reciprocal licensing agreements for any other license types") and omits Ohio,
+  // so Ohio Journeyman is now "not covered". The original principle stands: Ohio is named explicitly, never omitted.
+  assert(jText.includes("Ohio") && /not covered/i.test(jText), "Journeyman's text must explicitly state Ohio is not covered, not silently omit it");
+  assert(!jText.includes("Montana"), "Montana is not on TDLR's current Journeyman list (verified 2026-10-01) and must not reappear");
 
   const mConfirmedSentence = mText.split(".")[0]!;
   assert(mConfirmedSentence.includes("Ohio"), "Ohio MUST appear in Master's confirmed-states sentence — it is officially confirmed for Master");
