@@ -5718,6 +5718,48 @@ await test("[PERMANENT] every /transfer page in the sitemap and every indexable 
   assert(!isTradeTransferPublishable({ ...realRule, sourceUrl: secondary.website, fromState: secondary.jurisdiction, toState: secondary.jurisdiction }, resolve).publishable, "a non-authoritative source must fail");
 });
 
+// scripts/generate-transfers.ts fills every data/transfers/* record with template text and default numbers. When a
+// pair gets researched and a sourceUrl is added, the template steps are supposed to be fully replaced. They weren't for
+// electrician {ca,fl,ny,oh}->texas: live, indexed pages showed "approx. $235" and "32 additional training/CE hours"
+// beside a real $108 fee, and ohio->texas denied the TDLR-announced Ohio Master reciprocity (found 2026-10-01, fixed
+// in 34dc581). The source gate can't see this — it checks the source, not the content. A one-time audit of all 28
+// sourced files found no other leftovers before this became permanent.
+// If this fails: rewrite the flagged steps/numbers from the cited source (or set indexingHold with a reason while
+// you do). Never weaken a pattern or edit the text just to dodge a match.
+await test("[PERMANENT] no sourced data/transfers record carries generate-transfers.ts template leftovers — template steps, a feeUsd absent from its own text, or hours/years figures the text never states", () => {
+  const TEMPLATE_STEPS = [
+    /through the appropriate national registry or the state board directly/,
+    /^File an application for .+ with .+'s licensing board\.$/,
+    /additional training\/CE hours required by/,
+    /application fee \(approx\. \$/,
+    /Await processing — typically \d+-\d+ days/,
+    /^Confirm your .+ license is active and in good standing in [A-Za-z ]+\.$/,
+  ];
+  const WORDS = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten"];
+  const root = path.join(process.cwd(), "data", "transfers");
+  for (const prof of fs.readdirSync(root)) {
+    for (const f of fs.readdirSync(path.join(root, prof)).filter((x) => x.endsWith(".json"))) {
+      const r = JSON.parse(fs.readFileSync(path.join(root, prof, f), "utf-8"));
+      if (!r.sourceUrl) continue; // unsourced records are generator output by definition, and never indexed
+      const id = `${prof}/${f}`;
+      const text = `${r.steps.join("\n")}\n${r.notes}`;
+      r.steps.forEach((s: string, i: number) => {
+        for (const t of TEMPLATE_STEPS) assert(!t.test(s), `${id} step ${i + 1} is generator template text: "${s}"`);
+      });
+      assert(!/administered per the state's licensing authority/.test(r.notes), `${id}: notes are generator template text`);
+      assert(!/ State Licensing Board$/.test(r.officialSourceName), `${id}: officialSourceName is the generator placeholder`);
+      const fee = String(r.feeUsd).replace(/\B(?=(\d{3})+(?!\d))/g, ",?");
+      assert(new RegExp(`[$]\\s?${fee}(?![0-9])`).test(text), `${id}: feeUsd $${r.feeUsd} appears nowhere in its own steps/notes`);
+      if (r.additionalHoursRequired > 0) {
+        assert(new RegExp(`${r.additionalHoursRequired}[- ](?:classroom |clock )?hours?`).test(text), `${id}: additionalHoursRequired ${r.additionalHoursRequired} is never stated in its text`);
+      }
+      if (r.minimumYearsLicensed > 0) {
+        assert(new RegExp(`(${r.minimumYearsLicensed}|${WORDS[r.minimumYearsLicensed]})[- ](\\(\\d+\\) )?years?`, "i").test(text), `${id}: minimumYearsLicensed ${r.minimumYearsLicensed} is never stated in its text`);
+      }
+    }
+  }
+});
+
 
 console.log(`Results: ${passed} passed, ${failed} failed (${passed + failed} total)`);
 if (failed > 0) {
