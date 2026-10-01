@@ -82,6 +82,12 @@ export interface TransferRule {
   sourceUrl?: string;
   verifiedAt?: string;
   confidence?: number;
+  /**
+   * True only when estimatedProcessingDays is stated by the official source
+   * itself. Absent/false = the generator's default range, which must never be
+   * rendered as fact (render via formatProcessingTime()).
+   */
+  processingDaysSourced?: boolean;
 }
 
 export interface GuideSummary {

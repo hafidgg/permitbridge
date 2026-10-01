@@ -58,7 +58,7 @@ export function buildSearchIndex(): SearchDocument[] {
     docs.push({
       type: "transfer",
       title: `${profession.shortName}: ${from.name} → ${to.name}`,
-      description: `${r.pathwayLabel}. ${r.examRequired ? "Exam required." : "No exam required."} Est. ${r.estimatedProcessingDays[0]}-${r.estimatedProcessingDays[1]} days.`,
+      description: `${r.pathwayLabel}. ${r.examRequired ? "Exam required." : "No exam required."} ${r.processingDaysSourced ? `Est. ${r.estimatedProcessingDays[0]}-${r.estimatedProcessingDays[1]} days.` : "Processing time not published by the board."}`,
       url: `/transfer/${profession.slug}/${from.slug}/${to.slug}`,
       keywords: [profession.name, profession.shortName, from.name, to.name, r.pathwayLabel, "transfer license"],
     });

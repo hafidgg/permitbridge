@@ -29,6 +29,13 @@ export function formatDayRange(range: [number, number]): string {
   return `${range[0]}–${range[1]} days`;
 }
 
+export const PROCESSING_TIME_NOT_PUBLISHED = "Processing time not published by the board";
+
+/** Processing time for display — the day range only when the official source states it. */
+export function formatProcessingTime(rule: { estimatedProcessingDays: [number, number]; processingDaysSourced?: boolean }): string {
+  return rule.processingDaysSourced ? formatDayRange(rule.estimatedProcessingDays) : PROCESSING_TIME_NOT_PUBLISHED;
+}
+
 /** Map a 0-100 portability score to a qualitative label + color token. */
 export function portabilityLabel(score: number): { label: string; tone: "success" | "warning" | "destructive" } {
   if (score >= 70) return { label: "Easy Transfer", tone: "success" };

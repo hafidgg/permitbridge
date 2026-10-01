@@ -5675,6 +5675,22 @@ await test("[PERMANENT] every RN pair page linked from a guide's markdown passes
   }
 });
 
+// data/transfers/* files all carry estimatedProcessingDays, but for every file to date it is the generator's
+// default [30, 90] — no trade board's page states a timeline (several files' own steps say so). It was rendered
+// as fact in meta descriptions, FAQ, score card, embed and search until 2026-10-01. Any code that renders it must
+// go through processingDaysSourced (directly or via formatProcessingTime()). If this fails, route the new render
+// site through formatProcessingTime() — never set processingDaysSourced: true unless the official source states it.
+await test("[PERMANENT] every app/components/lib file that renders estimatedProcessingDays guards it with processingDaysSourced — the generator default must never be shown as a sourced fact", () => {
+  const roots = ["app", "components", "lib"].map((d) => path.join(process.cwd(), d));
+  const walk = (dir: string): string[] => fs.readdirSync(dir, { withFileTypes: true }).flatMap((e) => (e.isDirectory() ? walk(path.join(dir, e.name)) : /\.tsx?$/.test(e.name) ? [path.join(dir, e.name)] : []));
+  for (const file of roots.flatMap(walk)) {
+    const src = fs.readFileSync(file, "utf-8");
+    if (!src.includes("estimatedProcessingDays")) continue;
+    if (file.includes(path.join("lib", "data.ts")) || file.includes(path.join("lib", "knowledge-base"))) continue; // data loading / KB schema, not rendering
+    assert(src.includes("processingDaysSourced"), `${path.relative(process.cwd(), file)} reads estimatedProcessingDays without checking processingDaysSourced`);
+  }
+});
+
 
 console.log(`Results: ${passed} passed, ${failed} failed (${passed + failed} total)`);
 if (failed > 0) {

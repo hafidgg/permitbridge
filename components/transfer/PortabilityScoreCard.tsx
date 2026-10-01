@@ -1,5 +1,5 @@
 import { Badge } from "@/components/ui/badge";
-import { portabilityLabel, formatDayRange, formatUsd } from "@/lib/utils";
+import { portabilityLabel, formatProcessingTime, formatUsd } from "@/lib/utils";
 import { CheckCircle2, XCircle, Clock, DollarSign, GraduationCap } from "lucide-react";
 import type { TransferRule } from "@/types";
 
@@ -46,7 +46,7 @@ export function PortabilityScoreCard({ rule }: { rule: TransferRule }) {
           <dt className="flex items-center gap-1.5 text-xs font-medium text-muted-foreground">
             <Clock className="h-3.5 w-3.5" aria-hidden="true" /> Processing
           </dt>
-          <dd className="text-sm font-semibold">{formatDayRange(rule.estimatedProcessingDays)}</dd>
+          <dd className="text-sm font-semibold">{formatProcessingTime(rule)}</dd>
         </div>
         <div className="flex flex-col items-start gap-1">
           <dt className="flex items-center gap-1.5 text-xs font-medium text-muted-foreground">

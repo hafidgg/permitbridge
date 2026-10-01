@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { getTransferRule, getAllProfessions, getAllStates } from "@/lib/data";
-import { portabilityLabel, formatDayRange, formatUsd, SITE_URL } from "@/lib/utils";
+import { portabilityLabel, formatProcessingTime, formatUsd, SITE_URL } from "@/lib/utils";
 import { SITE_NAME } from "@/lib/constants";
 
 /**
@@ -87,7 +87,7 @@ export default async function PortabilityScoreEmbed({
       <ul style={{ margin: 0, padding: 0, listStyle: "none", fontSize: "13px", lineHeight: 1.7 }}>
         <li>Fee: {formatUsd(rule.feeUsd)}</li>
         <li>Exam required: {rule.examRequired ? "Yes" : "No"}</li>
-        <li>Est. processing: {formatDayRange(rule.estimatedProcessingDays)}</li>
+        <li>Processing: {formatProcessingTime(rule)}</li>
       </ul>
       <a
         href={fullPageUrl}

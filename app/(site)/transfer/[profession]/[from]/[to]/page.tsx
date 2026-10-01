@@ -57,7 +57,7 @@ export async function generateMetadata({ params }: { params: Promise<TransferPar
   const { profession, from, to, rule } = data;
   return buildMetadata({
     title: `${profession.shortName} License: Transfer From ${from.name} to ${to.name}`,
-    description: `${rule.pathwayLabel} — ${rule.examRequired ? "exam required" : "no exam required"}, est. ${rule.estimatedProcessingDays[0]}-${rule.estimatedProcessingDays[1]} days, ${rule.feeUsd} USD fee. Full step-by-step guide for ${profession.shortName.toLowerCase()}s moving from ${from.name} to ${to.name}.`,
+    description: `${rule.pathwayLabel} — ${rule.examRequired ? "exam required" : "no exam required"}, ${rule.processingDaysSourced ? `est. ${rule.estimatedProcessingDays[0]}-${rule.estimatedProcessingDays[1]} days` : "processing time not published by the board"}, ${rule.feeUsd} USD fee. Full step-by-step guide for ${profession.shortName.toLowerCase()}s moving from ${from.name} to ${to.name}.`,
     path: `/transfer/${profession.slug}/${from.slug}/${to.slug}`,
     // Content-trust hardening: a page whose figures were never individually
     // confirmed against a live official source (no sourceUrl) shouldn't be
@@ -84,7 +84,7 @@ export default async function TransferPage({ params }: { params: Promise<Transfe
   const pageFaqs = [
     {
       question: `Can I transfer my ${profession.shortName.toLowerCase()} license from ${from.name} to ${to.name}?`,
-      answer: `Yes, via ${rule.pathwayLabel.toLowerCase()}. ${rule.examRequired ? `You will need to pass ${rule.examName ?? "a state exam"}.` : "No additional trade exam is required in most cases."} Processing typically takes ${rule.estimatedProcessingDays[0]}-${rule.estimatedProcessingDays[1]} days.`,
+      answer: `Yes, via ${rule.pathwayLabel.toLowerCase()}. ${rule.examRequired ? `You will need to pass ${rule.examName ?? "a state exam"}.` : "No additional trade exam is required in most cases."} ${rule.processingDaysSourced ? `Processing typically takes ${rule.estimatedProcessingDays[0]}-${rule.estimatedProcessingDays[1]} days.` : "The licensing board does not publish a processing time."}`,
     },
     {
       question: `How much does it cost to transfer a ${profession.shortName.toLowerCase()} license to ${to.name}?`,
