@@ -5,6 +5,8 @@ import { getAllSingleStateProfessionSlugs, getElectricianStatePageData } from "@
 import { LINKING_STRUCTURE_UPDATED_AT, latestOf } from "@/lib/knowledge-base/structural-updates";
 import { SITE_URL } from "@/lib/utils";
 
+const KB_LINKED_PROFESSION_HUBS = new Set(["nurse", "electrician"]);
+
 /**
  * Phase 2D.5.2 — production investigation confirmed the root cause of a
  * stale live /sitemap.xml is NOT a bug in this file or its data sources
@@ -48,7 +50,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const professionRoutes: MetadataRoute.Sitemap = getAllProfessions().map((p) => ({
     url: `${SITE_URL}/profession/${p.slug}`,
-    lastModified: p.updatedAt,
+    // nurse/electrician hubs render knowledge-base link sections, so linking-only changes must bump them too.
+    lastModified: KB_LINKED_PROFESSION_HUBS.has(p.slug) ? latestOf(p.updatedAt, LINKING_STRUCTURE_UPDATED_AT) : p.updatedAt,
     changeFrequency: "weekly",
     priority: 0.9,
   }));

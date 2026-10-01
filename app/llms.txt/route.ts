@@ -1,4 +1,4 @@
-import { getAllProfessions, getAllStates } from "@/lib/data";
+import { getAllProfessions, getAllStates, getGuideBySlug, NURSE_TRANSFER_GUIDE_SLUG } from "@/lib/data";
 import { getAllPublicTransferRuleSlugs } from "@/lib/knowledge-base/transfer-rule-data";
 import { getAllSingleStateProfessionSlugs } from "@/lib/knowledge-base/electrician-state-data";
 import { SITE_NAME, SITE_DESCRIPTION } from "@/lib/constants";
@@ -27,6 +27,7 @@ export async function GET() {
   const professions = getAllProfessions();
   const states = getAllStates();
   const rnSlugs = getAllPublicTransferRuleSlugs();
+  const nurseTransferGuide = getGuideBySlug(NURSE_TRANSFER_GUIDE_SLUG);
   const electricianStateSlugs = getAllSingleStateProfessionSlugs();
 
   const lines: string[] = [
@@ -53,6 +54,7 @@ export async function GET() {
     "## Most authoritative content (field-level sourced RN transfer guides)",
     "",
     ...rnSlugs.map((s) => `- ${SITE_URL}/${s.profession}/${s.transfer}`),
+    ...(nurseTransferGuide ? [`- General guide (start here): ${SITE_URL}/guides/${nurseTransferGuide.slug}: ${nurseTransferGuide.title}`] : []),
     "",
     "## Most authoritative content (field-level sourced electrician reciprocity by state)",
     "",

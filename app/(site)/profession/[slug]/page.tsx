@@ -8,7 +8,7 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { ProfessionIcon } from "@/components/profession/ProfessionIcon";
 import { portabilityLabel, formatDate } from "@/lib/utils";
-import { getAllProfessions, getProfessionBySlug, getAllStates, getTransferRulesForProfession } from "@/lib/data";
+import { getAllProfessions, getProfessionBySlug, getAllStates, getTransferRulesForProfession, getGuideBySlug, NURSE_TRANSFER_GUIDE_SLUG } from "@/lib/data";
 import { getAllPublicTransferRuleSlugs } from "@/lib/knowledge-base/transfer-rule-data";
 import { getAllSingleStateProfessionSlugs } from "@/lib/knowledge-base/electrician-state-data";
 import { buildMetadata, articleJsonLd } from "@/lib/seo";
@@ -52,6 +52,7 @@ export default async function ProfessionPage({ params }: { params: Promise<{ slu
   // genuinely better-sourced content about the same real-world need this
   // page's own visitors have, so linking them here is honest, not filler.
   const verifiedNurseTransfers = profession.slug === "nurse" ? getAllPublicTransferRuleSlugs() : [];
+  const nurseTransferGuide = profession.slug === "nurse" ? getGuideBySlug(NURSE_TRANSFER_GUIDE_SLUG) : undefined;
   // Same link-graph gap as the RN case above: the knowledge-base's real,
   // sourced electrician single-state pages (/electrician/{state}) were
   // never linked from this hub either — generateStaticParams/sitemap.ts
@@ -161,6 +162,15 @@ export default async function ProfessionPage({ params }: { params: Promise<{ slu
               These specific state-to-state guides were individually confirmed against official state nursing board
               sources, with citations you can check yourself — more thoroughly verified than the general table above.
             </p>
+            {nurseTransferGuide && (
+              <p className="mb-4 max-w-2xl text-sm">
+                New to the process? Start with{" "}
+                <Link href={`/guides/${nurseTransferGuide.slug}`} className="font-medium underline underline-offset-4">
+                  {nurseTransferGuide.title}
+                </Link>{" "}
+                — compact vs. endorsement, the NLC 60-day rule, and Nursys verification.
+              </p>
+            )}
             <div className="flex flex-wrap gap-3">
               {verifiedNurseTransfers.map((t) => {
                 const fromName = states.find((s) => s.slug === t.sourceState)?.name ?? t.sourceState;

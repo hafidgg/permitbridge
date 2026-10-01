@@ -98,7 +98,7 @@ export function buildSearchIndex(): SearchDocument[] {
       title: g.title,
       description: g.description,
       url: `/guides/${g.slug}`,
-      keywords: [g.title, g.category, "guide"],
+      keywords: [g.title, g.category, "guide", ...(g.searchKeywords ?? [])],
     });
   }
 

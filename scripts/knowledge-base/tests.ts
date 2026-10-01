@@ -5660,6 +5660,17 @@ await test("[PERMANENT] sitemap.ts derives Iowa automatically via the same white
   assert(!sitemapSource.includes('"/electrician/iowa"') && !sitemapSource.includes("'/electrician/iowa'"), "no literal, manually-typed URL string for Iowa may exist in sitemap.ts");
 });
 
+await test("[PERMANENT] every RN pair page linked from a guide's markdown passes the real publish gate — guides hand-list pairs, so a gate change must never leave a guide linking to a 404", () => {
+  const guidesDir = path.join(process.cwd(), "content", "guides");
+  const publicRn = new Set(getAllPublicTransferRuleSlugs().filter((s) => s.profession === "registered-nurse").map((s) => s.transfer));
+  for (const file of fs.readdirSync(guidesDir).filter((f) => f.endsWith(".md"))) {
+    const md = fs.readFileSync(path.join(guidesDir, file), "utf-8");
+    for (const m of md.matchAll(/\(\/registered-nurse\/([a-z-]+)\)/g)) {
+      assert(publicRn.has(m[1] ?? ""), `${file} links to /registered-nurse/${m[1]}, which fails isTransferRulePublishable() and would 404`);
+    }
+  }
+});
+
 
 console.log(`Results: ${passed} passed, ${failed} failed (${passed + failed} total)`);
 if (failed > 0) {

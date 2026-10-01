@@ -11,7 +11,7 @@ import { TrustMethodologySection } from "@/components/transfer-knowledge-base/Tr
 import { ColoradoElectricianContent } from "@/components/electrician-state/ColoradoElectricianContent";
 import { getAllPublicTransferRuleSlugs, getPublicTransferRule, getSourceByUrl, summarizeEvidence, CRITICAL_TRANSFER_RULE_FIELDS, ALL_TRANSFER_FIELD_KEYS } from "@/lib/knowledge-base/transfer-rule-data";
 import { getElectricianStatePageData, getAllSingleStateProfessionSlugs, SUPPORTED_ELECTRICIAN_STATES } from "@/lib/knowledge-base/electrician-state-data";
-import { getAllStates, getAllProfessions } from "@/lib/data";
+import { getAllStates, getAllProfessions, getGuideBySlug, NURSE_TRANSFER_GUIDE_SLUG } from "@/lib/data";
 import { FIELD_LABELS, MECHANISM_LABEL, stateDisplayName } from "@/lib/knowledge-base/transfer-rule-labels";
 import { buildMetadata, articleJsonLd, faqJsonLd } from "@/lib/seo";
 import { formatDate, formatUsd } from "@/lib/utils";
@@ -128,6 +128,8 @@ const LIVE_STATE_SLUGS = new Set(getAllStates().map((s) => s.slug));
 const LIVE_PROFESSION_SLUG: Record<string, string> = Object.fromEntries(getAllProfessions().map((p) => [p.slug, p.slug]));
 // "registered-nurse" (knowledge base) maps to the live site's "nurse" profession page, when it exists.
 const LIVE_NURSE_PROFESSION_SLUG = LIVE_PROFESSION_SLUG["nurse"];
+// General "how to transfer" guide — linked one-way from every RN pair page (the guide lists the pairs itself).
+const NURSE_TRANSFER_GUIDE = getGuideBySlug(NURSE_TRANSFER_GUIDE_SLUG);
 
 function loadRuleOr404(params: PageParams): TransferRule {
   const rule = getPublicTransferRule(params.profession, params.transfer);
@@ -315,6 +317,11 @@ export default async function TransferRulePage({ params }: { params: Promise<Pag
             {LIVE_NURSE_PROFESSION_SLUG && (
               <Link href={`/profession/${LIVE_NURSE_PROFESSION_SLUG}`} className="rounded-full border border-border px-4 py-2 hover:bg-muted">
                 All Registered Nurse Info
+              </Link>
+            )}
+            {NURSE_TRANSFER_GUIDE && (
+              <Link href={`/guides/${NURSE_TRANSFER_GUIDE.slug}`} className="rounded-full border border-border px-4 py-2 hover:bg-muted">
+                {NURSE_TRANSFER_GUIDE.title}
               </Link>
             )}
             {LIVE_STATE_SLUGS.has(rule.sourceState) && (

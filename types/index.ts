@@ -92,6 +92,8 @@ export interface GuideSummary {
   publishedAt: string;
   updatedAt: string;
   readingMinutes: number;
+  /** Extra search-index terms the title doesn't contain (e.g. "RN" for a nursing guide). */
+  searchKeywords?: string[];
 }
 
 export interface BlogPostSummary {
