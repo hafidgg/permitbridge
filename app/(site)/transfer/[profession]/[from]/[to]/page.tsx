@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { isTradeTransferPublishable } from "@/lib/knowledge-base/trade-transfer-gate";
 import { getSourceByUrl } from "@/lib/knowledge-base/transfer-rule-data";
 import type { Metadata } from "next";
@@ -141,6 +142,15 @@ export default async function TransferPage({ params }: { params: Promise<Transfe
             The figures on this page are current best estimates and have not yet been individually confirmed against an
             official {to.name} licensing source. Always verify exact fees, exam requirements, and processing times directly
             with {to.name}&apos;s licensing authority before relying on them.
+          </p>
+        )}
+
+        {rule.seeAlsoPath && (
+          <p className="mt-8 rounded-lg border border-border bg-muted/30 p-4 text-sm">
+            <strong>Start here instead:</strong>{" "}
+            <Link href={rule.seeAlsoPath.path} className="font-medium underline underline-offset-4">
+              {rule.seeAlsoPath.label}
+            </Link>
           </p>
         )}
 

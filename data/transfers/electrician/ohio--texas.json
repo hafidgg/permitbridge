@@ -25,8 +25,12 @@
   "notes": "Rewritten 2026-10-01. The previous version wrongly said Ohio had no TDLR reciprocity; TDLR's announcement (https://www.tdlr.texas.gov/news/2026/06/05/texas-expands-electrician-reciprocity-with-ohio-to-support-skilled-workforce-and-economic-growth/) and current out-of-state page (https://www.tdlr.texas.gov/electricians/out-of-state.htm) both list Ohio for Master. Journeyman: officially not covered, per TDLR's own Journeyman list and the announcement's explicit statement, not merely unconfirmed. Headline fields (pathway, fee $45, no exam, 1 year) describe the Master path; the Journeyman path is in the steps. Journeyman figures from TDLR's Journeyman page (https://www.tdlr.texas.gov/electricians/apply/individuals/journeyman-electrician.htm) and PSI's bulletin (https://test-takers.psiexams.com/api/content/bulletin/1682).",
   "officialSourceName": "Texas Department of Licensing and Regulation (TDLR)",
   "updatedAt": "2026-10-01",
-  "indexingHold": "2026-10-01: content rewritten and sourced, but this record covers two tiers with different answers (Master reciprocity, Journeyman none) and the flat schema's headline fields (meta description, FAQ, score card) can show only one. They show Master ('no exam required', $45), which is wrong for a Journeyman reader. Held pending a decision on how to present two tiers.",
+  "indexingHold": "Decided 2026-10-01: stays noindexed. Master (reciprocity) and Journeyman (none) have different answers, and the flat trade schema's headline fields (meta description, FAQ, score card) can show only one. Extending the schema for one page was declined; /electrician/texas separates both tiers from sourced data and is the canonical page for this content.",
   "sourceUrl": "https://www.tdlr.texas.gov/electricians/out-of-state.htm",
   "verifiedAt": "2026-10-01",
-  "confidence": 0.9
+  "confidence": 0.9,
+  "seeAlsoPath": {
+    "path": "/electrician/texas",
+    "label": "Texas Electrician License Reciprocity — Master and Journeyman shown separately, including Ohio"
+  }
 }

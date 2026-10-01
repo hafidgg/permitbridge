@@ -93,6 +93,8 @@ export interface TransferRule {
    * content is being corrected. isTradeTransferPublishable() fails on it.
    */
   indexingHold?: string;
+  /** Internal path of a page that covers this content more completely; rendered as a prominent link. */
+  seeAlsoPath?: { path: string; label: string };
 }
 
 export interface GuideSummary {
