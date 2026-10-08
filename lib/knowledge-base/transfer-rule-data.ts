@@ -23,6 +23,7 @@
  */
 import fs from "node:fs";
 import path from "node:path";
+import { dataDirExists } from "../data-dir";
 import type { TransferRule, TransferRuleFactFieldKey } from "@/types/transfer-rule";
 import type { SourceRecord } from "@/types/knowledge-base";
 import { loadAllSources } from "./sources";
@@ -60,7 +61,7 @@ export interface PublicTransferRuleSlug {
  * that fail the gate, never adds one.
  */
 export function getAllPublicTransferRuleSlugs(): PublicTransferRuleSlug[] {
-  if (!fs.existsSync(TRANSFER_RULES_ROOT)) return [];
+  if (!dataDirExists(TRANSFER_RULES_ROOT)) return [];
   const slugs: PublicTransferRuleSlug[] = [];
   const sources = loadAllSources();
   const sourceByUrl = new Map(sources.map((s) => [s.website, s]));

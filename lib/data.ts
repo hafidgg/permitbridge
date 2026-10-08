@@ -9,6 +9,7 @@
 import "server-only";
 import fs from "node:fs";
 import path from "node:path";
+import { dataDirExists } from "@/lib/data-dir";
 import type {
   Profession,
   ProfessionSummary,
@@ -23,7 +24,7 @@ const DATA_DIR = path.join(process.cwd(), "data");
 
 function readJsonDir<T>(dir: string): T[] {
   const full = path.join(DATA_DIR, dir);
-  if (!fs.existsSync(full)) return [];
+  if (!dataDirExists(full)) return [];
   return fs
     .readdirSync(full)
     .filter((f) => f.endsWith(".json"))
@@ -75,7 +76,7 @@ export function getTransferRule(profession: string, from: string, to: string): T
 
 export function getAllTransferRules(): TransferRule[] {
   const transfersDir = path.join(DATA_DIR, "transfers");
-  if (!fs.existsSync(transfersDir)) return [];
+  if (!dataDirExists(transfersDir)) return [];
   const rules: TransferRule[] = [];
   for (const professionSlug of fs.readdirSync(transfersDir)) {
     const ruleDir = path.join(transfersDir, professionSlug);

@@ -9,6 +9,7 @@
  */
 import fs from "node:fs";
 import path from "node:path";
+import { dataDirExists } from "../data-dir";
 import type { ProfessionStateFacts, SourceRecord } from "@/types/knowledge-base";
 
 const SOURCES_DIR = path.join(process.cwd(), "data", "knowledge-base", "sources");
@@ -33,7 +34,7 @@ const FIELD_KEYS: (keyof ProfessionStateFacts)[] = [
 ];
 
 function loadAllFactFiles(): ProfessionStateFacts[] {
-  if (!fs.existsSync(FACTS_DIR)) return [];
+  if (!dataDirExists(FACTS_DIR)) return [];
   const facts: ProfessionStateFacts[] = [];
   for (const professionSlug of fs.readdirSync(FACTS_DIR)) {
     const dir = path.join(FACTS_DIR, professionSlug);
@@ -84,7 +85,7 @@ export function recomputeSourceUsage(): { updated: number; sourceCounts: Record<
 }
 
 export function loadAllSources(): SourceRecord[] {
-  if (!fs.existsSync(SOURCES_DIR)) return [];
+  if (!dataDirExists(SOURCES_DIR)) return [];
   return fs
     .readdirSync(SOURCES_DIR)
     .filter((f) => f.endsWith(".json"))
