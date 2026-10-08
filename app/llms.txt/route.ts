@@ -17,6 +17,10 @@ import { SITE_URL } from "@/lib/utils";
  * list, so it can never silently drift out of sync with what the site
  * actually contains.
  */
+// Built once at `next build`: its inputs are data/ files that only change through a deploy, so
+// re-reading them on every request added nothing but the risk of a function bundle without data/.
+export const dynamic = "force-static";
+
 function toTitleCase(slug: string): string {
   return slug
     .split("-")

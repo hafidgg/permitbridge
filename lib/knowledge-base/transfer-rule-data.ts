@@ -99,6 +99,9 @@ export function getAllPublicTransferRuleSlugs(): PublicTransferRuleSlug[] {
 export function getPublicTransferRule(profession: string, transferSlug: string): TransferRule | undefined {
   const parsed = parseTransferRuleSlug(`${profession}/${transferSlug}`);
   if (!parsed) return undefined;
+  // Throws in production if the whole directory is missing, so an ISR re-run without data/ fails
+  // (keeping the last good page) instead of returning undefined and caching a 404 for a real page.
+  if (!dataDirExists(TRANSFER_RULES_ROOT)) return undefined;
   const filePath = path.join(TRANSFER_RULES_ROOT, profession, `${parsed.sourceState}-to-${parsed.destinationState}.json`);
   if (!fs.existsSync(filePath)) return undefined;
   const rule = JSON.parse(fs.readFileSync(filePath, "utf-8")) as TransferRule;
