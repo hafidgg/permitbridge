@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "postbuild": "tsx scripts/check-sitemap.ts --build",
     "start": "next start",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
@@ -18,7 +19,9 @@
     "kb:coverage": "tsx scripts/knowledge-base/coverage-report.ts",
     "kb:trust": "tsx scripts/knowledge-base/trust-report.ts",
     "kb:queue": "tsx scripts/knowledge-base/verification-queue.ts",
-    "test": "tsx scripts/knowledge-base/tests.ts",
+    "test": "tsx scripts/knowledge-base/tests.ts && npm run test:sitemap",
+    "test:sitemap": "tsx --conditions=react-server scripts/check-sitemap.ts --source",
+    "check:sitemap:live": "tsx scripts/check-sitemap.ts --live",
     "kb:audit": "tsx scripts/knowledge-base/metric-audit.ts",
     "kb:core-audit": "tsx scripts/knowledge-base/rn-core-audit.ts",
     "kb:human-review": "tsx scripts/knowledge-base/human-review-queue.ts",

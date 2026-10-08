@@ -1,0 +1,48 @@
+name: Sitemap Live Check
+
+# Read-only check that the deployed /sitemap.xml stays above the floor in
+# scripts/sitemap-floor.ts. Added after the 2026-10 regression, where the
+# sitemap was correct right after deploy (78 URLs) and silently dropped to
+# 18 once an ISR re-run lost data/ about an hour later. So it checks twice:
+#
+#   - deployment_status: immediately after each successful Production deploy
+#     (Vercel's GitHub integration posts these statuses)
+#   - schedule: every hour, so every deploy is re-checked 60-120 minutes
+#     later, and any later drop is caught within the hour
+#
+# A failed run is the alert (GitHub emails the repo owner on workflow
+# failure). Fetches one public URL; no secrets, no writes.
+
+on:
+  deployment_status: {}
+  schedule:
+    - cron: "17 * * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  check-live-sitemap:
+    if: >-
+      github.event_name != 'deployment_status' ||
+      (github.event.deployment_status.state == 'success' &&
+       github.event.deployment.environment == 'Production')
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "lts/*"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Check live sitemap against floor
+        run: npm run check:sitemap:live

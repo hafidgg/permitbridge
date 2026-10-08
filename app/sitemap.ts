@@ -20,6 +20,9 @@ const KB_LINKED_PROFESSION_HUBS = new Set(["nurse", "electrician", "hvac-technic
  * data/, every data-backed group came back empty, and the live sitemap
  * silently shrank from 78 URLs to the 18 hardcoded ones (2026-10).
  * A stale sitemap is fixed by redeploying, not by revalidating.
+ *
+ * Guarded by scripts/sitemap-floor.ts: `npm test` (this function), `postbuild`
+ * (the prerendered output) and .github/workflows/sitemap-live-check.yml (live).
  */
 export const dynamic = "force-static";
 
