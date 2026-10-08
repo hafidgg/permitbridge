@@ -10,30 +10,18 @@ import { SITE_URL } from "@/lib/utils";
 const KB_LINKED_PROFESSION_HUBS = new Set(["nurse", "electrician", "hvac-technician", "plumber"]);
 
 /**
- * Phase 2D.5.2 — production investigation confirmed the root cause of a
- * stale live /sitemap.xml is NOT a bug in this file or its data sources
- * (getAllPublicTransferRuleSlugs() was directly executed against the
- * exact deployed code and produced the correct, current 7 RN pairs + the
- * new Colorado electrician page — confirmed by direct invocation, not
- * assumed) — it's that Next.js 15's documented default for metadata
- * route files (sitemap.ts, robots.ts, icon.tsx, etc.) is "static, built
- * once, unchanged until a full rebuild" (confirmed against Next.js's own
- * official v15 release notes: "Special Route Handlers like sitemap.ts...
- * remain static by default unless they use dynamic functions or dynamic
- * config options" — this is a DIFFERENT rule from the v15 change to
- * plain GET Route Handlers, which this file is not).
+ * Build-time only. Every source below is read from data/ on disk, and data/
+ * only changes through a commit + deploy, so the sitemap is generated once
+ * during `next build` and served as-is until the next deploy.
  *
- * This single line does not fix an already-stale cached response by
- * itself — that requires an infrastructure-level action (a fresh
- * production deploy), not a code change. What it does is convert this
- * file from Next.js's default "purely static, tied to a single build"
- * behavior into Incremental Static Regeneration: the sitemap will now
- * genuinely re-run (calling the exact same getAllPublicTransferRuleSlugs()
- * etc. above, completely unchanged) at most once per hour, so if a
- * future deploy's sitemap response ever gets stuck behind a stale cache
- * again, it self-corrects within an hour instead of indefinitely.
+ * This used to be `revalidate = 3600` (ISR), on the theory that an hourly
+ * re-run would let a stale sitemap self-correct. It did the opposite: the
+ * re-run happens inside a Vercel function whose bundle did not include
+ * data/, every data-backed group came back empty, and the live sitemap
+ * silently shrank from 78 URLs to the 18 hardcoded ones (2026-10).
+ * A stale sitemap is fixed by redeploying, not by revalidating.
  */
-export const revalidate = 3600;
+export const dynamic = "force-static";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes: MetadataRoute.Sitemap = [
