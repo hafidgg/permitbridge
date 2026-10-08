@@ -22,6 +22,39 @@ const nextConfig = {
   images: {
     formats: ["image/avif", "image/webp"],
   },
+  // Backup for every route that reads data/ or content/ through
+  // fs + process.cwd() and can run inside a Vercel function (dynamic
+  // routes, ISR pages, and on-demand renders of params outside
+  // generateStaticParams). File tracing does not reliably follow
+  // runtime-built paths: the sitemap's function shipped with zero data
+  // files, which is how it silently shrank to 18 URLs (2026-10). Next
+  // skips this for fully static routes (the sitemap is now force-static),
+  // so its entry only takes effect if it ever becomes dynamic/ISR again.
+  outputFileTracingIncludes: Object.fromEntries(
+    [
+      "/sitemap.xml",
+      "/llms.txt",
+      "/search",
+      "/embed/portability-score",
+      "/[profession]/[transfer]",
+      "/hvac-technician/[state]",
+      "/plumber/[state]",
+      "/profession/[slug]",
+      "/state/[slug]",
+      "/transfer/[profession]/[from]/[to]",
+      "/guides/[slug]",
+      "/blog/[slug]",
+    ].map((route) => [
+      route,
+      [
+        "./data/professions/**/*.json",
+        "./data/states/**/*.json",
+        "./data/transfers/**/*.json",
+        "./data/knowledge-base/**/*.json",
+        "./content/**/*.md",
+      ],
+    ]),
+  ),
   async headers() {
     return [
       {
