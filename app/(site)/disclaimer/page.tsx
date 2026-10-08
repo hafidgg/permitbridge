@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { buildMetadata } from "@/lib/seo";
-import { SITE_NAME } from "@/lib/constants";
+import { CONTACT_EMAIL, SITE_NAME } from "@/lib/constants";
 import { formatDate } from "@/lib/utils";
 
 export const metadata: Metadata = buildMetadata({
@@ -11,7 +11,7 @@ export const metadata: Metadata = buildMetadata({
   path: "/disclaimer",
 });
 
-const LAST_UPDATED = "2026-06-01";
+const LAST_UPDATED = "2026-10-08";
 
 export default function DisclaimerPage() {
   return (
@@ -49,10 +49,22 @@ export default function DisclaimerPage() {
             any information on the Site.
           </p>
 
-          <h2>Affiliate and Advertising Relationships</h2>
+          <h2>Official Sources</h2>
           <p>
-            Some pages contain affiliate links or advertising. See our <Link href="/privacy">Privacy Policy</Link> for
-            details. These relationships do not influence our licensing data or portability scoring methodology.
+            Wherever possible, each page links to the official licensing board source its requirements were taken
+            from. Use that link to confirm the current rule; if the board&apos;s page and ours disagree, the board is
+            right. See our <Link href="/methodology">methodology</Link> for how rules are verified.
+          </p>
+
+          <h2>Advertising</h2>
+          <p>
+            The Site may display advertising. Advertising does not influence our licensing information or scoring.
+            See our <Link href="/privacy">Privacy Policy</Link> for how advertising cookies are used.
+          </p>
+
+          <h2>Contact</h2>
+          <p>
+            To report an error, email <a href={`mailto:${CONTACT_EMAIL}?subject=Correction`}>{CONTACT_EMAIL}</a>.
           </p>
         </div>
       </article>
