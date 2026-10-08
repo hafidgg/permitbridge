@@ -45,7 +45,7 @@ export default function TermsPage() {
 
           <h2>Third-Party Links</h2>
           <p>
-            The Site links to third-party websites, including government licensing boards and affiliate partners. We
+            The Site links to third-party websites, including government licensing boards. We
             are not responsible for the content or practices of those sites.
           </p>
 
