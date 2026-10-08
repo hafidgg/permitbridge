@@ -19,7 +19,7 @@ import type { SourceConfig, FetchResult, FetchableSource } from "./types";
 
 const CACHE_DIR = path.join(process.cwd(), "data", "_pipeline", "cache");
 const FIXTURES_DIR = path.join(process.cwd(), "fixtures", "pipeline", "html");
-const USER_AGENT = "PermitBridgeDataBot/1.0 (+https://www.permitbridge.com/about; licensing-data-research)";
+const USER_AGENT = "PermitBridgeDataBot/1.0 (+https://www.getpermitbridge.com/about; licensing-data-research)";
 const REQUEST_DELAY_MS = 1500;
 const MAX_RETRIES = 3;
 

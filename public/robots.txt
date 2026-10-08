@@ -2,4 +2,4 @@
 # generated dynamically by app/robots.ts (Next.js Metadata API).
 User-agent: *
 Allow: /
-Sitemap: https://www.permitbridge.com/sitemap.xml
+Sitemap: https://www.getpermitbridge.com/sitemap.xml
