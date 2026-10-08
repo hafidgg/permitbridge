@@ -1,5 +1,8 @@
 export const SITE_NAME = "PermitBridge";
 export const SITE_TAGLINE = "Know exactly what it takes to move your license.";
+/** The single public contact address, used on every page that lists an email. */
+export const CONTACT_EMAIL = "contact@getpermitbridge.com";
+
 export const SITE_DESCRIPTION =
   "PermitBridge is the free, independent reference for transferring professional and trade licenses between US states — reciprocity, endorsement, exams, fees, and step-by-step timelines.";
 
