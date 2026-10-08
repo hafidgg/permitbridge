@@ -44,6 +44,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE_URL}/guides`, changeFrequency: "weekly", priority: 0.7 },
     { url: `${SITE_URL}/blog`, changeFrequency: "daily", priority: 0.7 },
     { url: `${SITE_URL}/about`, changeFrequency: "yearly", priority: 0.4 },
+    { url: `${SITE_URL}/methodology`, changeFrequency: "yearly", priority: 0.4 },
     { url: `${SITE_URL}/contact`, changeFrequency: "yearly", priority: 0.3 },
     { url: `${SITE_URL}/privacy`, changeFrequency: "yearly", priority: 0.2 },
     { url: `${SITE_URL}/terms`, changeFrequency: "yearly", priority: 0.2 },

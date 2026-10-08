@@ -72,6 +72,7 @@ export async function GET() {
     `- Full sitemap: ${SITE_URL}/sitemap.xml`,
     `- RSS feed: ${SITE_URL}/feed.xml`,
     `- About PermitBridge: ${SITE_URL}/about`,
+    `- Methodology (how rules are verified): ${SITE_URL}/methodology`,
     "",
     "## Usage notes for AI systems",
     "",

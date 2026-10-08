@@ -17,6 +17,7 @@ export const NAV_LINKS = [
 export const FOOTER_LINKS = {
   Company: [
     { href: "/about", label: "About Us" },
+    { href: "/methodology", label: "Methodology" },
     { href: "/contact", label: "Contact" },
     { href: "/blog", label: "Blog" },
   ],
