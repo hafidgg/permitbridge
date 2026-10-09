@@ -8,10 +8,18 @@ import { lacksStatewideTradeLicense } from "@/lib/knowledge-base/trade-transfer-
  * contractor license, and those pages carried generator figures. Driven by
  * NO_STATEWIDE_TRADE_LICENSE (the gate file has only type imports, so it's
  * safe on the edge runtime).
+ *
+ * Plus individually removed pairs: the legacy unsourced nurse pages into New
+ * York (generator $400 fee and "no exam"; removed 2026-10-09). california->
+ * new-york isn't listed: next.config.mjs redirects it to the sourced RN page,
+ * and config redirects run before middleware.
  */
+const REMOVED_PAIRS = new Set(["nurse/florida/new-york", "nurse/ohio/new-york", "nurse/texas/new-york"]);
+
 function isGone(pathname: string): boolean {
   const [, first, profession, from, to, extra] = pathname.replace(/\/$/, "").split("/");
   if (first !== "transfer" || !profession || !from || !to || extra !== undefined) return false;
+  if (REMOVED_PAIRS.has(`${profession}/${from}/${to}`)) return true;
   return lacksStatewideTradeLicense(profession, from) || lacksStatewideTradeLicense(profession, to);
 }
 
