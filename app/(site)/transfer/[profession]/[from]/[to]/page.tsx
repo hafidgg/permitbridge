@@ -72,7 +72,9 @@ export default async function TransferPage({ params }: { params: Promise<Transfe
   const otherDestinations = getAllStates()
     .filter((s) => s.slug !== from.slug && s.slug !== to.slug)
     .map((s) => ({ state: s, rule: professionRules.find((r) => r.fromState === from.slug && r.toState === s.slug)! }))
-    .filter((row) => row.rule);
+    // Only pairs that pass the publish gate: an unsourced pair's generator
+    // pathway/exam/score must not appear as fact on another page.
+    .filter((row) => row.rule && isTradeTransferPublishable(row.rule, getSourceByUrl).publishable);
 
   const pageFaqs = [
     {
@@ -179,12 +181,14 @@ export default async function TransferPage({ params }: { params: Promise<Transfe
           </aside>
         </section>
 
-        <section className="mt-16">
-          <h2 className="mb-6 text-2xl font-bold tracking-tight">
-            {profession.shortName} Transfers From {from.name} to Other States
-          </h2>
-          <OtherStatesTable rows={otherDestinations} professionSlug={profession.slug} originSlug={from.slug} direction="from" />
-        </section>
+        {otherDestinations.length > 0 && (
+          <section className="mt-16">
+            <h2 className="mb-6 text-2xl font-bold tracking-tight">
+              {profession.shortName} Transfers From {from.name} to Other States
+            </h2>
+            <OtherStatesTable rows={otherDestinations} professionSlug={profession.slug} originSlug={from.slug} direction="from" />
+          </section>
+        )}
       </div>
 
       <FAQSection faqs={pageFaqs} title="Frequently Asked Questions About This Transfer" />

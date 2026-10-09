@@ -1,0 +1,19 @@
+{
+  "id": "california-cslb-c20-classification",
+  "agencyName": "California Contractors State License Board (CSLB)",
+  "website": "https://www.cslb.ca.gov/about_us/library/licensing_classifications/Licensing_Classifications_Detail.aspx?Class=C20",
+  "jurisdiction": "california",
+  "professionsCovered": [
+    "hvac-technician"
+  ],
+  "sourceType": "official-board",
+  "official": true,
+  "authorityLevel": "authoritative",
+  "authorityRationale": "CSLB's own C-20 Warm-Air Heating, Ventilating and Air-Conditioning Contractor classification page. Read directly 2026-10-09: 'C-20 - Warm-Air Heating, Ventilating and Air-Conditioning Contractor California Code of Regulations Title 16, Division 8, Article 3. Classifications'.",
+  "specificity": "profession-specific",
+  "reliabilityScore": 0.9,
+  "reliabilityRationale": "Official primary document from the licensing agency itself, verified by direct read on 2026-10-09.",
+  "lastCrawl": null,
+  "lastManualVerification": "2026-10-09",
+  "fieldsUsingThisSource": 0
+}

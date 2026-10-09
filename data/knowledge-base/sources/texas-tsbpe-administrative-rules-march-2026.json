@@ -1,0 +1,19 @@
+{
+  "id": "texas-tsbpe-administrative-rules-march-2026",
+  "agencyName": "Texas State Board of Plumbing Examiners (TSBPE)",
+  "website": "https://tsbpe.texas.gov/wp-content/uploads/documents/TSBPE_AdministrativeRules_March2026.pdf",
+  "jurisdiction": "texas",
+  "professionsCovered": [
+    "plumber"
+  ],
+  "sourceType": "official-board",
+  "official": true,
+  "authorityLevel": "authoritative",
+  "authorityRationale": "TSBPE's own compilation of 22 TAC Part 17 (Chapters 361-367), dated March 13, 2026, on tsbpe.texas.gov. The cover marks it 'UNOFFICIAL VERSION' (the Texas Register/TAC is the official text). Read directly 2026-10-09: s365.1 sets license categories by individual and limits contracting to a Master Plumber who is an RMP; s367.9(a): a person or company shall not offer plumbing to the public 'unless the person or company has secured the services of at least one RMP holding a current Master Plumber License.'",
+  "specificity": "profession-specific",
+  "reliabilityScore": 0.9,
+  "reliabilityRationale": "Official primary document from the licensing agency itself, verified by direct read on 2026-10-09.",
+  "lastCrawl": null,
+  "lastManualVerification": "2026-10-09",
+  "fieldsUsingThisSource": 0
+}

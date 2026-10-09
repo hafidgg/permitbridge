@@ -1,0 +1,21 @@
+{
+  "id": "florida-dbpr-cilb-32-reciprocity",
+  "agencyName": "Florida Department of Business and Professional Regulation, Construction Industry Licensing Board (DBPR CILB)",
+  "website": "https://flrules.org/gateway/readRefFile.asp?refId=17723&filename=DBPR+CILB+32+-+Application+for+Certification+by+Reciprocity.doc",
+  "jurisdiction": "florida",
+  "professionsCovered": [
+    "contractor",
+    "hvac-technician",
+    "plumber"
+  ],
+  "sourceType": "official-board",
+  "official": true,
+  "authorityLevel": "authoritative",
+  "authorityRationale": "DBPR CILB 32, 'Reciprocity as Certified Contractor' (s. 489.115(3)(c), F.S.), Ref-17723, the form incorporated by reference in Rule 61-35.010, F.A.C., served from flrules.org (Florida Department of State). Read directly 2026-10-09 (antiword): license-category checklist covers only Louisiana or Mississippi and North Carolina, General/Building/Residential only; zero occurrences of 'plumb' or 'air condition'.",
+  "specificity": "profession-specific",
+  "reliabilityScore": 0.9,
+  "reliabilityRationale": "Official primary document from the licensing agency itself, verified by direct read on 2026-10-09.",
+  "lastCrawl": null,
+  "lastManualVerification": "2026-10-09",
+  "fieldsUsingThisSource": 0
+}

@@ -1,0 +1,21 @@
+{
+  "id": "florida-fac-61g4-15-001",
+  "agencyName": "Florida Construction Industry Licensing Board (Rule 61G4-15.001, F.A.C.)",
+  "website": "https://flrules.org/gateway/ruleNo.asp?id=61G4-15.001",
+  "jurisdiction": "florida",
+  "professionsCovered": [
+    "contractor",
+    "hvac-technician",
+    "plumber"
+  ],
+  "sourceType": "official-government",
+  "official": true,
+  "authorityLevel": "authoritative",
+  "authorityRationale": "Rule 61G4-15.001, F.A.C., 'Qualification for Certification' (effective 5/16/2024), CILB's own rule on flrules.org. Read directly 2026-10-09 from the rule .doc: certification categories include 'Sheet Metal; Class A and B Air Conditioning' and 'Plumbing Classification', with experience 'gained under the supervision of a contractor' (contractor certification under ch. 489, F.S.).",
+  "specificity": "jurisdiction-general",
+  "reliabilityScore": 0.9,
+  "reliabilityRationale": "Official primary document from the licensing agency itself, verified by direct read on 2026-10-09.",
+  "lastCrawl": null,
+  "lastManualVerification": "2026-10-09",
+  "fieldsUsingThisSource": 0
+}
