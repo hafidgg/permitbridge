@@ -3,17 +3,16 @@
   "name": "Florida",
   "abbreviation": "FL",
   "region": "South",
-  "licensingAuthorityNote": "Florida trade licenses are issued by the Department of Business and Professional Regulation (DBPR); healthcare licenses go through the Department of Health.",
-  "isUlrState": true,
-  "ulrEnactedYear": 2024,
+  "licensingAuthorityNote": "Florida's Construction Industry Licensing Board (CILB), part of the Department of Business and Professional Regulation (DBPR), certifies contractors, including Air-Conditioning and Plumbing contractors. Registered nurses are licensed by the Florida Board of Nursing.",
+  "isUlrState": false,
   "populationRank": 3,
   "faqs": [
     {
       "question": "Does Florida accept the NASCLA exam for contractors?",
-      "answer": "Yes, Florida is one of the states that accepts the NASCLA Accredited Examination for Commercial General Building Contractors in place of its own trade exam for qualifying applicants."
+      "answer": "For some categories. DBPR's endorsement application (CILB 10) lets applicants who passed the NASCLA examination apply by endorsement if they also pass the Florida Business and Finance exam and attest to passing an exam covering the Florida Building Code. CILB 10 says this option is only available for Certified General, Certified Building, and Certified Residential Contractor licenses."
     }
   ],
-  "updatedAt": "2026-08-05",
-  "sourceUrl": "https://www.myfloridalicense.com/",
-  "verifiedAt": "2026-08-05"
+  "updatedAt": "2026-10-09",
+  "sourceUrl": "https://flrules.org/gateway/readRefFile.asp?refId=17718&filename=DBPR+CILB+10+-+Application+for+Certification+by+Endorsement_New+Final.doc",
+  "verifiedAt": "2026-10-09"
 }

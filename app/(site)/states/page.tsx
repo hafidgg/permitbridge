@@ -24,7 +24,7 @@ export default function StatesPage() {
       <div className="container pb-16">
         <h1 className="text-3xl font-bold tracking-tight md:text-4xl">All States</h1>
         <p className="mt-3 max-w-2xl text-muted-foreground">
-          Select a state to see its licensing authority, Universal License Recognition status, and transfer rules by
+          Select a state to see its licensing authority and transfer rules by
           profession.
         </p>
 

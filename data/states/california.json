@@ -3,16 +3,16 @@
   "name": "California",
   "abbreviation": "CA",
   "region": "West",
-  "licensingAuthorityNote": "Most trade licenses in California are issued by the Contractors State License Board (CSLB); healthcare licenses go through the relevant state board (e.g., Board of Registered Nursing).",
+  "licensingAuthorityNote": "Contractor licenses in California, including the C-20 (HVAC) and C-36 (Plumbing) classifications, are issued by the Contractors State License Board (CSLB). Registered nurses are licensed by the Board of Registered Nursing.",
   "isUlrState": false,
   "populationRank": 1,
   "faqs": [
     {
-      "question": "Does California have license reciprocity with other states?",
-      "answer": "California generally does not offer broad contractor license reciprocity. Most out-of-state license holders still need to pass California's trade and law/business exams, though verified experience can sometimes reduce required documentation."
+      "question": "Does California have contractor license reciprocity with other states?",
+      "answer": "Only in limited cases. CSLB's Reciprocity Requirements page offers reciprocity to contractors from Arizona, Louisiana, Mississippi, Nevada, and North Carolina, in a classification on that state's reciprocal list, plus a NASCLA exam waiver for the General Building classification for contractors from any state. Other applicants complete CSLB's Application for Original Contractor's License."
     }
   ],
-  "updatedAt": "2026-08-05",
-  "sourceUrl": "https://www.cslb.ca.gov/Contractors/Applicants/Out_Of_State_Applicants.aspx",
-  "verifiedAt": "2026-08-05"
+  "updatedAt": "2026-10-09",
+  "sourceUrl": "https://www.cslb.ca.gov/Contractors/Applicants/Reciprocity/Reciprocity_Requirements.aspx",
+  "verifiedAt": "2026-10-09"
 }

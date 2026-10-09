@@ -3,20 +3,20 @@
   "name": "Texas",
   "abbreviation": "TX",
   "region": "South",
-  "licensingAuthorityNote": "Texas does not have a single statewide general contractor license; licensing is trade-specific (electrical, plumbing, HVAC) and administered by the Texas Department of Licensing and Regulation (TDLR). Unlike states with a broad Universal License Recognition law, Texas gives TDLR discretionary authority (Occupations Code \u00a751.4041) to waive requirements for holders of a \"substantially equivalent\" out-of-state license, rather than a guaranteed \"shall issue\" right. Texas's clearest guaranteed out-of-state recognition applies specifically to military service members and military spouses, not the general public.",
+  "licensingAuthorityNote": "Texas licenses trades separately: the Texas Department of Licensing and Regulation (TDLR) licenses electricians and air conditioning and refrigeration contractors, and the Texas State Board of Plumbing Examiners (TSBPE) licenses plumbers. Under Occupations Code §51.4041, TDLR \"may waive any prerequisite for obtaining a license\" for an applicant who holds a similar license from a jurisdiction with substantially equivalent requirements or a reciprocity agreement. That is a case-by-case decision, not a guaranteed right.",
   "isUlrState": false,
   "populationRank": 2,
   "faqs": [
     {
-      "question": "Is Texas a Universal License Recognition (ULR) state?",
-      "answer": "No, not in the broad, guaranteed sense that states like Ohio, Florida, or Arizona use. Texas law (Occupations Code \u00a751.4041) allows TDLR to waive a prerequisite for applicants holding a substantially equivalent out-of-state license, but this is discretionary rather than a guaranteed right for the general public. Texas does have a stronger, guaranteed recognition pathway specifically for military service members and their spouses."
+      "question": "Does Texas automatically recognize out-of-state licenses?",
+      "answer": "No. TDLR says it \"can review a licensee's qualifications for substantial equivalence on a case-by-case basis,\" and Occupations Code §51.4041 says TDLR \"may waive\" licensing prerequisites for a substantially equivalent license or one from a state with a reciprocity agreement. Whether a waiver applies is decided per application."
     },
     {
-      "question": "Does Texas have any guaranteed out-of-state license recognition?",
-      "answer": "Yes, for military service members and military spouses specifically: they can request work authorization based on an out-of-state license in good standing, without a separate full Texas application, for many TDLR-regulated occupations. Civilians without a military connection go through TDLR's standard reciprocity/alternative-verification process instead, which is discretionary rather than automatic."
+      "question": "Which TDLR programs have reciprocity agreements?",
+      "answer": "TDLR's \"Removing Barriers for Out-of-State Licensees\" summary (January 2025) lists reciprocity agreements for Air Conditioning and Refrigeration (South Carolina and Georgia), Auctioneers, and Electricians, each with specific states. Check TDLR's out-of-state page for your license type before applying."
     }
   ],
-  "updatedAt": "2026-08-07",
+  "updatedAt": "2026-10-09",
   "sourceUrl": "https://www.tdlr.texas.gov/media/pdf/removing-barriers-for-out-of-state-licensees-at-a-glance.pdf",
-  "verifiedAt": "2026-08-07"
+  "verifiedAt": "2026-10-09"
 }

@@ -3,17 +3,16 @@
   "name": "Ohio",
   "abbreviation": "OH",
   "region": "Midwest",
-  "licensingAuthorityNote": "Ohio trade licenses for larger jurisdictions go through the Ohio Construction Industry Licensing Board (OCILB); some smaller municipalities license independently.",
-  "isUlrState": true,
-  "ulrEnactedYear": 2024,
+  "licensingAuthorityNote": "The Ohio Construction Industry Licensing Board (OCILB) issues state licenses to Electrical, HVAC, Refrigeration, Plumbing, and Hydronics contractors who perform commercial work.",
+  "isUlrState": false,
   "populationRank": 7,
   "faqs": [
     {
-      "question": "Did Ohio recently change its out-of-state licensing rules?",
-      "answer": "Yes. Ohio adopted a Universal License Recognition law in 2024, requiring recognition of out-of-state occupational licenses for applicants with at least one year of active, good-standing licensure, subject to Ohio's application process."
+      "question": "Which trades does Ohio license at the state level?",
+      "answer": "OCILB's out-of-state testing application states that the board \"issues state licenses to Electrical, HVAC, Refrigeration, Plumbing, and Hydronics Contractors who perform commercial work.\""
     }
   ],
-  "updatedAt": "2026-08-05",
-  "sourceUrl": "https://com.ohio.gov/divisions-and-programs/industrial-compliance/licensing/construction-industry-licensing",
-  "verifiedAt": "2026-08-05"
+  "updatedAt": "2026-10-09",
+  "sourceUrl": "https://dam.assets.ohio.gov/image/upload/com.ohio.gov/DICO/OCILB/Out_of_State_Testing_Application_-_OCILB.pdf",
+  "verifiedAt": "2026-10-09"
 }

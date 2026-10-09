@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (!state) return {};
   return buildMetadata({
     title: `${state.name} Professional License Reciprocity & Transfer Rules`,
-    description: `Everything professionals need to know about transferring a license into or out of ${state.name}: licensing authority, Universal License Recognition status, and profession-by-profession rules.`,
+    description: `Everything professionals need to know about transferring a license into or out of ${state.name}: licensing authority and profession-by-profession rules.`,
     path: `/state/${state.slug}`,
   });
 }

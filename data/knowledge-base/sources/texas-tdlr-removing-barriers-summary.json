@@ -1,0 +1,20 @@
+{
+  "id": "texas-tdlr-removing-barriers-summary",
+  "agencyName": "Texas Department of Licensing and Regulation (TDLR)",
+  "website": "https://www.tdlr.texas.gov/media/pdf/removing-barriers-for-out-of-state-licensees-at-a-glance.pdf",
+  "jurisdiction": "texas",
+  "professionsCovered": [
+    "electrician",
+    "hvac-technician"
+  ],
+  "sourceType": "official-government",
+  "official": true,
+  "authorityLevel": "authoritative",
+  "authorityRationale": "TDLR's own one-page summary 'Removing Barriers for Out-of-State Licensees at a Glance' (TDLR AAG FORM-019, Jan. 2025). Read directly 2026-10-09: quotes Occupations Code §51.4041(b) ('may waive any prerequisite for obtaining a license...') and lists reciprocity agreements by program.",
+  "specificity": "jurisdiction-general",
+  "reliabilityScore": 0.93,
+  "reliabilityRationale": "Official agency publication, verified by direct read on 2026-10-09.",
+  "lastCrawl": null,
+  "lastManualVerification": "2026-10-09",
+  "fieldsUsingThisSource": 0
+}

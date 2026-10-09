@@ -3,16 +3,16 @@
   "name": "New York",
   "abbreviation": "NY",
   "region": "Northeast",
-  "licensingAuthorityNote": "New York does not license general contractors at the state level; licensing is handled by individual cities and counties (e.g., NYC Department of Buildings). Trade licenses (electrical, plumbing) are also frequently local rather than statewide.",
+  "licensingAuthorityNote": "Registered nurses in New York are licensed by the New York State Education Department's Office of the Professions (NYSED). PermitBridge does not cover trade licenses (electrical, plumbing, HVAC, contracting) for New York.",
   "isUlrState": false,
   "populationRank": 4,
   "faqs": [
     {
-      "question": "Is there a statewide contractor license in New York?",
-      "answer": "No. New York leaves general contractor licensing to individual municipalities, so an out-of-state contractor may need separate approval in each city or county where they plan to work."
+      "question": "How do registered nurses licensed in another state get licensed in New York?",
+      "answer": "By endorsement through NYSED's Office of the Professions. NYSED's endorsement page lists Form 1 (Application for Licensure) with the $143 fee, Form 2 (Certification of Professional Education), and Form 3 or Nursys verification of every other license held. NYSED also notes that New York is not a Nursing Compact state."
     }
   ],
-  "updatedAt": "2026-08-05",
-  "sourceUrl": "https://dos.ny.gov/professional-licensing",
-  "verifiedAt": "2026-08-05"
+  "updatedAt": "2026-10-09",
+  "sourceUrl": "https://www.op.nysed.gov/professions/registered-professional-nursing",
+  "verifiedAt": "2026-10-09"
 }
