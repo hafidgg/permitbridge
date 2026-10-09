@@ -1,11 +1,12 @@
 import Link from "next/link";
 import { isTradeTransferPublishable } from "@/lib/knowledge-base/trade-transfer-gate";
 import { getSourceByUrl } from "@/lib/knowledge-base/transfer-rule-data";
+import { getPublishableTransferRules } from "@/lib/publishable-transfers";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { FAQSection } from "@/components/home/FAQ";
-import { PortabilityScoreCard } from "@/components/transfer/PortabilityScoreCard";
+import { TransferFactsCard } from "@/components/transfer/TransferFactsCard";
 import { StepsList } from "@/components/transfer/StepsList";
 import { OtherStatesTable } from "@/components/transfer/OtherStatesTable";
 import { Badge } from "@/components/ui/badge";
@@ -27,11 +28,10 @@ interface TransferParams {
   to: string;
 }
 
-// Only pairs with a data file. Enumerating every profession x state x state
-// pre-rendered a 404 for any pair without one (e.g. the removed NY trade pairs,
-// which middleware.ts answers with 410).
+// Only publishable pairs. Unpublishable ones return 410 from middleware.ts
+// (list generated from the same gate by scripts/generate-gone-paths.ts).
 export function generateStaticParams(): TransferParams[] {
-  return getAllTransferRules().map((r) => ({ profession: r.profession, from: r.fromState, to: r.toState }));
+  return getPublishableTransferRules().map((r) => ({ profession: r.profession, from: r.fromState, to: r.toState }));
 }
 
 function loadPageData(params: TransferParams) {
@@ -148,7 +148,7 @@ export default async function TransferPage({ params }: { params: Promise<Transfe
         )}
 
         <div className="mt-8">
-          <PortabilityScoreCard rule={rule} />
+          <TransferFactsCard rule={rule} />
         </div>
 
         <section className="mt-12 grid grid-cols-1 gap-12 lg:grid-cols-3">
@@ -170,7 +170,7 @@ export default async function TransferPage({ params }: { params: Promise<Transfe
                 <dd className="font-medium">{rule.minimumYearsLicensed || "None"}</dd>
               </div>
               <div className="flex justify-between">
-                <dt className="text-muted-foreground">Difficulty</dt>
+                <dt className="text-muted-foreground">Difficulty (our estimate)</dt>
                 <dd className="font-medium">{rule.difficultyScore}/10</dd>
               </div>
               <div className="flex justify-between">

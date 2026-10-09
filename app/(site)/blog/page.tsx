@@ -7,7 +7,7 @@ import { buildMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
   title: "Blog — Licensing Policy Updates",
-  description: "Tracked changes to state licensing laws, Universal License Recognition adoption, and compact expansions as they happen.",
+  description: "Tracked changes to state licensing rules and interstate compacts that affect license transfers.",
   path: "/blog",
 });
 

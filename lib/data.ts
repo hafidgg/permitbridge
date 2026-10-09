@@ -120,16 +120,6 @@ export function getAllGuides(): GuideSummary[] {
       readingMinutes: 7,
     },
     {
-      slug: "universal-license-recognition-explained",
-      title: "Universal License Recognition (ULR) Laws, Explained",
-      description:
-        "Since 2019, over half of US states have passed some version of a Universal License Recognition law. Here's what it does — and does not — guarantee you.",
-      category: "Policy",
-      publishedAt: "2026-03-10",
-      updatedAt: "2026-06-20",
-      readingMinutes: 9,
-    },
-    {
       slug: "how-to-request-license-verification",
       title: "How to Request License Verification From Your Home State",
       description:
@@ -161,16 +151,6 @@ export function getGuideBySlug(slug: string): GuideSummary | undefined {
 
 export function getAllBlogPosts(): BlogPostSummary[] {
   return [
-    {
-      slug: "2026-ulr-state-tracker-update",
-      title: "2026 Mid-Year Update: Which States Added Universal License Recognition Laws",
-      description:
-        "A running log of every state that has enacted, expanded, or proposed Universal License Recognition legislation so far in 2026.",
-      publishedAt: "2026-07-01",
-      updatedAt: "2026-07-01",
-      tag: "Policy Update",
-      readingMinutes: 5,
-    },
     {
       slug: "nurse-licensure-compact-2026-changes",
       title: "What Changed in the Nurse Licensure Compact in 2026",

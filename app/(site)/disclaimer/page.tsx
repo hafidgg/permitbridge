@@ -30,9 +30,9 @@ export default function DisclaimerPage() {
 
           <h2>Not Legal or Professional Advice</h2>
           <p>
-            Nothing on this Site constitutes legal, regulatory, or professional licensing advice. Portability
-            scores, difficulty ratings, and time/fee estimates are informational approximations based on our
-            research and are not guarantees of any outcome, cost, or timeline.
+            Nothing on this Site constitutes legal, regulatory, or professional licensing advice. Difficulty
+            ratings are informational approximations based on our research, and no figure on the Site is a
+            guarantee of any outcome, cost, or timeline.
           </p>
 
           <h2>Always Verify Directly</h2>

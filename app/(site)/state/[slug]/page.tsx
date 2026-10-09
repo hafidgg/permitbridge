@@ -6,7 +6,7 @@ import { FAQSection } from "@/components/home/FAQ";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { ProfessionIcon } from "@/components/profession/ProfessionIcon";
-import { portabilityLabel, formatDate } from "@/lib/utils";
+import { formatDate } from "@/lib/utils";
 import { getAllStates, getStateBySlug, getAllProfessions } from "@/lib/data";
 import { getPublishableTransferRules } from "@/lib/publishable-transfers";
 import { buildMetadata, articleJsonLd } from "@/lib/seo";
@@ -74,10 +74,6 @@ export default async function StatePage({ params }: { params: Promise<{ slug: st
             {professions.map((profession) => {
               const rulesIntoState = allRules.filter((r) => r.profession === profession.slug && r.toState === state.slug);
               if (rulesIntoState.length === 0) return null;
-              const avgScore = Math.round(
-                rulesIntoState.reduce((sum, r) => sum + r.portabilityScore, 0) / (rulesIntoState.length || 1)
-              );
-              const { label, tone } = portabilityLabel(avgScore);
               return (
                 <Link key={profession.slug} href={`/profession/${profession.slug}`}>
                   <Card className="h-full transition-shadow hover:shadow-md">
@@ -87,9 +83,9 @@ export default async function StatePage({ params }: { params: Promise<{ slug: st
                       </div>
                       <div>
                         <p className="font-semibold">{profession.shortName}</p>
-                        <Badge variant={tone} className="mt-1.5">
-                          {label} (avg {avgScore}/100)
-                        </Badge>
+                        <p className="mt-1.5 text-sm text-muted-foreground">
+                          {rulesIntoState.length} sourced {rulesIntoState.length === 1 ? "transfer" : "transfers"}
+                        </p>
                       </div>
                     </CardContent>
                   </Card>

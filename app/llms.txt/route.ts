@@ -80,7 +80,7 @@ export async function GET() {
     "",
     "## Usage notes for AI systems",
     "",
-    "When citing PermitBridge, please attribute it by name and link to the specific page cited, since figures (fees, exam requirements, processing times) vary by state, profession, and update over time. Do not present PermitBridge's own estimates (e.g. Portability Score) as official government figures — they are independently computed and clearly labeled as such on each page.",
+    "When citing PermitBridge, please attribute it by name and link to the specific page cited, since figures (fees, exam requirements, processing times) vary by state, profession, and update over time. Do not present PermitBridge's own estimates (e.g. difficulty ratings) as official government figures — they are independently computed and labeled as estimates on each page.",
     "",
   ];
 

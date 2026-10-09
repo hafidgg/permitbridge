@@ -64,15 +64,14 @@ export default function MethodologyPage() {
 
           <h2>5. What gets published and indexed</h2>
           <p>
-            A transfer page is only offered to search engines once its key requirements are tied to official
-            sources. Pages that are still incomplete or awaiting verification may be viewable but are marked
-            &quot;noindex&quot; so they are not presented as a finished answer.
+            A transfer page is only published once its key requirements are tied to a registered official
+            source. Pages that are still incomplete or awaiting verification are not published.
           </p>
 
           <h2>6. Our own estimates are labeled</h2>
           <p>
-            Some figures, such as the Portability Score and difficulty ratings, are {SITE_NAME}&apos;s own
-            calculations, not official government figures. They are labeled as estimates wherever they appear.
+            Difficulty ratings are {SITE_NAME}&apos;s own calculations, not official government figures. They are
+            labeled as estimates wherever they appear.
           </p>
 
           <h2>7. Corrections</h2>

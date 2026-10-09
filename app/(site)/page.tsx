@@ -31,7 +31,7 @@ const HOMEPAGE_FAQS = [
   {
     question: "How often is the data updated?",
     answer:
-      "Every profession and state page shows a “last updated” date. We review licensing law changes — including new Universal License Recognition laws and compact expansions — on an ongoing basis.",
+      "Every profession and state page shows a “last updated” date. Each fact is checked against the official source it cites, and pages without a registered official source are not published.",
   },
   {
     question: "Which professions does PermitBridge cover?",
@@ -44,7 +44,7 @@ export default function HomePage() {
   const professions = getProfessionSummaries();
   const allProfessions = getAllProfessions();
   const allStates = getAllStates();
-  const topTransfers = [...getPublishableTransferRules()].sort((a, b) => b.portabilityScore - a.portabilityScore).slice(0, 6);
+  const topTransfers = [...getPublishableTransferRules()].sort((a, b) => b.updatedAt.localeCompare(a.updatedAt)).slice(0, 6);
   const posts = getAllBlogPosts().slice(0, 2);
   const searchIndex = buildSearchIndex();
 

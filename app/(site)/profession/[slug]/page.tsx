@@ -7,7 +7,7 @@ import { FAQSection } from "@/components/home/FAQ";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { ProfessionIcon } from "@/components/profession/ProfessionIcon";
-import { portabilityLabel, formatDate } from "@/lib/utils";
+import { formatDate } from "@/lib/utils";
 import { getAllProfessions, getProfessionBySlug, getAllStates, getGuideBySlug, NURSE_TRANSFER_GUIDE_SLUG } from "@/lib/data";
 import { getPublishableTransferRules } from "@/lib/publishable-transfers";
 import { getAllPublicTransferRuleSlugs } from "@/lib/knowledge-base/transfer-rule-data";
@@ -123,27 +123,15 @@ export default async function ProfessionPage({ params }: { params: Promise<{ slu
                       .map((toState) => {
                         const rule = rules.find((r) => r.fromState === fromState.slug && r.toState === toState.slug);
                         if (!rule) return null;
-                        const { tone } = portabilityLabel(rule.portabilityScore);
                         return (
                           <li key={toState.slug}>
                             <Link
                               href={`/transfer/${profession.slug}/${fromState.slug}/${toState.slug}`}
-                              className="flex items-center justify-between rounded-md px-2 py-1.5 text-sm hover:bg-muted"
+                              className="flex items-center rounded-md px-2 py-1.5 text-sm hover:bg-muted"
                             >
                               <span className="flex items-center gap-1.5">
                                 <ArrowRight className="h-3.5 w-3.5 text-muted-foreground" aria-hidden="true" />
                                 {toState.name}
-                              </span>
-                              <span
-                                className={
-                                  tone === "success"
-                                    ? "font-semibold text-success"
-                                    : tone === "warning"
-                                    ? "font-semibold text-warning"
-                                    : "font-semibold text-destructive"
-                                }
-                              >
-                                {rule.portabilityScore}
                               </span>
                             </Link>
                           </li>

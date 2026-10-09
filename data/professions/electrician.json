@@ -4,44 +4,17 @@
   "shortName": "Electrician",
   "category": "Skilled Trades",
   "icon": "zap",
-  "description": "How to transfer an electrical contractor or journeyman license between US states.",
-  "longDescription": "Electrician licensing is regulated at the state or, in some states, the county/city level, which makes interstate transfers unusually fragmented. Most states recognize the NASCLA and IAEI-backed National Electrical Code exam content, but classification levels (apprentice, journeyman, master, contractor) do not map 1:1 across state lines, and business/law exams are almost always state-specific.",
+  "description": "How to transfer an electrician license between US states.",
+  "longDescription": "Electricians are licensed state by state, and each state sets its own license levels and reciprocity terms. PermitBridge publishes an electrician transfer page only after checking the requirements against the licensing board's own source.",
   "averageTransferDays": [
     21,
     90
   ],
   "hasNationalCompact": false,
-  "commonExam": "NASCLA Accredited Examination for Commercial General Building Contractors",
-  "commonExamAcceptedStates": [
-    "Alabama",
-    "Arizona",
-    "Arkansas",
-    "Florida",
-    "Georgia",
-    "Louisiana",
-    "Mississippi",
-    "Nevada",
-    "New Mexico",
-    "North Carolina",
-    "Oregon",
-    "South Carolina",
-    "Tennessee",
-    "Utah",
-    "Virginia",
-    "West Virginia"
-  ],
   "faqs": [
     {
-      "question": "Can I use my electrician license in another state?",
-      "answer": "In most cases you cannot simply use an out-of-state license as-is. You typically need to apply for licensure by reciprocity or endorsement in the new state, which may waive the trade exam but almost always requires a state-specific business and law exam."
-    },
-    {
-      "question": "Is there a national electrician license?",
-      "answer": "No. There is no national electrician license or compact. The National Electrical Code (NEC) is a common technical standard, but each state licenses and regulates electricians independently."
-    },
-    {
-      "question": "Do I need to retake the trade exam if I move states?",
-      "answer": "It depends on the pathway. States that accept the NASCLA exam or have a direct reciprocity agreement with your home state often waive the trade exam. States without an agreement usually require the full exam."
+      "question": "Does Texas have electrician reciprocity with other states?",
+      "answer": "Only with specific states. TDLR's out-of-state page lists Journeyman Electrician reciprocity with Alabama, Alaska, Arkansas, Idaho, Iowa, Nebraska, New Mexico, Oklahoma, South Dakota and Wyoming, and Master Electrician reciprocity with Alabama, Arkansas, Iowa, Louisiana, Nebraska, North Carolina, Ohio and Tennessee."
     }
   ],
   "relatedProfessions": [
@@ -49,7 +22,5 @@
     "plumber",
     "contractor"
   ],
-  "updatedAt": "2026-08-07",
-  "sourceUrl": "https://www.nascla.org/nascla-commercial-exam-participating-state-agencies",
-  "verifiedAt": "2026-08-07"
+  "updatedAt": "2026-10-09"
 }

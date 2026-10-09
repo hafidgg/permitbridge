@@ -4,8 +4,8 @@
   "shortName": "Nurse",
   "category": "Healthcare",
   "icon": "heart-pulse",
-  "description": "How to transfer a Registered Nurse (RN) or Licensed Practical Nurse (LPN) license between US states, including the Nurse Licensure Compact (NLC).",
-  "longDescription": "Nursing is one of the few professions with a mature interstate compact. The Nurse Licensure Compact (NLC) allows a nurse whose primary state of residence is a compact member to hold a single multistate license valid for practice in every other compact state. Nurses moving to or from a non-compact state still need to apply for licensure by endorsement, which involves verification through Nursys, a background check, and sometimes jurisprudence exams.",
+  "description": "How to transfer a Registered Nurse (RN) license between US states, including the Nurse Licensure Compact (NLC).",
+  "longDescription": "Registered nurses can practice across member states of the Nurse Licensure Compact (NLC) with one multistate license. NCSBN's Nurse Licensure Compact site states that \"43 jurisdictions are currently part of the NLC\" and that \"nurses who live in a compact state can apply for a multistate license if they meet the licensure requirements.\" Nurses moving to a state outside the compact apply to that state's board, usually by endorsement.",
   "averageTransferDays": [
     14,
     60
@@ -56,22 +56,18 @@
   ],
   "faqs": [
     {
-      "question": "What is the Nurse Licensure Compact?",
-      "answer": "The NLC lets a nurse who legally resides in a compact state practice in any other compact state under one multistate license, without applying for a separate license in each state."
+      "question": "Who can get a multistate (NLC) nursing license?",
+      "answer": "According to NCSBN's Nurse Licensure Compact site, \"nurses who live in a compact state can apply for a multistate license if they meet the licensure requirements.\""
     },
     {
-      "question": "What if I move to a state that is not in the compact?",
-      "answer": "You need to apply for licensure by endorsement in that state directly, which typically requires verification of your original license through Nursys, a criminal background check, and sometimes a state-specific jurisprudence exam."
-    },
-    {
-      "question": "Does moving states affect my multistate NLC license?",
-      "answer": "Yes. Your multistate privilege is tied to your state of primary residence. If you move to a new compact state, you must apply for licensure there and your home-state license converts to a single-state license."
+      "question": "Is New York part of the Nurse Licensure Compact?",
+      "answer": "No. NYSED's endorsement page states that \"New York State is not a 'Nursing Compact State',\" so nurses licensed elsewhere apply for a New York license by endorsement."
     }
   ],
   "relatedProfessions": [
     "contractor"
   ],
-  "updatedAt": "2026-08-07",
+  "updatedAt": "2026-10-09",
   "sourceUrl": "https://www.nursecompact.com/",
-  "verifiedAt": "2026-08-07"
+  "verifiedAt": "2026-10-09"
 }

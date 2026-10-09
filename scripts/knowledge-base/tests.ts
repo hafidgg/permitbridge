@@ -5723,6 +5723,16 @@ await test("[PERMANENT] every /transfer page in the sitemap and every indexable 
   assert(!isTradeTransferPublishable({ ...realRule, sourceUrl: secondary.website, fromState: secondary.jurisdiction, toState: secondary.jurisdiction }, resolve).publishable, "a non-authoritative source must fail");
 });
 
+// 2026-10-09: unpublishable /transfer pairs return 410 from middleware.ts, driven by lib/generated/gone-transfer-paths.json.
+// If this fails: run `npm run generate-gone-paths` (prebuild does it too) and commit the result.
+await test("[PERMANENT] lib/generated/gone-transfer-paths.json lists exactly the /transfer pairs that fail the publish gate", () => {
+  const { computeGoneTransferPaths } = require("../../lib/gone-transfer-paths");
+  const committed = JSON.parse(fs.readFileSync(path.join(process.cwd(), "lib", "generated", "gone-transfer-paths.json"), "utf-8"));
+  assertEqual(JSON.stringify(committed), JSON.stringify(computeGoneTransferPaths()), "gone-transfer-paths.json is out of date");
+  const mw = fs.readFileSync(path.join(process.cwd(), "middleware.ts"), "utf-8");
+  assert(mw.includes('from "@/lib/generated/gone-transfer-paths.json"'), "middleware.ts must answer the generated gone paths with 410");
+});
+
 // 2026-10-09: the site-wide search index (shipped on every page), the home page's popular transfers, profession hubs
 // and state pages all listed unsourced generator pairs ("Universal License Recognition (Endorsement)", made-up exam
 // flags and scores). If this fails: read transfer rules through getPublishableTransferRules(), never the raw list.
