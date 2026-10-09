@@ -14,11 +14,32 @@ import type { SourceRecord } from "@/types/knowledge-base";
 import type { TransferRule } from "@/types";
 import type { PublicationCheckResult } from "@/lib/knowledge-base/transfer-review";
 
+/**
+ * States where a trade is not licensed at the state level, so any /transfer
+ * page for it would present a statewide license that doesn't exist. New York:
+ * electricians and plumbers are licensed by NYC DOB and other local
+ * authorities, contractors by NYC DOB/DCWP and localities, and there is no
+ * "HVAC" license at either level (researched 2026-10-09). The model has no
+ * city-level jurisdiction, so these pairs are not generated or published.
+ */
+export const NO_STATEWIDE_TRADE_LICENSE: Record<string, readonly string[]> = {
+  "new-york": ["electrician", "plumber", "hvac-technician", "contractor"],
+};
+
+export function lacksStatewideTradeLicense(profession: string, state: string): boolean {
+  return NO_STATEWIDE_TRADE_LICENSE[state]?.includes(profession) ?? false;
+}
+
 export function isTradeTransferPublishable(
   rule: TransferRule,
   resolveSource: (url: string) => SourceRecord | undefined
 ): PublicationCheckResult {
   const reasons: string[] = [];
+  for (const state of [rule.fromState, rule.toState]) {
+    if (lacksStatewideTradeLicense(rule.profession, state)) {
+      reasons.push(`${state} has no statewide ${rule.profession} license; a page claiming one can't be published.`);
+    }
+  }
   if (rule.indexingHold) {
     reasons.push(`Indexing hold: ${rule.indexingHold}`);
   }

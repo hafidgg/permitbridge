@@ -11,8 +11,8 @@ import { OtherStatesTable } from "@/components/transfer/OtherStatesTable";
 import { Badge } from "@/components/ui/badge";
 import { formatDate } from "@/lib/utils";
 import {
-  getAllProfessions,
   getAllStates,
+  getAllTransferRules,
   getProfessionBySlug,
   getStateBySlug,
   getTransferRule,
@@ -27,20 +27,11 @@ interface TransferParams {
   to: string;
 }
 
-export function generateStaticParams() {
-  const professions = getAllProfessions();
-  const states = getAllStates();
-  const params: TransferParams[] = [];
-
-  for (const profession of professions) {
-    for (const from of states) {
-      for (const to of states) {
-        if (from.slug === to.slug) continue;
-        params.push({ profession: profession.slug, from: from.slug, to: to.slug });
-      }
-    }
-  }
-  return params;
+// Only pairs with a data file. Enumerating every profession x state x state
+// pre-rendered a 404 for any pair without one (e.g. the removed NY trade pairs,
+// which middleware.ts answers with 410).
+export function generateStaticParams(): TransferParams[] {
+  return getAllTransferRules().map((r) => ({ profession: r.profession, from: r.fromState, to: r.toState }));
 }
 
 function loadPageData(params: TransferParams) {

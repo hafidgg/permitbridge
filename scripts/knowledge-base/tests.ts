@@ -1626,7 +1626,8 @@ await test("real production data (5 real transfer rules) untouched by Phase 3.2 
   const dir = path.join(process.cwd(), "data", "knowledge-base", "transfer-rules", "registered-nurse");
   const crypto = require("node:crypto");
   const expectedHashes: Record<string, string> = {
-    "california-to-new-york.json": "45d1ada0c43a4a62e424d7dd50c9190c",
+    // Re-pinned 2026-10-09: examRequirement -> Unknown (the old value cited NYSED's initial-licensure page, not endorsement).
+    "california-to-new-york.json": "8602f1aca9b44a78141960ce9ca670ca",
     "california-to-texas.json": "7c66c2cedf469c75828e21ec72d01966",
     "illinois-to-georgia.json": "481e6b9dcc66b613294c212abcaf4d52",
     "texas-to-california.json": "0122d91754c9f0985915a6a58a5cfa7b",
@@ -1650,9 +1651,9 @@ await test("real publication report correctly blocks california-to-texas (the on
   }
 });
 
-await test("real review queue contains exactly 109 items (one per populated, non-Verified field across all 8 real rules)", () => {
+await test("real review queue contains exactly 108 items (one per populated, non-Verified field across all 8 real rules)", () => {
   const queue = buildTransferReviewQueue();
-  assertEqual(queue.length, 109, "expected 109 queue items after Phase 2B.4 (95 from the prior 7 rules + 14 populated, non-Verified fields on the newly-published California->Florida rule)");
+  assertEqual(queue.length, 108, "expected 108 queue items: 109 after Phase 2B.4 (95 from the prior 7 rules + 14 on California->Florida), minus California->New York examRequirement, set to Unknown on 2026-10-09");
   const highPriority = queue.filter((i) => i.priority === "High");
   assert(highPriority.length > 0, "expected at least some High-priority (critical field) queue items");
 });
@@ -5720,6 +5721,27 @@ await test("[PERMANENT] every /transfer page in the sitemap and every indexable 
   assert(!isTradeTransferPublishable({ ...realRule, fromState: "ohio", toState: "texas" }, resolve).publishable, "a source from neither state's jurisdiction must fail");
   const secondary = allSources.find((x) => x.authorityLevel === "supplementary")!;
   assert(!isTradeTransferPublishable({ ...realRule, sourceUrl: secondary.website, fromState: secondary.jurisdiction, toState: secondary.jurisdiction }, resolve).publishable, "a non-authoritative source must fail");
+});
+
+// 2026-10-09: electrician/new-york--texas was indexed on a Texas-only source while the page presented a statewide
+// New York electrician license, which doesn't exist (NYC DOB and other localities license the trades). The 32 NY
+// trade pairs were removed and now return 410 (middleware.ts). If this fails: don't re-add NY trade pairs until the
+// model can represent a city-level licensing authority with its own registered source.
+await test("[PERMANENT] a New York trade page is never publishable, even with a valid registered source for the other state", () => {
+  const allSources = loadAllSources();
+  const resolve = (u: string) => allSources.find((x) => x.website === u);
+  const txRule = JSON.parse(fs.readFileSync(path.join(process.cwd(), "data", "transfers", "electrician", "california--texas.json"), "utf-8"));
+  assert(isTradeTransferPublishable(txRule, resolve).publishable, "control: the real CA->TX electrician rule must pass");
+  for (const profession of ["electrician", "plumber", "hvac-technician", "contractor"]) {
+    assert(!isTradeTransferPublishable({ ...txRule, profession, fromState: "new-york" }, resolve).publishable, `TX source only + NY origin must fail (${profession})`);
+    assert(!isTradeTransferPublishable({ ...txRule, profession, fromState: "texas", toState: "new-york" }, resolve).publishable, `TX source only + NY destination must fail (${profession})`);
+  }
+  for (const prof of ["electrician", "plumber", "hvac-technician", "contractor"]) {
+    const files = fs.readdirSync(path.join(process.cwd(), "data", "transfers", prof)).filter((f) => f.includes("new-york"));
+    assertEqual(files.length, 0, `data/transfers/${prof} must not contain New York pairs: ${files.join(", ")}`);
+  }
+  const gen = fs.readFileSync(path.join(process.cwd(), "scripts", "generate-transfers.ts"), "utf-8");
+  assert(gen.includes("lacksStatewideTradeLicense("), "generate-transfers.ts must skip states without a statewide trade license");
 });
 
 // scripts/generate-transfers.ts fills every data/transfers/* record with template text and default numbers. When a

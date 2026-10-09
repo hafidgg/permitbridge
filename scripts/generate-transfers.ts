@@ -10,6 +10,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import type { Profession, State, TransferRule, PathwayType } from "../types";
+import { lacksStatewideTradeLicense } from "../lib/knowledge-base/trade-transfer-gate";
 
 const DATA_DIR = path.join(process.cwd(), "data");
 const PROFESSIONS_DIR = path.join(DATA_DIR, "professions");
@@ -183,6 +184,8 @@ function main() {
     for (const from of states) {
       for (const to of states) {
         if (from.slug === to.slug) continue;
+        // No statewide license to transfer (e.g. NY trades are licensed by NYC DOB / localities).
+        if (lacksStatewideTradeLicense(profession.slug, from.slug) || lacksStatewideTradeLicense(profession.slug, to.slug)) continue;
         const computed = computeRule(profession, from, to);
         const overridePath = path.join(OVERRIDES_DIR, profession.slug, `${from.slug}--${to.slug}.json`);
         const hadOverride = fs.existsSync(overridePath);
