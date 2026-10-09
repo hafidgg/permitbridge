@@ -75,7 +75,9 @@ function TierSection({ tier, facts }: { tier: string; facts: ProfessionStateFact
         <FieldRow label="Experience Requirement" field={facts.requiredExperience} />
         <FieldRow label="Application Fee" field={facts.endorsementFeeUsd} />
         <FieldRow label="Processing Time" field={facts.processingTime} />
-        <FieldRow label="Universal License Recognition" field={facts.universalLicenseRecognitionStatus} />
+        {facts.universalLicenseRecognitionStatus.value !== "Unknown" && (
+          <FieldRow label="Universal License Recognition" field={facts.universalLicenseRecognitionStatus} />
+        )}
       </div>
     </section>
   );

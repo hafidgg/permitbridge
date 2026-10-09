@@ -1,0 +1,19 @@
+{
+  "id": "virginia-dpor-ulr",
+  "agencyName": "Virginia Department of Professional and Occupational Regulation (DPOR)",
+  "website": "https://www.dpor.virginia.gov/Applicants/ULR",
+  "jurisdiction": "virginia",
+  "professionsCovered": [
+    "electrician"
+  ],
+  "sourceType": "official-government",
+  "official": true,
+  "authorityLevel": "authoritative",
+  "authorityRationale": "DPOR's own Universal License Recognition page. Read directly 2026-10-09: ULR for applicants licensed or certified in another state for at least one year; ULR applications listed include 'Contractors - Tradesman'.",
+  "specificity": "jurisdiction-general",
+  "reliabilityScore": 0.93,
+  "reliabilityRationale": "Official agency page, verified by direct read on 2026-10-09.",
+  "lastCrawl": null,
+  "lastManualVerification": "2026-10-09",
+  "fieldsUsingThisSource": 2
+}

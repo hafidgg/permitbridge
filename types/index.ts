@@ -17,9 +17,19 @@ export interface ProfessionSummary {
 
 export interface Profession extends ProfessionSummary {
   longDescription: string;
+  /**
+   * UNSOURCED generator output (scripts/generate-transfers.ts). Do not render
+   * on any public surface; scripts/check-built-output.ts fails the build if it
+   * appears.
+   */
   averageTransferDays: [number, number];
   hasNationalCompact: boolean;
   compactName?: string;
+  /**
+   * UNSOURCED generator output (scripts/generate-transfers.ts). Do not render
+   * on any public surface; scripts/check-built-output.ts fails the build if it
+   * appears.
+   */
   compactStates?: string[];
   commonExam?: string;
   commonExamAcceptedStates?: string[];
@@ -67,8 +77,18 @@ export interface TransferRule {
   feeUsd: number;
   estimatedProcessingDays: [number, number];
   minimumYearsLicensed: number;
-  difficultyScore: number; // 1 (easy) - 10 (hard)
-  portabilityScore: number; // 0-100, higher = easier to transfer
+  /**
+   * UNSOURCED generator output (scripts/generate-transfers.ts). Do not render
+   * on any public surface; scripts/check-built-output.ts fails the build if it
+   * appears.
+   */
+  difficultyScore: number;
+  /**
+   * UNSOURCED generator output (scripts/generate-transfers.ts). Do not render
+   * on any public surface; scripts/check-built-output.ts fails the build if it
+   * appears.
+   */
+  portabilityScore: number;
   steps: string[];
   notes: string;
   officialSourceName: string;

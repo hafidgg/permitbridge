@@ -68,10 +68,10 @@ export default function MethodologyPage() {
             source. Pages that are still incomplete or awaiting verification are not published.
           </p>
 
-          <h2>6. Our own estimates are labeled</h2>
+          <h2>6. No scores or ratings of our own</h2>
           <p>
-            Difficulty ratings are {SITE_NAME}&apos;s own calculations, not official government figures. They are
-            labeled as estimates wherever they appear.
+            {SITE_NAME} doesn&apos;t publish its own scores or difficulty ratings. The figures on a published page
+            come from the official source that page cites.
           </p>
 
           <h2>7. Corrections</h2>

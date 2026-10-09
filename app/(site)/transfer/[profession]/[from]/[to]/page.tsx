@@ -170,10 +170,6 @@ export default async function TransferPage({ params }: { params: Promise<Transfe
                 <dd className="font-medium">{rule.minimumYearsLicensed || "None"}</dd>
               </div>
               <div className="flex justify-between">
-                <dt className="text-muted-foreground">Difficulty (our estimate)</dt>
-                <dd className="font-medium">{rule.difficultyScore}/10</dd>
-              </div>
-              <div className="flex justify-between">
                 <dt className="text-muted-foreground">Pathway type</dt>
                 <dd className="font-medium capitalize">{rule.pathway}</dd>
               </div>

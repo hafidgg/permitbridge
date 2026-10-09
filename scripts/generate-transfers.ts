@@ -6,6 +6,12 @@
  * editing/adding a profession or state so the transfer matrix stays in sync.
  *
  * Usage: npm run generate-transfers
+ *
+ * Everything this script computes (pathway, exam flag, fee, processing days,
+ * difficultyScore, portabilityScore) is a template default, not a sourced
+ * fact. A record is published only after it is rewritten from a registered
+ * source; difficultyScore, portabilityScore, and the profession fields it reads
+ * (averageTransferDays, compactStates, commonExam*) must never be rendered.
  */
 import fs from "node:fs";
 import path from "node:path";

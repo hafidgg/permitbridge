@@ -1466,8 +1466,8 @@ await test("slugs are deterministic for all 5 real transfer rules and match thei
   }
 });
 
-await test("Trust Dashboard metrics reconcile: total sources grew from 88 to 120 (4 Texas + 2 Arkansas + 5 Minnesota + 4 Utah + 1 Wyoming + 4 Iowa new authoritative electrician sources, + 6 trade-transfer sources registered 2026-10-01, + 5 origin-side trade sources registered 2026-10-09, + 1 Texas state-page source) — this counts raw rows in the single flat sources/ table, a genuinely different kind of number from the per-profession trust/reconciliation reports fixed in Phase 2D.3.2.1, so growth here from an eighth state's real sources is expected and correct, not a conflation to hide", () => {
-  assertEqual(sources.length, 120, "expected 120 total sources: 88 + 4 Texas (Phase 2F.2) + 2 Arkansas + 5 Minnesota + 4 Utah (utah-oregon-reciprocal-agreement, utah-admin-code-r156-1-302, utah-dopl-master-electrician-endorsement-page, utah-dopl-journeyman-electrician-endorsement-page) + 1 Wyoming (wyoming-wsfm-electrical-licensing) + 4 Iowa (iowa-dial-electrical-licensing, iowa-dial-reciprocal-agreements-pdf, iowa-admin-code-481-401, iowa-admin-code-481-403) + 6 trade-transfer sources (florida-dbpr-cilb-10-endorsement, ohio-ocilb-out-of-state-testing-application, texas-tdlr-acr-contractor-application, texas-tsbpe-out-of-state-examination, california-cslb-reciprocity-requirements, california-cslb-reciprocal-classifications) + 5 origin-side trade sources (florida-dbpr-cilb-32-reciprocity, florida-fac-61g4-15-001, texas-tsbpe-administrative-rules-march-2026, california-cslb-c36-classification, california-cslb-c20-classification) + 1 Texas state-page source (texas-tdlr-removing-barriers-summary)");
+await test("Trust Dashboard metrics reconcile: total sources grew from 88 to 121 (4 Texas + 2 Arkansas + 5 Minnesota + 4 Utah + 1 Wyoming + 4 Iowa new authoritative electrician sources, + 6 trade-transfer sources registered 2026-10-01, + 5 origin-side trade sources registered 2026-10-09, + 1 Texas state-page source, + virginia-dpor-ulr) — this counts raw rows in the single flat sources/ table, a genuinely different kind of number from the per-profession trust/reconciliation reports fixed in Phase 2D.3.2.1, so growth here from an eighth state's real sources is expected and correct, not a conflation to hide", () => {
+  assertEqual(sources.length, 121, "expected 121 total sources: 88 + 4 Texas (Phase 2F.2) + 2 Arkansas + 5 Minnesota + 4 Utah (utah-oregon-reciprocal-agreement, utah-admin-code-r156-1-302, utah-dopl-master-electrician-endorsement-page, utah-dopl-journeyman-electrician-endorsement-page) + 1 Wyoming (wyoming-wsfm-electrical-licensing) + 4 Iowa (iowa-dial-electrical-licensing, iowa-dial-reciprocal-agreements-pdf, iowa-admin-code-481-401, iowa-admin-code-481-403) + 6 trade-transfer sources (florida-dbpr-cilb-10-endorsement, ohio-ocilb-out-of-state-testing-application, texas-tdlr-acr-contractor-application, texas-tsbpe-out-of-state-examination, california-cslb-reciprocity-requirements, california-cslb-reciprocal-classifications) + 5 origin-side trade sources (florida-dbpr-cilb-32-reciprocity, florida-fac-61g4-15-001, texas-tsbpe-administrative-rules-march-2026, california-cslb-c36-classification, california-cslb-c20-classification) + 1 Texas state-page source (texas-tdlr-removing-barriers-summary) + virginia-dpor-ulr (2026-10-09, Virginia ULR field)");
   const secondarySources = sources.filter((s) => s.authorityLevel === "supplementary");
   assert(secondarySources.length >= 5, "expected at least the 5 secondary discovery-only sources registered in Phase 3.1");
 });
@@ -1626,12 +1626,13 @@ await test("real production data (5 real transfer rules) untouched by Phase 3.2 
   const dir = path.join(process.cwd(), "data", "knowledge-base", "transfer-rules", "registered-nurse");
   const crypto = require("node:crypto");
   const expectedHashes: Record<string, string> = {
-    // Re-pinned 2026-10-09: examRequirement -> Unknown (the old value cited NYSED's initial-licensure page, not endorsement).
-    "california-to-new-york.json": "8602f1aca9b44a78141960ce9ca670ca",
+    // Re-pinned 2026-10-09: CA->NY examRequirement -> Unknown (cited the initial-licensure page); CA->NY, IL->GA, TX->CA,
+    // TX->FL universalRecognitionApplies -> Unknown (no cited page addresses ULR in raw text; GA page returned 403).
+    "california-to-new-york.json": "34494a3de9f19998e0aa14694f97b306",
     "california-to-texas.json": "7c66c2cedf469c75828e21ec72d01966",
-    "illinois-to-georgia.json": "481e6b9dcc66b613294c212abcaf4d52",
-    "texas-to-california.json": "0122d91754c9f0985915a6a58a5cfa7b",
-    "texas-to-florida.json": "41cc34cf246d284890b90a2013389e90",
+    "illinois-to-georgia.json": "fc34235e56daa0d0a2719dac29cffdee",
+    "texas-to-california.json": "3e29c22039e679d4fda670a4b74f6a15",
+    "texas-to-florida.json": "c60e8c504d6060b427b2b62aceca598d",
   };
   for (const [file, expectedHash] of Object.entries(expectedHashes)) {
     const content = fs.readFileSync(path.join(dir, file));
@@ -1651,9 +1652,9 @@ await test("real publication report correctly blocks california-to-texas (the on
   }
 });
 
-await test("real review queue contains exactly 108 items (one per populated, non-Verified field across all 8 real rules)", () => {
+await test("real review queue contains exactly 104 items (one per populated, non-Verified field across all 8 real rules)", () => {
   const queue = buildTransferReviewQueue();
-  assertEqual(queue.length, 108, "expected 108 queue items: 109 after Phase 2B.4 (95 from the prior 7 rules + 14 on California->Florida), minus California->New York examRequirement, set to Unknown on 2026-10-09");
+  assertEqual(queue.length, 104, "expected 104 queue items: 109 after Phase 2B.4 (95 from the prior 7 rules + 14 on California->Florida), minus 5 fields set to Unknown on 2026-10-09 (California->New York examRequirement; universalRecognitionApplies on CA->NY, IL->GA, TX->CA, TX->FL)");
   const highPriority = queue.filter((i) => i.priority === "High");
   assert(highPriority.length > 0, "expected at least some High-priority (critical field) queue items");
 });
@@ -5072,7 +5073,7 @@ await test("[PERMANENT — Phase 2D.3.2.1] computeSourceReconciliation() called 
   const explicitRnRecon = computeSourceReconciliation("registered-nurse");
   assertEqual(defaultRecon.totalSourceRecords, explicitRnRecon.totalSourceRecords, "the default call must match an explicit registered-nurse call exactly");
   const electricianRecon = computeSourceReconciliation("electrician");
-  assertEqual(electricianRecon.totalSourceRecords, 25, "electrician's source reconciliation must count exactly the 25 real electrician sources (2 Colorado + 2 Virginia + 4 Texas + 2 Arkansas + 5 Minnesota + 4 Utah + 1 Wyoming + 4 Iowa + texas-tdlr-removing-barriers-summary, registered 2026-10-09 for the Texas state page), filtered via professionsCovered — never RN's sources");
+  assertEqual(electricianRecon.totalSourceRecords, 26, "electrician's source reconciliation must count exactly the 26 real electrician sources (2 Colorado + 2 Virginia + 4 Texas + 2 Arkansas + 5 Minnesota + 4 Utah + 1 Wyoming + 4 Iowa + texas-tdlr-removing-barriers-summary, registered 2026-10-09 for the Texas state page, + virginia-dpor-ulr), filtered via professionsCovered — never RN's sources");
   assert(defaultRecon.totalSourceRecords !== electricianRecon.totalSourceRecords, "RN and electrician source counts must never be conflated into the same number");
 });
 
@@ -5721,6 +5722,31 @@ await test("[PERMANENT] every /transfer page in the sitemap and every indexable 
   assert(!isTradeTransferPublishable({ ...realRule, fromState: "ohio", toState: "texas" }, resolve).publishable, "a source from neither state's jurisdiction must fail");
   const secondary = allSources.find((x) => x.authorityLevel === "supplementary")!;
   assert(!isTradeTransferPublishable({ ...realRule, sourceUrl: secondary.website, fromState: secondary.jurisdiction, toState: secondary.jurisdiction }, resolve).publishable, "a non-authoritative source must fail");
+});
+
+// 2026-10-09: difficultyScore, portabilityScore, averageTransferDays and compactStates are unsourced generator values
+// (see types/index.ts). scripts/check-built-output.ts (postbuild) also scans the built site for them.
+// If this fails: remove the render. Never display these fields.
+await test("[PERMANENT] no app/components/lib file reads the unsourced generator fields", () => {
+  const offenders: string[] = [];
+  const walk = (dir: string): string[] =>
+    fs.readdirSync(dir, { withFileTypes: true }).flatMap((e: any) => {
+      const full = path.join(dir, e.name);
+      return e.isDirectory() ? walk(full) : /\.(ts|tsx)$/.test(e.name) ? [full] : [];
+    });
+  for (const root of ["app", "components", "lib"]) {
+    for (const file of walk(path.join(process.cwd(), root))) {
+      const rel = path.relative(process.cwd(), file).replace(/\\/g, "/");
+      if (rel.startsWith("lib/pipeline/")) continue; // diff/validate the data, never render it
+      const src = fs.readFileSync(file, "utf-8");
+      for (const field of ["difficultyScore", "portabilityScore", "averageTransferDays", "compactStates"]) {
+        if (new RegExp(`\\.${field}\\b`).test(src)) offenders.push(`${rel}: .${field}`);
+      }
+    }
+  }
+  assertEqual(offenders.join("; "), "", "unsourced generator fields must not be read outside lib/pipeline");
+  const pkg = JSON.parse(fs.readFileSync(path.join(process.cwd(), "package.json"), "utf-8"));
+  assert(String(pkg.scripts.postbuild).includes("check-built-output.ts"), "postbuild must run scripts/check-built-output.ts");
 });
 
 // 2026-10-09: unpublishable /transfer pairs return 410 from middleware.ts, driven by lib/generated/gone-transfer-paths.json.

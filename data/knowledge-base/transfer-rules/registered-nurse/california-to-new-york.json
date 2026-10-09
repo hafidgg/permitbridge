@@ -77,18 +77,16 @@
     "notes": null
   },
   "universalRecognitionApplies": {
-    "value": {
-      "status": "not_applicable"
-    },
-    "sourceUrl": "https://www.op.nysed.gov/professions/registered-professional-nursing/endorsement-nursing-licenses",
-    "sourceTitle": "Endorsement of Nursing Licenses - RPN",
-    "sourceName": "New York State Education Department, Office of the Professions",
-    "verifiedAt": "2026-08-10",
-    "verificationMethod": "official_document_review",
+    "value": "Unknown",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "sourceName": null,
+    "verifiedAt": null,
+    "verificationMethod": null,
     "reviewer": null,
     "status": "pending_verification",
-    "confidence": 0.75,
-    "confidenceLevel": "likely",
+    "confidence": 0,
+    "confidenceLevel": "unknown",
     "history": [
       {
         "previousValue": null,
@@ -99,9 +97,19 @@
         "reason": "Phase 3.1: first population from real official-source research.",
         "sourceUrl": "https://www.op.nysed.gov/professions/registered-professional-nursing/endorsement-nursing-licenses",
         "reviewer": null
+      },
+      {
+        "previousValue": {
+          "status": "not_applicable"
+        },
+        "newValue": "Unknown",
+        "changedAt": "2026-10-09",
+        "reason": "NYSED's endorsement page (raw text, 2026-10-09) does not address Universal License Recognition; it says only that New York 'is not a Nursing Compact State'.",
+        "sourceUrl": null,
+        "reviewer": null
       }
     ],
-    "notes": null
+    "notes": "NYSED's endorsement page (raw text, 2026-10-09) does not address Universal License Recognition; it says only that New York 'is not a Nursing Compact State'."
   },
   "examRequirement": {
     "value": "Unknown",

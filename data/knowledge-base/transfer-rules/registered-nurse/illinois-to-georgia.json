@@ -77,18 +77,16 @@
     "notes": null
   },
   "universalRecognitionApplies": {
-    "value": {
-      "status": "not_applicable"
-    },
-    "sourceUrl": "https://sos.ga.gov/page/faqs-nursing",
-    "sourceTitle": "FAQs for Nursing",
-    "sourceName": "Georgia Board of Nursing",
-    "verifiedAt": "2026-08-10",
-    "verificationMethod": "official_document_review",
+    "value": "Unknown",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "sourceName": null,
+    "verifiedAt": null,
+    "verificationMethod": null,
     "reviewer": null,
     "status": "pending_verification",
-    "confidence": 0.7,
-    "confidenceLevel": "likely",
+    "confidence": 0,
+    "confidenceLevel": "unknown",
     "history": [
       {
         "previousValue": null,
@@ -99,9 +97,19 @@
         "reason": "Phase 3.1: first population from real official-source research.",
         "sourceUrl": "https://sos.ga.gov/page/faqs-nursing",
         "reviewer": null
+      },
+      {
+        "previousValue": {
+          "status": "not_applicable"
+        },
+        "newValue": "Unknown",
+        "changedAt": "2026-10-09",
+        "reason": "The cited sos.ga.gov nursing FAQ returned 403 when fetched raw on 2026-10-09, so the value could not be checked.",
+        "sourceUrl": null,
+        "reviewer": null
       }
     ],
-    "notes": null
+    "notes": "The cited sos.ga.gov nursing FAQ returned 403 when fetched raw on 2026-10-09, so the value could not be checked."
   },
   "examRequirement": {
     "value": {

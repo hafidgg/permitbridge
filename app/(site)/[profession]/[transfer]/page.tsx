@@ -213,7 +213,12 @@ export default async function TransferRulePage({ params }: { params: Promise<Pag
   const mechanismValue = rule.transferMechanism.value === "Unknown" ? "unknown" : (rule.transferMechanism.value as string);
 
   const criticalFields = ALL_TRANSFER_FIELD_KEYS.filter((k) => CRITICAL_TRANSFER_RULE_FIELDS.includes(k));
-  const supportingFields = ALL_TRANSFER_FIELD_KEYS.filter((k) => !CRITICAL_TRANSFER_RULE_FIELDS.includes(k));
+  // The ULR row is shown only with an affirmative, sourced value: no official
+  // nursing page reviewed (2026-10-09) addresses ULR, and an "Unknown" row
+  // there reads as if it might apply.
+  const supportingFields = ALL_TRANSFER_FIELD_KEYS.filter(
+    (k) => !CRITICAL_TRANSFER_RULE_FIELDS.includes(k) && !(k === "universalRecognitionApplies" && rule.universalRecognitionApplies.value === "Unknown")
+  );
 
   const otherTransfers = getAllPublicTransferRuleSlugs().filter((s) => s.transfer !== resolvedParams.transfer);
 

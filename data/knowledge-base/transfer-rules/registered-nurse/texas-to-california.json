@@ -77,18 +77,16 @@
     "notes": "No bilateral CA-TX agreement -- BRN issues its own license via its own endorsement review."
   },
   "universalRecognitionApplies": {
-    "value": {
-      "status": "not_applicable"
-    },
-    "sourceUrl": "https://www.rn.ca.gov/applicants/lic-end",
-    "sourceTitle": "Licensure by Endorsement",
-    "sourceName": "California Board of Registered Nursing (BRN)",
-    "verifiedAt": "2026-08-10",
-    "verificationMethod": "official_document_review",
+    "value": "Unknown",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "sourceName": null,
+    "verifiedAt": null,
+    "verificationMethod": null,
     "reviewer": null,
     "status": "pending_verification",
-    "confidence": 0.8,
-    "confidenceLevel": "likely",
+    "confidence": 0,
+    "confidenceLevel": "unknown",
     "history": [
       {
         "previousValue": null,
@@ -99,9 +97,19 @@
         "reason": "Phase 3.1: first population from real official-source research.",
         "sourceUrl": "https://www.rn.ca.gov/applicants/lic-end",
         "reviewer": null
+      },
+      {
+        "previousValue": {
+          "status": "not_applicable"
+        },
+        "newValue": "Unknown",
+        "changedAt": "2026-10-09",
+        "reason": "The BRN endorsement page (raw text, 2026-10-09) does not mention Universal License Recognition.",
+        "sourceUrl": null,
+        "reviewer": null
       }
     ],
-    "notes": "California does not have a general nursing ULR law; endorsement is the applicable pathway."
+    "notes": "The BRN endorsement page (raw text, 2026-10-09) does not mention Universal License Recognition."
   },
   "examRequirement": {
     "value": {
@@ -338,7 +346,7 @@
   "processingTime": {
     "value": "Generally 6-12 weeks once a complete application is submitted (secondary-source estimate; BRN's own official Processing Times page publishes rolling cohort-based dates rather than a fixed range, so this figure is not a direct official quote).",
     "sourceUrl": "https://catsol.com/guides/california-rn-license-guide/",
-    "sourceTitle": "California RN License Endorsement 2026 \u2014 6-12 Week Timeline",
+    "sourceTitle": "California RN License Endorsement 2026 — 6-12 Week Timeline",
     "sourceName": "CatSol (secondary source, used for discovery only)",
     "verifiedAt": "2026-08-10",
     "verificationMethod": "official_document_review",

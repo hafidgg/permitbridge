@@ -7,7 +7,7 @@
     "dev": "next dev",
     "prebuild": "tsx scripts/generate-gone-paths.ts",
     "build": "next build",
-    "postbuild": "tsx scripts/check-sitemap.ts --build",
+    "postbuild": "tsx scripts/check-sitemap.ts --build && tsx scripts/check-built-output.ts",
     "start": "next start",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
@@ -39,7 +39,8 @@
     "watch:wyoming": "tsx scripts/monitoring/watch-wyoming.ts",
     "monitor:dry-run": "tsx scripts/monitoring/dry-run.ts",
     "monitor:health": "tsx scripts/monitoring/health.ts",
-    "generate-gone-paths": "tsx scripts/generate-gone-paths.ts"
+    "generate-gone-paths": "tsx scripts/generate-gone-paths.ts",
+    "check:built-output": "tsx scripts/check-built-output.ts"
   },
   "dependencies": {
     "next": "^15.1.0",

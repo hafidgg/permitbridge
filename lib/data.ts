@@ -93,18 +93,6 @@ export function getTransferRulesForProfession(profession: string): TransferRule[
   return getAllTransferRules().filter((r) => r.profession === profession);
 }
 
-export function getTopTransfers(limit = 6): TransferRule[] {
-  return [...getAllTransferRules()]
-    .sort((a, b) => b.portabilityScore - a.portabilityScore)
-    .slice(0, limit);
-}
-
-export function getHardestTransfers(limit = 6): TransferRule[] {
-  return [...getAllTransferRules()]
-    .sort((a, b) => a.portabilityScore - b.portabilityScore)
-    .slice(0, limit);
-}
-
 // ---------- Guides & Blog (content/ markdown-backed summaries) ----------
 
 export function getAllGuides(): GuideSummary[] {
