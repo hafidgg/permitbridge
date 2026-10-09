@@ -9,7 +9,7 @@ import { buildMetadata } from "@/lib/seo";
 export const metadata: Metadata = buildMetadata({
   title: "All States — Professional License Reciprocity by State",
   description:
-    "Browse every US state covered by PermitBridge and see whether it has Universal License Recognition, which professions it licenses, and how transfers work.",
+    "Browse every US state covered by PermitBridge and see which agencies license each profession and how transfers work.",
   path: "/states",
 });
 

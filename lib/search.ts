@@ -11,11 +11,11 @@ import type { SearchDocument } from "@/types";
 import {
   getAllProfessions,
   getAllStates,
-  getAllTransferRules,
   getAllGuides,
   getAllBlogPosts,
 } from "@/lib/data";
 import { getAllPublicTransferRuleSlugs } from "@/lib/knowledge-base/transfer-rule-data";
+import { getPublishableTransferRules } from "@/lib/publishable-transfers";
 import { getAllSingleStateProfessionSlugs } from "@/lib/knowledge-base/electrician-state-data";
 import { getIndexableTradeStateSummaries } from "@/lib/trade-state-summary";
 
@@ -49,7 +49,10 @@ export function buildSearchIndex(): SearchDocument[] {
     });
   }
 
-  for (const r of getAllTransferRules()) {
+  // Same gate as the sitemap and the page's noIndex: the index ships on every
+  // page, so an unsourced pair's generator pathway/exam text would otherwise
+  // be shown site-wide.
+  for (const r of getPublishableTransferRules()) {
     const professions = getAllProfessions();
     const states = getAllStates();
     const profession = professions.find((p) => p.slug === r.profession);
@@ -67,7 +70,7 @@ export function buildSearchIndex(): SearchDocument[] {
 
   // These two knowledge-base pipelines (RN transfer pairs, electrician
   // single-state pages) are the site's most rigorously sourced content
-  // but live outside the old getAllTransferRules() pipeline above, so
+  // but live outside the old data/transfers pipeline above, so
   // they need their own entries here or the search box can't find them.
   const states = getAllStates();
   for (const t of getAllPublicTransferRuleSlugs()) {

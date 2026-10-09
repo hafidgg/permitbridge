@@ -5723,6 +5723,17 @@ await test("[PERMANENT] every /transfer page in the sitemap and every indexable 
   assert(!isTradeTransferPublishable({ ...realRule, sourceUrl: secondary.website, fromState: secondary.jurisdiction, toState: secondary.jurisdiction }, resolve).publishable, "a non-authoritative source must fail");
 });
 
+// 2026-10-09: the site-wide search index (shipped on every page), the home page's popular transfers, profession hubs
+// and state pages all listed unsourced generator pairs ("Universal License Recognition (Endorsement)", made-up exam
+// flags and scores). If this fails: read transfer rules through getPublishableTransferRules(), never the raw list.
+await test("[PERMANENT] every listing of data/transfers pairs goes through getPublishableTransferRules()", () => {
+  for (const rel of ["lib/search.ts", "app/(site)/page.tsx", "app/(site)/profession/[slug]/page.tsx", "app/(site)/state/[slug]/page.tsx"]) {
+    const src = fs.readFileSync(path.join(process.cwd(), ...rel.split("/")), "utf-8");
+    assert(src.includes("getPublishableTransferRules()"), `${rel} must read transfer rules via getPublishableTransferRules()`);
+    assert(!/getAllTransferRules\(|getTransferRulesForProfession\(|getTopTransfers\(|getHardestTransfers\(/.test(src), `${rel} must not read the unfiltered transfer rules`);
+  }
+});
+
 // 2026-10-09: electrician/new-york--texas was indexed on a Texas-only source while the page presented a statewide
 // New York electrician license, which doesn't exist (NYC DOB and other localities license the trades). The 32 NY
 // trade pairs were removed and now return 410 (middleware.ts). If this fails: don't re-add NY trade pairs until the

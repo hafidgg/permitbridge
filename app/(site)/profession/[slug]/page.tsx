@@ -8,7 +8,8 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { ProfessionIcon } from "@/components/profession/ProfessionIcon";
 import { portabilityLabel, formatDate } from "@/lib/utils";
-import { getAllProfessions, getProfessionBySlug, getAllStates, getTransferRulesForProfession, getGuideBySlug, NURSE_TRANSFER_GUIDE_SLUG } from "@/lib/data";
+import { getAllProfessions, getProfessionBySlug, getAllStates, getGuideBySlug, NURSE_TRANSFER_GUIDE_SLUG } from "@/lib/data";
+import { getPublishableTransferRules } from "@/lib/publishable-transfers";
 import { getAllPublicTransferRuleSlugs } from "@/lib/knowledge-base/transfer-rule-data";
 import { getAllSingleStateProfessionSlugs } from "@/lib/knowledge-base/electrician-state-data";
 import { getIndexableTradeStateSummaries } from "@/lib/trade-state-summary";
@@ -43,7 +44,7 @@ export default async function ProfessionPage({ params }: { params: Promise<{ slu
   if (!profession) notFound();
 
   const states = getAllStates();
-  const rules = getTransferRulesForProfession(profession.slug);
+  const rules = getPublishableTransferRules().filter((r) => r.profession === profession.slug);
   const relatedProfessions = getAllProfessions().filter((p) => profession.relatedProfessions.includes(p.slug));
   // Internal-linking fix: the old-pipeline "nurse" profession and the
   // knowledge-base's "registered-nurse" verified transfer pages use
@@ -90,9 +91,6 @@ export default async function ProfessionPage({ params }: { params: Promise<{ slu
 
         <div className="mt-6 flex flex-wrap gap-2 text-sm">
           <Badge variant="outline">Category: {profession.category}</Badge>
-          <Badge variant="outline">
-            Typical transfer: {profession.averageTransferDays[0]}–{profession.averageTransferDays[1]} days
-          </Badge>
           {profession.hasNationalCompact && <Badge variant="success">{profession.compactName}</Badge>}
           <Badge variant="outline">Updated {formatDate(profession.updatedAt)}</Badge>
           {profession.sourceUrl && (
@@ -104,6 +102,7 @@ export default async function ProfessionPage({ params }: { params: Promise<{ slu
           )}
         </div>
 
+        {rules.length > 0 && (
         <section className="mt-12">
           <h2 className="mb-4 text-2xl font-bold tracking-tight">
             Pick Your Move: {profession.shortName} License Transfers
@@ -114,7 +113,7 @@ export default async function ProfessionPage({ params }: { params: Promise<{ slu
           </p>
 
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-            {states.map((fromState) => (
+            {states.filter((fromState) => rules.some((r) => r.fromState === fromState.slug)).map((fromState) => (
               <Card key={fromState.slug}>
                 <CardContent className="pt-6">
                   <p className="mb-3 font-semibold">From {fromState.name}</p>
@@ -156,6 +155,7 @@ export default async function ProfessionPage({ params }: { params: Promise<{ slu
             ))}
           </div>
         </section>
+        )}
 
         {verifiedNurseTransfers.length > 0 && (
           <section className="mt-12 rounded-xl border border-border bg-muted/20 p-6">

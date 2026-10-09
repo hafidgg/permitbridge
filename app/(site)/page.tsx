@@ -5,11 +5,11 @@ import { PopularTransfers } from "@/components/home/PopularTransfers";
 import { LatestUpdates } from "@/components/home/LatestUpdates";
 import { FAQSection } from "@/components/home/FAQ";
 import { buildSearchIndex } from "@/lib/search";
+import { getPublishableTransferRules } from "@/lib/publishable-transfers";
 import {
   getProfessionSummaries,
   getAllProfessions,
   getAllStates,
-  getTopTransfers,
   getAllBlogPosts,
 } from "@/lib/data";
 import { buildMetadata } from "@/lib/seo";
@@ -44,7 +44,7 @@ export default function HomePage() {
   const professions = getProfessionSummaries();
   const allProfessions = getAllProfessions();
   const allStates = getAllStates();
-  const topTransfers = getTopTransfers(6);
+  const topTransfers = [...getPublishableTransferRules()].sort((a, b) => b.portabilityScore - a.portabilityScore).slice(0, 6);
   const posts = getAllBlogPosts().slice(0, 2);
   const searchIndex = buildSearchIndex();
 

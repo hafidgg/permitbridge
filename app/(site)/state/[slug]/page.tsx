@@ -7,7 +7,8 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { ProfessionIcon } from "@/components/profession/ProfessionIcon";
 import { portabilityLabel, formatDate } from "@/lib/utils";
-import { getAllStates, getStateBySlug, getAllProfessions, getAllTransferRules } from "@/lib/data";
+import { getAllStates, getStateBySlug, getAllProfessions } from "@/lib/data";
+import { getPublishableTransferRules } from "@/lib/publishable-transfers";
 import { buildMetadata, articleJsonLd } from "@/lib/seo";
 import { JsonLd } from "@/components/seo/JsonLd";
 
@@ -32,7 +33,7 @@ export default async function StatePage({ params }: { params: Promise<{ slug: st
   if (!state) notFound();
 
   const professions = getAllProfessions();
-  const allRules = getAllTransferRules();
+  const allRules = getPublishableTransferRules();
 
   return (
     <div>
@@ -72,6 +73,7 @@ export default async function StatePage({ params }: { params: Promise<{ slug: st
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {professions.map((profession) => {
               const rulesIntoState = allRules.filter((r) => r.profession === profession.slug && r.toState === state.slug);
+              if (rulesIntoState.length === 0) return null;
               const avgScore = Math.round(
                 rulesIntoState.reduce((sum, r) => sum + r.portabilityScore, 0) / (rulesIntoState.length || 1)
               );
