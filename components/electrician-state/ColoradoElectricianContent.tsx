@@ -108,6 +108,8 @@ export function ColoradoElectricianContent({
     .filter((d): d is string => !!d)
     .sort()
     .at(-1);
+  const boardUrl = journeyman.facts.reciprocityRules?.sourceUrl ?? master.facts.reciprocityRules?.sourceUrl;
+  const board = boardUrl ? getSourceByUrl(boardUrl) : undefined;
 
   return (
     <div className="container max-w-4xl pb-16">
@@ -123,6 +125,15 @@ export function ColoradoElectricianContent({
           The reciprocity rules for Journeyman and Master electricians are separately sourced and may cover different qualifying states. See each
           section below for the full, separately-sourced details.
         </p>
+        {board && (
+          <p className="mt-2 text-muted-foreground">
+            Independent reference, not legal advice. Confirm with the{" "}
+            <a href={board.website} target="_blank" rel="noopener noreferrer nofollow" className="text-primary hover:underline">
+              {board.agencyName}
+            </a>{" "}
+            before applying.
+          </p>
+        )}
       </div>
 
       <TierSection tier="journeyman" facts={journeyman.facts} />

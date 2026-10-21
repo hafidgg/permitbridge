@@ -49,6 +49,7 @@ export function TradeStateSummaryPage({ profession, state }: { profession: Trade
   if (!s) notFound();
   const label = PROFESSION_LABEL[profession];
   const path = `/${profession}/${state}`;
+  const board = s.shared?.source ?? s.pairs[0]?.source;
 
   return (
     <div>
@@ -112,6 +113,15 @@ export function TradeStateSummaryPage({ profession, state }: { profession: Trade
           ) : (
             <p className="text-sm text-muted-foreground">
               The route differs by origin state, so it is shown separately for each one below. Processing time: {PROCESSING_TIME_NOT_PUBLISHED.toLowerCase()}.
+            </p>
+          )}
+          {board && (
+            <p className="mt-3 text-sm text-muted-foreground">
+              Independent reference, not legal advice. Confirm with the{" "}
+              <a href={board.website} target="_blank" rel="noopener noreferrer nofollow" className="text-primary hover:underline">
+                {board.agencyName}
+              </a>{" "}
+              before applying.
             </p>
           )}
         </section>
