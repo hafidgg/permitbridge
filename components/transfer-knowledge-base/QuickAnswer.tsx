@@ -11,7 +11,7 @@ const REQUIREMENT_STATUS_TEXT: Record<string, string> = {
 };
 
 function fmt(value: unknown, formatter?: (v: unknown) => string): string {
-  if (value === "Unknown") return "Not yet confirmed";
+  if (value === "Unknown") return "Not published by the board";
   if (typeof value === "object" && value !== null && "status" in value) {
     const status = String((value as { status: unknown }).status);
     return REQUIREMENT_STATUS_TEXT[status] ?? status;

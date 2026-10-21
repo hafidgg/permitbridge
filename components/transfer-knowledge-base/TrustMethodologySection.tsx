@@ -16,10 +16,10 @@ export function TrustMethodologySection() {
         <li>Official government and licensing-board sources are preferred and are labeled distinctly from other sources.</li>
         <li>When only a secondary (non-official) source could be found, it is explicitly labeled "Secondary Source" rather than presented as official.</li>
         <li>When two official sources disagree, both are preserved and a documented, deterministic rule — not a guess — decides which is more specific to the exact fact in question.</li>
-        <li>Information that hasn't been confirmed by any source is shown as "Not yet confirmed" — it is never guessed, estimated, or copied from another state.</li>
+        <li>Anything we could not find on the board's own pages is listed under "Not published by the board" — it is never guessed, estimated, or copied from another state.</li>
         <li>
-          Human verification is tracked separately from automated research. A field found through research is <em>not</em> the same as a field a
-          person has reviewed and confirmed — this page shows that distinction honestly rather than treating research as verification.
+          Each requirement shows the source it came from and the date it was last researched. Research is not the same as a person reviewing and
+          confirming a field, so no field on this page is labeled &quot;verified&quot;.
         </li>
       </ol>
     </section>

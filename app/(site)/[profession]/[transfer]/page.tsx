@@ -220,6 +220,18 @@ export default async function TransferRulePage({ params }: { params: Promise<Pag
     (k) => !CRITICAL_TRANSFER_RULE_FIELDS.includes(k) && !(k === "universalRecognitionApplies" && rule.universalRecognitionApplies.value === "Unknown")
   );
 
+  // A processing time cited only to a non-board site (or an unregistered one)
+  // is not shown as a figure: it counts as not published by the board.
+  const isUnpublished = (key: (typeof ALL_TRANSFER_FIELD_KEYS)[number]): boolean => {
+    const field = rule[key] as VerifiedField<unknown>;
+    if (field.value === "Unknown") return true;
+    if (key !== "processingTime") return false;
+    const source = field.sourceUrl ? getSourceByUrl(field.sourceUrl) : undefined;
+    return !source || source.authorityLevel === "supplementary";
+  };
+  const unpublishedLabels = [...criticalFields, ...supportingFields].filter(isUnpublished).map((k) => FIELD_LABELS[k]);
+  const board = rule.transferMechanism.sourceUrl ? getSourceByUrl(rule.transferMechanism.sourceUrl) : undefined;
+
   const otherTransfers = getAllPublicTransferRuleSlugs().filter((s) => s.transfer !== resolvedParams.transfer);
 
   const faqs = [
@@ -283,6 +295,15 @@ export default async function TransferRulePage({ params }: { params: Promise<Pag
         {/* Quick Answer */}
         <div className="mt-8">
           <QuickAnswer rule={rule} />
+          {board && (
+            <p className="mt-3 text-sm text-muted-foreground">
+              Independent reference, not legal advice. Confirm with the{" "}
+              <a href={board.website} target="_blank" rel="noopener noreferrer nofollow" className="text-primary hover:underline">
+                {board.agencyName}
+              </a>{" "}
+              before applying.
+            </p>
+          )}
         </div>
 
         {/* Critical requirements */}
@@ -290,14 +311,14 @@ export default async function TransferRulePage({ params }: { params: Promise<Pag
           <h2 className="mb-2 text-2xl font-bold tracking-tight">Critical Requirements</h2>
           <p className="mb-4 text-sm text-muted-foreground">These are the requirements most likely to affect whether — and how — this transfer works.</p>
           <div className="rounded-xl border border-border px-6">
-            {criticalFields.map((key) => (
+            {criticalFields.filter((k) => !isUnpublished(k)).map((key) => (
               <RequirementRow
                 key={key}
                 label={FIELD_LABELS[key]}
                 isCritical
                 field={rule[key] as VerifiedField<unknown>}
                 source={(rule[key] as VerifiedField<unknown>).sourceUrl ? getSourceByUrl((rule[key] as VerifiedField<unknown>).sourceUrl!) : undefined}
-                valueFormatter={key === "applicationFeeUsd" ? (v) => formatUsd(v as number) : undefined}
+                valueFormatter={key === "applicationFeeUsd" ? (v) => formatUsd(v as number) : key === "transferMechanism" ? (v) => MECHANISM_LABEL[v as string] ?? String(v) : undefined}
               />
             ))}
           </div>
@@ -308,7 +329,7 @@ export default async function TransferRulePage({ params }: { params: Promise<Pag
           <h2 className="mb-2 text-2xl font-bold tracking-tight">Additional Details</h2>
           <p className="mb-4 text-sm text-muted-foreground">Useful for planning, but less likely to change whether the transfer is possible.</p>
           <div className="rounded-xl border border-border px-6">
-            {supportingFields.map((key) => (
+            {supportingFields.filter((k) => !isUnpublished(k)).map((key) => (
               <RequirementRow
                 key={key}
                 label={FIELD_LABELS[key]}
@@ -317,6 +338,9 @@ export default async function TransferRulePage({ params }: { params: Promise<Pag
               />
             ))}
           </div>
+          {unpublishedLabels.length > 0 && (
+            <p className="mt-4 text-sm text-muted-foreground">Not published by the board: {unpublishedLabels.join(", ")}.</p>
+          )}
         </section>
 
         {/* Trust & Methodology */}
