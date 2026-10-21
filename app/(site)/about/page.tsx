@@ -39,17 +39,17 @@ export default function AboutPage() {
 
           <h2>How Our Data Is Sourced</h2>
           <p>
-            Every rule on {SITE_NAME} comes from the official licensing board or state agency responsible for that
-            license, and is checked by hand against the board&apos;s own wording. Pages link to the official board
-            source and show the date each requirement was last verified. When a board does not publish something,
-            such as a processing time, we say so instead of estimating. Read the full{" "}
+            Rules on {SITE_NAME} come from the licensing board or state agency responsible for that license wherever
+            the board publishes them. When a page relies on any other source, that source is labeled &quot;Secondary
+            Source&quot;. Pages link to their sources and show the date each requirement was last researched. When a
+            board does not publish something, such as a processing time, we say so instead of estimating. Read the full{" "}
             <Link href="/methodology">methodology</Link> for details.
           </p>
 
           <h2>How We Stay Free</h2>
           <p>
             {SITE_NAME} is free to use. We may show advertising to cover running costs. Advertising never influences
-            our licensing information or scoring.
+            our licensing information.
           </p>
 
           <h2>What We Are Not</h2>
