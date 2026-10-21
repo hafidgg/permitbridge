@@ -21,6 +21,11 @@
   padding-left: 1.5rem;
   margin-bottom: 1rem;
 }
+.prose-permitbridge ol {
+  list-style: decimal;
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
 .prose-permitbridge li {
   margin-bottom: 0.5rem;
 }
