@@ -56,7 +56,8 @@ const BULLET = /^- /;
 const NUMBERED = /^\d+\. /;
 
 export function MarkdownBlock({ source }: { source: string }) {
-  const blocks = source.trim().split(/\n\n+/);
+  // A Windows checkout (core.autocrlf) gives CRLF files; blocks split on blank lines either way.
+  const blocks = source.replace(/\r\n/g, "\n").trim().split(/\n\n+/);
 
   return (
     <div className="prose-permitbridge">

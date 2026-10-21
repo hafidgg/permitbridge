@@ -105,7 +105,7 @@ export function getAllGuides(): GuideSummary[] {
       category: "Fundamentals",
       publishedAt: "2026-04-02",
       updatedAt: "2026-06-15",
-      readingMinutes: 7,
+      readingMinutes: 2,
     },
     {
       slug: "how-to-request-license-verification",
@@ -114,8 +114,8 @@ export function getAllGuides(): GuideSummary[] {
         "Nearly every interstate license transfer starts with a verification request. A step-by-step walkthrough of how to request one without delays.",
       category: "How-To",
       publishedAt: "2026-05-18",
-      updatedAt: "2026-05-18",
-      readingMinutes: 6,
+      updatedAt: "2026-10-21",
+      readingMinutes: 2,
     },
     {
       slug: NURSE_TRANSFER_GUIDE_SLUG,
@@ -125,7 +125,7 @@ export function getAllGuides(): GuideSummary[] {
       category: "How-To",
       publishedAt: "2026-10-01",
       updatedAt: "2026-10-01",
-      readingMinutes: 6,
+      readingMinutes: 4,
       searchKeywords: ["nurse", "registered nurse", "RN", "Nurse Licensure Compact", "NLC", "Nursys", "endorsement"],
     },
   ];
@@ -146,7 +146,7 @@ export function getAllBlogPosts(): BlogPostSummary[] {
       publishedAt: "2026-06-22",
       updatedAt: "2026-06-22",
       tag: "Healthcare",
-      readingMinutes: 4,
+      readingMinutes: 1,
     },
   ];
 }
