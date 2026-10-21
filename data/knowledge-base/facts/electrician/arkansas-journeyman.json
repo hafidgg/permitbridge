@@ -83,7 +83,7 @@
     "confidence": 0,
     "confidenceLevel": "unknown",
     "history": [],
-    "notes": "Research for this Arkansas expansion focused on the Board's own Reciprocal Agreements mechanism (see reciprocityRules); no separate Arkansas Universal License Recognition statute for electricians was independently identified. Absence of a finding is not evidence of absence — left Unknown rather than assumed false, matching the same caution applied in colorado-journeyman.json."
+    "notes": "Research for this Arkansas expansion focused on the Board's own Reciprocal Agreements mechanism ((see undefined and the reciprocal-agreement rules)); no separate Arkansas Universal License Recognition statute for electricians was independently identified. Absence of a finding is not evidence of absence — left Unknown rather than assumed false, matching the same caution applied in colorado-journeyman.json."
   },
   "compactMembership": {
     "value": false,
@@ -254,7 +254,7 @@
     "confidence": 0,
     "confidenceLevel": "unknown",
     "history": [],
-    "notes": "Arkansas's rules do not define a distinct 'endorsement' or 'reciprocity issuance' fee separate from the standard $80 journeyman examination fee (17 CAR 210-403(c)) — and whether reciprocal applicants must even pay that exam fee is itself unconfirmed (see requiredExams). Not recorded here to avoid conflating the general exam fee with a reciprocity-specific fee, matching Colorado's own explicit 'NOT independently confirmed' treatment of this field in colorado-journeyman.json."
+    "notes": "Arkansas's rules do not define a distinct 'endorsement' or 'reciprocity issuance' fee separate from the standard $80 journeyman examination fee (17 CAR 210-403(c)) — and whether reciprocal applicants must even pay that exam fee is itself unconfirmed ((see undefined and the exam requirements)). Not recorded here to avoid conflating the general exam fee with a reciprocity-specific fee, matching Colorado's own explicit 'NOT independently confirmed' treatment of this field in colorado-journeyman.json."
   },
   "renewalFeeUsd": {
     "value": 25,
