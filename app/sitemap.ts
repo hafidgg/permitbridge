@@ -50,7 +50,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const stateRoutes: MetadataRoute.Sitemap = getAllStates().map((s) => ({
     url: `${SITE_URL}/state/${s.slug}`,
-    lastModified: s.updatedAt,
+    // state hubs list RN pairs and the trade/electrician state pages, so linking-only changes bump them too.
+    lastModified: latestOf(s.updatedAt, LINKING_STRUCTURE_UPDATED_AT),
     changeFrequency: "weekly",
     priority: 0.9,
   }));
