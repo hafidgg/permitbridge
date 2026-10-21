@@ -4,13 +4,12 @@ export const SITE_TAGLINE = "Know exactly what it takes to move your license.";
 export const CONTACT_EMAIL = "contact@getpermitbridge.com";
 
 export const SITE_DESCRIPTION =
-  "PermitBridge is the free, independent reference for transferring professional and trade licenses between US states — reciprocity, endorsement, exams, fees, and step-by-step timelines.";
+  "PermitBridge is the free, independent reference for transferring professional and trade licenses between US states — reciprocity, endorsement, exams, fees, and step-by-step requirements.";
 
 export const NAV_LINKS = [
   { href: "/professions", label: "Professions" },
   { href: "/states", label: "States" },
   { href: "/guides", label: "Guides" },
-  { href: "/blog", label: "Blog" },
   { href: "/about", label: "About" },
 ] as const;
 
@@ -19,7 +18,6 @@ export const FOOTER_LINKS = {
     { href: "/about", label: "About Us" },
     { href: "/methodology", label: "Methodology" },
     { href: "/contact", label: "Contact" },
-    { href: "/blog", label: "Blog" },
   ],
   Resources: [
     { href: "/professions", label: "All Professions" },

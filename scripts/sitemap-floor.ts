@@ -29,6 +29,13 @@ export type SitemapGroup =
   | "tradeStateSummary"
   | "singleStateProfession";
 
+/**
+ * Groups allowed to be empty. Only "blog": the blog was removed on
+ * 2026-10-21 (its one post had no sourced facts). Every other group must
+ * still be non-empty, and the totals below are unchanged.
+ */
+const OPTIONAL_GROUPS: ReadonlySet<SitemapGroup> = new Set(["blog"]);
+
 const ALL_GROUPS: SitemapGroup[] = [
   "static",
   "profession",
@@ -68,7 +75,7 @@ export function checkSitemapFloor(urls: string[]): string[] {
   if (urls.length < MIN_TOTAL_URLS) problems.push(`only ${urls.length} URLs (floor ${MIN_TOTAL_URLS})`);
   if (counts.transfer < MIN_TRANSFER_URLS) problems.push(`only ${counts.transfer} /transfer URLs (floor ${MIN_TRANSFER_URLS})`);
   for (const group of ALL_GROUPS) {
-    if (counts[group] === 0) problems.push(`group "${group}" is empty`);
+    if (counts[group] === 0 && !OPTIONAL_GROUPS.has(group)) problems.push(`group "${group}" is empty`);
   }
   const duplicates = urls.length - new Set(urls).size;
   if (duplicates > 0) problems.push(`${duplicates} duplicate URLs`);

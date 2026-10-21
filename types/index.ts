@@ -135,18 +135,8 @@ export interface GuideSummary {
   searchKeywords?: string[];
 }
 
-export interface BlogPostSummary {
-  slug: string;
-  title: string;
-  description: string;
-  publishedAt: string;
-  updatedAt: string;
-  tag: string;
-  readingMinutes: number;
-}
-
 export interface SearchDocument {
-  type: "profession" | "state" | "transfer" | "guide" | "blog";
+  type: "profession" | "state" | "transfer" | "guide";
   title: string;
   description: string;
   url: string;

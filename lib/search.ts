@@ -12,7 +12,6 @@ import {
   getAllProfessions,
   getAllStates,
   getAllGuides,
-  getAllBlogPosts,
 } from "@/lib/data";
 import { getAllPublicTransferRuleSlugs } from "@/lib/knowledge-base/transfer-rule-data";
 import { getPublishableTransferRules } from "@/lib/publishable-transfers";
@@ -114,16 +113,6 @@ export function buildSearchIndex(): SearchDocument[] {
       description: g.description,
       url: `/guides/${g.slug}`,
       keywords: [g.title, g.category, "guide", ...(g.searchKeywords ?? [])],
-    });
-  }
-
-  for (const b of getAllBlogPosts()) {
-    docs.push({
-      type: "blog",
-      title: b.title,
-      description: b.description,
-      url: `/blog/${b.slug}`,
-      keywords: [b.title, b.tag, "update"],
     });
   }
 

@@ -25,10 +25,14 @@ const GONE_TRANSFER_PATHS = new Set<string>(goneTransferPaths);
 // Removed 2026-10-09: two articles with unsourced Universal License
 // Recognition claims, and the Portability Score widget (the score was an
 // unsourced estimate and is no longer published anywhere).
+// Removed 2026-10-21: the blog. Its one post had no specific, sourced facts,
+// so /blog itself is gone too.
 const GONE_CONTENT_PATHS = new Set([
   "/guides/universal-license-recognition-explained",
   "/blog/2026-ulr-state-tracker-update",
   "/embed/portability-score",
+  "/blog",
+  "/blog/nurse-licensure-compact-2026-changes",
 ]);
 
 function isGone(rawPathname: string): boolean {

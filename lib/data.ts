@@ -17,7 +17,6 @@ import type {
   StateSummary,
   TransferRule,
   GuideSummary,
-  BlogPostSummary,
 } from "@/types";
 
 const DATA_DIR = path.join(process.cwd(), "data");
@@ -137,24 +136,6 @@ export function getGuideBySlug(slug: string): GuideSummary | undefined {
   return getAllGuides().find((g) => g.slug === slug);
 }
 
-export function getAllBlogPosts(): BlogPostSummary[] {
-  return [
-    {
-      slug: "nurse-licensure-compact-2026-changes",
-      title: "What Changed in the Nurse Licensure Compact in 2026",
-      description: "New member states, implementation delays, and what they mean for traveling and relocating nurses.",
-      publishedAt: "2026-06-22",
-      updatedAt: "2026-06-22",
-      tag: "Healthcare",
-      readingMinutes: 1,
-    },
-  ];
-}
-
-export function getBlogPostBySlug(slug: string): BlogPostSummary | undefined {
-  return getAllBlogPosts().find((p) => p.slug === slug);
-}
-
 // ---------- Long-form content bodies (content/) ----------
 
 export function getGuideBody(slug: string): string | undefined {
@@ -163,8 +144,3 @@ export function getGuideBody(slug: string): string | undefined {
   return fs.readFileSync(filePath, "utf-8");
 }
 
-export function getBlogBody(slug: string): string | undefined {
-  const filePath = path.join(process.cwd(), "content", "blog", `${slug}.md`);
-  if (!fs.existsSync(filePath)) return undefined;
-  return fs.readFileSync(filePath, "utf-8");
-}

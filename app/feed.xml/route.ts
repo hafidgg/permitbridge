@@ -1,17 +1,12 @@
-import { getAllBlogPosts, getAllGuides } from "@/lib/data";
+import { getAllGuides } from "@/lib/data";
 import { SITE_NAME, SITE_DESCRIPTION } from "@/lib/constants";
 import { SITE_URL } from "@/lib/utils";
 
 /**
  * Real RSS 2.0 syndication feed, generated from the exact same data
- * functions the blog/guides pages themselves already use — never a
+ * function the guides pages themselves already use — never a
  * separately-maintained content list, so it can never drift out of sync
- * with what's actually published.
- *
- * Combines blog posts and guides into one feed (rather than two nearly-
- * empty separate feeds) since content volume is still small; each item
- * is clearly labeled by category so a reader/aggregator can distinguish
- * them.
+ * with what's actually published. (The blog was removed 2026-10-21.)
  *
  * Purpose: lets RSS aggregators, industry-news roundups, and AI/LLM
  * crawlers that respect syndication feeds pick up new content
@@ -27,13 +22,6 @@ function escapeXml(value: string): string {
 }
 
 export async function GET() {
-  const blogItems = getAllBlogPosts().map((p) => ({
-    title: p.title,
-    description: p.description,
-    url: `${SITE_URL}/blog/${p.slug}`,
-    publishedAt: p.publishedAt,
-    category: "Blog",
-  }));
   const guideItems = getAllGuides().map((g) => ({
     title: g.title,
     description: g.description,
@@ -42,7 +30,7 @@ export async function GET() {
     category: "Guide",
   }));
 
-  const items = [...blogItems, ...guideItems].sort(
+  const items = [...guideItems].sort(
     (a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
   );
 

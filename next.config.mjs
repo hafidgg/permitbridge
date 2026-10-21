@@ -42,7 +42,6 @@ const nextConfig = {
       "/state/[slug]",
       "/transfer/[profession]/[from]/[to]",
       "/guides/[slug]",
-      "/blog/[slug]",
     ].map((route) => [
       route,
       [

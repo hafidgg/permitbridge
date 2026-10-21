@@ -72,7 +72,6 @@ export async function GET() {
     "## Other resources",
     "",
     `- Guides: ${SITE_URL}/guides`,
-    `- Blog / policy updates: ${SITE_URL}/blog`,
     `- Full sitemap: ${SITE_URL}/sitemap.xml`,
     `- RSS feed: ${SITE_URL}/feed.xml`,
     `- About PermitBridge: ${SITE_URL}/about`,

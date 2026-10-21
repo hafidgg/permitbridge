@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Hero } from "@/components/home/Hero";
 import { PopularProfessions } from "@/components/home/PopularProfessions";
 import { PopularTransfers } from "@/components/home/PopularTransfers";
-import { LatestUpdates } from "@/components/home/LatestUpdates";
 import { FAQSection } from "@/components/home/FAQ";
 import { buildSearchIndex } from "@/lib/search";
 import { getPublishableTransferRules } from "@/lib/publishable-transfers";
@@ -10,7 +9,6 @@ import {
   getProfessionSummaries,
   getAllProfessions,
   getAllStates,
-  getAllBlogPosts,
 } from "@/lib/data";
 import { buildMetadata } from "@/lib/seo";
 import { SITE_NAME } from "@/lib/constants";
@@ -18,7 +16,7 @@ import { SITE_NAME } from "@/lib/constants";
 export const metadata: Metadata = buildMetadata({
   title: `${SITE_NAME} — Know Exactly What It Takes to Move Your License`,
   description:
-    "Free, independent reference for transferring professional and trade licenses between US states. Reciprocity, endorsement, exams, fees, and timelines for electricians, nurses, plumbers, HVAC techs, and contractors.",
+    "Free, independent reference for transferring professional and trade licenses between US states. Reciprocity, endorsement, exams and fees for electricians, nurses, plumbers, HVAC techs, and contractors.",
   path: "/",
 });
 
@@ -36,7 +34,7 @@ const HOMEPAGE_FAQS = [
   {
     question: "Which professions does PermitBridge cover?",
     answer:
-      "We currently cover electricians, registered nurses, plumbers, HVAC technicians, and general contractors across five states, and we are expanding coverage every month.",
+      "We currently cover electricians, registered nurses, plumbers, HVAC technicians, and general contractors. Each page lists the state pairs we have sourced from the destination board.",
   },
 ];
 
@@ -45,7 +43,6 @@ export default function HomePage() {
   const allProfessions = getAllProfessions();
   const allStates = getAllStates();
   const topTransfers = [...getPublishableTransferRules()].sort((a, b) => b.updatedAt.localeCompare(a.updatedAt)).slice(0, 6);
-  const posts = getAllBlogPosts().slice(0, 2);
   const searchIndex = buildSearchIndex();
 
   const enrichedTransfers = topTransfers
@@ -63,7 +60,6 @@ export default function HomePage() {
       <Hero searchIndex={searchIndex} />
       <PopularProfessions professions={professions} />
       <PopularTransfers transfers={enrichedTransfers} />
-      <LatestUpdates posts={posts} />
       <FAQSection faqs={HOMEPAGE_FAQS} title="Frequently Asked Questions" />
     </>
   );

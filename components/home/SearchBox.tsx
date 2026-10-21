@@ -3,7 +3,7 @@
 import * as React from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { Search, FileText, MapPinned, ArrowLeftRight, BookOpen, Newspaper } from "lucide-react";
+import { Search, FileText, MapPinned, ArrowLeftRight, BookOpen } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import type { SearchDocument } from "@/types";
 
@@ -12,7 +12,6 @@ const TYPE_ICON: Record<SearchDocument["type"], React.ComponentType<{ className?
   state: MapPinned,
   transfer: ArrowLeftRight,
   guide: BookOpen,
-  blog: Newspaper,
 };
 
 function scoreDocument(doc: SearchDocument, query: string): number {

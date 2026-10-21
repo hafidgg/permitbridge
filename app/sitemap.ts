@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { getAllProfessions, getAllStates, getAllTransferRules, getAllGuides, getAllBlogPosts } from "@/lib/data";
+import { getAllProfessions, getAllStates, getAllTransferRules, getAllGuides } from "@/lib/data";
 import { getAllPublicTransferRuleSlugs, getPublicTransferRule, summarizeEvidence, getSourceByUrl } from "@/lib/knowledge-base/transfer-rule-data";
 import { isTradeTransferPublishable } from "@/lib/knowledge-base/trade-transfer-gate";
 import { getIndexableTradeStateSummaries } from "@/lib/trade-state-summary";
@@ -32,7 +32,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE_URL}/professions`, changeFrequency: "weekly", priority: 0.8 },
     { url: `${SITE_URL}/states`, changeFrequency: "weekly", priority: 0.8 },
     { url: `${SITE_URL}/guides`, changeFrequency: "weekly", priority: 0.7 },
-    { url: `${SITE_URL}/blog`, changeFrequency: "daily", priority: 0.7 },
     { url: `${SITE_URL}/about`, changeFrequency: "yearly", priority: 0.4 },
     { url: `${SITE_URL}/methodology`, changeFrequency: "yearly", priority: 0.4 },
     { url: `${SITE_URL}/contact`, changeFrequency: "yearly", priority: 0.3 },
@@ -75,13 +74,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: g.updatedAt,
     changeFrequency: "monthly",
     priority: 0.6,
-  }));
-
-  const blogRoutes: MetadataRoute.Sitemap = getAllBlogPosts().map((b) => ({
-    url: `${SITE_URL}/blog/${b.slug}`,
-    lastModified: b.updatedAt,
-    changeFrequency: "monthly",
-    priority: 0.5,
   }));
 
   // Phase 3.3: the 5 real, human-review-pending Registered Nurse transfer
@@ -132,5 +124,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [...staticRoutes, ...professionRoutes, ...stateRoutes, ...transferRoutes, ...guideRoutes, ...blogRoutes, ...knowledgeBaseTransferRoutes, ...singleStateProfessionRoutes, ...tradeStateSummaryRoutes];
+  return [...staticRoutes, ...professionRoutes, ...stateRoutes, ...transferRoutes, ...guideRoutes, ...knowledgeBaseTransferRoutes, ...singleStateProfessionRoutes, ...tradeStateSummaryRoutes];
 }
