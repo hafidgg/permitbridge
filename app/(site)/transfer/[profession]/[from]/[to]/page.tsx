@@ -100,7 +100,8 @@ export default async function TransferPage({ params }: { params: Promise<Transfe
       <JsonLd
         data={articleJsonLd({
           title: `${profession.shortName} License: Transfer From ${from.name} to ${to.name}`,
-          description: rule.notes,
+          // rule.notes is the internal research record (correction history, extraction notes), not public copy.
+          description: `What it takes for a licensed ${profession.shortName.toLowerCase()} in ${from.name} to become licensed in ${to.name}: ${rule.pathwayLabel.toLowerCase()}.`,
           path: `/transfer/${profession.slug}/${from.slug}/${to.slug}`,
           publishedAt: rule.updatedAt,
           updatedAt: rule.updatedAt,
@@ -149,6 +150,15 @@ export default async function TransferPage({ params }: { params: Promise<Transfe
 
         <div className="mt-8">
           <TransferFactsCard rule={rule} />
+          {rule.sourceUrl && (
+            <p className="mt-3 text-sm text-muted-foreground">
+              Independent reference, not legal advice. Confirm with the{" "}
+              <a href={rule.sourceUrl} target="_blank" rel="noopener noreferrer nofollow" className="text-primary hover:underline">
+                {getSourceByUrl(rule.sourceUrl)?.agencyName ?? rule.officialSourceName}
+              </a>{" "}
+              before applying.
+            </p>
+          )}
         </div>
 
         <section className="mt-12 grid grid-cols-1 gap-12 lg:grid-cols-3">
@@ -156,10 +166,6 @@ export default async function TransferPage({ params }: { params: Promise<Transfe
             <h2 className="mb-6 text-2xl font-bold tracking-tight">Step-by-Step Process</h2>
             <StepsList steps={rule.steps} />
 
-            <div className="mt-8 rounded-lg border border-border bg-muted/30 p-6 text-sm leading-relaxed text-muted-foreground">
-              <strong className="text-foreground">Note: </strong>
-              {rule.notes}
-            </div>
           </div>
 
           <aside className="rounded-lg border border-border p-6">
