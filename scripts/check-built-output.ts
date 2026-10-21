@@ -10,6 +10,12 @@
  *     ordinary alphabetical state lists, e.g. an electrician reciprocity list)
  *   - difficulty ratings and the Portability Score
  * These values are template defaults with no source (see types/index.ts).
+ *
+ * It also checks the visible text of every prerendered .html page (scripts
+ * and styles stripped, so data keys in the RSC payload don't count) for
+ * internal tokens that leaked into prose: "see endorsementRules"-style field
+ * references, camelCase field names, snake_case enum values
+ * ("compact_privilege") and unrendered markdown ("**", "## ").
  */
 import fs from "node:fs";
 import path from "node:path";
@@ -35,6 +41,21 @@ for (const p of professions) {
   }
 }
 
+const visibleForbidden: { label: string; re: RegExp }[] = [
+  { label: "field reference", re: /\bsee [a-z]+[A-Z]\w+/ },
+  { label: "camelCase field name", re: /\b[a-z]+(?:[A-Z][a-z]+)+\b/ },
+  { label: "snake_case enum", re: /\b[a-z]+(?:_[a-z]+)+\b/ },
+  { label: "unrendered markdown", re: /\*\*|(?:^|\s)## / },
+];
+
+function visibleText(html: string): string {
+  return html
+    .replace(/<(script|style|template)[^>]*>[\s\S]*?<\/\1>/g, " ")
+    .replace(/<[^>]+>/g, " ")
+    .replace(/&[a-z]+;|&#\d+;/g, " ")
+    .replace(/https?:\/\/\S+/g, " ");
+}
+
 function walk(dir: string): string[] {
   return fs.readdirSync(dir, { withFileTypes: true }).flatMap((e) => {
     const full = path.join(dir, e.name);
@@ -54,8 +75,14 @@ for (const file of walk(APP)) {
     const m = text.match(re);
     if (m) failures.push(`${path.relative(APP, file)}: ${label} ("${m[0]}")`);
   }
+  if (!file.endsWith(".html")) continue;
+  const visible = visibleText(text);
+  for (const { label, re } of visibleForbidden) {
+    const m = visible.match(re);
+    if (m) failures.push(`${path.relative(APP, file)}: ${label} in visible text ("${m[0]}")`);
+  }
 }
-console.log("Built-output check — unsourced generator data");
+console.log("Built-output check — unsourced generator data and leaked internal tokens");
 if (failures.length) {
   for (const f of failures.slice(0, 50)) console.error(`  ✖ ${f}`);
   console.error(`✖ ${failures.length} hit(s). Remove the render, don't edit the data to dodge the match.`);
