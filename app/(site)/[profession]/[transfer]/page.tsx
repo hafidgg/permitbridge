@@ -85,6 +85,8 @@ export function generateStaticParams() {
 
 const stateName = stateDisplayName;
 
+const BOARD_ONLY_FIELDS: ReadonlySet<string> = new Set(["processingTime", "applicationFeeUsd", "otherRequiredFees", "examRequirement", "experienceRequirement"]);
+
 /**
  * Per-state meta descriptions for the single-state electrician pages.
  * Numbers are pulled directly from each state's sourced reciprocityRules
@@ -223,12 +225,12 @@ export default async function TransferRulePage({ params }: { params: Promise<Pag
     (k) => !CRITICAL_TRANSFER_RULE_FIELDS.includes(k) && !(k === "universalRecognitionApplies" && rule.universalRecognitionApplies.value === "Unknown")
   );
 
-  // A processing time cited only to a non-board site (or an unregistered one)
-  // is not shown as a figure: it counts as not published by the board.
+  // A processing time, fee, exam or experience figure cited only to a non-board
+  // site (or an unregistered one) is not shown: it counts as not published by the board.
   const isUnpublished = (key: (typeof ALL_TRANSFER_FIELD_KEYS)[number]): boolean => {
     const field = rule[key] as VerifiedField<unknown>;
     if (field.value === "Unknown") return true;
-    if (key !== "processingTime") return false;
+    if (!BOARD_ONLY_FIELDS.has(key)) return false;
     const source = field.sourceUrl ? getSourceByUrl(field.sourceUrl) : undefined;
     return !source || source.authorityLevel === "supplementary";
   };
