@@ -33,14 +33,8 @@ import type { ProfessionStateFacts, VerifiedField } from "@/types/knowledge-base
  */
 
 function FieldRow({ label, field }: { label: string; field: VerifiedField<unknown> }) {
-  if (field.value === "Unknown") {
-    return (
-      <div className="flex items-start justify-between gap-4 border-b border-border py-3 last:border-0">
-        <span className="text-sm font-medium text-muted-foreground">{label}</span>
-        <span className="text-right text-sm text-muted-foreground">Not yet confirmed</span>
-      </div>
-    );
-  }
+  // Unknown fields are listed once per tier ("Not published by the board: ..."), not as rows.
+  if (field.value === "Unknown") return null;
   const source = field.sourceUrl ? getSourceByUrl(field.sourceUrl) : undefined;
   const displayValue =
     typeof field.value === "boolean" ? (field.value ? "Yes" : "No") : typeof field.value === "object" ? JSON.stringify(field.value) : String(field.value);
@@ -63,6 +57,19 @@ function TierSection({ tier, facts }: { tier: string; facts: ProfessionStateFact
   const tierLabel = tier === "journeyman" ? "Journeyman Electrician" : "Master Electrician";
   const reciprocityAllowed = facts.reciprocityRules.value !== "Unknown" && !String(facts.reciprocityRules.value).toLowerCase().includes("may not be granted by reciprocity");
   const badgeVariant: "success" | "destructive" = reciprocityAllowed ? "success" : "destructive";
+  const rows: Array<{ label: string; field: VerifiedField<unknown> }> = [
+    { label: "Reciprocity Rules", field: facts.reciprocityRules },
+    { label: "Licensing Board", field: facts.licensingBoard },
+    { label: "Exam Requirement", field: facts.requiredExams },
+    { label: "Experience Requirement", field: facts.requiredExperience },
+    { label: "Application Fee", field: facts.endorsementFeeUsd },
+    { label: "Processing Time", field: facts.processingTime },
+  ];
+  // ULR is omitted entirely when Unknown (it reads as if it might apply), so it's not in the unpublished list either.
+  if (facts.universalLicenseRecognitionStatus.value !== "Unknown") {
+    rows.push({ label: "Universal License Recognition", field: facts.universalLicenseRecognitionStatus });
+  }
+  const unpublished = rows.filter((r) => r.field.value === "Unknown").map((r) => r.label);
 
   return (
     <section className="mt-10">
@@ -71,16 +78,11 @@ function TierSection({ tier, facts }: { tier: string; facts: ProfessionStateFact
         <Badge variant={badgeVariant}>{reciprocityAllowed ? "Reciprocity Available" : "Reciprocity NOT Available"}</Badge>
       </div>
       <div className="mt-4 rounded-xl border border-border px-6">
-        <FieldRow label="Reciprocity Rules" field={facts.reciprocityRules} />
-        <FieldRow label="Licensing Board" field={facts.licensingBoard} />
-        <FieldRow label="Exam Requirement" field={facts.requiredExams} />
-        <FieldRow label="Experience Requirement" field={facts.requiredExperience} />
-        <FieldRow label="Application Fee" field={facts.endorsementFeeUsd} />
-        <FieldRow label="Processing Time" field={facts.processingTime} />
-        {facts.universalLicenseRecognitionStatus.value !== "Unknown" && (
-          <FieldRow label="Universal License Recognition" field={facts.universalLicenseRecognitionStatus} />
-        )}
+        {rows.map((r) => (
+          <FieldRow key={r.label} label={r.label} field={r.field} />
+        ))}
       </div>
+      {unpublished.length > 0 && <p className="mt-3 text-sm text-muted-foreground">Not published by the board: {unpublished.join(", ")}.</p>}
     </section>
   );
 }
