@@ -11,6 +11,8 @@ import { getAllStates, getStateBySlug, getAllProfessions } from "@/lib/data";
 import { getPublishableTransferRules } from "@/lib/publishable-transfers";
 import { buildMetadata, articleJsonLd } from "@/lib/seo";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { SourcedRoutesTable } from "@/components/transfer/SourcedRoutesTable";
+import { getStateCoverage } from "@/lib/state-coverage";
 
 export function generateStaticParams() {
   return getAllStates().map((s) => ({ slug: s.slug }));
@@ -34,6 +36,7 @@ export default async function StatePage({ params }: { params: Promise<{ slug: st
 
   const professions = getAllProfessions();
   const allRules = getPublishableTransferRules();
+  const coverage = getStateCoverage(state.slug, state.name);
 
   return (
     <div>
@@ -94,6 +97,62 @@ export default async function StatePage({ params }: { params: Promise<{ slug: st
             })}
           </div>
         </section>
+
+        {coverage.into.length > 0 && (
+          <section className="mt-12">
+            <h2 className="mb-2 text-2xl font-bold tracking-tight">Sourced Routes Into {state.name}</h2>
+            <p className="mb-4 max-w-2xl text-sm text-muted-foreground">
+              Moving a license into {state.name} is decided by the {state.name} board, not by the state you are leaving. These{" "}
+              {coverage.into.length} routes are each read from the {state.name} board document named in the last column; open a route for its
+              full step-by-step requirements.
+            </p>
+            <SourcedRoutesTable routes={coverage.into} />
+          </section>
+        )}
+
+        {coverage.outOf.length > 0 && (
+          <section className="mt-12">
+            <h2 className="mb-2 text-2xl font-bold tracking-tight">Sourced Routes From {state.name} to Other States</h2>
+            <p className="mb-4 max-w-2xl text-sm text-muted-foreground">
+              If you hold a {state.name} license and are moving away, the destination state&apos;s board sets the rules. These{" "}
+              {coverage.outOf.length} routes start from a {state.name} license; the board cited is the destination state&apos;s.
+            </p>
+            <SourcedRoutesTable routes={coverage.outOf} />
+          </section>
+        )}
+
+        {coverage.statePages.length > 0 && (
+          <section className="mt-12">
+            <h2 className="mb-4 text-xl font-bold tracking-tight">{state.name} License Pages by Profession</h2>
+            <ul className="list-disc space-y-2 pl-5 text-sm">
+              {coverage.statePages.map((p) => (
+                <li key={p.href}>
+                  <Link href={p.href} className="text-primary hover:underline">
+                    {p.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
+
+        {coverage.boards.length > 0 && (
+          <section className="mt-12">
+            <h2 className="mb-2 text-xl font-bold tracking-tight">{state.name} Boards and Documents We Cite</h2>
+            <p className="mb-4 max-w-2xl text-sm text-muted-foreground">
+              Check fees and forms with these sources before you apply; they are the documents the routes above are read from.
+            </p>
+            <ul className="list-disc space-y-2 pl-5 text-sm">
+              {coverage.boards.map((b) => (
+                <li key={b.website}>
+                  <a href={b.website} target="_blank" rel="noopener noreferrer nofollow" className="text-primary hover:underline">
+                    {b.agencyName}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
       </div>
 
       <FAQSection faqs={state.faqs} title={`${state.name} Licensing FAQs`} />
