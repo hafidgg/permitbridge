@@ -41,7 +41,8 @@ function FieldRow({ label, field }: { label: string; field: VerifiedField<unknow
     );
   }
   const source = field.sourceUrl ? getSourceByUrl(field.sourceUrl) : undefined;
-  const displayValue = typeof field.value === "object" ? JSON.stringify(field.value) : String(field.value);
+  const displayValue =
+    typeof field.value === "boolean" ? (field.value ? "Yes" : "No") : typeof field.value === "object" ? JSON.stringify(field.value) : String(field.value);
   return (
     <div className="flex flex-col gap-1 border-b border-border py-3 last:border-0">
       <div className="flex items-start justify-between gap-4">
