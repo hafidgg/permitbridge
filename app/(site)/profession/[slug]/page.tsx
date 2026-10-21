@@ -11,10 +11,12 @@ import { formatDate } from "@/lib/utils";
 import { getAllProfessions, getProfessionBySlug, getAllStates, getGuideBySlug, NURSE_TRANSFER_GUIDE_SLUG } from "@/lib/data";
 import { getPublishableTransferRules } from "@/lib/publishable-transfers";
 import { getAllPublicTransferRuleSlugs } from "@/lib/knowledge-base/transfer-rule-data";
-import { getAllSingleStateProfessionSlugs } from "@/lib/knowledge-base/electrician-state-data";
+import { getAllSingleStateProfessionSlugs, getElectricianStatePageData } from "@/lib/knowledge-base/electrician-state-data";
 import { getIndexableTradeStateSummaries } from "@/lib/trade-state-summary";
 import { buildMetadata, articleJsonLd } from "@/lib/seo";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { SourcedRoutesTable } from "@/components/transfer/SourcedRoutesTable";
+import { getAllSourcedRoutes } from "@/lib/state-coverage";
 
 function toTitleCase(slug: string): string {
   return slug
@@ -62,8 +64,16 @@ export default async function ProfessionPage({ params }: { params: Promise<{ slu
   // page still only rendered the old-pipeline state x state transfer grid,
   // so every one of these pages (Colorado through Utah) had zero incoming
   // links a real visitor could follow to reach them.
-  const electricianStatePages = profession.slug === "electrician" ? getAllSingleStateProfessionSlugs() : [];
+  const electricianStatePages = (profession.slug === "electrician" ? getAllSingleStateProfessionSlugs() : []).map((s) => {
+    // licensingBoard and licenseTransferPage are shown only when the fact is confidenceLevel "verified".
+    const facts = getElectricianStatePageData(s.slug)?.tiers.find((t) => t.tier === "journeyman")?.facts;
+    const verified = (f: { value: unknown; confidenceLevel?: string } | undefined) =>
+      f && f.value !== "Unknown" && f.confidenceLevel === "verified" ? String(f.value) : null;
+    return { ...s, board: verified(facts?.licensingBoard), transferPage: verified(facts?.licenseTransferPage) };
+  });
   const tradeStateSummaries = getIndexableTradeStateSummaries().filter((s) => s.profession === profession.slug);
+  const sourcedRoutes = getAllSourcedRoutes().filter((r) => r.professionSlug === profession.slug);
+  const citedBoards = [...new Map(sourcedRoutes.flatMap((r) => (r.board ? [[r.board.agencyName, r.board] as const] : []))).values()];
 
   return (
     <div>
@@ -108,8 +118,8 @@ export default async function ProfessionPage({ params }: { params: Promise<{ slu
             Pick Your Move: {profession.shortName} License Transfers
           </h2>
           <p className="mb-6 max-w-2xl text-muted-foreground">
-            Select where you're licensed now and where you're headed to see the exact pathway, exam requirements, and
-            processing time.
+            Select where you're licensed now and where you're headed to see the pathway, exam requirement and fee, each
+            read from the destination state's board.
           </p>
 
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
@@ -147,10 +157,10 @@ export default async function ProfessionPage({ params }: { params: Promise<{ slu
 
         {verifiedNurseTransfers.length > 0 && (
           <section className="mt-12 rounded-xl border border-border bg-muted/20 p-6">
-            <h2 className="mb-2 text-xl font-bold tracking-tight">Verified, Source-Checked RN Transfer Guides</h2>
+            <h2 className="mb-2 text-xl font-bold tracking-tight">RN State-to-State Transfer Pages</h2>
             <p className="mb-4 max-w-2xl text-sm text-muted-foreground">
-              These specific state-to-state guides were individually confirmed against official state nursing board
-              sources, with citations you can check yourself — more thoroughly verified than the general table above.
+              Each page reads its requirements from the destination state&apos;s board of nursing where the board publishes them, and shows the
+              source and research date for every requirement.
             </p>
             {nurseTransferGuide && (
               <p className="mb-4 max-w-2xl text-sm">
@@ -184,15 +194,26 @@ export default async function ProfessionPage({ params }: { params: Promise<{ slu
               Journeyman and Master requirements researched and sourced separately for each state below, since the two tiers often follow
               different rules.
             </p>
-            <div className="flex flex-wrap gap-3">
+            <ul className="space-y-2 text-sm">
               {electricianStatePages.map((s) => (
-                <Link key={s.slug} href={`/${s.profession}/${s.slug}`}>
-                  <Badge variant="outline" className="px-4 py-2 text-sm hover:bg-muted">
-                    {toTitleCase(s.slug)}
-                  </Badge>
-                </Link>
+                <li key={s.slug}>
+                  <Link href={`/${s.profession}/${s.slug}`} className="font-medium text-primary hover:underline">
+                    {toTitleCase(s.slug)} electrician reciprocity
+                  </Link>
+                  {s.board && <span className="text-muted-foreground"> — licensed by the {s.board}</span>}
+                  {s.transferPage && (
+                    <>
+                      {" "}
+                      (
+                      <a href={s.transferPage} target="_blank" rel="noopener noreferrer nofollow" className="text-primary hover:underline">
+                        board&apos;s transfer information
+                      </a>
+                      )
+                    </>
+                  )}
+                </li>
               ))}
-            </div>
+            </ul>
           </section>
         )}
 
@@ -211,6 +232,32 @@ export default async function ProfessionPage({ params }: { params: Promise<{ slu
                 </Link>
               ))}
             </div>
+          </section>
+        )}
+
+        {sourcedRoutes.length > 0 && (
+          <section className="mt-12">
+            <h2 className="mb-2 text-xl font-bold tracking-tight">{profession.shortName} Routes at a Glance</h2>
+            <p className="mb-4 max-w-2xl text-sm text-muted-foreground">
+              Every {profession.shortName.toLowerCase()} route we have sourced, with the destination board&apos;s pathway, state fee and exam
+              requirement. The fee is the destination board&apos;s published application or licensing fee for that route; open a route for the full
+              breakdown and steps.
+            </p>
+            <SourcedRoutesTable routes={sourcedRoutes} showProfession={false} />
+            {citedBoards.length > 0 && (
+              <>
+                <p className="mb-2 mt-6 text-sm font-medium">Boards these routes are read from</p>
+                <ul className="list-disc space-y-1 pl-5 text-sm">
+                  {citedBoards.map((b) => (
+                    <li key={b.agencyName}>
+                      <a href={b.website} target="_blank" rel="noopener noreferrer nofollow" className="text-primary hover:underline">
+                        {b.agencyName}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </>
+            )}
           </section>
         )}
 
