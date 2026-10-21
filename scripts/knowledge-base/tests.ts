@@ -5779,8 +5779,9 @@ await test("[PERMANENT] every listing of data/transfers pairs goes through getPu
 await test("[PERMANENT] a New York trade page is never publishable, even with a valid registered source for the other state", () => {
   const allSources = loadAllSources();
   const resolve = (u: string) => allSources.find((x) => x.website === u);
-  const txRule = JSON.parse(fs.readFileSync(path.join(process.cwd(), "data", "transfers", "electrician", "california--texas.json"), "utf-8"));
-  assert(isTradeTransferPublishable(txRule, resolve).publishable, "control: the real CA->TX electrician rule must pass");
+  // Control was electrician/california--texas.json until 2026-10-21 (deleted; 308 to /electrician/texas).
+  const txRule = JSON.parse(fs.readFileSync(path.join(process.cwd(), "data", "transfers", "hvac-technician", "california--texas.json"), "utf-8"));
+  assert(isTradeTransferPublishable(txRule, resolve).publishable, "control: the real CA->TX HVAC rule must pass");
   for (const profession of ["electrician", "plumber", "hvac-technician", "contractor"]) {
     assert(!isTradeTransferPublishable({ ...txRule, profession, fromState: "new-york" }, resolve).publishable, `TX source only + NY origin must fail (${profession})`);
     assert(!isTradeTransferPublishable({ ...txRule, profession, fromState: "texas", toState: "new-york" }, resolve).publishable, `TX source only + NY destination must fail (${profession})`);

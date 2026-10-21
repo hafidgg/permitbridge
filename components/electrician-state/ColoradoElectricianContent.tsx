@@ -1,4 +1,5 @@
 import Link from "next/link";
+import type { ReactNode } from "react";
 import { Badge } from "@/components/ui/badge";
 import { getSourceByUrl } from "@/lib/knowledge-base/transfer-rule-data";
 import { formatDate } from "@/lib/utils";
@@ -95,10 +96,13 @@ export function ColoradoElectricianContent({
   state,
   tiers,
   otherStates,
+  children,
 }: {
   state: string;
   tiers: Array<{ tier: string; facts: ProfessionStateFacts }>;
   otherStates: Array<{ profession: string; slug: string }>;
+  /** State-specific sections rendered after the tier sections. */
+  children?: ReactNode;
 }) {
   const stateName = toTitleCase(state);
   const journeyman = tiers.find((t) => t.tier === "journeyman")!;
@@ -139,6 +143,7 @@ export function ColoradoElectricianContent({
 
       <TierSection tier="journeyman" facts={journeyman.facts} />
       <TierSection tier="master" facts={master.facts} />
+      {children}
 
       <section className="mt-10">
         <h2 className="mb-4 text-lg font-bold">Explore Further</h2>

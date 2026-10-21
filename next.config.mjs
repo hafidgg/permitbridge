@@ -83,6 +83,10 @@ const nextConfig = {
       { source: "/transfer/nurse/new-york/california", destination: "/registered-nurse/new-york-to-california", permanent: true },
       { source: "/transfer/nurse/texas/california", destination: "/registered-nurse/texas-to-california", permanent: true },
       { source: "/transfer/nurse/texas/florida", destination: "/registered-nurse/texas-to-florida", permanent: true },
+      // 2026-10-21: the CA->TX and FL->TX electrician pages differed only in the origin state's name.
+      // /electrician/texas covers both ("If your state isn't on TDLR's lists"); the records were deleted.
+      { source: "/transfer/electrician/california/texas", destination: "/electrician/texas", permanent: true },
+      { source: "/transfer/electrician/florida/texas", destination: "/electrician/texas", permanent: true },
     ];
   },
 };
