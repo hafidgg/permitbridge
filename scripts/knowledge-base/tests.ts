@@ -1635,7 +1635,9 @@ await test("real production data (5 real transfer rules) untouched by Phase 3.2 
     "texas-to-florida.json": "c60e8c504d6060b427b2b62aceca598d",
   };
   for (const [file, expectedHash] of Object.entries(expectedHashes)) {
-    const content = fs.readFileSync(path.join(dir, file));
+    // Hash with LF line endings: with core.autocrlf=true, a `git checkout` on Windows rewrites a file as CRLF
+    // without changing its committed content (2026-10-21: texas-to-florida.json failed this test for that reason alone).
+    const content = fs.readFileSync(path.join(dir, file), "utf-8").replace(/\r\n/g, "\n");
     const hash = crypto.createHash("md5").update(content).digest("hex");
     assertEqual(hash, expectedHash, `${file}: MD5 checksum must exactly match the pre-Phase-3.2 snapshot — zero bytes changed`);
   }
