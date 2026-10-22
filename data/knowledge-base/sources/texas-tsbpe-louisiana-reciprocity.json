@@ -1,0 +1,19 @@
+{
+  "id": "texas-tsbpe-louisiana-reciprocity",
+  "agencyName": "Texas State Board of Plumbing Examiners (TSBPE)",
+  "website": "https://tsbpe.texas.gov/louisianareciprocity/",
+  "jurisdiction": "texas",
+  "professionsCovered": [
+    "plumber"
+  ],
+  "sourceType": "official-board",
+  "official": true,
+  "authorityLevel": "authoritative",
+  "authorityRationale": "TSBPE's own announcement page on tsbpe.texas.gov, \"TSBPE Signs Reciprocal License Agreement with Louisiana\" (posted January 11, 2022, updated September 12, 2023). Read raw 2026-10-22. Used only for its exact wording: \"Louisiana Journeymen with Gasfitter Licensees in Good Standing are Now Eligible to Obtain the Equivalent License in Texas, No Exam Required\" — not generalized to other licence types or states.",
+  "specificity": "profession-specific",
+  "reliabilityScore": 0.85,
+  "reliabilityRationale": "Official page of the licensing agency itself, verified by direct raw read on 2026-10-22. An announcement, not a rule, so slightly below the rules PDF.",
+  "lastCrawl": null,
+  "lastManualVerification": "2026-10-22",
+  "fieldsUsingThisSource": 0
+}
