@@ -1,0 +1,70 @@
+{
+  "_comment": "Destination-level facts for /plumber/texas, from registered TSBPE sources only. Every quote is verbatim from the raw source text (fetched 2026-10-22); scripts/knowledge-base/tests.ts checks each sourceUrl is a registered authoritative source.",
+  "heading": "How Texas licenses plumbers",
+  "items": [
+    {
+      "label": "Licence classes",
+      "text": "TSBPE's rules (22 TAC Chapter 363, Examination and Registration) set out a Master Plumber License (§363.4), a Journeyman Plumber License (§363.5), a Tradesman Plumber-Limited License (§363.6) and a Plumbing Inspector License (§363.8), along with a Plumber's Apprentice Registration (§363.7) and other registrations and endorsements.",
+      "sourceUrl": "https://tsbpe.texas.gov/wp-content/uploads/documents/TSBPE_AdministrativeRules_March2026.pdf"
+    },
+    {
+      "label": "Responsible Master Plumber",
+      "text": "The rules define a Responsible Master Plumber (RMP) as a licensed Master Plumber who, among other things:",
+      "quote": "allows the person's Master Plumber License to be used by only one plumbing company for the purpose of offering and performing plumbing work",
+      "cite": "22 TAC §363.1(47)",
+      "sourceUrl": "https://tsbpe.texas.gov/wp-content/uploads/documents/TSBPE_AdministrativeRules_March2026.pdf"
+    },
+    {
+      "label": "Journeyman Plumber",
+      "text": "Classroom training:",
+      "quote": "To be eligible for a Journeyman Plumber License an applicant must have completed forty-eight (48) hours of classroom training provided by an approved instructor in an approved training program",
+      "cite": "22 TAC §363.5(a)",
+      "sourceUrl": "https://tsbpe.texas.gov/wp-content/uploads/documents/TSBPE_AdministrativeRules_March2026.pdf"
+    },
+    {
+      "label": "Journeyman Plumber",
+      "text": "Experience, which can be gained outside Texas:",
+      "quote": "have at least 8,000 hours of experience working at the trade under the supervision of a RMP or a Master Plumber licensed in another state",
+      "cite": "22 TAC §363.5(b)(1)",
+      "sourceUrl": "https://tsbpe.texas.gov/wp-content/uploads/documents/TSBPE_AdministrativeRules_March2026.pdf"
+    },
+    {
+      "label": "Journeyman Plumber",
+      "text": "The applicant must also hold an apprentice registration, a Tradesman Plumber-Limited License, or",
+      "quote": "a current Journeyman Plumber License issued in another state",
+      "cite": "22 TAC §363.5(b)(2)",
+      "sourceUrl": "https://tsbpe.texas.gov/wp-content/uploads/documents/TSBPE_AdministrativeRules_March2026.pdf"
+    },
+    {
+      "label": "Master Plumber",
+      "text": "A Journeyman licence from another state counts toward a Master Plumber License:",
+      "quote": "an applicant must have held a Journeyman Plumber License issued in Texas or another state: (1) for at least two years; or (2) for at least one year if the applicant has successfully completed a training program approved by the United States Department of Labor, Office of Apprenticeship or another nationally-recognized apprentice training program accepted by the Board",
+      "cite": "22 TAC §363.4",
+      "sourceUrl": "https://tsbpe.texas.gov/wp-content/uploads/documents/TSBPE_AdministrativeRules_March2026.pdf"
+    },
+    {
+      "label": "Plumbing Inspector",
+      "text": "An out-of-state Journeyman or Master licence qualifies an applicant for a Plumbing Inspector License, but not without the exam:",
+      "quote": "An applicant who holds a Journeyman or Master Plumber License issued in another state must take and pass the examination developed by the Board.",
+      "cite": "22 TAC §363.8(b)",
+      "sourceUrl": "https://tsbpe.texas.gov/wp-content/uploads/documents/TSBPE_AdministrativeRules_March2026.pdf"
+    },
+    {
+      "label": "Out-of-State Examination",
+      "text": "TSBPE's Out-of-State Examination Application (revised March 2026) is for a Journeyman or Master licence. The licence must have been held for two years; the non-refundable processing fee is $40 for Journeyman and $25 for Master, with a separate computer-based exam fee paid to Pearson VUE that the form does not state. Fingerprints are required, submitted once through IdentoGO. The Journeyman exam also includes a practical portion.",
+      "sourceUrl": "https://tsbpe.texas.gov/wp-content/uploads/forms/TSBPE_OutOfStateExaminationRequest.pdf"
+    },
+    {
+      "label": "Out-of-State Examination",
+      "text": "Waiting periods after a failed exam:",
+      "quote": "(1) First failure: a 30-day waiting period, (2) Second failure, a 60-day waiting period, (3) Third and subsequent failures: a 90-day waiting period.",
+      "sourceUrl": "https://tsbpe.texas.gov/wp-content/uploads/forms/TSBPE_OutOfStateExaminationRequest.pdf"
+    }
+  ],
+  "openQuestions": [
+    {
+      "text": "The form words its licence requirement two ways. Its minimum requirements say \"Proof applicant is currently licensed as a Journeyman or Master Plumber in another state\"; its checklist asks for a \"Legible copy of the applicant’s current, state-issued Residential, Journeyman or Master plumbing license\". Whether a Residential plumbing licence alone qualifies is not settled by the form.",
+      "sourceUrl": "https://tsbpe.texas.gov/wp-content/uploads/forms/TSBPE_OutOfStateExaminationRequest.pdf"
+    }
+  ]
+}

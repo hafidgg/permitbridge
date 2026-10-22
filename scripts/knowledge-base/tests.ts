@@ -5781,6 +5781,26 @@ await test("[PERMANENT] sitemap floor: the post-consolidation sitemap passes, an
   assert(checkSitemapFloor(base.slice(0, 49)).some((p: string) => p.includes("floor 50")), "49 URLs must fail the total");
 });
 
+// 2026-10-22: trade summary pages can carry destination-level facts (data/trade-state-notes/), e.g. how TSBPE
+// licenses plumbers on /plumber/texas. Every item must cite a registered, non-supplementary source of the destination
+// state; quotes are verbatim from that source's raw text (checked by hand at write time).
+// If this fails: register the source properly or remove the item. Never render a note without a board source.
+await test("[PERMANENT] trade-state notes cite only registered board sources of the destination state", () => {
+  const dir = path.join(process.cwd(), "data", "trade-state-notes");
+  const allSources = loadAllSources();
+  for (const f of fs.readdirSync(dir).filter((x: string) => x.endsWith(".json"))) {
+    const state = f.replace(/\.json$/, "").split("--")[1];
+    const d = JSON.parse(fs.readFileSync(path.join(dir, f), "utf-8"));
+    for (const item of [...d.items, ...(d.openQuestions ?? [])]) {
+      const src = allSources.find((s) => s.website === item.sourceUrl);
+      assert(!!src, `${f}: ${item.sourceUrl} is not a registered source`);
+      assert(src!.authorityLevel !== "supplementary", `${f}: ${item.sourceUrl} is supplementary`);
+      assertEqual(src!.jurisdiction, state, `${f}: ${item.sourceUrl} must be a ${state} source`);
+      assert(!/\.\.\.|…/.test(item.quote ?? ""), `${f}: a quote must be verbatim, not trimmed with an ellipsis`);
+    }
+  }
+});
+
 // 2026-10-09: difficultyScore, portabilityScore, averageTransferDays and compactStates are unsourced generator values
 // (see types/index.ts). scripts/check-built-output.ts (postbuild) also scans the built site for them.
 // If this fails: remove the render. Never display these fields.

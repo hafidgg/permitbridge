@@ -8,6 +8,7 @@ import { Badge } from "@/components/ui/badge";
 import { articleJsonLd, buildMetadata } from "@/lib/seo";
 import { formatUsd, PROCESSING_TIME_NOT_PUBLISHED } from "@/lib/utils";
 import { getTradeStateSummary, type TradeStateSummary, type TradeSummaryProfession } from "@/lib/trade-state-summary";
+import { getTradeStateNotes } from "@/lib/trade-state-notes";
 import type { PathwayType } from "@/types";
 
 const PROFESSION_LABEL: Record<TradeSummaryProfession, { title: string; noun: string; article: string }> = {
@@ -50,6 +51,7 @@ export function TradeStateSummaryPage({ profession, state }: { profession: Trade
   const label = PROFESSION_LABEL[profession];
   const path = `/${profession}/${state}`;
   const board = s.shared?.source ?? s.pairs[0]?.source;
+  const notes = getTradeStateNotes(profession, state);
 
   return (
     <div>
@@ -127,6 +129,44 @@ export function TradeStateSummaryPage({ profession, state }: { profession: Trade
             </p>
           )}
         </section>
+
+        {notes && (
+          <section className="mt-10">
+            <h2 className="mb-4 text-2xl font-bold tracking-tight">{notes.heading}</h2>
+            <ul className="space-y-3 text-sm">
+              {notes.items.map((item, i) => (
+                <li key={i}>
+                  <span className="font-medium">{item.label}.</span> {item.text}
+                  {item.quote && <> &ldquo;{item.quote}&rdquo;</>}
+                  <span className="text-muted-foreground">
+                    {" "}
+                    ({item.cite ? `${item.cite}, ` : ""}
+                    <a href={item.source.website} target="_blank" rel="noopener noreferrer nofollow" className="underline underline-offset-4">
+                      {item.source.agencyName}
+                    </a>
+                    )
+                  </span>
+                </li>
+              ))}
+            </ul>
+            {notes.openQuestions.length > 0 && (
+              <div className="mt-4">
+                <Badge variant="outline">Open question{notes.openQuestions.length > 1 ? "s" : ""}</Badge>
+                <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-muted-foreground">
+                  {notes.openQuestions.map((q) => (
+                    <li key={q.text}>
+                      {q.text} (Source:{" "}
+                      <a href={q.source.website} target="_blank" rel="noopener noreferrer nofollow" className="underline underline-offset-4">
+                        {q.source.agencyName}
+                      </a>
+                      )
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </section>
+        )}
 
         <section className="mt-10">
           <h2 className="mb-4 text-2xl font-bold tracking-tight">By origin state</h2>
