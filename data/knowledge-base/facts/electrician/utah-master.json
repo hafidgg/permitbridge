@@ -109,11 +109,11 @@
     "notes": "Both Utah's Oregon-reciprocity and general-endorsement mechanisms result in Utah issuing its own distinct Master Electrician certificate — not a single multistate license practiced across member states without a new license (the defining feature of a true compact, e.g. the Nurse Licensure Compact). Recorded as false, matching the same reasoning already applied to every other electrician state file."
   },
   "reciprocityRules": {
-    "value": "Utah has exactly one formal, no-examination bilateral reciprocal agreement for master-level electricians: with Oregon (Agreement BCD# 73-0-452). Under it, Utah issues a Master Electrician certificate WITHOUT EXAMINATION to a holder of an Oregon General Supervising Electrician license (and Oregon reciprocates for Utah Master Electrician certificate holders, issuing a General Supervising Electrician license), provided: the original license/certificate was obtained BY EXAMINATION with a minimum score of 75%; it is current, active, and in good standing; and the holder worked as a licensed journeyman electrician for at least 4 years (8,000 hours) — or equivalent experience as determined by the licensing state. No other state-specific no-exam reciprocal agreement was found for Utah master licensure; for every other state, applicants use Utah's broader ENDORSEMENT pathway instead, which does NOT waive Utah's own exam.",
+    "value": "Under the Utah-Oregon agreement (BCD# 73-0-452), Utah issues master electrician certificates, and Oregon general supervising electrician licenses, without examination. The applicant's Oregon general supervising electrician license or Utah master electrician certificate must have been obtained by examination with a minimum score of 75%, and be current, active and in good standing. The applicant must have qualified by working as a licensed journeyman with a valid journeyman electrical license or certificate for four years (8,000 hours), or experience the licensing state found equivalent.",
     "sourceUrl": "https://www.oregon.gov/bcd/licensing/Documents/reciprocal-licenses/s-utah.pdf",
     "sourceTitle": "Reciprocal Agreement — Utah Journeyman & Master and Oregon Journeyman & Supervisor Electrical Licenses (BCD# 73-0-452)",
     "sourceName": "Utah Division of Occupational and Professional Licensing (DOPL) & Oregon Building Codes Division",
-    "verifiedAt": "2026-09-04",
+    "verifiedAt": "2026-10-22",
     "verificationMethod": "official_document_review",
     "reviewer": null,
     "status": "pending_verification",
@@ -125,6 +125,14 @@
         "newValue": "Utah has exactly one formal, no-examination bilateral reciprocal agreement for master-level electricians: with Oregon (Agreement BCD# 73-0-452), subject to a 75%+ original exam score, good-standing, and 4-year/8,000-hour journeyman experience conditions.",
         "changedAt": "2026-09-04",
         "reason": "Initial population, directly read from the raw text of the signed Utah-Oregon reciprocal agreement PDF.",
+        "sourceUrl": "https://www.oregon.gov/bcd/licensing/Documents/reciprocal-licenses/s-utah.pdf",
+        "reviewer": null
+      },
+      {
+        "previousValue": "Utah has exactly one formal, no-examination bilateral reciprocal agreement for master-level electricians: with Oregon (Agreement BCD# 73-0-452). Under it, Utah issues a Master Electrician certificate WITHOUT EXAMINATION to a holder of an Oregon General Supervising Electrician license (and Oregon reciprocates for Utah Master Electrician certificate holders, issuing a General Supervising Electrician license), provided: the original license/certificate was obtained BY EXAMINATION with a minimum score of 75%; it is current, active, and in good standing; and the holder worked as a licensed journeyman electrician for at least 4 years (8,000 hours) — or equivalent experience as determined by the licensing state. No other state-specific no-exam reciprocal agreement was found for Utah master licensure; for every other state, applicants use Utah's broader ENDORSEMENT pathway instead, which does NOT waive Utah's own exam.",
+        "newValue": "Under the Utah-Oregon agreement (BCD# 73-0-452), Utah issues master electrician certificates, and Oregon general supervising electrician licenses, without examination. The applicant's Oregon general supervising electrician license or Utah master electrician certificate must have been obtained by examination with a minimum score of 75%, and be current, active and in good standing. The applicant must have qualified by working as a licensed journeyman with a valid journeyman electrical license or certificate for four years (8,000 hours), or experience the licensing state found equivalent.",
+        "changedAt": "2026-10-22",
+        "reason": "Rewritten as plain statements from the Utah-Oregon agreement (raw text); dropped the claim that endorsement does not waive Utah's exam (DOPL page blocks automated reads).",
         "sourceUrl": "https://www.oregon.gov/bcd/licensing/Documents/reciprocal-licenses/s-utah.pdf",
         "reviewer": null
       }
@@ -155,11 +163,11 @@
     "notes": "Utah is the first of PermitBridge's electrician states where 'reciprocity' and 'endorsement' are genuinely distinct, separately governed pathways rather than interchangeable terminology — every prior state (Colorado, Virginia, Texas, Arkansas, Minnesota) left this field Unknown because no such distinction existed in their materials."
   },
   "requiredExams": {
-    "value": "Via the Oregon RECIPROCITY pathway: no additional Utah examination — the agreement issues the certificate 'without examination' provided the original exam score was at least 75%. Via the general ENDORSEMENT pathway (all other states): DOPL's own Master Electrician Out-of-State Applicants Applying by Endorsement page states explicitly, 'All applicants will be required to pass the Utah Master Electrician Law and Rule examination' — a real, confirmed exam requirement, not merely discretionary language. This is a genuine, directly-quoted distinction from Oregon's true no-exam reciprocity.",
-    "sourceUrl": "https://dopl.utah.gov/electrical/apply-for-a-license/master-electrician/out-of-state-by-endorsement/",
-    "sourceTitle": "Master Electrician Out of State Applicants Applying by Endorsement",
+    "value": "Under the Utah-Oregon agreement, the master electrician certificate is issued without examination, provided the applicant's license or certificate was obtained by examination with a minimum score of 75%.",
+    "sourceUrl": "https://www.oregon.gov/bcd/licensing/Documents/reciprocal-licenses/s-utah.pdf",
+    "sourceTitle": "Reciprocal Agreement: Utah Journeyman & Master and Oregon Journeyman & Supervisor Electrical Licenses (BCD# 73-0-452)",
     "sourceName": "Utah Division of Occupational and Professional Licensing (DOPL)",
-    "verifiedAt": "2026-09-04",
+    "verifiedAt": "2026-10-22",
     "verificationMethod": "official_document_review",
     "reviewer": null,
     "status": "pending_verification",
@@ -172,6 +180,14 @@
         "changedAt": "2026-09-04",
         "reason": "Initial population from the Utah-Oregon reciprocal agreement and DOPL's Master Electrician Out-of-State Applicants Applying by Endorsement page.",
         "sourceUrl": "https://dopl.utah.gov/electrical/apply-for-a-license/master-electrician/out-of-state-by-endorsement/",
+        "reviewer": null
+      },
+      {
+        "previousValue": "Via the Oregon RECIPROCITY pathway: no additional Utah examination — the agreement issues the certificate 'without examination' provided the original exam score was at least 75%. Via the general ENDORSEMENT pathway (all other states): DOPL's own Master Electrician Out-of-State Applicants Applying by Endorsement page states explicitly, 'All applicants will be required to pass the Utah Master Electrician Law and Rule examination' — a real, confirmed exam requirement, not merely discretionary language. This is a genuine, directly-quoted distinction from Oregon's true no-exam reciprocity.",
+        "newValue": "Under the Utah-Oregon agreement, the master electrician certificate is issued without examination, provided the applicant's license or certificate was obtained by examination with a minimum score of 75%.",
+        "changedAt": "2026-10-22",
+        "reason": "Re-sourced from the DOPL endorsement page (HTTP 403 to automated reads) to the Utah-Oregon agreement (raw text); dropped the unverifiable DOPL quote.",
+        "sourceUrl": "https://www.oregon.gov/bcd/licensing/Documents/reciprocal-licenses/s-utah.pdf",
         "reviewer": null
       }
     ],

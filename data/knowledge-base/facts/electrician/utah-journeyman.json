@@ -109,11 +109,11 @@
     "notes": "Both Utah's Oregon-reciprocity and general-endorsement mechanisms result in Utah issuing its own distinct Journeyman Electrician license — not a single multistate license practiced across member states without a new license (the defining feature of a true compact, e.g. the Nurse Licensure Compact). Recorded as false, matching the same reasoning already applied to every other electrician state file."
   },
   "reciprocityRules": {
-    "value": "Utah has exactly one formal, no-examination bilateral reciprocal agreement for journeyman electricians: with Oregon (Utah DOPL / Oregon Building Codes Division Agreement BCD# 73-0-452). Under this agreement, Utah issues a Journeyman Electrician license WITHOUT EXAMINATION to a holder of an Oregon journeyman electrician license/certificate (and Oregon reciprocates for Utah journeyman holders), provided: the original license was obtained BY EXAMINATION with a minimum score of 75%; it is current, active, and in good standing; and it was earned via at least 4 years (8,000 hours) of electrical trade experience under direct supervision of a licensed journeyman, plus completion of a 4-year electrical apprenticeship vocational education program (minimum 576 classroom hours) — or experience/education independently determined equivalent by the licensing state. All reciprocity applicants must still pay the required fees to the reviewing state. No other state-specific no-exam reciprocal agreement was found for Utah journeyman licensure; for every other state, applicants use Utah's broader ENDORSEMENT pathway instead, which does not guarantee an examination waiver.",
+    "value": "Utah and Oregon have a reciprocal agreement (BCD# 73-0-452) to issue journeyman electrician licenses without examination. The applicant's Oregon or Utah journeyman license must have been obtained by examination with a minimum score of 75%, and be current, active and in good standing. The applicant must have qualified by passing that examination and by working at least four years (8,000 hours) in the electrical trade under the direct supervision of a licensed journeyman electrician, plus four years of electrical apprenticeship vocational education (576 classroom hours minimum), or experience and education the licensing state found equivalent.",
     "sourceUrl": "https://www.oregon.gov/bcd/licensing/Documents/reciprocal-licenses/s-utah.pdf",
     "sourceTitle": "Reciprocal Agreement — Utah Journeyman & Master and Oregon Journeyman & Supervisor Electrical Licenses (BCD# 73-0-452)",
     "sourceName": "Utah Division of Occupational and Professional Licensing (DOPL) & Oregon Building Codes Division",
-    "verifiedAt": "2026-09-04",
+    "verifiedAt": "2026-10-22",
     "verificationMethod": "official_document_review",
     "reviewer": null,
     "status": "pending_verification",
@@ -125,6 +125,14 @@
         "newValue": "Utah has exactly one formal, no-examination bilateral reciprocal agreement for journeyman electricians: with Oregon (Agreement BCD# 73-0-452), subject to a 75%+ original exam score, good-standing, and 4-year/8,000-hour experience plus apprenticeship-education conditions.",
         "changedAt": "2026-09-04",
         "reason": "Initial population, directly read from the raw text of the signed Utah-Oregon reciprocal agreement PDF.",
+        "sourceUrl": "https://www.oregon.gov/bcd/licensing/Documents/reciprocal-licenses/s-utah.pdf",
+        "reviewer": null
+      },
+      {
+        "previousValue": "Utah has exactly one formal, no-examination bilateral reciprocal agreement for journeyman electricians: with Oregon (Utah DOPL / Oregon Building Codes Division Agreement BCD# 73-0-452). Under this agreement, Utah issues a Journeyman Electrician license WITHOUT EXAMINATION to a holder of an Oregon journeyman electrician license/certificate (and Oregon reciprocates for Utah journeyman holders), provided: the original license was obtained BY EXAMINATION with a minimum score of 75%; it is current, active, and in good standing; and it was earned via at least 4 years (8,000 hours) of electrical trade experience under direct supervision of a licensed journeyman, plus completion of a 4-year electrical apprenticeship vocational education program (minimum 576 classroom hours) — or experience/education independently determined equivalent by the licensing state. All reciprocity applicants must still pay the required fees to the reviewing state. No other state-specific no-exam reciprocal agreement was found for Utah journeyman licensure; for every other state, applicants use Utah's broader ENDORSEMENT pathway instead, which does not guarantee an examination waiver.",
+        "newValue": "Utah and Oregon have a reciprocal agreement (BCD# 73-0-452) to issue journeyman electrician licenses without examination. The applicant's Oregon or Utah journeyman license must have been obtained by examination with a minimum score of 75%, and be current, active and in good standing. The applicant must have qualified by passing that examination and by working at least four years (8,000 hours) in the electrical trade under the direct supervision of a licensed journeyman electrician, plus four years of electrical apprenticeship vocational education (576 classroom hours minimum), or experience and education the licensing state found equivalent.",
+        "changedAt": "2026-10-22",
+        "reason": "Rewritten as plain statements from the Utah-Oregon agreement (raw text); dropped the endorsement-pathway sentence, which relied on a DOPL page that blocks automated reads.",
         "sourceUrl": "https://www.oregon.gov/bcd/licensing/Documents/reciprocal-licenses/s-utah.pdf",
         "reviewer": null
       }
@@ -155,11 +163,11 @@
     "notes": "Utah is the first of PermitBridge's electrician states where 'reciprocity' and 'endorsement' are genuinely distinct, separately governed pathways rather than interchangeable terminology — every prior state (Colorado, Virginia, Texas, Arkansas, Minnesota) left this field Unknown because no such distinction existed in their materials. Confidence set to 'likely' rather than 'verified' because the citation is a third-party (Cornell LII) mirror of the rule text, not Utah's own .gov page, which was unreachable throughout this research."
   },
   "requiredExams": {
-    "value": "Via the Oregon RECIPROCITY pathway: no additional Utah examination — the agreement issues the license 'without examination' provided the original Oregon exam score was at least 75%. Via the general ENDORSEMENT pathway (all other states): Utah Admin. Code R156-1-302 gives the Division discretion to require the applicant pass one or more exams, so a waiver is not guaranteed for journeyman endorsement applicants. Whether journeyman endorsement specifically always requires a Utah-specific exam (as master endorsement explicitly does — see utah-master.json) was not independently confirmed; not assumed to be identical to master's confirmed requirement without direct source text from the Journeyman Out-of-State by Endorsement page, which returned HTTP 403 on every automated fetch.",
+    "value": "Under the Utah-Oregon agreement, the license is issued without examination, provided the applicant's license was obtained by examination with a minimum score of 75%.",
     "sourceUrl": "https://www.oregon.gov/bcd/licensing/Documents/reciprocal-licenses/s-utah.pdf",
     "sourceTitle": "Reciprocal Agreement — Utah Journeyman & Master and Oregon Journeyman & Supervisor Electrical Licenses (BCD# 73-0-452)",
     "sourceName": "Utah Division of Occupational and Professional Licensing (DOPL) & Oregon Building Codes Division",
-    "verifiedAt": "2026-09-04",
+    "verifiedAt": "2026-10-22",
     "verificationMethod": "official_document_review",
     "reviewer": null,
     "status": "needs_review",
@@ -171,6 +179,14 @@
         "newValue": "No Utah exam via Oregon reciprocity (confirmed, 'without examination'). Exam not guaranteed waived via general endorsement (R156-1-302 discretion). Journeyman-specific endorsement exam text not independently confirmed.",
         "changedAt": "2026-09-04",
         "reason": "Initial population from the Utah-Oregon reciprocal agreement (reciprocity portion, high confidence) and R156-1-302 (endorsement portion, lower confidence).",
+        "sourceUrl": "https://www.oregon.gov/bcd/licensing/Documents/reciprocal-licenses/s-utah.pdf",
+        "reviewer": null
+      },
+      {
+        "previousValue": "Via the Oregon RECIPROCITY pathway: no additional Utah examination — the agreement issues the license 'without examination' provided the original Oregon exam score was at least 75%. Via the general ENDORSEMENT pathway (all other states): Utah Admin. Code R156-1-302 gives the Division discretion to require the applicant pass one or more exams, so a waiver is not guaranteed for journeyman endorsement applicants. Whether journeyman endorsement specifically always requires a Utah-specific exam (as master endorsement explicitly does — see utah-master.json) was not independently confirmed; not assumed to be identical to master's confirmed requirement without direct source text from the Journeyman Out-of-State by Endorsement page, which returned HTTP 403 on every automated fetch.",
+        "newValue": "Under the Utah-Oregon agreement, the license is issued without examination, provided the applicant's license was obtained by examination with a minimum score of 75%.",
+        "changedAt": "2026-10-22",
+        "reason": "Rewritten from the Utah-Oregon agreement (raw text); dropped the R156-1-302 and research-process text.",
         "sourceUrl": "https://www.oregon.gov/bcd/licensing/Documents/reciprocal-licenses/s-utah.pdf",
         "reviewer": null
       }

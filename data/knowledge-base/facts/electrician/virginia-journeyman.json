@@ -171,11 +171,11 @@
     "notes": "DPOR's materials name this mechanism 'reciprocity' specifically for the 3 bilateral agreements; a separate general 'endorsement' pathway distinct from both reciprocity and ULR was not confirmed in Phase 2D.1/2D.2 research."
   },
   "requiredExams": {
-    "value": "Even reciprocal applicants must still sit for the Virginia-specific exam section (state law and building code amendments) — only the national portion of the exam is waived.",
+    "value": "DPOR's list of Board for Contractors agreements says each one is either a licensing agreement (reciprocity) or an examination agreement (exemption), and that applicants under them \"must submit a complete application along with verification of licensure from the out-of-state board.\" It does not say which exam sections an agreement waives; DPOR refers applicants to the Board for Contractors for the details of each agreement.",
     "sourceUrl": "https://www.dpor.virginia.gov/sites/default/files/boards/Tradesman/Tradesmen%20reciprocal%20agreements.pdf",
     "sourceTitle": "Tradesmen Reciprocal Agreements",
     "sourceName": "Virginia Department of Professional and Occupational Regulation (DPOR), Board for Contractors",
-    "verifiedAt": "2026-08-25",
+    "verifiedAt": "2026-10-22",
     "verificationMethod": "official_document_review",
     "reviewer": null,
     "status": "pending_verification",
@@ -187,6 +187,14 @@
         "newValue": "Even reciprocal applicants must still sit for the Virginia-specific exam section (state law and building code amendments) — only the national portion of the exam is waived.",
         "changedAt": "2026-08-25",
         "reason": "Phase 2D.6.2: initial population from official DPOR sources verified in Phase 2D.1/2D.2.",
+        "sourceUrl": "https://www.dpor.virginia.gov/sites/default/files/boards/Tradesman/Tradesmen%20reciprocal%20agreements.pdf",
+        "reviewer": null
+      },
+      {
+        "previousValue": "Even reciprocal applicants must still sit for the Virginia-specific exam section (state law and building code amendments) — only the national portion of the exam is waived.",
+        "newValue": "DPOR's list of Board for Contractors agreements says each one is either a licensing agreement (reciprocity) or an examination agreement (exemption), and that applicants under them \"must submit a complete application along with verification of licensure from the out-of-state board.\" It does not say which exam sections an agreement waives; DPOR refers applicants to the Board for Contractors for the details of each agreement.",
+        "changedAt": "2026-10-22",
+        "reason": "The previous text (only the national portion of the exam is waived) is not in the cited DPOR agreements list (raw text); rewritten from that list.",
         "sourceUrl": "https://www.dpor.virginia.gov/sites/default/files/boards/Tradesman/Tradesmen%20reciprocal%20agreements.pdf",
         "reviewer": null
       }
