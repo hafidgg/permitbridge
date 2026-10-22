@@ -17,6 +17,11 @@
  * references, camelCase field names, snake_case enum values
  * ("compact_privilege"), raw true/false field values and unrendered markdown
  * ("**", "## ").
+ *
+ * The same visible text, plus <title> and meta descriptions, must not
+ * lowercase a proper name mid-sentence (a state name, a CSLB code like
+ * "c-36") or start a sentence in lowercase: both come from a title-case label
+ * being lowercased into a template sentence.
  */
 import fs from "node:fs";
 import path from "node:path";
@@ -50,8 +55,26 @@ const visibleForbidden: { label: string; re: RegExp }[] = [
   { label: "raw boolean value", re: /\b(?:Recognition|Membership|Status) (?:true|false)\b/ },
 ];
 
+const stateNames: string[] = fs
+  .readdirSync(path.join(process.cwd(), "data", "states"))
+  .filter((f) => f.endsWith(".json"))
+  .map((f) => JSON.parse(fs.readFileSync(path.join(process.cwd(), "data", "states", f), "utf-8")).name as string);
+visibleForbidden.push(
+  // Not inside a slug, path or domain ("new-york", "/texas", "tsbpe.texas.gov").
+  { label: "lowercase state name", re: new RegExp(String.raw`(?<![./\w-])(?:${stateNames.map((n) => n.toLowerCase()).join("|")})\b(?![-/\w]|\.\w)`) },
+  { label: "lowercase license code", re: /\b[a-z]-\d{1,2}\b/ },
+  // A sentence starting lowercase. Abbreviations that end in a period are not sentence ends; an email address is not a word.
+  { label: "sentence starting lowercase", re: /(?<!\b(?:e\.g|i\.e|vs|etc|approx|No|Sec|Rev|Stat|Ann|Code|Admin|seq|U\.S|al|Inc|Co))[.!?] +(?!\S*@)[a-z]/ }
+);
+
+/** <title> and meta description text, which the tag-stripping below would drop. */
+function headText(html: string): string {
+  const parts = [...html.matchAll(/<title[^>]*>([\s\S]*?)<\/title>|<meta (?:name|property)="(?:description|og:description|og:title)" content="([^"]*)"/g)];
+  return parts.map((m) => m[1] ?? m[2] ?? "").join(" . ");
+}
+
 function visibleText(html: string): string {
-  return html
+  return headText(html) + " " + html
     .replace(/<(script|style|template)[^>]*>[\s\S]*?<\/\1>/g, " ")
     .replace(/<[^>]+>/g, " ")
     .replace(/&[a-z]+;|&#\d+;/g, " ")
