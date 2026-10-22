@@ -31,7 +31,7 @@ export type SourceTier = 1 | 2 | 3 | 4;
  * not be a real field. A real build (`next build` with noUncheckedIndexedAccess)
  * caught the previous generic-Record version failing exactly this distinction.
  */
-export type ProfessionFactFieldKey = Exclude<keyof ProfessionStateFacts, "profession" | "state" | "conflicts" | "lastFullReviewAt" | "licenseTier">;
+export type ProfessionFactFieldKey = Exclude<keyof ProfessionStateFacts, "profession" | "state" | "conflicts" | "lastFullReviewAt" | "licenseTier" | "heldFields">;
 
 export const TIER_LABELS: Record<SourceTier, string> = {
   1: "State Licensing Authority",

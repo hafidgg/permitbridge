@@ -39,9 +39,11 @@ export function QuickAnswer({ rule }: { rule: TransferRule }) {
   const mechanism = rule.transferMechanism.value === "Unknown" ? "unknown" : (rule.transferMechanism.value as string);
   const mechanismSource = boardSource(rule.transferMechanism);
 
+  const held = new Set(rule.heldFields ?? []);
+  const isHeld = (field: VerifiedField<unknown>) => Object.entries(rule).some(([k, v]) => v === field && held.has(k));
   const item = (question: string, field: VerifiedField<unknown>, answer: (v: unknown) => string, source = boardSource(field)) => ({
     question,
-    answer: source ? answer(field.value) : NOT_PUBLISHED,
+    answer: source ? answer(field.value) : isHeld(field) ? "Not shown until we can re-check the board's page" : NOT_PUBLISHED,
     source,
   });
 

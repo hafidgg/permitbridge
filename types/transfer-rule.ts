@@ -129,6 +129,9 @@ export interface TransferRuleIdentity {
  * provenance and trust independently, exactly like ProfessionStateFacts.
  */
 export interface TransferRule extends TransferRuleIdentity {
+  /** Set by the page loader: fields withheld by a displayHold (see VerifiedField.displayHold). */
+  heldFields?: string[];
+
   // --- How the transfer legally works ---
   transferMechanism: VerifiedField<TransferMechanism>;
 
@@ -182,7 +185,7 @@ export interface TransferRule extends TransferRuleIdentity {
 // ---------------------------------------------------------------------
 export type TransferRuleFactFieldKey = Exclude<
   keyof TransferRule,
-  "profession" | "sourceState" | "destinationState" | "licenseType" | "conflicts" | "lastFullReviewAt"
+  "profession" | "sourceState" | "destinationState" | "licenseType" | "conflicts" | "lastFullReviewAt" | "heldFields"
 >;
 
 // ---------------------------------------------------------------------

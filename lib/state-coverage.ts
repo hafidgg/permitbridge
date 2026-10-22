@@ -23,7 +23,9 @@ export interface SourcedRoute {
   pathway: string;
   /** null when the fee is not published by a registered board source. */
   feeUsd: number | null;
-  exam: "Required" | "Not required" | "Depends on the license" | "Not published by the board";
+  /** True when the fee is held for re-checking (displayHold), so null doesn't read as "not published". */
+  feeHeld?: boolean;
+  exam: "Required" | "Not required" | "Depends on the license" | "Not published by the board" | "Being re-checked";
   board: SourceRecord | undefined;
 }
 
@@ -64,6 +66,7 @@ function rnRoutes(): SourcedRoute[] {
     const fee = rule.applicationFeeUsd;
     const exam = rule.examRequirement;
     const examStatus = exam.value !== "Unknown" && boardSourced(exam.sourceUrl) ? (exam.value as { status: string }).status : null;
+    const held = new Set(rule.heldFields ?? []);
     return [
       {
         href: `/${s.profession}/${s.transfer}`,
@@ -72,9 +75,10 @@ function rnRoutes(): SourcedRoute[] {
         profession: "Registered Nurse",
         from: stateDisplayName(rule.sourceState),
         to: stateDisplayName(rule.destinationState),
-        pathway: MECHANISM_LABEL[mechanism] ?? mechanism,
+        pathway: held.has("transferMechanism") ? "Being re-checked" : (MECHANISM_LABEL[mechanism] ?? mechanism),
         feeUsd: fee.value !== "Unknown" && boardSourced(fee.sourceUrl) ? (fee.value as number) : null,
-        exam: (examStatus && RN_EXAM[examStatus]) || "Not published by the board",
+        feeHeld: held.has("applicationFeeUsd"),
+        exam: held.has("examRequirement") ? "Being re-checked" : (examStatus && RN_EXAM[examStatus]) || "Not published by the board",
         board: rule.transferMechanism.sourceUrl ? getSourceByUrl(rule.transferMechanism.sourceUrl) : undefined,
       },
     ];

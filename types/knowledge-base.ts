@@ -91,6 +91,13 @@ export interface VerifiedField<T> {
   history: FieldHistoryEntry[];
 
   notes?: string;
+
+  /**
+   * Set when the value can't currently be re-checked against a readable registered source (e.g. the board's page
+   * blocks automated reads). The value is kept as the research record but never shown: loaders turn it into
+   * "Unknown" and list the field as held, and pages say it is being re-checked, not that the board doesn't publish it.
+   */
+  displayHold?: string;
 }
 
 /** When two official-ish sources disagree on a fact, record both rather than picking one. */
@@ -127,6 +134,8 @@ export interface ConflictRecord {
 export interface ProfessionStateFacts {
   profession: string; // profession slug
   state: string; // state slug
+  /** Set by the page loader: fields withheld by a displayHold (see VerifiedField.displayHold). */
+  heldFields?: string[];
 
   /**
    * Phase 2D.3.1: optional license-rank/tier discriminator, added

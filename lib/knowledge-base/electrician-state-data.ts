@@ -1,4 +1,5 @@
 import fs from "node:fs";
+import { applyDisplayHolds } from "@/lib/knowledge-base/display-hold";
 import path from "node:path";
 import type { ProfessionStateFacts } from "@/types/knowledge-base";
 import { loadAllSources } from "./sources";
@@ -55,7 +56,8 @@ export function getElectricianStatePageData(state: string): ElectricianStatePage
     const facts: ProfessionStateFacts = JSON.parse(fs.readFileSync(filePath, "utf-8"));
     const check = isProfessionStateFactsPublishable(facts, resolveSource);
     if (!check.publishable) return null; // whole page withheld if any tier fails — never publish a partial/misleading page
-    tiers.push({ tier, facts });
+    const { record, held } = applyDisplayHolds(facts);
+    tiers.push({ tier, facts: { ...record, heldFields: held } });
   }
 
   return { state, profession: "electrician", tiers };

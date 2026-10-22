@@ -78,13 +78,19 @@ function TierSection({ tier, facts }: { tier: string; facts: ProfessionStateFact
   if (facts.universalLicenseRecognitionStatus.value !== "Unknown") {
     rows.push({ label: "Universal License Recognition", field: facts.universalLicenseRecognitionStatus });
   }
-  const unpublished = rows.filter((r) => !isPublished(r.label, r.field)).map((r) => r.label);
+  const heldKeys = new Set(facts.heldFields ?? []);
+  const isHeld = (field: VerifiedField<unknown>) => Object.entries(facts).some(([k, v]) => v === field && heldKeys.has(k));
+  const unpublished = rows.filter((r) => !isPublished(r.label, r.field) && !isHeld(r.field)).map((r) => r.label);
+  const heldLabels = rows.filter((r) => isHeld(r.field)).map((r) => r.label);
 
   return (
     <section className="mt-10">
       <div className="flex flex-wrap items-center gap-3">
         <h2 className="text-2xl font-bold tracking-tight">{tierLabel}</h2>
-        <Badge variant={badgeVariant}>{reciprocityAllowed ? "Reciprocity Available" : "Reciprocity NOT Available"}</Badge>
+        {/* No badge when the reciprocity field isn't shown (unknown or held): "NOT Available" would be a claim we can't make. */}
+        {facts.reciprocityRules.value !== "Unknown" && (
+          <Badge variant={badgeVariant}>{reciprocityAllowed ? "Reciprocity Available" : "Reciprocity NOT Available"}</Badge>
+        )}
       </div>
       <div className="mt-4 rounded-xl border border-border px-6">
         {rows.map((r) => (
@@ -92,6 +98,9 @@ function TierSection({ tier, facts }: { tier: string; facts: ProfessionStateFact
         ))}
       </div>
       {unpublished.length > 0 && <p className="mt-3 text-sm text-muted-foreground">Not published by the board: {unpublished.join(", ")}.</p>}
+      {heldLabels.length > 0 && (
+        <p className="mt-2 text-sm text-muted-foreground">Not shown until we can re-check them against the board&apos;s own page: {heldLabels.join(", ")}.</p>
+      )}
     </section>
   );
 }

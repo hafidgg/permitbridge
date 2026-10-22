@@ -26,7 +26,7 @@ export function SourcedRoutesTable({ routes, showProfession = true }: { routes: 
                 </Link>
               </td>
               <td className="px-4 py-3">{r.pathway}</td>
-              <td className="px-4 py-3 whitespace-nowrap">{r.feeUsd === null ? "Not published by the board" : formatUsd(r.feeUsd)}</td>
+              <td className="px-4 py-3 whitespace-nowrap">{r.feeUsd !== null ? formatUsd(r.feeUsd) : r.feeHeld ? "Being re-checked" : "Not published by the board"}</td>
               <td className="px-4 py-3">{r.exam}</td>
               <td className="px-4 py-3">
                 {r.board ? (

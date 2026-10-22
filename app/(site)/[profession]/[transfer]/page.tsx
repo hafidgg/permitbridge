@@ -236,7 +236,10 @@ export default async function TransferRulePage({ params }: { params: Promise<Pag
     if (!source) return true;
     return BOARD_ONLY_FIELDS.has(key) && source.authorityLevel === "supplementary";
   };
-  const unpublishedLabels = [...criticalFields, ...supportingFields].filter(isUnpublished).map((k) => FIELD_LABELS[k]);
+  // Held fields (displayHold) are being re-checked, not unpublished: listed separately.
+  const held = new Set(rule.heldFields ?? []);
+  const unpublishedLabels = [...criticalFields, ...supportingFields].filter((k) => isUnpublished(k) && !held.has(k)).map((k) => FIELD_LABELS[k]);
+  const heldLabels = [...criticalFields, ...supportingFields].filter((k) => held.has(k)).map((k) => FIELD_LABELS[k]);
   const board = rule.transferMechanism.sourceUrl ? getSourceByUrl(rule.transferMechanism.sourceUrl) : undefined;
 
   const otherTransfers = getAllPublicTransferRuleSlugs().filter((s) => s.transfer !== resolvedParams.transfer);
@@ -347,6 +350,11 @@ export default async function TransferRulePage({ params }: { params: Promise<Pag
           </div>
           {unpublishedLabels.length > 0 && (
             <p className="mt-4 text-sm text-muted-foreground">Not published by the board: {unpublishedLabels.join(", ")}.</p>
+          )}
+          {heldLabels.length > 0 && (
+            <p className="mt-2 text-sm text-muted-foreground">
+              Not shown until we can re-check them against the board&apos;s own page: {heldLabels.join(", ")}.
+            </p>
           )}
         </section>
 

@@ -30,6 +30,7 @@ import { loadAllSources } from "./sources";
 import { buildTransferRuleSlug, parseTransferRuleSlug, validateTransferRule } from "./transfer-rule-schema";
 import { classifyTransferRuleCoverage, isTransferRulePublishable, CRITICAL_TRANSFER_RULE_FIELDS, getSecondarySourcedFields } from "./transfer-review";
 
+import { applyDisplayHolds } from "@/lib/knowledge-base/display-hold";
 const TRANSFER_RULES_ROOT = path.join(process.cwd(), "data", "knowledge-base", "transfer-rules");
 const KNOWN_PROFESSION_SLUGS = new Set(["registered-nurse"]); // matches data/knowledge-base/professions/*.json content
 
@@ -111,7 +112,8 @@ export function getPublicTransferRule(profession: string, transferSlug: string):
   const { publishable } = isTransferRulePublishable(rule, (url) => sourceByUrl.get(url), KNOWN_PROFESSION_SLUGS);
   if (!publishable) return undefined;
 
-  return rule;
+  const { record, held } = applyDisplayHolds(rule);
+  return { ...record, heldFields: held };
 }
 
 export function getSourceByUrl(url: string): SourceRecord | undefined {
