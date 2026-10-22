@@ -83,7 +83,7 @@
     "confidence": 0,
     "confidenceLevel": "unknown",
     "history": [],
-    "notes": "Research for this Minnesota expansion focused on DLI's own state-by-state reciprocity mechanism ((see undefined and the reciprocal-agreement rules)); no separate Minnesota Universal License Recognition statute for electricians was independently identified. Absence of a finding is not evidence of absence — left Unknown rather than assumed false, matching the same caution applied in colorado-master.json and arkansas-master.json."
+    "notes": "Research for this Minnesota expansion focused on DLI's own state-by-state reciprocity mechanism; no separate Minnesota Universal License Recognition statute for electricians was independently identified. Absence of a finding is not evidence of absence — left Unknown rather than assumed false, matching the same caution applied in colorado-master.json and arkansas-master.json."
   },
   "compactMembership": {
     "value": false,
