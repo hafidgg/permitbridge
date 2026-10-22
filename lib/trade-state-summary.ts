@@ -115,7 +115,8 @@ export function getTradeStateSummary(profession: TradeSummaryProfession, destina
   const onStatePage = new Set(boardProcedure?.steps ?? []);
   const folded = pairs.filter((p) => !p.hasPage);
   const byText = new Map<string, TradeSummaryPair[]>();
-  for (const p of folded) for (const step of new Set(p.rule.steps)) if (!onStatePage.has(step)) byText.set(step, [...(byText.get(step) ?? []), p]);
+  for (const p of folded.filter((f) => !f.rule.originRow))
+    for (const step of new Set(p.rule.steps)) if (!onStatePage.has(step)) byText.set(step, [...(byText.get(step) ?? []), p]);
   const sharedSteps: SharedStep[] = [...byText.entries()]
     .filter(([, ps]) => ps.length > 1)
     .map(([step, ps]) => ({
@@ -126,7 +127,9 @@ export function getTradeStateSummary(profession: TradeSummaryProfession, destina
     }));
   const isShared = (step: string) => (byText.get(step)?.length ?? 0) > 1;
   for (const p of pairs) {
-    const own = p.hasPage ? p.rule.steps : p.rule.steps.filter((s) => !isShared(s) && !onStatePage.has(s));
+    // A folded pair with an originRow is shown as its row plus the page's originShared text, which together carry
+    // everything its steps said (board steps on /state/{destination} aside); its steps stay as the research record.
+    const own = p.hasPage ? p.rule.steps : p.rule.originRow ? [] : p.rule.steps.filter((s) => !isShared(s) && !onStatePage.has(s));
     p.openQuestions = own.filter((s) => NEEDS_REVIEW.test(s)).map((s) => s.replace(NEEDS_REVIEW, ""));
     p.steps = p.hasPage ? [] : own.filter((s) => !NEEDS_REVIEW.test(s));
   }

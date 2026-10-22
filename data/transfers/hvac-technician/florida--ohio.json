@@ -30,5 +30,9 @@
   "updatedAt": "2026-09-30",
   "sourceUrl": "https://dam.assets.ohio.gov/image/upload/com.ohio.gov/DICO/OCILB/Out_of_State_Testing_Application_-_OCILB.pdf",
   "verifiedAt": "2026-09-30",
-  "confidence": 0.75
+  "confidence": 0.75,
+  "originRow": {
+    "applies": "No published OCILB HVAC agreement with Florida; Florida's Class A/B Air-Conditioning certification is the same license level.",
+    "note": "Florida's own reciprocity form (DBPR CILB 32) names only Louisiana, Mississippi, and North Carolina and has no Air-Conditioning category."
+  }
 }

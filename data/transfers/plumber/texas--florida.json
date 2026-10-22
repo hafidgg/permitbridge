@@ -30,5 +30,9 @@
   "updatedAt": "2026-09-30",
   "sourceUrl": "https://flrules.org/gateway/readRefFile.asp?refId=17718&filename=DBPR+CILB+10+-+Application+for+Certification+by+Endorsement_New+Final.doc",
   "verifiedAt": "2026-09-29",
-  "confidence": 0.75
+  "confidence": 0.75,
+  "originRow": {
+    "applies": "Texas Master or Journeyman Plumber license; Option C applies.",
+    "note": "Open question: Florida's Certified Plumbing Contractor is a contractor license. A Texas Master Plumber is the closer match, as the license that lets a person contract for and offer plumbing to the public as a Responsible Master Plumber, so it is plausibly similar. A Texas Journeyman Plumber cannot contract on its own and has not been shown to meet the same-or-similar condition. CILB makes the determination."
+  }
 }

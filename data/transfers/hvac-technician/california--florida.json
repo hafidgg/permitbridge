@@ -29,5 +29,9 @@
   "updatedAt": "2026-09-29",
   "sourceUrl": "https://flrules.org/gateway/readRefFile.asp?refId=17718&filename=DBPR+CILB+10+-+Application+for+Certification+by+Endorsement_New+Final.doc",
   "verifiedAt": "2026-09-29",
-  "confidence": 0.8
+  "confidence": 0.8,
+  "originRow": {
+    "applies": "California C-20 contractor license; Option C applies.",
+    "note": null
+  }
 }

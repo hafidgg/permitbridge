@@ -30,5 +30,9 @@
   "updatedAt": "2026-09-30",
   "sourceUrl": "https://flrules.org/gateway/readRefFile.asp?refId=17718&filename=DBPR+CILB+10+-+Application+for+Certification+by+Endorsement_New+Final.doc",
   "verifiedAt": "2026-09-30",
-  "confidence": 0.8
+  "confidence": 0.8,
+  "originRow": {
+    "applies": "Ohio HVAC contractor license; Option C applies.",
+    "note": "Ohio and Florida have no reciprocity agreement with each other. Open question: Ohio's license is plausibly similar, but it covers commercial work only, while Florida's Class A is unrestricted; whether that satisfies Option C, and whether it maps to Class A or Class B, is CILB's determination. Documents include a copy of Ohio's statutes or rules defining the HVAC contractor license."
+  }
 }

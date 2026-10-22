@@ -5792,13 +5792,28 @@ await test("[PERMANENT] trade-state notes cite only registered board sources of 
   for (const f of fs.readdirSync(dir).filter((x: string) => x.endsWith(".json"))) {
     const state = f.replace(/\.json$/, "").split("--")[1];
     const d = JSON.parse(fs.readFileSync(path.join(dir, f), "utf-8"));
-    for (const item of [...d.items, ...(d.openQuestions ?? [])]) {
+    for (const item of [...(d.items ?? []), ...(d.openQuestions ?? []), ...(d.originShared ?? [])]) {
       const src = allSources.find((s) => s.website === item.sourceUrl);
       assert(!!src, `${f}: ${item.sourceUrl} is not a registered source`);
       assert(src!.authorityLevel !== "supplementary", `${f}: ${item.sourceUrl} is supplementary`);
       assertEqual(src!.jurisdiction, state, `${f}: ${item.sourceUrl} must be a ${state} source`);
       assert(!/\.\.\.|…/.test(item.quote ?? ""), `${f}: a quote must be verbatim, not trimmed with an ellipsis`);
     }
+  }
+});
+
+// 2026-10-22: a consolidated pair renders on its summary page as one table row (originRow) under the page's
+// originShared text, instead of its repeated steps. originRow is our own wording, so it never carries quotation
+// marks; a verbatim quote belongs in originShared, naming its registered source.
+// If this fails: write the row from the record's own steps, or move the quote into originShared with its source.
+await test("[PERMANENT] every consolidated pair has an originRow in plain text, and its summary page has originShared", () => {
+  const list = JSON.parse(fs.readFileSync(path.join(process.cwd(), "data", "consolidated-transfers.json"), "utf-8")).pairs as { profession: string; from: string; to: string }[];
+  for (const p of list) {
+    const r = JSON.parse(fs.readFileSync(path.join(process.cwd(), "data", "transfers", p.profession, `${p.from}--${p.to}.json`), "utf-8"));
+    assert(!!r.originRow?.applies, `${p.profession} ${p.from}->${p.to}: missing originRow`);
+    for (const t of [r.originRow.applies, r.originRow.note ?? ""]) assert(!/["“”']\s|\s["“”']/.test(` ${t} `.replace(/(\w)'(\w)/g, "$1$2")), `${p.profession} ${p.from}->${p.to}: originRow must not quote ("${t.slice(0, 60)}")`);
+    const notes = path.join(process.cwd(), "data", "trade-state-notes", `${p.profession}--${p.to}.json`);
+    assert(fs.existsSync(notes) && JSON.parse(fs.readFileSync(notes, "utf-8")).originShared?.length > 0, `/${p.profession}/${p.to} needs originShared`);
   }
 });
 

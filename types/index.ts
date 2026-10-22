@@ -121,6 +121,12 @@ export interface TransferRule {
    * summaries say "pending an official answer" instead of "not yet researched".
    */
   pendingBoardAnswer?: { board: string; question: string };
+  /**
+   * A consolidated pair's row on its destination summary page: what applies to this origin, and any
+   * origin-only fact or open question. Written from the record's own steps; replaces its origin-named
+   * and needs_review steps there (the steps stay as the research record).
+   */
+  originRow?: { applies: string; note: string | null };
 }
 
 export interface GuideSummary {

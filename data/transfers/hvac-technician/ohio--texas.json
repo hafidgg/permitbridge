@@ -29,5 +29,9 @@
   "updatedAt": "2026-09-30",
   "sourceUrl": "https://www.tdlr.texas.gov/acr/forms/acr002%20contractor%20license%20application.pdf",
   "verifiedAt": "2026-09-30",
-  "confidence": 0.75
+  "confidence": 0.75,
+  "originRow": {
+    "applies": "Not eligible for ACR reciprocity; the Ohio license is evaluated case by case.",
+    "note": "Ohio's own reciprocity agreement with Texas covers Electrical only. Open question: Texas classifies by equipment capacity, Ohio by type of work (commercial); whether TDLR credits an Ohio commercial-only license, and toward which class, is not stated in TDLR's materials."
+  }
 }

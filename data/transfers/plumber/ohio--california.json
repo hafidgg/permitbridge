@@ -29,5 +29,9 @@
   "updatedAt": "2026-09-30",
   "sourceUrl": "https://www.cslb.ca.gov/Contractors/Applicants/Reciprocity/Reciprocity_Requirements.aspx",
   "verifiedAt": "2026-09-30",
-  "confidence": 0.85
+  "confidence": 0.85,
+  "originRow": {
+    "applies": "Ohio OCILB license; the §7065.1 waiver does not apply.",
+    "note": "We also did not find a published OCILB agreement with California."
+  }
 }

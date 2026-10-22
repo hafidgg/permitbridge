@@ -28,5 +28,9 @@
   "updatedAt": "2026-09-30",
   "sourceUrl": "https://www.tdlr.texas.gov/acr/forms/acr002%20contractor%20license%20application.pdf",
   "verifiedAt": "2026-09-30",
-  "confidence": 0.8
+  "confidence": 0.8,
+  "originRow": {
+    "applies": "Not eligible for ACR reciprocity; the California license is evaluated case by case.",
+    "note": "TDLR publishes no rule saying which Texas requirements a California C-20 license satisfies."
+  }
 }

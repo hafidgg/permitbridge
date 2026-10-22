@@ -20,9 +20,11 @@ export interface TradeStateNoteItem {
 }
 
 export interface TradeStateNotes {
-  heading: string;
+  heading: string | null;
   items: TradeStateNoteItem[];
   openQuestions: Array<{ text: string; source: SourceRecord }>;
+  /** What applies to every origin row on the summary page, written once. */
+  originShared: Array<{ text: string; source: SourceRecord }>;
 }
 
 interface RawItem {
@@ -42,10 +44,16 @@ function boardSource(url: string, file: string): SourceRecord {
 export function getTradeStateNotes(profession: string, state: string): TradeStateNotes | null {
   const file = path.join(process.cwd(), "data", "trade-state-notes", `${profession}--${state}.json`);
   if (!fs.existsSync(file)) return null;
-  const raw = JSON.parse(fs.readFileSync(file, "utf-8")) as { heading: string; items: RawItem[]; openQuestions?: Array<{ text: string; sourceUrl: string }> };
+  const raw = JSON.parse(fs.readFileSync(file, "utf-8")) as {
+    heading?: string;
+    items?: RawItem[];
+    openQuestions?: Array<{ text: string; sourceUrl: string }>;
+    originShared?: Array<{ text: string; sourceUrl: string }>;
+  };
   return {
-    heading: raw.heading,
-    items: raw.items.map(({ sourceUrl, ...i }) => ({ ...i, source: boardSource(sourceUrl, file) })),
+    heading: raw.heading ?? null,
+    items: (raw.items ?? []).map(({ sourceUrl, ...i }) => ({ ...i, source: boardSource(sourceUrl, file) })),
     openQuestions: (raw.openQuestions ?? []).map((q) => ({ text: q.text, source: boardSource(q.sourceUrl, file) })),
+    originShared: (raw.originShared ?? []).map((q) => ({ text: q.text, source: boardSource(q.sourceUrl, file) })),
   };
 }

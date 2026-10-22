@@ -31,5 +31,9 @@
   "updatedAt": "2026-09-30",
   "sourceUrl": "https://dam.assets.ohio.gov/image/upload/com.ohio.gov/DICO/OCILB/Out_of_State_Testing_Application_-_OCILB.pdf",
   "verifiedAt": "2026-09-30",
-  "confidence": 0.7
+  "confidence": 0.7,
+  "originRow": {
+    "applies": "No published OCILB HVAC agreement with California; C-20 is the same license level as Ohio's HVAC contractor license.",
+    "note": "Open question: ORC 4796.01 defines an out-of-state occupational license as one issued to an individual, while CSLB issues contractor licenses to the business; whether a C-20 held by a corporation or LLC fits that definition is not settled by the text."
+  }
 }

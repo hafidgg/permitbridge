@@ -52,6 +52,8 @@ export function TradeStateSummaryPage({ profession, state }: { profession: Trade
   const path = `/${profession}/${state}`;
   const board = s.shared?.source ?? s.pairs[0]?.source;
   const notes = getTradeStateNotes(profession, state);
+  // Folded pairs with an originRow render as table rows; kept pairs (own page) stay as cards.
+  const rows = s.pairs.filter((p) => !p.hasPage && p.rule.originRow);
 
   return (
     <div>
@@ -130,7 +132,7 @@ export function TradeStateSummaryPage({ profession, state }: { profession: Trade
           )}
         </section>
 
-        {notes && (
+        {notes?.heading && (
           <section className="mt-10">
             <h2 className="mb-4 text-2xl font-bold tracking-tight">{notes.heading}</h2>
             <ul className="space-y-3 text-sm">
@@ -179,8 +181,58 @@ export function TradeStateSummaryPage({ profession, state }: { profession: Trade
               .
             </p>
           )}
+          {rows.length > 0 && notes && notes.originShared.length > 0 && (
+            <div className="mb-6">
+              <p className="mb-2 text-sm font-medium">For every origin state in the table below:</p>
+              <ul className="list-disc space-y-1.5 pl-5 text-sm">
+                {notes.originShared.map((x) => (
+                  <li key={x.text}>{x.text}</li>
+                ))}
+              </ul>
+              <p className="mt-2 text-xs text-muted-foreground">
+                Source:{" "}
+                {[...new Map(notes.originShared.map((x) => [x.source.id, x.source] as const)).values()].map((src, i) => (
+                  <span key={src.id}>
+                    {i > 0 && ", "}
+                    <a href={src.website} target="_blank" rel="noopener noreferrer nofollow" className="underline underline-offset-4">
+                      {src.agencyName}
+                    </a>
+                  </span>
+                ))}
+              </p>
+            </div>
+          )}
+          {rows.length > 0 && (
+            <div className="mb-6 overflow-x-auto rounded-lg border border-border">
+              <table className="w-full text-left text-sm">
+                <thead className="bg-muted/50 text-xs uppercase text-muted-foreground">
+                  <tr>
+                    <th scope="col" className="px-4 py-3">Origin</th>
+                    <th scope="col" className="px-4 py-3">What applies</th>
+                    <th scope="col" className="px-4 py-3">Source</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-border">
+                  {rows.map((p) => (
+                    <tr key={p.origin.slug} id={`from-${p.origin.slug}`} className="scroll-mt-20 align-top">
+                      <td className="px-4 py-3 font-medium">{p.origin.name}</td>
+                      <td className="px-4 py-3">
+                        {p.rule.originRow!.applies}
+                        {p.rule.originRow!.note && <p className="mt-1 text-muted-foreground">{p.rule.originRow!.note}</p>}
+                      </td>
+                      <td className="px-4 py-3">
+                        <a href={p.source.website} target="_blank" rel="noopener noreferrer nofollow" className="underline underline-offset-4">
+                          {p.source.agencyName}
+                        </a>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          )}
           <div className="space-y-4">
-            {s.pairs.map((p) => (
+            {s.pairs.filter((p) => !rows.includes(p)).map((p) => (
               <div key={p.origin.slug} id={`from-${p.origin.slug}`} className="scroll-mt-20 rounded-lg border border-border p-5">
                 <div className="flex flex-wrap items-baseline justify-between gap-2">
                   <h3 className="text-lg font-semibold">
