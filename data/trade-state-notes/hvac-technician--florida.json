@@ -2,8 +2,43 @@
   "_comment": "Destination-level text for /hvac-technician/florida. originShared applies to every origin row; merged from the records' own wording with the origin made generic. Quotation marks only around text verbatim in the named registered source.",
   "originShared": [
     {
-      "text": "Florida's Reciprocity form (DBPR CILB 32) is limited to Louisiana, Mississippi, and North Carolina and has no Air-Conditioning category, so reciprocity is unavailable to HVAC contractors in Florida regardless of home state. The route is DBPR CILB 10, Certification by Endorsement (Section 489.115(3), Florida Statutes), which lists Air-Conditioning as a selectable category. Within CILB 10, the NASCLA-based Option A does not apply to this classification: the form restricts it to \"General, Building, and Residential license\" only. The route is Option C: hold a valid, current out-of-state license for at least 10 years, active now or within the last 2 years, of a license type \"the same or similar as the license type being applied for\" (both quoted from DBPR's CILB 10 form). Options A (substantially equivalent exam) and B (substantially equivalent licensing criteria) also exist, but CILB 10 warns that comparisons of state-specific tests are \"very stringent and rarely approved\". Submit verification of licensure showing at least 10 years and any discipline, and a copy of your state's statutes or rules defining your license type. Open question: CILB 10's 2-hour Florida Building Code course is required of General, Building, Residential, and Roofing Contractor applicants; Air-Conditioning is not listed, and the document does not say whether Air-Conditioning applicants face it.",
-      "sourceUrl": "https://flrules.org/gateway/readRefFile.asp?refId=17718&filename=DBPR+CILB+10+-+Application+for+Certification+by+Endorsement_New+Final.doc"
+      "text": "Florida's Reciprocity form (DBPR CILB 32) covers applicants from Louisiana, Mississippi, and North Carolina in General, Building, and Residential categories; it has no Air-Conditioning category, so reciprocity is not available to HVAC contractors in Florida.",
+      "sourceUrls": [
+        "https://flrules.org/gateway/readRefFile.asp?refId=17723&filename=DBPR+CILB+32+-+Application+for+Certification+by+Reciprocity.doc"
+      ]
+    },
+    {
+      "text": "The route is DBPR CILB 10, Certification by Endorsement (Section 489.115(3), Florida Statutes), which lists Class A and Class B Air-Conditioning among its license categories.",
+      "sourceUrls": [
+        "https://flrules.org/gateway/readRefFile.asp?refId=17718&filename=DBPR+CILB+10+-+Application+for+Certification+by+Endorsement_New+Final.doc"
+      ]
+    },
+    {
+      "text": "Within CILB 10, the NASCLA-based Option A does not apply to this classification: the form restricts it to \"General, Building, and Residential license\" only. The route is Option C: hold a valid, current out-of-state license for at least 10 years, active now or within the last 2 years, of a license type \"the same or similar as the license type being applied for\".",
+      "sourceUrls": [
+        "https://flrules.org/gateway/readRefFile.asp?refId=17718&filename=DBPR+CILB+10+-+Application+for+Certification+by+Endorsement_New+Final.doc"
+      ]
+    },
+    {
+      "text": "Options A (substantially equivalent exam) and B (substantially equivalent licensing criteria) also exist, but CILB 10 warns that comparisons of state-specific tests are \"very stringent and rarely approved\".",
+      "sourceUrls": [
+        "https://flrules.org/gateway/readRefFile.asp?refId=17718&filename=DBPR+CILB+10+-+Application+for+Certification+by+Endorsement_New+Final.doc"
+      ]
+    },
+    {
+      "text": "For Option C, submit verification of licensure from your state showing at least 10 years and any disciplinary action, and a copy of your state's statutes or rules defining your license type.",
+      "sourceUrls": [
+        "https://flrules.org/gateway/readRefFile.asp?refId=17718&filename=DBPR+CILB+10+-+Application+for+Certification+by+Endorsement_New+Final.doc"
+      ]
+    },
+    {
+      "text": "Open question: CILB 10's 2-hour Florida Building Code course is required of General, Building, Residential, and Roofing Contractor applicants; Air-Conditioning is not listed, and the document does not say whether Air-Conditioning applicants face it.",
+      "sourceUrls": [
+        "https://flrules.org/gateway/readRefFile.asp?refId=17718&filename=DBPR+CILB+10+-+Application+for+Certification+by+Endorsement_New+Final.doc"
+      ]
     }
+  ],
+  "routeSources": [
+    "https://flrules.org/gateway/readRefFile.asp?refId=17718&filename=DBPR+CILB+10+-+Application+for+Certification+by+Endorsement_New+Final.doc"
   ]
 }

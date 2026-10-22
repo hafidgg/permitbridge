@@ -31,7 +31,10 @@
   "verifiedAt": "2026-09-30",
   "confidence": 0.85,
   "originRow": {
-    "applies": "Florida certified plumbing license; the §7065.1 waiver does not apply.",
-    "note": null
+    "applies": "Florida certified plumbing license; the route above applies.",
+    "note": null,
+    "sourceUrls": [
+      "https://www.cslb.ca.gov/Contractors/Applicants/Reciprocity/Reciprocity_Requirements.aspx"
+    ]
   }
 }

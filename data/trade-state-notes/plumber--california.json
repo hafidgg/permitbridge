@@ -2,12 +2,41 @@
   "_comment": "Destination-level text for /plumber/california. originShared applies to every origin row; merged from the records' own wording with the origin made generic. Quotation marks only around text verbatim in the named registered source.",
   "originShared": [
     {
-      "text": "None of these states is one of CSLB's reciprocal-agreement states (Arizona, Louisiana, Mississippi, Nevada, North Carolina) or on CSLB's Reciprocal Classifications List, so no reciprocity trade-exam waiver applies. California's other exam waiver (Business and Professions Code §7065.1) applies only to qualifiers of licenses issued by CSLB itself, not to out-of-state licenses. File CSLB's Application for Original Contractor License (form 13A-1) with the $450 non-refundable application fee, documenting at least four years of journey-level (or higher) C-36 experience within the last 10 years on CSLB's Certification of Work Experience form. Experience from your state can count, but must be documented on CSLB's own form. CSLB's NASCLA exam waiver does not help: it is restricted to the B-General Building classification and does not cover C-36.",
-      "sourceUrl": "https://www.cslb.ca.gov/Contractors/Applicants/Reciprocity/Reciprocity_Requirements.aspx"
+      "text": "None of these states is one of the states CSLB reciprocates with (Arizona, Louisiana, Mississippi, Nevada, and North Carolina), so no reciprocity applies.",
+      "sourceUrls": [
+        "https://www.cslb.ca.gov/Contractors/Applicants/Reciprocity/Reciprocity_Requirements.aspx"
+      ]
     },
     {
-      "text": "Once the application is posted, pass the C-36 trade exam and the California Law and Business exam; exam fees are paid directly to the testing vendor and are not published in the application.",
-      "sourceUrl": "https://www.cslb.ca.gov/Contractors/Applicants/Reciprocity/Reciprocity_Requirements.aspx"
+      "text": "CSLB's NASCLA reciprocity route is for applicants for the General Building classification, so it does not cover C-36.",
+      "sourceUrls": [
+        "https://www.cslb.ca.gov/Contractors/Applicants/Reciprocity/Reciprocity_Requirements.aspx"
+      ]
+    },
+    {
+      "text": "Apply with CSLB's Application for Original Contractor License and the $450 non-refundable application fee.",
+      "sourceUrls": [
+        "https://www.cslb.ca.gov/Contractors/Applicants/Apply_for_a_Sole_Owner_License/default.aspx",
+        "https://www.cslb.ca.gov/About_Us/Library/Fees.aspx"
+      ]
+    },
+    {
+      "text": "Document at least four years of journeyman-level or higher C-36 experience, obtained within the last 10 years, on CSLB's Certification of Work Experience form. The form's definition of a contractor includes an out-of-state licensed contractor.",
+      "sourceUrls": [
+        "https://www.cslb.ca.gov/Resources/FormsAndApplications/CertificationOfWorkExperience.pdf",
+        "https://www.cslb.ca.gov/Contractors/Applicants/Apply_for_a_Sole_Owner_License/default.aspx"
+      ]
+    },
+    {
+      "text": "After CSLB accepts the application, pass a trade exam and/or a business and law exam; exam fees are paid directly to the testing vendor.",
+      "sourceUrls": [
+        "https://www.cslb.ca.gov/Contractors/Applicants/Apply_for_a_Sole_Owner_License/default.aspx"
+      ]
     }
+  ],
+  "routeSources": [
+    "https://www.cslb.ca.gov/Contractors/Applicants/Reciprocity/Reciprocity_Requirements.aspx",
+    "https://www.cslb.ca.gov/About_Us/Library/Fees.aspx",
+    "https://www.cslb.ca.gov/Contractors/Applicants/Apply_for_a_Sole_Owner_License/default.aspx"
   ]
 }

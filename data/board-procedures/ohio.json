@@ -1,0 +1,35 @@
+{
+  "_comment": "Steps OCILB/CSLB/DBPR apply to HVAC and plumbing applicants alike, shown once on /state/ohio. Each item names the registered documents that contain it. replacesSteps: the verbatim record steps these stand in for (kept off the summary pages).",
+  "items": [
+    {
+      "text": "OCILB's Out-of-State Examination Application lets the holder of an out-of-state trades contractors license substantially similar to the Ohio license qualify for the Ohio examination; the examination is still required.",
+      "sourceUrls": [
+        "https://dam.assets.ohio.gov/image/upload/com.ohio.gov/DICO/OCILB/Out_of_State_Testing_Application_-_OCILB.pdf"
+      ]
+    },
+    {
+      "text": "Maintain contractor's liability insurance of at least $500,000, in one contracting company name only.",
+      "sourceUrls": [
+        "https://dam.assets.ohio.gov/image/upload/com.ohio.gov/DICO/OCILB/Out_of_State_Testing_Application_-_OCILB.pdf"
+      ]
+    },
+    {
+      "text": "Pay the $25.00 application fee. Once approved (approval is valid for one year), obtain BCI and FBI background checks before sitting for the PSI computer-based exam.",
+      "sourceUrls": [
+        "https://dam.assets.ohio.gov/image/upload/com.ohio.gov/DICO/OCILB/Out_of_State_Testing_Application_-_OCILB.pdf"
+      ]
+    },
+    {
+      "text": "After passing both sections, send a copy of the exam results, a $25 check, and proof of at least $500,000 contractor liability insurance; the license and insurance must be assigned to a contracting company.",
+      "sourceUrls": [
+        "https://dam.assets.ohio.gov/image/upload/com.ohio.gov/DICO/OCILB/Out_of_State_Testing_Application_-_OCILB.pdf"
+      ]
+    }
+  ],
+  "replacesSteps": [
+    "After passing both sections, send the exam results, a $25 license fee, and a certificate of liability insurance; the license and insurance must be assigned to a contracting company.",
+    "Instead of reciprocity, OCILB's Out-of-State Examination Application offers a route for holders of an out-of-state trades contractor license 'substantially similar' to the Ohio license (ORC Chapter 4796). It replaces Ohio's usual five-years-as-a-tradesperson requirement, but the Ohio examination is still required.",
+    "Maintain contractor's liability insurance of at least $500,000 in a single contracting company's name.",
+    "Pay the $25 application fee. Once approved (approval is valid for one year), complete BCI and FBI background checks, then schedule the PSI computer-based exam; PSI's exam fee is not published in the application."
+  ]
+}

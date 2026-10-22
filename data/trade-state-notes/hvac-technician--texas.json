@@ -2,20 +2,37 @@
   "_comment": "Destination-level text for /hvac-technician/texas. originShared applies to every origin row; merged from the records' own wording with the origin made generic. Quotation marks only around text verbatim in the named registered source.",
   "originShared": [
     {
-      "text": "TDLR's Air Conditioning and Refrigeration (ACR) Contractor reciprocity is limited to Georgia and South Carolina: the ACR002 application states Texas \"currently reciprocates with Georgia and South Carolina only\" (TDLR's ACR002 application). File the standard ACR002 contractor license application with the $115 non-refundable fee, including a copy of your current license and a list of the requirements you met to obtain it, as TDLR's out-of-state applicant page instructs. TDLR evaluates the out-of-state license case by case: depending on the requirements of your current license, you may be required to complete some or all of the Texas requirements for licensure, including taking a licensing examination.",
-      "sourceUrl": "https://www.tdlr.texas.gov/acr/forms/acr002%20contractor%20license%20application.pdf"
+      "text": "TDLR's ACR002 application states Texas \"currently reciprocates with Georgia and South Carolina only\".",
+      "sourceUrls": [
+        "https://www.tdlr.texas.gov/acr/forms/acr002%20contractor%20license%20application.pdf"
+      ]
     },
     {
-      "text": "Unless TDLR waives it, document at least 48 months (4 years) of practical experience within the preceding 72 months (6 years) on TDLR's Experience Verification Form, or substitute qualifying education for part of it per the form's education table.",
-      "sourceUrl": "https://www.tdlr.texas.gov/acr/forms/acr002%20contractor%20license%20application.pdf"
+      "text": "File ACR002 with the $115 non-refundable application fee.",
+      "sourceUrls": [
+        "https://www.tdlr.texas.gov/acr/forms/acr002%20contractor%20license%20application.pdf"
+      ]
     },
     {
-      "text": "Expect to schedule and pass the PSI-administered Texas exam for the applicable class (A or B) once TDLR approves the application; PSI's exam fee is not published in TDLR's materials.",
-      "sourceUrl": "https://www.tdlr.texas.gov/acr/forms/acr002%20contractor%20license%20application.pdf"
+      "text": "Experience-only applicants attach Experience Verification Forms showing at least 48 months (4 years) of practical experience in the preceding 72 months (6 years); ACR002 also lets you substitute qualifying education for part of the experience.",
+      "sourceUrls": [
+        "https://www.tdlr.texas.gov/acr/forms/acr002%20contractor%20license%20application.pdf"
+      ]
     },
     {
-      "text": "Obtain the required certificate of insurance before the license is issued.",
-      "sourceUrl": "https://www.tdlr.texas.gov/acr/forms/acr002%20contractor%20license%20application.pdf"
+      "text": "Once the application is approved, TDLR notifies the exam provider (PSI); the exam fee is paid directly to PSI.",
+      "sourceUrls": [
+        "https://www.tdlr.texas.gov/acr/forms/acr002%20contractor%20license%20application.pdf"
+      ]
+    },
+    {
+      "text": "Submit a Certificate of Insurance after you pass the examination.",
+      "sourceUrls": [
+        "https://www.tdlr.texas.gov/acr/forms/acr002%20contractor%20license%20application.pdf"
+      ]
     }
+  ],
+  "routeSources": [
+    "https://www.tdlr.texas.gov/acr/forms/acr002%20contractor%20license%20application.pdf"
   ]
 }

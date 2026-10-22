@@ -1,0 +1,20 @@
+{
+  "id": "ohio-ocilb-reciprocity-ms",
+  "agencyName": "Ohio Construction Industry Licensing Board (OCILB), Ohio Department of Commerce",
+  "website": "https://dam.assets.ohio.gov/image/upload/com.ohio.gov/DICO/OCILB/dico_MS_Reciprocity.pdf",
+  "jurisdiction": "ohio",
+  "professionsCovered": [
+    "hvac-technician",
+    "plumber"
+  ],
+  "sourceType": "official-board",
+  "official": true,
+  "authorityLevel": "authoritative",
+  "authorityRationale": "OCILB's own Mississippi reciprocity application, hosted on dam.assets.ohio.gov (Ohio Department of Commerce). Read raw 2026-10-22; its \"Type of License Applying For\" line lists: EL HVAC RE PL.",
+  "specificity": "profession-specific",
+  "reliabilityScore": 0.9,
+  "reliabilityRationale": "Official form of the licensing board itself, verified by direct raw read on 2026-10-22.",
+  "lastCrawl": null,
+  "lastManualVerification": "2026-10-22",
+  "fieldsUsingThisSource": 0
+}

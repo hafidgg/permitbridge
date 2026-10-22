@@ -31,7 +31,11 @@
   "verifiedAt": "2026-09-30",
   "confidence": 0.85,
   "originRow": {
-    "applies": "Texas Journeyman or Master Plumber license; the §7065.1 waiver does not apply.",
-    "note": "Holding an individual plumber license rather than a contractor license does not stand in the way: CSLB qualifies C-36 applicants on documented experience, not on holding a particular license. Work as a Texas Journeyman or Master Plumber can count toward the four years."
+    "applies": "Texas Journeyman or Master Plumber license; the route above applies.",
+    "note": "CSLB's experience form counts journeyman-level or higher work, so work as a Texas Journeyman or Master Plumber can be reported on it.",
+    "sourceUrls": [
+      "https://www.cslb.ca.gov/Contractors/Applicants/Reciprocity/Reciprocity_Requirements.aspx",
+      "https://www.cslb.ca.gov/Resources/FormsAndApplications/CertificationOfWorkExperience.pdf"
+    ]
   }
 }

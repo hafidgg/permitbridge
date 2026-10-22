@@ -23,8 +23,10 @@ export interface TradeStateNotes {
   heading: string | null;
   items: TradeStateNoteItem[];
   openQuestions: Array<{ text: string; source: SourceRecord }>;
-  /** What applies to every origin row on the summary page, written once. */
-  originShared: Array<{ text: string; source: SourceRecord }>;
+  /** What applies to every origin row on the summary page, written once; each item with the documents that contain it. */
+  originShared: Array<{ text: string; sources: SourceRecord[] }>;
+  /** The documents behind the route box (pathway, fees, exam, years). Null: the page falls back to the pairs' source. */
+  routeSources: SourceRecord[] | null;
 }
 
 interface RawItem {
@@ -41,6 +43,12 @@ function boardSource(url: string, file: string): SourceRecord {
   return source;
 }
 
+/** The registered board sources for a list of URLs; throws on any that isn't one, so nothing renders unsourced. */
+export function boardSources(urls: string[], file: string): SourceRecord[] {
+  if (urls.length === 0) throw new Error(`${file}: an item needs at least one source`);
+  return urls.map((u) => boardSource(u, file));
+}
+
 export function getTradeStateNotes(profession: string, state: string): TradeStateNotes | null {
   const file = path.join(process.cwd(), "data", "trade-state-notes", `${profession}--${state}.json`);
   if (!fs.existsSync(file)) return null;
@@ -48,12 +56,14 @@ export function getTradeStateNotes(profession: string, state: string): TradeStat
     heading?: string;
     items?: RawItem[];
     openQuestions?: Array<{ text: string; sourceUrl: string }>;
-    originShared?: Array<{ text: string; sourceUrl: string }>;
+    originShared?: Array<{ text: string; sourceUrls: string[] }>;
+    routeSources?: string[];
   };
   return {
     heading: raw.heading ?? null,
     items: (raw.items ?? []).map(({ sourceUrl, ...i }) => ({ ...i, source: boardSource(sourceUrl, file) })),
     openQuestions: (raw.openQuestions ?? []).map((q) => ({ text: q.text, source: boardSource(q.sourceUrl, file) })),
-    originShared: (raw.originShared ?? []).map((q) => ({ text: q.text, source: boardSource(q.sourceUrl, file) })),
+    originShared: (raw.originShared ?? []).map((q) => ({ text: q.text, sources: boardSources(q.sourceUrls, file) })),
+    routeSources: raw.routeSources ? boardSources(raw.routeSources, file) : null,
   };
 }

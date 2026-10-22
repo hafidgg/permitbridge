@@ -2,8 +2,37 @@
   "_comment": "Destination-level text for /hvac-technician/ohio. originShared applies to every origin row; merged from the records' own wording with the origin made generic. Quotation marks only around text verbatim in the named registered source.",
   "originShared": [
     {
-      "text": "OCILB's published HVAC agreements are with Alabama, Kentucky, Louisiana, Mississippi, South Carolina, Tennessee, and West Virginia. Ohio's state HVAC license is a contractor license for commercial work, issued by the Ohio Construction Industry Licensing Board (OCILB) and tied to a \"contracting company\" (OCILB's Out of State Examination Application). Document your out-of-state license held for at least 5 years (for example, a letter of good standing); at least five building permits issued under that license; at least one tax return showing income earned under it (plus one W-2 if not an owner); and that your contracting company is registered in Ohio as a foreign corporation or foreign LLC with a designated in-state agent. Whether your license is substantially similar to Ohio's HVAC contractor license is OCILB's case-by-case judgment; Ohio law does not define the standard.",
-      "sourceUrl": "https://dam.assets.ohio.gov/image/upload/com.ohio.gov/DICO/OCILB/Out_of_State_Testing_Application_-_OCILB.pdf"
+      "text": "OCILB publishes reciprocity applications that list HVAC for Alabama, Kentucky, Louisiana, Mississippi, South Carolina, Tennessee, and West Virginia.",
+      "sourceUrls": [
+        "https://dam.assets.ohio.gov/image/upload/com.ohio.gov/DICO/OCILB/dico_AL_Reciprocity.pdf",
+        "https://dam.assets.ohio.gov/image/upload/com.ohio.gov/DICO/OCILB/dico_KY_Reciprocity.pdf",
+        "https://dam.assets.ohio.gov/image/upload/v1740759437/com.ohio.gov/DICO/OCILB/dico_LA_Reciprocity.pdf",
+        "https://dam.assets.ohio.gov/image/upload/com.ohio.gov/DICO/OCILB/dico_MS_Reciprocity.pdf",
+        "https://dam.assets.ohio.gov/image/upload/com.ohio.gov/DICO/OCILB/dico_SC_Reciprocity.pdf",
+        "https://dam.assets.ohio.gov/image/upload/com.ohio.gov/DICO/OCILB/dico_TN_Reciprocity.pdf",
+        "https://dam.assets.ohio.gov/image/upload/com.ohio.gov/DICO/OCILB/dico_WV_HVREPL_Reciprocity.pdf"
+      ]
+    },
+    {
+      "text": "OCILB issues state licenses to HVAC contractors who perform commercial work, and the license must be assigned to a \"contracting company\".",
+      "sourceUrls": [
+        "https://dam.assets.ohio.gov/image/upload/com.ohio.gov/DICO/OCILB/Out_of_State_Testing_Application_-_OCILB.pdf"
+      ]
+    },
+    {
+      "text": "To qualify for the Ohio examination with an out-of-state trades contractors license substantially similar to the Ohio license, provide: proof of the license for at least 5 years (for example, a letter of good standing); proof of at least five authorizations for construction issued by the building authority where you hold the license; at least one tax return showing income earned under the license (plus one W2 if you are not an owner); and proof that your contracting company is licensed as a foreign corporation or registered as a foreign limited liability company with a designated agent in Ohio.",
+      "sourceUrls": [
+        "https://dam.assets.ohio.gov/image/upload/com.ohio.gov/DICO/OCILB/Out_of_State_Testing_Application_-_OCILB.pdf"
+      ]
+    },
+    {
+      "text": "The application does not say how OCILB decides whether a license is substantially similar.",
+      "sourceUrls": [
+        "https://dam.assets.ohio.gov/image/upload/com.ohio.gov/DICO/OCILB/Out_of_State_Testing_Application_-_OCILB.pdf"
+      ]
     }
+  ],
+  "routeSources": [
+    "https://dam.assets.ohio.gov/image/upload/com.ohio.gov/DICO/OCILB/Out_of_State_Testing_Application_-_OCILB.pdf"
   ]
 }

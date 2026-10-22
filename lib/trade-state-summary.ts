@@ -10,6 +10,9 @@ import { getAllStates, getAllTransferRules } from "@/lib/data";
 import { getSourceByUrl } from "@/lib/knowledge-base/transfer-rule-data";
 import { isTradeTransferPublishable } from "@/lib/knowledge-base/trade-transfer-gate";
 import { isConsolidatedTransfer } from "@/lib/publishable-transfers";
+import { boardSources } from "@/lib/trade-state-notes";
+import fs from "node:fs";
+import path from "node:path";
 import type { PathwayType, State, TransferRule } from "@/types";
 import type { SourceRecord } from "@/types/knowledge-base";
 
@@ -44,8 +47,6 @@ export interface TradeStateSummary {
   pairs: TradeSummaryPair[];
   /** The destination's route, only when every passing pair agrees on it; otherwise null and rows carry their own. */
   shared: { pathway: PathwayType; feeUsd: number; examRequired: boolean; minimumYearsLicensed: number; source: SourceRecord } | null;
-  /** Origin states (among those the site covers) with no publishable pair and no research on record. */
-  unverifiedOrigins: State[];
   /** Origin states whose pair was researched but is blocked on an official answer from the board. */
   pendingOrigins: Array<{ origin: State; board: string; question: string }>;
   sharedSteps: SharedStep[];
@@ -55,14 +56,16 @@ export interface TradeStateSummary {
 }
 
 /**
- * Steps the destination board applies to HVAC and plumbing applicants alike: verbatim in both trades' folded
- * records for this destination, naming no origin state. Written once on /state/{destination}, with the
- * sources of the records they come from, instead of on both summary pages.
+ * Steps the destination board applies to HVAC and plumbing applicants alike (data/board-procedures/{state}.json),
+ * written once on /state/{destination}. Each item names the registered documents that contain it; replacesSteps
+ * are the verbatim record steps it stands in for, kept off both summary pages.
  */
 export interface BoardProcedure {
   destination: State;
-  steps: string[];
-  sources: SourceRecord[];
+  items: Array<{ text: string; sources: SourceRecord[] }>;
+  /** Every agency cited by the items, for the heading. */
+  agencies: string[];
+  replacesSteps: string[];
 }
 
 const NEEDS_REVIEW = /^needs_review:\s*/;
@@ -71,24 +74,13 @@ export function isTradeSummaryProfession(slug: string): slug is TradeSummaryProf
   return (TRADE_SUMMARY_PROFESSIONS as readonly string[]).includes(slug);
 }
 
-function foldedPairs(profession: TradeSummaryProfession, destinationSlug: string): TransferRule[] {
-  return getAllTransferRules().filter(
-    (r) => r.profession === profession && r.toState === destinationSlug && isConsolidatedTransfer(r) && isTradeTransferPublishable(r, getSourceByUrl).publishable
-  );
-}
-
 export function getBoardProcedure(destinationSlug: string): BoardProcedure | null {
-  const states = getAllStates();
-  const destination = states.find((s) => s.slug === destinationSlug);
-  if (!destination) return null;
-  const hvac = foldedPairs("hvac-technician", destinationSlug);
-  const plumber = foldedPairs("plumber", destinationSlug);
-  const names = states.filter((s) => s.slug !== destinationSlug).map((s) => s.name);
-  const inPlumber = new Set(plumber.flatMap((r) => r.steps));
-  const steps = [...new Set(hvac.flatMap((r) => r.steps))].filter((s) => inPlumber.has(s) && !NEEDS_REVIEW.test(s) && !names.some((n) => s.includes(n)));
-  if (steps.length === 0) return null;
-  const sources = [...new Map([...hvac, ...plumber].filter((r) => r.steps.some((s) => steps.includes(s))).map((r) => getSourceByUrl(r.sourceUrl!)!).map((s) => [s.id, s] as const)).values()];
-  return { destination, steps, sources };
+  const destination = getAllStates().find((s) => s.slug === destinationSlug);
+  const file = path.join(process.cwd(), "data", "board-procedures", `${destinationSlug}.json`);
+  if (!destination || !fs.existsSync(file)) return null;
+  const raw = JSON.parse(fs.readFileSync(file, "utf-8")) as { items: Array<{ text: string; sourceUrls: string[] }>; replacesSteps: string[] };
+  const items = raw.items.map((i) => ({ text: i.text, sources: boardSources(i.sourceUrls, file) }));
+  return { destination, items, agencies: [...new Set(items.flatMap((i) => i.sources.map((s) => s.agencyName)))], replacesSteps: raw.replacesSteps };
 }
 
 export function getTradeStateSummary(profession: TradeSummaryProfession, destinationSlug: string): TradeStateSummary | null {
@@ -112,7 +104,7 @@ export function getTradeStateSummary(profession: TradeSummaryProfession, destina
   // Folded pairs: every step moves here from the old page, except board-wide steps, which live on /state/{destination}.
   // A step two or more of them share verbatim is written once.
   const boardProcedure = getBoardProcedure(destinationSlug);
-  const onStatePage = new Set(boardProcedure?.steps ?? []);
+  const onStatePage = new Set(boardProcedure?.replacesSteps ?? []);
   const folded = pairs.filter((p) => !p.hasPage);
   const byText = new Map<string, TradeSummaryPair[]>();
   for (const p of folded.filter((f) => !f.rule.originRow))
@@ -148,16 +140,11 @@ export function getTradeStateSummary(profession: TradeSummaryProfession, destina
     .filter((p) => !!p.origin)
     .sort((a, b) => a.origin.name.localeCompare(b.origin.name));
   const pendingSlugs = new Set(pendingOrigins.map((p) => p.origin.slug));
-  const unverifiedOrigins = states
-    .filter((s) => s.slug !== destinationSlug && !covered.has(s.slug) && !pendingSlugs.has(s.slug))
-    .sort((a, b) => a.name.localeCompare(b.name));
-
   return {
     profession,
     destination,
     pairs,
     shared: agree ? { pathway: first.rule.pathway, feeUsd: first.rule.feeUsd, examRequired: first.rule.examRequired, minimumYearsLicensed: first.rule.minimumYearsLicensed, source: first.source } : null,
-    unverifiedOrigins,
     pendingOrigins,
     sharedSteps,
     boardProcedure,

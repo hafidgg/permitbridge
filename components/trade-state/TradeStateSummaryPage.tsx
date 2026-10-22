@@ -9,6 +9,8 @@ import { articleJsonLd, buildMetadata } from "@/lib/seo";
 import { formatUsd, PROCESSING_TIME_NOT_PUBLISHED } from "@/lib/utils";
 import { getTradeStateSummary, type TradeStateSummary, type TradeSummaryProfession } from "@/lib/trade-state-summary";
 import { getTradeStateNotes } from "@/lib/trade-state-notes";
+import { SourceList } from "@/components/trade-state/SourceList";
+import { getSourceByUrl } from "@/lib/knowledge-base/transfer-rule-data";
 import type { PathwayType } from "@/types";
 
 const PROFESSION_LABEL: Record<TradeSummaryProfession, { title: string; noun: string; article: string }> = {
@@ -54,6 +56,7 @@ export function TradeStateSummaryPage({ profession, state }: { profession: Trade
   const notes = getTradeStateNotes(profession, state);
   // Folded pairs with an originRow render as table rows; kept pairs (own page) stay as cards.
   const rows = s.pairs.filter((p) => !p.hasPage && p.rule.originRow);
+  const rowSources = (urls: string[]) => urls.map((u) => getSourceByUrl(u)).filter((x): x is NonNullable<typeof x> => !!x);
 
   return (
     <div>
@@ -109,11 +112,8 @@ export function TradeStateSummaryPage({ profession, state }: { profession: Trade
                 {/* Only folded origins carry their steps here; a kept pair's breakdown is on its own page. */}
                 {s.pairs.some((p) => p.steps.length > 0) ? "; each origin below gives the breakdown." : "."}
               </p>
-              <p className="mt-2 text-xs text-muted-foreground">
-                Source:{" "}
-                <a href={s.shared.source.website} target="_blank" rel="noopener noreferrer nofollow" className="underline underline-offset-4">
-                  {s.shared.source.agencyName}
-                </a>
+              <p className="mt-2">
+                <SourceList sources={notes?.routeSources ?? [s.shared.source]} />
               </p>
             </div>
           ) : (
@@ -174,7 +174,7 @@ export function TradeStateSummaryPage({ profession, state }: { profession: Trade
           <h2 className="mb-4 text-2xl font-bold tracking-tight">By origin state</h2>
           {s.boardProcedure && (
             <p className="mb-4 text-sm text-muted-foreground">
-              Steps the {s.boardProcedure.sources.map((src) => src.agencyName).join(" and ")} applies to HVAC and plumbing applicants alike are on the{" "}
+              Steps the {s.boardProcedure.agencies.join(" and ")} applies to HVAC and plumbing applicants alike are on the{" "}
               <Link href={`/state/${state}#board-procedure`} className="text-primary underline underline-offset-4">
                 {s.destination.name} page
               </Link>
@@ -184,22 +184,13 @@ export function TradeStateSummaryPage({ profession, state }: { profession: Trade
           {rows.length > 0 && notes && notes.originShared.length > 0 && (
             <div className="mb-6">
               <p className="mb-2 text-sm font-medium">For every origin state in the table below:</p>
-              <ul className="list-disc space-y-1.5 pl-5 text-sm">
+              <ul className="list-disc space-y-2 pl-5 text-sm">
                 {notes.originShared.map((x) => (
-                  <li key={x.text}>{x.text}</li>
+                  <li key={x.text}>
+                    {x.text} <SourceList sources={x.sources} />
+                  </li>
                 ))}
               </ul>
-              <p className="mt-2 text-xs text-muted-foreground">
-                Source:{" "}
-                {[...new Map(notes.originShared.map((x) => [x.source.id, x.source] as const)).values()].map((src, i) => (
-                  <span key={src.id}>
-                    {i > 0 && ", "}
-                    <a href={src.website} target="_blank" rel="noopener noreferrer nofollow" className="underline underline-offset-4">
-                      {src.agencyName}
-                    </a>
-                  </span>
-                ))}
-              </p>
             </div>
           )}
           {rows.length > 0 && (
@@ -221,9 +212,7 @@ export function TradeStateSummaryPage({ profession, state }: { profession: Trade
                         {p.rule.originRow!.note && <p className="mt-1 text-muted-foreground">{p.rule.originRow!.note}</p>}
                       </td>
                       <td className="px-4 py-3">
-                        <a href={p.source.website} target="_blank" rel="noopener noreferrer nofollow" className="underline underline-offset-4">
-                          {p.source.agencyName}
-                        </a>
+                        <SourceList sources={rowSources(p.rule.originRow!.sourceUrls)} className="text-sm" />
                       </td>
                     </tr>
                   ))}
@@ -324,16 +313,6 @@ export function TradeStateSummaryPage({ profession, state }: { profession: Trade
           </section>
         )}
 
-        {s.unverifiedOrigins.length > 0 && (
-          <section className="mt-10 rounded-lg border border-dashed border-border p-5">
-            <h2 className="mb-2 text-lg font-bold">Not yet researched</h2>
-            <p className="text-sm text-muted-foreground">
-              We haven&apos;t published sourced requirements for transferring {label.article} {label.noun} license into {s.destination.name} from:{" "}
-              <strong className="text-foreground">{s.unverifiedOrigins.map((o) => o.name).join(", ")}</strong>. Rather than guess, we leave these
-              out until we can cite the board directly — check with the {s.destination.name} board in the meantime.
-            </p>
-          </section>
-        )}
       </div>
     </div>
   );

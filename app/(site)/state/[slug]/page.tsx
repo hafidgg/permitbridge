@@ -10,6 +10,7 @@ import { formatDate } from "@/lib/utils";
 import { getAllStates, getStateBySlug, getAllProfessions } from "@/lib/data";
 import { getTransferPageRules } from "@/lib/publishable-transfers";
 import { getBoardProcedure, getIndexableTradeStateSummaries } from "@/lib/trade-state-summary";
+import { SourceList } from "@/components/trade-state/SourceList";
 import { buildMetadata, articleJsonLd } from "@/lib/seo";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { SourcedRoutesTable } from "@/components/transfer/SourcedRoutesTable";
@@ -109,7 +110,7 @@ export default async function StatePage({ params }: { params: Promise<{ slug: st
         {boardProcedure && (
           <section id="board-procedure" className="mt-12 scroll-mt-20">
             <h2 className="mb-2 text-2xl font-bold tracking-tight">
-              How the {boardProcedure.sources.map((src) => src.agencyName).join(" and ")} handles HVAC and plumbing applicants from other states
+              How the {boardProcedure.agencies.join(" and ")} handles HVAC and plumbing applicants from other states
             </h2>
             <p className="mb-4 max-w-2xl text-sm text-muted-foreground">
               These steps apply to both trades, whichever state your license is from. What differs by trade and origin state is on the{" "}
@@ -123,22 +124,13 @@ export default async function StatePage({ params }: { params: Promise<{ slug: st
               ))}
               .
             </p>
-            <ul className="max-w-3xl list-disc space-y-1.5 pl-5 text-sm">
-              {boardProcedure.steps.map((step) => (
-                <li key={step}>{step}</li>
+            <ul className="max-w-3xl list-disc space-y-2 pl-5 text-sm">
+              {boardProcedure.items.map((item) => (
+                <li key={item.text}>
+                  {item.text} <SourceList sources={item.sources} />
+                </li>
               ))}
             </ul>
-            <p className="mt-3 text-xs text-muted-foreground">
-              Source:{" "}
-              {boardProcedure.sources.map((src, i) => (
-                <span key={src.id}>
-                  {i > 0 && ", "}
-                  <a href={src.website} target="_blank" rel="noopener noreferrer nofollow" className="underline underline-offset-4">
-                    {src.agencyName}
-                  </a>
-                </span>
-              ))}
-            </p>
           </section>
         )}
 

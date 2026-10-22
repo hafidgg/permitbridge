@@ -1,0 +1,22 @@
+{
+  "_comment": "Steps OCILB/CSLB/DBPR apply to HVAC and plumbing applicants alike, shown once on /state/california. Each item names the registered documents that contain it. replacesSteps: the verbatim record steps these stand in for (kept off the summary pages).",
+  "items": [
+    {
+      "text": "After passing the exam(s), pay the initial license fee: $200 for a sole owner, $350 for a non-sole owner.",
+      "sourceUrls": [
+        "https://www.cslb.ca.gov/About_Us/Library/Fees.aspx",
+        "https://www.cslb.ca.gov/Contractors/Applicants/Apply_for_a_Sole_Owner_License/default.aspx"
+      ]
+    },
+    {
+      "text": "File a contractor bond with CSLB before the license is issued.",
+      "sourceUrls": [
+        "https://www.cslb.ca.gov/Contractors/Applicants/Apply_for_a_Sole_Owner_License/default.aspx"
+      ]
+    }
+  ],
+  "replacesSteps": [
+    "After passing, pay the initial license fee ($200 sole owner / $350 non-sole owner) and file the required $25,000 contractor's bond with CSLB.",
+    "Await processing. The board does not publish a processing time."
+  ]
+}

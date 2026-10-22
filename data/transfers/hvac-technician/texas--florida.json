@@ -32,6 +32,10 @@
   "confidence": 0.75,
   "originRow": {
     "applies": "Texas ACR contractor license; Option C applies.",
-    "note": null
+    "note": null,
+    "sourceUrls": [
+      "https://flrules.org/gateway/readRefFile.asp?refId=17718&filename=DBPR+CILB+10+-+Application+for+Certification+by+Endorsement_New+Final.doc",
+      "https://www.tdlr.texas.gov/acr/forms/acr002%20contractor%20license%20application.pdf"
+    ]
   }
 }

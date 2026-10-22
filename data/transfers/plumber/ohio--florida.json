@@ -33,6 +33,11 @@
   "confidence": 0.8,
   "originRow": {
     "applies": "Ohio Plumbing contractor license; Option C applies.",
-    "note": "Ohio and Florida have no reciprocity agreement with each other. Open question: Ohio's license is plausibly similar, but it covers commercial work only, while Florida's is not limited to commercial work; whether that satisfies Option C is CILB's determination. Documents include a copy of Ohio's statutes or rules defining the Plumbing contractor license."
+    "note": "Ohio is not one of CILB 32's states. Open question: Ohio's license is plausibly similar, but it covers commercial work only; whether that satisfies Option C is CILB's determination.",
+    "sourceUrls": [
+      "https://flrules.org/gateway/readRefFile.asp?refId=17718&filename=DBPR+CILB+10+-+Application+for+Certification+by+Endorsement_New+Final.doc",
+      "https://flrules.org/gateway/readRefFile.asp?refId=17723&filename=DBPR+CILB+32+-+Application+for+Certification+by+Reciprocity.doc",
+      "https://dam.assets.ohio.gov/image/upload/com.ohio.gov/DICO/OCILB/Out_of_State_Testing_Application_-_OCILB.pdf"
+    ]
   }
 }

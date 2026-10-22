@@ -1,0 +1,22 @@
+{
+  "_comment": "Steps OCILB/CSLB/DBPR apply to HVAC and plumbing applicants alike, shown once on /state/florida. Each item names the registered documents that contain it. replacesSteps: the verbatim record steps these stand in for (kept off the summary pages).",
+  "items": [
+    {
+      "text": "Pay the $350 Endorsement application fee to the Florida Department of Business and Professional Regulation.",
+      "sourceUrls": [
+        "https://flrules.org/gateway/readRefFile.asp?refId=17718&filename=DBPR+CILB+10+-+Application+for+Certification+by+Endorsement_New+Final.doc"
+      ]
+    },
+    {
+      "text": "Submit electronic fingerprints, a FICO-derived credit report, and proof of satisfaction of any liens, judgments, or bankruptcy.",
+      "sourceUrls": [
+        "https://flrules.org/gateway/readRefFile.asp?refId=17718&filename=DBPR+CILB+10+-+Application+for+Certification+by+Endorsement_New+Final.doc"
+      ]
+    }
+  ],
+  "replacesSteps": [
+    "Pay the $350 Endorsement application fee to the Florida Department of Business and Professional Regulation.",
+    "Submit electronic fingerprints, a FICO-derived credit report, and proof of satisfaction of any liens, judgments, or bankruptcy.",
+    "Await processing. The board does not publish a processing time."
+  ]
+}

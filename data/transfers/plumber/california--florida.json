@@ -34,6 +34,10 @@
   "confidence": 0.8,
   "originRow": {
     "applies": "California C-36 contractor license; Option C applies.",
-    "note": "C-36 and Florida's certified Plumbing Contractor are both unlimited, statewide plumbing contractor licenses with heavily overlapping scopes, so C-36 appears to meet the same-or-similar condition, but applying it is CILB's decision, and the scopes are not identical. Documents include a copy of California's statutes or rules defining the C-36 license type."
+    "note": "C-36 appears to meet the same-or-similar condition, but applying it is CILB's decision.",
+    "sourceUrls": [
+      "https://flrules.org/gateway/readRefFile.asp?refId=17718&filename=DBPR+CILB+10+-+Application+for+Certification+by+Endorsement_New+Final.doc",
+      "https://www.cslb.ca.gov/about_us/library/licensing_classifications/Licensing_Classifications_Detail.aspx?Class=C36"
+    ]
   }
 }

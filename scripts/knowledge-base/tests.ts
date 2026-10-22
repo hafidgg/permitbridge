@@ -1468,7 +1468,8 @@ await test("slugs are deterministic for all 5 real transfer rules and match thei
 
 await test("Trust Dashboard metrics reconcile: total sources grew from 88 to 121 (4 Texas + 2 Arkansas + 5 Minnesota + 4 Utah + 1 Wyoming + 4 Iowa new authoritative electrician sources, + 6 trade-transfer sources registered 2026-10-01, + 5 origin-side trade sources registered 2026-10-09, + 1 Texas state-page source, + virginia-dpor-ulr) — this counts raw rows in the single flat sources/ table, a genuinely different kind of number from the per-profession trust/reconciliation reports fixed in Phase 2D.3.2.1, so growth here from an eighth state's real sources is expected and correct, not a conflation to hide", () => {
   // 2026-10-22: +1 = 122, texas-tsbpe-louisiana-reciprocity (TSBPE's Louisiana announcement, used only for its exact Journeyman-with-Gasfitter wording on /plumber/texas).
-  assertEqual(sources.length, 122, "expected 122 total sources (121 below + texas-tsbpe-louisiana-reciprocity, 2026-10-22): 88 + 4 Texas (Phase 2F.2) + 2 Arkansas + 5 Minnesota + 4 Utah (utah-oregon-reciprocal-agreement, utah-admin-code-r156-1-302, utah-dopl-master-electrician-endorsement-page, utah-dopl-journeyman-electrician-endorsement-page) + 1 Wyoming (wyoming-wsfm-electrical-licensing) + 4 Iowa (iowa-dial-electrical-licensing, iowa-dial-reciprocal-agreements-pdf, iowa-admin-code-481-401, iowa-admin-code-481-403) + 6 trade-transfer sources (florida-dbpr-cilb-10-endorsement, ohio-ocilb-out-of-state-testing-application, texas-tdlr-acr-contractor-application, texas-tsbpe-out-of-state-examination, california-cslb-reciprocity-requirements, california-cslb-reciprocal-classifications) + 5 origin-side trade sources (florida-dbpr-cilb-32-reciprocity, florida-fac-61g4-15-001, texas-tsbpe-administrative-rules-march-2026, california-cslb-c36-classification, california-cslb-c20-classification) + 1 Texas state-page source (texas-tdlr-removing-barriers-summary) + virginia-dpor-ulr (2026-10-09, Virginia ULR field)");
+  // 2026-10-22 attribution audit: +12 = 134 -- nine OCILB state reciprocity applications (AL, AR, KY, LA, MS, SC, TN, TX, WV HVAC/plumbing) behind the Ohio agreement lists and the Texas electrical form, and three CSLB documents (fees page, sole-owner application page, Certification of Work Experience) behind the California route text.
+  assertEqual(sources.length, 134, "expected 134 total sources (122 + 9 OCILB reciprocity applications + 3 CSLB documents, 2026-10-22; 121 below + texas-tsbpe-louisiana-reciprocity): 88 + 4 Texas (Phase 2F.2) + 2 Arkansas + 5 Minnesota + 4 Utah (utah-oregon-reciprocal-agreement, utah-admin-code-r156-1-302, utah-dopl-master-electrician-endorsement-page, utah-dopl-journeyman-electrician-endorsement-page) + 1 Wyoming (wyoming-wsfm-electrical-licensing) + 4 Iowa (iowa-dial-electrical-licensing, iowa-dial-reciprocal-agreements-pdf, iowa-admin-code-481-401, iowa-admin-code-481-403) + 6 trade-transfer sources (florida-dbpr-cilb-10-endorsement, ohio-ocilb-out-of-state-testing-application, texas-tdlr-acr-contractor-application, texas-tsbpe-out-of-state-examination, california-cslb-reciprocity-requirements, california-cslb-reciprocal-classifications) + 5 origin-side trade sources (florida-dbpr-cilb-32-reciprocity, florida-fac-61g4-15-001, texas-tsbpe-administrative-rules-march-2026, california-cslb-c36-classification, california-cslb-c20-classification) + 1 Texas state-page source (texas-tdlr-removing-barriers-summary) + virginia-dpor-ulr (2026-10-09, Virginia ULR field)");
   const secondarySources = sources.filter((s) => s.authorityLevel === "supplementary");
   assert(secondarySources.length >= 5, "expected at least the 5 secondary discovery-only sources registered in Phase 3.1");
 });
@@ -5792,11 +5793,20 @@ await test("[PERMANENT] trade-state notes cite only registered board sources of 
   for (const f of fs.readdirSync(dir).filter((x: string) => x.endsWith(".json"))) {
     const state = f.replace(/\.json$/, "").split("--")[1];
     const d = JSON.parse(fs.readFileSync(path.join(dir, f), "utf-8"));
-    for (const item of [...(d.items ?? []), ...(d.openQuestions ?? []), ...(d.originShared ?? [])]) {
-      const src = allSources.find((s) => s.website === item.sourceUrl);
-      assert(!!src, `${f}: ${item.sourceUrl} is not a registered source`);
-      assert(src!.authorityLevel !== "supplementary", `${f}: ${item.sourceUrl} is supplementary`);
-      assertEqual(src!.jurisdiction, state, `${f}: ${item.sourceUrl} must be a ${state} source`);
+    // 2026-10-22: originShared items and the route box cite every document they draw on (sourceUrls / routeSources).
+    const cited = [
+      ...[...(d.items ?? []), ...(d.openQuestions ?? [])].map((i: any) => ({ urls: [i.sourceUrl], quote: i.quote })),
+      ...(d.originShared ?? []).map((i: any) => ({ urls: i.sourceUrls, quote: undefined })),
+      ...(d.routeSources ? [{ urls: d.routeSources, quote: undefined }] : []),
+    ];
+    for (const item of cited) {
+      assert(Array.isArray(item.urls) && item.urls.length > 0, `${f}: every item needs at least one source`);
+      for (const url of item.urls) {
+        const src = allSources.find((s) => s.website === url);
+        assert(!!src, `${f}: ${url} is not a registered source`);
+        assert(src!.authorityLevel !== "supplementary", `${f}: ${url} is supplementary`);
+        assertEqual(src!.jurisdiction, state, `${f}: ${url} must be a ${state} source`);
+      }
       assert(!/\.\.\.|…/.test(item.quote ?? ""), `${f}: a quote must be verbatim, not trimmed with an ellipsis`);
     }
   }
@@ -5811,9 +5821,33 @@ await test("[PERMANENT] every consolidated pair has an originRow in plain text, 
   for (const p of list) {
     const r = JSON.parse(fs.readFileSync(path.join(process.cwd(), "data", "transfers", p.profession, `${p.from}--${p.to}.json`), "utf-8"));
     assert(!!r.originRow?.applies, `${p.profession} ${p.from}->${p.to}: missing originRow`);
+    assert(Array.isArray(r.originRow.sourceUrls) && r.originRow.sourceUrls.length > 0 && r.originRow.sourceUrls.every((u: string) => loadAllSources().some((x) => x.website === u && x.authorityLevel !== "supplementary")), `${p.profession} ${p.from}->${p.to}: originRow needs registered board sources`);
     for (const t of [r.originRow.applies, r.originRow.note ?? ""]) assert(!/["“”']\s|\s["“”']/.test(` ${t} `.replace(/(\w)'(\w)/g, "$1$2")), `${p.profession} ${p.from}->${p.to}: originRow must not quote ("${t.slice(0, 60)}")`);
     const notes = path.join(process.cwd(), "data", "trade-state-notes", `${p.profession}--${p.to}.json`);
     assert(fs.existsSync(notes) && JSON.parse(fs.readFileSync(notes, "utf-8")).originShared?.length > 0, `/${p.profession}/${p.to} needs originShared`);
+  }
+});
+
+// 2026-10-22: board-wide steps on /state/{state} come from data/board-procedures/{state}.json. Each item cites the
+// registered in-state documents that contain it, and replacesSteps must still be verbatim steps of both an HVAC and a
+// plumber folded record for that state, or the summary pages would show them again.
+// If this fails: re-copy the record step exactly, or fix the item's sources. Never cite a document that lacks the text.
+await test("[PERMANENT] board procedures cite registered in-state sources and replace real record steps", () => {
+  const dir = path.join(process.cwd(), "data", "board-procedures");
+  const all = loadAllSources();
+  const cons = JSON.parse(fs.readFileSync(path.join(process.cwd(), "data", "consolidated-transfers.json"), "utf-8")).pairs as { profession: string; from: string; to: string }[];
+  for (const f of fs.readdirSync(dir).filter((x: string) => x.endsWith(".json"))) {
+    const state = f.replace(/\.json$/, "");
+    const d = JSON.parse(fs.readFileSync(path.join(dir, f), "utf-8"));
+    for (const item of d.items) {
+      assert(item.sourceUrls.length > 0, `${f}: item needs a source`);
+      for (const u of item.sourceUrls) {
+        const src = all.find((x) => x.website === u);
+        assert(!!src && src.authorityLevel !== "supplementary" && src.jurisdiction === state, `${f}: ${u} must be a registered ${state} board source`);
+      }
+    }
+    const steps = (prof: string) => cons.filter((c) => c.profession === prof && c.to === state).flatMap((c) => JSON.parse(fs.readFileSync(path.join(process.cwd(), "data", "transfers", prof, `${c.from}--${c.to}.json`), "utf-8")).steps as string[]);
+    for (const s of d.replacesSteps) assert(steps("hvac-technician").includes(s) && steps("plumber").includes(s), `${f}: replacesSteps entry is not a verbatim step of both trades: ${s.slice(0, 60)}`);
   }
 });
 

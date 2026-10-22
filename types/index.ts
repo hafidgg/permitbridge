@@ -126,7 +126,7 @@ export interface TransferRule {
    * origin-only fact or open question. Written from the record's own steps; replaces its origin-named
    * and needs_review steps there (the steps stay as the research record).
    */
-  originRow?: { applies: string; note: string | null };
+  originRow?: { applies: string; note: string | null; /** The registered documents the row's text comes from. */ sourceUrls: string[] };
 }
 
 export interface GuideSummary {

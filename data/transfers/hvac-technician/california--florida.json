@@ -32,6 +32,10 @@
   "confidence": 0.8,
   "originRow": {
     "applies": "California C-20 contractor license; Option C applies.",
-    "note": null
+    "note": null,
+    "sourceUrls": [
+      "https://flrules.org/gateway/readRefFile.asp?refId=17718&filename=DBPR+CILB+10+-+Application+for+Certification+by+Endorsement_New+Final.doc",
+      "https://www.cslb.ca.gov/about_us/library/licensing_classifications/Licensing_Classifications_Detail.aspx?Class=C20"
+    ]
   }
 }

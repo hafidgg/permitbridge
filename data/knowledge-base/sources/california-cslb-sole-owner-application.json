@@ -1,0 +1,20 @@
+{
+  "id": "california-cslb-sole-owner-application",
+  "agencyName": "Contractors State License Board (CSLB), State of California",
+  "website": "https://www.cslb.ca.gov/Contractors/Applicants/Apply_for_a_Sole_Owner_License/default.aspx",
+  "jurisdiction": "california",
+  "professionsCovered": [
+    "hvac-technician",
+    "plumber"
+  ],
+  "sourceType": "official-board",
+  "official": true,
+  "authorityLevel": "authoritative",
+  "authorityRationale": "CSLB's Apply for a Sole Owner License page: $450 non-refundable application fee, Certification of Work Experience, trade and/or business and law exam with fees paid to the testing vendor, contractor bond. Read raw 2026-10-22 on cslb.ca.gov.",
+  "specificity": "profession-specific",
+  "reliabilityScore": 0.9,
+  "reliabilityRationale": "Official page or form of the licensing board itself, verified by direct raw read on 2026-10-22.",
+  "lastCrawl": null,
+  "lastManualVerification": "2026-10-22",
+  "fieldsUsingThisSource": 0
+}
