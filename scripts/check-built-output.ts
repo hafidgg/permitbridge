@@ -55,11 +55,19 @@ const visibleForbidden: { label: string; re: RegExp }[] = [
   { label: "raw boolean value", re: /\b(?:Recognition|Membership|Status) (?:true|false)\b/ },
 ];
 
-const stateNames: string[] = fs
-  .readdirSync(path.join(process.cwd(), "data", "states"))
-  .filter((f) => f.endsWith(".json"))
-  .map((f) => JSON.parse(fs.readFileSync(path.join(process.cwd(), "data", "states", f), "utf-8")).name as string);
+// All 50 states and DC, not just the ones in data/states: knowledge-base pages name others (2026-10-22: "georgia → illinois").
+const stateNames: string[] = [
+  "Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "District of Columbia", "Florida",
+  "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts",
+  "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico",
+  "New York", "North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina",
+  "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming",
+];
 visibleForbidden.push(
+  // Leaked values from a broken template or cross-reference (2026-10-22: "((see undefined and the exam requirements))").
+  { label: "leaked undefined/null value", re: /\bundefined\b|\[object Object\]|\bNaN\b/ },
+  // A markdown table the guide renderer doesn't support shows as raw pipes.
+  { label: "unrendered markdown table", re: /\|\s*-{3,}\s*\|/ },
   // Not inside a slug, path or domain ("new-york", "/texas", "tsbpe.texas.gov").
   { label: "lowercase state name", re: new RegExp(String.raw`(?<![./\w-])(?:${stateNames.map((n) => n.toLowerCase()).join("|")})\b(?![-/\w]|\.\w)`) },
   { label: "lowercase license code", re: /\b[a-z]-\d{1,2}\b/ },

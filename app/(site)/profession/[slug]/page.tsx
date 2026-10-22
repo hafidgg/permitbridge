@@ -8,6 +8,7 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { ProfessionIcon } from "@/components/profession/ProfessionIcon";
 import { formatDate, inSentence } from "@/lib/utils";
+import { stateDisplayName } from "@/lib/knowledge-base/transfer-rule-labels";
 import { getAllProfessions, getProfessionBySlug, getAllStates, getGuideBySlug, NURSE_TRANSFER_GUIDE_SLUG } from "@/lib/data";
 import { getTransferPageRules } from "@/lib/publishable-transfers";
 import { getAllPublicTransferRuleSlugs } from "@/lib/knowledge-base/transfer-rule-data";
@@ -174,8 +175,8 @@ export default async function ProfessionPage({ params }: { params: Promise<{ slu
             )}
             <div className="flex flex-wrap gap-3">
               {verifiedNurseTransfers.map((t) => {
-                const fromName = states.find((s) => s.slug === t.sourceState)?.name ?? t.sourceState;
-                const toName = states.find((s) => s.slug === t.destinationState)?.name ?? t.destinationState;
+                const fromName = states.find((s) => s.slug === t.sourceState)?.name ?? stateDisplayName(t.sourceState);
+                const toName = states.find((s) => s.slug === t.destinationState)?.name ?? stateDisplayName(t.destinationState);
                 return (
                   <Link key={t.transfer} href={`/${t.profession}/${t.transfer}`}>
                     <Badge variant="outline" className="px-4 py-2 text-sm hover:bg-muted">
