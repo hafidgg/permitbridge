@@ -83,7 +83,7 @@
     "confidence": 0,
     "confidenceLevel": "unknown",
     "history": [],
-    "notes": "Research for this Minnesota expansion focused on DLI's own state-by-state reciprocity mechanism ((see undefined and the reciprocal-agreement rules)); no separate Minnesota Universal License Recognition statute for electricians was independently identified. Absence of a finding is not evidence of absence — left Unknown rather than assumed false, matching the same caution applied in colorado-journeyman.json and arkansas-journeyman.json."
+    "notes": "Research for this Minnesota expansion focused on DLI's own state-by-state reciprocity mechanism; no separate Minnesota Universal License Recognition statute for electricians was independently identified. Absence of a finding is not evidence of absence — left Unknown rather than assumed false, matching the same caution applied in colorado-journeyman.json and arkansas-journeyman.json."
   },
   "compactMembership": {
     "value": false,
@@ -146,7 +146,7 @@
     "notes": "Minnesota's own materials and statute describe this mechanism as 'reciprocity' specifically (Minn. Stat. 326B.33, Subd. 20 is titled 'Reciprocity') — no separate 'endorsement' pathway or terminology was identified, matching the same finding already recorded for Colorado and Arkansas."
   },
   "requiredExams": {
-    "value": "No Minnesota examination is required for reciprocal Class A Journeyworker applicants: Minnesota Statutes 326B.33, Subdivision 20 explicitly authorizes the commissioner to 'issue a personal license without requiring the applicant to pass an examination' provided the applicant holds a valid comparable license from a state participating in the reciprocal agreement. This is a positively stated statutory exemption, not an inference. For ORIGINAL (non-reciprocal) journeyworker licensure, a written exam ($50 exam fee) is required after accruing the necessary documented electrical work experience (Minnesota Rules 3800.3520, Subpart 1: 'As a precondition to issuance of any class of individual electrical license, an applicant is required to pass an examination').",
+    "value": "No Minnesota examination is required for reciprocal Class A Journeyworker applicants: Minnesota Statutes 326B.33, Subdivision 20 explicitly authorizes the commissioner to 'issue a personal license without requiring the applicant to pass an examination' provided the applicant holds a valid comparable license from a state participating in the reciprocal agreement. This is a positively stated statutory exemption, not an inference. For original (non-reciprocal) licensure, Minnesota Statutes 326B.33, Subdivision 18 requires that, except as provided in subdivision 20, \"as a precondition to issuance of a personal license, each applicant must pass a written or oral examination developed and administered by the commissioner.\"",
     "sourceUrl": "https://www.revisor.mn.gov/statutes/cite/326B.33",
     "sourceTitle": "Minnesota Statutes 326B.33, Subdivision 20 (Reciprocity)",
     "sourceName": "Office of the Revisor of Statutes, State of Minnesota",
@@ -162,6 +162,14 @@
         "newValue": "No Minnesota examination is required for reciprocal Class A Journeyworker applicants, per Minnesota Statutes 326B.33, Subdivision 20's explicit exam exemption for holders of a valid comparable license from a participating state.",
         "changedAt": "2026-09-04",
         "reason": "Initial population from Minnesota Statutes 326B.33, Subdivision 20.",
+        "sourceUrl": "https://www.revisor.mn.gov/statutes/cite/326B.33",
+        "reviewer": null
+      },
+      {
+        "previousValue": "No Minnesota examination is required for reciprocal Class A Journeyworker applicants: Minnesota Statutes 326B.33, Subdivision 20 explicitly authorizes the commissioner to 'issue a personal license without requiring the applicant to pass an examination' provided the applicant holds a valid comparable license from a state participating in the reciprocal agreement. This is a positively stated statutory exemption, not an inference. For ORIGINAL (non-reciprocal) journeyworker licensure, a written exam ($50 exam fee) is required after accruing the necessary documented electrical work experience (Minnesota Rules 3800.3520, Subpart 1: 'As a precondition to issuance of any class of individual electrical license, an applicant is required to pass an examination').",
+        "newValue": "No Minnesota examination is required for reciprocal Class A Journeyworker applicants: Minnesota Statutes 326B.33, Subdivision 20 explicitly authorizes the commissioner to 'issue a personal license without requiring the applicant to pass an examination' provided the applicant holds a valid comparable license from a state participating in the reciprocal agreement. This is a positively stated statutory exemption, not an inference. For original (non-reciprocal) licensure, Minnesota Statutes 326B.33, Subdivision 18 requires that, except as provided in subdivision 20, \"as a precondition to issuance of a personal license, each applicant must pass a written or oral examination developed and administered by the commissioner.\"",
+        "changedAt": "2026-10-22",
+        "reason": "Requoted from the cited statute (326B.33 Subd. 18, raw text); the previous quote attributed to Minn. R. 3800.3520 was not verbatim and that rule is not a registered source. Dropped the unsourced $50 exam fee.",
         "sourceUrl": "https://www.revisor.mn.gov/statutes/cite/326B.33",
         "reviewer": null
       }
