@@ -101,7 +101,9 @@ export function TradeStateSummaryPage({ profession, state }: { profession: Trade
                 </div>
               </dl>
               <p className="mt-4 text-xs text-muted-foreground">
-                Fees are the state fees recorded for this route; each origin below gives the breakdown.
+                Fees are the state fees recorded for this route
+                {/* Only folded origins carry their steps here; a kept pair's breakdown is on its own page. */}
+                {s.pairs.some((p) => p.steps.length > 0) ? "; each origin below gives the breakdown." : "."}
               </p>
               <p className="mt-2 text-xs text-muted-foreground">
                 Source:{" "}
