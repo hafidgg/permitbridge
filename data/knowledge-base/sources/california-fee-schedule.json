@@ -9,7 +9,7 @@
   "sourceType": "official-board",
   "official": true,
   "authorityLevel": "authoritative",
-  "authorityRationale": "California Code of Regulations Title 16, Division 14, Section 1417, hosted directly on the BRN's own domain (rn.ca.gov) \u2014 the actual regulatory text establishing all BRN fees, not a third-party summary.",
+  "authorityRationale": "BRN's 2018 proposed fee regulation language (16 CCR 1417), hosted on rn.ca.gov. It is a rulemaking proposal, not the current fee schedule; the current figure is read from california-brn-fee-schedule (2026-10-22).",
   "reliabilityScore": 0.97,
   "reliabilityRationale": "Primary regulatory text self-hosted by the licensing board itself.",
   "lastCrawl": null,

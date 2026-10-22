@@ -24,7 +24,8 @@
         "reviewer": null
       }
     ],
-    "notes": "Illinois is not an NLC member, so it has no multistate license for Georgia's compact membership to interact with. GA's own FAQ: 'If you have never been licensed in Georgia but you are/have been licensed in another state you should apply for licensure by endorsement.'"
+    "notes": "Illinois is not an NLC member, so it has no multistate license for Georgia's compact membership to interact with. GA's own FAQ: 'If you have never been licensed in Georgia but you are/have been licensed in another state you should apply for licensure by endorsement.'",
+    "displayHold": "Georgia board source (sos.ga.gov / Justia mirror) returns HTTP 403 to automated reads; value not re-checkable against raw text (2026-10-22)."
   },
   "endorsementProcess": {
     "value": "Apply via the GOALS portal (Registered Nurse by Endorsement); submit signed/notarized application by mail, Nursys or direct license verification, GAPS/Idemia fingerprinting, and the fee.",
@@ -74,7 +75,8 @@
         "reviewer": null
       }
     ],
-    "notes": null
+    "notes": null,
+    "displayHold": "Georgia board source (sos.ga.gov / Justia mirror) returns HTTP 403 to automated reads; value not re-checkable against raw text (2026-10-22)."
   },
   "universalRecognitionApplies": {
     "value": "Unknown",
@@ -136,7 +138,8 @@
         "reviewer": null
       }
     ],
-    "notes": "Endorsement applicant must already hold a valid out-of-state license (implying NCLEX already passed); not retaken."
+    "notes": "Endorsement applicant must already hold a valid out-of-state license (implying NCLEX already passed); not retaken.",
+    "displayHold": "Georgia board source (sos.ga.gov / Justia mirror) returns HTTP 403 to automated reads; value not re-checkable against raw text (2026-10-22)."
   },
   "experienceRequirement": {
     "value": {
@@ -175,7 +178,8 @@
         "reviewer": null
       }
     ],
-    "notes": "Directly quoted from Georgia's own official regulation text (410-4-.03), hosted by the Georgia Secretary of State. This is the clearest, most precisely-sourced conditional requirement found across all 5 transfers in this batch."
+    "notes": "Directly quoted from Georgia's own official regulation text (410-4-.03), hosted by the Georgia Secretary of State. This is the clearest, most precisely-sourced conditional requirement found across all 5 transfers in this batch.",
+    "displayHold": "Georgia board source (sos.ga.gov / Justia mirror) returns HTTP 403 to automated reads; value not re-checkable against raw text (2026-10-22)."
   },
   "applicationFeeUsd": {
     "value": 75,
@@ -198,7 +202,8 @@
         "reviewer": null
       }
     ],
-    "notes": "Reuses the exact figure/source already verified in Phase 2.5 for this field on Georgia's own ProfessionStateFacts record -- 'Endorsement: $75.00' on the GBON's own fee schedule."
+    "notes": "Reuses the exact figure/source already verified in Phase 2.5 for this field on Georgia's own ProfessionStateFacts record -- 'Endorsement: $75.00' on the GBON's own fee schedule.",
+    "displayHold": "Georgia board source (sos.ga.gov / Justia mirror) returns HTTP 403 to automated reads; value not re-checkable against raw text (2026-10-22)."
   },
   "otherRequiredFees": {
     "value": "Unknown",
@@ -239,7 +244,8 @@
         "reviewer": null
       }
     ],
-    "notes": "410-3-.02(1)(c): endorsement applicant must complete registration 'to cause the submission of a criminal background check as required by O.C.G.A. 43-26-7(d)(3).' Source is a regulation-text mirror (Justia), not sos.ga.gov directly, since the primary GA rules browser page for this specific numbered rule returned only a table of contents in this session's search -- confidence reflects this (0.85, not higher)."
+    "notes": "410-3-.02(1)(c): endorsement applicant must complete registration 'to cause the submission of a criminal background check as required by O.C.G.A. 43-26-7(d)(3).' Source is a regulation-text mirror (Justia), not sos.ga.gov directly, since the primary GA rules browser page for this specific numbered rule returned only a table of contents in this session's search -- confidence reflects this (0.85, not higher).",
+    "displayHold": "Georgia board source (sos.ga.gov / Justia mirror) returns HTTP 403 to automated reads; value not re-checkable against raw text (2026-10-22)."
   },
   "fingerprintingRequirement": {
     "value": {
@@ -266,7 +272,8 @@
         "reviewer": null
       }
     ],
-    "notes": null
+    "notes": null,
+    "displayHold": "Georgia board source (sos.ga.gov / Justia mirror) returns HTTP 403 to automated reads; value not re-checkable against raw text (2026-10-22)."
   },
   "licenseVerificationRequirement": {
     "value": {
@@ -293,7 +300,8 @@
         "reviewer": null
       }
     ],
-    "notes": "Nursys or direct board-to-board verification, per Vivian Health's paraphrase of GBON's own stated process (secondary corroboration; GA's own FAQ page confirms endorsement generally requires license verification without itemizing the exact mechanism in the snippet reviewed)."
+    "notes": "Nursys or direct board-to-board verification, per Vivian Health's paraphrase of GBON's own stated process (secondary corroboration; GA's own FAQ page confirms endorsement generally requires license verification without itemizing the exact mechanism in the snippet reviewed).",
+    "displayHold": "Georgia board source (sos.ga.gov / Justia mirror) returns HTTP 403 to automated reads; value not re-checkable against raw text (2026-10-22)."
   },
   "documentsRequired": {
     "value": "Unknown",
@@ -334,7 +342,8 @@
         "reviewer": null
       }
     ],
-    "notes": null
+    "notes": null,
+    "displayHold": "Georgia board source (sos.ga.gov / Justia mirror) returns HTTP 403 to automated reads; value not re-checkable against raw text (2026-10-22)."
   },
   "disciplinaryDisclosureRequirement": {
     "value": {
@@ -361,7 +370,8 @@
         "reviewer": null
       }
     ],
-    "notes": "An applicant under investigation for a Nurse Practice Act violation may not be issued a license until resolved."
+    "notes": "An applicant under investigation for a Nurse Practice Act violation may not be issued a license until resolved.",
+    "displayHold": "Georgia board source (sos.ga.gov / Justia mirror) returns HTTP 403 to automated reads; value not re-checkable against raw text (2026-10-22)."
   },
   "processingTime": {
     "value": "Applications are typically reviewed within 15 business days of receipt of all required documents (longer if disciplinary/criminal history requires review).",
@@ -384,12 +394,11 @@
         "reviewer": null
       }
     ],
-    "notes": null
+    "notes": null,
+    "displayHold": "Georgia board source (sos.ga.gov / Justia mirror) returns HTTP 403 to automated reads; value not re-checkable against raw text (2026-10-22)."
   },
   "temporaryPermitAvailability": {
-    "value": {
-      "status": "required"
-    },
+    "value": "Unknown",
     "sourceUrl": "https://www.law.cornell.edu/regulations/georgia/Ga-Comp-R-Regs-R-510-3-.03",
     "sourceTitle": "Ga. Comp. R. & Regs. 510-3-.03 - Temporary License",
     "sourceName": "Georgia Board of Nursing (via Cornell Law regulation mirror)",
@@ -407,6 +416,16 @@
         },
         "changedAt": "2026-08-10",
         "reason": "Phase 3.1: first population from real official-source research.",
+        "sourceUrl": "https://www.law.cornell.edu/regulations/georgia/Ga-Comp-R-Regs-R-510-3-.03",
+        "reviewer": null
+      },
+      {
+        "previousValue": {
+          "status": "required"
+        },
+        "newValue": "Unknown",
+        "changedAt": "2026-10-22",
+        "reason": "Removed: the cited rule, Ga. Comp. R. & Regs. 510-3-.03, belongs to the Georgia State Board of Examiners of Psychologists (Department 510), not the Board of Nursing (Department 410).",
         "sourceUrl": "https://www.law.cornell.edu/regulations/georgia/Ga-Comp-R-Regs-R-510-3-.03",
         "reviewer": null
       }
@@ -434,7 +453,8 @@
         "reviewer": null
       }
     ],
-    "notes": null
+    "notes": null,
+    "displayHold": "Georgia board source (sos.ga.gov / Justia mirror) returns HTTP 403 to automated reads; value not re-checkable against raw text (2026-10-22)."
   },
   "exceptions": {
     "value": "Military spouses and transitioning service members have a distinct eligibility pathway referenced in Georgia's endorsement regulation (410-3-.02(1)), not researched in detail in this pass.",
@@ -457,7 +477,8 @@
         "reviewer": null
       }
     ],
-    "notes": null
+    "notes": null,
+    "displayHold": "Georgia board source (sos.ga.gov / Justia mirror) returns HTTP 403 to automated reads; value not re-checkable against raw text (2026-10-22)."
   },
   "conflicts": [],
   "lastFullReviewAt": null

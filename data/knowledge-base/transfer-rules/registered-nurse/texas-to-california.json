@@ -27,11 +27,11 @@
     "notes": "California is not an NLC member and does not recognize compact privilege at all -- even though Texas is a compact member and the nurse may hold a multistate license, it has no effect in California. BRN's own page: 'To qualify for endorsement (reciprocity) into California... you must hold a current and active RN license in another state.' (Note BRN's own page loosely uses the word 'reciprocity' in parentheses next to 'endorsement' -- per Phase 3.0's documented mechanism distinctions, this is still classified endorsement: BRN issues its OWN license after review, there is no bilateral agreement recognizing the license directly.)"
   },
   "endorsementProcess": {
-    "value": "Apply via BreEZe, selecting 'RN Endorsement'; submit Nursys or direct verification, official transcripts request, fingerprinting, and the $350 fee.",
+    "value": "Apply via BreEZe, selecting 'RN Endorsement'; submit Nursys or direct verification, official transcripts request, fingerprinting, and the application fee.",
     "sourceUrl": "https://www.rn.ca.gov/applicants/lic-end",
     "sourceTitle": "Licensure by Endorsement",
     "sourceName": "California Board of Registered Nursing (BRN)",
-    "verifiedAt": "2026-08-10",
+    "verifiedAt": "2026-10-22",
     "verificationMethod": "official_document_review",
     "reviewer": null,
     "status": "pending_verification",
@@ -43,6 +43,14 @@
         "newValue": "Apply via BreEZe, selecting 'RN Endorsement'; submit Nursys or direct verification, official transcripts request, fingerprinting, and the $350 fee.",
         "changedAt": "2026-08-10",
         "reason": "Phase 3.1: first population from real official-source research.",
+        "sourceUrl": "https://www.rn.ca.gov/applicants/lic-end",
+        "reviewer": null
+      },
+      {
+        "previousValue": "Apply via BreEZe, selecting 'RN Endorsement'; submit Nursys or direct verification, official transcripts request, fingerprinting, and the $350 fee.",
+        "newValue": "Apply via BreEZe, selecting 'RN Endorsement'; submit Nursys or direct verification, official transcripts request, fingerprinting, and the application fee.",
+        "changedAt": "2026-10-22",
+        "reason": "The cited BRN Licensure by Endorsement page states no fee amount; the figure lives in the fee field (BRN Fee Schedule).",
         "sourceUrl": "https://www.rn.ca.gov/applicants/lic-end",
         "reviewer": null
       }
@@ -154,10 +162,10 @@
   },
   "applicationFeeUsd": {
     "value": 350,
-    "sourceUrl": "https://www.rn.ca.gov/pdfs/regulations/proposedlang-fees2018.pdf",
-    "sourceTitle": "California Code of Regulations, Title 16, Division 14, Section 1417 - Fees",
+    "sourceUrl": "https://rn.ca.gov/consumers/fees.shtml",
+    "sourceTitle": "Fee Schedule",
     "sourceName": "California Board of Registered Nursing",
-    "verifiedAt": "2026-08-10",
+    "verifiedAt": "2026-10-22",
     "verificationMethod": "official_document_review",
     "reviewer": null,
     "status": "pending_verification",
@@ -170,6 +178,14 @@
         "changedAt": "2026-08-10",
         "reason": "Phase 3.1: first population from real official-source research.",
         "sourceUrl": "https://www.rn.ca.gov/pdfs/regulations/proposedlang-fees2018.pdf",
+        "reviewer": null
+      },
+      {
+        "previousValue": 350,
+        "newValue": 350,
+        "changedAt": "2026-10-22",
+        "reason": "Re-sourced to BRN's current Fee Schedule page (raw text: Registered Nurse Endorsement Application - RN from Another State, District or U.S. Territory $350); the previous source was the 2018 proposed fee language.",
+        "sourceUrl": "https://rn.ca.gov/consumers/fees.shtml",
         "reviewer": null
       }
     ],

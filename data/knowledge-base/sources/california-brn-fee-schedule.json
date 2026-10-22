@@ -1,0 +1,19 @@
+{
+  "id": "california-brn-fee-schedule",
+  "agencyName": "California Board of Registered Nursing (BRN)",
+  "website": "https://rn.ca.gov/consumers/fees.shtml",
+  "jurisdiction": "california",
+  "professionsCovered": [
+    "registered-nurse"
+  ],
+  "sourceType": "official-board",
+  "official": true,
+  "authorityLevel": "authoritative",
+  "authorityRationale": "BRN's own current Fee Schedule page. Raw text (HTML comments excluded): 'Registered Nurse Endorsement Application - RN from Another State, District or U.S. Territory ... $350'.",
+  "specificity": "field-specific",
+  "reliabilityScore": 0.95,
+  "reliabilityRationale": "Official document of the body itself, read raw on 2026-10-22.",
+  "lastCrawl": null,
+  "lastManualVerification": "2026-10-22",
+  "fieldsUsingThisSource": 0
+}

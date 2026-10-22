@@ -1,0 +1,19 @@
+{
+  "id": "ncsbn-nlc-60-day-rule-faq",
+  "agencyName": "NCSBN (National Council of State Boards of Nursing)",
+  "website": "https://www.nursecompact.com/files/60_day_rule_faqs.pdf",
+  "jurisdiction": "national",
+  "professionsCovered": [
+    "registered-nurse"
+  ],
+  "sourceType": "official-compact",
+  "official": true,
+  "authorityLevel": "authoritative",
+  "authorityRationale": "NCSBN's official FAQ on NLC Rule 402(2), the 60-day rule, on nursecompact.com. States the rule text '(Effective Jan. 2, 2024)'.",
+  "specificity": "field-specific",
+  "reliabilityScore": 0.95,
+  "reliabilityRationale": "Official document of the body itself, read raw on 2026-10-22.",
+  "lastCrawl": null,
+  "lastManualVerification": "2026-10-22",
+  "fieldsUsingThisSource": 0
+}

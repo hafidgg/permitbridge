@@ -1,0 +1,19 @@
+{
+  "id": "california-brn-1410-5-oal-approval",
+  "agencyName": "California Board of Registered Nursing (BRN)",
+  "website": "https://www.rn.ca.gov/pdfs/regulations/approval-1410_5.pdf",
+  "jurisdiction": "california",
+  "professionsCovered": [
+    "registered-nurse"
+  ],
+  "sourceType": "official-board",
+  "official": true,
+  "authorityLevel": "authoritative",
+  "authorityRationale": "Office of Administrative Law's Notice of Approval for BRN's 16 CCR 1410.5, hosted on rn.ca.gov: out-of-state nurses practicing in good standing two or more years can be licensed 'even if they have not taken the California required laboratory classwork'; 'This regulatory action becomes effective on 10/1/2023.'",
+  "specificity": "field-specific",
+  "reliabilityScore": 0.95,
+  "reliabilityRationale": "Official document of the body itself, read raw on 2026-10-22.",
+  "lastCrawl": null,
+  "lastManualVerification": "2026-10-22",
+  "fieldsUsingThisSource": 0
+}

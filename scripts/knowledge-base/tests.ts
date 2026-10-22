@@ -542,7 +542,8 @@ await test("field reconciliation sum check passes: authoritative + secondary + n
 await test("source reconciliation sum check passes: officialReferenced + secondaryReferenced + unused === totalSourceRecords (84 after Phase 2B.4 registered 3 new sources for California->Florida's upgrade)", () => {
   const recon = computeSourceReconciliation();
   assert(recon.sumCheckPasses, `expected sumCheck (${recon.sumCheck}) to equal totalSourceRecords (${recon.totalSourceRecords})`);
-  assertEqual(recon.totalSourceRecords, 84, "expected 84 total source records (81 after Phase 2B.3 + 3 new: florida-nurse-rn-lpn-page, florida-mobile-endorsement-form, florida-endorsement-transaction-form, Phase 2B.4)");
+  // 2026-10-22: +3 RN sources (california-brn-fee-schedule, california-brn-1410-5-oal-approval, ncsbn-nlc-60-day-rule-faq) = 87.
+  assertEqual(recon.totalSourceRecords, 87, "expected 87 total source records (84 + 3 RN sources registered 2026-10-22; 81 after Phase 2B.3 + 3 new: florida-nurse-rn-lpn-page, florida-mobile-endorsement-form, florida-endorsement-transaction-form, Phase 2B.4)");
 });
 
 await test("trust dashboard's fieldsUsingAuthoritativeSources/fieldsUsingSecondarySources exactly match the independently-computed field reconciliation", () => {
@@ -1134,7 +1135,7 @@ await test("10. Reconciliation remains consistent after the rename", () => {
   assert(fieldRecon.sumCheckPasses, "field reconciliation sum check must still pass");
   const sourceRecon = computeSourceReconciliation();
   assert(sourceRecon.sumCheckPasses, "source reconciliation sum check must still pass");
-  assertEqual(sourceRecon.totalSourceRecords, 84, "source record count as of this test's original writing (Phase 2.7) — grew further in Phase 3.1, Phase 2B.2, Phase 2B.3, and Phase 2B.4, which is expected and not a rename-related regression; this assertion documents Phase 2.7's own baseline moment, now updated to avoid false-failing on later legitimate growth");
+  assertEqual(sourceRecon.totalSourceRecords, 87, "source record count (87 after 2026-10-22's 3 RN sources) as of this test's original writing (Phase 2.7) — grew further in Phase 3.1, Phase 2B.2, Phase 2B.3, and Phase 2B.4, which is expected and not a rename-related regression; this assertion documents Phase 2.7's own baseline moment, now updated to avoid false-failing on later legitimate growth");
 });
 
 // ---------------------------------------------------------------------
@@ -1359,9 +1360,10 @@ await test("source jurisdiction matches destination context for all real rules (
       // test to accept it for every file. 2026-10-22: endorsementProcess's
       // BRN URL variant was normalized to the registered one, so 5 remain.
       // None of the 5 renders: a field without a registered source is never shown.
+      // 2026-10-22 batch 2: exceptions re-sourced to the registered OAL approval of 16 CCR 1410.5, so 4 remain.
       const criticalFieldsWithIssues = jurisdictionIssues.filter((i) => CRITICAL_TRANSFER_RULE_FIELDS.some((f) => i.message.startsWith(f)));
       assertEqual(criticalFieldsWithIssues, [], `${file}: expected zero jurisdiction/source-resolution issues on CRITICAL fields specifically`);
-      assertEqual(jurisdictionIssues.length, 5, `${file}: expected exactly 5 known, non-blocking Rule 7 warnings on non-critical fields — a real remaining quality gap for future improvement, not a regression`);
+      assertEqual(jurisdictionIssues.length, 4, `${file}: expected exactly 4 known, non-blocking Rule 7 warnings on non-critical fields — a real remaining quality gap for future improvement, not a regression`);
     } else if (file === "georgia-to-illinois.json") {
       // Phase 2B.3: all 9 CRITICAL fields upgraded to genuine registered
       // idfpr.illinois.gov sources this session — 2 NON-critical fields
@@ -1473,7 +1475,8 @@ await test("slugs are deterministic for all 5 real transfer rules and match thei
 await test("Trust Dashboard metrics reconcile: total sources grew from 88 to 121 (4 Texas + 2 Arkansas + 5 Minnesota + 4 Utah + 1 Wyoming + 4 Iowa new authoritative electrician sources, + 6 trade-transfer sources registered 2026-10-01, + 5 origin-side trade sources registered 2026-10-09, + 1 Texas state-page source, + virginia-dpor-ulr) — this counts raw rows in the single flat sources/ table, a genuinely different kind of number from the per-profession trust/reconciliation reports fixed in Phase 2D.3.2.1, so growth here from an eighth state's real sources is expected and correct, not a conflation to hide", () => {
   // 2026-10-22: +1 = 122, texas-tsbpe-louisiana-reciprocity (TSBPE's Louisiana announcement, used only for its exact Journeyman-with-Gasfitter wording on /plumber/texas).
   // 2026-10-22 attribution audit: +12 = 134 -- nine OCILB state reciprocity applications (AL, AR, KY, LA, MS, SC, TN, TX, WV HVAC/plumbing) behind the Ohio agreement lists and the Texas electrical form, and three CSLB documents (fees page, sole-owner application page, Certification of Work Experience) behind the California route text.
-  assertEqual(sources.length, 134, "expected 134 total sources (122 + 9 OCILB reciprocity applications + 3 CSLB documents, 2026-10-22; 121 below + texas-tsbpe-louisiana-reciprocity): 88 + 4 Texas (Phase 2F.2) + 2 Arkansas + 5 Minnesota + 4 Utah (utah-oregon-reciprocal-agreement, utah-admin-code-r156-1-302, utah-dopl-master-electrician-endorsement-page, utah-dopl-journeyman-electrician-endorsement-page) + 1 Wyoming (wyoming-wsfm-electrical-licensing) + 4 Iowa (iowa-dial-electrical-licensing, iowa-dial-reciprocal-agreements-pdf, iowa-admin-code-481-401, iowa-admin-code-481-403) + 6 trade-transfer sources (florida-dbpr-cilb-10-endorsement, ohio-ocilb-out-of-state-testing-application, texas-tdlr-acr-contractor-application, texas-tsbpe-out-of-state-examination, california-cslb-reciprocity-requirements, california-cslb-reciprocal-classifications) + 5 origin-side trade sources (florida-dbpr-cilb-32-reciprocity, florida-fac-61g4-15-001, texas-tsbpe-administrative-rules-march-2026, california-cslb-c36-classification, california-cslb-c20-classification) + 1 Texas state-page source (texas-tdlr-removing-barriers-summary) + virginia-dpor-ulr (2026-10-09, Virginia ULR field)");
+  // 2026-10-22 batch 2: +3 = 137 -- BRN fee schedule, OAL approval of 16 CCR 1410.5, NCSBN 60-day-rule FAQ.
+  assertEqual(sources.length, 137, "expected 137 total sources (134 + 3 RN sources, 2026-10-22; 122 + 9 OCILB reciprocity applications + 3 CSLB documents, 2026-10-22; 121 below + texas-tsbpe-louisiana-reciprocity): 88 + 4 Texas (Phase 2F.2) + 2 Arkansas + 5 Minnesota + 4 Utah (utah-oregon-reciprocal-agreement, utah-admin-code-r156-1-302, utah-dopl-master-electrician-endorsement-page, utah-dopl-journeyman-electrician-endorsement-page) + 1 Wyoming (wyoming-wsfm-electrical-licensing) + 4 Iowa (iowa-dial-electrical-licensing, iowa-dial-reciprocal-agreements-pdf, iowa-admin-code-481-401, iowa-admin-code-481-403) + 6 trade-transfer sources (florida-dbpr-cilb-10-endorsement, ohio-ocilb-out-of-state-testing-application, texas-tdlr-acr-contractor-application, texas-tsbpe-out-of-state-examination, california-cslb-reciprocity-requirements, california-cslb-reciprocal-classifications) + 5 origin-side trade sources (florida-dbpr-cilb-32-reciprocity, florida-fac-61g4-15-001, texas-tsbpe-administrative-rules-march-2026, california-cslb-c36-classification, california-cslb-c20-classification) + 1 Texas state-page source (texas-tdlr-removing-barriers-summary) + virginia-dpor-ulr (2026-10-09, Virginia ULR field)");
   const secondarySources = sources.filter((s) => s.authorityLevel === "supplementary");
   assert(secondarySources.length >= 5, "expected at least the 5 secondary discovery-only sources registered in Phase 3.1");
 });
@@ -1636,8 +1639,11 @@ await test("real production data (5 real transfer rules) untouched by Phase 3.2 
     // TX->FL universalRecognitionApplies -> Unknown (no cited page addresses ULR in raw text; GA page returned 403).
     "california-to-new-york.json": "34494a3de9f19998e0aa14694f97b306",
     "california-to-texas.json": "7c66c2cedf469c75828e21ec72d01966",
-    "illinois-to-georgia.json": "fc34235e56daa0d0a2719dac29cffdee",
-    "texas-to-california.json": "3e29c22039e679d4fda670a4b74f6a15",
+    // Re-pinned 2026-10-22: IL->GA gets displayHold on 13 Georgia-sourced fields (sources return HTTP 403) and
+    // temporaryPermitAvailability -> Unknown (it cited a psychologists' board rule); TX->CA fee re-sourced to BRN's
+    // current fee schedule and "$350" dropped from endorsementProcess (its source states no fee).
+    "illinois-to-georgia.json": "f6f4a56778ffbb03b2bf59fd9997fd49",
+    "texas-to-california.json": "187f1d6ef3736cfd88f7baeca5406540",
     "texas-to-florida.json": "c60e8c504d6060b427b2b62aceca598d",
   };
   for (const [file, expectedHash] of Object.entries(expectedHashes)) {
@@ -1662,7 +1668,7 @@ await test("real publication report correctly blocks california-to-texas (the on
 
 await test("real review queue contains exactly 104 items (one per populated, non-Verified field across all 8 real rules)", () => {
   const queue = buildTransferReviewQueue();
-  assertEqual(queue.length, 103, "expected 103 queue items: 109 after Phase 2B.4 (95 from the prior 7 rules + 14 on California->Florida), minus 1 on 2026-10-22 (California->Florida exceptions -> Unknown: unregistered third-party source), minus 5 fields set to Unknown on 2026-10-09 (California->New York examRequirement; universalRecognitionApplies on CA->NY, IL->GA, TX->CA, TX->FL)");
+  assertEqual(queue.length, 102, "expected 102 queue items: 109 after Phase 2B.4 (95 from the prior 7 rules + 14 on California->Florida), minus 1 on 2026-10-22 (California->Florida exceptions -> Unknown: unregistered third-party source), minus 1 on 2026-10-22 (Illinois->Georgia temporaryPermitAvailability -> Unknown: it cited a psychologists' board rule), minus 5 fields set to Unknown on 2026-10-09 (California->New York examRequirement; universalRecognitionApplies on CA->NY, IL->GA, TX->CA, TX->FL)");
   const highPriority = queue.filter((i) => i.priority === "High");
   assert(highPriority.length > 0, "expected at least some High-priority (critical field) queue items");
 });
@@ -1748,7 +1754,8 @@ await test("directional independence holds for the pages: California->Texas and 
 });
 
 await test("conditional requirements are present in the data exactly as structured objects (what the page's IF/AND renderer consumes)", () => {
-  const rule = getPublicTransferRule("registered-nurse", "illinois-to-georgia")!;
+  // Raw file: since 2026-10-22 the loader hides IL->GA's Georgia-sourced fields (displayHold); the stored data is unchanged.
+  const rule = JSON.parse(fs.readFileSync(path.join(process.cwd(), "data", "knowledge-base", "transfer-rules", "registered-nurse", "illinois-to-georgia.json"), "utf-8"));
   const value = rule.experienceRequirement.value as any;
   assertEqual(value.status, "conditional");
   assert(Array.isArray(value.conditions) && value.conditions.length === 1);
@@ -1796,7 +1803,8 @@ await test("sitemap contains exactly the 7 currently-publishable RN transfer pag
 });
 
 await test("real production TransferRule data was not modified by Phase 3.3 (UI-only phase) — spot-check against Phase 3.1/3.2 values", () => {
-  const rule = getPublicTransferRule("registered-nurse", "illinois-to-georgia")!;
+  // Raw file: since 2026-10-22 the loader hides IL->GA's Georgia-sourced fields (displayHold); the stored data is unchanged.
+  const rule = JSON.parse(fs.readFileSync(path.join(process.cwd(), "data", "knowledge-base", "transfer-rules", "registered-nurse", "illinois-to-georgia.json"), "utf-8"));
   assertEqual(rule.applicationFeeUsd.value, 75, "Georgia's fee must remain unchanged from Phase 3.1");
   assertEqual(rule.experienceRequirement.confidence, 0.95, "the 500-hour rule's confidence must remain unchanged");
   assertEqual(rule.experienceRequirement.reviewer, null, "reviewer must still be null — Phase 3.3 built UI only, no review occurred");
@@ -5523,8 +5531,11 @@ await test("[PERMANENT] no RN content leakage in Arkansas's electrician page dat
     const allText = JSON.stringify(facts).toLowerCase();
     assert(!allText.includes("registered nurse") && !allText.includes("nursys") && !allText.includes("nclex"), "arkansas: electrician page data must contain zero RN-specific terminology");
   }
-  const journeyman = data.tiers.find((t) => t.tier === "journeyman")!.facts;
-  const master = data.tiers.find((t) => t.tier === "master")!.facts;
+  // Raw files: since 2026-10-22 both tiers' reciprocityRules carry a displayHold (the Arkansas page blocks automated
+  // reads), so the loader shows "Unknown" for both; the stored lists still differ.
+  const readAr = (tier: string) => JSON.parse(fs.readFileSync(path.join(process.cwd(), "data", "knowledge-base", "facts", "electrician", `arkansas-${tier}.json`), "utf-8"));
+  const journeyman = readAr("journeyman");
+  const master = readAr("master");
   assert(journeyman.reciprocityRules.value !== master.reciprocityRules.value, "Arkansas journeyman and master reciprocityRules must genuinely differ — the Journeyman (17-state) and Master (4-state, asymmetric) reciprocal lists are materially different, not the same text duplicated across tiers");
 });
 
@@ -5852,6 +5863,25 @@ await test("[PERMANENT] board procedures cite registered in-state sources and re
     }
     const steps = (prof: string) => cons.filter((c) => c.profession === prof && c.to === state).flatMap((c) => JSON.parse(fs.readFileSync(path.join(process.cwd(), "data", "transfers", prof, `${c.from}--${c.to}.json`), "utf-8")).steps as string[]);
     for (const s of d.replacesSteps) assert(steps("hvac-technician").includes(s) && steps("plumber").includes(s), `${f}: replacesSteps entry is not a verbatim step of both trades: ${s.slice(0, 60)}`);
+  }
+});
+
+// 2026-10-22: a field whose registered source can't be re-read (the board's page blocks automated reads) carries a
+// displayHold. The loaders must turn it into "Unknown" so no page, table, FAQ or JSON-LD shows it, and list it in
+// heldFields so pages say "being re-checked" rather than "not published by the board". Stored values stay on disk.
+// If this fails: fix the loader, don't drop the hold. Lift a hold only after re-reading the source's raw text.
+await test("[PERMANENT] displayHold fields are never shown and are reported as held, not as unpublished", () => {
+  const ilGa = getPublicTransferRule("registered-nurse", "illinois-to-georgia")!;
+  for (const k of ["transferMechanism", "examRequirement", "applicationFeeUsd", "processingTime"] as const) {
+    assertEqual(ilGa[k].value, "Unknown", `IL->GA ${k} must load as Unknown while held`);
+    assert((ilGa.heldFields ?? []).includes(k), `IL->GA ${k} must be listed in heldFields`);
+  }
+  const raw = JSON.parse(fs.readFileSync(path.join(process.cwd(), "data", "knowledge-base", "transfer-rules", "registered-nurse", "illinois-to-georgia.json"), "utf-8"));
+  assertEqual(raw.applicationFeeUsd.value, 75, "the stored value stays as the research record");
+  const ar = getElectricianStatePageData("arkansas")!;
+  for (const { tier, facts } of ar.tiers) {
+    assertEqual(facts.reciprocityRules.value, "Unknown", `Arkansas ${tier} reciprocityRules must load as Unknown while held`);
+    assert((facts.heldFields ?? []).includes("reciprocityRules"), `Arkansas ${tier} reciprocityRules must be listed as held`);
   }
 });
 
