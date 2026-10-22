@@ -241,7 +241,7 @@ export default async function TransferRulePage({ params }: { params: Promise<Pag
 
   const faqs = [
     { question: `Can a Registered Nurse transfer a license from ${from} to ${to}?`, answer: `Yes, via ${MECHANISM_LABEL[mechanismValue] ?? "a state-specific process"}. See the full requirements below — some details are still pending official confirmation.` },
-    { question: `Is an exam required to transfer an RN license from ${from} to ${to}?`, answer: rule.examRequirement.value === "Unknown" ? "This has not been officially confirmed yet." : (rule.examRequirement.value as any).status === "required" ? "Yes, an exam is required." : "No new exam is required." },
+    { question: `Is an exam required to transfer an RN license from ${from} to ${to}?`, answer: isUnpublished("examRequirement") ? "The board does not publish this." : (rule.examRequirement.value as any).status === "required" ? "Yes, an exam is required." : "No new exam is required." },
   ];
 
   return (
