@@ -11,7 +11,7 @@ export const metadata: Metadata = buildMetadata({
   path: "/methodology",
 });
 
-const LAST_UPDATED = "2026-10-08";
+const LAST_UPDATED = "2026-10-22";
 
 export default function MethodologyPage() {
   return (
@@ -33,7 +33,10 @@ export default function MethodologyPage() {
             Our primary source for each rule is the official licensing board or state agency responsible for that
             license: its website, application instructions, published forms, and the statutes or administrative rules
             it cites. When a board states a rule plainly on its own official page, we treat that as authoritative.
-            Third-party summaries, forums, and other reference sites are not used as the basis for a published rule.
+            A non-official (secondary) source appears only where it is labeled &quot;Secondary Source&quot;, and never
+            supports a fee, an exam requirement, required years of experience or a processing time: if only a
+            secondary source states one of those, the page says the board does not publish it. A detail whose source
+            we have not registered and checked is not shown at all.
           </p>
 
           <h2>2. Checked by hand</h2>
@@ -59,7 +62,7 @@ export default function MethodologyPage() {
           <p>
             When a question can only be answered by the board itself (for example, how it would treat a specific
             out-of-state license), we mark the page as researched but pending an official answer from the board,
-            instead of publishing a guess. Pages that have not yet been researched are labeled as such.
+            instead of publishing a guess.
           </p>
 
           <h2>5. What gets published and indexed</h2>

@@ -1356,10 +1356,12 @@ await test("source jurisdiction matches destination context for all real rules (
       // but unregistered sources from the original Phase 2B research.
       // This is an honest, documented, non-blocking gap (these fields
       // don't gate publication) — not silently hidden by loosening this
-      // test to accept it for every file.
+      // test to accept it for every file. 2026-10-22: endorsementProcess's
+      // BRN URL variant was normalized to the registered one, so 5 remain.
+      // None of the 5 renders: a field without a registered source is never shown.
       const criticalFieldsWithIssues = jurisdictionIssues.filter((i) => CRITICAL_TRANSFER_RULE_FIELDS.some((f) => i.message.startsWith(f)));
       assertEqual(criticalFieldsWithIssues, [], `${file}: expected zero jurisdiction/source-resolution issues on CRITICAL fields specifically`);
-      assertEqual(jurisdictionIssues.length, 6, `${file}: expected exactly 6 known, non-blocking Rule 7 warnings on non-critical fields — a real remaining quality gap for future improvement, not a regression`);
+      assertEqual(jurisdictionIssues.length, 5, `${file}: expected exactly 5 known, non-blocking Rule 7 warnings on non-critical fields — a real remaining quality gap for future improvement, not a regression`);
     } else if (file === "georgia-to-illinois.json") {
       // Phase 2B.3: all 9 CRITICAL fields upgraded to genuine registered
       // idfpr.illinois.gov sources this session — 2 NON-critical fields
@@ -1376,10 +1378,12 @@ await test("source jurisdiction matches destination context for all real rules (
       // experienceRequirement remains honestly Unknown) — 3 NON-critical
       // fields (temporaryPermitAvailability, processingTime, exceptions)
       // still cite real but unregistered sources from the original
-      // Phase 2B research.
+      // Phase 2B research. 2026-10-22: exceptions -> Unknown (its only source
+      // was an unregistered third-party site), so 2 remain; neither renders,
+      // since a field without a registered source is never shown.
       const criticalFieldsWithIssues = jurisdictionIssues.filter((i) => CRITICAL_TRANSFER_RULE_FIELDS.some((f) => i.message.startsWith(f)));
       assertEqual(criticalFieldsWithIssues, [], `${file}: expected zero jurisdiction/source-resolution issues on CRITICAL fields specifically`);
-      assertEqual(jurisdictionIssues.length, 3, `${file}: expected exactly 3 known, non-blocking Rule 7 warnings on non-critical fields — a real remaining quality gap for future improvement, not a regression`);
+      assertEqual(jurisdictionIssues.length, 2, `${file}: expected exactly 2 known, non-blocking Rule 7 warnings on non-critical fields — a real remaining quality gap for future improvement, not a regression`);
     } else {
       assertEqual(jurisdictionIssues, [], `${file}: expected zero jurisdiction/source-resolution issues`);
     }
@@ -1658,7 +1662,7 @@ await test("real publication report correctly blocks california-to-texas (the on
 
 await test("real review queue contains exactly 104 items (one per populated, non-Verified field across all 8 real rules)", () => {
   const queue = buildTransferReviewQueue();
-  assertEqual(queue.length, 104, "expected 104 queue items: 109 after Phase 2B.4 (95 from the prior 7 rules + 14 on California->Florida), minus 5 fields set to Unknown on 2026-10-09 (California->New York examRequirement; universalRecognitionApplies on CA->NY, IL->GA, TX->CA, TX->FL)");
+  assertEqual(queue.length, 103, "expected 103 queue items: 109 after Phase 2B.4 (95 from the prior 7 rules + 14 on California->Florida), minus 1 on 2026-10-22 (California->Florida exceptions -> Unknown: unregistered third-party source), minus 5 fields set to Unknown on 2026-10-09 (California->New York examRequirement; universalRecognitionApplies on CA->NY, IL->GA, TX->CA, TX->FL)");
   const highPriority = queue.filter((i) => i.priority === "High");
   assert(highPriority.length > 0, "expected at least some High-priority (critical field) queue items");
 });

@@ -32,10 +32,21 @@ import type { ProfessionStateFacts, VerifiedField } from "@/types/knowledge-base
  * component honestly generic instead of silently wrong for Virginia.
  */
 
-function FieldRow({ label, field }: { label: string; field: VerifiedField<unknown> }) {
-  // Unknown fields are listed once per tier ("Not published by the board: ..."), not as rows.
-  if (field.value === "Unknown") return null;
+/** Figures that only a board source may support; a secondary source for one counts as not published. */
+const BOARD_ONLY_LABELS = new Set(["Exam Requirement", "Experience Requirement", "Application Fee", "Processing Time"]);
+
+/** Shown only with a registered source; a secondary one only where allowed, and labelled (see /methodology). */
+function isPublished(label: string, field: VerifiedField<unknown>): boolean {
+  if (field.value === "Unknown") return false;
   const source = field.sourceUrl ? getSourceByUrl(field.sourceUrl) : undefined;
+  if (!source) return false;
+  return !(BOARD_ONLY_LABELS.has(label) && source.authorityLevel === "supplementary");
+}
+
+function FieldRow({ label, field }: { label: string; field: VerifiedField<unknown> }) {
+  // Unpublished fields are listed once per tier ("Not published by the board: ..."), not as rows.
+  if (!isPublished(label, field)) return null;
+  const source = getSourceByUrl(field.sourceUrl!)!;
   const displayValue =
     typeof field.value === "boolean" ? (field.value ? "Yes" : "No") : typeof field.value === "object" ? JSON.stringify(field.value) : String(field.value);
   return (
@@ -44,11 +55,9 @@ function FieldRow({ label, field }: { label: string; field: VerifiedField<unknow
         <span className="text-sm font-medium">{label}</span>
         <span className="text-right text-sm">{displayValue}</span>
       </div>
-      {source && (
-        <a href={field.sourceUrl!} target="_blank" rel="noopener noreferrer nofollow" className="self-end text-xs text-primary hover:underline">
-          Source: {source.agencyName} ↗
-        </a>
-      )}
+      <a href={field.sourceUrl!} target="_blank" rel="noopener noreferrer nofollow" className="self-end text-xs text-primary hover:underline">
+        Source: {source.agencyName} ↗{source.authorityLevel === "supplementary" ? " (Secondary Source)" : ""}
+      </a>
     </div>
   );
 }
@@ -69,7 +78,7 @@ function TierSection({ tier, facts }: { tier: string; facts: ProfessionStateFact
   if (facts.universalLicenseRecognitionStatus.value !== "Unknown") {
     rows.push({ label: "Universal License Recognition", field: facts.universalLicenseRecognitionStatus });
   }
-  const unpublished = rows.filter((r) => r.field.value === "Unknown").map((r) => r.label);
+  const unpublished = rows.filter((r) => !isPublished(r.label, r.field)).map((r) => r.label);
 
   return (
     <section className="mt-10">

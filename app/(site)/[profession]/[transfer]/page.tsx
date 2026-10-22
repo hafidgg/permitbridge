@@ -227,12 +227,14 @@ export default async function TransferRulePage({ params }: { params: Promise<Pag
 
   // A processing time, fee, exam or experience figure cited only to a non-board
   // site (or an unregistered one) is not shown: it counts as not published by the board.
+  // Any field whose source isn't a registered SourceRecord is not shown either (2026-10-22: an unlabelled
+  // third-party value reached CA->FL). A supplementary source may support other fields, always labelled.
   const isUnpublished = (key: (typeof ALL_TRANSFER_FIELD_KEYS)[number]): boolean => {
     const field = rule[key] as VerifiedField<unknown>;
     if (field.value === "Unknown") return true;
-    if (!BOARD_ONLY_FIELDS.has(key)) return false;
     const source = field.sourceUrl ? getSourceByUrl(field.sourceUrl) : undefined;
-    return !source || source.authorityLevel === "supplementary";
+    if (!source) return true;
+    return BOARD_ONLY_FIELDS.has(key) && source.authorityLevel === "supplementary";
   };
   const unpublishedLabels = [...criticalFields, ...supportingFields].filter(isUnpublished).map((k) => FIELD_LABELS[k]);
   const board = rule.transferMechanism.sourceUrl ? getSourceByUrl(rule.transferMechanism.sourceUrl) : undefined;

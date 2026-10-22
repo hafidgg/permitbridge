@@ -457,22 +457,30 @@
     "notes": "Mirrors the same reasoning pattern already used in the existing texas-to-florida.json record, adapted for a non-compact origin state."
   },
   "exceptions": {
-    "value": "Military spouses may apply for temporary licensure using standard documents, military orders, and proof of marriage, provided they hold an active, unencumbered license in another jurisdiction.",
-    "sourceUrl": "https://www.nursinglicensure.org/state/nursing-license-florida/",
-    "sourceTitle": "Florida Nursing License Requirements 2026",
-    "sourceName": "nursinglicensure.org (secondary)",
-    "verifiedAt": "2026-08-20",
-    "verificationMethod": "official_document_review",
+    "value": "Unknown",
+    "sourceUrl": null,
+    "sourceTitle": null,
+    "sourceName": null,
+    "verifiedAt": null,
+    "verificationMethod": null,
     "reviewer": null,
     "status": "pending_verification",
     "confidence": 0.6,
-    "confidenceLevel": "likely",
+    "confidenceLevel": "unknown",
     "history": [
       {
         "previousValue": null,
         "newValue": "Military spouses may apply for temporary licensure using standard documents, military orders, and proof of marriage, provided they hold an active, unencumbered license in another jurisdiction.",
         "changedAt": "2026-08-20",
         "reason": "Phase 2B pilot: first population from real official-source research.",
+        "sourceUrl": "https://www.nursinglicensure.org/state/nursing-license-florida/",
+        "reviewer": null
+      },
+      {
+        "previousValue": "Military spouses may apply for temporary licensure using standard documents, military orders, and proof of marriage, provided they hold an active, unencumbered license in another jurisdiction.",
+        "newValue": "Unknown",
+        "changedAt": "2026-10-22",
+        "reason": "Removed: cited only nursinglicensure.org (unregistered third-party site) and was rendered without a Secondary Source label; no registered Florida Board of Nursing source mentions military spouses (raw text checked 2026-10-22).",
         "sourceUrl": "https://www.nursinglicensure.org/state/nursing-license-florida/",
         "reviewer": null
       }

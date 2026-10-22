@@ -30,6 +30,8 @@ export function RequirementRow({
 }) {
   // Unknown fields are listed once on the page ("Not published by the board: ..."), not as rows.
   if (field.value === "Unknown") return null;
+  // No registered source, no row: the page lists it as not published instead.
+  if (!source) return null;
   const isSecondary = source?.authorityLevel === "supplementary";
 
   return (
