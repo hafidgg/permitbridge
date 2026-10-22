@@ -170,6 +170,15 @@ export function TradeStateSummaryPage({ profession, state }: { profession: Trade
 
         <section className="mt-10">
           <h2 className="mb-4 text-2xl font-bold tracking-tight">By origin state</h2>
+          {s.boardProcedure && (
+            <p className="mb-4 text-sm text-muted-foreground">
+              Steps the {s.boardProcedure.sources.map((src) => src.agencyName).join(" and ")} applies to HVAC and plumbing applicants alike are on the{" "}
+              <Link href={`/state/${state}#board-procedure`} className="text-primary underline underline-offset-4">
+                {s.destination.name} page
+              </Link>
+              .
+            </p>
+          )}
           <div className="space-y-4">
             {s.pairs.map((p) => (
               <div key={p.origin.slug} id={`from-${p.origin.slug}`} className="scroll-mt-20 rounded-lg border border-border p-5">

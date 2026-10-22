@@ -49,13 +49,46 @@ export interface TradeStateSummary {
   /** Origin states whose pair was researched but is blocked on an official answer from the board. */
   pendingOrigins: Array<{ origin: State; board: string; question: string }>;
   sharedSteps: SharedStep[];
+  /** Board-wide steps moved to /state/{destination} (see getBoardProcedure); the page links there instead. */
+  boardProcedure: BoardProcedure | null;
   lastUpdated: string;
+}
+
+/**
+ * Steps the destination board applies to HVAC and plumbing applicants alike: verbatim in both trades' folded
+ * records for this destination, naming no origin state. Written once on /state/{destination}, with the
+ * sources of the records they come from, instead of on both summary pages.
+ */
+export interface BoardProcedure {
+  destination: State;
+  steps: string[];
+  sources: SourceRecord[];
 }
 
 const NEEDS_REVIEW = /^needs_review:\s*/;
 
 export function isTradeSummaryProfession(slug: string): slug is TradeSummaryProfession {
   return (TRADE_SUMMARY_PROFESSIONS as readonly string[]).includes(slug);
+}
+
+function foldedPairs(profession: TradeSummaryProfession, destinationSlug: string): TransferRule[] {
+  return getAllTransferRules().filter(
+    (r) => r.profession === profession && r.toState === destinationSlug && isConsolidatedTransfer(r) && isTradeTransferPublishable(r, getSourceByUrl).publishable
+  );
+}
+
+export function getBoardProcedure(destinationSlug: string): BoardProcedure | null {
+  const states = getAllStates();
+  const destination = states.find((s) => s.slug === destinationSlug);
+  if (!destination) return null;
+  const hvac = foldedPairs("hvac-technician", destinationSlug);
+  const plumber = foldedPairs("plumber", destinationSlug);
+  const names = states.filter((s) => s.slug !== destinationSlug).map((s) => s.name);
+  const inPlumber = new Set(plumber.flatMap((r) => r.steps));
+  const steps = [...new Set(hvac.flatMap((r) => r.steps))].filter((s) => inPlumber.has(s) && !NEEDS_REVIEW.test(s) && !names.some((n) => s.includes(n)));
+  if (steps.length === 0) return null;
+  const sources = [...new Map([...hvac, ...plumber].filter((r) => r.steps.some((s) => steps.includes(s))).map((r) => getSourceByUrl(r.sourceUrl!)!).map((s) => [s.id, s] as const)).values()];
+  return { destination, steps, sources };
 }
 
 export function getTradeStateSummary(profession: TradeSummaryProfession, destinationSlug: string): TradeStateSummary | null {
@@ -76,10 +109,13 @@ export function getTradeStateSummary(profession: TradeSummaryProfession, destina
   }
   pairs.sort((a, b) => a.origin.name.localeCompare(b.origin.name));
 
-  // Folded pairs: every step moves here from the old page. A step two or more of them share verbatim is written once.
+  // Folded pairs: every step moves here from the old page, except board-wide steps, which live on /state/{destination}.
+  // A step two or more of them share verbatim is written once.
+  const boardProcedure = getBoardProcedure(destinationSlug);
+  const onStatePage = new Set(boardProcedure?.steps ?? []);
   const folded = pairs.filter((p) => !p.hasPage);
   const byText = new Map<string, TradeSummaryPair[]>();
-  for (const p of folded) for (const step of new Set(p.rule.steps)) byText.set(step, [...(byText.get(step) ?? []), p]);
+  for (const p of folded) for (const step of new Set(p.rule.steps)) if (!onStatePage.has(step)) byText.set(step, [...(byText.get(step) ?? []), p]);
   const sharedSteps: SharedStep[] = [...byText.entries()]
     .filter(([, ps]) => ps.length > 1)
     .map(([step, ps]) => ({
@@ -90,7 +126,7 @@ export function getTradeStateSummary(profession: TradeSummaryProfession, destina
     }));
   const isShared = (step: string) => (byText.get(step)?.length ?? 0) > 1;
   for (const p of pairs) {
-    const own = p.hasPage ? p.rule.steps : p.rule.steps.filter((s) => !isShared(s));
+    const own = p.hasPage ? p.rule.steps : p.rule.steps.filter((s) => !isShared(s) && !onStatePage.has(s));
     p.openQuestions = own.filter((s) => NEEDS_REVIEW.test(s)).map((s) => s.replace(NEEDS_REVIEW, ""));
     p.steps = p.hasPage ? [] : own.filter((s) => !NEEDS_REVIEW.test(s));
   }
@@ -121,6 +157,7 @@ export function getTradeStateSummary(profession: TradeSummaryProfession, destina
     unverifiedOrigins,
     pendingOrigins,
     sharedSteps,
+    boardProcedure,
     lastUpdated: pairs.map((p) => p.rule.updatedAt).sort().at(-1) ?? "",
   };
 }

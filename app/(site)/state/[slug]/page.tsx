@@ -9,7 +9,7 @@ import { ProfessionIcon } from "@/components/profession/ProfessionIcon";
 import { formatDate } from "@/lib/utils";
 import { getAllStates, getStateBySlug, getAllProfessions } from "@/lib/data";
 import { getTransferPageRules } from "@/lib/publishable-transfers";
-import { getIndexableTradeStateSummaries } from "@/lib/trade-state-summary";
+import { getBoardProcedure, getIndexableTradeStateSummaries } from "@/lib/trade-state-summary";
 import { buildMetadata, articleJsonLd } from "@/lib/seo";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { SourcedRoutesTable } from "@/components/transfer/SourcedRoutesTable";
@@ -39,6 +39,7 @@ export default async function StatePage({ params }: { params: Promise<{ slug: st
   // Only pairs that still have their own /transfer page are counted; consolidated ones live on the summary page.
   const allRules = getTransferPageRules();
   const summaries = getIndexableTradeStateSummaries().filter((s) => s.destination.slug === state.slug);
+  const boardProcedure = getBoardProcedure(state.slug);
   const coverage = getStateCoverage(state.slug, state.name);
 
   return (
@@ -104,6 +105,42 @@ export default async function StatePage({ params }: { params: Promise<{ slug: st
             })}
           </div>
         </section>
+
+        {boardProcedure && (
+          <section id="board-procedure" className="mt-12 scroll-mt-20">
+            <h2 className="mb-2 text-2xl font-bold tracking-tight">
+              How the {boardProcedure.sources.map((src) => src.agencyName).join(" and ")} handles HVAC and plumbing applicants from other states
+            </h2>
+            <p className="mb-4 max-w-2xl text-sm text-muted-foreground">
+              These steps apply to both trades, whichever state your license is from. What differs by trade and origin state is on the{" "}
+              {summaries.map((s, i) => (
+                <span key={s.profession}>
+                  {i > 0 && " and "}
+                  <Link href={`/${s.profession}/${state.slug}`} className="text-primary hover:underline">
+                    {s.profession === "plumber" ? "plumber" : "HVAC"} page
+                  </Link>
+                </span>
+              ))}
+              .
+            </p>
+            <ul className="max-w-3xl list-disc space-y-1.5 pl-5 text-sm">
+              {boardProcedure.steps.map((step) => (
+                <li key={step}>{step}</li>
+              ))}
+            </ul>
+            <p className="mt-3 text-xs text-muted-foreground">
+              Source:{" "}
+              {boardProcedure.sources.map((src, i) => (
+                <span key={src.id}>
+                  {i > 0 && ", "}
+                  <a href={src.website} target="_blank" rel="noopener noreferrer nofollow" className="underline underline-offset-4">
+                    {src.agencyName}
+                  </a>
+                </span>
+              ))}
+            </p>
+          </section>
+        )}
 
         {coverage.into.length > 0 && (
           <section className="mt-12">
