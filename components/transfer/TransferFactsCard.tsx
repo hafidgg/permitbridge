@@ -27,9 +27,10 @@ export function TransferFactsCard({ rule }: { rule: TransferRule }) {
         </div>
         <div className="flex flex-col items-start gap-1">
           <dt className="flex items-center gap-1.5 text-xs font-medium text-muted-foreground">
-            <GraduationCap className="h-3.5 w-3.5" aria-hidden="true" /> Extra Hours
+            <GraduationCap className="h-3.5 w-3.5" aria-hidden="true" /> Required coursework
           </dt>
-          <dd className="text-sm font-semibold">{rule.additionalHoursRequired > 0 ? `${rule.additionalHoursRequired}h` : "None"}</dd>
+          {/* Classroom/course hours the route requires (e.g. TSBPE's 48 Journeyman classroom hours, 22 TAC §363.5(a)), not "extra" transfer hours. */}
+          <dd className="text-sm font-semibold">{rule.additionalHoursRequired > 0 ? `${rule.additionalHoursRequired} hours` : "None"}</dd>
         </div>
       </dl>
     </div>
