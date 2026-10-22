@@ -4,7 +4,7 @@ import { PopularProfessions } from "@/components/home/PopularProfessions";
 import { PopularTransfers } from "@/components/home/PopularTransfers";
 import { FAQSection } from "@/components/home/FAQ";
 import { buildSearchIndex } from "@/lib/search";
-import { getPublishableTransferRules } from "@/lib/publishable-transfers";
+import { getTransferPageRules } from "@/lib/publishable-transfers";
 import {
   getProfessionSummaries,
   getAllProfessions,
@@ -42,7 +42,7 @@ export default function HomePage() {
   const professions = getProfessionSummaries();
   const allProfessions = getAllProfessions();
   const allStates = getAllStates();
-  const topTransfers = [...getPublishableTransferRules()].sort((a, b) => b.updatedAt.localeCompare(a.updatedAt)).slice(0, 6);
+  const topTransfers = [...getTransferPageRules()].sort((a, b) => b.updatedAt.localeCompare(a.updatedAt)).slice(0, 6);
   const searchIndex = buildSearchIndex();
 
   const enrichedTransfers = topTransfers

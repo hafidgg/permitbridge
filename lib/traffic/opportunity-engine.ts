@@ -91,8 +91,12 @@ export function matchExistingPage(geo: GeoClassification, intent: IntentClassifi
         // same sourceUrl-based gate the site itself uses (Phase 2B.1) —
         // never claim a match for a page that's actually noindex.
         if (record.sourceUrl) {
+          // A consolidated pair's page 308s to its destination summary page; match that instead.
+          const consolidated = (JSON.parse(fs.readFileSync(path.join(process.cwd(), "data", "consolidated-transfers.json"), "utf-8")).pairs as { profession: string; from: string; to: string }[]).some(
+            (p) => p.profession === prof.slug && p.from === geo.sourceState && p.to === geo.destinationState
+          );
           return {
-            matchedPage: `/transfer/${prof.slug}/${geo.sourceState}/${geo.destinationState}`,
+            matchedPage: consolidated ? `/${prof.slug}/${geo.destinationState}` : `/transfer/${prof.slug}/${geo.sourceState}/${geo.destinationState}`,
             matchType: "STRONG",
             matchConfidence: 0.75,
             profession: prof.slug,

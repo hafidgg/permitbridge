@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { isTradeTransferPublishable } from "@/lib/knowledge-base/trade-transfer-gate";
 import { getSourceByUrl } from "@/lib/knowledge-base/transfer-rule-data";
-import { getPublishableTransferRules } from "@/lib/publishable-transfers";
+import { getTransferPageRules } from "@/lib/publishable-transfers";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
@@ -10,7 +10,7 @@ import { TransferFactsCard } from "@/components/transfer/TransferFactsCard";
 import { StepsList } from "@/components/transfer/StepsList";
 import { OtherStatesTable } from "@/components/transfer/OtherStatesTable";
 import { Badge } from "@/components/ui/badge";
-import { formatDate } from "@/lib/utils";
+import { article, formatDate, inSentence } from "@/lib/utils";
 import {
   getAllStates,
   getAllTransferRules,
@@ -29,9 +29,10 @@ interface TransferParams {
 }
 
 // Only publishable pairs. Unpublishable ones return 410 from middleware.ts
-// (list generated from the same gate by scripts/generate-gone-paths.ts).
+// (list generated from the same gate by scripts/generate-gone-paths.ts);
+// consolidated ones 308 to their summary page (next.config.mjs).
 export function generateStaticParams(): TransferParams[] {
-  return getPublishableTransferRules().map((r) => ({ profession: r.profession, from: r.fromState, to: r.toState }));
+  return getTransferPageRules().map((r) => ({ profession: r.profession, from: r.fromState, to: r.toState }));
 }
 
 function loadPageData(params: TransferParams) {
@@ -51,7 +52,7 @@ export async function generateMetadata({ params }: { params: Promise<TransferPar
   const { profession, from, to, rule } = data;
   return buildMetadata({
     title: `${profession.shortName} License: Transfer From ${from.name} to ${to.name}`,
-    description: `${rule.pathwayLabel} — ${rule.examRequired ? "exam required" : "no exam required"}, ${rule.processingDaysSourced ? `est. ${rule.estimatedProcessingDays[0]}-${rule.estimatedProcessingDays[1]} days` : "processing time not published by the board"}, ${rule.feeUsd} USD fee. Full step-by-step guide for ${profession.shortName.toLowerCase()}s moving from ${from.name} to ${to.name}.`,
+    description: `${rule.pathwayLabel} — ${rule.examRequired ? "exam required" : "no exam required"}, ${rule.processingDaysSourced ? `est. ${rule.estimatedProcessingDays[0]}-${rule.estimatedProcessingDays[1]} days` : "processing time not published by the board"}, ${rule.feeUsd} USD fee. Full step-by-step guide for ${inSentence(profession.shortName)}s moving from ${from.name} to ${to.name}.`,
     path: `/transfer/${profession.slug}/${from.slug}/${to.slug}`,
     // Content-trust hardening: only pages whose sourceUrl is a registered,
     // authoritative, jurisdiction-matched SourceRecord are indexable — see
@@ -78,12 +79,13 @@ export default async function TransferPage({ params }: { params: Promise<Transfe
 
   const pageFaqs = [
     {
-      question: `Can I transfer my ${profession.shortName.toLowerCase()} license from ${from.name} to ${to.name}?`,
-      answer: `Yes, via ${rule.pathwayLabel.toLowerCase()}. ${rule.examRequired ? `You will need to pass ${rule.examName ?? "a state exam"}.` : "No additional trade exam is required in most cases."} ${rule.processingDaysSourced ? `Processing typically takes ${rule.estimatedProcessingDays[0]}-${rule.estimatedProcessingDays[1]} days.` : "The licensing board does not publish a processing time."}`,
+      question: `Can I transfer my ${inSentence(profession.shortName)} license from ${from.name} to ${to.name}?`,
+      // The pathway label is a title-case label, not a sentence fragment: quote it whole, never lowercased.
+      answer: `The ${to.name} board's route for a ${from.name} license: ${rule.pathwayLabel}. ${rule.examRequired ? `You will need to pass ${rule.examName ?? "a state exam"}.` : "No exam is required on this route."} ${rule.processingDaysSourced ? `Processing typically takes ${rule.estimatedProcessingDays[0]}-${rule.estimatedProcessingDays[1]} days.` : "The licensing board does not publish a processing time."}`,
     },
     {
-      question: `How much does it cost to transfer a ${profession.shortName.toLowerCase()} license to ${to.name}?`,
-      answer: `Budget approximately $${rule.feeUsd} for the ${to.name} application fee alone. Exam fees, if required, and any additional continuing-education hours are typically separate costs charged by third-party providers.`,
+      question: `How much does it cost to transfer ${article(profession.shortName)} ${inSentence(profession.shortName)} license to ${to.name}?`,
+      answer: `$${rule.feeUsd} in ${to.name} state fees is recorded for this route.`,
     },
     ...profession.faqs.slice(0, 1),
   ];
@@ -101,7 +103,7 @@ export default async function TransferPage({ params }: { params: Promise<Transfe
         data={articleJsonLd({
           title: `${profession.shortName} License: Transfer From ${from.name} to ${to.name}`,
           // rule.notes is the internal research record (correction history, extraction notes), not public copy.
-          description: `What it takes for a licensed ${profession.shortName.toLowerCase()} in ${from.name} to become licensed in ${to.name}: ${rule.pathwayLabel.toLowerCase()}.`,
+          description: `What it takes for a licensed ${inSentence(profession.shortName)} in ${from.name} to become licensed in ${to.name}. Route: ${rule.pathwayLabel}.`,
           path: `/transfer/${profession.slug}/${from.slug}/${to.slug}`,
           publishedAt: rule.updatedAt,
           updatedAt: rule.updatedAt,
@@ -113,8 +115,8 @@ export default async function TransferPage({ params }: { params: Promise<Transfe
           {profession.shortName} License: {from.name} → {to.name}
         </h1>
         <p className="mt-3 max-w-2xl text-muted-foreground">
-          A step-by-step breakdown of what it takes for a licensed {profession.shortName.toLowerCase()} in {from.name}{" "}
-          to become licensed in {to.name}, based on {to.name}'s current {rule.pathwayLabel.toLowerCase()} rules.
+          A step-by-step breakdown of what it takes for a licensed {inSentence(profession.shortName)} in {from.name} to become licensed in{" "}
+          {to.name}, based on the current rules of the {to.name} board.
         </p>
         <div className="mt-4 flex flex-wrap gap-2">
           <Badge variant="outline">{rule.pathwayLabel}</Badge>

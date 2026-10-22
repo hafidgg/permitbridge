@@ -8,7 +8,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { ProfessionIcon } from "@/components/profession/ProfessionIcon";
 import { formatDate } from "@/lib/utils";
 import { getAllStates, getStateBySlug, getAllProfessions } from "@/lib/data";
-import { getPublishableTransferRules } from "@/lib/publishable-transfers";
+import { getTransferPageRules } from "@/lib/publishable-transfers";
+import { getIndexableTradeStateSummaries } from "@/lib/trade-state-summary";
 import { buildMetadata, articleJsonLd } from "@/lib/seo";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { SourcedRoutesTable } from "@/components/transfer/SourcedRoutesTable";
@@ -35,7 +36,9 @@ export default async function StatePage({ params }: { params: Promise<{ slug: st
   if (!state) notFound();
 
   const professions = getAllProfessions();
-  const allRules = getPublishableTransferRules();
+  // Only pairs that still have their own /transfer page are counted; consolidated ones live on the summary page.
+  const allRules = getTransferPageRules();
+  const summaries = getIndexableTradeStateSummaries().filter((s) => s.destination.slug === state.slug);
   const coverage = getStateCoverage(state.slug, state.name);
 
   return (
@@ -76,9 +79,11 @@ export default async function StatePage({ params }: { params: Promise<{ slug: st
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {professions.map((profession) => {
               const rulesIntoState = allRules.filter((r) => r.profession === profession.slug && r.toState === state.slug);
-              if (rulesIntoState.length === 0) return null;
+              const summary = summaries.find((s) => s.profession === profession.slug);
+              if (rulesIntoState.length === 0 && !summary) return null;
+              const pages = rulesIntoState.length > 0 ? `${rulesIntoState.length} transfer ${rulesIntoState.length === 1 ? "page" : "pages"}` : null;
               return (
-                <Link key={profession.slug} href={`/profession/${profession.slug}`}>
+                <Link key={profession.slug} href={summary ? `/${profession.slug}/${state.slug}` : `/profession/${profession.slug}`}>
                   <Card className="h-full transition-shadow hover:shadow-md">
                     <CardContent className="flex items-start gap-3 pt-6">
                       <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10">
@@ -87,7 +92,9 @@ export default async function StatePage({ params }: { params: Promise<{ slug: st
                       <div>
                         <p className="font-semibold">{profession.shortName}</p>
                         <p className="mt-1.5 text-sm text-muted-foreground">
-                          {rulesIntoState.length} sourced {rulesIntoState.length === 1 ? "transfer" : "transfers"}
+                          {summary
+                            ? [`Summary for ${summary.pairs.length} origin ${summary.pairs.length === 1 ? "state" : "states"}`, pages].filter(Boolean).join(" · ")
+                            : pages}
                         </p>
                       </div>
                     </CardContent>

@@ -14,7 +14,7 @@ import {
   getAllGuides,
 } from "@/lib/data";
 import { getAllPublicTransferRuleSlugs } from "@/lib/knowledge-base/transfer-rule-data";
-import { getPublishableTransferRules } from "@/lib/publishable-transfers";
+import { getTransferPageRules } from "@/lib/publishable-transfers";
 import { getAllSingleStateProfessionSlugs } from "@/lib/knowledge-base/electrician-state-data";
 import { getIndexableTradeStateSummaries } from "@/lib/trade-state-summary";
 
@@ -51,7 +51,7 @@ export function buildSearchIndex(): SearchDocument[] {
   // Same gate as the sitemap and the page's noIndex: the index ships on every
   // page, so an unsourced pair's generator pathway/exam text would otherwise
   // be shown site-wide.
-  for (const r of getPublishableTransferRules()) {
+  for (const r of getTransferPageRules()) {
     const professions = getAllProfessions();
     const states = getAllStates();
     const profession = professions.find((p) => p.slug === r.profession);

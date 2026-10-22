@@ -2,7 +2,7 @@ import "server-only";
 import type { TransferRule as TradeTransferRule } from "@/types";
 import type { SourceRecord } from "@/types/knowledge-base";
 import { getAllProfessions, getAllStates } from "@/lib/data";
-import { getPublishableTransferRules } from "@/lib/publishable-transfers";
+import { getPublishableTransferRules, transferHref } from "@/lib/publishable-transfers";
 import { getAllPublicTransferRuleSlugs, getPublicTransferRule, getSourceByUrl } from "@/lib/knowledge-base/transfer-rule-data";
 import { MECHANISM_LABEL, stateDisplayName } from "@/lib/knowledge-base/transfer-rule-labels";
 import { getIndexableTradeStateSummaries } from "@/lib/trade-state-summary";
@@ -38,7 +38,7 @@ function tradeRoute(r: TradeTransferRule): SourcedRoute {
   const professionName = getAllProfessions().find((p) => p.slug === r.profession)?.shortName ?? r.profession;
   const stateName = (slug: string) => getAllStates().find((s) => s.slug === slug)?.name ?? stateDisplayName(slug);
   return {
-    href: `/transfer/${r.profession}/${r.fromState}/${r.toState}`,
+    href: transferHref(r),
     professionSlug: r.profession,
     profession: professionName,
     from: stateName(r.fromState),

@@ -55,3 +55,16 @@ export function portabilityLabel(score: number): { label: string; tone: "success
  * unchanged until a real domain is set as an environment variable.
  */
 export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.getpermitbridge.com";
+
+/** A name used mid-sentence: words lowercased, acronyms kept ("HVAC Technician" -> "HVAC technician"). */
+export function inSentence(name: string): string {
+  return name
+    .split(" ")
+    .map((w) => (w.length > 1 && w === w.toUpperCase() ? w : w.toLowerCase()))
+    .join(" ");
+}
+
+/** "a" or "an" for the phrase that follows, by its sound ("an HVAC technician", "a plumber"). */
+export function article(phrase: string): "a" | "an" {
+  return /^(?:[aeiou]|HVAC\b)/i.test(phrase) ? "an" : "a";
+}

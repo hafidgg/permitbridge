@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { getAllProfessions, getAllStates, getAllTransferRules, getAllGuides } from "@/lib/data";
 import { getAllPublicTransferRuleSlugs, getPublicTransferRule, summarizeEvidence, getSourceByUrl } from "@/lib/knowledge-base/transfer-rule-data";
 import { isTradeTransferPublishable } from "@/lib/knowledge-base/trade-transfer-gate";
+import { isConsolidatedTransfer } from "@/lib/publishable-transfers";
 import { getIndexableTradeStateSummaries } from "@/lib/trade-state-summary";
 import { getAllSingleStateProfessionSlugs, getElectricianStatePageData } from "@/lib/knowledge-base/electrician-state-data";
 import { LINKING_STRUCTURE_UPDATED_AT, latestOf } from "@/lib/knowledge-base/structural-updates";
@@ -63,6 +64,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // navigation but aren't actively pushed to Google.
   const transferRoutes: MetadataRoute.Sitemap = getAllTransferRules()
     .filter((r) => isTradeTransferPublishable(r, getSourceByUrl).publishable)
+    // Folded into /{profession}/{to}: the old URL is a 308, never a sitemap entry.
+    .filter((r) => !isConsolidatedTransfer(r))
     .map((r) => ({
       url: `${SITE_URL}/transfer/${r.profession}/${r.fromState}/${r.toState}`,
       lastModified: r.updatedAt,

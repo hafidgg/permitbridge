@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-21T17:27:28.488Z",
-  "documentCount": 60,
+  "generatedAt": "2026-10-22T15:40:39.765Z",
+  "documentCount": 42,
   "documents": [
     {
       "type": "profession",
@@ -162,48 +162,6 @@
     },
     {
       "type": "transfer",
-      "title": "HVAC Technician: California → Florida",
-      "description": "Certification by Endorsement — 10-Year Licensure History (Option C) — Reciprocity Not Available for This Classification. No exam required. Processing time not published by the board.",
-      "url": "/transfer/hvac-technician/california/florida",
-      "keywords": [
-        "HVAC Technician License",
-        "HVAC Technician",
-        "California",
-        "Florida",
-        "Certification by Endorsement — 10-Year Licensure History (Option C) — Reciprocity Not Available for This Classification",
-        "transfer license"
-      ]
-    },
-    {
-      "type": "transfer",
-      "title": "HVAC Technician: California → Ohio",
-      "description": "Out-of-State Licensee Examination Route — No Reciprocity; Ohio Exam Still Required. Exam required. Processing time not published by the board.",
-      "url": "/transfer/hvac-technician/california/ohio",
-      "keywords": [
-        "HVAC Technician License",
-        "HVAC Technician",
-        "California",
-        "Ohio",
-        "Out-of-State Licensee Examination Route — No Reciprocity; Ohio Exam Still Required",
-        "transfer license"
-      ]
-    },
-    {
-      "type": "transfer",
-      "title": "HVAC Technician: California → Texas",
-      "description": "Standard Application Required — No Reciprocity; Out-of-State License Evaluated Case by Case. Exam required. Processing time not published by the board.",
-      "url": "/transfer/hvac-technician/california/texas",
-      "keywords": [
-        "HVAC Technician License",
-        "HVAC Technician",
-        "California",
-        "Texas",
-        "Standard Application Required — No Reciprocity; Out-of-State License Evaluated Case by Case",
-        "transfer license"
-      ]
-    },
-    {
-      "type": "transfer",
       "title": "HVAC Technician: Florida → California",
       "description": "Full New Application Required — No Reciprocity or Exam Waiver Available for C-20. Exam required. Processing time not published by the board.",
       "url": "/transfer/hvac-technician/florida/california",
@@ -213,20 +171,6 @@
         "Florida",
         "California",
         "Full New Application Required — No Reciprocity or Exam Waiver Available for C-20",
-        "transfer license"
-      ]
-    },
-    {
-      "type": "transfer",
-      "title": "HVAC Technician: Florida → Ohio",
-      "description": "Out-of-State Licensee Examination Route — No Reciprocity; Ohio Exam Still Required. Exam required. Processing time not published by the board.",
-      "url": "/transfer/hvac-technician/florida/ohio",
-      "keywords": [
-        "HVAC Technician License",
-        "HVAC Technician",
-        "Florida",
-        "Ohio",
-        "Out-of-State Licensee Examination Route — No Reciprocity; Ohio Exam Still Required",
         "transfer license"
       ]
     },
@@ -246,118 +190,6 @@
     },
     {
       "type": "transfer",
-      "title": "HVAC Technician: Ohio → California",
-      "description": "Full New Application Required — No Reciprocity or Exam Waiver Available for C-20. Exam required. Processing time not published by the board.",
-      "url": "/transfer/hvac-technician/ohio/california",
-      "keywords": [
-        "HVAC Technician License",
-        "HVAC Technician",
-        "Ohio",
-        "California",
-        "Full New Application Required — No Reciprocity or Exam Waiver Available for C-20",
-        "transfer license"
-      ]
-    },
-    {
-      "type": "transfer",
-      "title": "HVAC Technician: Ohio → Florida",
-      "description": "Certification by Endorsement — 10-Year Licensure History (Option C) — Reciprocity Not Available for This Classification. No exam required. Processing time not published by the board.",
-      "url": "/transfer/hvac-technician/ohio/florida",
-      "keywords": [
-        "HVAC Technician License",
-        "HVAC Technician",
-        "Ohio",
-        "Florida",
-        "Certification by Endorsement — 10-Year Licensure History (Option C) — Reciprocity Not Available for This Classification",
-        "transfer license"
-      ]
-    },
-    {
-      "type": "transfer",
-      "title": "HVAC Technician: Ohio → Texas",
-      "description": "Standard Application Required — No Reciprocity; Out-of-State License Evaluated Case by Case. Exam required. Processing time not published by the board.",
-      "url": "/transfer/hvac-technician/ohio/texas",
-      "keywords": [
-        "HVAC Technician License",
-        "HVAC Technician",
-        "Ohio",
-        "Texas",
-        "Standard Application Required — No Reciprocity; Out-of-State License Evaluated Case by Case",
-        "transfer license"
-      ]
-    },
-    {
-      "type": "transfer",
-      "title": "HVAC Technician: Texas → California",
-      "description": "Full New Application Required — No Reciprocity or Exam Waiver Available for C-20. Exam required. Processing time not published by the board.",
-      "url": "/transfer/hvac-technician/texas/california",
-      "keywords": [
-        "HVAC Technician License",
-        "HVAC Technician",
-        "Texas",
-        "California",
-        "Full New Application Required — No Reciprocity or Exam Waiver Available for C-20",
-        "transfer license"
-      ]
-    },
-    {
-      "type": "transfer",
-      "title": "HVAC Technician: Texas → Florida",
-      "description": "Certification by Endorsement — 10-Year Licensure History (Option C) — Reciprocity Not Available for This Classification. No exam required. Processing time not published by the board.",
-      "url": "/transfer/hvac-technician/texas/florida",
-      "keywords": [
-        "HVAC Technician License",
-        "HVAC Technician",
-        "Texas",
-        "Florida",
-        "Certification by Endorsement — 10-Year Licensure History (Option C) — Reciprocity Not Available for This Classification",
-        "transfer license"
-      ]
-    },
-    {
-      "type": "transfer",
-      "title": "HVAC Technician: Texas → Ohio",
-      "description": "Out-of-State Licensee Examination Route — No Reciprocity; Ohio Exam Still Required. Exam required. Processing time not published by the board.",
-      "url": "/transfer/hvac-technician/texas/ohio",
-      "keywords": [
-        "HVAC Technician License",
-        "HVAC Technician",
-        "Texas",
-        "Ohio",
-        "Out-of-State Licensee Examination Route — No Reciprocity; Ohio Exam Still Required",
-        "transfer license"
-      ]
-    },
-    {
-      "type": "transfer",
-      "title": "Plumber: California → Florida",
-      "description": "Certification by Endorsement — 10-Year Licensure History (Option C) — Reciprocity Not Available for This Classification. No exam required. Processing time not published by the board.",
-      "url": "/transfer/plumber/california/florida",
-      "keywords": [
-        "Plumber License",
-        "Plumber",
-        "California",
-        "Florida",
-        "Certification by Endorsement — 10-Year Licensure History (Option C) — Reciprocity Not Available for This Classification",
-        "transfer license"
-      ]
-    },
-    {
-      "type": "transfer",
-      "title": "Plumber: California → Ohio",
-      "description": "Out-of-State Licensee Examination Route — No Reciprocity; Ohio Exam Still Required. Exam required. Processing time not published by the board.",
-      "url": "/transfer/plumber/california/ohio",
-      "keywords": [
-        "Plumber License",
-        "Plumber",
-        "California",
-        "Ohio",
-        "Out-of-State Licensee Examination Route — No Reciprocity; Ohio Exam Still Required",
-        "transfer license"
-      ]
-    },
-    {
-      "type": "transfer",
       "title": "Plumber: California → Texas",
       "description": "No Direct Path — California's C-36 Is a Contractor License, but Texas Licenses Only Individual Plumbers. Exam required. Processing time not published by the board.",
       "url": "/transfer/plumber/california/texas",
@@ -372,34 +204,6 @@
     },
     {
       "type": "transfer",
-      "title": "Plumber: Florida → California",
-      "description": "Full New Application Required — No Reciprocity or Exam Waiver Available for C-36. Exam required. Processing time not published by the board.",
-      "url": "/transfer/plumber/florida/california",
-      "keywords": [
-        "Plumber License",
-        "Plumber",
-        "Florida",
-        "California",
-        "Full New Application Required — No Reciprocity or Exam Waiver Available for C-36",
-        "transfer license"
-      ]
-    },
-    {
-      "type": "transfer",
-      "title": "Plumber: Florida → Ohio",
-      "description": "Out-of-State Licensee Examination Route — No Reciprocity; Ohio Exam Still Required. Exam required. Processing time not published by the board.",
-      "url": "/transfer/plumber/florida/ohio",
-      "keywords": [
-        "Plumber License",
-        "Plumber",
-        "Florida",
-        "Ohio",
-        "Out-of-State Licensee Examination Route — No Reciprocity; Ohio Exam Still Required",
-        "transfer license"
-      ]
-    },
-    {
-      "type": "transfer",
       "title": "Plumber: Florida → Texas",
       "description": "No Direct Path — Florida's State Plumbing License Is a Contractor License, but Texas Licenses Only Individual Plumbers. Exam required. Processing time not published by the board.",
       "url": "/transfer/plumber/florida/texas",
@@ -409,62 +213,6 @@
         "Florida",
         "Texas",
         "No Direct Path — Florida's State Plumbing License Is a Contractor License, but Texas Licenses Only Individual Plumbers",
-        "transfer license"
-      ]
-    },
-    {
-      "type": "transfer",
-      "title": "Plumber: Ohio → California",
-      "description": "Full New Application Required — No Reciprocity or Exam Waiver Available for C-36. Exam required. Processing time not published by the board.",
-      "url": "/transfer/plumber/ohio/california",
-      "keywords": [
-        "Plumber License",
-        "Plumber",
-        "Ohio",
-        "California",
-        "Full New Application Required — No Reciprocity or Exam Waiver Available for C-36",
-        "transfer license"
-      ]
-    },
-    {
-      "type": "transfer",
-      "title": "Plumber: Ohio → Florida",
-      "description": "Certification by Endorsement — 10-Year Licensure History (Option C) — Reciprocity Not Available for This Classification. No exam required. Processing time not published by the board.",
-      "url": "/transfer/plumber/ohio/florida",
-      "keywords": [
-        "Plumber License",
-        "Plumber",
-        "Ohio",
-        "Florida",
-        "Certification by Endorsement — 10-Year Licensure History (Option C) — Reciprocity Not Available for This Classification",
-        "transfer license"
-      ]
-    },
-    {
-      "type": "transfer",
-      "title": "Plumber: Texas → California",
-      "description": "Full New Application Required — No Reciprocity or Exam Waiver Available for C-36. Exam required. Processing time not published by the board.",
-      "url": "/transfer/plumber/texas/california",
-      "keywords": [
-        "Plumber License",
-        "Plumber",
-        "Texas",
-        "California",
-        "Full New Application Required — No Reciprocity or Exam Waiver Available for C-36",
-        "transfer license"
-      ]
-    },
-    {
-      "type": "transfer",
-      "title": "Plumber: Texas → Florida",
-      "description": "Certification by Endorsement — 10-Year Licensure History (Option C) — Reciprocity Not Available for This Classification. No exam required. Processing time not published by the board.",
-      "url": "/transfer/plumber/texas/florida",
-      "keywords": [
-        "Plumber License",
-        "Plumber",
-        "Texas",
-        "Florida",
-        "Certification by Endorsement — 10-Year Licensure History (Option C) — Reciprocity Not Available for This Classification",
         "transfer license"
       ]
     },

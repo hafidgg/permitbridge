@@ -1,8 +1,12 @@
 /** @type {import('next').NextConfig} */
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { readFileSync } from "node:fs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
+
+// Trade /transfer pairs folded into their destination summary page (see lib/publishable-transfers.ts).
+const consolidatedTransfers = JSON.parse(readFileSync(path.join(__dirname, "data/consolidated-transfers.json"), "utf8")).pairs;
 
 const nextConfig = {
   reactStrictMode: true,
@@ -87,6 +91,8 @@ const nextConfig = {
       // /electrician/texas covers both ("If your state isn't on TDLR's lists"); the records were deleted.
       { source: "/transfer/electrician/california/texas", destination: "/electrician/texas", permanent: true },
       { source: "/transfer/electrician/florida/texas", destination: "/electrician/texas", permanent: true },
+      // 2026-10-22: 18 near-duplicate HVAC/plumber pairs; each origin's lines now live on the destination summary page.
+      ...consolidatedTransfers.map((p) => ({ source: `/transfer/${p.profession}/${p.from}/${p.to}`, destination: `/${p.profession}/${p.to}`, permanent: true })),
     ];
   },
 };

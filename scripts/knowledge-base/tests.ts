@@ -5726,6 +5726,61 @@ await test("[PERMANENT] every /transfer page in the sitemap and every indexable 
   assert(!isTradeTransferPublishable({ ...realRule, sourceUrl: secondary.website, fromState: secondary.jurisdiction, toState: secondary.jurisdiction }, resolve).publishable, "a non-authoritative source must fail");
 });
 
+// 2026-10-22: 18 near-duplicate HVAC/plumber /transfer pages were folded into their destination summary pages.
+// data/consolidated-transfers.json is the one list: next.config.mjs 308s each old URL to /{profession}/{to}, and
+// getTransferPageRules() keeps them out of generateStaticParams, the sitemap, search and listings. The records stay
+// publishable — they still feed the summary page — so they must never land in the 410 list instead.
+// If this fails: fix the wiring, don't edit the list to make it pass. A pair leaves the list only by user decision.
+await test("[PERMANENT] consolidated /transfer pairs: one list, 308 not 410, never built or listed as pages", () => {
+  const list = JSON.parse(fs.readFileSync(path.join(process.cwd(), "data", "consolidated-transfers.json"), "utf-8")).pairs as { profession: string; from: string; to: string }[];
+  assertEqual(list.length, 18, "18 pairs were approved for consolidation");
+  const keep = ["plumber/california/texas", "plumber/florida/texas", "hvac-technician/florida/california", "hvac-technician/florida/texas"];
+  const allSources = loadAllSources();
+  const resolve = (u: string) => allSources.find((x) => x.website === u);
+  const gone: string[] = JSON.parse(fs.readFileSync(path.join(process.cwd(), "lib", "generated", "gone-transfer-paths.json"), "utf-8"));
+  for (const p of list) {
+    const key = `${p.profession}/${p.from}/${p.to}`;
+    assert(p.profession === "hvac-technician" || p.profession === "plumber", `${key}: only HVAC and plumber pairs fold into a summary page`);
+    assert(!keep.includes(key), `${key} is on the keep list`);
+    const rule = JSON.parse(fs.readFileSync(path.join(process.cwd(), "data", "transfers", p.profession, `${p.from}--${p.to}.json`), "utf-8"));
+    assert(isTradeTransferPublishable(rule, resolve).publishable, `${key} must still pass the gate: it feeds /${p.profession}/${p.to}`);
+    assert(!gone.includes(`/transfer/${key}`), `${key} must 308 to its summary page, not 410`);
+  }
+  const read = (...seg: string[]) => fs.readFileSync(path.join(process.cwd(), ...seg), "utf-8");
+  assert(read("next.config.mjs").includes('"data/consolidated-transfers.json"'), "next.config.mjs must build the 308s from the same list");
+  assert(read("app", "(site)", "transfer", "[profession]", "[from]", "[to]", "page.tsx").includes("return getTransferPageRules()"), "generateStaticParams must not build consolidated pairs");
+  assert(read("app", "sitemap.ts").includes(".filter((r) => !isConsolidatedTransfer(r))"), "the sitemap must drop consolidated pairs");
+  assert(read("lib", "search.ts").includes("for (const r of getTransferPageRules())"), "search must not index consolidated pairs");
+  assert(read("lib", "trade-state-summary.ts").includes("isConsolidatedTransfer(rule)"), "the summary page must carry the consolidated pairs' steps");
+});
+
+// 2026-10-22: floors set to the real counts after the consolidation (52 URLs, 6 /transfer, 4+4 trade summaries, 7 RN).
+await test("[PERMANENT] sitemap floor: the post-consolidation sitemap passes, and losing a page from any floored group fails", () => {
+  const { checkSitemapFloor } = require("../sitemap-floor");
+  const S = "https://www.getpermitbridge.com";
+  const states = ["california", "florida", "ohio", "texas"];
+  const base = [
+    ...Array.from({ length: 10 }, (_, i) => `${S}/${i === 0 ? "" : `static-${i}`}`),
+    ...Array.from({ length: 5 }, (_, i) => `${S}/profession/p${i}`),
+    ...Array.from({ length: 5 }, (_, i) => `${S}/state/s${i}`),
+    ...Array.from({ length: 6 }, (_, i) => `${S}/transfer/x/a${i}/b`),
+    ...Array.from({ length: 3 }, (_, i) => `${S}/guides/g${i}`),
+    ...Array.from({ length: 7 }, (_, i) => `${S}/registered-nurse/a${i}-to-b`),
+    ...states.map((s) => `${S}/hvac-technician/${s}`),
+    ...states.map((s) => `${S}/plumber/${s}`),
+    ...Array.from({ length: 8 }, (_, i) => `${S}/electrician/e${i}`),
+  ];
+  assertEqual(base.length, 52, "fixture mirrors the real sitemap");
+  assertEqual(checkSitemapFloor(base).join("; "), "", "the real post-consolidation shape passes");
+  const without = (re: RegExp) => { const i = base.findIndex((u) => re.test(u)); return base.filter((_, j) => j !== i); };
+  assert(checkSitemapFloor(without(/\/transfer\//)).some((p: string) => p.includes("/transfer URLs")), "5 /transfer pages must fail");
+  assert(checkSitemapFloor(without(/registered-nurse/)).some((p: string) => p.includes("knowledgeBaseTransfer")), "6 RN pages must fail");
+  assert(checkSitemapFloor(without(/\/hvac-technician\//)).some((p: string) => p.includes("/hvac-technician/")), "3 HVAC summary pages must fail");
+  assert(checkSitemapFloor(without(/\/plumber\//)).some((p: string) => p.includes("/plumber/")), "3 plumber summary pages must fail");
+  assert(checkSitemapFloor(base.filter((u) => !/\/electrician\//.test(u))).some((p: string) => p.includes('"singleStateProfession" is empty')), "no electrician pages must fail");
+  assert(checkSitemapFloor(base.slice(0, 49)).some((p: string) => p.includes("floor 50")), "49 URLs must fail the total");
+});
+
 // 2026-10-09: difficultyScore, portabilityScore, averageTransferDays and compactStates are unsourced generator values
 // (see types/index.ts). scripts/check-built-output.ts (postbuild) also scans the built site for them.
 // If this fails: remove the render. Never display these fields.
@@ -5767,7 +5822,8 @@ await test("[PERMANENT] lib/generated/gone-transfer-paths.json lists exactly the
 await test("[PERMANENT] every listing of data/transfers pairs goes through getPublishableTransferRules()", () => {
   for (const rel of ["lib/search.ts", "app/(site)/page.tsx", "app/(site)/profession/[slug]/page.tsx", "app/(site)/state/[slug]/page.tsx"]) {
     const src = fs.readFileSync(path.join(process.cwd(), ...rel.split("/")), "utf-8");
-    assert(src.includes("getPublishableTransferRules()"), `${rel} must read transfer rules via getPublishableTransferRules()`);
+    // getTransferPageRules() is getPublishableTransferRules() minus the consolidated pairs (2026-10-22): same gate, stricter.
+    assert(src.includes("getPublishableTransferRules()") || src.includes("getTransferPageRules()"), `${rel} must read transfer rules via getPublishableTransferRules() or getTransferPageRules()`);
     assert(!/getAllTransferRules\(|getTransferRulesForProfession\(|getTopTransfers\(|getHardestTransfers\(/.test(src), `${rel} must not read the unfiltered transfer rules`);
   }
 });

@@ -1,0 +1,95 @@
+{
+  "_comment": "Trade /transfer pairs folded into their destination summary page (/<profession>/<to>). The records stay in data/transfers and still feed the summary; only their own page is gone, 308 to the summary (next.config.mjs). Decided 2026-10-22.",
+  "pairs": [
+    {
+      "profession": "hvac-technician",
+      "from": "california",
+      "to": "florida"
+    },
+    {
+      "profession": "hvac-technician",
+      "from": "california",
+      "to": "ohio"
+    },
+    {
+      "profession": "hvac-technician",
+      "from": "california",
+      "to": "texas"
+    },
+    {
+      "profession": "hvac-technician",
+      "from": "florida",
+      "to": "ohio"
+    },
+    {
+      "profession": "hvac-technician",
+      "from": "ohio",
+      "to": "california"
+    },
+    {
+      "profession": "hvac-technician",
+      "from": "ohio",
+      "to": "florida"
+    },
+    {
+      "profession": "hvac-technician",
+      "from": "ohio",
+      "to": "texas"
+    },
+    {
+      "profession": "hvac-technician",
+      "from": "texas",
+      "to": "california"
+    },
+    {
+      "profession": "hvac-technician",
+      "from": "texas",
+      "to": "florida"
+    },
+    {
+      "profession": "hvac-technician",
+      "from": "texas",
+      "to": "ohio"
+    },
+    {
+      "profession": "plumber",
+      "from": "california",
+      "to": "florida"
+    },
+    {
+      "profession": "plumber",
+      "from": "california",
+      "to": "ohio"
+    },
+    {
+      "profession": "plumber",
+      "from": "florida",
+      "to": "california"
+    },
+    {
+      "profession": "plumber",
+      "from": "florida",
+      "to": "ohio"
+    },
+    {
+      "profession": "plumber",
+      "from": "ohio",
+      "to": "california"
+    },
+    {
+      "profession": "plumber",
+      "from": "ohio",
+      "to": "florida"
+    },
+    {
+      "profession": "plumber",
+      "from": "texas",
+      "to": "california"
+    },
+    {
+      "profession": "plumber",
+      "from": "texas",
+      "to": "florida"
+    }
+  ]
+}

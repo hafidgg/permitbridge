@@ -7,9 +7,9 @@ import { FAQSection } from "@/components/home/FAQ";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { ProfessionIcon } from "@/components/profession/ProfessionIcon";
-import { formatDate } from "@/lib/utils";
+import { formatDate, inSentence } from "@/lib/utils";
 import { getAllProfessions, getProfessionBySlug, getAllStates, getGuideBySlug, NURSE_TRANSFER_GUIDE_SLUG } from "@/lib/data";
-import { getPublishableTransferRules } from "@/lib/publishable-transfers";
+import { getTransferPageRules } from "@/lib/publishable-transfers";
 import { getAllPublicTransferRuleSlugs } from "@/lib/knowledge-base/transfer-rule-data";
 import { getAllSingleStateProfessionSlugs, getElectricianStatePageData } from "@/lib/knowledge-base/electrician-state-data";
 import { getIndexableTradeStateSummaries } from "@/lib/trade-state-summary";
@@ -46,7 +46,8 @@ export default async function ProfessionPage({ params }: { params: Promise<{ slu
   if (!profession) notFound();
 
   const states = getAllStates();
-  const rules = getPublishableTransferRules().filter((r) => r.profession === profession.slug);
+  // Pairs with their own page; consolidated pairs are reached through the destination summary links.
+  const rules = getTransferPageRules().filter((r) => r.profession === profession.slug);
   const relatedProfessions = getAllProfessions().filter((p) => profession.relatedProfessions.includes(p.slug));
   // Internal-linking fix: the old-pipeline "nurse" profession and the
   // knowledge-base's "registered-nurse" verified transfer pages use
@@ -239,7 +240,7 @@ export default async function ProfessionPage({ params }: { params: Promise<{ slu
           <section className="mt-12">
             <h2 className="mb-2 text-xl font-bold tracking-tight">{profession.shortName} Routes at a Glance</h2>
             <p className="mb-4 max-w-2xl text-sm text-muted-foreground">
-              Every {profession.shortName.toLowerCase()} route we have sourced, with the destination board&apos;s pathway, state fee and exam
+              Every {inSentence(profession.shortName)} route we have sourced, with the destination board&apos;s pathway, state fee and exam
               requirement. The fee is the destination board&apos;s published application or licensing fee for that route; open a route for the full
               breakdown and steps.
             </p>

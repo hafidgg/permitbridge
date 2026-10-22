@@ -101,7 +101,7 @@ export function TradeStateSummaryPage({ profession, state }: { profession: Trade
                 </div>
               </dl>
               <p className="mt-4 text-xs text-muted-foreground">
-                Fees are the state fees recorded for this route; see each origin&apos;s full requirements for the breakdown.
+                Fees are the state fees recorded for this route; each origin below gives the breakdown.
               </p>
               <p className="mt-2 text-xs text-muted-foreground">
                 Source:{" "}
@@ -130,20 +130,29 @@ export function TradeStateSummaryPage({ profession, state }: { profession: Trade
           <h2 className="mb-4 text-2xl font-bold tracking-tight">By origin state</h2>
           <div className="space-y-4">
             {s.pairs.map((p) => (
-              <div key={p.origin.slug} className="rounded-lg border border-border p-5">
+              <div key={p.origin.slug} id={`from-${p.origin.slug}`} className="scroll-mt-20 rounded-lg border border-border p-5">
                 <div className="flex flex-wrap items-baseline justify-between gap-2">
                   <h3 className="text-lg font-semibold">
                     From {p.origin.name} <span className="text-muted-foreground">→</span> {s.destination.name}
                   </h3>
-                  <Link href={`/transfer/${profession}/${p.origin.slug}/${state}`} className="inline-flex items-center gap-1 text-sm font-medium underline underline-offset-4">
-                    Full requirements <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
-                  </Link>
+                  {p.hasPage && (
+                    <Link href={`/transfer/${profession}/${p.origin.slug}/${state}`} className="inline-flex items-center gap-1 text-sm font-medium underline underline-offset-4">
+                      Full requirements <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
+                    </Link>
+                  )}
                 </div>
                 <p className="mt-2 text-sm">{p.rule.pathwayLabel}</p>
                 {!s.shared && (
                   <p className="mt-1 text-sm text-muted-foreground">
                     {formatUsd(p.rule.feeUsd)} in fees · {p.rule.examRequired ? "exam required" : "no exam"}
                   </p>
+                )}
+                {p.steps.length > 0 && (
+                  <ul className="mt-3 list-disc space-y-1.5 pl-5 text-sm">
+                    {p.steps.map((step) => (
+                      <li key={step}>{step}</li>
+                    ))}
+                  </ul>
                 )}
                 {p.openQuestions.length > 0 && (
                   <div className="mt-3">
@@ -155,9 +164,44 @@ export function TradeStateSummaryPage({ profession, state }: { profession: Trade
                     </ul>
                   </div>
                 )}
+                {!p.hasPage && (
+                  <p className="mt-3 text-xs text-muted-foreground">
+                    Source:{" "}
+                    <a href={p.source.website} target="_blank" rel="noopener noreferrer nofollow" className="underline underline-offset-4">
+                      {p.source.agencyName}
+                    </a>
+                  </p>
+                )}
               </div>
             ))}
           </div>
+          {s.sharedSteps.length > 0 && (
+            <div className="mt-6 rounded-lg border border-border p-5">
+              <h3 className="text-lg font-semibold">Steps that apply to more than one origin state</h3>
+              <ul className="mt-3 space-y-3 text-sm">
+                {s.sharedSteps.map((step) => (
+                  <li key={step.text}>
+                    <p className="font-medium">
+                      {step.openQuestion ? "Open question for licenses from " : "For licenses from "}
+                      {step.origins.map((o) => o.name).join(", ")}:
+                    </p>
+                    <p className={step.openQuestion ? "mt-1 text-muted-foreground" : "mt-1"}>{step.text}</p>
+                    <p className="mt-1 text-xs text-muted-foreground">
+                      Source:{" "}
+                      {step.sources.map((src, i) => (
+                        <span key={src.id}>
+                          {i > 0 && ", "}
+                          <a href={src.website} target="_blank" rel="noopener noreferrer nofollow" className="underline underline-offset-4">
+                            {src.agencyName}
+                          </a>
+                        </span>
+                      ))}
+                    </p>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
         </section>
 
         {s.pendingOrigins.length > 0 && (

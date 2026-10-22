@@ -9,6 +9,7 @@ import "server-only";
 import { getAllStates, getAllTransferRules } from "@/lib/data";
 import { getSourceByUrl } from "@/lib/knowledge-base/transfer-rule-data";
 import { isTradeTransferPublishable } from "@/lib/knowledge-base/trade-transfer-gate";
+import { isConsolidatedTransfer } from "@/lib/publishable-transfers";
 import type { PathwayType, State, TransferRule } from "@/types";
 import type { SourceRecord } from "@/types/knowledge-base";
 
@@ -23,6 +24,18 @@ export interface TradeSummaryPair {
   source: SourceRecord;
   /** Steps the record itself flags as needs_review — the origin-specific open questions. */
   openQuestions: string[];
+  /** false when the pair's own /transfer page was folded into this summary (it 308s here). */
+  hasPage: boolean;
+  /** For a folded pair: its other steps, minus any written once under sharedSteps. Empty for pairs with a page. */
+  steps: string[];
+}
+
+/** A step that several folded pairs carry word for word, written once with the origins it applies to. */
+export interface SharedStep {
+  text: string;
+  openQuestion: boolean;
+  origins: State[];
+  sources: SourceRecord[];
 }
 
 export interface TradeStateSummary {
@@ -35,8 +48,11 @@ export interface TradeStateSummary {
   unverifiedOrigins: State[];
   /** Origin states whose pair was researched but is blocked on an official answer from the board. */
   pendingOrigins: Array<{ origin: State; board: string; question: string }>;
+  sharedSteps: SharedStep[];
   lastUpdated: string;
 }
+
+const NEEDS_REVIEW = /^needs_review:\s*/;
 
 export function isTradeSummaryProfession(slug: string): slug is TradeSummaryProfession {
   return (TRADE_SUMMARY_PROFESSIONS as readonly string[]).includes(slug);
@@ -55,9 +71,29 @@ export function getTradeStateSummary(profession: TradeSummaryProfession, destina
     const origin = states.find((s) => s.slug === rule.fromState);
     const source = getSourceByUrl(rule.sourceUrl!);
     if (!origin || !source) continue;
-    pairs.push({ rule, origin, source, openQuestions: rule.steps.filter((s) => s.startsWith("needs_review:")).map((s) => s.replace(/^needs_review:\s*/, "")) });
+    const hasPage = !isConsolidatedTransfer(rule);
+    pairs.push({ rule, origin, source, openQuestions: [], hasPage, steps: [] });
   }
   pairs.sort((a, b) => a.origin.name.localeCompare(b.origin.name));
+
+  // Folded pairs: every step moves here from the old page. A step two or more of them share verbatim is written once.
+  const folded = pairs.filter((p) => !p.hasPage);
+  const byText = new Map<string, TradeSummaryPair[]>();
+  for (const p of folded) for (const step of new Set(p.rule.steps)) byText.set(step, [...(byText.get(step) ?? []), p]);
+  const sharedSteps: SharedStep[] = [...byText.entries()]
+    .filter(([, ps]) => ps.length > 1)
+    .map(([step, ps]) => ({
+      text: step.replace(NEEDS_REVIEW, ""),
+      openQuestion: NEEDS_REVIEW.test(step),
+      origins: ps.map((p) => p.origin),
+      sources: [...new Map(ps.map((p) => [p.source.id, p.source] as const)).values()],
+    }));
+  const isShared = (step: string) => (byText.get(step)?.length ?? 0) > 1;
+  for (const p of pairs) {
+    const own = p.hasPage ? p.rule.steps : p.rule.steps.filter((s) => !isShared(s));
+    p.openQuestions = own.filter((s) => NEEDS_REVIEW.test(s)).map((s) => s.replace(NEEDS_REVIEW, ""));
+    p.steps = p.hasPage ? [] : own.filter((s) => !NEEDS_REVIEW.test(s));
+  }
 
   const first = pairs[0];
   const agree =
@@ -84,6 +120,7 @@ export function getTradeStateSummary(profession: TradeSummaryProfession, destina
     shared: agree ? { pathway: first.rule.pathway, feeUsd: first.rule.feeUsd, examRequired: first.rule.examRequired, minimumYearsLicensed: first.rule.minimumYearsLicensed, source: first.source } : null,
     unverifiedOrigins,
     pendingOrigins,
+    sharedSteps,
     lastUpdated: pairs.map((p) => p.rule.updatedAt).sort().at(-1) ?? "",
   };
 }

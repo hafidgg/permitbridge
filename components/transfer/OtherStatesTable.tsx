@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import type { TransferRule, State } from "@/types";
+import { transferHref } from "@/lib/publishable-transfers";
 
 interface Row {
   rule: TransferRule;
@@ -31,10 +32,12 @@ export function OtherStatesTable({
         </thead>
         <tbody className="divide-y divide-border">
           {rows.map(({ rule, state }) => {
-            const href =
+            // A consolidated pair is read on its destination summary page, not its old (redirected) URL.
+            const href = transferHref(
               direction === "from"
-                ? `/transfer/${professionSlug}/${originSlug}/${state.slug}`
-                : `/transfer/${professionSlug}/${state.slug}/${originSlug}`;
+                ? { profession: professionSlug, fromState: originSlug, toState: state.slug }
+                : { profession: professionSlug, fromState: state.slug, toState: originSlug }
+            );
             return (
               <tr key={state.slug} className="hover:bg-muted/30">
                 <td className="px-4 py-3 font-medium">{state.name}</td>

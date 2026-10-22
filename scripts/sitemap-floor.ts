@@ -13,10 +13,26 @@
  *
  * Raise the floors when the site grows; never lower them to make a
  * failing check pass without understanding why URLs disappeared.
+ *
+ * 2026-10-22: lowered on purpose, from 70 total / 20 /transfer. 18 near-duplicate
+ * HVAC and plumber /transfer pages were folded into their destination summary
+ * pages (data/consolidated-transfers.json), leaving 52 URLs and 6 /transfer
+ * pages. Each floor is the real count, the total less a margin of 2.
  */
 
-export const MIN_TOTAL_URLS = 70;
-export const MIN_TRANSFER_URLS = 20;
+export const MIN_TOTAL_URLS = 50;
+export const MIN_TRANSFER_URLS = 6;
+
+/** Per-group floors, at the real count. A group not listed here only has to be non-empty. */
+export const MIN_GROUP_URLS: Readonly<Partial<Record<SitemapGroup, number>>> = {
+  knowledgeBaseTransfer: 7, // RN pairs
+};
+
+/** Trade summary pages per profession (/hvac-technician/{state}, /plumber/{state}), at the real count. */
+export const MIN_TRADE_SUMMARY_URLS: Readonly<Record<"hvac-technician" | "plumber", number>> = {
+  "hvac-technician": 4,
+  plumber: 4,
+};
 
 export type SitemapGroup =
   | "static"
@@ -74,6 +90,13 @@ export function checkSitemapFloor(urls: string[]): string[] {
   const counts = countByGroup(urls);
   if (urls.length < MIN_TOTAL_URLS) problems.push(`only ${urls.length} URLs (floor ${MIN_TOTAL_URLS})`);
   if (counts.transfer < MIN_TRANSFER_URLS) problems.push(`only ${counts.transfer} /transfer URLs (floor ${MIN_TRANSFER_URLS})`);
+  for (const [group, min] of Object.entries(MIN_GROUP_URLS) as [SitemapGroup, number][]) {
+    if (counts[group] < min) problems.push(`only ${counts[group]} ${group} URLs (floor ${min})`);
+  }
+  for (const [profession, min] of Object.entries(MIN_TRADE_SUMMARY_URLS)) {
+    const n = urls.filter((u) => new URL(u).pathname.split("/").filter(Boolean)[0] === profession && groupOf(u) === "tradeStateSummary").length;
+    if (n < min) problems.push(`only ${n} /${profession}/{state} URLs (floor ${min})`);
+  }
   for (const group of ALL_GROUPS) {
     if (counts[group] === 0 && !OPTIONAL_GROUPS.has(group)) problems.push(`group "${group}" is empty`);
   }
