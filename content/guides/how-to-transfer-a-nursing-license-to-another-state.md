@@ -3,10 +3,8 @@
 
 How you transfer an RN license depends on one thing before anything else: whether **both** your current state and your new state are members of the [Nurse Licensure Compact (NLC)](https://www.nursecompact.com/). The NLC reports that 43 jurisdictions currently participate. Check its [official map](https://www.nursecompact.com/files/NLC_Map.pdf) for your two states, because some member states have enacted the compact without having implemented it yet.
 
-| Your situation | Pathway |
-|---|---|
-| Both states are active NLC members, and you hold a multistate license | Compact relocation (the 60-day rule, below) |
-| Either state is not an NLC member | Licensure by endorsement in the new state |
+- **Both states are active NLC members, and you hold a multistate license:** compact relocation (the 60-day rule, below).
+- **Either state is not an NLC member:** licensure by endorsement in the new state.
 
 Your new state's membership is not enough by itself. For example, Florida is an NLC member but [California is not](https://www.rn.ca.gov/applicants/lic-end), so a California nurse moving to Florida goes through Florida's standard endorsement application. A Texas nurse moving to Florida (both are members) uses Florida's simpler [Multistate License Upgrade application](https://floridasnursing.gov/applications/multistate-upgrade-app.pdf).
 
@@ -40,7 +38,7 @@ These items differ from state to state, so we don't give general answers for the
 
 - **Fingerprinting and background checks.** In the state pairs we have sourced, California, Texas, Florida and Illinois each require fingerprinting under their own procedures. For New York we have not yet been able to confirm it from an official source. (The NLC's [uniform licensure requirements](https://www.nursecompact.com/how-it-works/applying-for-licensure.page) do require fingerprint-based background checks for a multistate license.)
 - **Temporary permits.** Some boards issue a temporary license or permit while your application is reviewed, for example [California](https://rn.ca.gov/applicants/lic-temp.shtml) and [Texas](https://www.bon.texas.gov/applications_six_month_permits_and_temporary_licenses.asp.html). Others do not, and the eligibility conditions differ.
-- **Processing time.** Official figures range from about 10 business days after the last required item arrives ([Texas BON](https://www.bon.texas.gov/pdfs/education_pdfs/education_programs/RN%20END%20INTL%20INSTRUCTIONS%208.22.pdf)) to 15 business days ([Georgia](https://sos.ga.gov/page/faqs-nursing)). Some boards publish no fixed figure.
+- **Processing time.** Boards differ, and several publish no fixed figure: the [Texas BON's endorsement page](https://www.bon.texas.gov/licensure_endorsement.asp.html), for example, does not state one. Check your destination board's own page.
 - **Any additional requirements.** These are set entirely by the destination state. Check that state's pair page or its board.
 
 ## Find the Rules for Your Specific Move

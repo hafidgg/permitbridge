@@ -123,7 +123,7 @@ export function getAllGuides(): GuideSummary[] {
         "Compact or endorsement? How RN license transfers actually work between US states — the NLC 60-day rule, Nursys verification, and where state rules genuinely differ.",
       category: "How-To",
       publishedAt: "2026-10-01",
-      updatedAt: "2026-10-01",
+      updatedAt: "2026-10-22",
       readingMinutes: 4,
       searchKeywords: ["nurse", "registered nurse", "RN", "Nurse Licensure Compact", "NLC", "Nursys", "endorsement"],
     },
