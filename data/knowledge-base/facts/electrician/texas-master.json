@@ -109,11 +109,11 @@
     "notes": "Texas's electrician reciprocity operates via named bilateral agreements with individual states, not a single multistate compact license practiced across member states without a new license (the defining feature of a true compact). Recorded as false to avoid conflating these bilateral agreements with a compact under this field's actual schema meaning."
   },
   "reciprocityRules": {
-    "value": "Texas has confirmed Master Electrician reciprocity agreements with: Arkansas, Nebraska, North Carolina, Louisiana (subject to a special residency condition \u2014 see below), Iowa, Alabama, and Ohio. Iowa-Master was confirmed via an official TDLR press release dated 2026-02-05, even though the primary out-of-state.htm listing page had not yet been updated to include it at time of research. Alabama-Master was confirmed via an official TDLR announcement (~2026-03-20). Ohio-Master was confirmed via an official TDLR announcement (June 2026).",
+    "value": "Texas has confirmed Master Electrician reciprocity agreements with: Arkansas, Nebraska, North Carolina, Louisiana (subject to a special residency condition \u2014 see below), Iowa, Alabama, Ohio, and Tennessee (Electrical Contractor). TDLR's out-of-state page lists all eight under Master Electrician.",
     "sourceUrl": "https://www.tdlr.texas.gov/electricians/out-of-state.htm",
     "sourceTitle": "Transfer Your Out-of-State Electrician License to Texas",
     "sourceName": "Texas Department of Licensing and Regulation (TDLR)",
-    "verifiedAt": "2026-08-27",
+    "verifiedAt": "2026-10-22",
     "verificationMethod": "official_document_review",
     "reviewer": null,
     "status": "pending_verification",
@@ -127,9 +127,17 @@
         "reason": "Phase 2F.2: initial population from official TDLR sources verified in Phase 2F/2F.1.",
         "sourceUrl": "https://www.tdlr.texas.gov/electricians/out-of-state.htm",
         "reviewer": null
+      },
+      {
+        "previousValue": "Texas has confirmed Master Electrician reciprocity agreements with: Arkansas, Nebraska, North Carolina, Louisiana (subject to a special residency condition \u2014 see below), Iowa, Alabama, and Ohio. Iowa-Master was confirmed via an official TDLR press release dated 2026-02-05, even though the primary out-of-state.htm listing page had not yet been updated to include it at time of research. Alabama-Master was confirmed via an official TDLR announcement (~2026-03-20). Ohio-Master was confirmed via an official TDLR announcement (June 2026).",
+        "newValue": "Texas has confirmed Master Electrician reciprocity agreements with: Arkansas, Nebraska, North Carolina, Louisiana (subject to a special residency condition \u2014 see below), Iowa, Alabama, Ohio, and Tennessee (Electrical Contractor). TDLR's out-of-state page lists all eight under Master Electrician.",
+        "changedAt": "2026-10-22",
+        "reason": "TDLR out-of-state.htm raw text (fetched 2026-10-22) lists \"Tennessee (Electrical Contractor)\" under Master Electrician, and now lists Iowa, Alabama and Ohio directly.",
+        "sourceUrl": "https://www.tdlr.texas.gov/electricians/out-of-state.htm",
+        "reviewer": null
       }
     ],
-    "notes": "Arkansas/Nebraska/North Carolina/Louisiana confirmed directly by TDLR's primary out-of-state.htm page. Iowa/Alabama/Ohio confirmed via separate, later official TDLR press releases not yet reflected on the primary page as of this research (Phase 2F.1 finding) \u2014 each cross-checked against its own dedicated official source, not inferred."
+    "notes": "All eight states confirmed from the raw text of TDLR's out-of-state.htm on 2026-10-22: \"Master Electrician - Alabama, Arkansas (master electrician), Iowa (Class A master electrician), Louisiana (state contractor\u2019s license), Nebraska, North Carolina (master electrician or unlimited electrical contractor), Ohio, and Tennessee (Electrical Contractor).\" Iowa/Alabama/Ohio were first confirmed in Phase 2F.1 via separate TDLR announcements before the page listed them."
   },
   "endorsementRules": {
     "value": "Unknown",
