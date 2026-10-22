@@ -103,7 +103,7 @@ export function getAllGuides(): GuideSummary[] {
         "The three pathways regulators use to recognize an out-of-state license are not interchangeable. Here's what actually differs and why it matters for your application.",
       category: "Fundamentals",
       publishedAt: "2026-04-02",
-      updatedAt: "2026-06-15",
+      updatedAt: "2026-10-22",
       readingMinutes: 2,
     },
     {
@@ -113,7 +113,7 @@ export function getAllGuides(): GuideSummary[] {
         "Nearly every interstate license transfer starts with a verification request. A step-by-step walkthrough of how to request one without delays.",
       category: "How-To",
       publishedAt: "2026-05-18",
-      updatedAt: "2026-10-21",
+      updatedAt: "2026-10-22",
       readingMinutes: 2,
     },
     {

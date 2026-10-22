@@ -16,7 +16,7 @@
   "difficultyScore": 7,
   "portabilityScore": 30,
   "steps": [
-    "Confirm your Contractor license is active and in good standing in Florida, and check whether it was originally earned by passing the NASCLA Commercial General Building Contractor exam (2009 or later) rather than a Florida-specific trade exam.",
+    "Confirm your Contractor license is active and in good standing in Florida, and check whether it was originally earned by passing the NASCLA Commercial General Building Contractor exam rather than a Florida-specific trade exam.",
     "Florida is not one of CSLB's five reciprocal-agreement states (Arizona, Louisiana, Mississippi, Nevada, North Carolina), so a state-to-state reciprocity waiver does not apply.",
     "If your license was earned via the NASCLA exam: submit a Request for Verification of License from Florida's board, CSLB's Application for Original Contractor's License, a signed statement requesting the NASCLA exam waiver, and release your NASCLA exam results to CSLB. Your trade exam is waived, but you must have held a general building contractor license (or similar) in good standing for the previous 5 years.",
     "If your license was NOT earned via the NASCLA exam: no waiver applies — you must complete a full original CSLB application, including CSLB's trade exam.",
@@ -25,7 +25,7 @@
   ],
   "notes": "Confirmed directly from CSLB's official reciprocity pages: Florida is not on California's 5-state reciprocity list (AZ, LA, MS, NV, NC), so the standard reciprocity waiver does not apply. Separately, CSLB waives its trade exam — for applicants from any state, not just the 5 reciprocal ones — if the applicant's existing license was earned by passing the NASCLA Commercial General Building Contractor exam (2009 forward); Florida's own CILB reciprocity document confirms Florida accepts the NASCLA exam as equivalent to its own Division I trade exams, so a Florida contractor may hold a NASCLA-based license, but this is not guaranteed for every Florida licensee. The $450 figure is CSLB's published single-classification original-application fee; a Sole Owner applicant also owes a $200 initial license fee after the exam stage ($650 total), or $350 ($800 total) for a non-sole-owner entity — not included in feeUsd, which reflects the application fee only, consistent with this site's other records. Whether CSLB still requires its business/law exam portion even after a trade-exam waiver was not stated on the pages checked — treat that detail as unconfirmed rather than assumed either way.",
   "officialSourceName": "California Contractors State License Board (CSLB)",
-  "updatedAt": "2026-09-17",
+  "updatedAt": "2026-10-22",
   "sourceUrl": "https://www.cslb.ca.gov/Contractors/Applicants/Reciprocity/Reciprocity_Requirements.aspx",
   "verifiedAt": "2026-09-17",
   "confidence": 0.85

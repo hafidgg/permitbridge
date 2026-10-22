@@ -32,9 +32,8 @@ export default function AboutPage() {
           <h2>Our Mission</h2>
           <p>
             To give nurses, electricians, plumbers, HVAC technicians, and other licensed professionals a clear,
-            accurate answer to one question: what will it take to keep working if I move to another state? License
-            recognition rules change often, and static guides go stale within months, so {SITE_NAME} is maintained as
-            a living reference rather than a one-time article.
+            accurate answer to one question: what will it take to keep working if I move to another state? Licensing
+            rules change, so {SITE_NAME} is maintained as a living reference and each page shows when it was last researched.
           </p>
 
           <h2>How Our Data Is Sourced</h2>
