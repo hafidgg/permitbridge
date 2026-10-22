@@ -68,6 +68,16 @@ visibleForbidden.push(
   { label: "leaked undefined/null value", re: /\bundefined\b|\[object Object\]|\bNaN\b/ },
   // A markdown table the guide renderer doesn't support shows as raw pipes.
   { label: "unrendered markdown table", re: /\|\s*-{3,}\s*\|/ },
+  // Claims removed after a raw-text audit found them in no registered source (2026-10-22). They must not come back.
+  {
+    label: "claim removed as unsourced",
+    re: /§\s?7065\.1|form 13A-1|\$25,000 (?:contractor'?s )?bond|some or all of the Texas requirements|unless TDLR waives|evaluated case by case|ORC 4740\.08|4796\.01 defines|Class A is unrestricted|about 10 business days|precondition to issuance of any class of individual electrical license/i,
+  },
+  // Research-process wording that belongs in notes, not on a page (file names, "this pass", "read here as", ...).
+  {
+    label: "research-process wording",
+    re: /\b[a-z]+-(?:journeyman|master|to-[a-z-]+)\.json\b|\bread here as\b|could not be independently confirmed|\bthis (?:pass|session)\b|\bPhase \d[A-Z]?(?:\.\d+)*\b|flagged as an open question rather than/i,
+  },
   // Not inside a slug, path or domain ("new-york", "/texas", "tsbpe.texas.gov").
   { label: "lowercase state name", re: new RegExp(String.raw`(?<![./\w-])(?:${stateNames.map((n) => n.toLowerCase()).join("|")})\b(?![-/\w]|\.\w)`) },
   { label: "lowercase license code", re: /\b[a-z]-\d{1,2}\b/ },
