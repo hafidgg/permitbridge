@@ -1685,11 +1685,12 @@ await test("public routes correctly exclude any record that fails the real quali
     "registered-nurse/texas-to-florida",
     "registered-nurse/texas-to-california",
     "registered-nurse/california-to-new-york",
-    "registered-nurse/illinois-to-georgia",
+    // illinois-to-georgia withdrawn 2026-10-22 (WITHDRAWN_TRANSFER_SLUGS): still passes the gate, no longer public.
     "registered-nurse/new-york-to-california",
     "registered-nurse/georgia-to-illinois",
     "registered-nurse/california-to-florida",
   ].sort();
+  assert(!actual.includes("registered-nurse/illinois-to-georgia"), "illinois-to-georgia was withdrawn (410) on 2026-10-22");
   assertEqual(actual, expected, "california-to-texas must still be excluded (unchanged); california-to-florida must now be included — 8 of its 9 critical fields were upgraded to genuine registered floridasnursing.gov sources in Phase 2B.4, with only experienceRequirement honestly remaining Unknown");
 });
 
@@ -1713,7 +1714,8 @@ await test("[PERMANENT — Phase 2B.1] California -> Texas is now correctly UNRE
 await test("the other 4 real transfers evaluate as publishable (page would NOT show the blocked notice)", () => {
   const publishableSlugs = ["texas-to-florida", "texas-to-california", "california-to-new-york", "illinois-to-georgia"];
   for (const slug of publishableSlugs) {
-    const rule = getPublicTransferRule("registered-nurse", slug)!;
+    // illinois-to-georgia is withdrawn from the public API (2026-10-22) but its record still passes the gate: read it raw.
+    const rule = slug === "illinois-to-georgia" ? JSON.parse(fs.readFileSync(path.join(process.cwd(), "data", "knowledge-base", "transfer-rules", "registered-nurse", "illinois-to-georgia.json"), "utf-8")) : getPublicTransferRule("registered-nurse", slug)!;
     assertEqual(summarizeEvidence(rule).publishable, true, `${slug} should be publishable`);
   }
 });
@@ -1741,7 +1743,8 @@ await test("human verification is never falsely displayed — zero fields have s
 });
 
 await test("source links correspond to the correct field — sourceName on the field matches the resolved SourceRecord's agency", () => {
-  const rule = getPublicTransferRule("registered-nurse", "illinois-to-georgia")!;
+  // Raw file: illinois-to-georgia is withdrawn from the public API (2026-10-22); its stored record is unchanged.
+  const rule = JSON.parse(fs.readFileSync(path.join(process.cwd(), "data", "knowledge-base", "transfer-rules", "registered-nurse", "illinois-to-georgia.json"), "utf-8"));
   const field = rule.experienceRequirement;
   const source = getSourceByUrl(field.sourceUrl!);
   assertEqual(source?.agencyName, field.sourceName, "the field's own sourceName must match the resolved SourceRecord it links to");
@@ -1792,7 +1795,7 @@ await test("sitemap contains exactly the 7 currently-publishable RN transfer pag
   // file's "Phase 3.3" comment block) against the same underlying data
   // functions, which is what actually matters for this assertion.
   const slugs = getAllPublicTransferRuleSlugs();
-  assertEqual(slugs.length, 7, "expected exactly 7 knowledge-base transfer routes — 8 files exist on disk, california-to-texas still fails the gate, california-to-florida now genuinely passes it");
+  assertEqual(slugs.length, 6, "expected exactly 6 knowledge-base transfer routes — 8 files exist on disk, california-to-texas still fails the gate, california-to-florida now genuinely passes it, illinois-to-georgia withdrawn (410) on 2026-10-22");
   assert(!slugs.some((s) => s.transfer === "california-to-texas"), "california-to-texas must never appear in the sitemap — it fails isTransferRulePublishable()");
   assert(slugs.some((s) => s.transfer === "california-to-florida"), "california-to-florida must now appear in the sitemap — Phase 2B.4 upgraded it to genuinely pass the real quality gate");
   for (const s of slugs) {
@@ -5205,9 +5208,9 @@ await test("[PERMANENT — Phase 2D.4.2] the new quality gate genuinely blocks �
 
 await test("[PERMANENT — Phase 2D.4.2] RN REGRESSION: generateStaticParams for the shared route still returns all 7 real RN pairs, completely unaffected by single-state entries being appended (now 8: colorado + virginia + texas + arkansas + minnesota + utah + wyoming + iowa)", () => {
   const rnSlugs = getAllPublicTransferRuleSlugs();
-  assertEqual(rnSlugs.length, 7, "RN's publishable pair count must remain exactly 7");
+  assertEqual(rnSlugs.length, 6, "RN's publishable pair count must be exactly 6 (7 until illinois-to-georgia was withdrawn, 2026-10-22)");
   const combined = [...rnSlugs.map((s) => ({ profession: s.profession, transfer: s.transfer })), ...getAllSingleStateProfessionSlugs().map((s) => ({ profession: s.profession, transfer: s.slug }))];
-  assertEqual(combined.length, 15, "expected exactly 7 RN pairs + colorado + virginia + texas + arkansas + minnesota + utah + wyoming + iowa = 15 total params for this route");
+  assertEqual(combined.length, 14, "expected exactly 6 RN pairs (illinois-to-georgia withdrawn 2026-10-22) + colorado + virginia + texas + arkansas + minnesota + utah + wyoming + iowa = 15 total params for this route");
 });
 
 await test("[PERMANENT — Phase 2D.4.2] RN REGRESSION: getPublicTransferRule still resolves every real RN pair exactly as before — the new electrician branch never intercepts or shadows an RN lookup", () => {
@@ -5300,9 +5303,9 @@ await test("[PERMANENT — Phase 2D.6.3] every critical field in both Virginia t
 
 await test("[PERMANENT — Phase 2D.6.3] RN REGRESSION: generateStaticParams for the shared route now returns 7 RN pairs + 8 single-state pages = 15 total, RN's 7 completely unaffected", () => {
   const rnSlugs = getAllPublicTransferRuleSlugs();
-  assertEqual(rnSlugs.length, 7, "RN's publishable pair count must remain exactly 7 — unaffected by Phase 2F.2");
+  assertEqual(rnSlugs.length, 6, "RN's publishable pair count must be exactly 6 (7 until illinois-to-georgia was withdrawn, 2026-10-22) — unaffected by Phase 2F.2");
   const combined = [...rnSlugs.map((s) => ({ profession: s.profession, transfer: s.transfer })), ...getAllSingleStateProfessionSlugs().map((s) => ({ profession: s.profession, transfer: s.slug }))];
-  assertEqual(combined.length, 15, "expected exactly 7 RN pairs + colorado + virginia + texas + arkansas + minnesota + utah + wyoming + iowa = 15 total params for this route");
+  assertEqual(combined.length, 14, "expected exactly 6 RN pairs (illinois-to-georgia withdrawn 2026-10-22) + colorado + virginia + texas + arkansas + minnesota + utah + wyoming + iowa = 15 total params for this route");
 });
 
 await test("[PERMANENT — Phase 2D.6.3] RN REGRESSION: getPublicTransferRule still resolves every real RN pair exactly as before — the generalized electrician branch never intercepts or shadows an RN lookup", () => {
@@ -5476,9 +5479,9 @@ await test("[PERMANENT — Phase 2F.2] no RN content leakage: Texas electrician 
 
 await test("[PERMANENT — Phase 2F.2] RN REGRESSION: generateStaticParams for the shared route now returns 7 RN pairs + 8 single-state pages = 15 total, RN's 7 completely unaffected", () => {
   const rnSlugs = getAllPublicTransferRuleSlugs();
-  assertEqual(rnSlugs.length, 7, "RN's publishable pair count must remain exactly 7 — unaffected by Phase 2F.2");
+  assertEqual(rnSlugs.length, 6, "RN's publishable pair count must be exactly 6 (7 until illinois-to-georgia was withdrawn, 2026-10-22) — unaffected by Phase 2F.2");
   const combined = [...rnSlugs.map((s) => ({ profession: s.profession, transfer: s.transfer })), ...getAllSingleStateProfessionSlugs().map((s) => ({ profession: s.profession, transfer: s.slug }))];
-  assertEqual(combined.length, 15, "expected exactly 7 RN pairs + colorado + virginia + texas + arkansas + minnesota + utah + wyoming + iowa = 15 total params for this route");
+  assertEqual(combined.length, 14, "expected exactly 6 RN pairs (illinois-to-georgia withdrawn 2026-10-22) + colorado + virginia + texas + arkansas + minnesota + utah + wyoming + iowa = 15 total params for this route");
 });
 
 await test("[PERMANENT — Phase 2F.2] sitemap.ts still derives Texas automatically via the same whitelist function — no manually-written '/electrician/texas' URL string exists", () => {
@@ -5782,16 +5785,16 @@ await test("[PERMANENT] sitemap floor: the post-consolidation sitemap passes, an
     ...Array.from({ length: 5 }, (_, i) => `${S}/state/s${i}`),
     ...Array.from({ length: 6 }, (_, i) => `${S}/transfer/x/a${i}/b`),
     ...Array.from({ length: 3 }, (_, i) => `${S}/guides/g${i}`),
-    ...Array.from({ length: 7 }, (_, i) => `${S}/registered-nurse/a${i}-to-b`),
+    ...Array.from({ length: 6 }, (_, i) => `${S}/registered-nurse/a${i}-to-b`), // 6 since 2026-10-22 (IL->GA withdrawn)
     ...states.map((s) => `${S}/hvac-technician/${s}`),
     ...states.map((s) => `${S}/plumber/${s}`),
     ...Array.from({ length: 8 }, (_, i) => `${S}/electrician/e${i}`),
   ];
-  assertEqual(base.length, 52, "fixture mirrors the real sitemap");
+  assertEqual(base.length, 51, "fixture mirrors the real sitemap (51 since IL->GA was withdrawn, 2026-10-22)");
   assertEqual(checkSitemapFloor(base).join("; "), "", "the real post-consolidation shape passes");
   const without = (re: RegExp) => { const i = base.findIndex((u) => re.test(u)); return base.filter((_, j) => j !== i); };
   assert(checkSitemapFloor(without(/\/transfer\//)).some((p: string) => p.includes("/transfer URLs")), "5 /transfer pages must fail");
-  assert(checkSitemapFloor(without(/registered-nurse/)).some((p: string) => p.includes("knowledgeBaseTransfer")), "6 RN pages must fail");
+  assert(checkSitemapFloor(without(/registered-nurse/)).some((p: string) => p.includes("knowledgeBaseTransfer")), "5 RN pages must fail");
   assert(checkSitemapFloor(without(/\/hvac-technician\//)).some((p: string) => p.includes("/hvac-technician/")), "3 HVAC summary pages must fail");
   assert(checkSitemapFloor(without(/\/plumber\//)).some((p: string) => p.includes("/plumber/")), "3 plumber summary pages must fail");
   assert(checkSitemapFloor(base.filter((u) => !/\/electrician\//.test(u))).some((p: string) => p.includes('"singleStateProfession" is empty')), "no electrician pages must fail");
@@ -5871,8 +5874,12 @@ await test("[PERMANENT] board procedures cite registered in-state sources and re
 // heldFields so pages say "being re-checked" rather than "not published by the board". Stored values stay on disk.
 // If this fails: fix the loader, don't drop the hold. Lift a hold only after re-reading the source's raw text.
 await test("[PERMANENT] displayHold fields are never shown and are reported as held, not as unpublished", () => {
-  const ilGa = getPublicTransferRule("registered-nurse", "illinois-to-georgia")!;
-  for (const k of ["transferMechanism", "examRequirement", "applicationFeeUsd", "processingTime"] as const) {
+  // illinois-to-georgia itself is withdrawn (410, 2026-10-22); apply the same helper the loader uses to its raw record.
+  const { applyDisplayHolds } = require("../../lib/knowledge-base/display-hold");
+  const held = applyDisplayHolds(JSON.parse(fs.readFileSync(path.join(process.cwd(), "data", "knowledge-base", "transfer-rules", "registered-nurse", "illinois-to-georgia.json"), "utf-8")));
+  const ilGa = { ...held.record, heldFields: held.held };
+  assertEqual(getPublicTransferRule("registered-nurse", "illinois-to-georgia"), undefined, "illinois-to-georgia is withdrawn from the public API");
+  for (const k of ["transferMechanism", "examRequirement", "applicationFeeUsd", "processingTime"]) {
     assertEqual(ilGa[k].value, "Unknown", `IL->GA ${k} must load as Unknown while held`);
     assert((ilGa.heldFields ?? []).includes(k), `IL->GA ${k} must be listed in heldFields`);
   }

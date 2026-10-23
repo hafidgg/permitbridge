@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-22T15:40:39.765Z",
-  "documentCount": 42,
+  "generatedAt": "2026-10-23T06:16:14.557Z",
+  "documentCount": 41,
   "documents": [
     {
       "type": "profession",
@@ -255,20 +255,6 @@
         "nursing license",
         "Georgia",
         "Illinois",
-        "transfer license"
-      ]
-    },
-    {
-      "type": "transfer",
-      "title": "Registered Nurse: Illinois → Georgia",
-      "description": "Verified, field-sourced RN license transfer guide from Illinois to Georgia.",
-      "url": "/registered-nurse/illinois-to-georgia",
-      "keywords": [
-        "registered nurse",
-        "RN",
-        "nursing license",
-        "Illinois",
-        "Georgia",
         "transfer license"
       ]
     },

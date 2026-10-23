@@ -33,6 +33,9 @@ const GONE_CONTENT_PATHS = new Set([
   "/embed/portability-score",
   "/blog",
   "/blog/nurse-licensure-compact-2026-changes",
+  // Withdrawn 2026-10-22 (WITHDRAWN_TRANSFER_SLUGS in lib/knowledge-base/transfer-rule-data.ts): its Georgia sources
+  // can't be re-read, so nothing verifiable was left on the page.
+  "/registered-nurse/illinois-to-georgia",
 ]);
 
 function isGone(rawPathname: string): boolean {

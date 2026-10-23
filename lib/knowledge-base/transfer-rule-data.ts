@@ -42,6 +42,14 @@ export interface PublicTransferRuleSlug {
 }
 
 /**
+ * Published pages withdrawn by decision, though their records still pass the gate. The stored data stays as the
+ * research record; middleware.ts answers these paths with 410.
+ * 2026-10-22: illinois-to-georgia -- every Georgia board source blocks automated reads, so 13 of its fields are held
+ * (displayHold) and the page had nothing verifiable left to show.
+ */
+export const WITHDRAWN_TRANSFER_SLUGS: ReadonlySet<string> = new Set(["registered-nurse/illinois-to-georgia"]);
+
+/**
  * The whitelist the page's generateStaticParams() uses — and, since
  * sitemap.ts and everything else derives from this same function, the
  * single authoritative gate for the entire public-discovery surface
@@ -77,6 +85,7 @@ export function getAllPublicTransferRuleSlugs(): PublicTransferRuleSlug[] {
 
       const { publishable } = isTransferRulePublishable(rule, resolveSource, KNOWN_PROFESSION_SLUGS);
       if (!publishable) continue; // fails the real quality gate — never public, regardless of the file existing on disk
+      if (WITHDRAWN_TRANSFER_SLUGS.has(`${profession}/${rule.sourceState}-to-${rule.destinationState}`)) continue;
 
       slugs.push({
         profession,
@@ -100,6 +109,7 @@ export function getAllPublicTransferRuleSlugs(): PublicTransferRuleSlug[] {
 export function getPublicTransferRule(profession: string, transferSlug: string): TransferRule | undefined {
   const parsed = parseTransferRuleSlug(`${profession}/${transferSlug}`);
   if (!parsed) return undefined;
+  if (WITHDRAWN_TRANSFER_SLUGS.has(`${profession}/${transferSlug}`)) return undefined;
   // Throws in production if the whole directory is missing, so an ISR re-run without data/ fails
   // (keeping the last good page) instead of returning undefined and caching a 404 for a real page.
   if (!dataDirExists(TRANSFER_RULES_ROOT)) return undefined;

@@ -48,7 +48,6 @@ For the exact requirements between two states, including fees, forms and the off
 - [California → Florida](/registered-nurse/california-to-florida)
 - [California → New York](/registered-nurse/california-to-new-york)
 - [Georgia → Illinois](/registered-nurse/georgia-to-illinois)
-- [Illinois → Georgia](/registered-nurse/illinois-to-georgia)
 - [New York → California](/registered-nurse/new-york-to-california)
 - [Texas → California](/registered-nurse/texas-to-california)
 - [Texas → Florida](/registered-nurse/texas-to-florida)
