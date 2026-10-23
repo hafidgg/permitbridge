@@ -75,6 +75,7 @@ export default async function StatePage({ params }: { params: Promise<{ slug: st
             </a>
           )}
         </div>
+        <p className="mt-3 text-sm text-muted-foreground">Independent reference, not legal advice. Confirm with the official licensing authority before applying.</p>
 
         <section className="mt-12">
           <h2 className="mb-6 text-2xl font-bold tracking-tight">License Transfers Into {state.name}</h2>

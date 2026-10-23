@@ -113,6 +113,7 @@ export default async function ProfessionPage({ params }: { params: Promise<{ slu
             </a>
           )}
         </div>
+        <p className="mt-3 text-sm text-muted-foreground">Independent reference, not legal advice. Confirm with the official licensing authority before applying.</p>
 
         {rules.length > 0 && (
         <section className="mt-12">
