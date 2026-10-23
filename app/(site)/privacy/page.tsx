@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { buildMetadata } from "@/lib/seo";
-import { CONTACT_EMAIL, SITE_NAME } from "@/lib/constants";
+import { CONTACT_EMAIL, OPERATOR_NAME, SITE_NAME } from "@/lib/constants";
 import { formatDate, SITE_URL } from "@/lib/utils";
 
 export const metadata: Metadata = buildMetadata({
@@ -23,7 +23,7 @@ export default function PrivacyPage() {
         <div className="prose-permitbridge mt-8">
           <p>
             This Privacy Policy explains how {SITE_NAME} (&quot;we,&quot; &quot;us&quot;) handles information when you
-            visit {SITE_URL.replace(/^https?:\/\//, "")} (the &quot;Site&quot;). {SITE_NAME} does not offer accounts or
+            visit {SITE_URL.replace(/^https?:\/\//, "")} (the &quot;Site&quot;). {SITE_NAME} is operated by {OPERATOR_NAME}. {SITE_NAME} does not offer accounts or
             ask you to sign up, and we collect only the information needed to operate and improve the Site.
           </p>
 

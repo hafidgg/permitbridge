@@ -2,7 +2,7 @@ import { getAllProfessions, getAllStates, getGuideBySlug, NURSE_TRANSFER_GUIDE_S
 import { getAllPublicTransferRuleSlugs } from "@/lib/knowledge-base/transfer-rule-data";
 import { getAllSingleStateProfessionSlugs } from "@/lib/knowledge-base/electrician-state-data";
 import { getIndexableTradeStateSummaries } from "@/lib/trade-state-summary";
-import { SITE_NAME, SITE_DESCRIPTION } from "@/lib/constants";
+import { CONTACT_EMAIL, OPERATOR_NAME, SITE_DESCRIPTION, SITE_NAME } from "@/lib/constants";
 import { SITE_URL } from "@/lib/utils";
 
 /**
@@ -39,6 +39,8 @@ export async function GET() {
     `# ${SITE_NAME}`,
     "",
     `> ${SITE_DESCRIPTION}`,
+    "",
+    `${SITE_NAME} is operated by ${OPERATOR_NAME}. Contact: ${CONTACT_EMAIL}`,
     "",
     "PermitBridge is an independent, non-governmental reference site. It is not affiliated with any state licensing board or government agency. All information is for general reference only — always verify current requirements directly with the official licensing authority before relying on them.",
     "",

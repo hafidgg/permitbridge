@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { buildMetadata } from "@/lib/seo";
-import { CONTACT_EMAIL, SITE_NAME } from "@/lib/constants";
+import { CONTACT_EMAIL, OPERATOR_NAME, SITE_NAME } from "@/lib/constants";
 import { Mail, Flag, Handshake } from "lucide-react";
 
 export const metadata: Metadata = buildMetadata({
@@ -38,7 +38,7 @@ export default function ContactPage() {
       <div className="container max-w-3xl pb-16">
         <h1 className="text-3xl font-bold tracking-tight md:text-4xl">Contact Us</h1>
         <p className="mt-3 text-muted-foreground">
-          We read every message, especially corrections — accuracy is the entire point of {SITE_NAME}. All messages go to{" "}
+          We read every message, especially corrections — accuracy is the entire point of {SITE_NAME}. {SITE_NAME} is operated by {OPERATOR_NAME}, and all messages go to{" "}
           <a href={`mailto:${CONTACT_EMAIL}`} className="font-medium text-primary hover:underline">
             {CONTACT_EMAIL}
           </a>

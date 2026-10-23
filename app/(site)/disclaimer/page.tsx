@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { buildMetadata } from "@/lib/seo";
-import { CONTACT_EMAIL, SITE_NAME } from "@/lib/constants";
+import { CONTACT_EMAIL, OPERATOR_NAME, SITE_NAME } from "@/lib/constants";
 import { formatDate } from "@/lib/utils";
 
 export const metadata: Metadata = buildMetadata({
@@ -11,7 +11,7 @@ export const metadata: Metadata = buildMetadata({
   path: "/disclaimer",
 });
 
-const LAST_UPDATED = "2026-10-08";
+const LAST_UPDATED = "2026-10-23";
 
 export default function DisclaimerPage() {
   return (
@@ -24,7 +24,7 @@ export default function DisclaimerPage() {
         <div className="prose-permitbridge mt-8">
           <h2>Not Official Government Information</h2>
           <p>
-            {SITE_NAME} is an independent, privately operated reference site. We are not a government agency, a
+            {SITE_NAME} is an independent reference site operated by {OPERATOR_NAME}. We are not a government agency, a
             state licensing board, or affiliated with any licensing authority mentioned on the Site.
           </p>
 

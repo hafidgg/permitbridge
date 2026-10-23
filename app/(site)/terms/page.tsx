@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { buildMetadata } from "@/lib/seo";
-import { CONTACT_EMAIL, SITE_NAME } from "@/lib/constants";
+import { CONTACT_EMAIL, OPERATOR_NAME, SITE_NAME } from "@/lib/constants";
 import { formatDate } from "@/lib/utils";
 
 export const metadata: Metadata = buildMetadata({
@@ -11,7 +11,7 @@ export const metadata: Metadata = buildMetadata({
   path: "/terms",
 });
 
-const LAST_UPDATED = "2026-06-01";
+const LAST_UPDATED = "2026-10-23";
 
 export default function TermsPage() {
   return (
@@ -22,7 +22,10 @@ export default function TermsPage() {
         <p className="mt-2 text-xs text-muted-foreground">Last updated {formatDate(LAST_UPDATED)}</p>
 
         <div className="prose-permitbridge mt-8">
-          <p>By accessing or using {SITE_NAME} ("the Site"), you agree to these Terms of Service.</p>
+          <p>
+            By accessing or using {SITE_NAME} ("the Site"), you agree to these Terms of Service. {SITE_NAME} is
+            operated by {OPERATOR_NAME}.
+          </p>
 
           <h2>Use of the Site</h2>
           <p>

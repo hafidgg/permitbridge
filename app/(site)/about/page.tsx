@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { buildMetadata } from "@/lib/seo";
-import { CONTACT_EMAIL, SITE_NAME } from "@/lib/constants";
+import { CONTACT_EMAIL, OPERATOR_NAME, SITE_NAME } from "@/lib/constants";
 
 export const metadata: Metadata = buildMetadata({
   title: "About Us",
@@ -24,7 +24,7 @@ export default function AboutPage() {
           </p>
           <h2>Who Runs {SITE_NAME}</h2>
           <p>
-            {SITE_NAME} is an independent project run by GOUGUA. It is not owned by, funded by, or affiliated with
+            {SITE_NAME} is operated by {OPERATOR_NAME}, its independent operator. It is not owned by, funded by, or affiliated with
             any licensing board, government agency, or professional association, and no board has reviewed or
             endorsed its pages. You can reach us at <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.
           </p>

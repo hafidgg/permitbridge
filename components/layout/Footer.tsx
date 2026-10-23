@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { FOOTER_LINKS, SITE_NAME, SITE_TAGLINE } from "@/lib/constants";
+import { FOOTER_LINKS, OPERATOR_NAME, SITE_NAME, SITE_TAGLINE } from "@/lib/constants";
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -31,7 +31,7 @@ export function Footer() {
 
         <div className="mt-10 border-t border-border pt-6 text-xs text-muted-foreground">
           <p>
-            © {year} {SITE_NAME}. All rights reserved. {SITE_NAME} is an independent reference site and is not
+            © {year} {SITE_NAME}. All rights reserved. {SITE_NAME} is operated by {OPERATOR_NAME}. It is an independent reference site and is not
             affiliated with any state licensing board or government agency. Always confirm requirements with the
             official licensing authority before applying.
           </p>

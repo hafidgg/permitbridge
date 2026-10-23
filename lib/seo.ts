@@ -5,7 +5,7 @@
  * JSON-LD structured data across the site.
  */
 import type { Metadata } from "next";
-import { SITE_NAME, SITE_DESCRIPTION } from "@/lib/constants";
+import { OPERATOR_NAME, SITE_DESCRIPTION, SITE_NAME } from "@/lib/constants";
 import { SITE_URL } from "@/lib/utils";
 
 interface BuildMetadataArgs {
@@ -57,6 +57,7 @@ export function organizationJsonLd() {
     url: SITE_URL,
     logo: `${SITE_URL}/logo.png`,
     description: SITE_DESCRIPTION,
+    founder: { "@type": "Person", name: OPERATOR_NAME },
     sameAs: [],
   };
 }
