@@ -103,8 +103,8 @@ export function getAllGuides(): GuideSummary[] {
         "The three pathways regulators use to recognize an out-of-state license are not interchangeable. Here's what actually differs and why it matters for your application.",
       category: "Fundamentals",
       publishedAt: "2026-04-02",
-      updatedAt: "2026-10-22",
-      readingMinutes: 2,
+      updatedAt: "2026-10-23",
+      readingMinutes: 3,
     },
     {
       slug: "how-to-request-license-verification",
