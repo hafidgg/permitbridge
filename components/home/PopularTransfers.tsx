@@ -15,7 +15,7 @@ export function PopularTransfers({ transfers }: { transfers: EnrichedTransfer[] 
     <section className="bg-muted/30 py-16">
       <div className="container">
         <div className="mb-8">
-          <h2 className="text-2xl font-bold tracking-tight md:text-3xl">Recently Verified License Transfers</h2>
+          <h2 className="text-2xl font-bold tracking-tight md:text-3xl">License Transfers From Official Sources</h2>
           <p className="mt-2 text-muted-foreground">
             Transfer guides checked against the official licensing source each one cites, most recently updated first.
           </p>

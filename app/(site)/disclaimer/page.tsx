@@ -52,7 +52,7 @@ export default function DisclaimerPage() {
           <p>
             Wherever possible, each page links to the official licensing board source its requirements were taken
             from. Use that link to confirm the current rule; if the board&apos;s page and ours disagree, the board is
-            right. See our <Link href="/methodology">methodology</Link> for how rules are verified.
+            right. See our <Link href="/methodology">methodology</Link> for how rules are sourced and checked.
           </p>
 
           <h2>Advertising</h2>

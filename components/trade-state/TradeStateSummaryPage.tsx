@@ -81,7 +81,7 @@ export function TradeStateSummaryPage({ profession, state }: { profession: Trade
           {s.shared ? (
             <div className="rounded-lg border border-border p-6">
               <p className="mb-4 text-sm text-muted-foreground">
-                {s.destination.name}&apos;s board sets the route, so it is the same for every origin state we have verified below.
+                {s.destination.name}&apos;s board sets the route, so it is the same for every origin state listed below.
               </p>
               <dl className="grid grid-cols-1 gap-4 text-sm sm:grid-cols-2">
                 <div>

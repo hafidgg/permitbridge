@@ -25,24 +25,39 @@ export default function AboutPage() {
           <h2>Who Runs {SITE_NAME}</h2>
           <p>
             {SITE_NAME} is an independent project run by GOUGUA. It is not owned by, funded by, or affiliated with
-            any licensing board, government agency, or professional association. You can reach us at{" "}
-            <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.
+            any licensing board, government agency, or professional association, and no board has reviewed or
+            endorsed its pages. You can reach us at <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.
           </p>
 
           <h2>Our Mission</h2>
           <p>
             To give nurses, electricians, plumbers, HVAC technicians, and other licensed professionals a clear,
             accurate answer to one question: what will it take to keep working if I move to another state? Licensing
-            rules change, so {SITE_NAME} is maintained as a living reference and each page shows when it was last researched.
+            rules change, so {SITE_NAME} is maintained as a living reference. Transfer pages, registered nurse pages,
+            electrician state pages and trade summary pages show the date their requirements were last researched.
           </p>
 
-          <h2>How Our Data Is Sourced</h2>
+          <h2>How Pages Are Built</h2>
           <p>
-            Rules on {SITE_NAME} come from the licensing board or state agency responsible for that license wherever
-            the board publishes them. When a page relies on any other source, that source is labeled &quot;Secondary
-            Source&quot;. Pages link to their sources and show the date each requirement was last researched. When a
-            board does not publish something, such as a processing time, we say so instead of estimating. Read the full{" "}
+            Each page is built from the licensing board or state agency responsible for that license: its website,
+            application instructions, published forms, and the statutes or rules it cites. A requirement is published
+            only when it is tied to a registered official source, and the page links to that source. When a board
+            does not publish something, such as a processing time, the page says so instead of estimating.
+          </p>
+
+          <h2>Secondary Sources</h2>
+          <p>
+            A non-official source appears only where it is labeled &quot;Secondary Source&quot;, and it never supports a
+            fee, an exam requirement, required years of experience or a processing time. If only a secondary source
+            states one of those, the page says the board does not publish it. Read the full{" "}
             <Link href="/methodology">methodology</Link> for details.
+          </p>
+
+          <h2>Reporting an Error</h2>
+          <p>
+            If you spot something outdated or wrong, email <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a> with
+            the page and what changed, and include the official source if you have it. We re-check the rule against
+            the board and update the page.
           </p>
 
           <h2>How We Stay Free</h2>

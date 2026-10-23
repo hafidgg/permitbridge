@@ -39,11 +39,12 @@ export default function MethodologyPage() {
             we have not registered and checked is not shown at all.
           </p>
 
-          <h2>2. Checked by hand</h2>
+          <h2>2. Taken from the board&apos;s own wording</h2>
           <p>
-            Each rule is read and checked by a person against the board&apos;s own wording. It is not generated
-            from unchecked automated scraping. Where a requirement is ambiguous, we record the ambiguity rather than
-            guess.
+            Each rule is taken from the board&apos;s own published wording. Stored values are compared automatically
+            with the text of the source they came from, and a value we cannot re-read that way is not shown until we
+            can. No page claims that a person has reviewed it. Where a requirement is ambiguous, we record the
+            ambiguity rather than guess.
           </p>
 
           <h2>3. A source link and a last-checked date on each page</h2>
