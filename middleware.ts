@@ -58,5 +58,6 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/transfer/:path*", "/guides/:path*", "/blog/:path*", "/embed/:path*"],
+  // /registered-nurse: WITHDRAWN_TRANSFER_SLUGS. A gone path outside the matcher never reaches isGone() and 404s.
+  matcher: ["/transfer/:path*", "/guides/:path*", "/blog/:path*", "/embed/:path*", "/registered-nurse/:path*"],
 };

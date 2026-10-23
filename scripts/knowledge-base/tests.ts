@@ -5927,6 +5927,17 @@ await test("[PERMANENT] lib/generated/gone-transfer-paths.json lists exactly the
   assert(mw.includes('from "@/lib/generated/gone-transfer-paths.json"'), "middleware.ts must answer the generated gone paths with 410");
 });
 
+// 2026-10-23: IL->GA shipped 404 instead of 410 because /registered-nurse wasn't in the middleware matcher.
+// If this fails: add the path to GONE_CONTENT_PATHS and its first segment to config.matcher in middleware.ts.
+await test("[PERMANENT] every withdrawn transfer page is in the 410 list and inside the middleware matcher", () => {
+  const { WITHDRAWN_TRANSFER_SLUGS } = require("../../lib/knowledge-base/transfer-rule-data");
+  const mw = fs.readFileSync(path.join(process.cwd(), "middleware.ts"), "utf-8");
+  for (const slug of WITHDRAWN_TRANSFER_SLUGS as Set<string>) {
+    assert(mw.includes(`"/${slug}"`), `/${slug} must be in GONE_CONTENT_PATHS`);
+    assert(mw.includes(`"/${slug.split("/")[0]}/:path*"`), `/${slug.split("/")[0]}/:path* must be in the middleware matcher`);
+  }
+});
+
 // 2026-10-09: the site-wide search index (shipped on every page), the home page's popular transfers, profession hubs
 // and state pages all listed unsourced generator pairs ("Universal License Recognition (Endorsement)", made-up exam
 // flags and scores). If this fails: read transfer rules through getPublishableTransferRules(), never the raw list.
