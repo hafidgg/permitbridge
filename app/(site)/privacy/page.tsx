@@ -10,7 +10,7 @@ export const metadata: Metadata = buildMetadata({
   path: "/privacy",
 });
 
-const LAST_UPDATED = "2026-10-08";
+const LAST_UPDATED = "2026-10-23";
 
 export default function PrivacyPage() {
   return (
@@ -44,6 +44,10 @@ export default function PrivacyPage() {
             below may use cookies and similar technologies (such as local storage and pixel tags) to measure traffic
             and, where advertising is shown, to serve and measure ads. You can block or delete cookies in your browser
             settings at any time; some features may then work differently.
+          </p>
+          <p>
+            Visitors in the European Economic Area, the United Kingdom and Switzerland: analytics and advertising
+            cookies are not set unless consent is given.
           </p>
 
           <h2>Analytics: Google Analytics and Google Tag Manager</h2>

@@ -4,6 +4,7 @@ import "../globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { ConsentModeDefault } from "@/components/seo/ConsentModeDefault";
 import { GoogleAnalytics } from "@/components/seo/GoogleAnalytics";
 import { GoogleTagManagerHead, GoogleTagManagerBody } from "@/components/seo/GoogleTagManager";
 import { organizationJsonLd, websiteJsonLd } from "@/lib/seo";
@@ -76,6 +77,9 @@ export const metadata: Metadata = {
 export default function SiteRootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={inter.variable}>
+      <head>
+        <ConsentModeDefault />
+      </head>
       <body className="flex min-h-screen flex-col font-sans">
         <GoogleTagManagerHead />
         <GoogleTagManagerBody />
