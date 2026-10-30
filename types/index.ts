@@ -139,6 +139,8 @@ export interface GuideSummary {
   readingMinutes: number;
   /** Extra search-index terms the title doesn't contain (e.g. "RN" for a nursing guide). */
   searchKeywords?: string[];
+  /** Site paths that show a link to this guide (profession hubs, trade and electrician state pages). */
+  linkedFrom?: string[];
 }
 
 export interface SearchDocument {

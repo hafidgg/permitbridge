@@ -10,13 +10,13 @@ Your new state's membership is not enough by itself. For example, Florida is an 
 
 ## Pathway 1: Moving Between Two Compact States
 
-Under NLC Rule 402(2), in effect since January 2, 2024, a multistate licensee who changes their primary state of residence to another compact state **must apply** for a multistate license in the new state within 60 days. The rule's [official FAQ](https://www.nursecompact.com/files/60_day_rule_faqs.pdf) makes these points:
+The NLC states that "Nurses who live in a compact state can apply for a multistate license if they meet the licensure requirements." The relocation rule itself is NLC Rule 402(2), quoted in its [official FAQ](https://www.nursecompact.com/files/60_day_rule_faqs.pdf): "A multistate licensee who changes primary state of residence (PSOR) to another party state shall apply for a multistate license in the new party state within 60 days. (Effective Jan. 2, 2024)" The FAQ makes these points:
 
 - **The rule sets a deadline for applying, not for issuing.** You must submit the application within 60 days. The new state does not have to issue your license within 60 days.
 - **The 60 days begin when you actually relocate,** meaning you are physically present in the new state and intend to make it your primary residence.
 - **You can keep practicing on your old multistate license** until the new state issues yours. However, your former state will not renew that license once you are no longer a resident there. If it expires before the new license is issued, you can no longer rely on it, so the FAQ suggests renewing it before you move if it expires soon.
 - **Travel nurses on temporary assignments are not covered by the rule,** as long as they keep their primary state of residence. Getting a driver's license or registering to vote in the new state can change your primary state of residence for this purpose.
-- **You will need proof of residency** in the new state, such as that state's driver's license or ID, according to the FAQ.
+- **You will need proof of residency** in the new state. The FAQ says: "Most states will accept that state's driver's license or state ID as acceptable proof of residency."
 
 **Where states differ:** the NLC FAQ calls this application "licensure by endorsement," but individual boards name and process it differently. Florida, for example, uses a dedicated [Multistate License Upgrade](https://floridasnursing.gov/applications/multistate-upgrade-app.pdf) form. Use the form your new board names.
 
@@ -53,3 +53,10 @@ For the exact requirements between two states, including fees, forms and the off
 - [Texas → Florida](/registered-nurse/texas-to-florida)
 
 If your state pair isn't listed yet, go directly to your **destination** state's board of nursing. Its official rules always override any general guide, including this one.
+
+## Sources
+
+- NCSBN, [Nurse Licensure Compact](https://www.nursecompact.com/)
+- NCSBN, [Frequently Asked Questions Regarding the Amended NLC Residency Rule (PDF)](https://www.nursecompact.com/files/60_day_rule_faqs.pdf)
+
+Last verified (Nurse Licensure Compact sections): October 30, 2026.

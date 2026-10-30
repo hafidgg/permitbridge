@@ -10,6 +10,7 @@ import { RequirementRow } from "@/components/transfer-knowledge-base/Requirement
 import { TrustMethodologySection } from "@/components/transfer-knowledge-base/TrustMethodologySection";
 import { ColoradoElectricianContent } from "@/components/electrician-state/ColoradoElectricianContent";
 import { TexasNotListedSection } from "@/components/electrician-state/TexasNotListedSection";
+import { RelatedGuides } from "@/components/content/RelatedGuides";
 import { getAllPublicTransferRuleSlugs, getPublicTransferRule, getSourceByUrl, summarizeEvidence, CRITICAL_TRANSFER_RULE_FIELDS, ALL_TRANSFER_FIELD_KEYS } from "@/lib/knowledge-base/transfer-rule-data";
 import { getElectricianStatePageData, getAllSingleStateProfessionSlugs, SUPPORTED_ELECTRICIAN_STATES } from "@/lib/knowledge-base/electrician-state-data";
 import { getAllStates, getAllProfessions, getGuideBySlug, NURSE_TRANSFER_GUIDE_SLUG } from "@/lib/data";
@@ -206,6 +207,7 @@ export default async function TransferRulePage({ params }: { params: Promise<Pag
         />
         <ColoradoElectricianContent state={resolvedParams.transfer} tiers={data.tiers} otherStates={otherElectricianStates}>
           {resolvedParams.transfer === "texas" && <TexasNotListedSection />}
+          <RelatedGuides pagePath={`/electrician/${resolvedParams.transfer}`} className="mt-10" />
         </ColoradoElectricianContent>
       </div>
     );

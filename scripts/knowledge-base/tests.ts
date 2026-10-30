@@ -5704,6 +5704,27 @@ await test("[PERMANENT] every RN pair page linked from a guide's markdown passes
   }
 });
 
+// Guides hand-write links to trade, electrician and RN pages, and pages link back through linkedFrom. Any of those
+// pages can be folded (308) or withdrawn (410). check-sitemap.ts runs findBrokenGuideLinks() against the real
+// sitemap in `npm test` and `postbuild`; this test pins the function's behaviour and that wiring.
+// If this fails: fix the guide's link or its linkedFrom — never drop the check.
+await test("[PERMANENT] every internal link in guide markdown, and every guide linkedFrom path, must resolve to a sitemap URL", () => {
+  const { findBrokenGuideLinks, internalLinksIn } = require("../guide-links");
+  const { getAllGuides } = require("../../lib/guides");
+  const read = (...seg: string[]) => fs.readFileSync(path.join(process.cwd(), ...seg), "utf-8");
+  assertEqual(internalLinksIn("[a](/plumber/texas) [b](https://x.gov/y) [c](/guides/g#s)").join(","), "/plumber/texas,/guides/g", "only internal paths, fragments dropped");
+  const tmp = fs.mkdtempSync(path.join(require("node:os").tmpdir(), "guides-"));
+  fs.writeFileSync(path.join(tmp, "g.md"), "See [Texas](/plumber/texas) and [gone](/transfer/plumber/texas/florida).");
+  const S = "https://www.getpermitbridge.com";
+  const realPaths = ["/plumber/texas", ...getAllGuides().flatMap((g: { slug: string; linkedFrom?: string[] }) => [`/guides/${g.slug}`, ...(g.linkedFrom ?? [])])];
+  const problems: string[] = findBrokenGuideLinks(realPaths.map((p) => `${S}${p}`), tmp);
+  assertEqual(problems.join("; "), "g.md links to /transfer/plumber/texas/florida, which is not in the sitemap", "an unserved link is reported, a served one is not");
+  assert(findBrokenGuideLinks([`${S}/plumber/texas`], tmp).some((p: string) => p.includes("is linked from")), "a linkedFrom path missing from the sitemap is reported");
+  fs.rmSync(tmp, { recursive: true, force: true });
+  const checker = read("scripts", "check-sitemap.ts");
+  assert(checker.includes("findBrokenGuideLinks(urls)") && checker.includes('mode !== "--live"'), "check-sitemap.ts must run the guide-link check for --source and --build");
+});
+
 // data/transfers/* files all carry estimatedProcessingDays, but for every file to date it is the generator's
 // default [30, 90] — no trade board's page states a timeline (several files' own steps say so). It was rendered
 // as fact in meta descriptions, FAQ, score card, embed and search until 2026-10-01. Any code that renders it must
@@ -5784,21 +5805,22 @@ await test("[PERMANENT] sitemap floor: the post-consolidation sitemap passes, an
     ...Array.from({ length: 5 }, (_, i) => `${S}/profession/p${i}`),
     ...Array.from({ length: 5 }, (_, i) => `${S}/state/s${i}`),
     ...Array.from({ length: 6 }, (_, i) => `${S}/transfer/x/a${i}/b`),
-    ...Array.from({ length: 3 }, (_, i) => `${S}/guides/g${i}`),
+    ...Array.from({ length: 7 }, (_, i) => `${S}/guides/g${i}`), // 7 since 2026-10-30 (four guides added)
     ...Array.from({ length: 6 }, (_, i) => `${S}/registered-nurse/a${i}-to-b`), // 6 since 2026-10-22 (IL->GA withdrawn)
     ...states.map((s) => `${S}/hvac-technician/${s}`),
     ...states.map((s) => `${S}/plumber/${s}`),
     ...Array.from({ length: 8 }, (_, i) => `${S}/electrician/e${i}`),
   ];
-  assertEqual(base.length, 51, "fixture mirrors the real sitemap (51 since IL->GA was withdrawn, 2026-10-22)");
+  assertEqual(base.length, 55, "fixture mirrors the real sitemap (55 since four guides were added, 2026-10-30)");
   assertEqual(checkSitemapFloor(base).join("; "), "", "the real post-consolidation shape passes");
   const without = (re: RegExp) => { const i = base.findIndex((u) => re.test(u)); return base.filter((_, j) => j !== i); };
+  assert(checkSitemapFloor(without(/\/guides\//)).some((p: string) => p.includes("guide URLs")), "6 guide pages must fail");
   assert(checkSitemapFloor(without(/\/transfer\//)).some((p: string) => p.includes("/transfer URLs")), "5 /transfer pages must fail");
   assert(checkSitemapFloor(without(/registered-nurse/)).some((p: string) => p.includes("knowledgeBaseTransfer")), "5 RN pages must fail");
   assert(checkSitemapFloor(without(/\/hvac-technician\//)).some((p: string) => p.includes("/hvac-technician/")), "3 HVAC summary pages must fail");
   assert(checkSitemapFloor(without(/\/plumber\//)).some((p: string) => p.includes("/plumber/")), "3 plumber summary pages must fail");
   assert(checkSitemapFloor(base.filter((u) => !/\/electrician\//.test(u))).some((p: string) => p.includes('"singleStateProfession" is empty')), "no electrician pages must fail");
-  assert(checkSitemapFloor(base.slice(0, 49)).some((p: string) => p.includes("floor 50")), "49 URLs must fail the total");
+  assert(checkSitemapFloor(base.slice(0, 52)).some((p: string) => p.includes("floor 53")), "52 URLs must fail the total");
 });
 
 // 2026-10-22: trade summary pages can carry destination-level facts (data/trade-state-notes/), e.g. how TSBPE

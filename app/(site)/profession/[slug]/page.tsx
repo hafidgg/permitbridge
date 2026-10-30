@@ -7,6 +7,7 @@ import { FAQSection } from "@/components/home/FAQ";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { ProfessionIcon } from "@/components/profession/ProfessionIcon";
+import { RelatedGuides } from "@/components/content/RelatedGuides";
 import { formatDate, inSentence } from "@/lib/utils";
 import { stateDisplayName } from "@/lib/knowledge-base/transfer-rule-labels";
 import { getAllProfessions, getProfessionBySlug, getAllStates, getGuideBySlug, NURSE_TRANSFER_GUIDE_SLUG } from "@/lib/data";
@@ -278,6 +279,8 @@ export default async function ProfessionPage({ params }: { params: Promise<{ slu
             </div>
           </section>
         )}
+
+        <RelatedGuides pagePath={`/profession/${profession.slug}`} />
       </div>
 
       <FAQSection faqs={profession.faqs} title={`${profession.shortName} License FAQs`} />

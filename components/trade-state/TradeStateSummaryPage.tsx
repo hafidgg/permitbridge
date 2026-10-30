@@ -10,6 +10,7 @@ import { formatUsd, PROCESSING_TIME_NOT_PUBLISHED } from "@/lib/utils";
 import { getTradeStateSummary, type TradeStateSummary, type TradeSummaryProfession } from "@/lib/trade-state-summary";
 import { getTradeStateNotes } from "@/lib/trade-state-notes";
 import { SourceList } from "@/components/trade-state/SourceList";
+import { RelatedGuides } from "@/components/content/RelatedGuides";
 import { getSourceByUrl } from "@/lib/knowledge-base/transfer-rule-data";
 import type { PathwayType } from "@/types";
 
@@ -313,6 +314,7 @@ export function TradeStateSummaryPage({ profession, state }: { profession: Trade
           </section>
         )}
 
+        <RelatedGuides pagePath={`/${profession}/${state}`} className="mt-10" />
       </div>
     </div>
   );

@@ -16,7 +16,6 @@ import type {
   State,
   StateSummary,
   TransferRule,
-  GuideSummary,
 } from "@/types";
 
 const DATA_DIR = path.join(process.cwd(), "data");
@@ -94,47 +93,7 @@ export function getTransferRulesForProfession(profession: string): TransferRule[
 
 // ---------- Guides & Blog (content/ markdown-backed summaries) ----------
 
-export function getAllGuides(): GuideSummary[] {
-  return [
-    {
-      slug: "reciprocity-vs-endorsement-vs-comity",
-      title: "Reciprocity vs. Endorsement vs. Comity: What's the Real Difference?",
-      description:
-        "The three pathways regulators use to recognize an out-of-state license are not interchangeable. Here's what actually differs and why it matters for your application.",
-      category: "Fundamentals",
-      publishedAt: "2026-04-02",
-      updatedAt: "2026-10-23",
-      readingMinutes: 3,
-    },
-    {
-      slug: "how-to-request-license-verification",
-      title: "How to Request License Verification From Your Home State",
-      description:
-        "Nearly every interstate license transfer starts with a verification request. A step-by-step walkthrough of how to request one without delays.",
-      category: "How-To",
-      publishedAt: "2026-05-18",
-      updatedAt: "2026-10-22",
-      readingMinutes: 2,
-    },
-    {
-      slug: NURSE_TRANSFER_GUIDE_SLUG,
-      title: "How to Transfer a Nursing License to Another State",
-      description:
-        "Compact or endorsement? How RN license transfers actually work between US states — the NLC 60-day rule, Nursys verification, and where state rules genuinely differ.",
-      category: "How-To",
-      publishedAt: "2026-10-01",
-      updatedAt: "2026-10-22",
-      readingMinutes: 4,
-      searchKeywords: ["nurse", "registered nurse", "RN", "Nurse Licensure Compact", "NLC", "Nursys", "endorsement"],
-    },
-  ];
-}
-
-export const NURSE_TRANSFER_GUIDE_SLUG = "how-to-transfer-a-nursing-license-to-another-state";
-
-export function getGuideBySlug(slug: string): GuideSummary | undefined {
-  return getAllGuides().find((g) => g.slug === slug);
-}
+export { getAllGuides, getGuideBySlug, getGuidesLinkedFrom, NURSE_TRANSFER_GUIDE_SLUG } from "@/lib/guides";
 
 // ---------- Long-form content bodies (content/) ----------
 

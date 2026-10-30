@@ -12,7 +12,8 @@
  * for linking-only changes instead of a sitemap that only moves when facts
  * are re-verified.
  */
-export const LINKING_STRUCTURE_UPDATED_AT = "2026-10-22";
+// 2026-10-30: "Related guides" links on profession hubs and plumber/HVAC/electrician state pages; llms.txt lists every guide.
+export const LINKING_STRUCTURE_UPDATED_AT = "2026-10-30";
 
 /** Returns whichever of the two ISO date strings is later; ignores null/undefined inputs. */
 export function latestOf(...dates: Array<string | null | undefined>): string | undefined {

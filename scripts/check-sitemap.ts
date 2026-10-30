@@ -10,6 +10,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { checkSitemapFloor, countByGroup, extractLocs } from "./sitemap-floor";
+import { findBrokenGuideLinks } from "./guide-links";
 
 const BUILD_OUTPUT = path.join(process.cwd(), ".next", "server", "app", "sitemap.xml.body");
 const DEFAULT_LIVE_URL = "https://www.getpermitbridge.com/sitemap.xml";
@@ -48,6 +49,15 @@ async function loadUrls(mode: string, arg: string | undefined): Promise<{ label:
     process.exit(1);
   }
   console.log("✔ Sitemap floor OK.");
+  if (mode !== "--live") {
+    const broken = findBrokenGuideLinks(urls);
+    if (broken.length > 0) {
+      console.error("✖ Guide links that do not resolve to a sitemap URL:");
+      broken.forEach((p) => console.error(`  - ${p}`));
+      process.exit(1);
+    }
+    console.log("✔ Every guide link resolves to a sitemap URL.");
+  }
 })().catch((err) => {
   console.error(`✖ ${err instanceof Error ? err.message : String(err)}`);
   process.exit(1);

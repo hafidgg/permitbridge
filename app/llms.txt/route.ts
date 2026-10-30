@@ -1,4 +1,4 @@
-import { getAllProfessions, getAllStates, getGuideBySlug, NURSE_TRANSFER_GUIDE_SLUG } from "@/lib/data";
+import { getAllGuides, getAllProfessions, getAllStates, getGuideBySlug, NURSE_TRANSFER_GUIDE_SLUG } from "@/lib/data";
 import { getAllPublicTransferRuleSlugs } from "@/lib/knowledge-base/transfer-rule-data";
 import { getAllSingleStateProfessionSlugs } from "@/lib/knowledge-base/electrician-state-data";
 import { getIndexableTradeStateSummaries } from "@/lib/trade-state-summary";
@@ -70,6 +70,10 @@ export async function GET() {
     "## HVAC and plumber license transfer by destination state (sourced pairs only)",
     "",
     ...getIndexableTradeStateSummaries().map((s) => `- ${SITE_URL}/${s.profession}/${s.destination.slug}: ${s.destination.name} (${s.profession === "plumber" ? "Plumber" : "HVAC"}), from ${s.pairs.map((p) => p.origin.name).join(", ")}`),
+    "",
+    "## Guides",
+    "",
+    ...getAllGuides().map((g) => `- ${SITE_URL}/guides/${g.slug}: ${g.title}`),
     "",
     "## Other resources",
     "",

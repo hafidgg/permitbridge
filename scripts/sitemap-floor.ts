@@ -20,15 +20,18 @@
  * pages. Each floor is the real count, the total less a margin of 2.
  * Later on 2026-10-22: /registered-nurse/illinois-to-georgia withdrawn (410), so 51 URLs
  * and the RN floor is 6; the total floor stays 50.
+ * 2026-10-30: four guides added (55 URLs). Total floor raised 50 -> 53; guide floor set at the real count, 7.
  */
 
-export const MIN_TOTAL_URLS = 50;
+export const MIN_TOTAL_URLS = 53;
 export const MIN_TRANSFER_URLS = 6;
 
 /** Per-group floors, at the real count. A group not listed here only has to be non-empty. */
 export const MIN_GROUP_URLS: Readonly<Partial<Record<SitemapGroup, number>>> = {
   // RN pairs. 7 -> 6 on 2026-10-22: illinois-to-georgia withdrawn (410), its Georgia sources can't be re-read.
   knowledgeBaseTransfer: 6,
+  // 3 -> 7 on 2026-10-30: California C-36, Texas TSBPE, journeyman electrician and HVAC reciprocity guides.
+  guide: 7,
 };
 
 /** Trade summary pages per profession (/hvac-technician/{state}, /plumber/{state}), at the real count. */
