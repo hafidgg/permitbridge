@@ -1,0 +1,103 @@
+# PermitBridge live status baseline (www). Columns: expected_status<TAB>path<TAB>redirect_target (308 only).
+# Updated 2026-11-07: /transfer/nurse/california/texas moved 308->410 (its target was never published).
+# Re-run (bash): grep -v '^#' scripts/monitoring/status-baseline.tsv | while IFS=$'	' read s p t; do r=$(curl -s -o /dev/null -w '%{http_code} %{redirect_url}' "https://www.getpermitbridge.com$p"); [ "$r" != "$s ${t}" ] && [ "$r" != "$s " ] && echo "DIFF want=$s $t got=$r $p"; sleep 0.5; done; echo done
+# Note: bursts of requests trip Vercel's bot challenge (403 + X-Vercel-Mitigated: challenge); keep the sleep.
+200	/
+200	/professions
+200	/states
+200	/guides
+200	/about
+200	/methodology
+200	/contact
+200	/privacy
+200	/terms
+200	/disclaimer
+200	/profession/electrician
+200	/profession/contractor
+200	/profession/hvac-technician
+200	/profession/plumber
+200	/profession/nurse
+200	/state/california
+200	/state/florida
+200	/state/new-york
+200	/state/ohio
+200	/state/texas
+200	/transfer/contractor/california/florida
+200	/transfer/contractor/florida/california
+200	/transfer/hvac-technician/florida/california
+200	/transfer/hvac-technician/florida/texas
+200	/transfer/plumber/california/texas
+200	/transfer/plumber/florida/texas
+200	/guides/reciprocity-vs-endorsement-vs-comity
+200	/guides/how-to-request-license-verification
+200	/guides/how-to-transfer-a-nursing-license-to-another-state
+200	/guides/california-plumbing-license-c36
+200	/guides/texas-plumbing-license-tsbpe
+200	/guides/journeyman-electrician-license-reciprocity
+200	/guides/hvac-license-reciprocity-by-state
+200	/registered-nurse/california-to-florida
+200	/registered-nurse/california-to-new-york
+200	/registered-nurse/georgia-to-illinois
+200	/registered-nurse/new-york-to-california
+200	/registered-nurse/texas-to-california
+200	/registered-nurse/texas-to-florida
+200	/electrician/colorado
+200	/electrician/virginia
+200	/electrician/texas
+200	/electrician/arkansas
+200	/electrician/minnesota
+200	/electrician/utah
+200	/electrician/wyoming
+200	/electrician/iowa
+200	/hvac-technician/california
+200	/hvac-technician/florida
+200	/hvac-technician/ohio
+200	/hvac-technician/texas
+200	/plumber/california
+200	/plumber/florida
+200	/plumber/ohio
+200	/plumber/texas
+410	
+410	
+410	
+410	
+410	
+410	
+410	
+410	
+410	
+410	
+410	
+410	
+410	
+410	
+410	
+410	
+410	
+410	
+410	
+410	
+410	
+410	
+410	
+410	
+410	
+410	
+410	
+410	
+410	
+410	
+410	
+410	
+410	
+410	
+410	
+410	
+410	
+410	
+410	
+410	/transfer/nurse/california/texas
+308	/transfer/nurse/california/florida	https://www.getpermitbridge.com/registered-nurse/california-to-florida
+308	/transfer/nurse/new-york/california	https://www.getpermitbridge.com/registered-nurse/new-york-to-california
+308	/transfer/nurse/texas/california	https://www.getpermitbridge.com/registered-nurse/texas-to-california
+308	/transfer/nurse/texas/florida	https://www.getpermitbridge.com/registered-nurse/texas-to-florida
