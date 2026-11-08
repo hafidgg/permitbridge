@@ -104,6 +104,11 @@ export interface RequirementValue {
   status: RequirementStatus;
   /** Populated ONLY when status === "conditional". Empty/omitted otherwise — never a fake single-item array for a flatly required/not-required fact. */
   conditions?: RequirementCondition[];
+  /**
+   * A verbatim sentence from the field's source. When present, pages show this quote instead of the status label,
+   * so the page claims no more than the source's own words.
+   */
+  statement?: string;
 }
 
 /** The standard wrapper for every requirement-shaped fact in a TransferRule. */

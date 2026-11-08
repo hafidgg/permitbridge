@@ -1637,14 +1637,17 @@ await test("real production data (5 real transfer rules) untouched by Phase 3.2 
   const expectedHashes: Record<string, string> = {
     // Re-pinned 2026-10-09: CA->NY examRequirement -> Unknown (cited the initial-licensure page); CA->NY, IL->GA, TX->CA,
     // TX->FL universalRecognitionApplies -> Unknown (no cited page addresses ULR in raw text; GA page returned 403).
-    "california-to-new-york.json": "34494a3de9f19998e0aa14694f97b306",
+    // Re-pinned 2026-11-07: CA->NY temporaryPermitAvailability re-sourced from TrustedHealth to NYSED License
+    // Requirements (value = NYSED's verbatim sentence); TX->FL applicationFeeUsd gets displayHold ($100 is Florida's
+    // "Multi-state Upgrade" fee, not confirmed for this route).
+    "california-to-new-york.json": "378963a5b11a07f937ae1d5906901c60",
     "california-to-texas.json": "7c66c2cedf469c75828e21ec72d01966",
     // Re-pinned 2026-10-22: IL->GA gets displayHold on 13 Georgia-sourced fields (sources return HTTP 403) and
     // temporaryPermitAvailability -> Unknown (it cited a psychologists' board rule); TX->CA fee re-sourced to BRN's
     // current fee schedule and "$350" dropped from endorsementProcess (its source states no fee).
     "illinois-to-georgia.json": "f6f4a56778ffbb03b2bf59fd9997fd49",
     "texas-to-california.json": "187f1d6ef3736cfd88f7baeca5406540",
-    "texas-to-florida.json": "c60e8c504d6060b427b2b62aceca598d",
+    "texas-to-florida.json": "e4a28c22479d5b0afe848a89e3256630",
   };
   for (const [file, expectedHash] of Object.entries(expectedHashes)) {
     // Hash with LF line endings: with core.autocrlf=true, a `git checkout` on Windows rewrites a file as CRLF
@@ -6024,8 +6027,17 @@ await test("[PERMANENT] no sourced data/transfers record carries generate-transf
       });
       assert(!/administered per the state's licensing authority/.test(r.notes), `${id}: notes are generator template text`);
       assert(!/ State Licensing Board$/.test(r.officialSourceName), `${id}: officialSourceName is the generator placeholder`);
-      const fee = String(r.feeUsd).replace(/\B(?=(\d{3})+(?!\d))/g, ",?");
-      assert(new RegExp(`[$]\\s?${fee}(?![0-9])`).test(text), `${id}: feeUsd $${r.feeUsd} appears nowhere in its own steps/notes`);
+      // null = no single sourced fee (never a computed total); nothing to find in the text.
+      if (r.feeUsd !== null) {
+        const fee = String(r.feeUsd).replace(/\B(?=(\d{3})+(?!\d))/g, ",?");
+        assert(new RegExp(`[$]\\s?${fee}(?![0-9])`).test(text), `${id}: feeUsd $${r.feeUsd} appears nowhere in its own steps/notes`);
+      }
+      const extraSources = [...(r.feeSourceUrl ? [r.feeSourceUrl] : []), ...(r.supportingSources ?? []).map((s: { sourceUrl: string }) => s.sourceUrl)];
+      for (const u of extraSources) {
+        const src = loadAllSources().find((s) => s.website === u);
+        assert(!!src && src.authorityLevel === "authoritative", `${id}: ${u} must be a registered authoritative source`);
+      }
+      if (r.feeSourceUrl) assert(r.feeUsd !== null, `${id}: feeSourceUrl without a feeUsd`);
       if (r.additionalHoursRequired > 0) {
         assert(new RegExp(`${r.additionalHoursRequired}[- ](?:classroom |clock )?hours?`).test(text), `${id}: additionalHoursRequired ${r.additionalHoursRequired} is never stated in its text`);
       }

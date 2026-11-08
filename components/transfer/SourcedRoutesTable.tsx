@@ -26,7 +26,23 @@ export function SourcedRoutesTable({ routes, showProfession = true }: { routes: 
                 </Link>
               </td>
               <td className="px-4 py-3">{r.pathway}</td>
-              <td className="px-4 py-3 whitespace-nowrap">{r.feeUsd !== null ? formatUsd(r.feeUsd) : r.feeHeld ? "Being re-checked" : "Not published by the board"}</td>
+              <td className="px-4 py-3 whitespace-nowrap">
+                {r.feeUsd !== null ? (
+                  r.feeSource ? (
+                    <a href={r.feeSource.website} target="_blank" rel="noopener noreferrer nofollow" title={`Source: ${r.feeSource.agencyName}`} className="text-primary hover:underline">
+                      {formatUsd(r.feeUsd)}
+                    </a>
+                  ) : (
+                    formatUsd(r.feeUsd)
+                  )
+                ) : r.feeHeld ? (
+                  "Being re-checked"
+                ) : r.feeItemized ? (
+                  "—"
+                ) : (
+                  "Not published by the board"
+                )}
+              </td>
               <td className="px-4 py-3">{r.exam}</td>
               <td className="px-4 py-3">
                 {r.board ? (

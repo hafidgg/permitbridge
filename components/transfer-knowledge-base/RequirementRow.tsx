@@ -2,7 +2,7 @@ import { Badge } from "@/components/ui/badge";
 import { formatDate } from "@/lib/utils";
 import type { VerifiedField, SourceRecord } from "@/types/knowledge-base";
 
-function isRequirementValue(value: unknown): value is { status: string; conditions?: { description: string; category: string }[] } {
+function isRequirementValue(value: unknown): value is { status: string; conditions?: { description: string; category: string }[]; statement?: string } {
   return typeof value === "object" && value !== null && "status" in (value as object);
 }
 
@@ -48,14 +48,17 @@ export function RequirementRow({
       </div>
 
       <p className="mt-2 text-base">
-        {isRequirementValue(field.value) ? (
+        {isRequirementValue(field.value) && field.value.statement ? (
+          // The source's own sentence, shown instead of a status label so the row claims no more than the source.
+          <span className="font-medium">&ldquo;{field.value.statement}&rdquo;</span>
+        ) : isRequirementValue(field.value) ? (
           <span className="font-medium">{REQUIREMENT_STATUS_TEXT[field.value.status] ?? field.value.status}</span>
         ) : (
           <span className="font-medium">{valueFormatter ? valueFormatter(field.value) : String(field.value)}</span>
         )}
       </p>
 
-      {isRequirementValue(field.value) && field.value.status === "conditional" && field.value.conditions && field.value.conditions.length > 0 && (
+      {isRequirementValue(field.value) && !field.value.statement && field.value.status === "conditional" && field.value.conditions && field.value.conditions.length > 0 && (
         <div className="mt-2 rounded-md bg-muted/50 p-3 text-sm">
           <p className="mb-1 font-medium text-muted-foreground">This requirement applies if:</p>
           <ul className="list-inside list-disc space-y-1">

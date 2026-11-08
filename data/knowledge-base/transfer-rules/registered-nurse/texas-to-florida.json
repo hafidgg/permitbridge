@@ -177,7 +177,8 @@
         "reviewer": null
       }
     ],
-    "notes": "Florida's official Fees page lists 'Multi-state Upgrade Fees: $100.00 Application and Licensing Fee to the Board of Nursing' -- distinct from and lower than the $110 general endorsement fee, confirming this is genuinely a simplified pathway, not full endorsement."
+    "notes": "Florida's official Fees page lists 'Multi-state Upgrade Fees: $100.00 Application and Licensing Fee to the Board of Nursing' -- distinct from and lower than the $110 general endorsement fee, confirming this is genuinely a simplified pathway, not full endorsement.",
+    "displayHold": "2026-11-07: Florida's fee page labels $100 'Multi-state Upgrade Fees', a fee for existing Florida licensees; not confirmed to apply to a Texas nurse on this route. Not shown until confirmed."
   },
   "otherRequiredFees": {
     "value": "Unknown",

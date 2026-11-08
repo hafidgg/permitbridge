@@ -46,7 +46,7 @@ export interface TradeStateSummary {
   destination: State;
   pairs: TradeSummaryPair[];
   /** The destination's route, only when every passing pair agrees on it; otherwise null and rows carry their own. */
-  shared: { pathway: PathwayType; feeUsd: number; examRequired: boolean; minimumYearsLicensed: number; source: SourceRecord } | null;
+  shared: { pathway: PathwayType; feeUsd: number | null; examRequired: boolean; minimumYearsLicensed: number; source: SourceRecord } | null;
   /** Origin states whose pair was researched but is blocked on an official answer from the board. */
   pendingOrigins: Array<{ origin: State; board: string; question: string }>;
   sharedSteps: SharedStep[];

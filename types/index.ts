@@ -74,7 +74,21 @@ export interface TransferRule {
   examRequired: boolean;
   examName?: string;
   additionalHoursRequired: number;
-  feeUsd: number;
+  /**
+   * The single state fee a source states for this route. null when no source states one figure (e.g. several
+   * separately listed fees): never store or render a total we computed ourselves. Pages omit the fee when null.
+   */
+  feeUsd: number | null;
+  /**
+   * Registered source whose raw text states feeUsd, when it isn't the record's own sourceUrl (e.g. the board's fee
+   * page while sourceUrl is its reciprocity page). Pages link the fee to it.
+   */
+  feeSourceUrl?: string;
+  /**
+   * Further registered sources the steps rely on (e.g. a fee schedule for amounts quoted in the steps), rendered
+   * under the steps as "{supports}: {citation} ↗". Each must resolve to a registered source or it is not rendered.
+   */
+  supportingSources?: Array<{ sourceUrl: string; supports: string; citation: string }>;
   estimatedProcessingDays: [number, number];
   minimumYearsLicensed: number;
   /**

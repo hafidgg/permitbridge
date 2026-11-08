@@ -25,6 +25,10 @@ export interface SourcedRoute {
   feeUsd: number | null;
   /** True when the fee is held for re-checking (displayHold), so null doesn't read as "not published". */
   feeHeld?: boolean;
+  /** True for a trade route whose fees are listed separately on its page (no single sourced figure), so null doesn't read as "not published". */
+  feeItemized?: boolean;
+  /** The registered source that states feeUsd; the table links the fee to it. */
+  feeSource?: SourceRecord;
   exam: "Required" | "Not required" | "Depends on the license" | "Not published by the board" | "Being re-checked";
   board: SourceRecord | undefined;
 }
@@ -47,6 +51,8 @@ function tradeRoute(r: TradeTransferRule): SourcedRoute {
     to: stateName(r.toState),
     pathway: r.pathwayLabel,
     feeUsd: r.feeUsd,
+    feeItemized: r.feeUsd === null,
+    feeSource: r.feeUsd !== null && r.feeSourceUrl ? getSourceByUrl(r.feeSourceUrl) : undefined,
     exam: r.examRequired ? "Required" : "Not required",
     board: r.sourceUrl ? getSourceByUrl(r.sourceUrl) : undefined,
   };
@@ -78,6 +84,7 @@ function rnRoutes(): SourcedRoute[] {
         pathway: held.has("transferMechanism") ? "Being re-checked" : (MECHANISM_LABEL[mechanism] ?? mechanism),
         feeUsd: fee.value !== "Unknown" && boardSourced(fee.sourceUrl) ? (fee.value as number) : null,
         feeHeld: held.has("applicationFeeUsd"),
+        feeSource: fee.value !== "Unknown" && fee.sourceUrl ? getSourceByUrl(fee.sourceUrl) : undefined,
         exam: held.has("examRequirement") ? "Being re-checked" : (examStatus && RN_EXAM[examStatus]) || "Not published by the board",
         board: rule.transferMechanism.sourceUrl ? getSourceByUrl(rule.transferMechanism.sourceUrl) : undefined,
       },

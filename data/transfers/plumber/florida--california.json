@@ -8,6 +8,7 @@
   "examName": "CSLB C-36 (Plumbing) trade exam plus the California Law and Business exam — no waiver route exists for a Florida license",
   "additionalHoursRequired": 0,
   "feeUsd": 450,
+  "feeSourceUrl": "https://www.cslb.ca.gov/About_Us/Library/Fees.aspx",
   "estimatedProcessingDays": [
     30,
     90

@@ -1,8 +1,10 @@
 import { formatProcessingTime, formatUsd } from "@/lib/utils";
 import { CheckCircle2, XCircle, Clock, DollarSign, GraduationCap } from "lucide-react";
 import type { TransferRule } from "@/types";
+import type { SourceRecord } from "@/types/knowledge-base";
 
-export function TransferFactsCard({ rule }: { rule: TransferRule }) {
+/** feeSource: the registered source that states the fee, when it isn't the page's main source; the fee links to it. */
+export function TransferFactsCard({ rule, feeSource }: { rule: TransferRule; feeSource?: SourceRecord }) {
   return (
     <div className="rounded-xl border border-border bg-card p-6 shadow-sm md:p-8">
       <dl className="grid grid-cols-2 gap-6 sm:grid-cols-4">
@@ -19,12 +21,22 @@ export function TransferFactsCard({ rule }: { rule: TransferRule }) {
           </dt>
           <dd className="text-sm font-semibold">{formatProcessingTime(rule)}</dd>
         </div>
-        <div className="flex flex-col items-start gap-1">
-          <dt className="flex items-center gap-1.5 text-xs font-medium text-muted-foreground">
-            <DollarSign className="h-3.5 w-3.5" aria-hidden="true" /> Fee
-          </dt>
-          <dd className="text-sm font-semibold">{formatUsd(rule.feeUsd)}</dd>
-        </div>
+        {rule.feeUsd !== null && (
+          <div className="flex flex-col items-start gap-1">
+            <dt className="flex items-center gap-1.5 text-xs font-medium text-muted-foreground">
+              <DollarSign className="h-3.5 w-3.5" aria-hidden="true" /> Fee
+            </dt>
+            <dd className="text-sm font-semibold">
+              {feeSource ? (
+                <a href={feeSource.website} target="_blank" rel="noopener noreferrer nofollow" title={`Source: ${feeSource.agencyName}`} className="text-primary hover:underline">
+                  {formatUsd(rule.feeUsd)}
+                </a>
+              ) : (
+                formatUsd(rule.feeUsd)
+              )}
+            </dd>
+          </div>
+        )}
         <div className="flex flex-col items-start gap-1">
           <dt className="flex items-center gap-1.5 text-xs font-medium text-muted-foreground">
             <GraduationCap className="h-3.5 w-3.5" aria-hidden="true" /> Required coursework

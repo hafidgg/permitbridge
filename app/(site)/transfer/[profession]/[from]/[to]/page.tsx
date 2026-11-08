@@ -52,7 +52,7 @@ export async function generateMetadata({ params }: { params: Promise<TransferPar
   const { profession, from, to, rule } = data;
   return buildMetadata({
     title: `${profession.shortName} License: Transfer From ${from.name} to ${to.name}`,
-    description: `${rule.pathwayLabel} — ${rule.examRequired ? "exam required" : "no exam required"}, ${rule.processingDaysSourced ? `est. ${rule.estimatedProcessingDays[0]}-${rule.estimatedProcessingDays[1]} days` : "processing time not published by the board"}, ${rule.feeUsd} USD fee. Full step-by-step guide for ${inSentence(profession.shortName)}s moving from ${from.name} to ${to.name}.`,
+    description: `${rule.pathwayLabel} — ${rule.examRequired ? "exam required" : "no exam required"}, ${rule.processingDaysSourced ? `est. ${rule.estimatedProcessingDays[0]}-${rule.estimatedProcessingDays[1]} days` : "processing time not published by the board"}${rule.feeUsd !== null ? `, ${rule.feeUsd} USD fee` : ""}. Full step-by-step guide for ${inSentence(profession.shortName)}s moving from ${from.name} to ${to.name}.`,
     path: `/transfer/${profession.slug}/${from.slug}/${to.slug}`,
     // Content-trust hardening: only pages whose sourceUrl is a registered,
     // authoritative, jurisdiction-matched SourceRecord are indexable — see
@@ -77,16 +77,23 @@ export default async function TransferPage({ params }: { params: Promise<Transfe
     // pathway/exam/score must not appear as fact on another page.
     .filter((row) => row.rule && isTradeTransferPublishable(row.rule, getSourceByUrl).publishable);
 
+  // Unregistered sources never render.
+  const supportingSources = (rule.supportingSources ?? []).filter((s) => getSourceByUrl(s.sourceUrl));
   const pageFaqs = [
     {
       question: `Can I transfer my ${inSentence(profession.shortName)} license from ${from.name} to ${to.name}?`,
       // The pathway label is a title-case label, not a sentence fragment: quote it whole, never lowercased.
       answer: `The ${to.name} board's route for a ${from.name} license: ${rule.pathwayLabel}. ${rule.examRequired ? `You will need to pass ${rule.examName ?? "a state exam"}.` : "No exam is required on this route."} ${rule.processingDaysSourced ? `Processing typically takes ${rule.estimatedProcessingDays[0]}-${rule.estimatedProcessingDays[1]} days.` : "The licensing board does not publish a processing time."}`,
     },
-    {
-      question: `How much does it cost to transfer ${article(profession.shortName)} ${inSentence(profession.shortName)} license to ${to.name}?`,
-      answer: `$${rule.feeUsd} in ${to.name} state fees is recorded for this route.`,
-    },
+    // No single sourced figure (feeUsd null): no cost FAQ, rather than a total we computed.
+    ...(rule.feeUsd !== null
+      ? [
+          {
+            question: `How much does it cost to transfer ${article(profession.shortName)} ${inSentence(profession.shortName)} license to ${to.name}?`,
+            answer: `$${rule.feeUsd} in ${to.name} state fees is recorded for this route.`,
+          },
+        ]
+      : []),
     ...profession.faqs.slice(0, 1),
   ];
 
@@ -151,7 +158,7 @@ export default async function TransferPage({ params }: { params: Promise<Transfe
         )}
 
         <div className="mt-8">
-          <TransferFactsCard rule={rule} />
+          <TransferFactsCard rule={rule} feeSource={rule.feeSourceUrl ? getSourceByUrl(rule.feeSourceUrl) : undefined} />
           {rule.sourceUrl && (
             <p className="mt-3 text-sm text-muted-foreground">
               Independent reference, not legal advice. Confirm with the{" "}
@@ -167,6 +174,18 @@ export default async function TransferPage({ params }: { params: Promise<Transfe
           <div className="lg:col-span-2">
             <h2 className="mb-6 text-2xl font-bold tracking-tight">Step-by-Step Process</h2>
             <StepsList steps={rule.steps} />
+            {supportingSources.length > 0 && (
+              <ul className="mt-6 space-y-1 text-sm text-muted-foreground">
+                {supportingSources.map(({ supports, citation, sourceUrl }) => (
+                  <li key={sourceUrl}>
+                    {supports}:{" "}
+                    <a href={sourceUrl} target="_blank" rel="noopener noreferrer nofollow" className="text-primary hover:underline">
+                      {citation} ↗
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            )}
 
           </div>
 

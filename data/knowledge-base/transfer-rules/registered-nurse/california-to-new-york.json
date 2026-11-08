@@ -345,12 +345,19 @@
   },
   "temporaryPermitAvailability": {
     "value": {
-      "status": "not_applicable"
+      "status": "conditional",
+      "conditions": [
+        {
+          "description": "You have ever taken the NCLEX-RN (then not eligible for a limited permit).",
+          "category": "other"
+        }
+      ],
+      "statement": "If you have ever taken the NCLEX-RN, you are not eligible for a limited permit."
     },
-    "sourceUrl": "https://www.trustedhealth.com/nurse-licensure-guide/new-york",
-    "sourceTitle": "New York Nursing License & Board of Nursing Guide",
-    "sourceName": "TrustedHealth (secondary source, used for discovery only)",
-    "verifiedAt": "2026-08-10",
+    "sourceUrl": "https://www.op.nysed.gov/professions/registered-professional-nursing/license-requirements",
+    "sourceTitle": "License Requirements - Registered Professional Nursing",
+    "sourceName": "New York State Education Department, Office of the Professions",
+    "verifiedAt": "2026-11-07",
     "verificationMethod": "official_document_review",
     "reviewer": null,
     "status": "pending_verification",
@@ -366,9 +373,28 @@
         "reason": "Phase 3.1: first population from real official-source research.",
         "sourceUrl": "https://www.trustedhealth.com/nurse-licensure-guide/new-york",
         "reviewer": null
+      },
+      {
+        "previousValue": {
+          "status": "not_applicable"
+        },
+        "newValue": {
+          "status": "conditional",
+          "conditions": [
+            {
+              "description": "You have ever taken the NCLEX-RN (then not eligible for a limited permit).",
+              "category": "other"
+            }
+          ],
+          "statement": "If you have ever taken the NCLEX-RN, you are not eligible for a limited permit."
+        },
+        "changedAt": "2026-11-07",
+        "reason": "Re-sourced from TrustedHealth (secondary) to NYSED's own License Requirements page; value is now NYSED's verbatim sentence.",
+        "sourceUrl": "https://www.op.nysed.gov/professions/registered-professional-nursing/license-requirements",
+        "reviewer": null
       }
     ],
-    "notes": "Secondary source states limited permits are 'generally only granted to RNs obtaining licensure by EXAMINATION,' not endorsement -- used for discovery only per Step 2; deliberately low confidence, needs direct NYSED confirmation before Verified status could ever apply."
+    "notes": "NYSED License Requirements page, Limited Permits section (raw HTML read 2026-11-07): \"If you have ever taken the NCLEX-RN, you are not eligible for a limited permit.\" The page shows only this sentence; it does not assert that every California RN has taken the NCLEX-RN."
   },
   "compactStatus": {
     "value": "Not applicable -- neither state participates in the NLC.",

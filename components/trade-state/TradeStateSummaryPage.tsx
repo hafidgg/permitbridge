@@ -33,7 +33,7 @@ function titleFor(s: TradeStateSummary): string {
 
 function descriptionFor(s: TradeStateSummary): string {
   const origins = s.pairs.map((p) => p.origin.name).join(", ");
-  const route = s.shared ? `${PATHWAY_SUMMARY[s.shared.pathway]}, ${formatUsd(s.shared.feeUsd)} in fees, ${s.shared.examRequired ? "exam required" : "no exam"}. ` : "";
+  const route = s.shared ? `${PATHWAY_SUMMARY[s.shared.pathway]}, ${s.shared.feeUsd !== null ? `${formatUsd(s.shared.feeUsd)} in fees, ` : ""}${s.shared.examRequired ? "exam required" : "no exam"}. ` : "";
   return `Transferring an existing ${PROFESSION_LABEL[s.profession].noun} license into ${s.destination.name}: ${route}Sourced from the ${s.destination.name} board, with details for licenses from ${origins}.`;
 }
 
@@ -89,10 +89,12 @@ export function TradeStateSummaryPage({ profession, state }: { profession: Trade
                   <dt className="text-muted-foreground">Pathway</dt>
                   <dd className="font-semibold">{PATHWAY_SUMMARY[s.shared.pathway]}</dd>
                 </div>
-                <div>
-                  <dt className="text-muted-foreground">Fees</dt>
-                  <dd className="font-semibold">{formatUsd(s.shared.feeUsd)}</dd>
-                </div>
+                {s.shared.feeUsd !== null && (
+                  <div>
+                    <dt className="text-muted-foreground">Fees</dt>
+                    <dd className="font-semibold">{formatUsd(s.shared.feeUsd)}</dd>
+                  </div>
+                )}
                 {s.shared.minimumYearsLicensed > 0 && (
                   <div>
                     <dt className="text-muted-foreground">Minimum years licensed</dt>
@@ -237,7 +239,7 @@ export function TradeStateSummaryPage({ profession, state }: { profession: Trade
                 <p className="mt-2 text-sm">{p.rule.pathwayLabel}</p>
                 {!s.shared && (
                   <p className="mt-1 text-sm text-muted-foreground">
-                    {formatUsd(p.rule.feeUsd)} in fees · {p.rule.examRequired ? "exam required" : "no exam"}
+                    {p.rule.feeUsd !== null ? `${formatUsd(p.rule.feeUsd)} in fees · ` : ""}{p.rule.examRequired ? "exam required" : "no exam"}
                   </p>
                 )}
                 {p.steps.length > 0 && (
