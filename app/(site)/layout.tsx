@@ -59,6 +59,9 @@ export const metadata: Metadata = {
     title: `${SITE_NAME} — Professional License Transfer Reference`,
     description: SITE_DESCRIPTION,
   },
+  other: {
+    "google-adsense-account": "ca-pub-8931032812638210",
+  },
 };
 
 /**
