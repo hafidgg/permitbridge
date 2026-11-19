@@ -1,5 +1,6 @@
 # PermitBridge live status baseline (www). Columns: expected_status<TAB>path<TAB>redirect_target (308 only).
 # Updated 2026-11-07: /transfer/nurse/california/texas moved 308->410 (its target was never published).
+# Updated 2026-11-19: added 21 308 rows so every redirect in next.config.mjs is covered (18 consolidated HVAC/plumber pairs, electrician california->texas and florida->texas, nurse california->new-york). 120 rows.
 # Re-run (bash): grep -v '^#' scripts/monitoring/status-baseline.tsv | while IFS=$'	' read s p t; do r=$(curl -s -o /dev/null -w '%{http_code} %{redirect_url}' "https://www.getpermitbridge.com$p"); [ "$r" != "$s ${t}" ] && [ "$r" != "$s " ] && echo "DIFF want=$s $t got=$r $p"; sleep 0.5; done; echo done
 # Note: bursts of requests trip Vercel's bot challenge (403 + X-Vercel-Mitigated: challenge); keep the sleep.
 200	/
@@ -101,3 +102,24 @@
 308	/transfer/nurse/new-york/california	https://www.getpermitbridge.com/registered-nurse/new-york-to-california
 308	/transfer/nurse/texas/california	https://www.getpermitbridge.com/registered-nurse/texas-to-california
 308	/transfer/nurse/texas/florida	https://www.getpermitbridge.com/registered-nurse/texas-to-florida
+308	/transfer/hvac-technician/california/florida	https://www.getpermitbridge.com/hvac-technician/florida
+308	/transfer/hvac-technician/california/ohio	https://www.getpermitbridge.com/hvac-technician/ohio
+308	/transfer/hvac-technician/ohio/california	https://www.getpermitbridge.com/hvac-technician/california
+308	/transfer/hvac-technician/ohio/florida	https://www.getpermitbridge.com/hvac-technician/florida
+308	/transfer/hvac-technician/ohio/texas	https://www.getpermitbridge.com/hvac-technician/texas
+308	/transfer/hvac-technician/texas/ohio	https://www.getpermitbridge.com/hvac-technician/ohio
+308	/transfer/plumber/california/florida	https://www.getpermitbridge.com/plumber/florida
+308	/transfer/plumber/california/ohio	https://www.getpermitbridge.com/plumber/ohio
+308	/transfer/plumber/florida/california	https://www.getpermitbridge.com/plumber/california
+308	/transfer/plumber/florida/ohio	https://www.getpermitbridge.com/plumber/ohio
+308	/transfer/plumber/ohio/california	https://www.getpermitbridge.com/plumber/california
+308	/transfer/plumber/ohio/florida	https://www.getpermitbridge.com/plumber/florida
+308	/transfer/plumber/texas/california	https://www.getpermitbridge.com/plumber/california
+308	/transfer/plumber/texas/florida	https://www.getpermitbridge.com/plumber/florida
+308	/transfer/electrician/california/texas	https://www.getpermitbridge.com/electrician/texas
+308	/transfer/hvac-technician/california/texas	https://www.getpermitbridge.com/hvac-technician/texas
+308	/transfer/hvac-technician/florida/ohio	https://www.getpermitbridge.com/hvac-technician/ohio
+308	/transfer/hvac-technician/texas/california	https://www.getpermitbridge.com/hvac-technician/california
+308	/transfer/hvac-technician/texas/florida	https://www.getpermitbridge.com/hvac-technician/florida
+308	/transfer/electrician/florida/texas	https://www.getpermitbridge.com/electrician/texas
+308	/transfer/nurse/california/new-york	https://www.getpermitbridge.com/registered-nurse/california-to-new-york
