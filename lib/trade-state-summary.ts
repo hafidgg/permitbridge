@@ -53,6 +53,8 @@ export interface TradeStateSummary {
   /** Board-wide steps moved to /state/{destination} (see getBoardProcedure); the page links there instead. */
   boardProcedure: BoardProcedure | null;
   lastUpdated: string;
+  /** Latest verifiedAt across the published pairs (the date their sources were last researched); "" when none is recorded. */
+  lastResearched: string;
 }
 
 /**
@@ -149,6 +151,7 @@ export function getTradeStateSummary(profession: TradeSummaryProfession, destina
     sharedSteps,
     boardProcedure,
     lastUpdated: pairs.map((p) => p.rule.updatedAt).sort().at(-1) ?? "",
+    lastResearched: pairs.map((p) => p.rule.verifiedAt ?? "").filter(Boolean).sort().at(-1) ?? "",
   };
 }
 

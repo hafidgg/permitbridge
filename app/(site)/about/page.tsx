@@ -19,57 +19,46 @@ export default function AboutPage() {
 
         <div className="prose-permitbridge mt-8">
           <p>
-            {SITE_NAME} exists because moving a professional or trade license between US states should not require
-            reading fifty different government websites written in fifty different styles of bureaucratic language.
+            {SITE_NAME} is an independent guide to transferring professional licenses between U.S. states (nursing,
+            electrician, HVAC, plumbing and contractor licenses).
           </p>
-          <h2>Who Runs {SITE_NAME}</h2>
           <p>
-            {SITE_NAME} is operated by {OPERATOR_NAME}, its independent operator. It is not owned by, funded by, or affiliated with
-            any licensing board, government agency, or professional association, and no board has reviewed or
-            endorsed its pages. You can reach us at <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.
+            It is written and maintained by {OPERATOR_NAME}, an independent researcher. {SITE_NAME} is not a law firm, a
+            licensing board, or a government agency.
           </p>
-
-          <h2>Our Mission</h2>
+          <h2>How I Work</h2>
+          <ul>
+            <li>
+              I read the official sources published by each state board, link to them on every page, and quote the exact
+              wording where it matters, so you can check each requirement yourself.
+            </li>
+            <li>
+              Every fee, exam, experience or processing-time requirement comes from an official source linked on the page:
+              a state licensing board or agency, its forms and rules, or for nursing the Nurse Licensure Compact and Nursys.
+            </li>
+            <li>
+              If I can&apos;t confirm a detail in an official source, I leave it off the page. When a board does not publish
+              something, such as a processing time, the page says so.
+            </li>
+            <li>
+              Pages show the date their information was last researched or updated. The full process is on the{" "}
+              <Link href="/methodology">Methodology</Link> page.
+            </li>
+          </ul>
+          <h2>What This Site Is Not</h2>
           <p>
-            To give nurses, electricians, plumbers, HVAC technicians, and other licensed professionals a clear,
-            accurate answer to one question: what will it take to keep working if I move to another state? Licensing
-            rules change, so {SITE_NAME} is maintained as a living reference. Transfer pages, registered nurse pages,
-            electrician state pages and trade summary pages show the date their requirements were last researched.
+            {SITE_NAME} does not issue licenses, process applications, or give legal advice. Rules change, so always confirm
+            with the licensing board before you apply. No licensing board has reviewed or endorsed these pages.
           </p>
-
-          <h2>How Pages Are Built</h2>
           <p>
-            Each page is built from the licensing board or state agency responsible for that license: its website,
-            application instructions, published forms, and the statutes or rules it cites. A requirement is published
-            only when it is tied to a registered official source, and the page links to that source. When a board
-            does not publish something, such as a processing time, the page says so instead of estimating.
+            The site may display advertising in the future. Advertising never influences the licensing information on any
+            page.
           </p>
-
-          <h2>Secondary Sources</h2>
+          <h2>Corrections</h2>
           <p>
-            A non-official source appears only where it is labeled &quot;Secondary Source&quot;, and it never supports a
-            fee, an exam requirement, required years of experience or a processing time. If only a secondary source
-            states one of those, the page says the board does not publish it. Read the full{" "}
-            <Link href="/methodology">methodology</Link> for details.
-          </p>
-
-          <h2>Reporting an Error</h2>
-          <p>
-            If you spot something outdated or wrong, email <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a> with
-            the page and what changed, and include the official source if you have it. We re-check the rule against
-            the board and update the page.
-          </p>
-
-          <h2>How We Stay Free</h2>
-          <p>
-            {SITE_NAME} is free to use. We may show advertising to cover running costs. Advertising never influences
-            our licensing information.
-          </p>
-
-          <h2>What We Are Not</h2>
-          <p>
-            {SITE_NAME} is not a law firm, a government agency, or a substitute for confirming requirements directly
-            with the official licensing board before you apply, pay a fee, or make a moving decision.
+            If you find an error or an outdated requirement, write to me at{" "}
+            <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a> (also listed on the{" "}
+            <Link href="/contact">Contact</Link> page) and I will check it against the official source.
           </p>
         </div>
       </article>

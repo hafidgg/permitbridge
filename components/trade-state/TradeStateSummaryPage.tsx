@@ -6,7 +6,7 @@ import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { Badge } from "@/components/ui/badge";
 import { articleJsonLd, buildMetadata } from "@/lib/seo";
-import { formatUsd, PROCESSING_TIME_NOT_PUBLISHED } from "@/lib/utils";
+import { formatDate, formatUsd, PROCESSING_TIME_NOT_PUBLISHED } from "@/lib/utils";
 import { getTradeStateSummary, type TradeStateSummary, type TradeSummaryProfession } from "@/lib/trade-state-summary";
 import { getTradeStateNotes } from "@/lib/trade-state-notes";
 import { SourceList } from "@/components/trade-state/SourceList";
@@ -72,6 +72,7 @@ export function TradeStateSummaryPage({ profession, state }: { profession: Trade
 
       <div className="container max-w-4xl pb-16">
         <h1 className="mt-4 text-3xl font-bold tracking-tight md:text-4xl">{titleFor(s)}</h1>
+        {s.lastResearched && <p className="mt-2 text-xs text-muted-foreground">Last researched {formatDate(s.lastResearched)}</p>}
         <p className="mt-3 max-w-2xl text-muted-foreground">
           What it takes to transfer {label.article} {label.noun} license you already hold in another state into {s.destination.name}. This page covers
           license transfer only — not how to get licensed from scratch.

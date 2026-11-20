@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import Link from "next/link";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { MarkdownBlock } from "@/components/content/MarkdownBlock";
 import { formatDate } from "@/lib/utils";
+import { OPERATOR_NAME } from "@/lib/constants";
 import { getAllGuides, getGuideBySlug, getGuideBody } from "@/lib/data";
 import { buildMetadata, articleJsonLd } from "@/lib/seo";
 import { JsonLd } from "@/components/seo/JsonLd";
@@ -41,7 +43,11 @@ export default async function GuideDetailPage({ params }: { params: Promise<{ sl
         <span className="text-xs font-semibold uppercase tracking-wide text-primary">{guide.category}</span>
         <h1 className="mt-2 text-3xl font-bold tracking-tight md:text-4xl">{guide.title}</h1>
         <p className="mt-4 text-xs text-muted-foreground">
-          Published {formatDate(guide.publishedAt)} · Updated {formatDate(guide.updatedAt)} · {guide.readingMinutes} min read
+          By{" "}
+          <Link href="/about" className="hover:underline">
+            {OPERATOR_NAME}
+          </Link>{" "}
+          · Published {formatDate(guide.publishedAt)} · Updated {formatDate(guide.updatedAt)} · {guide.readingMinutes} min read
         </p>
         <p className="mt-3 text-sm text-muted-foreground">Independent reference, not legal advice. Confirm with the official licensing authority before applying.</p>
 

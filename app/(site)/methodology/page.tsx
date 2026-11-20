@@ -2,16 +2,16 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { buildMetadata } from "@/lib/seo";
-import { CONTACT_EMAIL, SITE_NAME } from "@/lib/constants";
+import { CONTACT_EMAIL, OPERATOR_NAME, SITE_NAME } from "@/lib/constants";
 import { formatDate, PROCESSING_TIME_NOT_PUBLISHED } from "@/lib/utils";
 
 export const metadata: Metadata = buildMetadata({
   title: "Methodology: How We Verify Licensing Rules",
-  description: `How ${SITE_NAME} researches and verifies license-transfer rules: official licensing board sources, a source link on every page, last-checked dates, and what we show when a board does not publish something.`,
+  description: `How ${SITE_NAME} researches and verifies license-transfer rules: official licensing board sources, a source link on every page, the date each page was last researched or updated, and what we show when a board does not publish something.`,
   path: "/methodology",
 });
 
-const LAST_UPDATED = "2026-10-22";
+const LAST_UPDATED = "2026-11-20";
 
 export default function MethodologyPage() {
   return (
@@ -41,16 +41,19 @@ export default function MethodologyPage() {
 
           <h2>2. Taken from the board&apos;s own wording</h2>
           <p>
-            Each rule is taken from the board&apos;s own published wording. Stored values are compared automatically
-            with the text of the source they came from, and a value we cannot re-read that way is not shown until we
-            can. No page claims that a person has reviewed it. Where a requirement is ambiguous, we record the
-            ambiguity rather than guess.
+            Each rule is taken from the board&apos;s own published wording. Pages are researched by the site operator,{" "}
+            {OPERATOR_NAME}, from those official sources; this is research, not legal advice and not a legal review. A
+            page is published only when its key requirements are tied to a registered, authoritative source from the
+            right state. A value that cannot be confirmed in its official source is left off the page. Automated
+            checks at build time block specific values known to have no official source, such as generic transfer-time
+            estimates, from appearing on any page. Where a requirement is ambiguous, we record the ambiguity rather
+            than guess.
           </p>
 
-          <h2>3. A source link and a last-checked date on each page</h2>
+          <h2>3. A source link and a date on each content page</h2>
           <p>
-            Transfer and state pages link to the official board source each requirement was taken from, and show
-            the date it was last checked. If you want to confirm a detail, follow that link: the board&apos;s current
+            Transfer, state, profession and guide pages link to the official source each requirement was taken from,
+            and show the date their information was last researched or updated. If you want to confirm a detail, follow that link: the board&apos;s current
             page always wins over ours.
           </p>
 
@@ -83,7 +86,7 @@ export default function MethodologyPage() {
             Rules change, sometimes without much notice. If you spot something outdated or wrong, email{" "}
             <a href={`mailto:${CONTACT_EMAIL}?subject=Correction`}>{CONTACT_EMAIL}</a> with the page and what
             changed, and include the official source if you have it. We re-check the rule against the board and
-            update the page and its last-checked date.
+            update the page and its date last researched or updated.
           </p>
 
           <p>

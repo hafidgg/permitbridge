@@ -25,6 +25,7 @@
  */
 import fs from "node:fs";
 import path from "node:path";
+import { MIN_TRADE_SUMMARY_URLS } from "./sitemap-floor";
 
 const APP = path.join(process.cwd(), ".next", "server", "app");
 const professions = fs
@@ -125,7 +126,24 @@ for (const file of walk(APP)) {
     if (m) failures.push(`${path.relative(APP, file)}: ${label} in visible text ("${m[0]}")`);
   }
 }
-console.log("Built-output check — unsourced generator data and leaked internal tokens");
+// Every indexable trade state page (/hvac-technician/{state}, /plumber/{state}) must show a visible
+// "Last researched <date>" line in its main content (2026-11-20 audit: the date was only in JSON-LD).
+const DATE_LINE = /Last researched\s+(?:January|February|March|April|May|June|July|August|September|October|November|December) \d{1,2}, 20\d\d/;
+for (const [profession, min] of Object.entries(MIN_TRADE_SUMMARY_URLS)) {
+  const dir = path.join(APP, profession);
+  const pages = fs.existsSync(dir) ? fs.readdirSync(dir).filter((f) => f.endsWith(".html")) : [];
+  let indexable = 0;
+  for (const f of pages) {
+    const html = fs.readFileSync(path.join(dir, f), "utf-8");
+    if (/<meta name="robots" content="[^"]*noindex/.test(html)) continue;
+    indexable++;
+    const main = html.match(/<main[^>]*>([\s\S]*)<\/main>/)?.[1] ?? "";
+    if (!DATE_LINE.test(visibleText(main))) failures.push(`${profession}/${f}: no visible "Last researched <date>" in main content`);
+  }
+  if (indexable < min) failures.push(`${profession}: only ${indexable} indexable built trade state page(s) checked for a date (floor ${min})`);
+}
+
+console.log("Built-output check — unsourced generator data, leaked internal tokens, trade-page dates");
 if (failures.length) {
   for (const f of failures.slice(0, 50)) console.error(`  ✖ ${f}`);
   console.error(`✖ ${failures.length} hit(s). Remove the render, don't edit the data to dodge the match.`);
