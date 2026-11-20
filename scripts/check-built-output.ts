@@ -52,7 +52,7 @@ const visibleForbidden: { label: string; re: RegExp }[] = [
   { label: "field reference", re: /\bsee [a-z]+[A-Z]\w+/ },
   { label: "camelCase field name", re: /\b[a-z]+(?:[A-Z][a-z]+)+\b/ },
   { label: "snake_case enum", re: /\b[a-z]+(?:_[a-z]+)+\b/ },
-  { label: "unrendered markdown", re: /\*\*|(?:^|\s)## / },
+  { label: "unrendered markdown", re: /\*\*|(?:^|\s)#{2,6} / },
   { label: "raw boolean value", re: /\b(?:Recognition|Membership|Status) (?:true|false)\b/ },
 ];
 

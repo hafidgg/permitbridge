@@ -1,7 +1,8 @@
 /**
  * Minimal, dependency-free renderer for our own controlled markdown subset
- * (## headings, paragraphs, "- " and "1. " lists, **bold**, and inline
- * [text](url) links — see /content). Any other syntax renders as literal
+ * (## and ### headings, paragraphs, "- " and "1. " lists, pipe tables with a
+ * header row and a |---| separator, **bold**, and inline [text](url) links —
+ * see /content). Any other syntax renders as literal
  * text, so scripts/check-built-output.ts fails the build on stray "**".
  * Avoids pulling in a full markdown/MDX pipeline for a handful of static
  * editorial files.
@@ -53,6 +54,12 @@ function renderInline(text: string, keyPrefix: string) {
 }
 
 const BULLET = /^- /;
+const TABLE_ROW = /^\|.*\|$/;
+const TABLE_SEPARATOR = /^\|(?:\s*:?-{3,}:?\s*\|)+$/;
+
+function tableCells(line: string): string[] {
+  return line.slice(1, -1).split("|").map((c) => c.trim());
+}
 const NUMBERED = /^\d+\. /;
 
 export function MarkdownBlock({ source }: { source: string }) {
@@ -62,10 +69,41 @@ export function MarkdownBlock({ source }: { source: string }) {
   return (
     <div className="prose-permitbridge">
       {blocks.map((block, index) => {
+        if (block.startsWith("### ")) {
+          return <h3 key={index}>{renderInline(block.replace(/^###\s+/, ""), `block-${index}`)}</h3>;
+        }
         if (block.startsWith("## ")) {
           return <h2 key={index}>{block.replace(/^##\s+/, "")}</h2>;
         }
-        const lines = block.split("\n");
+        const lines = block.split("\n").map((l) => l.trim());
+        // A table: header row, separator row, then body rows, every line wrapped in pipes.
+        const [head = "", separator = "", ...rows] = lines;
+        if (rows.length > 0 && lines.every((l) => TABLE_ROW.test(l)) && TABLE_SEPARATOR.test(separator)) {
+          return (
+            <div key={index} className="table-scroll">
+              <table>
+                <thead>
+                  <tr>
+                    {tableCells(head).map((c, i) => (
+                      <th key={i} scope="col">
+                        {renderInline(c, `block-${index}-h-${i}`)}
+                      </th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody>
+                  {rows.map((row, r) => (
+                    <tr key={r}>
+                      {tableCells(row).map((c, i) => (
+                        <td key={i}>{renderInline(c, `block-${index}-${r}-${i}`)}</td>
+                      ))}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          );
+        }
         for (const [marker, Tag] of [[BULLET, "ul"], [NUMBERED, "ol"]] as const) {
           if (lines.every((l) => marker.test(l))) {
             return (

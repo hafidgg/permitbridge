@@ -92,6 +92,42 @@ export function getAllGuides(): GuideSummary[] {
         "/hvac-technician/texas",
       ],
     },
+    {
+      slug: "ohio-ocilb-reciprocity-agreements",
+      title: "Ohio OCILB Reciprocity Agreements: What Each State's Form Says",
+      description:
+        "What OCILB's reciprocity applications for nine states say: who can apply, which trades each form lists, the $500,000 insurance rule and the $25 per-trade fee.",
+      category: "State Guide",
+      publishedAt: "2026-11-20",
+      updatedAt: "2026-11-20",
+      readingMinutes: 5,
+      searchKeywords: ["Ohio", "OCILB", "reciprocity", "electrical", "HVAC", "plumbing", "hydronics", "refrigeration"],
+      linkedFrom: ["/profession/hvac-technician", "/profession/plumber", "/profession/electrician", "/hvac-technician/ohio", "/plumber/ohio"],
+    },
+    {
+      slug: "texas-rn-license-by-endorsement",
+      title: "Texas RN License by Endorsement: What the Board of Nursing Requires",
+      description:
+        "Texas BON endorsement for U.S.-educated RNs: eligibility under Rule 217.5, the Nursys verification rule, the jurisprudence exam, fees and the 120-day temporary license.",
+      category: "State Guide",
+      publishedAt: "2026-11-20",
+      updatedAt: "2026-11-20",
+      readingMinutes: 4,
+      searchKeywords: ["nurse", "registered nurse", "RN", "Texas", "BON", "endorsement", "NJE", "Nursys"],
+      linkedFrom: ["/profession/nurse"],
+    },
+    {
+      slug: "florida-rn-endorsement-vs-multistate-upgrade",
+      title: "Florida RN License: MOBILE Endorsement vs. Multi-state Upgrade",
+      description:
+        "Florida Board of Nursing's two applications compared: MOBILE Endorsement for nurses licensed elsewhere and the Multi-state Upgrade for current Florida licensees.",
+      category: "State Guide",
+      publishedAt: "2026-11-20",
+      updatedAt: "2026-11-20",
+      readingMinutes: 4,
+      searchKeywords: ["nurse", "registered nurse", "RN", "Florida", "endorsement", "MOBILE", "multistate", "compact"],
+      linkedFrom: ["/profession/nurse", "/registered-nurse/california-to-florida"],
+    },
   ];
 }
 

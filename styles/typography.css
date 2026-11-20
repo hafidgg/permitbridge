@@ -34,3 +34,25 @@
   text-decoration: underline;
   text-underline-offset: 2px;
 }
+
+/* Tables from pipe-table markdown. The wrapper scrolls sideways on narrow screens instead of widening the page. */
+.prose-permitbridge .table-scroll {
+  overflow-x: auto;
+  margin-bottom: 1rem;
+}
+.prose-permitbridge table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+.prose-permitbridge th,
+.prose-permitbridge td {
+  border: 1px solid hsl(var(--border));
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+  vertical-align: top;
+}
+.prose-permitbridge th {
+  font-weight: 600;
+  background: hsl(var(--muted));
+}
