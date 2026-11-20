@@ -1,6 +1,7 @@
 # PermitBridge live status baseline (www). Columns: expected_status<TAB>path<TAB>redirect_target (308 only).
 # Updated 2026-11-07: /transfer/nurse/california/texas moved 308->410 (its target was never published).
 # Updated 2026-11-19: added 21 308 rows so every redirect in next.config.mjs is covered (18 consolidated HVAC/plumber pairs, electrician california->texas and florida->texas, nurse california->new-york). 120 rows.
+# Updated 2026-11-20: added the three batch-1 guides (Ohio OCILB, Texas RN, Florida RN). 123 rows: 58x200, 40x410, 25x308.
 # Re-run (bash): grep -v '^#' scripts/monitoring/status-baseline.tsv | while IFS=$'	' read s p t; do r=$(curl -s -o /dev/null -w '%{http_code} %{redirect_url}' "https://www.getpermitbridge.com$p"); [ "$r" != "$s ${t}" ] && [ "$r" != "$s " ] && echo "DIFF want=$s $t got=$r $p"; sleep 0.5; done; echo done
 # Note: bursts of requests trip Vercel's bot challenge (403 + X-Vercel-Mitigated: challenge); keep the sleep.
 200	/
@@ -36,6 +37,9 @@
 200	/guides/texas-plumbing-license-tsbpe
 200	/guides/journeyman-electrician-license-reciprocity
 200	/guides/hvac-license-reciprocity-by-state
+200	/guides/ohio-ocilb-reciprocity-agreements
+200	/guides/texas-rn-license-by-endorsement
+200	/guides/florida-rn-endorsement-vs-multistate-upgrade
 200	/registered-nurse/california-to-florida
 200	/registered-nurse/california-to-new-york
 200	/registered-nurse/georgia-to-illinois
