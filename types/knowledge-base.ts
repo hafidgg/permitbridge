@@ -162,6 +162,14 @@ export interface ProfessionStateFacts {
    */
   licenseTier?: string;
 
+  /**
+   * What endorsementFeeUsd actually is, when it is not an application fee (2026-11-20: Iowa's
+   * $75/$375 are 3-year license fees under 481—401.3). Defaults to "Application Fee" on the page.
+   */
+  endorsementFeeLabel?: string;
+  /** The source's own words about that fee, shown under the fee row as a quote. */
+  endorsementFeeNote?: string;
+
   licensingBoard: VerifiedField<string>;
   officialWebsite: VerifiedField<string>;
   licenseTransferPage: VerifiedField<string>;

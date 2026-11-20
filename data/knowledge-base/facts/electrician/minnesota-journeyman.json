@@ -177,11 +177,11 @@
     "notes": "Unlike Arkansas (where the exam-exemption for reciprocal applicants had to be inferred from the rule's silence and was flagged needs_review), Minnesota's statute states the exemption positively and explicitly — recorded here as verified, not needs_review."
   },
   "requiredExperience": {
-    "value": "For the RECIPROCITY pathway specifically: hold a current Class A Journeyworker (or equivalent) license from a reciprocating state in good standing, held for at least one year, and obtained by passing that state's license examination (not by a reciprocal agreement with a city or other political subdivision, nor by grandfathering without an exam).",
-    "sourceUrl": "https://www.dli.mn.gov/sites/default/files/pdf/ele_reciprocity.pdf",
-    "sourceTitle": "Individual Electrical License Reciprocity Application (Form CC0502)",
+    "value": "For the reciprocity pathway, DLI's reciprocity page requires: \"The applicant must have obtained the same or greater class of license in the first state by examination at the state level (the license must not have been obtained through a reciprocal agreement with a city or other political subdivision).\" It also requires: \"The applicant must have held the license for at least one year in the first state\" and \"The applicant's license must be current and in good standing in the first state.\"",
+    "sourceUrl": "https://www.dli.mn.gov/workers/electrician-or-electrical-installer/electrical-license-reciprocity",
+    "sourceTitle": "Electrical license reciprocity",
     "sourceName": "Minnesota Department of Labor and Industry (DLI), Construction Codes and Licensing Division",
-    "verifiedAt": "2026-09-04",
+    "verifiedAt": "2026-11-20",
     "verificationMethod": "official_document_review",
     "reviewer": null,
     "status": "pending_verification",
@@ -194,6 +194,14 @@
         "changedAt": "2026-09-04",
         "reason": "Initial population from Form CC0502's 'Reciprocity Requirements' section, read directly from the raw PDF text.",
         "sourceUrl": "https://www.dli.mn.gov/sites/default/files/pdf/ele_reciprocity.pdf",
+        "reviewer": null
+      },
+      {
+        "previousValue": "For the RECIPROCITY pathway specifically: hold a current Class A Journeyworker (or equivalent) license from a reciprocating state in good standing, held for at least one year, and obtained by passing that state's license examination (not by a reciprocal agreement with a city or other political subdivision, nor by grandfathering without an exam).",
+        "newValue": "For the reciprocity pathway, DLI's reciprocity page requires: \"The applicant must have obtained the same or greater class of license in the first state by examination at the state level (the license must not have been obtained through a reciprocal agreement with a city or other political subdivision).\" It also requires: \"The applicant must have held the license for at least one year in the first state\" and \"The applicant's license must be current and in good standing in the first state.\"",
+        "changedAt": "2026-11-20",
+        "reason": "Replaced our inference ('nor by grandfathering without an exam') with the DLI page's own wording, quoted. Re-read the raw page on 2026-11-20.",
+        "sourceUrl": "https://www.dli.mn.gov/workers/electrician-or-electrical-installer/electrical-license-reciprocity",
         "reviewer": null
       }
     ],

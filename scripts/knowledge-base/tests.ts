@@ -1370,9 +1370,10 @@ await test("source jurisdiction matches destination context for all real rules (
       // (temporaryPermitAvailability, processingTime) still cite real
       // but unregistered sources from the original Phase 2B research.
       // Same honest, documented, non-blocking pattern as New York->California.
+      // 2026-11-20: temporaryPermitAvailability now cites the registered RN-EN packet, so 2 -> 1 (processingTime remains).
       const criticalFieldsWithIssues = jurisdictionIssues.filter((i) => CRITICAL_TRANSFER_RULE_FIELDS.some((f) => i.message.startsWith(f)));
       assertEqual(criticalFieldsWithIssues, [], `${file}: expected zero jurisdiction/source-resolution issues on CRITICAL fields specifically`);
-      assertEqual(jurisdictionIssues.length, 2, `${file}: expected exactly 2 known, non-blocking Rule 7 warnings on non-critical fields — a real remaining quality gap for future improvement, not a regression`);
+      assertEqual(jurisdictionIssues.length, 1, `${file}: expected exactly 1 known, non-blocking Rule 7 warning on a non-critical field (processingTime) — a real remaining quality gap for future improvement, not a regression`);
     } else if (file === "california-to-florida.json") {
       // Phase 2B.4: all 9 CRITICAL fields upgraded to genuine registered
       // floridasnursing.gov sources this session (the strongest result
@@ -1673,7 +1674,7 @@ await test("real publication report correctly blocks california-to-texas (the on
 
 await test("real review queue contains exactly 104 items (one per populated, non-Verified field across all 8 real rules)", () => {
   const queue = buildTransferReviewQueue();
-  assertEqual(queue.length, 102, "expected 102 queue items: 109 after Phase 2B.4 (95 from the prior 7 rules + 14 on California->Florida), minus 1 on 2026-10-22 (California->Florida exceptions -> Unknown: unregistered third-party source), minus 1 on 2026-10-22 (Illinois->Georgia temporaryPermitAvailability -> Unknown: it cited a psychologists' board rule), minus 5 fields set to Unknown on 2026-10-09 (California->New York examRequirement; universalRecognitionApplies on CA->NY, IL->GA, TX->CA, TX->FL)");
+  assertEqual(queue.length, 104, "expected 104 queue items: plus 2 on 2026-11-20 (Georgia->Illinois documentsRequired and otherRequiredFees populated from the RN-EN packet); 109 after Phase 2B.4 (95 from the prior 7 rules + 14 on California->Florida), minus 1 on 2026-10-22 (California->Florida exceptions -> Unknown: unregistered third-party source), minus 1 on 2026-10-22 (Illinois->Georgia temporaryPermitAvailability -> Unknown: it cited a psychologists' board rule), minus 5 fields set to Unknown on 2026-10-09 (California->New York examRequirement; universalRecognitionApplies on CA->NY, IL->GA, TX->CA, TX->FL)");
   const highPriority = queue.filter((i) => i.priority === "High");
   assert(highPriority.length > 0, "expected at least some High-priority (critical field) queue items");
 });

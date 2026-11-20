@@ -161,18 +161,27 @@
     "notes": "REUSED from Illinois's existing verified base fact, per Phase 2B's data-reuse architecture."
   },
   "otherRequiredFees": {
-    "value": "Unknown",
-    "sourceUrl": null,
-    "sourceTitle": null,
-    "sourceName": null,
-    "verifiedAt": null,
-    "verificationMethod": null,
+    "value": "Temporary permit: \"Temporary Permit - $25.00\". When applying for both, \"Combine the $50 endorsement fee and the $25 temporary permit fee into one check or money order for $75\".",
+    "sourceUrl": "https://idfpr.illinois.gov/content/dam/soi/en/web/idfpr/renewals/apply/forms/RN-EN.pdf",
+    "sourceTitle": "Registered Nurse Examination/Endorsement/Restoration Instruction Sheet",
+    "sourceName": "Illinois Department of Financial and Professional Regulation (IDFPR)",
+    "verifiedAt": "2026-11-20",
+    "verificationMethod": "official_document_review",
     "reviewer": null,
     "status": "pending_verification",
-    "confidence": 0,
-    "confidenceLevel": "unknown",
-    "history": [],
-    "notes": "Fingerprint vendor fee not itemized with confidence; secondary sources gave inconsistent combined totals ($100-$170) that could not be attributed to a specific official fee schedule this session."
+    "confidence": 0.9,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": "Unknown",
+        "newValue": "Temporary permit: \"Temporary Permit - $25.00\". When applying for both, \"Combine the $50 endorsement fee and the $25 temporary permit fee into one check or money order for $75\".",
+        "changedAt": "2026-11-20",
+        "reason": "Re-read the raw IDFPR RN-EN packet on 2026-11-20; value set from its own text (previously shown as not published, or sourced from a secondary aggregator).",
+        "sourceUrl": "https://idfpr.illinois.gov/content/dam/soi/en/web/idfpr/renewals/apply/forms/RN-EN.pdf",
+        "reviewer": null
+      }
+    ],
+    "notes": "Fingerprint vendor fee is set by the vendor; the packet says to \"Contact the vendor to determine the fee\"."
   },
   "backgroundCheckRequirement": {
     "value": {
@@ -215,16 +224,17 @@
   },
   "fingerprintingRequirement": {
     "value": {
-      "status": "required"
+      "status": "required",
+      "statement": "Individuals applying for licensure for professions that require fingerprints must submit to a criminal background check and provide evidence of fingerprint processing from a fingerprint vendor licensed by the Department. Fingerprints must be taken within 60 days from the date that the application is submitted to the Department or the Department's testing vendor."
     },
     "sourceUrl": "https://idfpr.illinois.gov/content/dam/soi/en/web/idfpr/renewals/apply/forms/RN-EN.pdf",
     "sourceTitle": "Registered Nurse Examination/Endorsement/Restoration Instruction Sheet",
     "sourceName": "Illinois Department of Financial and Professional Regulation (IDFPR)",
-    "verifiedAt": "2026-08-21",
+    "verifiedAt": "2026-11-20",
     "verificationMethod": "official_document_review",
     "reviewer": null,
     "status": "pending_verification",
-    "confidence": 0.88,
+    "confidence": 0.9,
     "confidenceLevel": "verified",
     "history": [
       {
@@ -246,6 +256,19 @@
         },
         "changedAt": "2026-08-21",
         "reason": "Phase 2B.3: upgraded from a secondary/unregistered source (Advantis Medical (secondary)) to a genuine official Illinois IDFPR source, found via direct research this session.",
+        "sourceUrl": "https://idfpr.illinois.gov/content/dam/soi/en/web/idfpr/renewals/apply/forms/RN-EN.pdf",
+        "reviewer": null
+      },
+      {
+        "previousValue": {
+          "status": "required"
+        },
+        "newValue": {
+          "status": "required",
+          "statement": "Individuals applying for licensure for professions that require fingerprints must submit to a criminal background check and provide evidence of fingerprint processing from a fingerprint vendor licensed by the Department. Fingerprints must be taken within 60 days from the date that the application is submitted to the Department or the Department's testing vendor."
+        },
+        "changedAt": "2026-11-20",
+        "reason": "Re-read the raw IDFPR RN-EN packet on 2026-11-20; value set from its own text (previously shown as not published, or sourced from a secondary aggregator).",
         "sourceUrl": "https://idfpr.illinois.gov/content/dam/soi/en/web/idfpr/renewals/apply/forms/RN-EN.pdf",
         "reviewer": null
       }
@@ -292,18 +315,27 @@
     "notes": "Official IDFPR page states explicitly: \"All Nursing profession license Certification or Verifications must be made via the NURSYS website. Do not send requests directly to the IDFPR.\""
   },
   "documentsRequired": {
-    "value": "Unknown",
-    "sourceUrl": null,
-    "sourceTitle": null,
-    "sourceName": null,
-    "verifiedAt": null,
-    "verificationMethod": null,
+    "value": "For applicants educated in the United States, the RN-EN packet lists: \"Application for Licensure and/or Examination (four page)\"; \"Supporting Document PHQ must be completed and submitted with each application\"; the CT-NUR Form, to \"Submit verification of licensure from the state of original licensure, current state of licensure and any jurisdiction in which you have actively practiced within the last 5 years\" (through Nursys where the state participates); the ED-NUR Form, \"OR official transcripts with school seal affixed\"; and the fee.",
+    "sourceUrl": "https://idfpr.illinois.gov/content/dam/soi/en/web/idfpr/renewals/apply/forms/RN-EN.pdf",
+    "sourceTitle": "Registered Nurse Examination/Endorsement/Restoration Instruction Sheet",
+    "sourceName": "Illinois Department of Financial and Professional Regulation (IDFPR)",
+    "verifiedAt": "2026-11-20",
+    "verificationMethod": "official_document_review",
     "reviewer": null,
     "status": "pending_verification",
-    "confidence": 0,
-    "confidenceLevel": "unknown",
-    "history": [],
-    "notes": "Detailed document checklist not fully itemized from an official IDFPR source with high confidence this session."
+    "confidence": 0.9,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": "Unknown",
+        "newValue": "For applicants educated in the United States, the RN-EN packet lists: \"Application for Licensure and/or Examination (four page)\"; \"Supporting Document PHQ must be completed and submitted with each application\"; the CT-NUR Form, to \"Submit verification of licensure from the state of original licensure, current state of licensure and any jurisdiction in which you have actively practiced within the last 5 years\" (through Nursys where the state participates); the ED-NUR Form, \"OR official transcripts with school seal affixed\"; and the fee.",
+        "changedAt": "2026-11-20",
+        "reason": "Re-read the raw IDFPR RN-EN packet on 2026-11-20; value set from its own text (previously shown as not published, or sourced from a secondary aggregator).",
+        "sourceUrl": "https://idfpr.illinois.gov/content/dam/soi/en/web/idfpr/renewals/apply/forms/RN-EN.pdf",
+        "reviewer": null
+      }
+    ],
+    "notes": null
   },
   "goodStandingRequirement": {
     "value": {
@@ -371,17 +403,18 @@
   },
   "temporaryPermitAvailability": {
     "value": {
-      "status": "available"
+      "status": "conditional",
+      "statement": "In accordance with Section 60-10(f)(g) of the Illinois Nurse Practice Act, you may be eligible to receive a temporary permit. The permit is valid for six months from the date of issuance, or issuance of an Illinois Registered Nurse License, or notification that the Department intends to deny licensure, whichever comes first."
     },
-    "sourceUrl": "https://www.nursinglicensure.org/state/nursing-license-illinois/",
-    "sourceTitle": "Illinois Nursing License Requirements 2026",
-    "sourceName": "Illinois Department of Financial and Professional Regulation (via secondary aggregator)",
-    "verifiedAt": "2026-08-20",
+    "sourceUrl": "https://idfpr.illinois.gov/content/dam/soi/en/web/idfpr/renewals/apply/forms/RN-EN.pdf",
+    "sourceTitle": "Registered Nurse Examination/Endorsement/Restoration Instruction Sheet",
+    "sourceName": "Illinois Department of Financial and Professional Regulation (IDFPR)",
+    "verifiedAt": "2026-11-20",
     "verificationMethod": "official_document_review",
     "reviewer": null,
     "status": "pending_verification",
-    "confidence": 0.7,
-    "confidenceLevel": "likely",
+    "confidence": 0.9,
+    "confidenceLevel": "verified",
     "history": [
       {
         "previousValue": null,
@@ -392,9 +425,22 @@
         "reason": "Phase 2B pilot: first population from real official-source research.",
         "sourceUrl": "https://www.nursinglicensure.org/state/nursing-license-illinois/",
         "reviewer": null
+      },
+      {
+        "previousValue": {
+          "status": "available"
+        },
+        "newValue": {
+          "status": "conditional",
+          "statement": "In accordance with Section 60-10(f)(g) of the Illinois Nurse Practice Act, you may be eligible to receive a temporary permit. The permit is valid for six months from the date of issuance, or issuance of an Illinois Registered Nurse License, or notification that the Department intends to deny licensure, whichever comes first."
+        },
+        "changedAt": "2026-11-20",
+        "reason": "Re-read the raw IDFPR RN-EN packet on 2026-11-20; value set from its own text (previously shown as not published, or sourced from a secondary aggregator).",
+        "sourceUrl": "https://idfpr.illinois.gov/content/dam/soi/en/web/idfpr/renewals/apply/forms/RN-EN.pdf",
+        "reviewer": null
       }
     ],
-    "notes": "RN endorsement applicants may request a temporary permit to practice while the full application processes; exact current fee not confirmed this session."
+    "notes": "RN-EN packet: \"Temporary Permit - $25.00\"; requires the TP-NUR form and copies of current licenses held in other U.S. jurisdictions."
   },
   "compactStatus": {
     "value": "Not applicable \u2014 Illinois is not an NLC member, so Georgia's own compact membership provides no shortcut for entering Illinois; standard endorsement applies regardless of the applicant's origin state.",

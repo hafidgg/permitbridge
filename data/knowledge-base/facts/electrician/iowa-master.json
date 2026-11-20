@@ -2,6 +2,8 @@
   "profession": "electrician",
   "state": "iowa",
   "licenseTier": "master",
+  "endorsementFeeLabel": "License Fee (Master Class A, 3-year term)",
+  "endorsementFeeNote": "If a license is issued for less than the period of time specified in the table above, the fee will be prorated according to the number of months for which the license is issued.",
   "licensingBoard": {
     "value": "Iowa Electrical Examining Board, Department of Inspections, Appeals & Licensing (DIAL)",
     "sourceUrl": "https://dial.iowa.gov/licenses/building/electrical-licensing",
@@ -289,7 +291,7 @@
     "sourceUrl": "https://www.legis.iowa.gov/docs/iac/chapter/08-06-2025.481.401.pdf",
     "sourceTitle": "Chapter 401 -- Electrician and Electrical Contractor Licensing Program: Licensing Requirements, Procedures, and Fees",
     "sourceName": "Iowa Legislative Services Agency (Iowa Administrative Code, Chapter 481-401)",
-    "verifiedAt": "2026-09-08",
+    "verifiedAt": "2026-11-20",
     "verificationMethod": "ai_assisted_manual_research",
     "reviewer": null,
     "status": "pending_verification",
@@ -301,6 +303,14 @@
         "newValue": 375,
         "changedAt": "2026-09-08",
         "reason": "Initial population from the Iowa Admin. Code 481-401.3(103) license-term/fee table (2026-2028 cycle), per the Iowa electrician reciprocity Evidence Report approved 2026-09-08.",
+        "sourceUrl": "https://www.legis.iowa.gov/docs/iac/chapter/08-06-2025.481.401.pdf",
+        "reviewer": null
+      },
+      {
+        "previousValue": 375,
+        "newValue": 375,
+        "changedAt": "2026-11-20",
+        "reason": "Re-read Iowa Administrative Code 481—401.3 on 2026-11-20: the amount is the license fee for a 3-year term (prorated by month), not an application fee. Page label changed; value unchanged.",
         "sourceUrl": "https://www.legis.iowa.gov/docs/iac/chapter/08-06-2025.481.401.pdf",
         "reviewer": null
       }

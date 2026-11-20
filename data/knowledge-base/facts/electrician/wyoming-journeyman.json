@@ -2,6 +2,8 @@
   "profession": "electrician",
   "state": "wyoming",
   "licenseTier": "journeyman",
+  "endorsementFeeLabel": "Initial License Fee",
+  "endorsementFeeNote": "Once the applicant has passed the examination, ... The initial license fee will be $100.00.",
   "licensingBoard": {
     "value": "Wyoming State Fire Marshal's Office, Department of Fire Prevention and Electrical Safety",
     "sourceUrl": "https://wsfm.wyo.gov/electrical-safety/licensing",
@@ -281,7 +283,7 @@
     "sourceUrl": "https://wsfm.wyo.gov/electrical-safety/licensing",
     "sourceTitle": "Licensing",
     "sourceName": "Wyoming State Fire Marshal's Office, Department of Fire Prevention and Electrical Safety",
-    "verifiedAt": "2026-09-07",
+    "verifiedAt": "2026-11-20",
     "verificationMethod": "ai_assisted_manual_research",
     "reviewer": null,
     "status": "pending_verification",
@@ -293,6 +295,14 @@
         "newValue": 100,
         "changedAt": "2026-09-07",
         "reason": "Initial population from the official WSFM licensing page, per the Wyoming electrician reciprocity Evidence Report approved 2026-09-07.",
+        "sourceUrl": "https://wsfm.wyo.gov/electrical-safety/licensing",
+        "reviewer": null
+      },
+      {
+        "previousValue": 100,
+        "newValue": 100,
+        "changedAt": "2026-11-20",
+        "reason": "Re-read the raw WSFM licensing page on 2026-11-20: it calls this amount \"The initial license fee\". Page label changed from \"Application Fee\"; value unchanged.",
         "sourceUrl": "https://wsfm.wyo.gov/electrical-safety/licensing",
         "reviewer": null
       }

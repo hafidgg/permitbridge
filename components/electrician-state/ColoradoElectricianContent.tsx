@@ -2,7 +2,7 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 import { Badge } from "@/components/ui/badge";
 import { getSourceByUrl } from "@/lib/knowledge-base/transfer-rule-data";
-import { formatDate } from "@/lib/utils";
+import { formatDate, formatUsd } from "@/lib/utils";
 import type { ProfessionStateFacts, VerifiedField } from "@/types/knowledge-base";
 
 /**
@@ -32,29 +32,36 @@ import type { ProfessionStateFacts, VerifiedField } from "@/types/knowledge-base
  * component honestly generic instead of silently wrong for Virginia.
  */
 
-/** Figures that only a board source may support; a secondary source for one counts as not published. */
-const BOARD_ONLY_LABELS = new Set(["Exam Requirement", "Experience Requirement", "Application Fee", "Processing Time"]);
-
 /** Shown only with a registered source; a secondary one only where allowed, and labelled (see /methodology). */
-function isPublished(label: string, field: VerifiedField<unknown>): boolean {
+function isPublished(field: VerifiedField<unknown>, boardOnly = false): boolean {
   if (field.value === "Unknown") return false;
   const source = field.sourceUrl ? getSourceByUrl(field.sourceUrl) : undefined;
   if (!source) return false;
-  return !(BOARD_ONLY_LABELS.has(label) && source.authorityLevel === "supplementary");
+  // Figures that only a board source may support; a secondary source for one counts as not published.
+  return !(boardOnly && source.authorityLevel === "supplementary");
 }
 
-function FieldRow({ label, field }: { label: string; field: VerifiedField<unknown> }) {
+type Row = { label: string; field: VerifiedField<unknown>; boardOnly?: boolean; usd?: boolean; note?: string };
+
+function FieldRow({ label, field, boardOnly, usd, note }: Row) {
   // Unpublished fields are listed once per tier ("Not published by the board: ..."), not as rows.
-  if (!isPublished(label, field)) return null;
+  if (!isPublished(field, boardOnly)) return null;
   const source = getSourceByUrl(field.sourceUrl!)!;
   const displayValue =
-    typeof field.value === "boolean" ? (field.value ? "Yes" : "No") : typeof field.value === "object" ? JSON.stringify(field.value) : String(field.value);
+    usd && typeof field.value === "number"
+      ? formatUsd(field.value)
+      : typeof field.value === "boolean"
+        ? (field.value ? "Yes" : "No")
+        : typeof field.value === "object"
+          ? JSON.stringify(field.value)
+          : String(field.value);
   return (
     <div className="flex flex-col gap-1 border-b border-border py-3 last:border-0">
       <div className="flex items-start justify-between gap-4">
         <span className="text-sm font-medium">{label}</span>
         <span className="text-right text-sm">{displayValue}</span>
       </div>
+      {note && <p className="text-xs text-muted-foreground">&ldquo;{note}&rdquo;</p>}
       <a href={field.sourceUrl!} target="_blank" rel="noopener noreferrer nofollow" className="self-end text-xs text-primary hover:underline">
         Source: {source.agencyName} ↗{source.authorityLevel === "supplementary" ? " (Secondary Source)" : ""}
       </a>
@@ -66,13 +73,19 @@ function TierSection({ tier, facts }: { tier: string; facts: ProfessionStateFact
   const tierLabel = tier === "journeyman" ? "Journeyman Electrician" : "Master Electrician";
   const reciprocityAllowed = facts.reciprocityRules.value !== "Unknown" && !String(facts.reciprocityRules.value).toLowerCase().includes("may not be granted by reciprocity");
   const badgeVariant: "success" | "destructive" = reciprocityAllowed ? "success" : "destructive";
-  const rows: Array<{ label: string; field: VerifiedField<unknown> }> = [
+  const rows: Row[] = [
     { label: "Reciprocity Rules", field: facts.reciprocityRules },
     { label: "Licensing Board", field: facts.licensingBoard },
-    { label: "Exam Requirement", field: facts.requiredExams },
-    { label: "Experience Requirement", field: facts.requiredExperience },
-    { label: "Application Fee", field: facts.endorsementFeeUsd },
-    { label: "Processing Time", field: facts.processingTime },
+    { label: "Exam Requirement", field: facts.requiredExams, boardOnly: true },
+    { label: "Experience Requirement", field: facts.requiredExperience, boardOnly: true },
+    {
+      label: facts.endorsementFeeLabel ?? "Application Fee",
+      field: facts.endorsementFeeUsd,
+      boardOnly: true,
+      usd: true,
+      note: facts.endorsementFeeNote,
+    },
+    { label: "Processing Time", field: facts.processingTime, boardOnly: true },
   ];
   // ULR is omitted entirely when Unknown (it reads as if it might apply), so it's not in the unpublished list either.
   if (facts.universalLicenseRecognitionStatus.value !== "Unknown") {
@@ -80,7 +93,7 @@ function TierSection({ tier, facts }: { tier: string; facts: ProfessionStateFact
   }
   const heldKeys = new Set(facts.heldFields ?? []);
   const isHeld = (field: VerifiedField<unknown>) => Object.entries(facts).some(([k, v]) => v === field && heldKeys.has(k));
-  const unpublished = rows.filter((r) => !isPublished(r.label, r.field) && !isHeld(r.field)).map((r) => r.label);
+  const unpublished = rows.filter((r) => !isPublished(r.field, r.boardOnly) && !isHeld(r.field)).map((r) => r.label);
   const heldLabels = rows.filter((r) => isHeld(r.field)).map((r) => r.label);
 
   return (
@@ -94,7 +107,7 @@ function TierSection({ tier, facts }: { tier: string; facts: ProfessionStateFact
       </div>
       <div className="mt-4 rounded-xl border border-border px-6">
         {rows.map((r) => (
-          <FieldRow key={r.label} label={r.label} field={r.field} />
+          <FieldRow key={r.label} {...r} />
         ))}
       </div>
       {unpublished.length > 0 && <p className="mt-3 text-sm text-muted-foreground">Not published by the board: {unpublished.join(", ")}.</p>}
