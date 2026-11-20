@@ -1647,7 +1647,9 @@ await test("real production data (5 real transfer rules) untouched by Phase 3.2 
     // current fee schedule and "$350" dropped from endorsementProcess (its source states no fee).
     "illinois-to-georgia.json": "f6f4a56778ffbb03b2bf59fd9997fd49",
     "texas-to-california.json": "187f1d6ef3736cfd88f7baeca5406540",
-    "texas-to-florida.json": "e4a28c22479d5b0afe848a89e3256630",
+    // Re-pinned 2026-11-20: TX->FL compactStatus and exceptions no longer say a relocating compact nurse files
+    // Florida's Multistate License Upgrade (the form requires a current single state Florida license).
+    "texas-to-florida.json": "0782f220b28e20655a1dc27a74c6102d",
   };
   for (const [file, expectedHash] of Object.entries(expectedHashes)) {
     // Hash with LF line endings: with core.autocrlf=true, a `git checkout` on Windows rewrites a file as CRLF

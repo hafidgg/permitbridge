@@ -434,7 +434,7 @@
     "notes": "Valid 90 days, non-renewable; requires no disciplinary history and a complete endorsement application already submitted."
   },
   "compactStatus": {
-    "value": "Florida is an NLC member, but California is not \u2014 the relocating nurse's California license carries no multistate compact privilege, so standard MOBILE Endorsement (not the simplified Multistate License Upgrade path reserved for nurses already holding a compact multistate license) applies, exactly as it would from any other non-compact state.",
+    "value": "Florida is an NLC member, but California is not \u2014 the relocating nurse's California license carries no multistate compact privilege, so standard MOBILE Endorsement applies, exactly as it would from any other non-compact state.",
     "sourceUrl": "https://www.nursecompact.com/",
     "sourceTitle": "Nurse Licensure Compact \u2014 Official Site",
     "sourceName": "NCSBN (National Council of State Boards of Nursing)",
@@ -451,6 +451,14 @@
         "changedAt": "2026-08-20",
         "reason": "Phase 2B pilot: first population from real official-source research.",
         "sourceUrl": "https://www.nursecompact.com/",
+        "reviewer": null
+      },
+      {
+        "previousValue": "Florida is an NLC member, but California is not \u2014 the relocating nurse's California license carries no multistate compact privilege, so standard MOBILE Endorsement (not the simplified Multistate License Upgrade path reserved for nurses already holding a compact multistate license) applies, exactly as it would from any other non-compact state.",
+        "newValue": "Florida is an NLC member, but California is not \u2014 the relocating nurse's California license carries no multistate compact privilege, so standard MOBILE Endorsement applies, exactly as it would from any other non-compact state.",
+        "changedAt": "2026-11-20",
+        "reason": "Removed the parenthetical describing the Multistate License Upgrade as reserved for nurses holding a compact multistate license: Florida's upgrade form requires a current single state Florida license.",
+        "sourceUrl": "https://floridasnursing.gov/applications/multistate-upgrade-app.pdf",
         "reviewer": null
       }
     ],

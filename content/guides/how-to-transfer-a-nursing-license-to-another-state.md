@@ -6,7 +6,7 @@ How you transfer an RN license depends on one thing before anything else: whethe
 - **Both states are active NLC members, and you hold a multistate license:** compact relocation (the 60-day rule, below).
 - **Either state is not an NLC member:** licensure by endorsement in the new state.
 
-Your new state's membership is not enough by itself. For example, Florida is an NLC member but [California is not](https://www.rn.ca.gov/applicants/lic-end), so a California nurse moving to Florida goes through Florida's standard endorsement application. A Texas nurse moving to Florida (both are members) uses Florida's simpler [Multistate License Upgrade application](https://floridasnursing.gov/applications/multistate-upgrade-app.pdf).
+Your new state's membership is not enough by itself. For example, Florida is an NLC member but [California is not](https://www.rn.ca.gov/applicants/lic-end), so a California nurse moving to Florida goes through Florida's standard endorsement application. Florida's [Multistate License Upgrade application](https://floridasnursing.gov/applications/multistate-upgrade-app.pdf) is for nurses who already hold a Florida license: it states, "To apply for a multistate license upgrade you must have a current single state Florida Licensed Practical Nurse (LPN) or Registered Nurse (RN) license." The Florida Board of Nursing pages we read do not name the application a nurse moving to Florida from another compact state should file, so confirm it with the board.
 
 ## Pathway 1: Moving Between Two Compact States
 
@@ -18,7 +18,7 @@ The NLC states that "Nurses who live in a compact state can apply for a multista
 - **Travel nurses on temporary assignments are not covered by the rule,** as long as they keep their primary state of residence. Getting a driver's license or registering to vote in the new state can change your primary state of residence for this purpose.
 - **You will need proof of residency** in the new state. The FAQ says: "Most states will accept that state's driver's license or state ID as acceptable proof of residency."
 
-**Where states differ:** the NLC FAQ calls this application "licensure by endorsement," but individual boards name and process it differently. Florida, for example, uses a dedicated [Multistate License Upgrade](https://floridasnursing.gov/applications/multistate-upgrade-app.pdf) form. Use the form your new board names.
+**Where states differ:** the NLC FAQ calls this application "licensure by endorsement," but individual boards name and process it differently. Use the form your new board names, and if its pages do not name one for your situation, confirm with that board.
 
 ## Pathway 2: Licensure by Endorsement (Any Non-Compact Move)
 
@@ -38,7 +38,7 @@ These items differ from state to state, so we don't give general answers for the
 
 - **Fingerprinting and background checks.** In the state pairs we have sourced, California, Texas, Florida and Illinois each require fingerprinting under their own procedures. For New York we have not yet been able to confirm it from an official source. (The NLC's [uniform licensure requirements](https://www.nursecompact.com/how-it-works/applying-for-licensure.page) do require fingerprint-based background checks for a multistate license.)
 - **Temporary permits.** Some boards issue a temporary license or permit while your application is reviewed, for example [California](https://rn.ca.gov/applicants/lic-temp.shtml) and [Texas](https://www.bon.texas.gov/applications_six_month_permits_and_temporary_licenses.asp.html). Others do not, and the eligibility conditions differ.
-- **Processing time.** Boards differ, and several publish no fixed figure: the [Texas BON's endorsement page](https://www.bon.texas.gov/licensure_endorsement.asp.html), for example, does not state one. Check your destination board's own page.
+- **Processing time.** Boards differ. The Texas BON's [RN endorsement instructions](https://www.bon.texas.gov/pdfs/education_pdfs/education_programs/RN%20END%20US%20INSTRUCTIONS.pdf) state: "Board staff aims to process applications and supplemental items within fifteen (15) business days", counted from "the date the items are received." That is the board's stated aim, not a guarantee. Check your destination board's own page.
 - **Any additional requirements.** These are set entirely by the destination state. Check that state's pair page or its board.
 
 ## Find the Rules for Your Specific Move
@@ -58,5 +58,7 @@ If your state pair isn't listed yet, go directly to your **destination** state's
 
 - NCSBN, [Nurse Licensure Compact](https://www.nursecompact.com/)
 - NCSBN, [Frequently Asked Questions Regarding the Amended NLC Residency Rule (PDF)](https://www.nursecompact.com/files/60_day_rule_faqs.pdf)
+- Florida Board of Nursing, [Multistate License Upgrade Application, DH-MQA 5024 (PDF)](https://floridasnursing.gov/applications/multistate-upgrade-app.pdf)
+- Texas Board of Nursing, [RN Endorsement Application Requirements, Graduates of U.S. Programs, V5.2026 (PDF)](https://www.bon.texas.gov/pdfs/education_pdfs/education_programs/RN%20END%20US%20INSTRUCTIONS.pdf)
 
-Last verified (Nurse Licensure Compact sections): October 30, 2026.
+Last verified: the Nurse Licensure Compact sections on October 30, 2026; the Florida Multistate License Upgrade and Texas processing-time statements on November 20, 2026.

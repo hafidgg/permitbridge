@@ -346,11 +346,11 @@
     "notes": "Not applicable in the same sense as endorsement -- the TX multistate license itself already authorizes practice while the FL upgrade application is pending, per FL's own compact rules."
   },
   "compactStatus": {
-    "value": "Both states are NLC members. A relocating nurse must still submit Florida's simplified 'Multistate License Upgrade' application (not full endorsement) to have Florida become the new home-state license.",
+    "value": "Florida's Multistate License Upgrade application states: \"To apply for a multistate license upgrade you must have a current single state Florida Licensed Practical Nurse (LPN) or Registered Nurse (RN) license.\" The Florida Board of Nursing pages we read do not name the application a compact nurse moving to Florida should file. Confirm with the Florida Board of Nursing before applying.",
     "sourceUrl": "https://floridasnursing.gov/applications/multistate-upgrade-app.pdf",
     "sourceTitle": "Multistate Upgrade Application",
     "sourceName": "Florida Board of Nursing",
-    "verifiedAt": "2026-08-10",
+    "verifiedAt": "2026-11-20",
     "verificationMethod": "official_document_review",
     "reviewer": null,
     "status": "pending_verification",
@@ -364,16 +364,24 @@
         "reason": "Phase 3.1: first population from real official-source research.",
         "sourceUrl": "https://floridasnursing.gov/applications/multistate-upgrade-app.pdf",
         "reviewer": null
+      },
+      {
+        "previousValue": "Both states are NLC members. A relocating nurse must still submit Florida's simplified 'Multistate License Upgrade' application (not full endorsement) to have Florida become the new home-state license.",
+        "newValue": "Florida's Multistate License Upgrade application states: \"To apply for a multistate license upgrade you must have a current single state Florida Licensed Practical Nurse (LPN) or Registered Nurse (RN) license.\" The Florida Board of Nursing pages we read do not name the application a compact nurse moving to Florida should file. Confirm with the Florida Board of Nursing before applying.",
+        "changedAt": "2026-11-20",
+        "reason": "Removed the claim that a relocating compact nurse files Florida's Multistate License Upgrade: the form itself requires a current single state Florida license. Re-read the raw form on 2026-11-20.",
+        "sourceUrl": "https://floridasnursing.gov/applications/multistate-upgrade-app.pdf",
+        "reviewer": null
       }
     ],
     "notes": null
   },
   "exceptions": {
-    "value": "If the Texas-licensed nurse is NOT changing primary residence (e.g. a travel assignment), no Florida application is needed at all -- the multistate license alone suffices. This transfer rule specifically models the RELOCATION scenario (changing primary residence), which does require the upgrade application.",
+    "value": "Florida's Multistate License Upgrade application states that the Nurse Licensure Compact allows a nurse licensed in a Compact State \"to practice across state lines in another Compact State without having to obtain a license in the other state unless the nurse moves and declares the new Compact State as their new primary state of residence.\" For a nurse who moves to Florida, the board's pages we read do not name the application to file; confirm with the Florida Board of Nursing.",
     "sourceUrl": "https://floridasnursing.gov/applications/multistate-upgrade-app.pdf",
     "sourceTitle": "Multistate Upgrade Application",
     "sourceName": "Florida Board of Nursing",
-    "verifiedAt": "2026-08-10",
+    "verifiedAt": "2026-11-20",
     "verificationMethod": "official_document_review",
     "reviewer": null,
     "status": "pending_verification",
@@ -385,6 +393,14 @@
         "newValue": "If the Texas-licensed nurse is NOT changing primary residence (e.g. a travel assignment), no Florida application is needed at all -- the multistate license alone suffices. This transfer rule specifically models the RELOCATION scenario (changing primary residence), which does require the upgrade application.",
         "changedAt": "2026-08-10",
         "reason": "Phase 3.1: first population from real official-source research.",
+        "sourceUrl": "https://floridasnursing.gov/applications/multistate-upgrade-app.pdf",
+        "reviewer": null
+      },
+      {
+        "previousValue": "If the Texas-licensed nurse is NOT changing primary residence (e.g. a travel assignment), no Florida application is needed at all -- the multistate license alone suffices. This transfer rule specifically models the RELOCATION scenario (changing primary residence), which does require the upgrade application.",
+        "newValue": "Florida's Multistate License Upgrade application states that the Nurse Licensure Compact allows a nurse licensed in a Compact State \"to practice across state lines in another Compact State without having to obtain a license in the other state unless the nurse moves and declares the new Compact State as their new primary state of residence.\" For a nurse who moves to Florida, the board's pages we read do not name the application to file; confirm with the Florida Board of Nursing.",
+        "changedAt": "2026-11-20",
+        "reason": "Removed the claim that a relocating compact nurse files Florida's Multistate License Upgrade: the form itself requires a current single state Florida license. Re-read the raw form on 2026-11-20.",
         "sourceUrl": "https://floridasnursing.gov/applications/multistate-upgrade-app.pdf",
         "reviewer": null
       }
