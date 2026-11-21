@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { isKnownGuide } from "@/lib/route-params";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { MarkdownBlock } from "@/components/content/MarkdownBlock";
@@ -15,6 +16,8 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
+  // Unknown params: no data/ lookup (it reads from disk at request time); the not-found page sets its own metadata.
+  if (!isKnownGuide(slug)) return {};
   const guide = getGuideBySlug(slug);
   if (!guide) return {};
   return buildMetadata({ title: guide.title, description: guide.description, path: `/guides/${guide.slug}` });
@@ -22,6 +25,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
 export default async function GuideDetailPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
+  if (!isKnownGuide(slug)) notFound();
   const guide = getGuideBySlug(slug);
   const body = getGuideBody(slug);
   if (!guide || !body) notFound();

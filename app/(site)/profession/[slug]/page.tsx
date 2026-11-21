@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { isKnownProfession } from "@/lib/route-params";
 import { ArrowRight } from "lucide-react";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { FAQSection } from "@/components/home/FAQ";
@@ -33,6 +34,8 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
+  // Unknown params: no data/ lookup (it reads from disk at request time); the not-found page sets its own metadata.
+  if (!isKnownProfession(slug)) return {};
   const profession = getProfessionBySlug(slug);
   if (!profession) return {};
   return buildMetadata({
@@ -44,6 +47,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
 export default async function ProfessionPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
+  if (!isKnownProfession(slug)) notFound();
   const profession = getProfessionBySlug(slug);
   if (!profession) notFound();
 
