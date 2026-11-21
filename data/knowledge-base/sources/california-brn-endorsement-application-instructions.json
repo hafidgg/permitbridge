@@ -1,0 +1,19 @@
+{
+  "id": "california-brn-endorsement-application-instructions",
+  "agencyName": "California Board of Registered Nursing (BRN)",
+  "website": "https://www.rn.ca.gov/pdfs/applicants/end-app.pdf",
+  "jurisdiction": "california",
+  "professionsCovered": [
+    "registered-nurse"
+  ],
+  "sourceType": "official-board",
+  "official": true,
+  "authorityLevel": "authoritative",
+  "authorityRationale": "BRN's own Licensure by Endorsement application instructions (PDF), linked from its Licensure by Endorsement page. Read directly 2026-11-21 (HTTP 200, PDF): Endorsement Application Requirements Checklist, 'Applicants must provide the following:' ... 'Transcripts sent directly from your school of nursing.'",
+  "specificity": "profession-specific",
+  "reliabilityScore": 0.9,
+  "reliabilityRationale": "Official primary document from the licensing board itself, read directly on 2026-11-21.",
+  "lastCrawl": null,
+  "lastManualVerification": "2026-11-21",
+  "fieldsUsingThisSource": 0
+}

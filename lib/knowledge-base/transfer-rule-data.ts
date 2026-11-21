@@ -27,7 +27,7 @@ import { dataDirExists } from "../data-dir";
 import type { TransferRule, TransferRuleFactFieldKey } from "@/types/transfer-rule";
 import type { SourceRecord } from "@/types/knowledge-base";
 import { loadAllSources } from "./sources";
-import { buildTransferRuleSlug, parseTransferRuleSlug, validateTransferRule } from "./transfer-rule-schema";
+import { buildTransferRuleSlug, parseTransferRuleSlug, validateTransferRule, assertAdditionalSourcesAuthoritative } from "./transfer-rule-schema";
 import { classifyTransferRuleCoverage, isTransferRulePublishable, CRITICAL_TRANSFER_RULE_FIELDS, getSecondarySourcedFields } from "./transfer-review";
 
 import { applyDisplayHolds } from "@/lib/knowledge-base/display-hold";
@@ -119,6 +119,8 @@ export function getPublicTransferRule(profession: string, transferSlug: string):
 
   const sources = loadAllSources();
   const sourceByUrl = new Map(sources.map((s) => [s.website, s]));
+  // Throws (failing the build) on any additional source that isn't a registered authoritative one.
+  assertAdditionalSourcesAuthoritative(rule, (url) => sourceByUrl.get(url), filePath);
   const { publishable } = isTransferRulePublishable(rule, (url) => sourceByUrl.get(url), KNOWN_PROFESSION_SLUGS);
   if (!publishable) return undefined;
 

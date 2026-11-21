@@ -25,7 +25,7 @@ import { classifyIntent } from "../../lib/traffic/intent-classifier";
 import { matchExistingPage, buildOpportunity, buildOpportunityQueue } from "../../lib/traffic/opportunity-engine";
 import { compareSnapshots } from "../../lib/integrations/google-search-console/alerts";
 import type { ConflictSourceSnapshot } from "../../types/knowledge-base";
-import { buildTransferRuleSlug, parseTransferRuleSlug, validateTransferRule, isTransferRuleValid } from "../../lib/knowledge-base/transfer-rule-schema";
+import { buildTransferRuleSlug, parseTransferRuleSlug, validateTransferRule, isTransferRuleValid, additionalSourceProblems, assertAdditionalSourcesAuthoritative } from "../../lib/knowledge-base/transfer-rule-schema";
 import {
   SYNTHETIC_TRANSFER_CA_TO_TX,
   SYNTHETIC_TRANSFER_TX_TO_CA,
@@ -544,7 +544,8 @@ await test("source reconciliation sum check passes: officialReferenced + seconda
   assert(recon.sumCheckPasses, `expected sumCheck (${recon.sumCheck}) to equal totalSourceRecords (${recon.totalSourceRecords})`);
   // 2026-10-22: +3 RN sources (california-brn-fee-schedule, california-brn-1410-5-oal-approval, ncsbn-nlc-60-day-rule-faq) = 87.
   // 2026-11-21 (Phase 3b): +3 RN sources (california-brn-verifications, texas-bon-enlc, texas-bon-compact-with-texans) = 90.
-  assertEqual(recon.totalSourceRecords, 90, "expected 90 total source records (87 + 3 RN sources registered 2026-11-21; 84 + 3 RN sources registered 2026-10-22; 81 after Phase 2B.3 + 3 new: florida-nurse-rn-lpn-page, florida-mobile-endorsement-form, florida-endorsement-transaction-form, Phase 2B.4)");
+  // 2026-11-21 (Commit C): +1 california-brn-endorsement-application-instructions (BRN end-app.pdf) = 91.
+  assertEqual(recon.totalSourceRecords, 91, "expected 91 total source records (90 + california-brn-endorsement-application-instructions, 2026-11-21; 87 + 3 RN sources registered 2026-11-21; 84 + 3 RN sources registered 2026-10-22; 81 after Phase 2B.3 + 3 new: florida-nurse-rn-lpn-page, florida-mobile-endorsement-form, florida-endorsement-transaction-form, Phase 2B.4)");
 });
 
 await test("trust dashboard's fieldsUsingAuthoritativeSources/fieldsUsingSecondarySources exactly match the independently-computed field reconciliation", () => {
@@ -1137,7 +1138,8 @@ await test("10. Reconciliation remains consistent after the rename", () => {
   const sourceRecon = computeSourceReconciliation();
   assert(sourceRecon.sumCheckPasses, "source reconciliation sum check must still pass");
   // 2026-11-21 (Phase 3b): 90 after three more RN sources (california-brn-verifications, texas-bon-enlc, texas-bon-compact-with-texans).
-  assertEqual(sourceRecon.totalSourceRecords, 90, "source record count (90 after 2026-11-21's 3 RN sources; 87 after 2026-10-22's 3 RN sources) as of this test's original writing (Phase 2.7) — grew further in Phase 3.1, Phase 2B.2, Phase 2B.3, and Phase 2B.4, which is expected and not a rename-related regression; this assertion documents Phase 2.7's own baseline moment, now updated to avoid false-failing on later legitimate growth");
+  // 2026-11-21 (Commit C): 91 after california-brn-endorsement-application-instructions.
+  assertEqual(sourceRecon.totalSourceRecords, 91, "source record count (91 after 2026-11-21's end-app.pdf source; 90 after 2026-11-21's 3 RN sources; 87 after 2026-10-22's 3 RN sources) as of this test's original writing (Phase 2.7) — grew further in Phase 3.1, Phase 2B.2, Phase 2B.3, and Phase 2B.4, which is expected and not a rename-related regression; this assertion documents Phase 2.7's own baseline moment, now updated to avoid false-failing on later legitimate growth");
 });
 
 // ---------------------------------------------------------------------
@@ -1484,7 +1486,8 @@ await test("Trust Dashboard metrics reconcile: total sources grew from 88 to 121
   // 2026-10-22 batch 2: +3 = 137 -- BRN fee schedule, OAL approval of 16 CCR 1410.5, NCSBN 60-day-rule FAQ.
   // 2026-11-21: +1 = 138 -- florida-statute-489-105 (F.S. 489.105, 2026 edition, read on flsenate.gov 2026-11-21).
   // 2026-11-21 (Phase 3b): +3 = 141 -- california-brn-verifications, texas-bon-enlc, texas-bon-compact-with-texans (each read directly 2026-11-21).
-  assertEqual(sources.length, 141, "expected 141 total sources (138 + california-brn-verifications, texas-bon-enlc, texas-bon-compact-with-texans, 2026-11-21; 137 + florida-statute-489-105, 2026-11-21; 134 + 3 RN sources, 2026-10-22; 122 + 9 OCILB reciprocity applications + 3 CSLB documents, 2026-10-22; 121 below + texas-tsbpe-louisiana-reciprocity): 88 + 4 Texas (Phase 2F.2) + 2 Arkansas + 5 Minnesota + 4 Utah (utah-oregon-reciprocal-agreement, utah-admin-code-r156-1-302, utah-dopl-master-electrician-endorsement-page, utah-dopl-journeyman-electrician-endorsement-page) + 1 Wyoming (wyoming-wsfm-electrical-licensing) + 4 Iowa (iowa-dial-electrical-licensing, iowa-dial-reciprocal-agreements-pdf, iowa-admin-code-481-401, iowa-admin-code-481-403) + 6 trade-transfer sources (florida-dbpr-cilb-10-endorsement, ohio-ocilb-out-of-state-testing-application, texas-tdlr-acr-contractor-application, texas-tsbpe-out-of-state-examination, california-cslb-reciprocity-requirements, california-cslb-reciprocal-classifications) + 5 origin-side trade sources (florida-dbpr-cilb-32-reciprocity, florida-fac-61g4-15-001, texas-tsbpe-administrative-rules-march-2026, california-cslb-c36-classification, california-cslb-c20-classification) + 1 Texas state-page source (texas-tdlr-removing-barriers-summary) + virginia-dpor-ulr (2026-10-09, Virginia ULR field)");
+  // 2026-11-21 (Commit C): +1 = 142 -- california-brn-endorsement-application-instructions (BRN end-app.pdf, read directly 2026-11-21).
+  assertEqual(sources.length, 142, "expected 142 total sources (141 + california-brn-endorsement-application-instructions, 2026-11-21; 138 + california-brn-verifications, texas-bon-enlc, texas-bon-compact-with-texans, 2026-11-21; 137 + florida-statute-489-105, 2026-11-21; 134 + 3 RN sources, 2026-10-22; 122 + 9 OCILB reciprocity applications + 3 CSLB documents, 2026-10-22; 121 below + texas-tsbpe-louisiana-reciprocity): 88 + 4 Texas (Phase 2F.2) + 2 Arkansas + 5 Minnesota + 4 Utah (utah-oregon-reciprocal-agreement, utah-admin-code-r156-1-302, utah-dopl-master-electrician-endorsement-page, utah-dopl-journeyman-electrician-endorsement-page) + 1 Wyoming (wyoming-wsfm-electrical-licensing) + 4 Iowa (iowa-dial-electrical-licensing, iowa-dial-reciprocal-agreements-pdf, iowa-admin-code-481-401, iowa-admin-code-481-403) + 6 trade-transfer sources (florida-dbpr-cilb-10-endorsement, ohio-ocilb-out-of-state-testing-application, texas-tdlr-acr-contractor-application, texas-tsbpe-out-of-state-examination, california-cslb-reciprocity-requirements, california-cslb-reciprocal-classifications) + 5 origin-side trade sources (florida-dbpr-cilb-32-reciprocity, florida-fac-61g4-15-001, texas-tsbpe-administrative-rules-march-2026, california-cslb-c36-classification, california-cslb-c20-classification) + 1 Texas state-page source (texas-tdlr-removing-barriers-summary) + virginia-dpor-ulr (2026-10-09, Virginia ULR field)");
   const secondarySources = sources.filter((s) => s.authorityLevel === "supplementary");
   assert(secondarySources.length >= 5, "expected at least the 5 secondary discovery-only sources registered in Phase 3.1");
 });
@@ -1639,6 +1642,30 @@ await test("reviewer history is preserved: approving a field appends to history 
   assertEqual(result.updatedField.history[0], SCENARIO_1_FIELD_TO_APPROVE.history[0], "original history entries must be preserved unchanged");
 });
 
+// 2026-11-21: additionalSources must be registered, authoritative, destination-state sources, or loading the rule throws.
+await test("[PERMANENT] additionalSources: an unregistered, supplementary or wrong-jurisdiction additional source throws (build fails); real rules pass", () => {
+  const base = loadRealRule("texas-to-california.json");
+  const supplementary = sources.find((s) => s.authorityLevel === "supplementary");
+  const otherState = sources.find((s) => s.authorityLevel === "authoritative" && s.jurisdiction !== "california" && s.jurisdiction !== "national" && s.jurisdiction !== "federal");
+  assert(Boolean(supplementary && otherState), "fixture sources must exist");
+  const withExtra = (url: string, key: "documentsRequired" | "processingTime" | "applicationFeeUsd" = "documentsRequired"): TransferRule => {
+    const rule = JSON.parse(JSON.stringify(base));
+    rule[key] = { ...rule[key], additionalSources: [{ sourceUrl: url, sourceTitle: "fixture" }] };
+    return rule;
+  };
+  const throws = (rule: TransferRule) => { try { assertAdditionalSourcesAuthoritative(rule, realResolveSource, "fixture.json"); return false; } catch { return true; } };
+  assert(throws(withExtra("https://example.com/not-registered")), "an unregistered additional source must throw");
+  assert(throws(withExtra(supplementary!.website)), "a supplementary additional source must throw");
+  // The board-only rule (fee, exam, experience, processing time) holds for additional sources: supplementary is rejected on any field.
+  assert(throws(withExtra(supplementary!.website, "processingTime")), "a supplementary additional source on processingTime must throw");
+  assert(throws(withExtra(supplementary!.website, "applicationFeeUsd")), "a supplementary additional source on applicationFeeUsd must throw");
+  assert(throws(withExtra(otherState!.website)), "an additional source from another state's board must throw");
+  assert(!throws(withExtra("https://www.rn.ca.gov/pdfs/applicants/end-app.pdf")), "a registered authoritative California source must pass");
+  for (const file of fs.readdirSync(REAL_TRANSFER_RULES_DIR).filter((f) => f.endsWith(".json"))) {
+    assertEqual(additionalSourceProblems(loadRealRule(file), realResolveSource), [], `${file}: every real additional source must be registered and authoritative`);
+  }
+});
+
 await test("real production data (5 real transfer rules) untouched by Phase 3.2 — checksums match pre-phase snapshot", () => {
   const dir = path.join(process.cwd(), "data", "knowledge-base", "transfer-rules", "registered-nurse");
   const crypto = require("node:crypto");
@@ -1657,7 +1684,10 @@ await test("real production data (5 real transfer rules) untouched by Phase 3.2 
     // Re-pinned 2026-11-21: TX->CA temporaryPermitAvailability -> "available" with BRN lic-end's verbatim sentence (optional,
     // not required); documentsRequired -> lic-end's verbatim "All applicants must provide" list; reciprocityAgreementExists ->
     // Unknown (no BRN page states it).
-    "texas-to-california.json": "5584929309addb928f1c2b8d05b182dd",
+    // Re-pinned 2026-11-21 (Commit C): TX->CA documentsRequired adds the verbatim transcripts line from BRN's endorsement
+    // application instructions (end-app.pdf) beside the lic-end list.
+    // Re-pinned again 2026-11-21 (Commit C): documentsRequired.additionalSources links the newly registered end-app.pdf source.
+    "texas-to-california.json": "1294cb8fa028236249d26ff9534d7e4c",
     // Re-pinned 2026-11-20: TX->FL compactStatus and exceptions no longer say a relocating compact nurse files
     // Florida's Multistate License Upgrade (the form requires a current single state Florida license).
     "texas-to-florida.json": "0782f220b28e20655a1dc27a74c6102d",

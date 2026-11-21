@@ -78,6 +78,34 @@ const ALL_VERIFIED_FIELD_KEYS: TransferRuleFactFieldKey[] = [
  * SourceRecord catalog (or a synthetic one, for fixture tests) without
  * this module needing to know how sources are loaded.
  */
+/**
+ * additionalSources entries are held to a stricter rule than a field's main sourceUrl: each must resolve to a
+ * registered SourceRecord with authorityLevel "authoritative" and a jurisdiction matching destinationState
+ * (or national/federal). Anything else throws, so the build fails instead of rendering an unsupported link.
+ * Because a supplementary source is never accepted here, the board-only rule for fee, exam, experience and
+ * processing-time fields holds for additional sources by construction. Returns the problems found ([] = ok).
+ */
+export function additionalSourceProblems(rule: TransferRule, resolveSource: (url: string) => SourceRecord | undefined): string[] {
+  const problems: string[] = [];
+  for (const [key, field] of Object.entries(rule)) {
+    const extra = (field as { additionalSources?: { sourceUrl: string }[] } | null)?.additionalSources;
+    if (!Array.isArray(extra)) continue;
+    for (const { sourceUrl } of extra) {
+      const source = sourceUrl ? resolveSource(sourceUrl) : undefined;
+      if (!source) problems.push(`${key}: additional source ${sourceUrl} is not a registered SourceRecord`);
+      else if (source.authorityLevel !== "authoritative") problems.push(`${key}: additional source ${sourceUrl} is ${source.authorityLevel}, not authoritative`);
+      else if (source.jurisdiction !== "national" && source.jurisdiction !== "federal" && source.jurisdiction !== rule.destinationState)
+        problems.push(`${key}: additional source ${sourceUrl} jurisdiction "${source.jurisdiction}" does not match destinationState "${rule.destinationState}"`);
+    }
+  }
+  return problems;
+}
+
+export function assertAdditionalSourcesAuthoritative(rule: TransferRule, resolveSource: (url: string) => SourceRecord | undefined, file: string): void {
+  const problems = additionalSourceProblems(rule, resolveSource);
+  if (problems.length) throw new Error(`${file}: ${problems.join("; ")}`);
+}
+
 export function validateTransferRule(
   rule: TransferRule,
   resolveSource: (sourceUrl: string) => SourceRecord | undefined,

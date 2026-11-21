@@ -244,6 +244,10 @@ export default async function TransferRulePage({ params }: { params: Promise<Pag
   const held = new Set(rule.heldFields ?? []);
   const unpublishedLabels = [...criticalFields, ...supportingFields].filter((k) => isUnpublished(k) && !held.has(k)).map((k) => FIELD_LABELS[k]);
   const heldLabels = [...criticalFields, ...supportingFields].filter((k) => held.has(k)).map((k) => FIELD_LABELS[k]);
+  // Extra sources a field quotes. getPublicTransferRule has already thrown on any that isn't a registered
+  // authoritative source (assertAdditionalSourcesAuthoritative), so every entry here is safe to link.
+  const extraSources = (key: (typeof ALL_TRANSFER_FIELD_KEYS)[number]) =>
+    ((rule[key] as VerifiedField<unknown>).additionalSources ?? []).map((s) => ({ url: s.sourceUrl, title: s.sourceTitle }));
   const board = rule.transferMechanism.sourceUrl ? getSourceByUrl(rule.transferMechanism.sourceUrl) : undefined;
 
   const otherTransfers = getAllPublicTransferRuleSlugs().filter((s) => s.transfer !== resolvedParams.transfer);
@@ -332,6 +336,7 @@ export default async function TransferRulePage({ params }: { params: Promise<Pag
                 isCritical
                 field={rule[key] as VerifiedField<unknown>}
                 source={(rule[key] as VerifiedField<unknown>).sourceUrl ? getSourceByUrl((rule[key] as VerifiedField<unknown>).sourceUrl!) : undefined}
+                additionalSources={extraSources(key)}
                 valueFormatter={key === "applicationFeeUsd" ? (v) => formatUsd(v as number) : key === "transferMechanism" ? (v) => MECHANISM_LABEL[v as string] ?? String(v) : undefined}
               />
             ))}
@@ -349,6 +354,7 @@ export default async function TransferRulePage({ params }: { params: Promise<Pag
                 label={FIELD_LABELS[key]}
                 field={rule[key] as VerifiedField<unknown>}
                 source={(rule[key] as VerifiedField<unknown>).sourceUrl ? getSourceByUrl((rule[key] as VerifiedField<unknown>).sourceUrl!) : undefined}
+                additionalSources={extraSources(key)}
               />
             ))}
           </div>

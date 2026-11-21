@@ -304,7 +304,7 @@
     "notes": "Nursys Verification Application, or the Verification of License form for non-Nursys states."
   },
   "documentsRequired": {
-    "value": "BRN\u2019s Licensure by Endorsement page states: \u201cAll applicants must provide the following items: Completed fingerprints using either Live Scan or fingerprint card (Hard Card) processing method\u201d; \u201cCompleted \"Verification of License\" form or Nursys\u00ae Verification Application if your board of nursing participates in Nursys\u00ae.\u201d; \u201cIf applicable, documents and/or letters explaining prior convictions or disciplinary action and attesting to your rehabilitation\u201d.",
+    "value": "BRN\u2019s Licensure by Endorsement page states: \u201cAll applicants must provide the following items: Completed fingerprints using either Live Scan or fingerprint card (Hard Card) processing method\u201d; \u201cCompleted \"Verification of License\" form or Nursys\u00ae Verification Application if your board of nursing participates in Nursys\u00ae.\u201d; \u201cIf applicable, documents and/or letters explaining prior convictions or disciplinary action and attesting to your rehabilitation\u201d. BRN\u2019s Licensure by Endorsement application instructions (end-app.pdf) state: \u201cApplicants must provide the following:\u201d \u2026 \u201cTranscripts sent directly from your school of nursing.\u201d",
     "sourceUrl": "https://www.rn.ca.gov/applicants/lic-end",
     "sourceTitle": "Licensure by Endorsement",
     "sourceName": "California Board of Registered Nursing (BRN)",
@@ -330,9 +330,23 @@
         "reason": "2026-11-21: replaced with the verbatim 'All applicants must provide the following items' list from BRN's Licensure by Endorsement page, read raw 2026-11-21 (the page mentions transcripts only for international applicants). Same value on texas-to-california and new-york-to-california.",
         "sourceUrl": "https://www.rn.ca.gov/applicants/lic-end",
         "reviewer": null
+      },
+      {
+        "previousValue": "BRN\u2019s Licensure by Endorsement page states: \u201cAll applicants must provide the following items: Completed fingerprints using either Live Scan or fingerprint card (Hard Card) processing method\u201d; \u201cCompleted \"Verification of License\" form or Nursys\u00ae Verification Application if your board of nursing participates in Nursys\u00ae.\u201d; \u201cIf applicable, documents and/or letters explaining prior convictions or disciplinary action and attesting to your rehabilitation\u201d.",
+        "newValue": "BRN\u2019s Licensure by Endorsement page states: \u201cAll applicants must provide the following items: Completed fingerprints using either Live Scan or fingerprint card (Hard Card) processing method\u201d; \u201cCompleted \"Verification of License\" form or Nursys\u00ae Verification Application if your board of nursing participates in Nursys\u00ae.\u201d; \u201cIf applicable, documents and/or letters explaining prior convictions or disciplinary action and attesting to your rehabilitation\u201d. BRN\u2019s Licensure by Endorsement application instructions (end-app.pdf) state: \u201cApplicants must provide the following:\u201d \u2026 \u201cTranscripts sent directly from your school of nursing.\u201d",
+        "changedAt": "2026-11-21",
+        "reason": "2026-11-21 (later the same day): added the transcripts line from BRN's Licensure by Endorsement application instructions (https://www.rn.ca.gov/pdfs/applicants/end-app.pdf), read raw 2026-11-21, quoted beside the lic-end list (lic-end re-read raw 2026-11-21). Correction to the previous entry: its parenthetical 'the page mentions transcripts only for international applicants' was wrong -- lic-end also tells out-of-state program graduates how to send transcripts.",
+        "sourceUrl": "https://www.rn.ca.gov/applicants/lic-end",
+        "reviewer": null
       }
     ],
-    "notes": null
+    "notes": null,
+    "additionalSources": [
+      {
+        "sourceUrl": "https://www.rn.ca.gov/pdfs/applicants/end-app.pdf",
+        "sourceTitle": "BRN Licensure by Endorsement application instructions"
+      }
+    ]
   },
   "goodStandingRequirement": {
     "value": {

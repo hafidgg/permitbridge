@@ -98,6 +98,13 @@ export interface VerifiedField<T> {
    * "Unknown" and list the field as held, and pages say it is being re-checked, not that the board doesn't publish it.
    */
   displayHold?: string;
+
+  /**
+   * Further sources that state part of this field's value verbatim (the value names each one). Each must be a
+   * registered, authoritative SourceRecord for the destination state, or loading the rule throws (build fails):
+   * see assertAdditionalSourcesAuthoritative in lib/knowledge-base/transfer-rule-schema.ts.
+   */
+  additionalSources?: { sourceUrl: string; sourceTitle: string }[];
 }
 
 /** When two official-ish sources disagree on a fact, record both rather than picking one. */

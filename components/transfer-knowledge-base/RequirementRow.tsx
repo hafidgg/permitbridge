@@ -20,12 +20,15 @@ export function RequirementRow({
   isCritical,
   field,
   source,
+  additionalSources = [],
   valueFormatter,
 }: {
   label: string;
   isCritical?: boolean;
   field: VerifiedField<unknown>;
   source: SourceRecord | undefined;
+  /** Registered sources only (the page filters); each is linked under its own title. */
+  additionalSources?: { url: string; title: string }[];
   valueFormatter?: (value: unknown) => string;
 }) {
   // Unknown fields are listed once on the page ("Not published by the board: ..."), not as rows.
@@ -83,6 +86,14 @@ export function RequirementRow({
         ) : (
           <span>Source: {field.sourceTitle ?? "not recorded"}</span>
         )}
+        {additionalSources.map((s) => (
+          <span key={s.url}>
+            Also:{" "}
+            <a href={s.url} target="_blank" rel="noopener noreferrer nofollow" className="text-primary hover:underline">
+              {s.title}
+            </a>
+          </span>
+        ))}
         {isSecondary && (
           <Badge variant="outline" className="border-warning text-warning">
             Secondary Source
