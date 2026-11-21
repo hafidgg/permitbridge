@@ -128,6 +128,30 @@ export function getAllGuides(): GuideSummary[] {
       searchKeywords: ["nurse", "registered nurse", "RN", "Florida", "endorsement", "MOBILE", "multistate", "compact"],
       linkedFrom: ["/profession/nurse", "/registered-nurse/california-to-florida"],
     },
+    {
+      slug: "iowa-electrical-license-out-of-state",
+      title: "Iowa Electrical License for Out-of-State Electricians: Agreements, Rules and Fees",
+      description:
+        "Iowa Electrical Examining Board: the 13 reciprocal agreements, rule 481—401 conditions including 16,000 hours or apprenticeship, the testing route, fees and continuing education.",
+      category: "State Guide",
+      publishedAt: "2026-11-20",
+      updatedAt: "2026-11-20",
+      readingMinutes: 5,
+      searchKeywords: ["electrician", "Iowa", "DIAL", "journeyman", "master", "reciprocity", "Electrical Examining Board"],
+      linkedFrom: ["/profession/electrician", "/electrician/iowa"],
+    },
+    {
+      slug: "illinois-rn-license-by-endorsement",
+      title: "Illinois RN License by Endorsement: What IDFPR's Application Requires",
+      description:
+        "IDFPR endorsement for RNs licensed elsewhere: the $50 fee, the six-month temporary permit, Nursys verification, the 60-day fingerprint window and the three-year application limit.",
+      category: "State Guide",
+      publishedAt: "2026-11-20",
+      updatedAt: "2026-11-20",
+      readingMinutes: 4,
+      searchKeywords: ["nurse", "registered nurse", "RN", "Illinois", "IDFPR", "endorsement", "temporary permit", "Nursys"],
+      linkedFrom: ["/profession/nurse", "/registered-nurse/georgia-to-illinois"],
+    },
   ];
 }
 

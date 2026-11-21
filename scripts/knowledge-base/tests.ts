@@ -5811,22 +5811,22 @@ await test("[PERMANENT] sitemap floor: the post-consolidation sitemap passes, an
     ...Array.from({ length: 5 }, (_, i) => `${S}/profession/p${i}`),
     ...Array.from({ length: 5 }, (_, i) => `${S}/state/s${i}`),
     ...Array.from({ length: 6 }, (_, i) => `${S}/transfer/x/a${i}/b`),
-    ...Array.from({ length: 10 }, (_, i) => `${S}/guides/g${i}`), // 10 since 2026-11-20 (three guides added)
+    ...Array.from({ length: 12 }, (_, i) => `${S}/guides/g${i}`), // 12 since 2026-11-20 (Iowa and Illinois guides added)
     ...Array.from({ length: 6 }, (_, i) => `${S}/registered-nurse/a${i}-to-b`), // 6 since 2026-10-22 (IL->GA withdrawn)
     ...states.map((s) => `${S}/hvac-technician/${s}`),
     ...states.map((s) => `${S}/plumber/${s}`),
     ...Array.from({ length: 8 }, (_, i) => `${S}/electrician/e${i}`),
   ];
-  assertEqual(base.length, 58, "fixture mirrors the real sitemap (58 since three guides were added, 2026-11-20)");
+  assertEqual(base.length, 60, "fixture mirrors the real sitemap (60 since the Iowa and Illinois guides were added, 2026-11-20)");
   assertEqual(checkSitemapFloor(base).join("; "), "", "the real post-consolidation shape passes");
   const without = (re: RegExp) => { const i = base.findIndex((u) => re.test(u)); return base.filter((_, j) => j !== i); };
-  assert(checkSitemapFloor(without(/\/guides\//)).some((p: string) => p.includes("guide URLs")), "9 guide pages must fail");
+  assert(checkSitemapFloor(without(/\/guides\//)).some((p: string) => p.includes("guide URLs")), "11 guide pages must fail");
   assert(checkSitemapFloor(without(/\/transfer\//)).some((p: string) => p.includes("/transfer URLs")), "5 /transfer pages must fail");
   assert(checkSitemapFloor(without(/registered-nurse/)).some((p: string) => p.includes("knowledgeBaseTransfer")), "5 RN pages must fail");
   assert(checkSitemapFloor(without(/\/hvac-technician\//)).some((p: string) => p.includes("/hvac-technician/")), "3 HVAC summary pages must fail");
   assert(checkSitemapFloor(without(/\/plumber\//)).some((p: string) => p.includes("/plumber/")), "3 plumber summary pages must fail");
   assert(checkSitemapFloor(base.filter((u) => !/\/electrician\//.test(u))).some((p: string) => p.includes('"singleStateProfession" is empty')), "no electrician pages must fail");
-  assert(checkSitemapFloor(base.slice(0, 55)).some((p: string) => p.includes("floor 56")), "55 URLs must fail the total");
+  assert(checkSitemapFloor(base.slice(0, 57)).some((p: string) => p.includes("floor 58")), "57 URLs must fail the total");
 });
 
 // 2026-10-22: trade summary pages can carry destination-level facts (data/trade-state-notes/), e.g. how TSBPE

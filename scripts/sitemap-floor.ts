@@ -22,9 +22,10 @@
  * and the RN floor is 6; the total floor stays 50.
  * 2026-10-30: four guides added (55 URLs). Total floor raised 50 -> 53; guide floor set at the real count, 7.
  * 2026-11-20: three guides added (58 URLs). Total floor raised 53 -> 56; guide floor set at the real count, 10.
+ * Later on 2026-11-20: Iowa electrical and Illinois RN guides added (60 URLs). Total floor 56 -> 58; guide floor 12.
  */
 
-export const MIN_TOTAL_URLS = 56;
+export const MIN_TOTAL_URLS = 58;
 export const MIN_TRANSFER_URLS = 6;
 
 /** Per-group floors, at the real count. A group not listed here only has to be non-empty. */
@@ -33,7 +34,8 @@ export const MIN_GROUP_URLS: Readonly<Partial<Record<SitemapGroup, number>>> = {
   knowledgeBaseTransfer: 6,
   // 3 -> 7 on 2026-10-30: California C-36, Texas TSBPE, journeyman electrician and HVAC reciprocity guides.
   // 7 -> 10 on 2026-11-20: Ohio OCILB reciprocity, Texas RN endorsement and Florida RN endorsement vs upgrade guides.
-  guide: 10,
+  // 10 -> 12 later on 2026-11-20: Iowa electrical license for out-of-state electricians and Illinois RN endorsement guides.
+  guide: 12,
 };
 
 /** Trade summary pages per profession (/hvac-technician/{state}, /plumber/{state}), at the real count. */
