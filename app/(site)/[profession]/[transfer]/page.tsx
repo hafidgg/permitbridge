@@ -11,6 +11,8 @@ import { TrustMethodologySection } from "@/components/transfer-knowledge-base/Tr
 import { ColoradoElectricianContent } from "@/components/electrician-state/ColoradoElectricianContent";
 import { TexasNotListedSection } from "@/components/electrician-state/TexasNotListedSection";
 import { RelatedGuides } from "@/components/content/RelatedGuides";
+import { PairNotesSection } from "@/components/content/PairNotesSection";
+import { getPairNotes } from "@/lib/pair-notes";
 import { getAllPublicTransferRuleSlugs, getPublicTransferRule, getSourceByUrl, summarizeEvidence, CRITICAL_TRANSFER_RULE_FIELDS, ALL_TRANSFER_FIELD_KEYS } from "@/lib/knowledge-base/transfer-rule-data";
 import { getElectricianStatePageData, getAllSingleStateProfessionSlugs, SUPPORTED_ELECTRICIAN_STATES } from "@/lib/knowledge-base/electrician-state-data";
 import { getAllStates, getAllProfessions, getGuideBySlug, NURSE_TRANSFER_GUIDE_SLUG } from "@/lib/data";
@@ -359,6 +361,11 @@ export default async function TransferRulePage({ params }: { params: Promise<Pag
             </p>
           )}
         </section>
+
+        {(() => {
+          const pairNotes = getPairNotes(rule.profession, rule.sourceState, rule.destinationState);
+          return pairNotes ? <PairNotesSection notes={pairNotes} /> : null;
+        })()}
 
         {/* Trust & Methodology */}
         <div className="mt-10">

@@ -1,0 +1,19 @@
+{
+  "id": "california-brn-verifications",
+  "agencyName": "California Board of Registered Nursing (BRN)",
+  "website": "https://www.rn.ca.gov/licensees/verifications.shtml",
+  "jurisdiction": "california",
+  "professionsCovered": [
+    "registered-nurse"
+  ],
+  "sourceType": "official-board",
+  "official": true,
+  "authorityLevel": "authoritative",
+  "authorityRationale": "BRN's own 'Verification of California Licensure' page. Read directly 2026-11-21 (HTTP 200, HTML): 'If you are currently a California RN or previously held a California RN license and are seeking licensure: In another state, you may submit your request via Nursys®.'",
+  "specificity": "profession-specific",
+  "reliabilityScore": 0.9,
+  "reliabilityRationale": "Official primary page from the licensing board itself, read directly on 2026-11-21.",
+  "lastCrawl": null,
+  "lastManualVerification": "2026-11-21",
+  "fieldsUsingThisSource": 0
+}

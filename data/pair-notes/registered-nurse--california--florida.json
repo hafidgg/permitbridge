@@ -1,0 +1,31 @@
+{
+  "_comment": "Pair-specific facts for this page. Every quote is verbatim from the raw official source read on sourcesReadOn; each sourceUrl must be a registered, non-supplementary source (lib/pair-notes.ts).",
+  "heading": "Verifying a California license for Florida",
+  "sourcesReadOn": "2026-11-21",
+  "items": [
+    {
+      "label": "California's verification route",
+      "text": "The California Board of Registered Nursing tells current and former California RNs:",
+      "quote": "If you are currently a California RN or previously held a California RN license and are seeking licensure: In another state, you may submit your request via Nursys®.",
+      "sourceUrl": "https://www.rn.ca.gov/licensees/verifications.shtml"
+    },
+    {
+      "label": "Advanced practice certifications",
+      "text": "The same page adds:",
+      "quote": "Advanced Practice certifications will not be included with RN license verification requested via Nursys.",
+      "sourceUrl": "https://www.rn.ca.gov/licensees/verifications.shtml"
+    },
+    {
+      "label": "What Florida asks for",
+      "text": "Florida's endorsement checklist states:",
+      "quote": "Verification of every license you hold or have held is required.",
+      "sourceUrl": "https://floridasnursing.gov/forms/sd-nursing-endorsement-transaction.pdf"
+    },
+    {
+      "label": "Fingerprints",
+      "text": "The checklist also states that \"All applicants are required to be background screened\" and tells applicants to use the Florida",
+      "quote": "Board of Nursing ORI number when getting your prints taken- EDOH4420Z",
+      "sourceUrl": "https://floridasnursing.gov/forms/sd-nursing-endorsement-transaction.pdf"
+    }
+  ]
+}

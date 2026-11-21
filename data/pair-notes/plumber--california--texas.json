@@ -1,0 +1,28 @@
+{
+  "_comment": "Pair-specific facts for this page. Every quote is verbatim from the raw official source read on sourcesReadOn; each sourceUrl must be a registered, non-supplementary source (lib/pair-notes.ts).",
+  "heading": "What California's C-36 license covers",
+  "sourcesReadOn": "2026-11-21",
+  "items": [
+    {
+      "label": "C-36 scope",
+      "text": "CSLB's C-36 Plumbing Contractor classification reads:",
+      "quote": "A plumbing contractor provides a means for a supply of safe water, ample in volume and of suitable temperature for the purpose intended and the proper disposal of fluid waste from the premises in all structures and fixed works.",
+      "cite": "16 CCR Division 8, Article 3",
+      "sourceUrl": "https://www.cslb.ca.gov/about_us/library/licensing_classifications/Licensing_Classifications_Detail.aspx?Class=C36"
+    },
+    {
+      "label": "Gases and liquids",
+      "text": "The classification includes:",
+      "quote": "Piping, storage tanks and venting for a safe and adequate supply of gases and liquids for any purpose, including vacuum, compressed air and gases for medical, dental, commercial and industrial uses",
+      "cite": "16 CCR Division 8, Article 3",
+      "sourceUrl": "https://www.cslb.ca.gov/about_us/library/licensing_classifications/Licensing_Classifications_Detail.aspx?Class=C36"
+    },
+    {
+      "label": "From the meter",
+      "text": "It also includes:",
+      "quote": "Water and gas piping from the property owner's side of the utility meter to the structure or fixed works",
+      "cite": "16 CCR Division 8, Article 3",
+      "sourceUrl": "https://www.cslb.ca.gov/about_us/library/licensing_classifications/Licensing_Classifications_Detail.aspx?Class=C36"
+    }
+  ]
+}

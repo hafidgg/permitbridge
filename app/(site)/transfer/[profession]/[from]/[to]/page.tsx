@@ -21,6 +21,8 @@ import {
 } from "@/lib/data";
 import { buildMetadata, articleJsonLd } from "@/lib/seo";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { PairNotesSection } from "@/components/content/PairNotesSection";
+import { getPairNotes } from "@/lib/pair-notes";
 
 interface TransferParams {
   profession: string;
@@ -77,6 +79,7 @@ export default async function TransferPage({ params }: { params: Promise<Transfe
     // pathway/exam/score must not appear as fact on another page.
     .filter((row) => row.rule && isTradeTransferPublishable(row.rule, getSourceByUrl).publishable);
 
+  const pairNotes = getPairNotes(profession.slug, from.slug, to.slug);
   // Unregistered sources never render.
   const supportingSources = (rule.supportingSources ?? []).filter((s) => getSourceByUrl(s.sourceUrl));
   const pageFaqs = [
@@ -205,6 +208,8 @@ export default async function TransferPage({ params }: { params: Promise<Transfe
             </dl>
           </aside>
         </section>
+
+        {pairNotes && <PairNotesSection notes={pairNotes} />}
 
         {otherDestinations.length > 0 && (
           <section className="mt-16">

@@ -1,0 +1,37 @@
+{
+  "_comment": "Pair-specific facts for this page. Every quote is verbatim from the raw official source read on sourcesReadOn; each sourceUrl must be a registered, non-supplementary source (lib/pair-notes.ts).",
+  "heading": "A Texas compact license and a move to Florida",
+  "sourcesReadOn": "2026-11-21",
+  "items": [
+    {
+      "label": "Compact state",
+      "text": "The Texas Board of Nursing states:",
+      "quote": "Texas remains a compact state, affording Texas nurses the ability to respond to the challenges of modern health care, and provide borderless nursing services in other eNLC states.",
+      "sourceUrl": "https://www.bon.texas.gov/licensure_nurse_licensure_compact_eNLC.asp.html"
+    },
+    {
+      "label": "Grandfathered Texas licenses",
+      "text": "The board also states that",
+      "quote": "Texas nurses with an original NLC multistate license will be grandfathered into the eNLC and no further action is needed.",
+      "sourceUrl": "https://www.bon.texas.gov/licensure_nurse_licensure_compact_eNLC.asp.html"
+    },
+    {
+      "label": "Moving and residency",
+      "text": "Florida's Multistate License Upgrade application states:",
+      "quote": "If a nurse moves from one state to another and establishes residency, the nurse must apply for licensure in that state.",
+      "sourceUrl": "https://floridasnursing.gov/applications/multistate-upgrade-app.pdf"
+    },
+    {
+      "label": "One multistate license",
+      "text": "The same application states:",
+      "quote": "A nurse may only hold one multistate license.",
+      "sourceUrl": "https://floridasnursing.gov/applications/multistate-upgrade-app.pdf"
+    },
+    {
+      "label": "Residence in another compact state",
+      "text": "It also states:",
+      "quote": "If your declared primary state of residency is another Compact State, you are not eligible for a multistate license in Florida.",
+      "sourceUrl": "https://floridasnursing.gov/applications/multistate-upgrade-app.pdf"
+    }
+  ]
+}

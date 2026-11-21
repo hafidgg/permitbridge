@@ -1,0 +1,28 @@
+{
+  "_comment": "Pair-specific facts for this page. Every quote is verbatim from the raw official source read on sourcesReadOn; each sourceUrl must be a registered, non-supplementary source (lib/pair-notes.ts).",
+  "heading": "What Florida's plumbing contractor license covers",
+  "sourcesReadOn": "2026-11-21",
+  "items": [
+    {
+      "label": "Definition",
+      "text": "Florida's statute defines a plumbing contractor as",
+      "quote": "a contractor whose services are unlimited in the plumbing trade and includes contracting business consisting of the execution of contracts requiring the experience, financial means, knowledge, and skill to install, maintain, repair, alter, extend, or, if not prohibited by law, design plumbing",
+      "cite": "§489.105(3)(m), F.S.",
+      "sourceUrl": "https://www.flsenate.gov/Laws/Statutes/2026/489.105"
+    },
+    {
+      "label": "Gas",
+      "text": "Its scope covers work",
+      "quote": "including the installation of water, natural gas, liquefied petroleum gas and related venting, and storm and sanitary sewer lines",
+      "cite": "§489.105(3)(m), F.S.",
+      "sourceUrl": "https://www.flsenate.gov/Laws/Statutes/2026/489.105"
+    },
+    {
+      "label": "Public and private work",
+      "text": "The statute adds:",
+      "quote": "The scope of work of the plumbing contractor applies to private property and public property, including any excavation work incidental thereto, and includes the work of the specialty plumbing contractor.",
+      "cite": "§489.105(3)(m), F.S.",
+      "sourceUrl": "https://www.flsenate.gov/Laws/Statutes/2026/489.105"
+    }
+  ]
+}

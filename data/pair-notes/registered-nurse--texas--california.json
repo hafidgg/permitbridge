@@ -1,0 +1,19 @@
+{
+  "_comment": "Pair-specific facts for this page. Every quote is verbatim from the raw official source read on sourcesReadOn; each sourceUrl must be a registered, non-supplementary source (lib/pair-notes.ts).",
+  "heading": "What the Texas Board of Nursing says about your Texas license",
+  "sourcesReadOn": "2026-11-21",
+  "items": [
+    {
+      "label": "Compact state",
+      "text": "The Texas Board of Nursing states:",
+      "quote": "Texas remains a compact state, affording Texas nurses the ability to respond to the challenges of modern health care, and provide borderless nursing services in other eNLC states.",
+      "sourceUrl": "https://www.bon.texas.gov/licensure_nurse_licensure_compact_eNLC.asp.html"
+    },
+    {
+      "label": "Verification requests",
+      "text": "On its Compact with Texans page, the board states:",
+      "quote": "Licensure verification requests are answered within 10 working days.",
+      "sourceUrl": "https://www.bon.texas.gov/compact_with_texans.asp.html"
+    }
+  ]
+}
