@@ -27,6 +27,10 @@ function toTitleCase(slug: string): string {
     .join(" ");
 }
 
+// Only prebuilt params exist; anything else gets the build-time 404 without running this route (its lookups
+// read data/ from disk at request time; on the Cloudflare Workers preview these unknown-param renders returned 500).
+export const dynamicParams = false;
+
 export function generateStaticParams() {
   return getAllProfessions().map((p) => ({ slug: p.slug }));
 }
