@@ -27,7 +27,8 @@ jobs:
     timeout-minutes: 45
     env:
       NEXT_PUBLIC_SITE_URL: ${{ vars.NEXT_PUBLIC_SITE_URL }}
-      NEXT_PUBLIC_GA_MEASUREMENT_ID: ${{ vars.NEXT_PUBLIC_GA_MEASUREMENT_ID }}
+      # NEXT_PUBLIC_GA_MEASUREMENT_ID deliberately not passed: production (Vercel) does not set it, so its HTML has
+      # no direct gtag.js tag (GA4 is not loaded by the app itself). Passing it here added a tag production lacks.
       NEXT_PUBLIC_GTM_ID: ${{ vars.NEXT_PUBLIC_GTM_ID }}
     steps:
       - uses: actions/checkout@v4
