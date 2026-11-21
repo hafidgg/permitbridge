@@ -42,3 +42,7 @@ next-env.d.ts
 # outside the intended data/knowledge-base/monitoring/ path allowlist.
 data/_pipeline/cache/*
 !data/_pipeline/cache/.gitkeep
+
+# OpenNext / Cloudflare build output
+/.open-next/
+/.wrangler/

@@ -1,0 +1,46 @@
+// Cloudflare Workers config for the OpenNext build (branch cloudflare-preview only).
+// Preview only: no "routes" / custom domains, so the Worker is reachable only on *.workers.dev.
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "permitbridge-preview",
+  "main": ".open-next/worker.js",
+  // >= 2025-05-05 per OpenNext known-issues (FinalizationRegistry).
+  "compatibility_date": "2025-05-05",
+  "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
+  "workers_dev": true,
+  "assets": {
+    "directory": ".open-next/assets",
+    "binding": "ASSETS"
+  },
+  "services": [
+    {
+      "binding": "WORKER_SELF_REFERENCE",
+      "service": "permitbridge-preview"
+    }
+  ],
+  // ISR (revalidate = 3600): R2 incremental cache + Durable Object revalidation queue, as OpenNext requires
+  // for time-based revalidation. No tag cache: the app calls no revalidateTag/revalidatePath.
+  "r2_buckets": [
+    {
+      "binding": "NEXT_INC_CACHE_R2_BUCKET",
+      "bucket_name": "permitbridge-preview-inc-cache"
+    }
+  ],
+  "durable_objects": {
+    "bindings": [
+      {
+        "name": "NEXT_CACHE_DO_QUEUE",
+        "class_name": "DOQueueHandler"
+      }
+    ]
+  },
+  "migrations": [
+    {
+      "tag": "v1",
+      "new_sqlite_classes": ["DOQueueHandler"]
+    }
+  ],
+  "observability": {
+    "enabled": true
+  }
+}

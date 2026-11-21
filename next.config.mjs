@@ -66,6 +66,9 @@ const nextConfig = {
           { key: "X-Frame-Options", value: "DENY" },
           { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
           { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=()" },
+          // Preview builds only (PREVIEW_NOINDEX=1, set by .github/workflows/cloudflare-preview.yml). A default
+          // build never emits it: scripts/check-preview-noindex.ts fails the postbuild if it does.
+          ...(process.env.PREVIEW_NOINDEX === "1" ? [{ key: "X-Robots-Tag", value: "noindex, nofollow" }] : []),
         ],
       },
     ];

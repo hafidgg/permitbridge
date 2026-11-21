@@ -1,0 +1,11 @@
+# Cloudflare Workers static-asset headers (OpenNext): next.config.mjs headers() does not apply to public/
+# files or /_next/static, so the same four security headers are set here. No X-Robots-Tag in this file:
+# the preview workflow appends it at build time only (see scripts/check-preview-noindex.ts).
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+
+/_next/static/*
+  Cache-Control: public,max-age=31536000,immutable
