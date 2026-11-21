@@ -384,16 +384,16 @@
     "notes": "Same official FBON form: no disciplinary action in the five years preceding application."
   },
   "processingTime": {
-    "value": "Florida's own materials describe issuance in 'under 30 days,' though timing depends on how promptly the applicant completes all requirements (fingerprinting, verification, etc.).",
-    "sourceUrl": "https://www.trustedhealth.com/nurse-licensure-guide/florida",
-    "sourceTitle": "Florida Nursing License & Board of Nursing Guide",
-    "sourceName": "Trusted Health, citing the Florida Board of Nursing's own published endorsement tips (secondary intermediary, but directly attributes the figure to the Board)",
-    "verifiedAt": "2026-08-20",
+    "value": "Please allow up to 10 business days for initial review of new applications.",
+    "sourceUrl": "https://floridasnursing.gov/nurse-rn-lpn/",
+    "sourceTitle": "Nursing (RN & LPN) \u2014 Florida Board of Nursing",
+    "sourceName": "Florida Board of Nursing",
+    "verifiedAt": "2026-11-21",
     "verificationMethod": "official_document_review",
     "reviewer": null,
     "status": "pending_verification",
-    "confidence": 0.65,
-    "confidenceLevel": "likely",
+    "confidence": 0.9,
+    "confidenceLevel": "verified",
     "history": [
       {
         "previousValue": null,
@@ -401,6 +401,14 @@
         "changedAt": "2026-08-20",
         "reason": "Phase 2B pilot: first population from real official-source research.",
         "sourceUrl": "https://www.trustedhealth.com/nurse-licensure-guide/florida",
+        "reviewer": null
+      },
+      {
+        "previousValue": "Florida's own materials describe issuance in 'under 30 days,' though timing depends on how promptly the applicant completes all requirements (fingerprinting, verification, etc.).",
+        "newValue": "Please allow up to 10 business days for initial review of new applications.",
+        "changedAt": "2026-11-21",
+        "reason": "2026-11-21: replaced a third-party (trustedhealth.com, unregistered) estimate with the Florida Board of Nursing RN/LPN page's verbatim sentence, read raw 2026-11-21.",
+        "sourceUrl": "https://floridasnursing.gov/nurse-rn-lpn/",
         "reviewer": null
       }
     ],
@@ -498,17 +506,32 @@
   "conflicts": [],
   "lastFullReviewAt": null,
   "experienceRequirement": {
-    "value": "Unknown",
-    "sourceUrl": null,
-    "sourceTitle": null,
-    "sourceName": null,
-    "verifiedAt": null,
-    "verificationMethod": null,
+    "value": {
+      "status": "required",
+      "statement": "Must have actively practiced the profession for at least two years during the four-year period immediately preceding the date of submission of this application."
+    },
+    "sourceUrl": "https://floridasnursing.gov/nurse-rn-lpn/",
+    "sourceTitle": "Nursing (RN & LPN) \u2014 Florida Board of Nursing",
+    "sourceName": "Florida Board of Nursing",
+    "verifiedAt": "2026-11-21",
+    "verificationMethod": "official_document_review",
     "reviewer": null,
     "status": "pending_verification",
-    "confidence": 0,
-    "confidenceLevel": "unknown",
-    "history": [],
+    "confidence": 0.9,
+    "confidenceLevel": "verified",
+    "history": [
+      {
+        "previousValue": "Unknown",
+        "newValue": {
+          "status": "required",
+          "statement": "Must have actively practiced the profession for at least two years during the four-year period immediately preceding the date of submission of this application."
+        },
+        "changedAt": "2026-11-21",
+        "reason": "2026-11-21: Florida Board of Nursing RN/LPN page read raw 2026-11-21; value is its verbatim sentence.",
+        "sourceUrl": "https://floridasnursing.gov/nurse-rn-lpn/",
+        "reviewer": null
+      }
+    ],
     "notes": "Not itemized as a distinct minimum-duration-of-practice requirement in the official Florida Board materials reviewed this session."
   }
 }

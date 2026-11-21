@@ -16,8 +16,8 @@ The exact document differs by board. These are the verification requirements as 
 
 - **Texas, electricians (TDLR).** A letter of good standing from the issuing state's licensing authority, confirming you passed the statewide electrical exam, hold a current Journeyman Electrician license, and are in good standing. Source: [TDLR out-of-state electrician page](https://www.tdlr.texas.gov/electricians/out-of-state.htm).
 - **New York, registered nurses (NYSED).** Form 1 (the application), Form 2 (Certification of Professional Education), and Form 3 or Nursys verification of your license. Source: [NYSED endorsement page](https://www.op.nysed.gov/professions/registered-professional-nursing/endorsement-nursing-licenses).
-- **California, registered nurses (BRN).** Nursys or direct license verification, plus transcripts sent to the board electronically through a transcript vendor or directly from your school. Source: [BRN licensure by endorsement](https://www.rn.ca.gov/applicants/lic-end).
-- **Illinois, registered nurses (IDFPR).** License verification through Nursys when your current state participates in it, as Georgia does. Source: [IDFPR RN endorsement application](https://idfpr.illinois.gov/content/dam/soi/en/web/idfpr/renewals/apply/forms/RN-EN.pdf).
+- **California, registered nurses (BRN).** BRN's endorsement application checklist asks for a "Completed Verification of License form" (or a Nursys verification if your board of nursing participates in Nursys) and "Transcripts sent directly from your school of nursing." Source: [BRN Licensure by Endorsement application instructions](https://www.rn.ca.gov/pdfs/applicants/end-app.pdf).
+- **Illinois, registered nurses (IDFPR).** License verification through Nursys when your current state participates in it. Source: [IDFPR RN endorsement application](https://idfpr.illinois.gov/content/dam/soi/en/web/idfpr/renewals/apply/forms/RN-EN.pdf).
 
 Two patterns show up across these: the three nursing boards accept Nursys verification, and the Texas trade board asks for a letter from the issuing board confirming your license and exam history.
 

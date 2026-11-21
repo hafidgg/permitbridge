@@ -35,7 +35,7 @@
     "notes": "Official IDFPR instruction sheet explicitly directs applicants who \"hold an Active RN license in another state\" to apply via Endorsement, distinct from the Examination path."
   },
   "endorsementProcess": {
-    "value": "Apply via IDFPR Online Services (Licensure by Endorsement); submit license verification via Nursys (Georgia participates), transcripts, and complete IDFPR-approved fingerprint-based background check.",
+    "value": "Apply via IDFPR Online Services (Licensure by Endorsement); submit license verification via Nursys, transcripts, and complete IDFPR-approved fingerprint-based background check.",
     "sourceUrl": "https://idfpr.illinois.gov/content/dam/soi/en/web/idfpr/renewals/apply/forms/RN-EN.pdf",
     "sourceTitle": "Registered Nurse Examination/Endorsement/Restoration Instruction Sheet",
     "sourceName": "Illinois Department of Financial and Professional Regulation (IDFPR)",
@@ -51,6 +51,14 @@
         "newValue": "Apply via IDFPR Online Services (Licensure by Endorsement); submit license verification via Nursys (Georgia participates), transcripts, and complete IDFPR-approved fingerprint-based background check.",
         "changedAt": "2026-08-20",
         "reason": "Phase 2B pilot: first population from real official-source research.",
+        "sourceUrl": "https://idfpr.illinois.gov/content/dam/soi/en/web/idfpr/renewals/apply/forms/RN-EN.pdf",
+        "reviewer": null
+      },
+      {
+        "previousValue": "Apply via IDFPR Online Services (Licensure by Endorsement); submit license verification via Nursys (Georgia participates), transcripts, and complete IDFPR-approved fingerprint-based background check.",
+        "newValue": "Apply via IDFPR Online Services (Licensure by Endorsement); submit license verification via Nursys, transcripts, and complete IDFPR-approved fingerprint-based background check.",
+        "changedAt": "2026-11-21",
+        "reason": "2026-11-21: removed \"(Georgia participates)\" -- the RN-EN packet (re-read raw 2026-11-21) does not mention Georgia. Rest of the value unchanged and not re-verified today, so verifiedAt is unchanged.",
         "sourceUrl": "https://idfpr.illinois.gov/content/dam/soi/en/web/idfpr/renewals/apply/forms/RN-EN.pdf",
         "reviewer": null
       }

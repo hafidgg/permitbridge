@@ -1363,9 +1363,11 @@ await test("source jurisdiction matches destination context for all real rules (
       // BRN URL variant was normalized to the registered one, so 5 remain.
       // None of the 5 renders: a field without a registered source is never shown.
       // 2026-10-22 batch 2: exceptions re-sourced to the registered OAL approval of 16 CCR 1410.5, so 4 remain.
+      // 2026-11-21: temporaryPermitAvailability re-sourced to BRN's registered lic-end page and reciprocityAgreementExists -> Unknown
+      // (no BRN page states it), so 2 remain (otherRequiredFees, processingTime).
       const criticalFieldsWithIssues = jurisdictionIssues.filter((i) => CRITICAL_TRANSFER_RULE_FIELDS.some((f) => i.message.startsWith(f)));
       assertEqual(criticalFieldsWithIssues, [], `${file}: expected zero jurisdiction/source-resolution issues on CRITICAL fields specifically`);
-      assertEqual(jurisdictionIssues.length, 4, `${file}: expected exactly 4 known, non-blocking Rule 7 warnings on non-critical fields — a real remaining quality gap for future improvement, not a regression`);
+      assertEqual(jurisdictionIssues.length, 2, `${file}: expected exactly 2 known, non-blocking Rule 7 warnings on non-critical fields — a real remaining quality gap for future improvement, not a regression`);
     } else if (file === "georgia-to-illinois.json") {
       // Phase 2B.3: all 9 CRITICAL fields upgraded to genuine registered
       // idfpr.illinois.gov sources this session — 2 NON-critical fields
@@ -1386,9 +1388,10 @@ await test("source jurisdiction matches destination context for all real rules (
       // Phase 2B research. 2026-10-22: exceptions -> Unknown (its only source
       // was an unregistered third-party site), so 2 remain; neither renders,
       // since a field without a registered source is never shown.
+      // 2026-11-21: processingTime re-sourced to Florida's registered RN/LPN page, so 1 remains (temporaryPermitAvailability).
       const criticalFieldsWithIssues = jurisdictionIssues.filter((i) => CRITICAL_TRANSFER_RULE_FIELDS.some((f) => i.message.startsWith(f)));
       assertEqual(criticalFieldsWithIssues, [], `${file}: expected zero jurisdiction/source-resolution issues on CRITICAL fields specifically`);
-      assertEqual(jurisdictionIssues.length, 2, `${file}: expected exactly 2 known, non-blocking Rule 7 warnings on non-critical fields — a real remaining quality gap for future improvement, not a regression`);
+      assertEqual(jurisdictionIssues.length, 1, `${file}: expected exactly 1 known, non-blocking Rule 7 warning on a non-critical field — a real remaining quality gap for future improvement, not a regression`);
     } else {
       assertEqual(jurisdictionIssues, [], `${file}: expected zero jurisdiction/source-resolution issues`);
     }
@@ -1651,7 +1654,10 @@ await test("real production data (5 real transfer rules) untouched by Phase 3.2 
     // temporaryPermitAvailability -> Unknown (it cited a psychologists' board rule); TX->CA fee re-sourced to BRN's
     // current fee schedule and "$350" dropped from endorsementProcess (its source states no fee).
     "illinois-to-georgia.json": "f6f4a56778ffbb03b2bf59fd9997fd49",
-    "texas-to-california.json": "187f1d6ef3736cfd88f7baeca5406540",
+    // Re-pinned 2026-11-21: TX->CA temporaryPermitAvailability -> "available" with BRN lic-end's verbatim sentence (optional,
+    // not required); documentsRequired -> lic-end's verbatim "All applicants must provide" list; reciprocityAgreementExists ->
+    // Unknown (no BRN page states it).
+    "texas-to-california.json": "5584929309addb928f1c2b8d05b182dd",
     // Re-pinned 2026-11-20: TX->FL compactStatus and exceptions no longer say a relocating compact nurse files
     // Florida's Multistate License Upgrade (the form requires a current single state Florida license).
     "texas-to-florida.json": "0782f220b28e20655a1dc27a74c6102d",
