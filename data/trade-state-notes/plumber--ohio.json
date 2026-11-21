@@ -1,5 +1,27 @@
 {
   "_comment": "Destination-level text for /plumber/ohio. originShared applies to every origin row; merged from the records' own wording with the origin made generic. Quotation marks only around text verbatim in the named registered source.",
+  "heading": "What OCILB's plumbing forms say",
+  "sourcesReadOn": "2026-11-21",
+  "items": [
+    {
+      "label": "Arkansas",
+      "text": "Arkansas's form covers plumbing alone; it is headed ARKANSAS PLUMBING RECIPROCITY APPLICATION and asks for the",
+      "quote": "Arkansas License Number: Plumbing",
+      "sourceUrl": "https://dam.assets.ohio.gov/image/upload/com.ohio.gov/DICO/OCILB/dico_AR_Reciprocity.pdf"
+    },
+    {
+      "label": "West Virginia",
+      "text": "The West Virginia form lists HVAC and PL and states the applicant must currently hold",
+      "quote": "a West Virginia Master Plumber, or HVAC Technician and WV Contractor License",
+      "sourceUrl": "https://dam.assets.ohio.gov/image/upload/com.ohio.gov/DICO/OCILB/dico_WV_HVREPL_Reciprocity.pdf"
+    },
+    {
+      "label": "Tennessee",
+      "text": "Tennessee's form accepts a license obtained by grandfathering; the applicant must have",
+      "quote": "previously tested or Grandfathered with Tennessee to obtain their license(s)",
+      "sourceUrl": "https://dam.assets.ohio.gov/image/upload/com.ohio.gov/DICO/OCILB/dico_TN_Reciprocity.pdf"
+    }
+  ],
   "originShared": [
     {
       "text": "OCILB publishes reciprocity applications that list Plumbing for Arkansas, Mississippi, South Carolina, Tennessee, and West Virginia.",

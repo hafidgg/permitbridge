@@ -1,5 +1,44 @@
 {
   "_comment": "Destination-level text for /plumber/florida. originShared applies to every origin row; merged from the records' own wording with the origin made generic. Quotation marks only around text verbatim in the named registered source.",
+  "heading": "How Florida defines a plumbing contractor",
+  "sourcesReadOn": "2026-11-21",
+  "items": [
+    {
+      "label": "Definition",
+      "text": "The statute defines a plumbing contractor as",
+      "quote": "a contractor whose services are unlimited in the plumbing trade",
+      "cite": "§489.105(3)(m), F.S.",
+      "sourceUrl": "https://www.flsenate.gov/Laws/Statutes/2026/489.105"
+    },
+    {
+      "label": "No extra local license",
+      "text": "A plumbing contractor may do this work",
+      "quote": "without obtaining an additional local regulatory license, certificate, or registration: sanitary drainage or storm drainage facilities, water and sewer plants and substations, venting systems, public or private water supply systems, septic tanks, drainage and supply wells, swimming pool piping, irrigation systems, and solar heating water systems",
+      "cite": "§489.105(3)(m), F.S.",
+      "sourceUrl": "https://www.flsenate.gov/Laws/Statutes/2026/489.105"
+    },
+    {
+      "label": "Gas",
+      "text": "That list continues",
+      "quote": "including the installation of water, natural gas, liquefied petroleum gas and related venting, and storm and sanitary sewer lines",
+      "cite": "§489.105(3)(m), F.S.",
+      "sourceUrl": "https://www.flsenate.gov/Laws/Statutes/2026/489.105"
+    },
+    {
+      "label": "Medical gas and fire lines",
+      "text": "The scope also includes",
+      "quote": "air-piping, vacuum line piping, oxygen line piping, nitrous oxide piping, and all related medical gas systems; fire line standpipes and fire sprinklers if authorized by law",
+      "cite": "§489.105(3)(m), F.S.",
+      "sourceUrl": "https://www.flsenate.gov/Laws/Statutes/2026/489.105"
+    },
+    {
+      "label": "Other trades' work",
+      "text": "Work belonging to another trade must be subcontracted:",
+      "quote": "Such contractor shall subcontract, with a qualified contractor in the field concerned, all other work incidental to the work but which is specified as being the work of a trade other than that of a plumbing contractor.",
+      "cite": "§489.105(3)(m), F.S.",
+      "sourceUrl": "https://www.flsenate.gov/Laws/Statutes/2026/489.105"
+    }
+  ],
   "originShared": [
     {
       "text": "Florida's Reciprocity form (DBPR CILB 32) covers applicants from Louisiana, Mississippi, and North Carolina in General, Building, and Residential categories; it has no Plumbing category, so reciprocity is not available to plumbing contractors in Florida.",

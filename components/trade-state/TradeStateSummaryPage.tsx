@@ -139,6 +139,12 @@ export function TradeStateSummaryPage({ profession, state }: { profession: Trade
         {notes?.heading && (
           <section className="mt-10">
             <h2 className="mb-4 text-2xl font-bold tracking-tight">{notes.heading}</h2>
+            {notes.sourcesReadOn && (
+              <p className="-mt-2 mb-4 text-sm text-muted-foreground">
+                Sources for this section read{" "}
+                {new Date(`${notes.sourcesReadOn}T00:00:00Z`).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" })}.
+              </p>
+            )}
             <ul className="space-y-3 text-sm">
               {notes.items.map((item, i) => (
                 <li key={i}>

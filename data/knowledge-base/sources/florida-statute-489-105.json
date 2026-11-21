@@ -1,0 +1,20 @@
+{
+  "id": "florida-statute-489-105",
+  "agencyName": "Florida Legislature (Section 489.105, Florida Statutes)",
+  "website": "https://www.flsenate.gov/Laws/Statutes/2026/489.105",
+  "jurisdiction": "florida",
+  "professionsCovered": [
+    "hvac-technician",
+    "plumber"
+  ],
+  "sourceType": "official-government",
+  "official": true,
+  "authorityLevel": "authoritative",
+  "authorityRationale": "Section 489.105, Florida Statutes, 2026 edition (page header '2026 Florida Statutes'; history note ends 's. 18, ch. 2026-3'), the definitions section of Part I of chapter 489 on the Florida Senate's official statutes site. Read directly 2026-11-21 (HTTP 200, HTML): subsection (3) paragraphs (f), (g) and (h) define the Class A, Class B and Class C air-conditioning contractor, and paragraph (m) defines the plumbing contractor.",
+  "specificity": "jurisdiction-general",
+  "reliabilityScore": 0.95,
+  "reliabilityRationale": "The statute itself, read directly from the Legislature's official site on 2026-11-21.",
+  "lastCrawl": null,
+  "lastManualVerification": "2026-11-21",
+  "fieldsUsingThisSource": 0
+}

@@ -1,5 +1,44 @@
 {
   "_comment": "Destination-level text for /hvac-technician/florida. originShared applies to every origin row; merged from the records' own wording with the origin made generic. Quotation marks only around text verbatim in the named registered source.",
+  "heading": "How Florida defines air-conditioning contractors",
+  "sourcesReadOn": "2026-11-21",
+  "items": [
+    {
+      "label": "Class A",
+      "text": "The statute defines a Class A air-conditioning contractor as",
+      "quote": "a contractor whose services are unlimited in the execution of contracts requiring the experience, knowledge, and skill to install, maintain, repair, fabricate, alter, extend, or design, if not prohibited by law, central air-conditioning, refrigeration, heating, and ventilating systems",
+      "cite": "§489.105(3)(f), F.S.",
+      "sourceUrl": "https://www.flsenate.gov/Laws/Statutes/2026/489.105"
+    },
+    {
+      "label": "Class B",
+      "text": "A Class B air-conditioning contractor is",
+      "quote": "a contractor whose services are limited to 25 tons of cooling and 500,000 Btu of heating in any one system",
+      "cite": "§489.105(3)(g), F.S.",
+      "sourceUrl": "https://www.flsenate.gov/Laws/Statutes/2026/489.105"
+    },
+    {
+      "label": "Wiring",
+      "text": "Both classes may",
+      "quote": "repair or replace power wiring, disconnects, breakers, or fuses for dedicated HVAC circuits with proper use of a circuit breaker lock",
+      "cite": "§489.105(3)(f) and (g), F.S.",
+      "sourceUrl": "https://www.flsenate.gov/Laws/Statutes/2026/489.105"
+    },
+    {
+      "label": "Excluded work",
+      "text": "For both classes, the scope of work",
+      "quote": "does not include any work such as liquefied petroleum or natural gas fuel lines within buildings, except for disconnecting or reconnecting changeouts of liquefied petroleum or natural gas appliances within buildings; potable water lines or connections thereto; sanitary sewer lines; swimming pool piping and filters; or electrical power wiring",
+      "cite": "§489.105(3)(f) and (g), F.S.",
+      "sourceUrl": "https://www.flsenate.gov/Laws/Statutes/2026/489.105"
+    },
+    {
+      "label": "Class C",
+      "text": "Class C is closed to new applicants:",
+      "quote": "Only a person who was registered or certified as a Class C air-conditioning contractor as of October 1, 1988, shall be so registered or certified after October 1, 1988.",
+      "cite": "§489.105(3)(h), F.S.",
+      "sourceUrl": "https://www.flsenate.gov/Laws/Statutes/2026/489.105"
+    }
+  ],
   "originShared": [
     {
       "text": "Florida's Reciprocity form (DBPR CILB 32) covers applicants from Louisiana, Mississippi, and North Carolina in General, Building, and Residential categories; it has no Air-Conditioning category, so reciprocity is not available to HVAC contractors in Florida.",

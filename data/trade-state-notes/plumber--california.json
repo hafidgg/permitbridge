@@ -1,5 +1,42 @@
 {
   "_comment": "Destination-level text for /plumber/california. originShared applies to every origin row; merged from the records' own wording with the origin made generic. Quotation marks only around text verbatim in the named registered source.",
+  "heading": "How California classifies plumbing contractors",
+  "sourcesReadOn": "2026-11-21",
+  "items": [
+    {
+      "label": "C-36 scope",
+      "text": "CSLB's C-36 Plumbing Contractor classification reads:",
+      "quote": "A plumbing contractor provides a means for a supply of safe water, ample in volume and of suitable temperature for the purpose intended and the proper disposal of fluid waste from the premises in all structures and fixed works.",
+      "cite": "16 CCR Division 8, Article 3",
+      "sourceUrl": "https://www.cslb.ca.gov/about_us/library/licensing_classifications/Licensing_Classifications_Detail.aspx?Class=C36"
+    },
+    {
+      "label": "Gas work",
+      "text": "The classification includes gas appliances but draws a line at forced-air heating:",
+      "quote": "All gas appliances, flues and gas connections for all systems including suspended space heating units. This does not include forced warm air units",
+      "cite": "16 CCR Division 8, Article 3",
+      "sourceUrl": "https://www.cslb.ca.gov/about_us/library/licensing_classifications/Licensing_Classifications_Detail.aspx?Class=C36"
+    },
+    {
+      "label": "Water heating",
+      "text": "It also includes:",
+      "quote": "Installation of any type of equipment to heat water, or fluids, to a temperature suitable for the purposes listed in this section, including the installation of solar equipment for this purpose",
+      "cite": "16 CCR Division 8, Article 3",
+      "sourceUrl": "https://www.cslb.ca.gov/about_us/library/licensing_classifications/Licensing_Classifications_Detail.aspx?Class=C36"
+    },
+    {
+      "label": "Safety devices",
+      "text": "Maintenance and replacement extends to safety devices such as",
+      "quote": "gas earthquake valves, gas control valves, back flow preventers, water conditioning equipment and regulating valves",
+      "cite": "16 CCR Division 8, Article 3",
+      "sourceUrl": "https://www.cslb.ca.gov/about_us/library/licensing_classifications/Licensing_Classifications_Detail.aspx?Class=C36"
+    },
+    {
+      "label": "Classes CSLB maps to C-36",
+      "text": "On CSLB's Reciprocal Classifications List, the rows that correspond to C-36 are all Arizona classes: C-37, K-77 and L-77 (Plumbing, Including Solar) and C-37R, K-37 and L-37 (Plumbing). The Nevada, Louisiana, Mississippi and North Carolina tables have no C-36 row.",
+      "sourceUrl": "https://www.cslb.ca.gov/Contractors/Applicants/Reciprocity/Reciprocal_Classifications_List.aspx"
+    }
+  ],
   "originShared": [
     {
       "text": "None of these states is one of the states CSLB reciprocates with (Arizona, Louisiana, Mississippi, Nevada, and North Carolina), so no reciprocity applies.",

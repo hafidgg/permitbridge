@@ -1,5 +1,28 @@
 {
   "_comment": "Destination-level text for /hvac-technician/california. originShared applies to every origin row; merged from the records' own wording with the origin made generic. Quotation marks only around text verbatim in the named registered source.",
+  "heading": "How California classifies HVAC contractors",
+  "sourcesReadOn": "2026-11-21",
+  "items": [
+    {
+      "label": "C-20 scope",
+      "text": "CSLB's C-20 Warm-Air Heating, Ventilating and Air-Conditioning Contractor classification reads:",
+      "quote": "A warm-air heating, ventilating and air-conditioning contractor fabricates, installs, maintains, services and repairs warm-air heating systems and water heating heat pumps, complete with warm-air appliances; ventilating systems complete with blowers and plenum chambers; air-conditioning systems complete with air-conditioning unit; and the ducts, registers, flues, humidity and thermostatic controls and air filters in connection with any of these systems.",
+      "cite": "16 CCR Division 8, Article 3",
+      "sourceUrl": "https://www.cslb.ca.gov/about_us/library/licensing_classifications/Licensing_Classifications_Detail.aspx?Class=C20"
+    },
+    {
+      "label": "Solar systems",
+      "text": "The same classification adds:",
+      "quote": "This classification shall include warm-air heating, ventilating and air-conditioning systems which utilize solar energy.",
+      "cite": "16 CCR Division 8, Article 3",
+      "sourceUrl": "https://www.cslb.ca.gov/about_us/library/licensing_classifications/Licensing_Classifications_Detail.aspx?Class=C20"
+    },
+    {
+      "label": "Classes CSLB maps to C-20",
+      "text": "On CSLB's Reciprocal Classifications List, the rows that correspond to C-20 are Arizona's C-39, K-79 and L-79 (Air Conditioning and Refrigeration, Including Solar), Arizona's C-39R, K-39 and L-39 (Air Conditioning and Refrigeration), and Nevada's row listed as C-1f C-21 (Heating Cooling & Circulating Air Refrigeration & Air Conditioning). The Louisiana, Mississippi and North Carolina tables have no C-20 row.",
+      "sourceUrl": "https://www.cslb.ca.gov/Contractors/Applicants/Reciprocity/Reciprocal_Classifications_List.aspx"
+    }
+  ],
   "originShared": [
     {
       "text": "None of these states is one of the states CSLB reciprocates with (Arizona, Louisiana, Mississippi, Nevada, and North Carolina), so no reciprocity applies.",

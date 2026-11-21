@@ -21,6 +21,8 @@ export interface TradeStateNoteItem {
 
 export interface TradeStateNotes {
   heading: string | null;
+  /** ISO date (YYYY-MM-DD) the section's cited sources were read; shown under the heading. */
+  sourcesReadOn: string | null;
   items: TradeStateNoteItem[];
   openQuestions: Array<{ text: string; source: SourceRecord }>;
   /** What applies to every origin row on the summary page, written once; each item with the documents that contain it. */
@@ -54,6 +56,7 @@ export function getTradeStateNotes(profession: string, state: string): TradeStat
   if (!fs.existsSync(file)) return null;
   const raw = JSON.parse(fs.readFileSync(file, "utf-8")) as {
     heading?: string;
+    sourcesReadOn?: string;
     items?: RawItem[];
     openQuestions?: Array<{ text: string; sourceUrl: string }>;
     originShared?: Array<{ text: string; sourceUrls: string[] }>;
@@ -61,6 +64,7 @@ export function getTradeStateNotes(profession: string, state: string): TradeStat
   };
   return {
     heading: raw.heading ?? null,
+    sourcesReadOn: raw.sourcesReadOn ?? null,
     items: (raw.items ?? []).map(({ sourceUrl, ...i }) => ({ ...i, source: boardSource(sourceUrl, file) })),
     openQuestions: (raw.openQuestions ?? []).map((q) => ({ text: q.text, source: boardSource(q.sourceUrl, file) })),
     originShared: (raw.originShared ?? []).map((q) => ({ text: q.text, sources: boardSources(q.sourceUrls, file) })),

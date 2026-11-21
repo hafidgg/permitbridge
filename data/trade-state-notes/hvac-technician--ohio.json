@@ -1,5 +1,33 @@
 {
   "_comment": "Destination-level text for /hvac-technician/ohio. originShared applies to every origin row; merged from the records' own wording with the origin made generic. Quotation marks only around text verbatim in the named registered source.",
+  "heading": "What OCILB's HVAC forms say",
+  "sourcesReadOn": "2026-11-21",
+  "items": [
+    {
+      "label": "Separate examinations",
+      "text": "OCILB's Out of State Examination Application lists Hydronics, Plumbing, Electrical, HVAC and Refrigeration as separate examinations, with the instruction",
+      "quote": "CHECK ONLY ONE",
+      "sourceUrl": "https://dam.assets.ohio.gov/image/upload/com.ohio.gov/DICO/OCILB/Out_of_State_Testing_Application_-_OCILB.pdf"
+    },
+    {
+      "label": "Alabama",
+      "text": "The Alabama form lists HVAC, RE and EL, and requires that the applicant",
+      "quote": "must currently hold an Alabama License, and previously tested with Alabama to obtain their license(s)",
+      "sourceUrl": "https://dam.assets.ohio.gov/image/upload/com.ohio.gov/DICO/OCILB/dico_AL_Reciprocity.pdf"
+    },
+    {
+      "label": "Kentucky",
+      "text": "The Kentucky form lists EL, HVAC and RE. Its sentence on which license must be held names only the electrical license; for all applicants it says:",
+      "quote": "All applicants must have previously tested with Kentucky to obtain their license(s). Applicants who obtained the Kentucky License via Grandfathering cannot reciprocate.",
+      "sourceUrl": "https://dam.assets.ohio.gov/image/upload/com.ohio.gov/DICO/OCILB/dico_KY_Reciprocity.pdf"
+    },
+    {
+      "label": "Louisiana",
+      "text": "The Louisiana form lists EL, HVAC, RE and HY, and requires",
+      "quote": "a Louisiana Unlimited Electrical License or Mechanical License",
+      "sourceUrl": "https://dam.assets.ohio.gov/image/upload/v1740759437/com.ohio.gov/DICO/OCILB/dico_LA_Reciprocity.pdf"
+    }
+  ],
   "originShared": [
     {
       "text": "OCILB publishes reciprocity applications that list HVAC for Alabama, Kentucky, Louisiana, Mississippi, South Carolina, Tennessee, and West Virginia.",
