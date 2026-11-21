@@ -1,0 +1,38 @@
+{
+  "guides": [
+    "reciprocity-vs-endorsement-vs-comity",
+    "how-to-request-license-verification",
+    "how-to-transfer-a-nursing-license-to-another-state",
+    "california-plumbing-license-c36",
+    "texas-plumbing-license-tsbpe",
+    "journeyman-electrician-license-reciprocity",
+    "hvac-license-reciprocity-by-state",
+    "ohio-ocilb-reciprocity-agreements",
+    "texas-rn-license-by-endorsement",
+    "florida-rn-endorsement-vs-multistate-upgrade",
+    "iowa-electrical-license-out-of-state",
+    "illinois-rn-license-by-endorsement"
+  ],
+  "states": [
+    "california",
+    "florida",
+    "new-york",
+    "ohio",
+    "texas"
+  ],
+  "professions": [
+    "electrician",
+    "contractor",
+    "hvac-technician",
+    "plumber",
+    "nurse"
+  ],
+  "transfers": [
+    "contractor/california/florida",
+    "contractor/florida/california",
+    "hvac-technician/florida/california",
+    "hvac-technician/florida/texas",
+    "plumber/california/texas",
+    "plumber/florida/texas"
+  ]
+}

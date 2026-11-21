@@ -4,6 +4,7 @@ import { getSourceByUrl } from "@/lib/knowledge-base/transfer-rule-data";
 import { getTransferPageRules } from "@/lib/publishable-transfers";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { isKnownTransfer } from "@/lib/route-params";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { FAQSection } from "@/components/home/FAQ";
 import { TransferFactsCard } from "@/components/transfer/TransferFactsCard";
@@ -33,10 +34,6 @@ interface TransferParams {
 // Only publishable pairs. Unpublishable ones return 410 from middleware.ts
 // (list generated from the same gate by scripts/generate-gone-paths.ts);
 // consolidated ones 308 to their summary page (next.config.mjs).
-// Only prebuilt params exist; anything else gets the build-time 404 without running this route (its lookups
-// read data/ from disk at request time; on the Cloudflare Workers preview these unknown-param renders returned 500).
-export const dynamicParams = false;
-
 export function generateStaticParams(): TransferParams[] {
   return getTransferPageRules().map((r) => ({ profession: r.profession, from: r.fromState, to: r.toState }));
 }
@@ -53,6 +50,8 @@ function loadPageData(params: TransferParams) {
 
 export async function generateMetadata({ params }: { params: Promise<TransferParams> }): Promise<Metadata> {
   const resolvedParams = await params;
+  // Unknown params: no data/ lookup (it reads from disk at request time); the not-found page sets its own metadata.
+  if (!isKnownTransfer(resolvedParams.profession, resolvedParams.from, resolvedParams.to)) return {};
   const data = loadPageData(resolvedParams);
   if (!data) return {};
   const { profession, from, to, rule } = data;
@@ -71,6 +70,7 @@ export async function generateMetadata({ params }: { params: Promise<TransferPar
 
 export default async function TransferPage({ params }: { params: Promise<TransferParams> }) {
   const resolvedParams = await params;
+  if (!isKnownTransfer(resolvedParams.profession, resolvedParams.from, resolvedParams.to)) notFound();
   const data = loadPageData(resolvedParams);
   if (!data) notFound();
   const { profession, from, to, rule } = data;
