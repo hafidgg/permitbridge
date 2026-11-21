@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { SearchBox } from "@/components/home/SearchBox";
-import { buildSearchIndex } from "@/lib/search";
+import type { SearchDocument } from "@/types";
+// Built from buildSearchIndex() at prebuild (scripts/generate-search-index.ts): no request-time reads of data/.
+import searchIndexJson from "@/lib/generated/search-index.json";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
@@ -13,7 +15,7 @@ export const metadata: Metadata = buildMetadata({
 
 export default async function SearchPage({ searchParams }: { searchParams: Promise<{ q?: string }> }) {
   const resolvedSearchParams = await searchParams;
-  const searchIndex = buildSearchIndex();
+  const searchIndex = searchIndexJson as SearchDocument[];
 
   return (
     <div>

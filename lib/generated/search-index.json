@@ -1,0 +1,714 @@
+[
+  {
+    "type": "profession",
+    "title": "Electrician License",
+    "description": "How to transfer an electrician license between US states.",
+    "url": "/profession/electrician",
+    "keywords": [
+      "Electrician License",
+      "Electrician",
+      "Skilled Trades",
+      "license",
+      "requirements"
+    ]
+  },
+  {
+    "type": "profession",
+    "title": "General Contractor License",
+    "description": "How to transfer a contractor license between US states.",
+    "url": "/profession/contractor",
+    "keywords": [
+      "General Contractor License",
+      "Contractor",
+      "Construction",
+      "license",
+      "requirements"
+    ]
+  },
+  {
+    "type": "profession",
+    "title": "HVAC Technician License",
+    "description": "How to transfer an HVAC contractor license between US states.",
+    "url": "/profession/hvac-technician",
+    "keywords": [
+      "HVAC Technician License",
+      "HVAC Technician",
+      "Skilled Trades",
+      "license",
+      "requirements"
+    ]
+  },
+  {
+    "type": "profession",
+    "title": "Plumber License",
+    "description": "How to transfer a plumbing license between US states.",
+    "url": "/profession/plumber",
+    "keywords": [
+      "Plumber License",
+      "Plumber",
+      "Skilled Trades",
+      "license",
+      "requirements"
+    ]
+  },
+  {
+    "type": "profession",
+    "title": "Registered Nurse (RN) License",
+    "description": "How to transfer a Registered Nurse (RN) license between US states, including the Nurse Licensure Compact (NLC).",
+    "url": "/profession/nurse",
+    "keywords": [
+      "Registered Nurse (RN) License",
+      "Nurse",
+      "Healthcare",
+      "license",
+      "requirements"
+    ]
+  },
+  {
+    "type": "state",
+    "title": "California Professional Licensing",
+    "description": "License transfer and reciprocity rules for professionals moving to or from California.",
+    "url": "/state/california",
+    "keywords": [
+      "California",
+      "CA",
+      "West",
+      "license",
+      "reciprocity"
+    ]
+  },
+  {
+    "type": "state",
+    "title": "Florida Professional Licensing",
+    "description": "License transfer and reciprocity rules for professionals moving to or from Florida.",
+    "url": "/state/florida",
+    "keywords": [
+      "Florida",
+      "FL",
+      "South",
+      "license",
+      "reciprocity"
+    ]
+  },
+  {
+    "type": "state",
+    "title": "New York Professional Licensing",
+    "description": "License transfer and reciprocity rules for professionals moving to or from New York.",
+    "url": "/state/new-york",
+    "keywords": [
+      "New York",
+      "NY",
+      "Northeast",
+      "license",
+      "reciprocity"
+    ]
+  },
+  {
+    "type": "state",
+    "title": "Ohio Professional Licensing",
+    "description": "License transfer and reciprocity rules for professionals moving to or from Ohio.",
+    "url": "/state/ohio",
+    "keywords": [
+      "Ohio",
+      "OH",
+      "Midwest",
+      "license",
+      "reciprocity"
+    ]
+  },
+  {
+    "type": "state",
+    "title": "Texas Professional Licensing",
+    "description": "License transfer and reciprocity rules for professionals moving to or from Texas.",
+    "url": "/state/texas",
+    "keywords": [
+      "Texas",
+      "TX",
+      "South",
+      "license",
+      "reciprocity"
+    ]
+  },
+  {
+    "type": "transfer",
+    "title": "Contractor: California → Florida",
+    "description": "Certification by Endorsement — 10-Year Licensure History (Option C). No exam required. Processing time not published by the board.",
+    "url": "/transfer/contractor/california/florida",
+    "keywords": [
+      "General Contractor License",
+      "Contractor",
+      "California",
+      "Florida",
+      "Certification by Endorsement — 10-Year Licensure History (Option C)",
+      "transfer license"
+    ]
+  },
+  {
+    "type": "transfer",
+    "title": "Contractor: Florida → California",
+    "description": "NASCLA Exam-Based Waiver (Conditional). Exam required. Processing time not published by the board.",
+    "url": "/transfer/contractor/florida/california",
+    "keywords": [
+      "General Contractor License",
+      "Contractor",
+      "Florida",
+      "California",
+      "NASCLA Exam-Based Waiver (Conditional)",
+      "transfer license"
+    ]
+  },
+  {
+    "type": "transfer",
+    "title": "HVAC Technician: Florida → California",
+    "description": "Full New Application Required — No Reciprocity or Exam Waiver Available for C-20. Exam required. Processing time not published by the board.",
+    "url": "/transfer/hvac-technician/florida/california",
+    "keywords": [
+      "HVAC Technician License",
+      "HVAC Technician",
+      "Florida",
+      "California",
+      "Full New Application Required — No Reciprocity or Exam Waiver Available for C-20",
+      "transfer license"
+    ]
+  },
+  {
+    "type": "transfer",
+    "title": "HVAC Technician: Florida → Texas",
+    "description": "Full Standard Application Required — No Reciprocity, No Abbreviated Out-of-State Path for This Classification. Exam required. Processing time not published by the board.",
+    "url": "/transfer/hvac-technician/florida/texas",
+    "keywords": [
+      "HVAC Technician License",
+      "HVAC Technician",
+      "Florida",
+      "Texas",
+      "Full Standard Application Required — No Reciprocity, No Abbreviated Out-of-State Path for This Classification",
+      "transfer license"
+    ]
+  },
+  {
+    "type": "transfer",
+    "title": "Plumber: California → Texas",
+    "description": "No Direct Path — California's C-36 Is a Contractor License, but Texas Licenses Only Individual Plumbers. Exam required. Processing time not published by the board.",
+    "url": "/transfer/plumber/california/texas",
+    "keywords": [
+      "Plumber License",
+      "Plumber",
+      "California",
+      "Texas",
+      "No Direct Path — California's C-36 Is a Contractor License, but Texas Licenses Only Individual Plumbers",
+      "transfer license"
+    ]
+  },
+  {
+    "type": "transfer",
+    "title": "Plumber: Florida → Texas",
+    "description": "No Direct Path — Florida's State Plumbing License Is a Contractor License, but Texas Licenses Only Individual Plumbers. Exam required. Processing time not published by the board.",
+    "url": "/transfer/plumber/florida/texas",
+    "keywords": [
+      "Plumber License",
+      "Plumber",
+      "Florida",
+      "Texas",
+      "No Direct Path — Florida's State Plumbing License Is a Contractor License, but Texas Licenses Only Individual Plumbers",
+      "transfer license"
+    ]
+  },
+  {
+    "type": "transfer",
+    "title": "Registered Nurse: California → Florida",
+    "description": "Verified, field-sourced RN license transfer guide from California to Florida.",
+    "url": "/registered-nurse/california-to-florida",
+    "keywords": [
+      "registered nurse",
+      "RN",
+      "nursing license",
+      "California",
+      "Florida",
+      "transfer license"
+    ]
+  },
+  {
+    "type": "transfer",
+    "title": "Registered Nurse: California → New York",
+    "description": "Verified, field-sourced RN license transfer guide from California to New York.",
+    "url": "/registered-nurse/california-to-new-york",
+    "keywords": [
+      "registered nurse",
+      "RN",
+      "nursing license",
+      "California",
+      "New York",
+      "transfer license"
+    ]
+  },
+  {
+    "type": "transfer",
+    "title": "Registered Nurse: Georgia → Illinois",
+    "description": "Verified, field-sourced RN license transfer guide from Georgia to Illinois.",
+    "url": "/registered-nurse/georgia-to-illinois",
+    "keywords": [
+      "registered nurse",
+      "RN",
+      "nursing license",
+      "Georgia",
+      "Illinois",
+      "transfer license"
+    ]
+  },
+  {
+    "type": "transfer",
+    "title": "Registered Nurse: New York → California",
+    "description": "Verified, field-sourced RN license transfer guide from New York to California.",
+    "url": "/registered-nurse/new-york-to-california",
+    "keywords": [
+      "registered nurse",
+      "RN",
+      "nursing license",
+      "New York",
+      "California",
+      "transfer license"
+    ]
+  },
+  {
+    "type": "transfer",
+    "title": "Registered Nurse: Texas → California",
+    "description": "Verified, field-sourced RN license transfer guide from Texas to California.",
+    "url": "/registered-nurse/texas-to-california",
+    "keywords": [
+      "registered nurse",
+      "RN",
+      "nursing license",
+      "Texas",
+      "California",
+      "transfer license"
+    ]
+  },
+  {
+    "type": "transfer",
+    "title": "Registered Nurse: Texas → Florida",
+    "description": "Verified, field-sourced RN license transfer guide from Texas to Florida.",
+    "url": "/registered-nurse/texas-to-florida",
+    "keywords": [
+      "registered nurse",
+      "RN",
+      "nursing license",
+      "Texas",
+      "Florida",
+      "transfer license"
+    ]
+  },
+  {
+    "type": "transfer",
+    "title": "Electrician License Reciprocity: Colorado",
+    "description": "Journeyman and Master electrician license reciprocity and endorsement requirements for Colorado.",
+    "url": "/electrician/colorado",
+    "keywords": [
+      "electrician",
+      "journeyman",
+      "master electrician",
+      "Colorado",
+      "license reciprocity"
+    ]
+  },
+  {
+    "type": "transfer",
+    "title": "Electrician License Reciprocity: Virginia",
+    "description": "Journeyman and Master electrician license reciprocity and endorsement requirements for Virginia.",
+    "url": "/electrician/virginia",
+    "keywords": [
+      "electrician",
+      "journeyman",
+      "master electrician",
+      "Virginia",
+      "license reciprocity"
+    ]
+  },
+  {
+    "type": "transfer",
+    "title": "Electrician License Reciprocity: Texas",
+    "description": "Journeyman and Master electrician license reciprocity and endorsement requirements for Texas.",
+    "url": "/electrician/texas",
+    "keywords": [
+      "electrician",
+      "journeyman",
+      "master electrician",
+      "Texas",
+      "license reciprocity"
+    ]
+  },
+  {
+    "type": "transfer",
+    "title": "Electrician License Reciprocity: Arkansas",
+    "description": "Journeyman and Master electrician license reciprocity and endorsement requirements for Arkansas.",
+    "url": "/electrician/arkansas",
+    "keywords": [
+      "electrician",
+      "journeyman",
+      "master electrician",
+      "Arkansas",
+      "license reciprocity"
+    ]
+  },
+  {
+    "type": "transfer",
+    "title": "Electrician License Reciprocity: Minnesota",
+    "description": "Journeyman and Master electrician license reciprocity and endorsement requirements for Minnesota.",
+    "url": "/electrician/minnesota",
+    "keywords": [
+      "electrician",
+      "journeyman",
+      "master electrician",
+      "Minnesota",
+      "license reciprocity"
+    ]
+  },
+  {
+    "type": "transfer",
+    "title": "Electrician License Reciprocity: Utah",
+    "description": "Journeyman and Master electrician license reciprocity and endorsement requirements for Utah.",
+    "url": "/electrician/utah",
+    "keywords": [
+      "electrician",
+      "journeyman",
+      "master electrician",
+      "Utah",
+      "license reciprocity"
+    ]
+  },
+  {
+    "type": "transfer",
+    "title": "Electrician License Reciprocity: Wyoming",
+    "description": "Journeyman and Master electrician license reciprocity and endorsement requirements for Wyoming.",
+    "url": "/electrician/wyoming",
+    "keywords": [
+      "electrician",
+      "journeyman",
+      "master electrician",
+      "Wyoming",
+      "license reciprocity"
+    ]
+  },
+  {
+    "type": "transfer",
+    "title": "Electrician License Reciprocity: Iowa",
+    "description": "Journeyman and Master electrician license reciprocity and endorsement requirements for Iowa.",
+    "url": "/electrician/iowa",
+    "keywords": [
+      "electrician",
+      "journeyman",
+      "master electrician",
+      "Iowa",
+      "license reciprocity"
+    ]
+  },
+  {
+    "type": "transfer",
+    "title": "California HVAC License Reciprocity & Transfer",
+    "description": "Transferring an existing hvac license into California, from Florida, Ohio, Texas.",
+    "url": "/hvac-technician/california",
+    "keywords": [
+      "hvac",
+      "air conditioning",
+      "California",
+      "license reciprocity",
+      "license transfer"
+    ]
+  },
+  {
+    "type": "transfer",
+    "title": "Florida HVAC License Reciprocity & Transfer",
+    "description": "Transferring an existing hvac license into Florida, from California, Ohio, Texas.",
+    "url": "/hvac-technician/florida",
+    "keywords": [
+      "hvac",
+      "air conditioning",
+      "Florida",
+      "license reciprocity",
+      "license transfer"
+    ]
+  },
+  {
+    "type": "transfer",
+    "title": "Ohio HVAC License Reciprocity & Transfer",
+    "description": "Transferring an existing hvac license into Ohio, from California, Florida, Texas.",
+    "url": "/hvac-technician/ohio",
+    "keywords": [
+      "hvac",
+      "air conditioning",
+      "Ohio",
+      "license reciprocity",
+      "license transfer"
+    ]
+  },
+  {
+    "type": "transfer",
+    "title": "Texas HVAC License Reciprocity & Transfer",
+    "description": "Transferring an existing hvac license into Texas, from California, Florida, Ohio.",
+    "url": "/hvac-technician/texas",
+    "keywords": [
+      "hvac",
+      "air conditioning",
+      "Texas",
+      "license reciprocity",
+      "license transfer"
+    ]
+  },
+  {
+    "type": "transfer",
+    "title": "California Plumber License Reciprocity & Transfer",
+    "description": "Transferring an existing plumber license into California, from Florida, Ohio, Texas.",
+    "url": "/plumber/california",
+    "keywords": [
+      "plumber",
+      "plumbing",
+      "California",
+      "license reciprocity",
+      "license transfer"
+    ]
+  },
+  {
+    "type": "transfer",
+    "title": "Florida Plumber License Reciprocity & Transfer",
+    "description": "Transferring an existing plumber license into Florida, from California, Ohio, Texas.",
+    "url": "/plumber/florida",
+    "keywords": [
+      "plumber",
+      "plumbing",
+      "Florida",
+      "license reciprocity",
+      "license transfer"
+    ]
+  },
+  {
+    "type": "transfer",
+    "title": "Ohio Plumber License Reciprocity & Transfer",
+    "description": "Transferring an existing plumber license into Ohio, from California, Florida.",
+    "url": "/plumber/ohio",
+    "keywords": [
+      "plumber",
+      "plumbing",
+      "Ohio",
+      "license reciprocity",
+      "license transfer"
+    ]
+  },
+  {
+    "type": "transfer",
+    "title": "Texas Plumber License Reciprocity & Transfer",
+    "description": "Transferring an existing plumber license into Texas, from California, Florida.",
+    "url": "/plumber/texas",
+    "keywords": [
+      "plumber",
+      "plumbing",
+      "Texas",
+      "license reciprocity",
+      "license transfer"
+    ]
+  },
+  {
+    "type": "guide",
+    "title": "Reciprocity vs. Endorsement vs. Comity: What's the Real Difference?",
+    "description": "The three pathways regulators use to recognize an out-of-state license are not interchangeable. Here's what actually differs and why it matters for your application.",
+    "url": "/guides/reciprocity-vs-endorsement-vs-comity",
+    "keywords": [
+      "Reciprocity vs. Endorsement vs. Comity: What's the Real Difference?",
+      "Fundamentals",
+      "guide"
+    ]
+  },
+  {
+    "type": "guide",
+    "title": "How to Request License Verification From Your Home State",
+    "description": "Nearly every interstate license transfer starts with a verification request. A step-by-step walkthrough of how to request one without delays.",
+    "url": "/guides/how-to-request-license-verification",
+    "keywords": [
+      "How to Request License Verification From Your Home State",
+      "How-To",
+      "guide"
+    ]
+  },
+  {
+    "type": "guide",
+    "title": "How to Transfer a Nursing License to Another State",
+    "description": "Compact or endorsement? How RN license transfers actually work between US states — the NLC 60-day rule, Nursys verification, and where state rules genuinely differ.",
+    "url": "/guides/how-to-transfer-a-nursing-license-to-another-state",
+    "keywords": [
+      "How to Transfer a Nursing License to Another State",
+      "How-To",
+      "guide",
+      "nurse",
+      "registered nurse",
+      "RN",
+      "Nurse Licensure Compact",
+      "NLC",
+      "Nursys",
+      "endorsement"
+    ]
+  },
+  {
+    "type": "guide",
+    "title": "California Plumbing License (C-36): Experience, Exams, Fees and Reciprocity",
+    "description": "What CSLB's own pages say about the C-36 Plumbing Contractor license: the four-years-in-ten experience rule, exams, sole owner fees, and which states' licenses CSLB accepts by reciprocity.",
+    "url": "/guides/california-plumbing-license-c36",
+    "keywords": [
+      "California Plumbing License (C-36): Experience, Exams, Fees and Reciprocity",
+      "State Guide",
+      "guide",
+      "plumber",
+      "plumbing",
+      "California",
+      "CSLB",
+      "C-36",
+      "contractor license",
+      "reciprocity"
+    ]
+  },
+  {
+    "type": "guide",
+    "title": "Texas Plumbing Licenses (TSBPE): License Types and Applying From Another State",
+    "description": "Texas plumbing license types and their requirements, section by section from the TSBPE rules, plus the Out-of-State Examination and the Louisiana agreement.",
+    "url": "/guides/texas-plumbing-license-tsbpe",
+    "keywords": [
+      "Texas Plumbing Licenses (TSBPE): License Types and Applying From Another State",
+      "State Guide",
+      "guide",
+      "plumber",
+      "plumbing",
+      "Texas",
+      "TSBPE",
+      "journeyman",
+      "master plumber",
+      "out-of-state"
+    ]
+  },
+  {
+    "type": "guide",
+    "title": "Journeyman Electrician License Reciprocity: What Texas, Minnesota and Iowa Require",
+    "description": "What the Texas, Minnesota and Iowa reciprocity pages each say for journeyman electricians: the states listed, holding periods, exam conditions and fees.",
+    "url": "/guides/journeyman-electrician-license-reciprocity",
+    "keywords": [
+      "Journeyman Electrician License Reciprocity: What Texas, Minnesota and Iowa Require",
+      "Fundamentals",
+      "guide",
+      "electrician",
+      "journeyman",
+      "journeyworker",
+      "reciprocity",
+      "TDLR",
+      "Minnesota",
+      "Iowa"
+    ]
+  },
+  {
+    "type": "guide",
+    "title": "HVAC License Reciprocity: What Four State Documents Say",
+    "description": "What official documents from Texas, California, Florida and Ohio say about reciprocity for HVAC and air-conditioning licenses: the states each one names and what applicants must submit.",
+    "url": "/guides/hvac-license-reciprocity-by-state",
+    "keywords": [
+      "HVAC License Reciprocity: What Four State Documents Say",
+      "Fundamentals",
+      "guide",
+      "HVAC",
+      "air conditioning",
+      "ACR",
+      "C-20",
+      "reciprocity",
+      "CILB",
+      "endorsement"
+    ]
+  },
+  {
+    "type": "guide",
+    "title": "Ohio OCILB Reciprocity Agreements: What Each State's Form Says",
+    "description": "What OCILB's reciprocity applications for nine states say: who can apply, which trades each form lists, the $500,000 insurance rule and the $25 per-trade fee.",
+    "url": "/guides/ohio-ocilb-reciprocity-agreements",
+    "keywords": [
+      "Ohio OCILB Reciprocity Agreements: What Each State's Form Says",
+      "State Guide",
+      "guide",
+      "Ohio",
+      "OCILB",
+      "reciprocity",
+      "electrical",
+      "HVAC",
+      "plumbing",
+      "hydronics",
+      "refrigeration"
+    ]
+  },
+  {
+    "type": "guide",
+    "title": "Texas RN License by Endorsement: What the Board of Nursing Requires",
+    "description": "Texas BON endorsement for U.S.-educated RNs: eligibility under Rule 217.5, the Nursys verification rule, the jurisprudence exam, fees and the 120-day temporary license.",
+    "url": "/guides/texas-rn-license-by-endorsement",
+    "keywords": [
+      "Texas RN License by Endorsement: What the Board of Nursing Requires",
+      "State Guide",
+      "guide",
+      "nurse",
+      "registered nurse",
+      "RN",
+      "Texas",
+      "BON",
+      "endorsement",
+      "NJE",
+      "Nursys"
+    ]
+  },
+  {
+    "type": "guide",
+    "title": "Florida RN License: MOBILE Endorsement vs. Multi-state Upgrade",
+    "description": "Florida Board of Nursing's two applications compared: MOBILE Endorsement for nurses licensed elsewhere and the Multi-state Upgrade for current Florida licensees.",
+    "url": "/guides/florida-rn-endorsement-vs-multistate-upgrade",
+    "keywords": [
+      "Florida RN License: MOBILE Endorsement vs. Multi-state Upgrade",
+      "State Guide",
+      "guide",
+      "nurse",
+      "registered nurse",
+      "RN",
+      "Florida",
+      "endorsement",
+      "MOBILE",
+      "multistate",
+      "compact"
+    ]
+  },
+  {
+    "type": "guide",
+    "title": "Iowa Electrical License for Out-of-State Electricians: Agreements, Rules and Fees",
+    "description": "Iowa Electrical Examining Board: the 13 reciprocal agreements, rule 481—401 conditions including 16,000 hours or apprenticeship, the testing route, fees and continuing education.",
+    "url": "/guides/iowa-electrical-license-out-of-state",
+    "keywords": [
+      "Iowa Electrical License for Out-of-State Electricians: Agreements, Rules and Fees",
+      "State Guide",
+      "guide",
+      "electrician",
+      "Iowa",
+      "DIAL",
+      "journeyman",
+      "master",
+      "reciprocity",
+      "Electrical Examining Board"
+    ]
+  },
+  {
+    "type": "guide",
+    "title": "Illinois RN License by Endorsement: What IDFPR's Application Requires",
+    "description": "IDFPR endorsement for RNs licensed elsewhere: the $50 fee, the six-month temporary permit, Nursys verification, the 60-day fingerprint window and the three-year application limit.",
+    "url": "/guides/illinois-rn-license-by-endorsement",
+    "keywords": [
+      "Illinois RN License by Endorsement: What IDFPR's Application Requires",
+      "State Guide",
+      "guide",
+      "nurse",
+      "registered nurse",
+      "RN",
+      "Illinois",
+      "IDFPR",
+      "endorsement",
+      "temporary permit",
+      "Nursys"
+    ]
+  }
+]
