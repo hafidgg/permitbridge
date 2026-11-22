@@ -1,165 +1,172 @@
 {
-  "generatedAt": "2026-11-15T17:28:53.518Z",
+  "generatedAt": "2026-11-22T18:06:28.734Z",
   "siteUrl": "sc-domain:www.getpermitbridge.com",
   "totals": {
-    "clicks": 16,
-    "impressions": 3710,
-    "ctr": 0.00431266846361186,
-    "averagePosition": 27.154716981132076
+    "clicks": 19,
+    "impressions": 3744,
+    "ctr": 0.005074786324786325,
+    "averagePosition": 26.299679487179485
   },
   "topPages": [
     {
       "page": "https://www.getpermitbridge.com/registered-nurse/texas-to-california",
       "clicks": 3,
-      "impressions": 122,
-      "position": 6.926229508196721
+      "impressions": 109,
+      "position": 6.4495412844036695
     },
     {
       "page": "https://www.getpermitbridge.com/hvac-technician/florida",
       "clicks": 2,
-      "impressions": 180,
-      "position": 33.67777777777778
+      "impressions": 192,
+      "position": 26.270833333333332
+    },
+    {
+      "page": "https://www.getpermitbridge.com/plumber/florida",
+      "clicks": 2,
+      "impressions": 178,
+      "position": 33.050561797752806
     },
     {
       "page": "https://www.getpermitbridge.com/transfer/hvac-technician/florida/texas",
       "clicks": 2,
-      "impressions": 37,
-      "position": 13.621621621621621
+      "impressions": 33,
+      "position": 11.030303030303031
+    },
+    {
+      "page": "https://www.getpermitbridge.com/transfer/hvac-technician/ohio/florida",
+      "clicks": 2,
+      "impressions": 5,
+      "position": 2
     },
     {
       "page": "https://www.getpermitbridge.com/disclaimer",
       "clicks": 1,
-      "impressions": 6,
-      "position": 2.833333333333333
-    },
-    {
-      "page": "https://www.getpermitbridge.com/electrician/arkansas",
-      "clicks": 1,
-      "impressions": 101,
-      "position": 8.05940594059406
+      "impressions": 3,
+      "position": 2.666666666666667
     },
     {
       "page": "https://www.getpermitbridge.com/electrician/utah",
       "clicks": 1,
-      "impressions": 161,
-      "position": 18.81366459627329
+      "impressions": 179,
+      "position": 20.743016759776538
     },
     {
       "page": "https://www.getpermitbridge.com/guides/reciprocity-vs-endorsement-vs-comity",
       "clicks": 1,
-      "impressions": 36,
-      "position": 4.694444444444445
+      "impressions": 41,
+      "position": 4.073170731707317
     },
     {
-      "page": "https://www.getpermitbridge.com/hvac-technician/ohio",
+      "page": "https://www.getpermitbridge.com/registered-nurse/california-to-new-york",
       "clicks": 1,
-      "impressions": 56,
-      "position": 23.321428571428573
+      "impressions": 124,
+      "position": 11.42741935483871
     },
     {
       "page": "https://www.getpermitbridge.com/state/california",
       "clicks": 1,
       "impressions": 113,
-      "position": 61.097345132743364
+      "position": 56.38053097345133
+    },
+    {
+      "page": "https://www.getpermitbridge.com/transfer/contractor/california/florida",
+      "clicks": 1,
+      "impressions": 85,
+      "position": 6.7176470588235295
     },
     {
       "page": "https://www.getpermitbridge.com/transfer/electrician/california/texas",
       "clicks": 1,
-      "impressions": 37,
-      "position": 8.54054054054054
-    },
-    {
-      "page": "https://www.getpermitbridge.com/transfer/hvac-technician/ohio/florida",
-      "clicks": 1,
-      "impressions": 5,
-      "position": 3.8
+      "impressions": 33,
+      "position": 8.484848484848484
     },
     {
       "page": "https://www.getpermitbridge.com/transfer/hvac-technician/texas/california",
       "clicks": 1,
-      "impressions": 16,
-      "position": 8.625
+      "impressions": 15,
+      "position": 8.733333333333334
     },
     {
       "page": "https://www.getpermitbridge.com/",
       "clicks": 0,
-      "impressions": 14,
-      "position": 14.285714285714286
+      "impressions": 10,
+      "position": 11.2
     },
     {
       "page": "https://www.getpermitbridge.com/about",
       "clicks": 0,
-      "impressions": 11,
-      "position": 3.727272727272727
+      "impressions": 8,
+      "position": 3.75
     },
     {
-      "page": "https://www.getpermitbridge.com/blog",
+      "page": "https://www.getpermitbridge.com/electrician/arkansas",
       "clicks": 0,
-      "impressions": 1,
-      "position": 10
-    },
-    {
-      "page": "https://www.getpermitbridge.com/blog/nurse-licensure-compact-2026-changes",
-      "clicks": 0,
-      "impressions": 3,
-      "position": 67.66666666666667
+      "impressions": 62,
+      "position": 7.5
     },
     {
       "page": "https://www.getpermitbridge.com/electrician/colorado",
       "clicks": 0,
-      "impressions": 65,
-      "position": 8.815384615384616
+      "impressions": 60,
+      "position": 9.166666666666666
     },
     {
       "page": "https://www.getpermitbridge.com/electrician/iowa",
       "clicks": 0,
-      "impressions": 89,
-      "position": 22.865168539325843
+      "impressions": 123,
+      "position": 24
     },
     {
       "page": "https://www.getpermitbridge.com/electrician/minnesota",
       "clicks": 0,
-      "impressions": 20,
-      "position": 7.6
+      "impressions": 17,
+      "position": 8
     },
     {
       "page": "https://www.getpermitbridge.com/electrician/texas",
       "clicks": 0,
-      "impressions": 128,
-      "position": 52.5078125
+      "impressions": 122,
+      "position": 52.67213114754098
     },
     {
       "page": "https://www.getpermitbridge.com/electrician/virginia",
       "clicks": 0,
-      "impressions": 25,
-      "position": 8.68
+      "impressions": 16,
+      "position": 8.75
     },
     {
       "page": "https://www.getpermitbridge.com/electrician/wyoming",
       "clicks": 0,
-      "impressions": 29,
-      "position": 39.55172413793103
+      "impressions": 28,
+      "position": 35.214285714285715
     },
     {
       "page": "https://www.getpermitbridge.com/guides",
       "clicks": 0,
-      "impressions": 50,
-      "position": 36.08
+      "impressions": 44,
+      "position": 53.95454545454545
     },
     {
       "page": "https://www.getpermitbridge.com/guides/california-plumbing-license-c36",
       "clicks": 0,
-      "impressions": 51,
-      "position": 51.254901960784316
+      "impressions": 114,
+      "position": 52.36842105263158
     },
     {
-      "page": "https://www.getpermitbridge.com/guides/how-to-request-license-verification",
+      "page": "https://www.getpermitbridge.com/guides/florida-rn-endorsement-vs-multistate-upgrade",
       "clicks": 0,
-      "impressions": 41,
-      "position": 7.463414634146342
+      "impressions": 3,
+      "position": 5.666666666666667
     }
   ],
   "topQueries": [
+    {
+      "query": "florida plumbing license reciprocity",
+      "page": "https://www.getpermitbridge.com/plumber/florida",
+      "clicks": 1,
+      "impressions": 13,
+      "position": 23
+    },
     {
       "query": "\"only then can they get licensing and certification\"",
       "page": "https://www.getpermitbridge.com/state/california",
@@ -175,25 +182,25 @@
       "position": 59
     },
     {
-      "query": "air conditioning contractor license florida",
-      "page": "https://www.getpermitbridge.com/hvac-technician/florida",
+      "query": "acr technician meaning",
+      "page": "https://www.getpermitbridge.com/hvac-technician/texas",
       "clicks": 0,
-      "impressions": 1,
-      "position": 73
+      "impressions": 9,
+      "position": 78.66666666666667
     },
     {
       "query": "air conditioning contractor license santa maria ca",
       "page": "https://www.getpermitbridge.com/hvac-technician/california",
       "clicks": 0,
-      "impressions": 3,
-      "position": 78.33333333333333
+      "impressions": 5,
+      "position": 75.2
     },
     {
       "query": "apprentice plumbing license texas",
       "page": "https://www.getpermitbridge.com/guides/texas-plumbing-license-tsbpe",
       "clicks": 0,
-      "impressions": 2,
-      "position": 88.5
+      "impressions": 3,
+      "position": 87.33333333333333
     },
     {
       "query": "apprentice plumbing license texas",
@@ -207,7 +214,7 @@
       "page": "https://www.getpermitbridge.com/profession/electrician",
       "clicks": 0,
       "impressions": 2,
-      "position": 91.5
+      "position": 91
     },
     {
       "query": "arkansas electrical license reciprocity",
@@ -222,6 +229,27 @@
       "clicks": 0,
       "impressions": 1,
       "position": 50
+    },
+    {
+      "query": "c 36 license",
+      "page": "https://www.getpermitbridge.com/guides/california-plumbing-license-c36",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 64
+    },
+    {
+      "query": "c 42 license",
+      "page": "https://www.getpermitbridge.com/guides/california-plumbing-license-c36",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 63
+    },
+    {
+      "query": "c-36 license",
+      "page": "https://www.getpermitbridge.com/guides/california-plumbing-license-c36",
+      "clicks": 0,
+      "impressions": 4,
+      "position": 55
     },
     {
       "query": "c-36 license",
@@ -248,8 +276,8 @@
       "query": "c-36 plumbing license",
       "page": "https://www.getpermitbridge.com/plumber/california",
       "clicks": 0,
-      "impressions": 2,
-      "position": 73
+      "impressions": 1,
+      "position": 74
     },
     {
       "query": "c-36 plumbing license",
@@ -276,15 +304,15 @@
       "query": "c36 contractors license",
       "page": "https://www.getpermitbridge.com/guides/california-plumbing-license-c36",
       "clicks": 0,
-      "impressions": 2,
-      "position": 55
+      "impressions": 4,
+      "position": 65.25
     },
     {
       "query": "c36 license",
-      "page": "https://www.getpermitbridge.com/plumber/california",
+      "page": "https://www.getpermitbridge.com/guides/california-plumbing-license-c36",
       "clicks": 0,
-      "impressions": 1,
-      "position": 79
+      "impressions": 2,
+      "position": 64
     },
     {
       "query": "c36 license california",
@@ -304,22 +332,29 @@
       "query": "c36 plumbing license",
       "page": "https://www.getpermitbridge.com/guides/california-plumbing-license-c36",
       "clicks": 0,
-      "impressions": 2,
-      "position": 66.5
+      "impressions": 3,
+      "position": 51
     },
     {
       "query": "c36 plumbing license",
       "page": "https://www.getpermitbridge.com/plumber/california",
       "clicks": 0,
-      "impressions": 2,
-      "position": 73
+      "impressions": 1,
+      "position": 74
     },
     {
       "query": "c36 plumbing license",
       "page": "https://www.getpermitbridge.com/state/california",
       "clicks": 0,
-      "impressions": 2,
-      "position": 81.5
+      "impressions": 1,
+      "position": 82
+    },
+    {
+      "query": "c42 license",
+      "page": "https://www.getpermitbridge.com/guides/california-plumbing-license-c36",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 91
     },
     {
       "query": "ca state licensing",
@@ -351,13 +386,6 @@
     },
     {
       "query": "california electrical license reciprocity",
-      "page": "https://www.getpermitbridge.com/profession/electrician",
-      "clicks": 0,
-      "impressions": 1,
-      "position": 74
-    },
-    {
-      "query": "california electrical license reciprocity",
       "page": "https://www.getpermitbridge.com/state/california",
       "clicks": 0,
       "impressions": 1,
@@ -368,7 +396,21 @@
       "page": "https://www.getpermitbridge.com/states",
       "clicks": 0,
       "impressions": 2,
-      "position": 83
+      "position": 87
+    },
+    {
+      "query": "california hvac license",
+      "page": "https://www.getpermitbridge.com/guides/california-plumbing-license-c36",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 9
+    },
+    {
+      "query": "california hvac license",
+      "page": "https://www.getpermitbridge.com/hvac-technician/california",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 19
     },
     {
       "query": "california hvac license",
@@ -376,6 +418,13 @@
       "clicks": 0,
       "impressions": 1,
       "position": 98
+    },
+    {
+      "query": "california plumbers license",
+      "page": "https://www.getpermitbridge.com/guides/california-plumbing-license-c36",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 52
     },
     {
       "query": "california plumbing contractor license",
@@ -395,22 +444,22 @@
       "query": "california plumbing license",
       "page": "https://www.getpermitbridge.com/guides/california-plumbing-license-c36",
       "clicks": 0,
-      "impressions": 4,
-      "position": 95.25
+      "impressions": 14,
+      "position": 78.14285714285714
     },
     {
       "query": "california plumbing license",
       "page": "https://www.getpermitbridge.com/plumber/california",
       "clicks": 0,
-      "impressions": 29,
-      "position": 76.3103448275862
+      "impressions": 19,
+      "position": 83.73684210526316
     },
     {
       "query": "california plumbing license",
       "page": "https://www.getpermitbridge.com/state/california",
       "clicks": 0,
-      "impressions": 7,
-      "position": 87.71428571428571
+      "impressions": 5,
+      "position": 88.8
     },
     {
       "query": "california refrigeration license",
@@ -437,29 +486,29 @@
       "query": "california state licensing",
       "page": "https://www.getpermitbridge.com/state/california",
       "clicks": 0,
-      "impressions": 24,
-      "position": 51.166666666666664
+      "impressions": 23,
+      "position": 51.608695652173914
     },
     {
       "query": "california state plumbing license",
       "page": "https://www.getpermitbridge.com/guides/california-plumbing-license-c36",
       "clicks": 0,
-      "impressions": 4,
-      "position": 76.25
+      "impressions": 9,
+      "position": 70.88888888888889
     },
     {
       "query": "california state plumbing license",
       "page": "https://www.getpermitbridge.com/plumber/california",
       "clicks": 0,
-      "impressions": 18,
-      "position": 71.5
+      "impressions": 7,
+      "position": 75.42857142857143
     },
     {
       "query": "california state plumbing license",
       "page": "https://www.getpermitbridge.com/state/california",
       "clicks": 0,
-      "impressions": 9,
-      "position": 87.77777777777777
+      "impressions": 8,
+      "position": 88.75
     },
     {
       "query": "california state plumbing license",
@@ -479,8 +528,8 @@
       "query": "can i transfer my plumbing license to another state",
       "page": "https://www.getpermitbridge.com/guides",
       "clicks": 0,
-      "impressions": 2,
-      "position": 79
+      "impressions": 3,
+      "position": 74
     },
     {
       "query": "can i transfer my plumbing license to another state",
@@ -493,8 +542,15 @@
       "query": "can i transfer my plumbing license to another state",
       "page": "https://www.getpermitbridge.com/plumber/california",
       "clicks": 0,
-      "impressions": 2,
-      "position": 75
+      "impressions": 1,
+      "position": 84
+    },
+    {
+      "query": "can i transfer my plumbing license to another state",
+      "page": "https://www.getpermitbridge.com/plumber/florida",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 20
     },
     {
       "query": "can i transfer my plumbing license to another state",
@@ -507,12 +563,19 @@
       "query": "can i transfer my plumbing license to another state",
       "page": "https://www.getpermitbridge.com/plumber/texas",
       "clicks": 0,
-      "impressions": 3,
-      "position": 69.66666666666667
+      "impressions": 2,
+      "position": 73.5
     },
     {
       "query": "can i transfer my plumbing license to another state",
       "page": "https://www.getpermitbridge.com/profession/plumber",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 67
+    },
+    {
+      "query": "can i transfer my plumbing license to another state",
+      "page": "https://www.getpermitbridge.com/states",
       "clicks": 0,
       "impressions": 1,
       "position": 69
@@ -528,15 +591,15 @@
       "query": "can one use electrician's license from another state in california.",
       "page": "https://www.getpermitbridge.com/hvac-technician/california",
       "clicks": 0,
-      "impressions": 1,
-      "position": 78
+      "impressions": 2,
+      "position": 64
     },
     {
       "query": "can one use electrician's license from another state in california.",
       "page": "https://www.getpermitbridge.com/profession/electrician",
       "clicks": 0,
-      "impressions": 2,
-      "position": 71
+      "impressions": 1,
+      "position": 81
     },
     {
       "query": "can you move a nursing corporation from one state to another",
@@ -549,15 +612,15 @@
       "query": "certified electrician in salt lake city ut",
       "page": "https://www.getpermitbridge.com/electrician/utah",
       "clicks": 0,
-      "impressions": 1,
-      "position": 6
+      "impressions": 2,
+      "position": 9.5
     },
     {
       "query": "certified electrician in wyoming",
       "page": "https://www.getpermitbridge.com/electrician/wyoming",
       "clicks": 0,
-      "impressions": 3,
-      "position": 73.66666666666667
+      "impressions": 2,
+      "position": 73
     },
     {
       "query": "certified plumbing contractor",
@@ -577,22 +640,22 @@
       "query": "class a hvac license florida",
       "page": "https://www.getpermitbridge.com/hvac-technician/florida",
       "clicks": 0,
-      "impressions": 2,
-      "position": 85.5
+      "impressions": 1,
+      "position": 91
     },
     {
       "query": "class b hvac license florida",
       "page": "https://www.getpermitbridge.com/hvac-technician/florida",
       "clicks": 0,
-      "impressions": 3,
-      "position": 91.33333333333333
+      "impressions": 1,
+      "position": 94
     },
     {
-      "query": "compact nursing license states 2026",
-      "page": "https://www.getpermitbridge.com/blog/nurse-licensure-compact-2026-changes",
+      "query": "comity vs reciprocity",
+      "page": "https://www.getpermitbridge.com/guides",
       "clicks": 0,
       "impressions": 1,
-      "position": 97
+      "position": 41
     },
     {
       "query": "construction industry licensing board",
@@ -612,8 +675,8 @@
       "query": "contractor license ohio",
       "page": "https://www.getpermitbridge.com/state/ohio",
       "clicks": 0,
-      "impressions": 11,
-      "position": 85.45454545454545
+      "impressions": 9,
+      "position": 86.44444444444444
     },
     {
       "query": "contractor license reciprocity",
@@ -626,8 +689,8 @@
       "query": "contractor license reciprocity",
       "page": "https://www.getpermitbridge.com/guides/hvac-license-reciprocity-by-state",
       "clicks": 0,
-      "impressions": 1,
-      "position": 95
+      "impressions": 3,
+      "position": 70
     },
     {
       "query": "contractor license reciprocity",
@@ -652,31 +715,45 @@
     },
     {
       "query": "contractor license reciprocity by state",
+      "page": "https://www.getpermitbridge.com/profession/contractor",
+      "clicks": 0,
+      "impressions": 1,
+      "position": 86
+    },
+    {
+      "query": "contractor license reciprocity by state",
       "page": "https://www.getpermitbridge.com/states",
       "clicks": 0,
-      "impressions": 4,
-      "position": 79
+      "impressions": 5,
+      "position": 87.2
     },
     {
       "query": "contractor reciprocity by state",
       "page": "https://www.getpermitbridge.com/states",
       "clicks": 0,
-      "impressions": 3,
-      "position": 79.33333333333333
+      "impressions": 2,
+      "position": 82
     },
     {
-      "query": "do electrician licenses transfer from state to state",
-      "page": "https://www.getpermitbridge.com/profession/electrician",
+      "query": "cslb plumbing license",
+      "page": "https://www.getpermitbridge.com/guides/california-plumbing-license-c36",
       "clicks": 0,
       "impressions": 1,
-      "position": 1
+      "position": 59
     },
     {
       "query": "do plumbing licenses transfer to other states",
       "page": "https://www.getpermitbridge.com/guides",
       "clicks": 0,
+      "impressions": 2,
+      "position": 77.5
+    },
+    {
+      "query": "do plumbing licenses transfer to other states",
+      "page": "https://www.getpermitbridge.com/plumber/florida",
+      "clicks": 0,
       "impressions": 1,
-      "position": 91
+      "position": 62
     },
     {
       "query": "do plumbing licenses transfer to other states",
@@ -690,7 +767,7 @@
       "page": "https://www.getpermitbridge.com/profession/plumber",
       "clicks": 0,
       "impressions": 2,
-      "position": 79.5
+      "position": 80
     },
     {
       "query": "do plumbing licenses transfer to other states",
@@ -703,15 +780,15 @@
       "query": "do plumbing licenses transfer to other states",
       "page": "https://www.getpermitbridge.com/states",
       "clicks": 0,
-      "impressions": 2,
-      "position": 83.5
+      "impressions": 3,
+      "position": 78.33333333333333
     },
     {
       "query": "documents needed to transfer nursing home resident to another state",
       "page": "https://www.getpermitbridge.com/guides/how-to-transfer-a-nursing-license-to-another-state",
       "clicks": 0,
-      "impressions": 2,
-      "position": 66
+      "impressions": 1,
+      "position": 61
     },
     {
       "query": "drain cleaner license texas",
@@ -721,32 +798,32 @@
       "position": 92
     },
     {
-      "query": "electrical certification rollover process",
-      "page": "https://www.getpermitbridge.com/profession/electrician",
-      "clicks": 0,
-      "impressions": 1,
-      "position": 90
-    },
-    {
       "query": "electrical license reciprocity",
       "page": "https://www.getpermitbridge.com/electrician/texas",
       "clicks": 0,
-      "impressions": 25,
-      "position": 84.6
+      "impressions": 23,
+      "position": 85.8695652173913
+    },
+    {
+      "query": "electrical license reciprocity",
+      "page": "https://www.getpermitbridge.com/electrician/utah",
+      "clicks": 0,
+      "impressions": 2,
+      "position": 30.5
     },
     {
       "query": "electrical license reciprocity",
       "page": "https://www.getpermitbridge.com/guides/journeyman-electrician-license-reciprocity",
       "clicks": 0,
-      "impressions": 1,
-      "position": 94
+      "impressions": 3,
+      "position": 54.333333333333336
     },
     {
       "query": "electrical license reciprocity",
       "page": "https://www.getpermitbridge.com/profession/electrician",
       "clicks": 0,
-      "impressions": 12,
-      "position": 85
+      "impressions": 7,
+      "position": 89.14285714285714
     },
     {
       "query": "electrical license reciprocity by state",
@@ -757,24 +834,10 @@
     },
     {
       "query": "electrical license reciprocity by state",
-      "page": "https://www.getpermitbridge.com/profession/electrician",
-      "clicks": 0,
-      "impressions": 2,
-      "position": 76
-    },
-    {
-      "query": "electrical license reciprocity by state",
       "page": "https://www.getpermitbridge.com/states",
       "clicks": 0,
-      "impressions": 3,
-      "position": 92
-    },
-    {
-      "query": "electrical license requirements by state",
-      "page": "https://www.getpermitbridge.com/profession/electrician",
-      "clicks": 0,
-      "impressions": 1,
-      "position": 90
+      "impressions": 2,
+      "position": 81
     },
     {
       "query": "electrical reciprocal",
@@ -796,69 +859,6 @@
       "clicks": 0,
       "impressions": 1,
       "position": 67
-    },
-    {
-      "query": "electrician license reciprocity",
-      "page": "https://www.getpermitbridge.com/electrician/texas",
-      "clicks": 0,
-      "impressions": 6,
-      "position": 75.33333333333333
-    },
-    {
-      "query": "electrician license reciprocity",
-      "page": "https://www.getpermitbridge.com/electrician/utah",
-      "clicks": 0,
-      "impressions": 1,
-      "position": 87
-    },
-    {
-      "query": "electrician license reciprocity",
-      "page": "https://www.getpermitbridge.com/guides",
-      "clicks": 0,
-      "impressions": 1,
-      "position": 92
-    },
-    {
-      "query": "electrician license reciprocity",
-      "page": "https://www.getpermitbridge.com/profession/electrician",
-      "clicks": 0,
-      "impressions": 4,
-      "position": 87.25
-    },
-    {
-      "query": "electrician license requirements by state",
-      "page": "https://www.getpermitbridge.com/profession/electrician",
-      "clicks": 0,
-      "impressions": 1,
-      "position": 84
-    },
-    {
-      "query": "electrician license texas",
-      "page": "https://www.getpermitbridge.com/electrician/texas",
-      "clicks": 0,
-      "impressions": 1,
-      "position": 87
-    },
-    {
-      "query": "electrician licensing in texas",
-      "page": "https://www.getpermitbridge.com/electrician/texas",
-      "clicks": 0,
-      "impressions": 1,
-      "position": 76
-    },
-    {
-      "query": "electrician requirements by state",
-      "page": "https://www.getpermitbridge.com/profession/electrician",
-      "clicks": 0,
-      "impressions": 1,
-      "position": 85
-    },
-    {
-      "query": "florida air conditioning contractor license",
-      "page": "https://www.getpermitbridge.com/hvac-technician/florida",
-      "clicks": 0,
-      "impressions": 1,
-      "position": 74
     }
   ]
 }
