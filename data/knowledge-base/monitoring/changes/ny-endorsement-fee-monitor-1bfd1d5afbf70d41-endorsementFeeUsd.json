@@ -1,0 +1,20 @@
+{
+  "id": "ny-endorsement-fee-monitor-1bfd1d5afbf70d41-endorsementFeeUsd",
+  "sourceId": "ny-endorsement-fee-monitor",
+  "jurisdiction": "new-york",
+  "profession": "registered-nurse",
+  "field": "endorsementFeeUsd",
+  "previousValue": 143,
+  "previousHash": "1bfd1d5afbf70d41",
+  "newHash": "1bfd1d5afbf70d41",
+  "detectedAt": "2026-11-23T21:55:58.234Z",
+  "classification": "SOURCE_UNAVAILABLE",
+  "evidence": {
+    "url": "https://www.op.nysed.gov/professions/registered-professional-nursing/endorsement-nursing-licenses",
+    "title": "Endorsement of Nursing Licenses - RPN | Office of the Professions",
+    "fetchedAt": "2026-11-23T21:55:58.234Z"
+  },
+  "confidence": 0,
+  "jurisdictionMismatch": false,
+  "status": "pending_verification"
+}
