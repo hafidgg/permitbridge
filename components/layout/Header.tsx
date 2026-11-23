@@ -2,6 +2,7 @@ import Link from "next/link";
 import { NAV_LINKS, SITE_NAME } from "@/lib/constants";
 import { Button } from "@/components/ui/button";
 import { MapPinned, Search } from "lucide-react";
+import { MobileNav } from "@/components/layout/MobileNav";
 
 export function Header() {
   return (
@@ -31,6 +32,7 @@ export function Header() {
               <span className="hidden sm:inline">Search</span>
             </Link>
           </Button>
+          <MobileNav />
         </div>
       </div>
     </header>
