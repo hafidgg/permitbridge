@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { isKnownState } from "@/lib/route-params";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { FAQSection } from "@/components/home/FAQ";
 import { Badge } from "@/components/ui/badge";
@@ -22,6 +23,8 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
+  // Unknown params: no data/ lookup (it reads from disk at request time); the not-found page sets its own metadata.
+  if (!isKnownState(slug)) return {};
   const state = getStateBySlug(slug);
   if (!state) return {};
   return buildMetadata({
@@ -33,6 +36,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
 export default async function StatePage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
+  if (!isKnownState(slug)) notFound();
   const state = getStateBySlug(slug);
   if (!state) notFound();
 

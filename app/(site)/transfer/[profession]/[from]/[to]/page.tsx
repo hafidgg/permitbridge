@@ -4,6 +4,7 @@ import { getSourceByUrl } from "@/lib/knowledge-base/transfer-rule-data";
 import { getTransferPageRules } from "@/lib/publishable-transfers";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { isKnownTransfer } from "@/lib/route-params";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { FAQSection } from "@/components/home/FAQ";
 import { TransferFactsCard } from "@/components/transfer/TransferFactsCard";
@@ -49,6 +50,8 @@ function loadPageData(params: TransferParams) {
 
 export async function generateMetadata({ params }: { params: Promise<TransferParams> }): Promise<Metadata> {
   const resolvedParams = await params;
+  // Unknown params: no data/ lookup (it reads from disk at request time); the not-found page sets its own metadata.
+  if (!isKnownTransfer(resolvedParams.profession, resolvedParams.from, resolvedParams.to)) return {};
   const data = loadPageData(resolvedParams);
   if (!data) return {};
   const { profession, from, to, rule } = data;
@@ -67,6 +70,7 @@ export async function generateMetadata({ params }: { params: Promise<TransferPar
 
 export default async function TransferPage({ params }: { params: Promise<TransferParams> }) {
   const resolvedParams = await params;
+  if (!isKnownTransfer(resolvedParams.profession, resolvedParams.from, resolvedParams.to)) notFound();
   const data = loadPageData(resolvedParams);
   if (!data) notFound();
   const { profession, from, to, rule } = data;

@@ -15,6 +15,16 @@ export const NAV_LINKS = [
   { href: "/about", label: "About" },
 ] as const;
 
+// Mobile header menu. Same hrefs as NAV_LINKS / FOOTER_LINKS.
+export const MOBILE_NAV_LINKS = [
+  { href: "/professions", label: "Professions" },
+  { href: "/states", label: "States" },
+  { href: "/guides", label: "Guides" },
+  { href: "/methodology", label: "Methodology" },
+  { href: "/about", label: "About" },
+  { href: "/contact", label: "Contact" },
+] as const;
+
 export const FOOTER_LINKS = {
   Company: [
     { href: "/about", label: "About Us" },

@@ -1,11 +1,13 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { SearchBox } from "@/components/home/SearchBox";
-import { buildSearchIndex } from "@/lib/search";
+import type { SearchDocument } from "@/types";
+// Built from buildSearchIndex() at prebuild (scripts/generate-search-index.ts): no request-time reads of data/.
+import searchIndexJson from "@/lib/generated/search-index.json";
 import { MapPinned } from "lucide-react";
 
 export default function NotFound() {
-  const searchIndex = buildSearchIndex();
+  const searchIndex = searchIndexJson as SearchDocument[];
 
   return (
     <div className="container flex flex-col items-center justify-center py-24 text-center">
